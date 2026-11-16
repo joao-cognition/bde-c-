@@ -42,7 +42,7 @@ BSLS_IDENT("$Id: $")
 #include <stdlib.h>        // '_byteswap_*'
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                          // =========================
@@ -166,7 +166,7 @@ struct ByteOrderUtil_Impl<TYPE, 8> {
 
 #define BSLS_BYTEORDERUTIL_IMPL_CUSTOMSWAP_64(dstType, x)                     \
     return static_cast<dstType>(__builtin_bswap64(                            \
-                              static_cast<BloombergLP::bsls::Types::Int64>(x)))
+                              static_cast<BNP_Paribas::bsls::Types::Int64>(x)))
 
 #endif
 
@@ -188,7 +188,7 @@ struct ByteOrderUtil_Impl<TYPE, 8> {
 
 #define BSLS_BYTEORDERUTIL_IMPL_CUSTOMSWAP_64(dstType, x)                     \
     return static_cast<dstType>(_byteswap_uint64(                             \
-                             static_cast<BloombergLP::bsls::Types::Uint64>(x)))
+                             static_cast<BNP_Paribas::bsls::Types::Uint64>(x)))
 
 #elif defined(BSLS_PLATFORM_CPU_POWERPC) && defined(BSLS_PLATFORM_CMP_IBM)    \
   && !defined(BSLS_BYTEORDERUTIL_IMPL_DISABLE_COUNTERPRODUCTIVE_MACROS)
@@ -270,7 +270,7 @@ unsigned long long bsls_byteOrderUtil_Impl_powerpc_swap_p64(
     {                                                                         \
         BSLS_BYTEORDERUTIL_IMPL_COMPILE_TIME_ASSERT(8 == sizeof *x);          \
         return static_cast<dstType>(bsls_byteOrderUtil_Impl_powerpc_swap_p64( \
-            reinterpret_cast<const BloombergLP::bsls::Types::Uint64 *>(x)));  \
+            reinterpret_cast<const BNP_Paribas::bsls::Types::Uint64 *>(x)));  \
     }
 
 #endif  // BSLS_PLATFORM_CPU_POWERPC
@@ -339,12 +339,12 @@ unsigned long long bsls_byteOrderUtil_Impl_powerpc_swap_p64(
 #define BSLS_BYTEORDERUTIL_IMPL_CUSTOMSWAP_P64(dstType, x)                    \
     {                                                                         \
         BSLS_BYTEORDERUTIL_IMPL_COMPILE_TIME_ASSERT(8 == sizeof *x);          \
-        BloombergLP::bsls::Types::Uint64 y;                                   \
+        BNP_Paribas::bsls::Types::Uint64 y;                                   \
                                                                               \
         asm("ldxa [%1] %2, %0"                                                \
           : "=r" (y)                                                          \
           : "r" (x), "i"(0x88), "m" (                                         \
-            *reinterpret_cast<const BloombergLP::bsls::Types::Uint64 *>(x))); \
+            *reinterpret_cast<const BNP_Paribas::bsls::Types::Uint64 *>(x))); \
                                                                               \
         return static_cast<dstType>(y);                                       \
     }
@@ -369,13 +369,13 @@ unsigned long long bsls_byteOrderUtil_Impl_powerpc_swap_p64(
 #define BSLS_BYTEORDERUTIL_IMPL_CUSTOMSWAP_P64(dstType, x)                    \
     {                                                                         \
         BSLS_BYTEORDERUTIL_IMPL_COMPILE_TIME_ASSERT(8 == sizeof *x);          \
-        BloombergLP::bsls::Types::Uint64 y;                                   \
+        BNP_Paribas::bsls::Types::Uint64 y;                                   \
         asm("ldxa [%1] %2, %0\n\t"                                            \
             "srl   %0, 0, %R0\n\t"                                            \
             "srlx  %0, 32, %0"                                                \
           : "=r" (y)                                                          \
           : "r" (x), "i"(0x88), "m" (                                         \
-               *reinterpret_cast<BloombergLP::bsls::Types::Uint64 *>(x)));    \
+               *reinterpret_cast<BNP_Paribas::bsls::Types::Uint64 *>(x)));    \
                                                                               \
         return static_cast<dstType>(y);                                       \
     }
@@ -454,7 +454,7 @@ unsigned long long bsls_byteOrderUtil_Impl_sparc_CC_swap_p64(
 
 #define BSLS_BYTEORDERUTIL_IMPL_CUSTOMSWAP_64(dstType, x)                     \
     {                                                                         \
-        typedef BloombergLP::bsls::Types::Uint64 Uint64;                      \
+        typedef BNP_Paribas::bsls::Types::Uint64 Uint64;                      \
                                                                               \
         BSLS_BYTEORDERUTIL_IMPL_COMPILE_TIME_ASSERT(8 == sizeof x);           \
                                                                               \
@@ -473,7 +473,7 @@ unsigned long long bsls_byteOrderUtil_Impl_sparc_CC_swap_p64(
 
 #define BSLS_BYTEORDERUTIL_IMPL_CUSTOMSWAP_64(dstType, x)                     \
     {                                                                         \
-        typedef BloombergLP::bsls::Types::Uint64 Uint64;                      \
+        typedef BNP_Paribas::bsls::Types::Uint64 Uint64;                      \
                                                                               \
         BSLS_BYTEORDERUTIL_IMPL_COMPILE_TIME_ASSERT(8 == sizeof x);           \
                                                                               \

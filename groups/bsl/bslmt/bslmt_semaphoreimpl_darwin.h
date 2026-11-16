@@ -38,7 +38,7 @@ BSLS_IDENT("$Id: $")
 #ifdef BSLS_PLATFORM_OS_DARWIN
 #include <semaphore.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 template <class SEMAPHORE_POLICY>

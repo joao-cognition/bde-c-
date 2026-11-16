@@ -37,7 +37,7 @@ int main(int argc, char *[])
 }
 #else
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                       BUILD CONFIGURATION MACROS

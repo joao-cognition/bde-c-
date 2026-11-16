@@ -420,7 +420,7 @@ BSLS_IDENT("$Id: $")
     BSLS_BSLTESTUTIL_ASSERT
 
 #define BSLS_BSLTESTUTIL_LOOP_ASSERT(I,X) do {                                \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
@@ -429,99 +429,99 @@ BSLS_IDENT("$Id: $")
     BSLS_BSLTESTUTIL_LOOP_ASSERT
 
 #define BSLS_BSLTESTUTIL_LOOP2_ASSERT(I,J,X) do {                             \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(J, #J ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
 
 #define BSLS_BSLTESTUTIL_LOOP3_ASSERT(I,J,K,X) do {                           \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(J, #J ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(K, #K ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
 
 #define BSLS_BSLTESTUTIL_LOOP4_ASSERT(I,J,K,L,X) do {                         \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(J, #J ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(K, #K ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(L, #L ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
 
 #define BSLS_BSLTESTUTIL_LOOP5_ASSERT(I,J,K,L,M,X) do {                       \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(J, #J ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(K, #K ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(L, #L ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(M, #M ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
 
 #define BSLS_BSLTESTUTIL_LOOP6_ASSERT(I,J,K,L,M,N,X) do {                     \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(J, #J ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(K, #K ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(L, #L ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(M, #M ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(N, #N ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
 
 #define BSLS_BSLTESTUTIL_LOOP7_ASSERT(I,J,K,L,M,N,O,X) do {                   \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(J, #J ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(K, #K ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(L, #L ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(M, #M ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(N, #N ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(O, #O ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
 
 #define BSLS_BSLTESTUTIL_LOOP8_ASSERT(I,J,K,L,M,N,O,V,X) do {                 \
-    if (!(X)) { BloombergLP::bsls::                                           \
+    if (!(X)) { BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(I, #I ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(J, #J ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(K, #K ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(L, #L ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(M, #M ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(N, #N ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(O, #O ": ", "\t");          \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                       BslTestUtil::callDebugprint(V, #V ": ",                 \
                                                         "    (context)\n");   \
                 aSsErT(true, #X, __LINE__); } } while (false)
@@ -554,24 +554,24 @@ BSLS_IDENT("$Id: $")
 
 /// Quote identifier literally.
 #define BSLS_BSLTESTUTIL_Q(X)                                                 \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                              BslTestUtil::printStringNoFlush("<| " #X " |>\n");
 
 /// Print identifier and its value.
 #define BSLS_BSLTESTUTIL_P(X)                                                 \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                                 BslTestUtil::callDebugprint(X, #X " = ", "\n");
 
 /// P(X) without `\n`.
 #define BSLS_BSLTESTUTIL_P_(X)                                                \
-                BloombergLP::bsls::                                           \
+                BNP_Paribas::bsls::                                           \
                                 BslTestUtil::callDebugprint(X, #X " = ", ", ");
 
 /// Current line number.
 #define BSLS_BSLTESTUTIL_L_ __LINE__
 
 /// Print a tab (w/o newline).
-#define BSLS_BSLTESTUTIL_T_ BloombergLP::bsls::BslTestUtil::printTab();
+#define BSLS_BSLTESTUTIL_T_ BNP_Paribas::bsls::BslTestUtil::printTab();
 
 // PRINTF FORMAT MACROS
 #if defined(BSLS_PLATFORM_CMP_MSVC)
@@ -618,7 +618,7 @@ BSLS_IDENT("$Id: $")
     // Provide a platform-independent way to specify a 'uintptr_t' integer
     // format for 'printf'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 
@@ -755,13 +755,13 @@ void BslTestUtil::callDebugprint(const TYPE&  obj,
                                  const char  *trailingString)
 {
     if (leadingString) {
-        BloombergLP::bsls::BslTestUtil::printStringNoFlush(leadingString);
+        BNP_Paribas::bsls::BslTestUtil::printStringNoFlush(leadingString);
     }
 
     debugprint(obj);
 
     if (trailingString) {
-        BloombergLP::bsls::BslTestUtil::printStringNoFlush(trailingString);
+        BNP_Paribas::bsls::BslTestUtil::printStringNoFlush(trailingString);
     }
     flush();
 }

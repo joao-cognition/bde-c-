@@ -26,7 +26,7 @@
 // BDE_VERIFY pragma: -TP09  // Test-case indexing thing
 // BDE_VERIFY pragma: -TP18  // Test-case banners are ALL-CAPS
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                  TEST PLAN

@@ -17,7 +17,7 @@
   #include <bsl_fstream.h>
   #include <bsl_memory.h>
 
-  using namespace BloombergLP;
+  using namespace BNP_Paribas;
 
   /// Log the specified `message` to the "Function 1" category at `e_INFO`
   /// severity.

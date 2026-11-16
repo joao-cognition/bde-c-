@@ -36,7 +36,7 @@
 #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -1988,12 +1988,12 @@ int main(int argc, char *argv[])
         const bsl::string_view EXPECTED(
             U_MAYBE_UNUSED
             "$const auto bdlbScopeExitGuard_#${$"
-                         "BloombergLP$::$bdlb$::$ScopeExitUtil$::$"
+                         "BNP_Paribas$::$bdlb$::$ScopeExitUtil$::$"
                                           "makeScopeExit$($exitFunc$)$}$");
 #else
         const bsl::string_view EXPECTED(
             U_MAYBE_UNUSED
-            "$const BloombergLP$::$bdlb$::$ScopeExitAny "
+            "$const BNP_Paribas$::$bdlb$::$ScopeExitAny "
                                      "bdlbScopeExitGuard_#$($($exitFunc$)$)$");
 #endif
 #undef U_MAYBE_UNUSED
@@ -2066,11 +2066,11 @@ int main(int argc, char *argv[])
 
 #ifdef BDLB_SCOPEEXIT_USES_MODERN_CPP
         const bsl::string_view EXPECTED(
-            "$auto varName${$BloombergLP$::$bdlb$::$ScopeExitUtil$::$"
+            "$auto varName${$BNP_Paribas$::$bdlb$::$ScopeExitUtil$::$"
                                           "makeScopeExit$($exitFunc$)$}$");
 #else
         const bsl::string_view EXPECTED(
-            "$BloombergLP$::$bdlb$::$ScopeExitAny varName$(($exitFunc$))$");
+            "$BNP_Paribas$::$bdlb$::$ScopeExitAny varName$(($exitFunc$))$");
 #endif
 
         ASSERTV(proctorMacroText, EXPECTED,

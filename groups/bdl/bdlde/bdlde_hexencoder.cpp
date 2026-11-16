@@ -53,7 +53,7 @@ static const char uppercaseLettersTable[16] =
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                            // ----------

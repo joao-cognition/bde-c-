@@ -16,7 +16,7 @@
 #include <bsl_string.h>
 #include <bsl_sstream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -181,7 +181,7 @@ const Element &V0 = VALUES[0],            // V0, V1, ... are used in
               &V7 = VALUES[7], &VG = V7,
               &V8 = VALUES[8], &VH = V8;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 /// Print the specified Guid `v` to bsl::cout.

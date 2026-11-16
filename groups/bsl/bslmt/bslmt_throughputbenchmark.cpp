@@ -22,7 +22,7 @@ BSLS_IDENT_RCSID(bslmt_bslmt_throughputbenchmark_cpp,"$Id$ $CSID$")
 
 #include <bslstl_sharedptr.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
                         // -------------------------

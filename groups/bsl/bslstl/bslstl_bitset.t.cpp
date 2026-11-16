@@ -33,7 +33,7 @@
 #include <stdlib.h>      // `atoi`
 #include <string.h>      // `strcmp`, `strcpy`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;    // still using iostream
 
 // Pragmas to disable noisiest bde_verify warnings

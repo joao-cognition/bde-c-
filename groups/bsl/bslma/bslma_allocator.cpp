@@ -11,9 +11,9 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bsls_keyword.h>
 #include <bsls_performancehint.h>
 
-typedef BloombergLP::bsls::AlignmentUtil AlignUtil;
+typedef BNP_Paribas::bsls::AlignmentUtil AlignUtil;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                         // ---------------

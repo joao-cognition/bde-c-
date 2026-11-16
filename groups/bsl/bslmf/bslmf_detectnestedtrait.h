@@ -19,7 +19,7 @@ BSLS_IDENT("$Id: $")
 // because their association with a type is embedded within the type's
 // definition.  `bslmf::DetectNestedTrait` and can also be used to detect
 // traits created using older legacy traits definitions mechanisms used at
-// Bloomberg.
+// BNP Paribas.
 //
 // Please note:
 // 1. The use of `bslmf::DetectNestedTrait` to detect traits is *deprecated*.
@@ -334,7 +334,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_nestedtraitdeclaration.h>
 #include <bslmf_voidtype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                         // ===========================

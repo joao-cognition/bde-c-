@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLSTL_BIDIRECTIONALNODEPOOL_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                        // ===========================

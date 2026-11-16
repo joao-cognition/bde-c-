@@ -156,7 +156,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_alignmentutil.h>
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                 // ===========================================

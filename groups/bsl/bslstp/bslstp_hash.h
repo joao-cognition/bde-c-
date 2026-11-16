@@ -69,7 +69,7 @@ BSLS_IDENT("$Id: $")
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 #endif // BDE_OMIT_INTERNAL_DEPRECATED
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstp {
 
                           // ==================

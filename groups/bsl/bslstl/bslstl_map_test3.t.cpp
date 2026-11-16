@@ -88,7 +88,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::pair;
 using bsl::map;
 using bsls::NameOf;
@@ -1527,7 +1527,7 @@ struct MoveHolder {
 
     /// This typedef is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     /// Default initialize the held value.
     MoveHolder()
@@ -1549,7 +1549,7 @@ struct MoveHolder {
 
     /// Move-construct from the specified `rhs`. Set the `rhs` moved-from
     /// flag to `true`.
-    MoveHolder(BloombergLP::bslmf::MovableRef<MoveHolder> rhs)
+    MoveHolder(BNP_Paribas::bslmf::MovableRef<MoveHolder> rhs)
     : d_value(MoveUtil::move(MoveUtil::access(rhs).d_value))
     , d_moved(false)
     {
@@ -1567,7 +1567,7 @@ struct MoveHolder {
 
     /// Move-assign from the specified `rhs`. Set the `rhs` moved-from flag
     /// to `true`.
-    MoveHolder& operator=(BloombergLP::bslmf::MovableRef<MoveHolder> rhs)
+    MoveHolder& operator=(BNP_Paribas::bslmf::MovableRef<MoveHolder> rhs)
     {
         MoveHolder& lvalue = rhs;
 
@@ -2541,7 +2541,7 @@ TestDriver<KEY, VALUE, COMP, ALLOC>::testCase32a_RunTest(Obj   *target,
 template <class KEY, class VALUE, class COMP, class ALLOC>
 void TestDriver<KEY, VALUE, COMP, ALLOC>::testCase43()
 {
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     static const struct {
         int         d_line;      // source line number

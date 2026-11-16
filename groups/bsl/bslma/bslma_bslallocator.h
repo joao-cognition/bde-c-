@@ -505,7 +505,7 @@ BSLS_IDENT("$Id: $")
     BSLS_DEPRECATE_FEATURE("bsl", "bsl_allocator_assign", \
                            "Do not assign allocators.")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // FORWARD DECLARATIONS
@@ -544,9 +544,9 @@ class allocator : public polymorphic_allocator<TYPE> {
     // Note that `allocator` is not trivially copyable because its assignment
     // operator is not trivial.
     BSLMF_NESTED_TRAIT_DECLARATION(allocator,
-                                   BloombergLP::bslmf::IsBitwiseCopyable);
+                                   BNP_Paribas::bslmf::IsBitwiseCopyable);
     BSLMF_NESTED_TRAIT_DECLARATION(allocator,
-                              BloombergLP::bslmf::IsBitwiseEqualityComparable);
+                              BNP_Paribas::bslmf::IsBitwiseEqualityComparable);
 
     // PUBLIC TYPES
     typedef TYPE                                    value_type;
@@ -587,7 +587,7 @@ class allocator : public polymorphic_allocator<TYPE> {
     /// ```
     /// this->mechanism() == bslma::Default::allocator(mechanism)
     /// ```
-    allocator(BloombergLP::bslma::Allocator *mechanism);            // IMPLICIT
+    allocator(BNP_Paribas::bslma::Allocator *mechanism);            // IMPLICIT
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_DEFAULTED_FUNCTIONS
     allocator(const allocator& original) BSLS_KEYWORD_NOEXCEPT = default;
@@ -701,7 +701,7 @@ class allocator : public polymorphic_allocator<TYPE> {
 
     /// Return a pointer to the mechanism object to which this proxy
     /// forwards allocation and deallocation calls.
-    BloombergLP::bslma::Allocator *mechanism() const;
+    BNP_Paribas::bslma::Allocator *mechanism() const;
 
     /// Return a default-constructed allocator.
     allocator select_on_container_copy_construction() const;
@@ -717,11 +717,11 @@ class allocator : public polymorphic_allocator<TYPE> {
 /// `allocator<char>` instead.
 template <>
 class allocator<void>
-    : public allocator<BloombergLP::bslma::BslAllocator_Voidish>
+    : public allocator<BNP_Paribas::bslma::BslAllocator_Voidish>
 {
 
     // PRIVATE TYPES
-    typedef allocator<BloombergLP::bslma::BslAllocator_Voidish> Base;
+    typedef allocator<BNP_Paribas::bslma::BslAllocator_Voidish> Base;
 
     // NOT DEFINED
     void allocate();     // Hide name inherited from base class
@@ -735,9 +735,9 @@ class allocator<void>
     // Note that `allocator` is not trivially copyable because its assignment
     // operator is not trivial.
     BSLMF_NESTED_TRAIT_DECLARATION(allocator,
-                                   BloombergLP::bslmf::IsBitwiseCopyable);
+                                   BNP_Paribas::bslmf::IsBitwiseCopyable);
     BSLMF_NESTED_TRAIT_DECLARATION(allocator,
-                              BloombergLP::bslmf::IsBitwiseEqualityComparable);
+                              BNP_Paribas::bslmf::IsBitwiseEqualityComparable);
 
     // PUBLIC TYPES
     typedef void           *pointer;
@@ -763,7 +763,7 @@ class allocator<void>
     /// ```
     /// this->mechanism() == bslma::Default::allocator(mechanism);
     /// ```
-    allocator(BloombergLP::bslma::Allocator *mechanism);            // IMPLICIT
+    allocator(BNP_Paribas::bslma::Allocator *mechanism);            // IMPLICIT
 
     /// Create a proxy object sharing the same mechanism object as the
     /// specified `original`.  The newly constructed allocator will compare
@@ -936,14 +936,14 @@ struct allocator_traits<allocator<TYPE> > {
 template <class TYPE>
 inline
 allocator<TYPE>::allocator()
-: Base(BloombergLP::bslma::Default::defaultAllocator())
+: Base(BNP_Paribas::bslma::Default::defaultAllocator())
 {
 }
 
 template <class TYPE>
 inline
-allocator<TYPE>::allocator(BloombergLP::bslma::Allocator *mechanism)
-: Base(BloombergLP::bslma::Default::allocator(mechanism))
+allocator<TYPE>::allocator(BNP_Paribas::bslma::Allocator *mechanism)
+: Base(BNP_Paribas::bslma::Default::allocator(mechanism))
 {
 }
 
@@ -1005,7 +1005,7 @@ template <class ELEMENT_TYPE>
 inline
 void allocator<TYPE>::construct(ELEMENT_TYPE *address)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(address, *this);
+    BNP_Paribas::bslma::ConstructionUtil::construct(address, *this);
 }
 
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
@@ -1016,7 +1016,7 @@ void allocator<TYPE>::construct(ELEMENT_TYPE *address,
                                 ARG1&         argument1,
                                 ARGS&&...     arguments)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         address,
         *this,
         argument1,
@@ -1031,7 +1031,7 @@ void allocator<TYPE>::construct(
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARG1)  argument1,
                             ARGS&&...                                arguments)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         address,
         *this,
         BSLS_COMPILERFEATURES_FORWARD(ARG1, argument1),
@@ -1044,7 +1044,7 @@ template <class ELEMENT_TYPE>
 inline
 void allocator<TYPE>::destroy(ELEMENT_TYPE *address)
 {
-    BloombergLP::bslma::DestructionUtil::destroy(address);
+    BNP_Paribas::bslma::DestructionUtil::destroy(address);
 }
 
 
@@ -1054,7 +1054,7 @@ inline
 typename allocator<TYPE>::pointer
 allocator<TYPE>::address(reference x) const
 {
-    return BloombergLP::bsls::Util::addressOf(x);
+    return BNP_Paribas::bsls::Util::addressOf(x);
 }
 
 template <class TYPE>
@@ -1062,7 +1062,7 @@ inline
 typename allocator<TYPE>::const_pointer
 allocator<TYPE>::address(const_reference x) const
 {
-    return BloombergLP::bsls::Util::addressOf(x);
+    return BNP_Paribas::bsls::Util::addressOf(x);
 }
 
 template <class TYPE>
@@ -1079,9 +1079,9 @@ typename allocator<TYPE>::size_type allocator<TYPE>::max_size() const
 
 template <class TYPE>
 inline
-BloombergLP::bslma::Allocator *allocator<TYPE>::mechanism() const
+BNP_Paribas::bslma::Allocator *allocator<TYPE>::mechanism() const
 {
-    return static_cast<BloombergLP::bslma::Allocator *>(this->resource());
+    return static_cast<BNP_Paribas::bslma::Allocator *>(this->resource());
 }
 
 template <class TYPE>
@@ -1102,7 +1102,7 @@ allocator<void>::allocator()
 }
 
 inline
-allocator<void>::allocator(BloombergLP::bslma::Allocator *mechanism)
+allocator<void>::allocator(BNP_Paribas::bslma::Allocator *mechanism)
 : Base(mechanism)
 {
 }
@@ -1152,14 +1152,14 @@ allocator<void> allocator<void>::select_on_container_copy_construction() const
 template <class TYPE>
 inline
 bool operator==(const bsl::allocator<TYPE>&    a,
-                BloombergLP::bslma::Allocator *b)
+                BNP_Paribas::bslma::Allocator *b)
 {
     return a.resource() == b || a.resource()->is_equal(*b);
 }
 
 template <class TYPE>
 inline
-bool operator==(BloombergLP::bslma::Allocator *a,
+bool operator==(BNP_Paribas::bslma::Allocator *a,
                 const bsl::allocator<TYPE>&    b)
 {
     return a == b.resource() || a->is_equal(*b.resource());
@@ -1168,14 +1168,14 @@ bool operator==(BloombergLP::bslma::Allocator *a,
 template <class TYPE>
 inline
 bool operator!=(const bsl::allocator<TYPE>&    a,
-                BloombergLP::bslma::Allocator *b)
+                BNP_Paribas::bslma::Allocator *b)
 {
     return ! (a.resource() == b || a.resource()->is_equal(*b));
 }
 
 template <class TYPE>
 inline
-bool operator!=(BloombergLP::bslma::Allocator *a,
+bool operator!=(BNP_Paribas::bslma::Allocator *a,
                 const bsl::allocator<TYPE>&    b)
 {
     return ! (a == b.resource() || a->is_equal(*b.resource()));
@@ -1186,7 +1186,7 @@ bool operator!=(BloombergLP::bslma::Allocator *a,
 //                                TYPE TRAITS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 /// An allocator is not *itself* an allocator-aware type, even though it is

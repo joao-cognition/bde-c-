@@ -143,7 +143,7 @@ void aSsErT(bool condition, const char *message, int line)
     #define TEST_BSL_SPAN_AT                                                  1
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             USAGE EXAMPLE
@@ -1199,9 +1199,9 @@ int main(int argc, char *argv[])
     printf("TEST " __FILE__ " CASE %d\n", test);
 
     // CONCERN: In no case does memory come from the global allocator.
-    BloombergLP::bslma::TestAllocator
+    BNP_Paribas::bslma::TestAllocator
                                 globalAllocator("global", veryVeryVeryVerbose);
-    BloombergLP::bslma::Default::setGlobalAllocator(&globalAllocator);
+    BNP_Paribas::bslma::Default::setGlobalAllocator(&globalAllocator);
 
     switch (test) { case 0:
       case 10: {

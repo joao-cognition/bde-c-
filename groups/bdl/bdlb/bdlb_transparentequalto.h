@@ -70,7 +70,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_istriviallydefaultconstructible.h>
 #include <bslmf_nestedtraitdeclaration.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                     // =========================

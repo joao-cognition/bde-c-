@@ -403,7 +403,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_integralconstant.h>
 #include <bslmf_voidtype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// This `struct` template implements a meta-function to determine whether

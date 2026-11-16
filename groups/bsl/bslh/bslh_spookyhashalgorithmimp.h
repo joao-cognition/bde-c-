@@ -167,7 +167,7 @@ BSLS_IDENT("$Id: $")
 // continues until the BloombergLP copyright notice.  Changes made to the
 // original code include:
 //
-// 1. Added `BloombergLP` and `bslh` namespaces
+// 1. Added `BNP_Paribas` and `bslh` namespaces
 // 2. Renamed `SpookyHash` to `SpookyHashAlgorithmImp`
 // 3. Removed usage of `stdint.h` (which might not be available on all
 //    platforms) and updated associated `typedef`s
@@ -234,7 +234,7 @@ BSLS_IDENT("$Id: $")
 #define BSLH_SPOOKYHASHALGORITHMIMP_INLINE inline
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslh {
 

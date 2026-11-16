@@ -70,7 +70,7 @@ BSLS_IDENT("$Id: $")
 # include <thread>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
 // FREE FUNCTIONS

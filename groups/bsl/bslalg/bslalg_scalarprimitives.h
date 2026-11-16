@@ -115,7 +115,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_removecvq.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

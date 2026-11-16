@@ -441,9 +441,9 @@ BSLS_IDENT("$Id: $")
 // ---------------------------------------------------------------------------
 // Allocation trace 1, 1 block(s) in use.
 // Stack trace at allocation time:
-// (0): BloombergLP::balst::StackTraceTestAllocator::allocate(int)+0x17d at 0x
+// (0): BNP_Paribas::balst::StackTraceTestAllocator::allocate(int)+0x17d at 0x
 // 805e741 in balst_stacktracetestallocator.t.dbg_exc_mt
-// (1): BloombergLP::bslma::TestAllocator::allocate(int)+0x12c at 0x8077398 in
+// (1): BNP_Paribas::bslma::TestAllocator::allocate(int)+0x12c at 0x8077398 in
 //  balst_stacktracetestallocator.t.dbg_exc_mt
 // (2): ShipsCrew::copy(bsl::basic_string<char, std::char_traits<char>, bsl::a
 // llocator<char> > const&)+0x31 at 0x804c3db in balst_stacktracetestallocator
@@ -451,7 +451,7 @@ BSLS_IDENT("$Id: $")
 // (3): ShipsCrew::setCook(bsl::basic_string<char, std::char_traits<char>, bsl
 // ::allocator<char> > const&)+0x2d at 0x804c4c1 in balst_stacktracetestalloca
 // tor.t.dbg_exc_mt
-// (4): ShipsCrew::ShipsCrew(char const*, BloombergLP::bslma::Allocator*)+0x23
+// (4): ShipsCrew::ShipsCrew(char const*, BNP_Paribas::bslma::Allocator*)+0x23
 // 4 at 0x804c738 in balst_stacktracetestallocator.t.dbg_exc_mt
 // (5): main+0x53c at 0x804d55e in balst_stacktracetestallocator.t.dbg_exc_mt
 // (6): __libc_start_main+0xdc at 0x182e9c in /lib/libc.so.6
@@ -477,7 +477,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_functional.h>
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
                        // =============================

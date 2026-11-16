@@ -31,7 +31,7 @@
 #define snprintf _snprintf_s
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using bsl::cout;
 using bsl::endl;

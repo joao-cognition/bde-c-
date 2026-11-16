@@ -43,10 +43,10 @@ using std::vprint_unicode;
 
 #else
 
-using BloombergLP::bslfmt::print;
-using BloombergLP::bslfmt::println;
-using BloombergLP::bslfmt::vprint_nonunicode;
-using BloombergLP::bslfmt::vprint_unicode;
+using BNP_Paribas::bslfmt::print;
+using BNP_Paribas::bslfmt::println;
+using BNP_Paribas::bslfmt::vprint_nonunicode;
+using BNP_Paribas::bslfmt::vprint_unicode;
 
 #endif
 

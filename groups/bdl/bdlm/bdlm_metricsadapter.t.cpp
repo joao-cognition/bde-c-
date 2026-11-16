@@ -25,7 +25,7 @@
 #include <bsl_map.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 
@@ -108,7 +108,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                   GLOBAL FUNCTIONS FOR TESTING
 // ----------------------------------------------------------------------------
 
-void testMetric(BloombergLP::bdlm::Metric *value)
+void testMetric(BNP_Paribas::bdlm::Metric *value)
 {
     (void)value;
 }
@@ -324,7 +324,7 @@ struct ProtocolClassTestImp : bsls::ProtocolTestImp<ProtocolClass> {
 // Next, we provide the metric method, `my_metric`, which will compute its
 // invocation count:
 // ```
-    void my_metric(BloombergLP::bdlm::Metric *value)
+    void my_metric(BNP_Paribas::bdlm::Metric *value)
     {
         *value = value->theGauge() + 1.0;
     }
@@ -336,7 +336,7 @@ struct ProtocolClassTestImp : bsls::ProtocolTestImp<ProtocolClass> {
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

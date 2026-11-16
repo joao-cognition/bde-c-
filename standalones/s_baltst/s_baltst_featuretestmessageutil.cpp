@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(s_baltst_featuretestmessageutil_cpp, "$Id$ $CSID$")
 
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                        // -----------------------------

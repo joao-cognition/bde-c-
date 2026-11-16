@@ -17,7 +17,7 @@
 #include <bsl_iomanip.h>
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -207,7 +207,7 @@ void testCFunction1()
     bsl::size_t    charsWritten;
 
     int retVal =
-              BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
+              BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
                                                              buffSize,
                                                              "Hello",
                                                              &charsWritten);
@@ -243,7 +243,7 @@ void testCFunction2()
     // "&Eacute;cole", the French word for School.  `&Eacute;` is the HTML
     // entity equivalent to Unicode-E WITH ACUTE, LATIN CAPITAL LETTER
     int retVal =
-          BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
+          BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
                                                          buffSize,
                                                          "\xc3\x89" "cole",
                                                          &charsWritten);
@@ -263,7 +263,7 @@ void testCFunction2()
 
     // Reversing the conversion returns the original string:
     retVal =
-          BloombergLP::bdlde::CharConvertUcs2::ucs2ToUtf8(buffer2,
+          BNP_Paribas::bdlde::CharConvertUcs2::ucs2ToUtf8(buffer2,
                                                          buffer2Size,
                                                          buffer,
                                                          &charsWritten,
@@ -314,7 +314,7 @@ void processUtf8(const char *strU8)
     bsl::size_t    charsWritten = 0;
 
     int result =
-              BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
+              BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
                                                              buffSize,
                                                              strU8,
                                                              &charsWritten);
@@ -333,7 +333,7 @@ void processUtf8(const char *strU8)
 void loadUCS2Hello(bsl::vector<unsigned short> *result)
 {
     int retVal =
-              BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(result,
+              BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(result,
                                                              "Hello");
 
     ASSERT( 0  == retVal);
@@ -358,7 +358,7 @@ void checkCppRoundTrip()
     // "&Eacute;cole", the French word for School.  `&Eacute;` is the HTML
     // entity corresponding to "Unicode-E WITH ACUTE, LATIN CAPITAL LETTER"
     int retVal =
-          BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(&result,
+          BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(&result,
                                                          "\xc3\x89" "cole");
 
     ASSERT( 0   == retVal);
@@ -375,7 +375,7 @@ void checkCppRoundTrip()
 
     // Reversing the conversion returns the original string:
     retVal =
-          BloombergLP::bdlde::CharConvertUcs2::ucs2ToUtf8(&result2,
+          BNP_Paribas::bdlde::CharConvertUcs2::ucs2ToUtf8(&result2,
                                                          &result.front(),
                                                          &charsWritten);
 
@@ -395,7 +395,7 @@ void checkCppRoundTrip()
 void processUtf8(bsl::vector<unsigned short> *result, const bsl::string &strU8)
 
 {
-    BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(result, strU8.c_str());
+    BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(result, strU8.c_str());
 }
 
 
@@ -3542,12 +3542,12 @@ int main(int argc, char**argv)
         unsigned short ucs2_buffer[256];
         char  utf8_buffer[256];
 
-        ASSERT(SUCCESS == BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(
+        ASSERT(SUCCESS == BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(
                       ucs2_buffer,
                       sizeof ucs2_buffer/sizeof *ucs2_buffer,
                       ecole));
 
-        ASSERT(SUCCESS == BloombergLP::bdlde::CharConvertUcs2::ucs2ToUtf8(
+        ASSERT(SUCCESS == BNP_Paribas::bdlde::CharConvertUcs2::ucs2ToUtf8(
                       utf8_buffer,
                       sizeof utf8_buffer/sizeof *utf8_buffer,
                       ucs2_buffer));

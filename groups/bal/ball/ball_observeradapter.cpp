@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(ball_observeradapter_cpp,"$Id$ $CSID$")
 #include <ball_userfields.h>                    // for testing only
 #include <ball_userfieldvalue.h>                // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // ---------------------

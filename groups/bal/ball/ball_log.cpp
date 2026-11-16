@@ -29,7 +29,7 @@ BSLS_IDENT_RCSID(ball_log_cpp,"$Id$ $CSID$")
 
 // See the end of this file for implementation notes.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                          // ----------
@@ -258,14 +258,14 @@ Log_Formatter::~Log_Formatter()
 // The stream-style logging macro (without a callback) is reproduced here:
 // ```
 //#define BALL_LOG_STREAM_BLOCK(SEVERITY)                                    \@
-//for (const BloombergLP::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =    \@
+//for (const BNP_Paribas::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =    \@
 //                      ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER); \@
 //     ball_log_cAtEgOrYhOlDeR                                               \@
 //     && ball_log_cAtEgOrYhOlDeR->threshold() >= (SEVERITY)                 \@
-//     && BloombergLP::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR, \@
+//     && BNP_Paribas::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR, \@
 //                                                  (SEVERITY));             \@
 //     )                                                                     \@
-//for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                    \@
+//for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                    \@
 //                                       ball_log_cAtEgOrYhOlDeR->category(),\@
 //                                       __FILE__,                           \@
 //                                       __LINE__,                           \@
@@ -331,11 +331,11 @@ Log_Formatter::~Log_Formatter()
 // in terms of the 'ball::Log' utility functions.  Note, however, that direct
 // use of the utility functions is *strongly* discouraged:
 // ```
-//      static const BloombergLP::ball::Category *category =
+//      static const BNP_Paribas::ball::Category *category =
 //                                  ball::Log::setCategory("EQUITY.NASD.SUNW");
 //      {
-//          using BloombergLP::ball::Log;
-//          using BloombergLP::ball::Severity;
+//          using BNP_Paribas::ball::Log;
+//          using BNP_Paribas::ball::Severity;
 //          if (ball::Log::isEnabled(category, ball::Severity::e_INFO)) {
 //              const char *formatSpec = "%d shares of %s sold at %f\n";
 //              snprintf(ball::Log::messageBuffer(),

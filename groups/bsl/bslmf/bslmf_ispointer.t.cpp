@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                TEST PLAN
@@ -23,7 +23,7 @@ using namespace BloombergLP;
 //
 // ----------------------------------------------------------------------------
 // PUBLIC CLASS DATA
-// [ 2] BloombergLP::bslmf::IsPointer::value
+// [ 2] BNP_Paribas::bslmf::IsPointer::value
 // [ 1] bsl::is_pointer::value
 // [ 1] bsl::is_pointer_v
 //

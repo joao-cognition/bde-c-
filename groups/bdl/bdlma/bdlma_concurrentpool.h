@@ -232,7 +232,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_cstddef.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                            // ====================
@@ -571,7 +571,7 @@ class ConcurrentPool {
 }  // close enterprise namespace
 
 // Note that the 'new' and 'delete' operators are declared outside the
-// 'BloombergLP' namespace so that they do not hide the standard placement
+// 'BNP_Paribas' namespace so that they do not hide the standard placement
 // 'new' and 'delete' operators (i.e.,
 // 'void *operator new(bsl::size_t, void *)' and
 // 'void operator delete(void *)').
@@ -581,7 +581,7 @@ class ConcurrentPool {
 // would cause dangerous ambiguity.  Consider what would have happened had we
 // overloaded the array version of 'operator new':
 //..
-//  void *operator new[](bsl::size_t size, BloombergLP::bdlma::Pool& pool);
+//  void *operator new[](bsl::size_t size, BNP_Paribas::bdlma::Pool& pool);
 //..
 // A user of 'bdlma::Pool' may expect to be able to use array 'operator new' as
 // follows:
@@ -626,7 +626,7 @@ class ConcurrentPool {
 ///  t->~my_Type();
 ///  pool->deallocate(t);
 ///..
-void *operator new(bsl::size_t size, BloombergLP::bdlma::ConcurrentPool& pool);
+void *operator new(bsl::size_t size, BNP_Paribas::bdlma::ConcurrentPool& pool);
 
 /// Use the specified `pool` to deallocate the memory at the specified
 /// `address`.  The behavior is undefined unless `address` was allocated
@@ -635,13 +635,13 @@ void *operator new(bsl::size_t size, BloombergLP::bdlma::ConcurrentPool& pool);
 /// case of an exception.  Client code should not call it; use
 /// `bdlma::ConcurrentPool::deleteObject()` instead.
 inline
-void operator delete(void *address, BloombergLP::bdlma::ConcurrentPool& pool);
+void operator delete(void *address, BNP_Paribas::bdlma::ConcurrentPool& pool);
 
 // ============================================================================
 //                             INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                   // -------------------------------------
@@ -803,7 +803,7 @@ bslma::Allocator *ConcurrentPool::allocator() const
 
 // FREE OPERATORS
 inline
-void *operator new(bsl::size_t size, BloombergLP::bdlma::ConcurrentPool& pool)
+void *operator new(bsl::size_t size, BNP_Paribas::bdlma::ConcurrentPool& pool)
 {
     BSLS_ASSERT_SAFE(size <= pool.blockSize());
 
@@ -812,7 +812,7 @@ void *operator new(bsl::size_t size, BloombergLP::bdlma::ConcurrentPool& pool)
 }
 
 inline
-void operator delete(void *address, BloombergLP::bdlma::ConcurrentPool& pool)
+void operator delete(void *address, BNP_Paribas::bdlma::ConcurrentPool& pool)
 {
     pool.deallocate(address);
 }

@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(ball_severityutil_cpp,"$Id$ $CSID$")
 
 #include <bsl_cstring.h>   // 'strcmp'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // -------------------

@@ -60,7 +60,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_keyword.h>
 #include <bsls_review.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

@@ -60,7 +60,7 @@ BSLS_IDENT("$Id$")
 // :   for the metrics framework it adapts (this is often a value computed from
 // :   the other descriptor properties).
 // ```
-// For example, for GUTS (an internal Bloomberg metric framework) using a
+// For example, for GUTS (an internal BNP Paribas metric framework) using a
 // `guta::BdlmMetricsAdapter` configured with the namespace "bdlm" and object
 // identifier prefix "svc", supplying (metricNamespace:
 // k_USE_METRICS_ADAPTER_NAMESPACE_SELECTION, metricName: "backlog",
@@ -87,7 +87,7 @@ BSLS_IDENT("$Id$")
 
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlm {
 
                           // ======================

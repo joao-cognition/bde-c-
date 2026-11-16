@@ -20,7 +20,7 @@
 
 #include <vector>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -398,7 +398,7 @@ int veryVeryVerbose;
 //  #include <bsl_iterator.h>
 //  #include <bsl_vector.h>
 //
-//  using namespace BloombergLP;
+//  using namespace BNP_Paribas;
 //
 int loadFromHexStream(bsl::vector<char> *result, bsl::istream& stream)
 {

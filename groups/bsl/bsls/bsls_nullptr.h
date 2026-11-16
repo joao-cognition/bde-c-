@@ -210,7 +210,7 @@ namespace bsl {
 }
 #  endif
 #else
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
                        // ===================
@@ -238,7 +238,7 @@ namespace bsl {
 
     /// Alias for a type that can match a null pointer literal, but is not a
     /// pointer type itself.
-    typedef BloombergLP::bsls::Nullptr_Impl::Type nullptr_t;
+    typedef BNP_Paribas::bsls::Nullptr_Impl::Type nullptr_t;
 }
 #endif
 

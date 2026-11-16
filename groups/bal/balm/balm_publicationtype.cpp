@@ -14,7 +14,7 @@ BSLS_IDENT_RCSID(balm_publicationtype_cpp,"$Id$ $CSID$ $CCId$")
 #include <bsl_iomanip.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balm {
                            // ---------------------

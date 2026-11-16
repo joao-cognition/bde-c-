@@ -18,7 +18,7 @@ BSLS_IDENT_RCSID(bdlcc_skiplist_cpp,"$Id$ $CSID$")
 #include <bsl_algorithm.h>
 #include <bsl_limits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlcc {
 
                     // ===================================

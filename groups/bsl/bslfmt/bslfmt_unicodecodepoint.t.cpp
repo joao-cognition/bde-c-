@@ -12,7 +12,7 @@
 #include <string.h>  // `strlen`
 #include <wchar.h>   // `wcslen`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslfmt;
 
 // ============================================================================

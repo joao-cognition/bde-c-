@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bslmt_recursivemuteximpl_pthread_cpp,"$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
              // ------------------------------------------------
              // class RecursiveMutexImpl<Platform::PosixThreads>

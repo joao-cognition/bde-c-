@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bslstl_syncbufbase_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 SyncBufBase::~SyncBufBase()

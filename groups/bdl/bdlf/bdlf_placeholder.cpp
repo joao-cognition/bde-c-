@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bdlf_placeholder_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlf {namespace PlaceHolders {
 

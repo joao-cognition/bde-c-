@@ -30,7 +30,7 @@
 #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -131,7 +131,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 //-----------------------------------------------------------------------------
 
-typedef BloombergLP::bslalg::ScalarPrimitives  Obj;
+typedef BNP_Paribas::bslalg::ScalarPrimitives  Obj;
 
 typedef bslmf::MovableRefUtil MovUtl;
 
@@ -305,7 +305,7 @@ class my_Class2 {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>
@@ -368,7 +368,7 @@ class my_Class2a {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 template <> struct UsesBslmaAllocator<my_Class2a> : bsl::true_type { };
@@ -428,7 +428,7 @@ class my_Class3 {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>
@@ -541,7 +541,7 @@ struct is_trivially_default_constructible<my_ClassFussy> : true_type {};
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <>
@@ -629,7 +629,7 @@ class my_Class4 {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>
@@ -675,7 +675,7 @@ class my_Class5 : public my_Class4 {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 template <> struct UsesBslmaAllocator<my_Class5> : bsl::true_type { };
@@ -731,7 +731,7 @@ struct my_Pair {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class T1, class T2>
@@ -791,7 +791,7 @@ struct my_PairA {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class T1, class T2>
@@ -849,7 +849,7 @@ struct my_PairAA {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class T1, class T2>
@@ -906,7 +906,7 @@ struct my_PairBB {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class T1, class T2>
@@ -1312,7 +1312,7 @@ class ConstructTestTypeAlloc {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>
@@ -1419,7 +1419,7 @@ class ConstructTestTypeAllocArgT {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

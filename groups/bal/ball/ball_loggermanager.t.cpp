@@ -83,7 +83,7 @@
 #undef ERROR
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bdlf::PlaceHolders;
 
@@ -632,7 +632,7 @@ namespace BALL_LOGGERMANAGER_USAGE_EXAMPLE_2 {
         ASSERT( 75 == defaultCategory.triggerLevel());
         ASSERT( 50 == defaultCategory.triggerAllLevel());
 // ```
-// Next, we add a category named "BloombergLP" (by calling `addCategory`).
+// Next, we add a category named "BNP_Paribas" (by calling `addCategory`).
 // Note that threshold levels supplied with the category override all defaults
 // (including thresholds set by the supplied callback).  Also note that the
 // logger manager invokes the supplied category name filter to map the category
@@ -641,23 +641,23 @@ namespace BALL_LOGGERMANAGER_USAGE_EXAMPLE_2 {
 // category is searched for (i.e., by name) in the registry:
 // ```
         const ball::Category *blpCategory =
-                           manager.addCategory("BloombergLP", 128, 96, 64, 32);
-        ASSERT(blpCategory == manager.lookupCategory("BLOOMBERGLP"));
-        ASSERT(  0 == bsl::strcmp("bloomberglp", blpCategory->categoryName()));
+                           manager.addCategory("BNP_Paribas", 128, 96, 64, 32);
+        ASSERT(blpCategory == manager.lookupCategory("BNP_PARIBAS"));
+        ASSERT(  0 == bsl::strcmp("bnp_paribas", blpCategory->categoryName()));
         ASSERT(128 == blpCategory->recordLevel());
         ASSERT( 96 == blpCategory->passLevel());
         ASSERT( 64 == blpCategory->triggerLevel());
         ASSERT( 32 == blpCategory->triggerAllLevel());
 // ```
-// Then, we add a second category named "BloombergLP.bal.ball" (by calling
+// Then, we add a second category named "BNP_Paribas.bal.ball" (by calling
 // `setCategory`) and `ASSERT` that the threshold levels are "inherited" from
-// category "BloombergLP":
+// category "BNP_Paribas":
 // ```
         const ball::Category *ballCategory =
-                                   manager.setCategory("BLOOMbergLP.bal.ball");
+                                   manager.setCategory("BNP_pariBAS.bal.ball");
 
-        ASSERT(ballCategory == manager.lookupCategory("bloomberglp.bal.ball"));
-        ASSERT(  0 == bsl::strcmp("bloomberglp.bal.ball",
+        ASSERT(ballCategory == manager.lookupCategory("bnp_paribas.bal.ball"));
+        ASSERT(  0 == bsl::strcmp("bnp_paribas.bal.ball",
                                   ballCategory->categoryName()));
         ASSERT(128 == ballCategory->recordLevel());
         ASSERT( 96 == ballCategory->passLevel());
@@ -1101,7 +1101,7 @@ void countingBslsLogMessageHandler(bsls::LogSeverity::Enum,
 static
 void logMessageTest(
                 bool                                   loggerManagerExistsFlag,
-                const BloombergLP::ball::TestObserver& testObserver,
+                const BNP_Paribas::ball::TestObserver& testObserver,
                 int                                    numPublishedSoFar)
 {
     ASSERT(loggerManagerExistsFlag == Obj::isInitialized());
@@ -2835,7 +2835,7 @@ int main(int argc, char *argv[])
                  << "TESTING `Logger::logMessage` (RULE BASED LOGGING)\n"
                  << "=================================================\n";
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         int VALUES[] = { 1,
                          ball::Severity::e_FATAL - 1,
@@ -2881,7 +2881,7 @@ int main(int argc, char *argv[])
         const ball::TestObserver        *TO = sTO.get();
         ball::LoggerManagerConfiguration mXC;
         mXC.setTriggerMarkers(
-                  BloombergLP::ball::LoggerManagerConfiguration::e_NO_MARKERS);
+                  BNP_Paribas::ball::LoggerManagerConfiguration::e_NO_MARKERS);
 
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED
         ball::LoggerManager::initSingleton(sTO.get(), mXC, &ta);
@@ -3376,14 +3376,14 @@ int main(int argc, char *argv[])
 
             // add a category
 
-            const Cat *cat = mX.addCategory("Bloomberg.Bal", 64, 48, 32, 16);
+            const Cat *cat = mX.addCategory("BNPParibas.Bal", 64, 48, 32, 16);
             ASSERT(cat);
             ASSERT(0 == da.numBlocksInUse());
 
-            ASSERT(cat == X.lookupCategory("Bloomberg.Bal"));
+            ASSERT(cat == X.lookupCategory("BNPParibas.Bal"));
             ASSERT(0 == da.numBlocksInUse());
 
-            ASSERT( 0  == bsl::strcmp("Bloomberg.Bal", cat->categoryName()));
+            ASSERT( 0  == bsl::strcmp("BNPParibas.Bal", cat->categoryName()));
             ASSERT(64  == cat->recordLevel());
             ASSERT(48  == cat->passLevel());
             ASSERT(32  == cat->triggerLevel());
@@ -3407,7 +3407,7 @@ int main(int argc, char *argv[])
             if (veryVerbose) cout << R << endl;
 
             const Attr& A = R.fixedFields();
-            ASSERT(0            == bsl::strcmp("Bloomberg.Bal", A.category()));
+            ASSERT(0            == bsl::strcmp("BNPParibas.Bal", A.category()));
             ASSERT(A.severity() == cat->passLevel());
             ASSERT(0            == bsl::strcmp(__FILE__, A.fileName()));
             ASSERT(LINE         == A.lineNumber());
@@ -3802,7 +3802,7 @@ int main(int argc, char *argv[])
         ball::LoggerManagerConfiguration mXC;
 
         mXC.setTriggerMarkers(
-                  BloombergLP::ball::LoggerManagerConfiguration::e_NO_MARKERS);
+                  BNP_Paribas::ball::LoggerManagerConfiguration::e_NO_MARKERS);
 
 
         ASSERT(false == Obj::isInitialized());
@@ -4929,20 +4929,20 @@ int main(int argc, char *argv[])
         const int dfltTrigLevel    = mX.defaultTriggerThresholdLevel();
         const int dfltTrigAllLevel = mX.defaultTriggerAllThresholdLevel();
 
-        Cat       *cat1 = mX.addCategory("BLOOMBERG.BAL", 64, 48, 32, 16);
+        Cat       *cat1 = mX.addCategory("BNPPARIBAS.BAL", 64, 48, 32, 16);
         ASSERT(cat1);
         ASSERT(2    == X.numCategories());
-        ASSERT(cat1 == X.lookupCategory("BLOOMBERG.bal"));
-        ASSERT( 0   == bsl::strcmp("bloomberg.bal", cat1->categoryName()));
+        ASSERT(cat1 == X.lookupCategory("BNPPARIBAS.bal"));
+        ASSERT( 0   == bsl::strcmp("bnpparibas.bal", cat1->categoryName()));
         ASSERT(64   == cat1->recordLevel());
         ASSERT(48   == cat1->passLevel());
         ASSERT(32   == cat1->triggerLevel());
         ASSERT(16   == cat1->triggerAllLevel());
 
-        const Cat *cat2 = mX.setCategory("bloomberg.bal.ball");
+        const Cat *cat2 = mX.setCategory("bnpparibas.bal.ball");
         ASSERT(cat2);
         ASSERT(3    == X.numCategories());
-        ASSERT(cat2 == X.lookupCategory("Bloomberg.Bal.Ball"));
+        ASSERT(cat2 == X.lookupCategory("BNPParibas.Bal.Ball"));
         // verify inheritance of levels
         ASSERT(64 == cat2->recordLevel());
         ASSERT(48 == cat2->passLevel());
@@ -4983,7 +4983,7 @@ int main(int argc, char *argv[])
         };
         enum { NUM_DATA = sizeof DATA / sizeof *DATA };
 
-        const char *CAT_NAME = "Bloomberg.Bal.Ball";
+        const char *CAT_NAME = "BNPParibas.Bal.Ball";
         const int   NUM_CAT  = mX.numCategories();
 
         for (int i = 0; i < NUM_DATA; ++i) {
@@ -5013,7 +5013,7 @@ int main(int argc, char *argv[])
         ASSERT(20 == cat2->triggerLevel());
         ASSERT(10 == cat2->triggerAllLevel());
 
-        const Cat *cat6 = mX.setCategory("Bloomberg.Bal.Ball.logging",
+        const Cat *cat6 = mX.setCategory("BNPParibas.Bal.Ball.logging",
                                          80, 60, 40, 20);
         ASSERT(cat6);
         ASSERT(0  == (cat2 == cat6));
@@ -5173,9 +5173,9 @@ int main(int argc, char *argv[])
         ASSERT(mX.lookupCategory("Equities"));
         ASSERT(mX.lookupCategory("Equities.Graphics"));
         ASSERT(mX.lookupCategory("Equities.Graphics.G"));
-        ASSERT(mX.lookupCategory("Bloomberg.Bal.Ball"));
-        ASSERT(mX.lookupCategory("Bloomberg.Bal.Ball.Logging"));
-        ASSERT(mX.lookupCategory("Bloomberg.Bal"));
+        ASSERT(mX.lookupCategory("BNPParibas.Bal.Ball"));
+        ASSERT(mX.lookupCategory("BNPParibas.Bal.Ball.Logging"));
+        ASSERT(mX.lookupCategory("BNPParibas.Bal"));
 
         // ...but cannot add new categories
         ASSERT(0 == mX.addCategory("one_more_category", 0, 0, 0, 0));
@@ -5953,10 +5953,10 @@ int main(int argc, char *argv[])
                 ASSERT(cbLevels == levels);
             }
 
-            const Cat *cat1 = mX.addCategory("Bloomberg.Bal", 64, 48, 32, 16);
+            const Cat *cat1 = mX.addCategory("BNPParibas.Bal", 64, 48, 32, 16);
             ASSERT(cat1);
-            ASSERT(cat1 == X.lookupCategory("Bloomberg.Bal"));
-            ASSERT( 0  == bsl::strcmp("Bloomberg.Bal", cat1->categoryName()));
+            ASSERT(cat1 == X.lookupCategory("BNPParibas.Bal"));
+            ASSERT( 0  == bsl::strcmp("BNPParibas.Bal", cat1->categoryName()));
             ASSERT(64  == cat1->recordLevel());
             ASSERT(48  == cat1->passLevel());
             ASSERT(32  == cat1->triggerLevel());
@@ -6212,12 +6212,12 @@ int main(int argc, char *argv[])
 
         verifyLoggerManagerDefaults(X, &ga, 0);
 
-        const Cat *cat1 = mX.addCategory("Bloomberg.Bal", 0, 64, 128, 255);
+        const Cat *cat1 = mX.addCategory("BNPParibas.Bal", 0, 64, 128, 255);
         ASSERT(cat1);
-        ASSERT(cat1 == X.lookupCategory("Bloomberg.Bal"));
-        ASSERT(cat1 == X.lookupCategory("BLOOMBERG.bal"));
-        ASSERT(cat1 == X.lookupCategory("bloomberg.BAL"));
-        ASSERT(0    == bsl::strcmp("bloomberg.bal", cat1->categoryName()));
+        ASSERT(cat1 == X.lookupCategory("BNPParibas.Bal"));
+        ASSERT(cat1 == X.lookupCategory("BNPPARIBAS.bal"));
+        ASSERT(cat1 == X.lookupCategory("bnpparibas.BAL"));
+        ASSERT(0    == bsl::strcmp("bnpparibas.bal", cat1->categoryName()));
 
         const Cat *cat2 = mX.setCategory("setCategory(const char *)");
         ASSERT(cat2);
@@ -6355,10 +6355,10 @@ int main(int argc, char *argv[])
 
         verifyLoggerManagerDefaults(X, &ga, 0);
 
-        const Cat *cat1 = mX.addCategory("Bloomberg.Bal", 64, 48, 32, 16);
+        const Cat *cat1 = mX.addCategory("BNPParibas.Bal", 64, 48, 32, 16);
         ASSERT(cat1);
-        ASSERT(cat1 == X.lookupCategory("Bloomberg.Bal"));
-        ASSERT( 0   == bsl::strcmp("Bloomberg.Bal", cat1->categoryName()));
+        ASSERT(cat1 == X.lookupCategory("BNPParibas.Bal"));
+        ASSERT( 0   == bsl::strcmp("BNPParibas.Bal", cat1->categoryName()));
         ASSERT(64   == cat1->recordLevel());
         ASSERT(48   == cat1->passLevel());
         ASSERT(32   == cat1->triggerLevel());
@@ -6828,32 +6828,32 @@ int main(int argc, char *argv[])
         ASSERT(FACTORY_TRIGGER    == dfltCat.triggerLevel());
         ASSERT(FACTORY_TRIGGERALL == dfltCat.triggerAllLevel());
 
-        const Cat *cat1 = mX.addCategory("BLOOMBERG.BAL", 64, 48, 32, 16);
+        const Cat *cat1 = mX.addCategory("BNPPARIBAS.BAL", 64, 48, 32, 16);
         ASSERT(cat1);
         ASSERT(2    == X.numCategories());
-        ASSERT(cat1 == X.lookupCategory("BLOOMBERG.bal"));
-        ASSERT( 0   == bsl::strcmp("bloomberg.bal", cat1->categoryName()));
+        ASSERT(cat1 == X.lookupCategory("BNPPARIBAS.bal"));
+        ASSERT( 0   == bsl::strcmp("bnpparibas.bal", cat1->categoryName()));
         ASSERT(64   == cat1->recordLevel());
         ASSERT(48   == cat1->passLevel());
         ASSERT(32   == cat1->triggerLevel());
         ASSERT(16   == cat1->triggerAllLevel());
 
-        const Cat *cat2 = mX.setCategory("Bloomberg.BAL.LOGGING");
+        const Cat *cat2 = mX.setCategory("BNPParibas.BAL.LOGGING");
         ASSERT(cat2);
         ASSERT(3    == X.numCategories());
-        ASSERT(cat2 == X.lookupCategory("BLOOMBERG.BAL.LOGGING"));
-        ASSERT(0    == bsl::strcmp("bloomberg.bal.logging",
+        ASSERT(cat2 == X.lookupCategory("BNPPARIBAS.BAL.LOGGING"));
+        ASSERT(0    == bsl::strcmp("bnpparibas.bal.logging",
                                    cat2->categoryName()));
         ASSERT(64   == cat2->recordLevel());
         ASSERT(48   == cat2->passLevel());
         ASSERT(32   == cat2->triggerLevel());
         ASSERT(16   == cat2->triggerAllLevel());
 
-        const Cat *cat3 = mX.setCategory("BLOOMBERG");
+        const Cat *cat3 = mX.setCategory("BNPPARIBAS");
         ASSERT(cat3);
         ASSERT(4     == mX.numCategories());
-        ASSERT(cat3  == mX.lookupCategory("Bloomberg"));
-        ASSERT(0     == bsl::strcmp("bloomberg", cat3->categoryName()));
+        ASSERT(cat3  == mX.lookupCategory("BNP Paribas"));
+        ASSERT(0     == bsl::strcmp("bnpparibas", cat3->categoryName()));
 
         ASSERT(FACTORY_RECORD     == cat3->recordLevel());
         ASSERT(FACTORY_PASS       == cat3->passLevel());
@@ -6861,14 +6861,14 @@ int main(int argc, char *argv[])
         ASSERT(FACTORY_TRIGGERALL == cat3->triggerAllLevel());
 
         Cat *cat4 = mX.setCategory(
-               "Bloomberg.Bal.Logging.Component.LoggerManager.Test.Breathing",
+               "BNPParibas.Bal.Logging.Component.LoggerManager.Test.Breathing",
                65, 49, 33, 17);
         ASSERT(cat4);
         ASSERT(5    == X.numCategories());
         ASSERT(cat4 == X.lookupCategory(
-              "BLOOMBERG.bal.LOGGING.component.LOGGERMANAGER.test.BREATHING"));
+              "BNPPARIBAS.bal.LOGGING.component.LOGGERMANAGER.test.BREATHING"));
         ASSERT(0    == bsl::strcmp(
-                "bloomberg.bal.logging.component.loggermanager.test.breathing",
+                "bnpparibas.bal.logging.component.loggermanager.test.breathing",
                 cat4->categoryName()));
         ASSERT(65   == cat4->recordLevel());
         ASSERT(49   == cat4->passLevel());

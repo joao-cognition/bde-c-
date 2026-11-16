@@ -87,7 +87,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_exceptionutil.h>
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                  // =============================
@@ -570,7 +570,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatFixedImpl(
                                           t_FORMAT_CONTEXT&    formatContext,
                                           const Specification& finalSpec) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     /// Must be decimal format
     BSLS_ASSERT(Specification::e_FLOATING_FIXED == finalSpec.formatType() ||
@@ -628,7 +628,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatDefaultImpl(
                                           t_FORMAT_CONTEXT&    formatContext,
                                           const Specification& finalSpec) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     /// Must be default format
     BSLS_ASSERT(Specification::e_FLOATING_DEFAULT == finalSpec.formatType());
@@ -660,7 +660,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatGeneralImpl(
                                           t_FORMAT_CONTEXT&    formatContext,
                                           const Specification& finalSpec) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     /// Must be general format
     BSLS_ASSERT(
@@ -710,7 +710,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatGeneralImpl(
     }
 
     if (Specification::e_FLOATING_GENERAL_UC == finalSpec.formatType()) {
-        BloombergLP::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
+        BNP_Paribas::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
     }
 
     return alignAndCopy(buf, numberLength, formatContext, finalSpec);
@@ -724,7 +724,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatHexImpl(
                                           t_FORMAT_CONTEXT&    formatContext,
                                           const Specification& finalSpec) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     /// Must be hexfloat format
     BSLS_ASSERT(Specification::e_FLOATING_HEX == finalSpec.formatType() ||
@@ -748,7 +748,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatHexImpl(
     }
 
     if (Specification::e_FLOATING_HEX_UC == finalSpec.formatType()) {
-        BloombergLP::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
+        BNP_Paribas::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
     }
 
     return alignAndCopy(buf, numberLength, formatContext, finalSpec);
@@ -762,7 +762,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatHexPrecImpl(
                                           t_FORMAT_CONTEXT&    formatContext,
                                           const Specification& finalSpec) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     /// Must be hexfloat format
     BSLS_ASSERT(Specification::e_FLOATING_HEX == finalSpec.formatType() ||
@@ -808,7 +808,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatHexPrecImpl(
     }
 
     if (Specification::e_FLOATING_HEX_UC == finalSpec.formatType()) {
-        BloombergLP::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
+        BNP_Paribas::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
     }
 
     return alignAndCopy(buf, numberLength, formatContext, finalSpec);
@@ -822,7 +822,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatScientificImpl(
                                           t_FORMAT_CONTEXT&    formatContext,
                                           const Specification& finalSpec) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     /// Must be scientific format
     BSLS_ASSERT(
@@ -871,7 +871,7 @@ FormatterFloating_Base<t_VALUE, t_CHAR>::formatScientificImpl(
     }
 
     if (Specification::e_FLOATING_SCIENTIFIC_UC == finalSpec.formatType()) {
-        BloombergLP::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
+        BNP_Paribas::bslfmt::FormatterCharUtil<char>::toUpper(buf, end);
     }
 
     return alignAndCopy(buf, numberLength, formatContext, finalSpec);
@@ -959,14 +959,14 @@ namespace bsl {
 /// values for both (`char` and `wchar_t`) character types.
 template <class t_CHAR>
 struct formatter<float, t_CHAR>
-: BloombergLP::bslfmt::FormatterFloating_Base<float, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterFloating_Base<float, t_CHAR> {
 };
 
 /// This template partial specialization defines `bsl::formatter` for `float`
 /// values for both (`char` and `wchar_t`) character types.
 template <class t_CHAR>
 struct formatter<double, t_CHAR>
-: BloombergLP::bslfmt::FormatterFloating_Base<double, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterFloating_Base<double, t_CHAR> {
 };
 
 /// This template partial specialization defines a disabled `bsl::formatter`

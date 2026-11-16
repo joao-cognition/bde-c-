@@ -36,16 +36,16 @@ BSLS_IDENT_RCSID(bdlmt_threadpool_cpp,"$Id$ $CSID$")
 
 namespace {
 
-void backlogMetric(BloombergLP::bdlm::Metric            *value,
-                   const BloombergLP::bdlmt::ThreadPool *object)
+void backlogMetric(BNP_Paribas::bdlm::Metric            *value,
+                   const BNP_Paribas::bdlmt::ThreadPool *object)
 {
-    *value = BloombergLP::bdlm::Metric::Gauge(  object->numPendingJobs()
+    *value = BNP_Paribas::bdlm::Metric::Gauge(  object->numPendingJobs()
                                               - object->numWaitingThreads());
 }
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlmt {
 
                          // ==================

@@ -99,7 +99,7 @@ BSLS_IDENT("$Id: $")
     static_assert((BSLMF_CONSTANT_EXPRESSION), #BSLMF_CONSTANT_EXPRESSION)
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                              // ==============
                              // Support macros
@@ -178,7 +178,7 @@ struct AssertTest {
 
 #define BSLMF_ASSERT(expr)                                         \
     struct BSLMF_ASSERT_CAT(bslmf_Assert_, __LINE__)               \
-        : ::BloombergLP::bslmf::Assert_If<!!(int)(expr)>           \
+        : ::BNP_Paribas::bslmf::Assert_If<!!(int)(expr)>           \
     {                                                              \
         BSLMF_COMPILE_TIME_ASSERTION_FAILURE * dummy;              \
     };                                                             \
@@ -189,8 +189,8 @@ struct AssertTest {
 #else
 
 #define BSLMF_ASSERT(expr) \
-BSLA_MAYBE_UNUSED typedef BloombergLP::bslmf::AssertTest<                     \
-         sizeof(BloombergLP::BSLMF_COMPILE_TIME_ASSERTION_FAILURE<!!(expr)>)> \
+BSLA_MAYBE_UNUSED typedef BNP_Paribas::bslmf::AssertTest<                     \
+         sizeof(BNP_Paribas::BSLMF_COMPILE_TIME_ASSERTION_FAILURE<!!(expr)>)> \
                                     BSLMF_ASSERT_CAT(bslmf_Assert_, __LINE__)
 #endif
 

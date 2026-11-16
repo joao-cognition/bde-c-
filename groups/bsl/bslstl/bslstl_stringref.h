@@ -278,7 +278,7 @@ BSLS_IDENT("$Id: $")
 #include <cstring>
 #include <iosfwd>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 #if defined(BSLS_PLATFORM_OS_AIX)
@@ -287,12 +287,12 @@ namespace bslstl {
 // 'bslstl::StringRef's are compared, the ADL doesn't look in the namespace of
 // the base class for candidates.
 
-using BloombergLP::bslstl_stringview_relops::operator==;
-using BloombergLP::bslstl_stringview_relops::operator!=;
-using BloombergLP::bslstl_stringview_relops::operator<;
-using BloombergLP::bslstl_stringview_relops::operator>;
-using BloombergLP::bslstl_stringview_relops::operator<=;
-using BloombergLP::bslstl_stringview_relops::operator>=;
+using BNP_Paribas::bslstl_stringview_relops::operator==;
+using BNP_Paribas::bslstl_stringview_relops::operator!=;
+using BNP_Paribas::bslstl_stringview_relops::operator<;
+using BNP_Paribas::bslstl_stringview_relops::operator>;
+using BNP_Paribas::bslstl_stringview_relops::operator<=;
+using BNP_Paribas::bslstl_stringview_relops::operator>=;
 
 #endif
 
@@ -1098,7 +1098,7 @@ inline
 void bslstl::hashAppend(HASHALG&                       hashAlg,
                         const StringRefImp<CHAR_TYPE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAlg(input.data(), sizeof(CHAR_TYPE)*input.length());
     hashAppend(hashAlg, input.length());
 }

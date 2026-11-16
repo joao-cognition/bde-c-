@@ -51,25 +51,25 @@ void initBlockSet(sigset_t *blockSet)
 }
 #endif
 
-void backlogMetric(BloombergLP::bdlm::Metric                 *value,
-                   const BloombergLP::bdlmt::FixedThreadPool *object)
+void backlogMetric(BNP_Paribas::bdlm::Metric                 *value,
+                   const BNP_Paribas::bdlmt::FixedThreadPool *object)
 {
-    *value = BloombergLP::bdlm::Metric::Gauge(  object->numPendingJobs()
+    *value = BNP_Paribas::bdlm::Metric::Gauge(  object->numPendingJobs()
                                               + object->numActiveThreads()
                                               - object->numThreadsStarted());
 }
 
-void usedCapacityMetric(BloombergLP::bdlm::Metric                 *value,
-                        const BloombergLP::bdlmt::FixedThreadPool *object)
+void usedCapacityMetric(BNP_Paribas::bdlm::Metric                 *value,
+                        const BNP_Paribas::bdlmt::FixedThreadPool *object)
 {
-    *value = BloombergLP::bdlm::Metric::Gauge(
+    *value = BNP_Paribas::bdlm::Metric::Gauge(
                                   static_cast<double>(object->numPendingJobs())
                                                     / object->queueCapacity());
 }
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlmt {
 
                           // ---------------------

@@ -25,11 +25,11 @@
 #include <bsl_ostream.h>
 #include <bsl_sstream.h>
 
-// It is very important not to say `using BloombergLP;` in this test driver, in
-// order to test that the macros will work when `BloombergLP` is not in scope.
+// It is very important not to say `using BNP_Paribas;` in this test driver, in
+// order to test that the macros will work when `BNP_Paribas` is not in scope.
 
-namespace Corp = BloombergLP;
-namespace BALM = BloombergLP::balm;
+namespace Corp = BNP_Paribas;
+namespace BALM = BNP_Paribas::balm;
 
 using bsl::cout;
 using bsl::endl;
@@ -243,8 +243,8 @@ bool balmMetricsIfCategoryEnabledTest(const char *category)
 
 namespace {
 
-typedef BloombergLP::bsls::Log         Log;
-typedef BloombergLP::bsls::LogSeverity Severity;
+typedef BNP_Paribas::bsls::Log         Log;
+typedef BNP_Paribas::bsls::LogSeverity Severity;
 
 /// This struct provides a namespace for a utility function,
 /// `testMessageHandler`, which is a valid log message handler
@@ -1398,7 +1398,7 @@ int main(int argc, char *argv[])
         if (verbose) cout << "\nTesting Usage Example"
                           << "\n=====================" << endl;
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
 ///Usage
 ///-----

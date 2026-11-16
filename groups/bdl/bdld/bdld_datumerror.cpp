@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(bdld_datumerror_cpp,"$Id$ $CSID$")
 #include <bslim_printer.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdld {
 

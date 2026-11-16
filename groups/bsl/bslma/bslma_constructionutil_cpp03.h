@@ -21,12 +21,12 @@
 // regions of C++11 code, then this header contains no code and is not
 // '#include'd in the original header.
 //
-// Generated on Mon Nov 09 14:44:30 2026
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Generated on Mon Nov 16 07:41:44 2026
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 
 #ifdef COMPILING_BSLMA_CONSTRUCTIONUTIL_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 struct ConstructionUtil_Imp;
@@ -63,7 +63,7 @@ struct ConstructionUtil {
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif
@@ -663,7 +663,7 @@ struct ConstructionUtil {
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif
@@ -1252,7 +1252,7 @@ struct ConstructionUtil_Imp {
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif
@@ -3147,7 +3147,7 @@ struct ConstructionUtil_Imp {
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif
@@ -5065,7 +5065,7 @@ ConstructionUtil::construct(TARGET_TYPE      *address,
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif
@@ -6189,7 +6189,7 @@ ConstructionUtil::make(const ALLOCATOR&  allocator)
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif
@@ -7284,7 +7284,7 @@ ConstructionUtil_Imp::construct(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif
@@ -10454,7 +10454,7 @@ ConstructionUtil_Imp::make(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslma_constructionutil.h
+// Command line: sim_cpp11_features.py bslma_constructionutil.h
 #ifndef BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT
 #define BSLMA_CONSTRUCTIONUTIL_VARIADIC_LIMIT 13
 #endif

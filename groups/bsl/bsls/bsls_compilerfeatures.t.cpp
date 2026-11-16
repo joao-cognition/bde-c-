@@ -48,7 +48,7 @@
 // is known to be buggy or incomplete in some implementations such that it is
 // not useful to us, the corresponding macro should be turned off for that
 // platform.  For these cases, this test driver may contain a minimal test of
-// that feature that ensures that the Bloomberg use of the feature is supported
+// that feature that ensures that the BNP Paribas use of the feature is supported
 // on any platform that defines that macro.
 //-----------------------------------------------------------------------------
 // [32] BSLS_COMPILERFEATURES_GUARANTEED_COPY_ELISION
@@ -119,7 +119,7 @@
 #pragma bde_verify -IND01  // Possibly mis-indented line
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                     STANDARD BSL ASSERT TEST FUNCTION

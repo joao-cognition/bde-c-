@@ -56,7 +56,7 @@ BSLS_IDENT_RCSID(bdldfp_decimal_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bdldfp;
 
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY)
@@ -117,7 +117,7 @@ printImpl(bsl::basic_ostream<CHARTYPE, TRAITS>& out,
     BSLS_TRY {
         typename bsl::basic_ostream<CHARTYPE, TRAITS>::sentry kerberos(out);
         if (kerberos) {
-            typedef BloombergLP::bdldfp::DecimalNumPut<CHARTYPE> Facet;
+            typedef BNP_Paribas::bdldfp::DecimalNumPut<CHARTYPE> Facet;
             const Facet& facet(bsl::has_facet<Facet>(out.getloc())
                                ? bsl::use_facet<Facet>(out.getloc())
                                : Facet::object());
@@ -147,7 +147,7 @@ read(bsl::basic_istream<CHARTYPE, TRAITS>& in,
 {
     typename bsl::basic_istream<CHARTYPE, TRAITS>::sentry kerberos(in);
     if (kerberos) {
-        typedef BloombergLP::bdldfp::DecimalNumGet<CHARTYPE> Facet;
+        typedef BNP_Paribas::bdldfp::DecimalNumGet<CHARTYPE> Facet;
         const Facet& facet(bsl::has_facet<Facet>(in.getloc())
                            ? bsl::use_facet<Facet>(in.getloc())
                            : Facet::object());
@@ -329,7 +329,7 @@ bool isNegative(const Decimal128& x)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
                             // --------------------
@@ -872,183 +872,183 @@ bdldfp::operator<< <wchar_t, bsl::char_traits<wchar_t> >(
                   // std::numeric_limits<> specializations
 
             // ---------------------------------------------------
-            // std::numeric_limits<BloombergLP::bdldfp::Decimal32>
+            // std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>
             // ---------------------------------------------------
 
-BloombergLP::bdldfp::Decimal32
-    std::numeric_limits<BloombergLP::bdldfp::Decimal32>::min()
+BNP_Paribas::bdldfp::Decimal32
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::min()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::min32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::min32();
 }
 
-BloombergLP::bdldfp::Decimal32
-    std::numeric_limits<BloombergLP::bdldfp::Decimal32>::max()
+BNP_Paribas::bdldfp::Decimal32
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::max()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::max32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::max32();
 }
 
-BloombergLP::bdldfp::Decimal32
-    std::numeric_limits<BloombergLP::bdldfp::Decimal32>::epsilon()
+BNP_Paribas::bdldfp::Decimal32
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::epsilon()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::epsilon32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::epsilon32();
 }
 
-BloombergLP::bdldfp::Decimal32
-    std::numeric_limits<BloombergLP::bdldfp::Decimal32>::round_error()
+BNP_Paribas::bdldfp::Decimal32
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::round_error()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::roundError32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::roundError32();
 }
 
-BloombergLP::bdldfp::Decimal32
-    std::numeric_limits<BloombergLP::bdldfp::Decimal32>::infinity()
+BNP_Paribas::bdldfp::Decimal32
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::infinity()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::infinity32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::infinity32();
 }
 
-BloombergLP::bdldfp::Decimal32
-    std::numeric_limits<BloombergLP::bdldfp::Decimal32>::quiet_NaN()
+BNP_Paribas::bdldfp::Decimal32
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::quiet_NaN()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::quietNaN32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::quietNaN32();
 }
 
-BloombergLP::bdldfp::Decimal32
-   std::numeric_limits<BloombergLP::bdldfp::Decimal32>::signaling_NaN()
+BNP_Paribas::bdldfp::Decimal32
+   std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::signaling_NaN()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::signalingNaN32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::signalingNaN32();
 }
 
-BloombergLP::bdldfp::Decimal32
-    std::numeric_limits<BloombergLP::bdldfp::Decimal32>::denorm_min()
+BNP_Paribas::bdldfp::Decimal32
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>::denorm_min()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::denormMin32();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::denormMin32();
 }
 
             // ---------------------------------------------------
-            // std::numeric_limits<BloombergLP::bdldfp::Decimal64>
+            // std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>
             // ---------------------------------------------------
 
-BloombergLP::bdldfp::Decimal64
-    std::numeric_limits<BloombergLP::bdldfp::Decimal64>::min()
+BNP_Paribas::bdldfp::Decimal64
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::min()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::min64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::min64();
 }
 
-BloombergLP::bdldfp::Decimal64
-    std::numeric_limits<BloombergLP::bdldfp::Decimal64>::max()
+BNP_Paribas::bdldfp::Decimal64
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::max()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::max64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::max64();
 }
 
-BloombergLP::bdldfp::Decimal64
-    std::numeric_limits<BloombergLP::bdldfp::Decimal64>::epsilon()
+BNP_Paribas::bdldfp::Decimal64
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::epsilon()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::epsilon64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::epsilon64();
 }
 
-BloombergLP::bdldfp::Decimal64
-    std::numeric_limits<BloombergLP::bdldfp::Decimal64>::round_error()
+BNP_Paribas::bdldfp::Decimal64
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::round_error()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::roundError64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::roundError64();
 }
 
-BloombergLP::bdldfp::Decimal64
-    std::numeric_limits<BloombergLP::bdldfp::Decimal64>::infinity()
+BNP_Paribas::bdldfp::Decimal64
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::infinity()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::infinity64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::infinity64();
 }
 
-BloombergLP::bdldfp::Decimal64
-    std::numeric_limits<BloombergLP::bdldfp::Decimal64>::quiet_NaN()
+BNP_Paribas::bdldfp::Decimal64
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::quiet_NaN()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::quietNaN64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::quietNaN64();
 }
 
-BloombergLP::bdldfp::Decimal64
-   std::numeric_limits<BloombergLP::bdldfp::Decimal64>::signaling_NaN()
+BNP_Paribas::bdldfp::Decimal64
+   std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::signaling_NaN()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::signalingNaN64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::signalingNaN64();
 }
 
-BloombergLP::bdldfp::Decimal64
-    std::numeric_limits<BloombergLP::bdldfp::Decimal64>::denorm_min()
+BNP_Paribas::bdldfp::Decimal64
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>::denorm_min()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::denormMin64();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::denormMin64();
 }
 
             // ----------------------------------------------------
-            // std::numeric_limits<BloombergLP::bdldfp::Decimal128>
+            // std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>
             // ----------------------------------------------------
 
-BloombergLP::bdldfp::Decimal128
-    std::numeric_limits<BloombergLP::bdldfp::Decimal128>::min()
+BNP_Paribas::bdldfp::Decimal128
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::min()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::min128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::min128();
 }
 
-BloombergLP::bdldfp::Decimal128
-    std::numeric_limits<BloombergLP::bdldfp::Decimal128>::max()
+BNP_Paribas::bdldfp::Decimal128
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::max()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::max128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::max128();
 }
 
-BloombergLP::bdldfp::Decimal128
-    std::numeric_limits<BloombergLP::bdldfp::Decimal128>::epsilon()
+BNP_Paribas::bdldfp::Decimal128
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::epsilon()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::epsilon128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::epsilon128();
 }
 
-BloombergLP::bdldfp::Decimal128
-    std::numeric_limits<BloombergLP::bdldfp::Decimal128>::round_error()
+BNP_Paribas::bdldfp::Decimal128
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::round_error()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::roundError128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::roundError128();
 }
 
-BloombergLP::bdldfp::Decimal128
-    std::numeric_limits<BloombergLP::bdldfp::Decimal128>::infinity()
+BNP_Paribas::bdldfp::Decimal128
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::infinity()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::infinity128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::infinity128();
 }
 
-BloombergLP::bdldfp::Decimal128
-    std::numeric_limits<BloombergLP::bdldfp::Decimal128>::quiet_NaN()
+BNP_Paribas::bdldfp::Decimal128
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::quiet_NaN()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::quietNaN128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::quietNaN128();
 }
 
-BloombergLP::bdldfp::Decimal128
-   std::numeric_limits<BloombergLP::bdldfp::Decimal128>::signaling_NaN()
+BNP_Paribas::bdldfp::Decimal128
+   std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::signaling_NaN()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::signalingNaN128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::signalingNaN128();
 }
 
-BloombergLP::bdldfp::Decimal128
-    std::numeric_limits<BloombergLP::bdldfp::Decimal128>::denorm_min()
+BNP_Paribas::bdldfp::Decimal128
+    std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>::denorm_min()
     BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bdldfp::DecimalImpUtil::denormMin128();
+    return BNP_Paribas::bdldfp::DecimalImpUtil::denormMin128();
 }
 
 // ----------------------------------------------------------------------------

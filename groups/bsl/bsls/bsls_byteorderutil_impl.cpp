@@ -6,7 +6,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT("$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #if defined(BSLS_PLATFORM_CPU_SPARC) && !defined(BSLS_PLATFORM_CMP_GNU)
 void bsls_byteOrderUtil_Impl_common()

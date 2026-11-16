@@ -288,7 +288,7 @@ BSLS_IDENT("$Id: $")
 //
 // int main()
 // {
-//     BloombergLP::bsls::Stopwatch timer;
+//     BNP_Paribas::bsls::Stopwatch timer;
 //     timer.start();
 //     for (int i = 0; i < 10; ++i) {
 //         add(array1, array2);
@@ -311,7 +311,7 @@ BSLS_IDENT("$Id: $")
 // void add2(int *arrayA, int *arrayB)
 // {
 //     for (int i = 0; i < SIZE / 8; ++i){
-//         using namespace BloombergLP; // Generally avoid 'using' in this TD.
+//         using namespace BNP_Paribas; // Generally avoid 'using' in this TD.
 //         bsls::PerformanceHint::prefetchForWriting((int *) arrayA + 16);
 //         bsls::PerformanceHint::prefetchForReading((int *) arrayB + 16);
 //
@@ -370,7 +370,7 @@ BSLS_IDENT("$Id: $")
 #include <intrin.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                         // ============================
                         // BSLS_PERFORMANCEHINT_PREDICT
@@ -419,11 +419,11 @@ namespace BloombergLP {
 
 #if defined(BDE_BUILD_TARGET_OPT) && defined(BSLS_PLATFORM_CMP_SUN)
     #define BSLS_PERFORMANCEHINT_UNLIKELY_HINT                                \
-                             BloombergLP::bsls::PerformanceHint::rarelyCalled()
+                             BNP_Paribas::bsls::PerformanceHint::rarelyCalled()
 #elif defined(BDE_BUILD_TARGET_OPT) &&                                        \
    (defined(BSLS_PLATFORM_CMP_IBM) || BSLS_PERFORMANCEHINT_HAS_ATTRIBUTE_COLD)
     #define BSLS_PERFORMANCEHINT_UNLIKELY_HINT                                \
-                             BloombergLP::bsls::PerformanceHint::lowFrequency()
+                             BNP_Paribas::bsls::PerformanceHint::lowFrequency()
 #else
     #define BSLS_PERFORMANCEHINT_UNLIKELY_HINT
 #endif

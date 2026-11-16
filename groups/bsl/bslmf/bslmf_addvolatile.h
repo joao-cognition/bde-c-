@@ -65,7 +65,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_compilerfeatures.h>
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ======================
@@ -128,7 +128,7 @@ struct add_volatile {
     /// reference type, nor a function type, nor already
     /// `volatile`-qualified at the top-level; otherwise, `type` is an alias
     /// to `t_TYPE`.
-    typedef typename BloombergLP::bslmf::AddVolatile_Imp<
+    typedef typename BNP_Paribas::bslmf::AddVolatile_Imp<
         t_TYPE,
         !is_reference<t_TYPE>::value && !is_function<t_TYPE>::value &&
             !is_volatile<t_TYPE>::value>::Type type;

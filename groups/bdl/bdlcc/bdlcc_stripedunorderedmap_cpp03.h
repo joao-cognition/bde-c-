@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BDLCC_STRIPEDUNORDEREDMAP_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlcc {
 
                          // =========================

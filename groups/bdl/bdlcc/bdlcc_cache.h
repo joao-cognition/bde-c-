@@ -325,7 +325,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_limits.h>
 #include <bsl_cstddef.h>            // 'bsl::size_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlcc {
 
 struct CacheEvictionPolicy {

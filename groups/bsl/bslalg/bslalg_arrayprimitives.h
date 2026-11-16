@@ -156,7 +156,7 @@ BSLS_IDENT("$Id$ $CSID$")
 //     // TYPE TRAITS
 //     BSLMF_NESTED_TRAIT_DECLARATION(
 //         MyVector,
-//         BloombergLP::bslmf::IsBitwiseMoveable);
+//         BNP_Paribas::bslmf::IsBitwiseMoveable);
 //
 //     // CREATORS
 //     explicit MyVector(bslma::Allocator *basicAllocator = 0)
@@ -248,7 +248,7 @@ BSLS_IDENT("$Id$ $CSID$")
 //     if (d_capacity >= minCapacity) return;                        // RETURN
 //
 //     TYPE *newArrayPtr = static_cast<TYPE*>(d_allocator_p->allocate(
-//     BloombergLP::bslma::Allocator::size_type(minCapacity * sizeof(TYPE))));
+//     BNP_Paribas::bslma::Allocator::size_type(minCapacity * sizeof(TYPE))));
 //
 //     if (d_array_p) {
 // ```
@@ -370,7 +370,7 @@ BSLS_IDENT("$Id$ $CSID$")
     // xlC representation for a null member pointer is not all zero bits.
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

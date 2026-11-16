@@ -183,7 +183,7 @@ BSLS_IDENT("$Id: $")
 #include <string>                   // 'std::string', 'std::pmr::string'
 #include <vector>                   // 'std::vector', 'std::pmr::vector'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlde {
                           // =======================

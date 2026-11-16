@@ -280,7 +280,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <string>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
 class SimpleFormatter;

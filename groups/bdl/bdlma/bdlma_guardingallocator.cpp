@@ -30,7 +30,7 @@ BSLS_IDENT_RCSID(bdlma_guardingallocator_cpp,"$Id$ $CSID$")
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 // Define the offset (in bytes) from the address returned to the user in which

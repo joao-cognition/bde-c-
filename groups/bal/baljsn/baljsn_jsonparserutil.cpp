@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(baljsn_jsonparserutil_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 int base64Decode(bsl::vector<char>       *value,
                  const bsl::string_view&  base64String)
@@ -47,7 +47,7 @@ int base64Decode(bsl::vector<char>       *value,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
                              // ---------------------

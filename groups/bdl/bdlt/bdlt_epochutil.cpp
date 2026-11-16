@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bdlt_epochutil_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                              // ----------------
@@ -15,7 +15,7 @@ namespace bdlt {
 
 #ifndef BDE_OPENSOURCE_PUBLICATION
     #ifdef BDE_USE_PROLEPTIC_DATES
-    #error 'BDE_USE_PROLEPTIC_DATES' option disallowed for Bloomberg code.
+    #error 'BDE_USE_PROLEPTIC_DATES' option disallowed for BNP Paribas code.
     #endif
 #endif
 

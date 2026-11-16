@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLFMT_FORMAT_ARGS_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 // FORWARD DECLARATIONS

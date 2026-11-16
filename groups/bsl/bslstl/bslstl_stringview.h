@@ -168,7 +168,7 @@ BSLS_IDENT("$Id: $")
 // `std::string_view` was introduced in the Standard library for C++17.
 // Later versions of the Standard have added features.  One of the goals of
 // `bsl::string_view` is to make *all* `std::string_view` features
-// available to Bloomberg developers, irrespective of the language level being
+// available to BNP Paribas developers, irrespective of the language level being
 // used.  Thus, `bsl::string_view` provides a `std::string_view` implementation
 // for C++03, C++11, and CPP14 -- language levels that have no
 // `std::string_view` class.  For later language levels, `bsl::string_view`
@@ -323,7 +323,7 @@ using std::operator>=;
 # define BSLSTL_STRINGVIEW_IDENTITY_USE_WRAPPER    0
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                          // ===========================
@@ -1192,7 +1192,7 @@ void swap(basic_string_view<CHAR_TYPE, CHAR_TRAITS>& a,
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl_stringview_relops {
 
                     // =============================
@@ -1239,7 +1239,7 @@ BSLS_KEYWORD_NOEXCEPT;
 template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator==(
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT;
@@ -1247,7 +1247,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator==(
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT;
 
@@ -1263,7 +1263,7 @@ BSLS_KEYWORD_NOEXCEPT;
 template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator!=(
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT;
@@ -1271,7 +1271,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator!=(
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT;
 
@@ -1286,7 +1286,7 @@ BSLS_KEYWORD_NOEXCEPT;
 template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator<(
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT;
@@ -1294,7 +1294,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator<(
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT;
 
@@ -1309,7 +1309,7 @@ BSLS_KEYWORD_NOEXCEPT;
 template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator>(
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT;
@@ -1317,7 +1317,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator>(
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT;
 
@@ -1332,7 +1332,7 @@ BSLS_KEYWORD_NOEXCEPT;
 template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator<=(
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT;
@@ -1340,7 +1340,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator<=(
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT;
 
@@ -1355,7 +1355,7 @@ BSLS_KEYWORD_NOEXCEPT;
 template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator>=(
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT;
@@ -1363,7 +1363,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_KEYWORD_CONSTEXPR_CPP17
 bool operator>=(
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT;
 
@@ -1392,7 +1392,7 @@ void hashAppend(HASHALG&                                         hashAlg,
 /// to allow character arrays to be hashed without converting them first.
 template <class CHAR_TYPE, class CHAR_TRAITS>
 struct hash<basic_string_view<CHAR_TYPE, CHAR_TRAITS> >
-    : ::BloombergLP::bslh::Hash<>
+    : ::BNP_Paribas::bslh::Hash<>
 {
     // PUBLIC ACCESSORS
 
@@ -1413,7 +1413,7 @@ struct hash<basic_string_view<CHAR_TYPE, CHAR_TRAITS> >
 // for `string_view` and `wstring_view` makes the problematic cases work.
 
 template <>
-struct hash<string_view> : ::BloombergLP::bslh::Hash<>
+struct hash<string_view> : ::BNP_Paribas::bslh::Hash<>
 {
     // PUBLIC ACCESSORS
 
@@ -1427,7 +1427,7 @@ struct hash<string_view> : ::BloombergLP::bslh::Hash<>
 };
 
 template <>
-struct hash<wstring_view> : ::BloombergLP::bslh::Hash<>
+struct hash<wstring_view> : ::BNP_Paribas::bslh::Hash<>
 {
     // PUBLIC ACCESSORS
 
@@ -1483,7 +1483,7 @@ wstring_view operator ""_sv(const wchar_t *characterString,
         // BSLS_COMPILERFEATURES_SUPPORT_INLINE_NAMESPACE
 
 #ifdef BSLSTL_STRING_VIEW_IS_ALIASED
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 /// Pass the specified `input` string to the specified `hashAlg` hashing
@@ -1512,7 +1512,7 @@ void hashAppend(HASHALG&                                              hashAlg,
 
 #if BSLSTL_STRINGVIEW_IDENTITY_USE_WRAPPER
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 template <class TYPE>
@@ -1735,8 +1735,8 @@ void
 basic_string_view<CHAR_TYPE, CHAR_TRAITS>::swap(
                                 basic_string_view& other) BSLS_KEYWORD_NOEXCEPT
 {
-    BloombergLP::bslalg::ScalarPrimitives::swap(d_length,  other.d_length);
-    BloombergLP::bslalg::ScalarPrimitives::swap(d_start_p, other.d_start_p);
+    BNP_Paribas::bslalg::ScalarPrimitives::swap(d_length,  other.d_length);
+    BNP_Paribas::bslalg::ScalarPrimitives::swap(d_start_p, other.d_start_p);
 }
 
 // ACCESSORS
@@ -1870,7 +1870,7 @@ basic_string_view<CHAR_TYPE, CHAR_TRAITS>::at(size_type position) const
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(position >= length())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                                        "string_view::at(n): invalid position");
     }
     return *(begin() + position);
@@ -1916,7 +1916,7 @@ basic_string_view<CHAR_TYPE, CHAR_TRAITS>::copy(CHAR_TYPE *characterString,
 
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(position > length())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                              "string_view::copy(str,pos,n): invalid position");
     }
 
@@ -1946,7 +1946,7 @@ basic_string_view<CHAR_TYPE, CHAR_TRAITS>::substr(size_type position,
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(position > length())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                                "string_view::substr(pos,n): invalid position");
     }
 
@@ -1979,7 +1979,7 @@ int basic_string_view<CHAR_TYPE, CHAR_TRAITS>::compare(
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(length() < position)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
             "const string_view<...>::compare(pos,n, other): invalid position");
     }
 
@@ -2001,7 +2001,7 @@ int basic_string_view<CHAR_TYPE, CHAR_TRAITS>::compare(
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(length() < lhsPosition)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                "const string_view<...>::compare(pos,n,other,other_pos,other_n)"
                ": invalid lhs position");
     }
@@ -2013,7 +2013,7 @@ int basic_string_view<CHAR_TYPE, CHAR_TRAITS>::compare(
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
                                              other.length() < otherPosition)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                "const string_view<...>::compare(pos,n,other,other_pos,other_n)"
                ": invalid rhs position");
     }
@@ -2055,7 +2055,7 @@ int basic_string_view<CHAR_TYPE, CHAR_TRAITS>::compare(
 
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(length() < lhsPosition)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
              "const string_view<...>::compare(pos,n,other): invalid position");
     }
 
@@ -2084,7 +2084,7 @@ int basic_string_view<CHAR_TYPE, CHAR_TRAITS>::compare(
 
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(length() < lhsPosition)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                        "const string_view<...>::compare(pos,n,other,other_pos)"
                       ": invalid position");
     }
@@ -2598,8 +2598,8 @@ BSLS_PLATFORM_AGGRESSIVE_INLINE
 std::size_t hash<basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::
 operator()(const basic_string_view<CHAR_TYPE, CHAR_TRAITS>& input) const
 {
-    using ::BloombergLP::bslh::hashAppend;
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    using ::BNP_Paribas::bslh::hashAppend;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input.data(), sizeof(CHAR_TYPE) * input.size());
     hashAppend(hashAlg, input.size());
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -2611,8 +2611,8 @@ std::size_t hash<basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::
 operator()(const CHAR_TYPE *input) const
 {
     BSLS_ASSERT_SAFE(input);
-    using ::BloombergLP::bslh::hashAppend;
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    using ::BNP_Paribas::bslh::hashAppend;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
 
     std::size_t length = CHAR_TRAITS::length(input);
 
@@ -2626,8 +2626,8 @@ operator()(const CHAR_TYPE *input) const
 inline
 std::size_t hash<string_view>::operator()(const string_view& input) const
 {
-    using ::BloombergLP::bslh::hashAppend;
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    using ::BNP_Paribas::bslh::hashAppend;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input.data(), input.size());
     hashAppend(hashAlg, input.size());
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -2637,9 +2637,9 @@ inline
 std::size_t hash<string_view>::operator()(const char *input) const
 {
     BSLS_ASSERT_SAFE(input);
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     std::size_t length = char_traits<char>::length(input);
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input, length);
     hashAppend(hashAlg, length);
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -2648,8 +2648,8 @@ std::size_t hash<string_view>::operator()(const char *input) const
 inline
 std::size_t hash<wstring_view>::operator()(const wstring_view& input) const
 {
-    using ::BloombergLP::bslh::hashAppend;
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    using ::BNP_Paribas::bslh::hashAppend;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input.data(), sizeof(wchar_t) * input.size());
     hashAppend(hashAlg, input.size());
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -2659,9 +2659,9 @@ inline
 std::size_t hash<wstring_view>::operator()(const wchar_t *input) const
 {
     BSLS_ASSERT_SAFE(input);
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     std::size_t length = char_traits<wchar_t>::length(input);
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input, sizeof(wchar_t) * length);
     hashAppend(hashAlg, length);
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -2671,7 +2671,7 @@ std::size_t hash<wstring_view>::operator()(const wchar_t *input) const
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl_stringview_relops {
 
                             // ----------------------
@@ -2721,7 +2721,7 @@ void bsl::swap(
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator==(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>        lhs,
            bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>        rhs)
                                                           BSLS_KEYWORD_NOEXCEPT
@@ -2732,8 +2732,8 @@ operator==(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>        lhs,
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
-operator==(typename BloombergLP::bslstl::StringView_Identity<
+bool BNP_Paribas::bslstl_stringview_relops::
+operator==(typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2744,9 +2744,9 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator==(const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT
 {
@@ -2756,7 +2756,7 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator!=(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             lhs,
            bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2767,8 +2767,8 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
-operator!=(typename BloombergLP::bslstl::StringView_Identity<
+bool BNP_Paribas::bslstl_stringview_relops::
+operator!=(typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2779,9 +2779,9 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator!=(const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT
 {
@@ -2791,7 +2791,7 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator<(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>              lhs,
           bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>              rhs)
                                                           BSLS_KEYWORD_NOEXCEPT
@@ -2802,8 +2802,8 @@ operator<(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>              lhs,
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
-operator<(typename BloombergLP::bslstl::StringView_Identity<
+bool BNP_Paribas::bslstl_stringview_relops::
+operator<(typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
           const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2814,9 +2814,9 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator<(const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             lhs,
-          typename BloombergLP::bslstl::StringView_Identity<
+          typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT
 {
@@ -2826,7 +2826,7 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator>(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>              lhs,
           bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>              rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2837,8 +2837,8 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
-operator>(typename BloombergLP::bslstl::StringView_Identity<
+bool BNP_Paribas::bslstl_stringview_relops::
+operator>(typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
           const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2849,9 +2849,9 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator>(const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             lhs,
-          typename BloombergLP::bslstl::StringView_Identity<
+          typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT
 {
@@ -2861,7 +2861,7 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator<=(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             lhs,
            bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             rhs)
                                                           BSLS_KEYWORD_NOEXCEPT
@@ -2872,8 +2872,8 @@ operator<=(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             lhs,
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
-operator<=(typename BloombergLP::bslstl::StringView_Identity<
+bool BNP_Paribas::bslstl_stringview_relops::
+operator<=(typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2884,9 +2884,9 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator<=(const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT
 {
@@ -2896,7 +2896,7 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator>=(bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             lhs,
            bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>             rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2907,8 +2907,8 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
-operator>=(typename BloombergLP::bslstl::StringView_Identity<
+bool BNP_Paribas::bslstl_stringview_relops::
+operator>=(typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type lhs,
            const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            rhs)
 BSLS_KEYWORD_NOEXCEPT
@@ -2919,9 +2919,9 @@ BSLS_KEYWORD_NOEXCEPT
 template <class CHAR_TYPE, class CHAR_TRAITS>
 inline
 BSLS_KEYWORD_CONSTEXPR_CPP17
-bool BloombergLP::bslstl_stringview_relops::
+bool BNP_Paribas::bslstl_stringview_relops::
 operator>=(const bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>            lhs,
-           typename BloombergLP::bslstl::StringView_Identity<
+           typename BNP_Paribas::bslstl::StringView_Identity<
                     bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS> >::type rhs)
 BSLS_KEYWORD_NOEXCEPT
 {
@@ -2930,12 +2930,12 @@ BSLS_KEYWORD_NOEXCEPT
 
 namespace bsl {
 
-using BloombergLP::bslstl_stringview_relops::operator==;
-using BloombergLP::bslstl_stringview_relops::operator!=;
-using BloombergLP::bslstl_stringview_relops::operator<;
-using BloombergLP::bslstl_stringview_relops::operator>;
-using BloombergLP::bslstl_stringview_relops::operator<=;
-using BloombergLP::bslstl_stringview_relops::operator>=;
+using BNP_Paribas::bslstl_stringview_relops::operator==;
+using BNP_Paribas::bslstl_stringview_relops::operator!=;
+using BNP_Paribas::bslstl_stringview_relops::operator<;
+using BNP_Paribas::bslstl_stringview_relops::operator>;
+using BNP_Paribas::bslstl_stringview_relops::operator<=;
+using BNP_Paribas::bslstl_stringview_relops::operator>=;
 
 }  // close namespace bsl
 
@@ -2991,7 +2991,7 @@ inline
 void bsl::hashAppend(HASHALG&                                         hashAlg,
                      const basic_string_view<CHAR_TYPE, CHAR_TRAITS>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAlg(input.data(), sizeof(CHAR_TYPE)*input.size());
     hashAppend(hashAlg, input.size());
 }
@@ -2999,7 +2999,7 @@ void bsl::hashAppend(HASHALG&                                         hashAlg,
 #endif  // BSLSTL_STRING_VIEW_IS_ALIASED
 
 #ifdef BSLSTL_STRING_VIEW_IS_ALIASED
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 template <class HASHALG, class CHAR_TYPE, class CHAR_TRAITS>
 BSLS_PLATFORM_AGGRESSIVE_INLINE

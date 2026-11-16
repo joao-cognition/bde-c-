@@ -23,7 +23,7 @@ BSLS_IDENT_RCSID(bslstl_variant_cpp, "$Id$ $CSID$")
 // inner type doesn't exist (see DRQS 175366735); therefore, such return types
 // must be avoided.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 }  // close package namespace
 }  // close enterprise namespace

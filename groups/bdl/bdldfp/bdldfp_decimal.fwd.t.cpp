@@ -9,7 +9,7 @@
 #include <bsl_cstdlib.h>
 #include <bsl_cstring.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;

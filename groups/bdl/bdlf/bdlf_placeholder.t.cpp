@@ -6,7 +6,7 @@
 #include <bsl_cstdio.h>
 #include <bsl_cstdlib.h>    // atoi()
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

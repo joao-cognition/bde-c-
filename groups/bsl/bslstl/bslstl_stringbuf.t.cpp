@@ -28,7 +28,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                 TEST PLAN
@@ -63,7 +63,7 @@ using namespace BloombergLP;
 // [12] overflow(int)
 // [ 3] allocator_type get_allocator() const;
 // [19] void str(const StringType& value);
-// [19] void str(BloombergLP::bslmf::MovableRef<StringType> value);
+// [19] void str(BNP_Paribas::bslmf::MovableRef<StringType> value);
 // [19] void str(const basic_string<CHAR, TRAITS, SALLOC>& value);
 // [ 3] StringType str() const;
 // [ 3] StringType str() &&;
@@ -768,7 +768,7 @@ class StringBufTest : public bsl::basic_stringbuf<TYPE>
         // because the `std::allocator` there does not support `rebind`.  This
         // limitation can be lifted once we fully support C++20, where `rebind`
         // is removed and rebind requests are made through `allocator_traits`.
-        // See {DRQS 168075157} and https://github.com/bloomberg/bde/pull/268
+        // See {DRQS 168075157} and https://github.com/joao-cognition/bde-c-/pull/268
                     // test `str(otherAllocator)`
                 const bsl::basic_string<
                           TYPE,
@@ -907,7 +907,7 @@ class StringBufTest : public bsl::basic_stringbuf<TYPE>
             // test `str(MoveableRef<String>)`
             bslma::TestAllocator ta("test allocator");
 
-            typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+            typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
             static const struct {
                 int  d_line;
@@ -980,7 +980,7 @@ class StringBufTest : public bsl::basic_stringbuf<TYPE>
         // because the `std::allocator` there does not support `rebind`.  This
         // limitation can be lifted once we fully support C++20, where `rebind`
         // is removed and rebind requests are made through `allocator_traits`.
-        // See {DRQS 168075157} and https://github.com/bloomberg/bde/pull/268
+        // See {DRQS 168075157} and https://github.com/joao-cognition/bde-c-/pull/268
         {
             // test `str(String with different Allocator)`
             bslma::TestAllocator ta("test allocator");
@@ -1145,7 +1145,7 @@ class StringBufTest : public bsl::basic_stringbuf<TYPE>
                     loadString(&mT, LENGTH_TJ);
                     loadString(&oT, LENGTH_TJ);
 
-                    mX.str(BloombergLP::bslmf::MovableRefUtil::move(T));
+                    mX.str(BNP_Paribas::bslmf::MovableRefUtil::move(T));
                     ASSERT(X.str() == oT);
                     ASSERT(X.view() == oT);
                     // test strings that will be changed by a move
@@ -1883,7 +1883,7 @@ namespace {
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     int                 test = argc > 1 ? atoi(argv[1]) : 0;
     bool             verbose = argc > 2;
@@ -1965,7 +1965,7 @@ int main(int argc, char *argv[])
         //
         // Testing:
         //   void str(const StringType& value);
-        //   void str(BloombergLP::bslmf::MovableRef<StringType> value);
+        //   void str(BNP_Paribas::bslmf::MovableRef<StringType> value);
         //   void str(const basic_string<CHAR, TRAITS, SALLOC>& value);
         // --------------------------------------------------------------------
 

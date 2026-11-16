@@ -20,7 +20,7 @@
 #include <stdlib.h>     // `atoi`
 #include <string.h>     // `strlen`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -214,7 +214,7 @@ bslma::TestAllocator *Z;  // initialized at the start of main()
     }
 
     // TRAITS
-    namespace BloombergLP {
+    namespace BNP_Paribas {
 
     namespace bslma {
     template <> struct UsesBslmaAllocator<TestType> : bsl::true_type {};

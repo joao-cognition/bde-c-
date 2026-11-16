@@ -16,7 +16,7 @@ BSLS_IDENT_RCSID(baltzo_zoneinfo_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // STATIC HELPER FUNCTIONS
 

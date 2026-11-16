@@ -68,7 +68,7 @@ BSLS_IDENT("$Id: $")
 //     bsl::size_t    charsWritten;
 //
 //     int retVal =
-//               BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
+//               BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
 //                                                              buffSize,
 //                                                              "Hello",
 //                                                              &charsWritten);
@@ -100,7 +100,7 @@ BSLS_IDENT("$Id: $")
 //     // "&Eacute;cole", the French word for School.  '&Eacute;' is the HTML
 //     // entity equivalent to "Unicode-E WITH ACUTE, LATIN CAPITAL LETTER".
 //     int retVal =
-//           BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
+//           BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
 //                                                          buffSize,
 //                                                          "\xc3\x89" "cole",
 //                                                          &charsWritten);
@@ -120,7 +120,7 @@ BSLS_IDENT("$Id: $")
 //
 //     // Reversing the conversion returns the original string:
 //     retVal =
-//           BloombergLP::bdlde::CharConvertUcs2::ucs2ToUtf8(buffer2,
+//           BNP_Paribas::bdlde::CharConvertUcs2::ucs2ToUtf8(buffer2,
 //                                                          buffer2Size,
 //                                                          buffer,
 //                                                          &charsWritten,
@@ -171,7 +171,7 @@ BSLS_IDENT("$Id: $")
 //     bsl::size_t    charsWritten = 0;
 //
 //     int result =
-//               BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
+//               BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(buffer,
 //                                                              buffSize,
 //                                                              strU8,
 //                                                              &charsWritten);
@@ -191,7 +191,7 @@ BSLS_IDENT("$Id: $")
 // void loadUCS2Hello(bsl::vector<unsigned short> *result)
 // {
 //     int retVal =
-//               BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(result,
+//               BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(result,
 //                                                              "Hello");
 //
 //     assert( 0  == retVal);
@@ -216,7 +216,7 @@ BSLS_IDENT("$Id: $")
 //     // "&Eacute;cole", the French word for School.  &Eacute; is the HTML
 //     // entity corresponding to "Unicode-E WITH ACUTE, LATIN CAPITAL LETTER".
 //     int retVal =
-//           BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(&result,
+//           BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(&result,
 //                                                          "\xc3\x89" "cole");
 //
 //     assert( 0   == retVal);
@@ -233,7 +233,7 @@ BSLS_IDENT("$Id: $")
 //
 //     // Reversing the conversion returns the original string:
 //     retVal =
-//           BloombergLP::bdlde::CharConvertUcs2::ucs2ToUtf8(&result2,
+//           BNP_Paribas::bdlde::CharConvertUcs2::ucs2ToUtf8(&result2,
 //                                                          &result.front(),
 //                                                          &charsWritten);
 //
@@ -253,7 +253,7 @@ BSLS_IDENT("$Id: $")
 // {
 //     bsl::vector<unsigned short> result;
 //
-//     BloombergLP::bdlde::CharConvertUcs2::utf8ToUcs2(&result, strU8.c_str());
+//     BNP_Paribas::bdlde::CharConvertUcs2::utf8ToUcs2(&result, strU8.c_str());
 //
 //     return result;
 // }
@@ -272,7 +272,7 @@ BSLS_IDENT("$Id: $")
 #include <string>                  // 'std::string', 'std::pmr::string'
 #include <vector>                  // 'std::vector', 'std::pmr::vector'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlde {
                            // ======================

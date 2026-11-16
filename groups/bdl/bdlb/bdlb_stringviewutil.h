@@ -148,7 +148,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_algorithm.h>    // bsl::min
 #include <bsl_string_view.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
                         // =====================
                         // struct StringViewUtil

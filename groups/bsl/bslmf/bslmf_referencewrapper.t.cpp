@@ -339,8 +339,8 @@ int main(int argc, char *argv[])
         if (verbose) puts("\nTYPE TRAITS"
                           "\n===========");
 
-        using BloombergLP::bslmf::IsBitwiseMoveable;
-        using BloombergLP::bslmf::IsReferenceWrapper;
+        using BNP_Paribas::bslmf::IsBitwiseMoveable;
+        using BNP_Paribas::bslmf::IsReferenceWrapper;
         using bsl::reference_wrapper;
 
         // First, verify that we have one bitwise movable type and one not

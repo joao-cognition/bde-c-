@@ -40,7 +40,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslscm_versiontag.h> // BSL_VERSION_MAJOR, BSL_VERSION_MINOR
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslscm {
 

@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bslx_streambufinstream_cpp,"$Id$ $CSID$")
 
 #include <bslx_streambufoutstream.h>        // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslx {
 
 }  // close package namespace

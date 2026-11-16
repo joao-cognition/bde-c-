@@ -7,8 +7,8 @@
 @DESCRIPTION: The 'balm' package provides facilities for recording and
  publishing metric data.
 
- Bloomberg internal software should also consider the GUTS telemetry API, which
- is integrated into Bloomberg infrastructure.
+ BNP Paribas internal software should also consider the GUTS telemetry API, which
+ is integrated into BNP Paribas infrastructure.
 
  A "metric", in the context of this package, is a measured event.  This package
  does *not* define what constitutes an event or what the associated measurement

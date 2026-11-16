@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(ball_observerformatterimp_cpp,"$Id$ $CSID$")
 #include <ball_severity.h>
 #include <ball_userfields.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 }  // close package namespace

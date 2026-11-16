@@ -118,7 +118,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstdlib>  // 'std::malloc', 'std::free'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 

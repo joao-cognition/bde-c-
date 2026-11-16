@@ -22,7 +22,7 @@
 #include <bsl_cstdlib.h>  // getenv
 #include <bsl_cstring.h>  // memcpy
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
 
                          // --------------------------

@@ -24,7 +24,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -128,7 +128,7 @@ const bsl::string& bdlat_customizedTypeConvertToBaseType(
 
 }  // close namespace test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_CustomizedTypeFunctions {
 
 template <>
@@ -257,7 +257,7 @@ int main(int argc, char *argv[])
 
         // Test `bdlat_CustomizedTypeFunctions` customization-points
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_CustomizedTypeFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_CustomizedTypeFunctions::
                            IsCustomizedType<bdlar::CustomizedTypeRef>::value));
 
             typedef  bdlat_CustomizedTypeFunctions::BaseType<
@@ -277,7 +277,7 @@ int main(int argc, char *argv[])
             str.d_value = baseValue;
         }
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_CustomizedTypeFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_CustomizedTypeFunctions::
                       IsCustomizedType<bdlar::CustomizedTypeConstRef>::value));
 
             bdlar::CustomizedTypeConstRef cref(ref);

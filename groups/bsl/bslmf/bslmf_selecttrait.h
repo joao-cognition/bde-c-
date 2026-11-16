@@ -363,7 +363,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_integralconstant.h>
 #include <bslmf_switch.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 

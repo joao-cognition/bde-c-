@@ -15,7 +15,7 @@
 // names.
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                           // FORWARD DECLARATIONS

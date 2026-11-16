@@ -32,7 +32,7 @@ BSLS_IDENT_RCSID(balcl_typeinfo_cpp,"$Id$ $CSID$")
 
 #include <bsl_c_ctype.h>    // 'isdigit', 'isspace'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balcl {
 
                    // ========================
@@ -97,12 +97,12 @@ TypeInfoConstraint::~TypeInfoConstraint()
 }
 
 }  // close namespace balcl
-}  // close namespace BloombergLP
+}  // close namespace BNP_Paribas
 
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace balcl;
 
 typedef bslmf::MovableRefUtil MoveUtil;
@@ -1051,7 +1051,7 @@ void OptionValueUtil::setValue(OptionValue *dst, const void  *src)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balcl {
 
                        // --------------

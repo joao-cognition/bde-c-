@@ -92,7 +92,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_exceptionutil.h>
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                     // ==================================
@@ -180,7 +180,7 @@ struct RangeFormatter_StringRenderer<true> {
 template <class t_TYPE, class t_CHAR = char>
 class range_formatter {
     // PRIVATE TYPES
-    typedef BloombergLP::bslfmt::RangeFormatSpecification<t_CHAR>
+    typedef BNP_Paribas::bslfmt::RangeFormatSpecification<t_CHAR>
                                                                  Specification;
     typedef typename bsl::remove_cvref<t_TYPE>::type               ElementType;
     typedef bsl::formatter<ElementType, t_CHAR>            UnderlyingFormatter;
@@ -458,7 +458,7 @@ typename t_FORMAT_CONTEXT::iterator
 range_formatter<t_TYPE, t_CHAR>::format(t_RANGE&          range,
                                         t_FORMAT_CONTEXT& ctx) const
 {
-    typedef BloombergLP::bslfmt::FormatterSpecificationNumericValue
+    typedef BNP_Paribas::bslfmt::FormatterSpecificationNumericValue
                                                                   NumericValue;
 
     Specification finalSpec(d_spec);

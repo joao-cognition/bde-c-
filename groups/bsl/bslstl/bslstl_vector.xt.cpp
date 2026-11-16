@@ -476,7 +476,7 @@ void invokePatternSwap(TYPE *a, TYPE *b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` and `invokePatternSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::vector;
 #ifdef BSLS_ASSERT_SAFE_IS_ACTIVE
 using bsl::Vector_IsRandomAccessIterator;
@@ -604,7 +604,7 @@ static bool veryVeryVeryVerbose;
 
                   // `AllocTestType` less-than operator
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 bool operator<(const AllocTestType& lhs, const AllocTestType& rhs)
@@ -908,7 +908,7 @@ class CountingHashAlgorithm {
 template <class CONTAINER>
 void verifyElementWiseHashAppend(int line, const CONTAINER& container)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     CountingHashAlgorithm actual;
     hashAppend(actual, container);
@@ -1084,7 +1084,7 @@ struct ExceptionProctor {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class OBJECT, class ALLOCATOR>
@@ -1293,7 +1293,7 @@ class ContainerCompatibleRange {
     auto end() const { return const_sentinel(d_value.end()); }
 };
 
-static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                                  ContainerCompatibleRange<int>,
                                                  int>);
 static_assert(bsl::forward_iterator<
@@ -1402,7 +1402,7 @@ class ContainerCompatibleSizedRange {
     auto size() const { return d_value.size(); }
 };
 
-static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                             ContainerCompatibleSizedRange<int>,
                                             int>);
 static_assert(bsl::ranges::sized_range<ContainerCompatibleSizedRange<int>>);
@@ -1654,7 +1654,7 @@ class LimitAllocator : public ALLOC {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class ALLOCATOR>
@@ -1925,8 +1925,8 @@ struct EqPred
 class IncompleteTypeSupportChecker {
 
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil                      MoveUtil;
-    typedef BloombergLP::bslmf::MovableRef<IncompleteTypeSupportChecker>
+    typedef BNP_Paribas::bslmf::MovableRefUtil                      MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRef<IncompleteTypeSupportChecker>
                                                                     MovableRef;
 
   public:
@@ -2646,7 +2646,7 @@ class TestIteratorSS {
 
   public:
     // PUBLIC TYPES
-    typedef BloombergLP::bsls::Types::UintPtr UintPtr;
+    typedef BNP_Paribas::bsls::Types::UintPtr UintPtr;
 
     typedef int                             *value_type;
     typedef value_type                      *pointer;
@@ -2746,7 +2746,7 @@ class TestIteratorNoSS {
 
   public:
     // PUBLIC TYPES
-    typedef BloombergLP::bsls::Types::UintPtr UintPtr;
+    typedef BNP_Paribas::bsls::Types::UintPtr UintPtr;
 
     typedef int                             *value_type;
     typedef value_type                      *pointer;
@@ -3178,7 +3178,7 @@ struct StatelessAllocator {
 // TBD: duplicate these types as allocator-aware
 // TBD: duplicate the allocator-aware types for std allocators
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <>
@@ -4351,7 +4351,7 @@ void TestDriver<TYPE, ALLOC>::testCase34()
 
     if (verbose) printf("\nTesting `%s`.\n", NameOf<TYPE>().name());
 
-    typedef ::BloombergLP::bslh::Hash<> Hasher;
+    typedef ::BNP_Paribas::bslh::Hash<> Hasher;
     typedef Hasher::result_type         HashType;
     Hasher                              hasher;
 
@@ -4509,7 +4509,7 @@ void TestDriver<TYPE, ALLOC>::testCase34()
 
             Hasher::HashAlgorithm expected;
             {
-                using ::BloombergLP::bslh::hashAppend;
+                using ::BNP_Paribas::bslh::hashAppend;
 
                 hashAppend(expected, U.size());
                 for (std::size_t k = 0; k < U.size(); ++k) {
@@ -20041,7 +20041,7 @@ int main(int argc, char *argv[])
             ASSERT(initialSize + 2 == IT.size());
             ASSERT(source1         == IT.back());
 
-            mIT.push_back(BloombergLP::bslmf::MovableRefUtil::move(source3));
+            mIT.push_back(BNP_Paribas::bslmf::MovableRefUtil::move(source3));
                                                                           // 32
 
             ASSERT(initialSize + 3  == IT.size());
@@ -20068,7 +20068,7 @@ int main(int argc, char *argv[])
 
             mIter = mIT.insert(
                             mIT.cbegin(),
-                            BloombergLP::bslmf::MovableRefUtil::move(source4));
+                            BNP_Paribas::bslmf::MovableRefUtil::move(source4));
                                                                           // 36
 
             ASSERT(initialSize + 5 == IT.size());
@@ -20571,7 +20571,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("Count the calls made for `vector<char>`."
                             "  (C-6)\n");
         {
-            using ::BloombergLP::bslh::hashAppend;
+            using ::BNP_Paribas::bslh::hashAppend;
 
             const std::size_t SIZE_ONLY     = 1;  // the size
             const std::size_t SIZE_AND_DATA = 2;  // the size, then the data

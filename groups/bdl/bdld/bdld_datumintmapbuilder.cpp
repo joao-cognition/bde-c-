@@ -16,7 +16,7 @@ BSLS_IDENT_RCSID(bdld_datumintmapbuilder.cpp, "$Id$ $CSID$")
 #include <bsl_memory.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdld {
 
 namespace {

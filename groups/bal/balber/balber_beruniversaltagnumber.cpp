@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(balber_beruniversaltagnumber_cpp,"$Id$ $CSID$")
 
 #include <bdlb_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balber {
 
                         // ----------------------------

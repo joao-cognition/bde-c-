@@ -1,7 +1,7 @@
 // bdlb_variantprinter.cpp                                            -*-C++-*-
 #include <bdlb_variantprinter.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 }  // close package namespace

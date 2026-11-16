@@ -49,7 +49,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsltf_argumenttype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                          // ========================

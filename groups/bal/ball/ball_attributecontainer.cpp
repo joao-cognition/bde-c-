@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(ball_attributecontainer_cpp,"$Id$ $CSID$")
 
 #include <ball_attribute.h>              // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                     // ------------------------

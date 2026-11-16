@@ -25,7 +25,7 @@
 #include <bsl_cstring.h>
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bdlpcre;
 
@@ -560,7 +560,7 @@ inline
 void *WeakAlignAllocator::allocate(size_type numBytes)
 {
     const size_t maxAlign =
-                          BloombergLP::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
+                          BNP_Paribas::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
 
     if (0 == (numBytes & (maxAlign - 1))) {
         // Maximally aligned memory, we just call the upstream allocator
@@ -609,7 +609,7 @@ inline
 void WeakAlignAllocator::deallocate(void *ptr)
 {
     const size_t maxAlign =
-                          BloombergLP::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
+                          BNP_Paribas::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
 
     if (0 == bsls::AlignmentUtil::calculateAlignmentOffset(ptr, maxAlign)) {
         // Maximum aligned, no offset was added
@@ -957,10 +957,10 @@ int main(int argc, char *argv[])
 // ```
     const char RFC822_MESSAGE[] =
         "Received: ; Fri, 23 Apr 2004 14:30:00 -0400\r\n"
-        "Message-ID: <12345@mailgate.bloomberg.net>\r\n"
+        "Message-ID: <12345@mailgate.bnpparibas.com>\r\n"
         "Date: Fri, 23 Apr 2004 14:30:00 -0400\r\n"
-        "From: <someone@bloomberg.net>\r\n"
-        "To: <someone_else@bloomberg.net>\r\n"
+        "From: <someone@bnpparibas.com>\r\n"
+        "To: <someone_else@bnpparibas.com>\r\n"
         "Subject: This is the subject text\r\n"
         "MIME-Version: 1.0\r\n"
         "Content-Type: text/plain\r\n"
@@ -1341,7 +1341,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "`WeakAlignAllocator breathing test\n";
         {
             const size_t maxAlign =
-                          BloombergLP::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
+                          BNP_Paribas::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
 
             static struct {
                 size_t d_line;
@@ -5545,7 +5545,7 @@ int main(int argc, char *argv[])
             //line  pattern              subject
             //----  -------              -------
             { L_,   SIMPLE_PATTERN,      "XXXabcabcZZZ"              },
-            { L_,   EMAIL_PATTERN,       "john.dow@bloomberg.net" },
+            { L_,   EMAIL_PATTERN,       "john.dow@bnpparibas.com" },
             { L_,   IP_ADDRESS_PATTERN,  "255.255.255.255"        },
         };
 

@@ -17,7 +17,7 @@ BSLS_IDENT_RCSID(bslmt_muteximpl_win32_cpp,"$Id$ $CSID$")
 
 #ifdef BSLMT_PLATFORM_WIN32_THREADS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 BSLMF_ASSERT(sizeof(CRITICAL_SECTION) ==
              sizeof(void *) * bslmt::MutexImpl<bslmt::Platform::Win32Threads>::

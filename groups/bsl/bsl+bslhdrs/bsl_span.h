@@ -11,7 +11,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: Provide types, in the 'bsl' namespace, equivalent to those
 // defined in the corresponding C++ standard header.  Include 'bslstl_span.h'
-// which provides Bloomberg's implementation on all platforms. 'bslstl_span.h'
+// which provides BNP Paribas's implementation on all platforms. 'bslstl_span.h'
 // includes the native compiler-provided standard header when it is available
 // and uses the platform standard library implementation as a base class in the
 // 'bsl' namespace.

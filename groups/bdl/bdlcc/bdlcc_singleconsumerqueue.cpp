@@ -5,7 +5,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bdlcc_singleconsumerqueue_cpp,"$Id$$CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

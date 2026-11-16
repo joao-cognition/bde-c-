@@ -40,7 +40,7 @@
 #include <bsl_string.h>
 #include <bsl_utility.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;

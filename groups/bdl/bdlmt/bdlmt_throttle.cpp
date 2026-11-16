@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(bdlmt_throttle_cpp,"$Id$ $CSID$")
                             // struct bdlmt::Throttle
                             // ----------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlmt {
 
 // MANIPULATORS

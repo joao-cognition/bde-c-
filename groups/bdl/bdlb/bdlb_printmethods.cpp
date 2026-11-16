@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdlb_printmethods_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 /// Print the specified `object` in 2 digit hex, preceded by "0x", to the
 /// specified `stream`.
@@ -29,7 +29,7 @@ void printHexChar(bsl::ostream& stream, unsigned char object)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 bsl::ostream& PrintMethods::print(bsl::ostream& stream,

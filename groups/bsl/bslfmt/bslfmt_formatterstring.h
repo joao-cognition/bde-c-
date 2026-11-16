@@ -86,7 +86,7 @@ BSLS_IDENT("$Id: $")
 #include <cstddef>    // `std::size_t`
 #include <limits>     // for 'std::numeric_limits'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                         // ==========================
@@ -161,12 +161,12 @@ namespace bsl {
 /// `wchar_t *` types.
 template <class t_CHAR>
 struct formatter<t_CHAR *, t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // ACCESSORS
 
@@ -191,12 +191,12 @@ struct formatter<t_CHAR *, t_CHAR>
 /// `const wchar_t *` types.
 template <class t_CHAR>
 struct formatter<const t_CHAR *, t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // ACCESSORS
 
@@ -221,12 +221,12 @@ struct formatter<const t_CHAR *, t_CHAR>
 /// `wchar_t[]` types.
 template <class t_CHAR, std::size_t t_SIZE>
 struct formatter<t_CHAR[t_SIZE], t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // ACCESSORS
 
@@ -251,12 +251,12 @@ struct formatter<t_CHAR[t_SIZE], t_CHAR>
 /// `std::wstring` types.
 template <class t_CHAR, class t_CHAR_TRAITS, class t_ALLOCATOR>
 struct formatter<std::basic_string<t_CHAR, t_CHAR_TRAITS, t_ALLOCATOR>, t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // ACCESSORS
 
@@ -281,12 +281,12 @@ struct formatter<std::basic_string<t_CHAR, t_CHAR_TRAITS, t_ALLOCATOR>, t_CHAR>
 /// `bsl::wstring` types.
 template <class t_CHAR, class t_CHAR_TRAITS, class t_ALLOCATOR>
 struct formatter<bsl::basic_string<t_CHAR, t_CHAR_TRAITS, t_ALLOCATOR>, t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // We should propagate this formatter to the `std` namespace, so do *not*
     // define the `BSL_FORMATTER_PREVENT_STD_DELEGATION_TRAIT_CPP20` trait.
@@ -316,12 +316,12 @@ struct formatter<bsl::basic_string<t_CHAR, t_CHAR_TRAITS, t_ALLOCATOR>, t_CHAR>
 /// and `std::wstring_view` types.
 template <class t_CHAR, class t_CHAR_TRAITS>
 struct formatter<std::basic_string_view<t_CHAR, t_CHAR_TRAITS>, t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // ACCESSORS
 
@@ -349,12 +349,12 @@ struct formatter<std::basic_string_view<t_CHAR, t_CHAR_TRAITS>, t_CHAR>
 /// `bsl::wstring_view` types.
 template <class t_CHAR, class t_CHAR_TRAITS>
 struct formatter<bsl::basic_string_view<t_CHAR, t_CHAR_TRAITS>, t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // If we do not alias `string_view` then this formatter must be promoted to
     // the `std` namespace, so do *not* define the
@@ -384,13 +384,13 @@ struct formatter<bsl::basic_string_view<t_CHAR, t_CHAR_TRAITS>, t_CHAR>
 /// `bsl::formatter` type.  It implements formatting for `bslstl::StringRef`
 /// and `bslstl::StringRefWide` types.
 template <class t_CHAR>
-struct formatter<BloombergLP::bslstl::StringRefImp<t_CHAR>, t_CHAR>
-: BloombergLP::bslfmt::FormatterString_Imp<t_CHAR> {
+struct formatter<BNP_Paribas::bslstl::StringRefImp<t_CHAR>, t_CHAR>
+: BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 
     // This formatter specialization must be promoted to the `std` namespace so
     //  do *not* define the `BSL_FORMATTER_PREVENT_STD_DELEGATION_TRAIT_CPP20`
@@ -407,7 +407,7 @@ struct formatter<BloombergLP::bslstl::StringRefImp<t_CHAR>, t_CHAR>
     /// `bsl::format_error` in the event of failure.
     template <class t_FORMAT_CONTEXT>
     typename t_FORMAT_CONTEXT::iterator format(
-                BloombergLP::bslstl::StringRefImp<t_CHAR> value,
+                BNP_Paribas::bslstl::StringRefImp<t_CHAR> value,
                 t_FORMAT_CONTEXT&                         formatContext) const;
 };
 
@@ -417,7 +417,7 @@ struct formatter<BloombergLP::bslstl::StringRefImp<t_CHAR>, t_CHAR>
 //                           INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                         // --------------------------
@@ -577,7 +577,7 @@ typename t_FORMAT_CONTEXT::iterator formatter<t_CHAR *, t_CHAR>::format(
                                         t_FORMAT_CONTEXT&  formatContext) const
 {
     bsl::basic_string_view<t_CHAR> view(value);
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
                                                                 view,
                                                                 formatContext);
 }
@@ -594,7 +594,7 @@ typename t_FORMAT_CONTEXT::iterator formatter<const t_CHAR *, t_CHAR>::format(
                                         t_FORMAT_CONTEXT&  formatContext) const
 {
     bsl::basic_string_view<t_CHAR> view(value);
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
                                                                 view,
                                                                 formatContext);
 }
@@ -611,7 +611,7 @@ typename t_FORMAT_CONTEXT::iterator formatter<t_CHAR[t_SIZE], t_CHAR>::format(
                                         t_FORMAT_CONTEXT&  formatContext) const
 {
     bsl::basic_string_view<t_CHAR> view(value, t_SIZE);
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
                                                                 view,
                                                                 formatContext);
 }
@@ -629,7 +629,7 @@ formatter<std::basic_string<t_CHAR, t_CHAR_TRAITS, t_ALLOCATOR>, t_CHAR>::
            t_FORMAT_CONTEXT& formatContext) const
 {
     bsl::basic_string_view<t_CHAR, t_CHAR_TRAITS> view(value);
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
         formatImpl(view, formatContext);
 }
 
@@ -645,7 +645,7 @@ formatter<bsl::basic_string<t_CHAR, t_CHAR_TRAITS, t_ALLOCATOR>, t_CHAR>::
     format(const bsl::basic_string<t_CHAR, t_CHAR_TRAITS, t_ALLOCATOR>& value,
            t_FORMAT_CONTEXT& formatContext) const
 {
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
         formatImpl(value, formatContext);
 }
 
@@ -676,7 +676,7 @@ typename t_FORMAT_CONTEXT::iterator formatter<
                             t_FORMAT_CONTEXT&              formatContext) const
 {
     bsl::basic_string_view<t_CHAR, t_CHAR_TRAITS> view(value);
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
         formatImpl(view, formatContext);
 }
 
@@ -696,7 +696,7 @@ formatter<bsl::basic_string_view<t_CHAR, t_CHAR_TRAITS>, t_CHAR>::format(
              bsl::basic_string_view<t_CHAR, t_CHAR_TRAITS> value,
              t_FORMAT_CONTEXT&                             formatContext) const
 {
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR, t_CHAR_TRAITS>::
         formatImpl(value, formatContext);
 }
 
@@ -722,11 +722,11 @@ namespace bsl {
 template <class t_CHAR>
 template <class t_FORMAT_CONTEXT>
 typename t_FORMAT_CONTEXT::iterator
-formatter<BloombergLP::bslstl::StringRefImp<t_CHAR>, t_CHAR>::format(
-                 BloombergLP::bslstl::StringRefImp<t_CHAR> value,
+formatter<BNP_Paribas::bslstl::StringRefImp<t_CHAR>, t_CHAR>::format(
+                 BNP_Paribas::bslstl::StringRefImp<t_CHAR> value,
                  t_FORMAT_CONTEXT&                         formatContext) const
 {
-    return BloombergLP::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
+    return BNP_Paribas::bslfmt::FormatterString_Imp<t_CHAR>::formatImpl(
                                                                 value,
                                                                 formatContext);
 }
@@ -737,7 +737,7 @@ formatter<BloombergLP::bslstl::StringRefImp<t_CHAR>, t_CHAR>::format(
 template <class t_CHAR>
 inline
 constexpr std::range_format
-    std::format_kind<BloombergLP::bslstl::StringRefImp<t_CHAR> > =
+    std::format_kind<BNP_Paribas::bslstl::StringRefImp<t_CHAR> > =
                                                    std::range_format::disabled;
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP23_RANGE_FORMAT
 

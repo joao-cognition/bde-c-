@@ -53,7 +53,7 @@
 #pragma GCC diagnostic ignored "-Waggressive-loop-optimizations"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -156,7 +156,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                          DEBUG PRINT SUPPORT
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 /// Print the specified `guid` to the standard output stream.

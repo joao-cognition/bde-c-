@@ -34,11 +34,11 @@ BSLS_IDENT("$Id: $")
 //
 // * If `T` does not use an externally supplied allocator, then it is not AA.
 // * If `T` uses the address of a `bslma::Allocator`, then it is **legacy-AA**.
-//   Most older AA classes developed at Bloomberg are **legacy-AA**.  The value
+//   Most older AA classes developed at BNP Paribas are **legacy-AA**.  The value
 //   of `bslma::UsesBslmaAllocator<T>::value` must be true for a type to be
 //   detected as supporting the **legacy-AA** model.
 // * If `T` uses an instantiation of `bsl::allocator`, then it is **bsl-AA**.
-//   Most newer AA classes developed at Bloomberg are **bsl-AA**.  `T` is
+//   Most newer AA classes developed at BNP Paribas are **bsl-AA**.  `T` is
 //   automatically detectable as supporting the **bsl-AA** model if there exists
 //   a nested type `T::allocator_type` that is convertible from
 //   `bsl::allocator<char>`.
@@ -393,7 +393,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_usesallocator.h>
 #include <bslmf_voidtype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // FORWARD DECLARATIONS

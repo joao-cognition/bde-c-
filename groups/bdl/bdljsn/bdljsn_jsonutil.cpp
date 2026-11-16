@@ -29,7 +29,7 @@ BSLS_IDENT_RCSID(bdljsn_jsonutil_cpp, "$Id$ $CSID$")
 // BDE_VERIFY pragma: -CD01
 // BDE_VERIFY pragma: -TR10
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 namespace {
 namespace u {

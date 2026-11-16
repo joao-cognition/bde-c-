@@ -216,7 +216,7 @@
  removes the need for the type implementer to actually write the hashing
  algorithm.  An example implementation can be seen below:
 ..
-  namespace BloombergLP {
+  namespace BNP_Paribas {
   namespace NamespaceForBoxes {
 
   class Box {

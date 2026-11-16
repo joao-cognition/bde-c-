@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlma_concurrentallocatoradapter_cpp,"$Id$ $CSID$")
 
 #include <bslmt_lockguard.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                      // --------------------------------

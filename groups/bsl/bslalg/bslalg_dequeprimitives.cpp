@@ -14,7 +14,7 @@ BSLS_IDENT("$Id$ $CSID$")
 // inside a 'bslstl_Deque' or not.
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

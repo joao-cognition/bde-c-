@@ -36,7 +36,7 @@
 #include <bsl_streambuf.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using bsl::atoi;
 using bsl::cout;

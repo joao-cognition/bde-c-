@@ -34,7 +34,7 @@ BSLS_IDENT_RCSID(bdls_osutil_cpp, "$Id$ $CSID$")
 # include <sys/utsname.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

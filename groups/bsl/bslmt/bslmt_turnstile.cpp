@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(bslmt_turnstile_cpp,"$Id$ $CSID$")
 #include <bsls_systemtime.h>
 #include <bsls_timeinterval.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 enum { k_MICROSECS_PER_SECOND = 1000 * 1000 };

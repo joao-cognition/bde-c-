@@ -18,7 +18,7 @@
 #include <tuple> // `std::tuple`
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP11_TUPLE
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslh;
 
 // ============================================================================

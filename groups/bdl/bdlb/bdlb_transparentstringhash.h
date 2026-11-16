@@ -108,7 +108,7 @@ BSLS_IDENT("$Id: $")
 #include <string_view>       // 'std::string_view'
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                     // ============================

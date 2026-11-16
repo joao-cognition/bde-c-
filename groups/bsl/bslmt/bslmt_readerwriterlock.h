@@ -233,7 +233,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmt_mutex.h>
 #include <bslmt_threadutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
                           // ======================

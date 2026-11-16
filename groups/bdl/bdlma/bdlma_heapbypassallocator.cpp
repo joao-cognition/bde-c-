@@ -32,7 +32,7 @@ BSLS_IDENT_RCSID(bdlma_heapbypassallocator_cpp,"$Id$ $CSID$")
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
 namespace {

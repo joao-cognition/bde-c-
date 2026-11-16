@@ -45,7 +45,7 @@
 # pragma bde_verify append dictionary src tbd  // Doesn't work ??
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -572,7 +572,7 @@ class TestType_Base : public TestTypeStats {
 
     /// Return `true` if the specified `a` matches the allocator.  The
     /// second overload relies on the fact that most STL allocators used for
-    /// testing at Bloomberg can be constructed (not necessarily converted)
+    /// testing at BNP Paribas can be constructed (not necessarily converted)
     /// from `bslma::Allocator *`; if not, a call to the second overload
     /// will fail to compile.
     bool matchAllocator(AllocArg a) const { return a == d_allocator; }
@@ -1793,7 +1793,7 @@ namespace {
 // `d_value` variable, an optimization known prior to C++17 as "copy elision".
 // This optimization is required by the C++17 standard and is optional in
 // pre-2017 standards, but is implemented in all of the C++11 compilers for
-// which this component is expected to be used at Bloomberg.
+// which this component is expected to be used at BNP Paribas.
 //
 // Next, we implement the assignment operators, which simply call `setValue`:
 // ```

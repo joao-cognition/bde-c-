@@ -13,7 +13,7 @@
 #include <stdlib.h>     // `atoi`
 
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -174,7 +174,7 @@ class allocator {
 // `UsesBslmaAllocator` trait with the type (sometimes referred to as a
 // "C++11-style" trait declaration, because it is more in keeping with the
 // style of trait declarations found in the C++11 Standard).  Note that the
-// specialization must be performed in the `BloombergLP::bslma` namespace:
+// specialization must be performed in the `BNP_Paribas::bslma` namespace:
 // ```
 
     /// ...
@@ -194,7 +194,7 @@ class allocator {
     }  // close namespace xyz
 
     // TRAITS
-    namespace BloombergLP {
+    namespace BNP_Paribas {
     namespace bslma {
 
     template <>
@@ -444,7 +444,7 @@ struct ConvertibleToAny {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

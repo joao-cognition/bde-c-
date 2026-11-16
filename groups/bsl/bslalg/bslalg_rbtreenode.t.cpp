@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslalg;
 
 // ============================================================================
@@ -163,7 +163,7 @@ const RbTreeNode::Color BLACK = RbTreeNode::BSLALG_BLACK;
 //-----------------------------------------------------------------------------
 
 // Fundamental-type-specific print functions.
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 void debugprint(const Obj& val) {

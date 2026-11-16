@@ -34,7 +34,7 @@ BSLS_IDENT("$Id: $")
 
 #include <limits.h>   // for `std::numeric_limits`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                          // =================================
@@ -410,7 +410,7 @@ t_CHAR *FormatterIntegralBase<t_VALUE, t_CHAR>::formatValue(
 {
     BSLS_ASSERT(valueStorage);
 
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     (void) storageSize; // suppress compiler warning
 
@@ -477,14 +477,14 @@ t_CHAR *FormatterIntegralBase<t_VALUE, t_CHAR>::formatValue(
         // additionally modify the resulting string for uppercase hexadecimal
         // format.
 
-        BloombergLP::bslfmt::FormatterCharUtil<char>::toUpper(valueBuf,
+        BNP_Paribas::bslfmt::FormatterCharUtil<char>::toUpper(valueBuf,
                                                               valueEnd);
     }
 
      t_CHAR *convertedValueEnd = valueStorage;
 
      convertedValueEnd =
-                BloombergLP::bslfmt::FormatterCharUtil<t_CHAR>::outputFromChar(
+                BNP_Paribas::bslfmt::FormatterCharUtil<t_CHAR>::outputFromChar(
                     valueBuf,
                     valueEnd,
                     convertedValueEnd);

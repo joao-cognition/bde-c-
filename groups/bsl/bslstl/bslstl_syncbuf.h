@@ -97,7 +97,7 @@ BSLS_IDENT("$Id: $")
 namespace bsl {
 
 // Internal type
-typedef BloombergLP::bsls::BslLock SyncBuf_Mutex;
+typedef BNP_Paribas::bsls::BslLock SyncBuf_Mutex;
 
                             // ===================
                             // class basic_syncbuf
@@ -109,10 +109,10 @@ typedef BloombergLP::bsls::BslLock SyncBuf_Mutex;
 /// call).
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 class basic_syncbuf : public std::basic_streambuf<CHAR_TYPE, CHAR_TRAITS>,
-                      public BloombergLP::bslstl::SyncBufBase {
+                      public BNP_Paribas::bslstl::SyncBufBase {
 
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     // PRIVATE MANIPULATORS
 
@@ -338,7 +338,7 @@ bool basic_syncbuf<CHAR,TRAITS,ALLOCATOR>::emit()
     typedef basic_string<CHAR,TRAITS,ALLOCATOR> String;
     typedef typename string::size_type          SizeType;
 
-    BloombergLP::bsls::BslLockGuard lock(this->d_mutex_p);
+    BNP_Paribas::bsls::BslLockGuard lock(this->d_mutex_p);
     String s =
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_REF_QUALIFIERS
         std::move(d_buff).str();
@@ -408,7 +408,7 @@ void basic_syncbuf<CHAR,TRAITS,ALLOCATOR>::swap(basic_syncbuf& other)
 {
     BSLS_ASSERT(allocator_traits<ALLOCATOR>::propagate_on_container_swap::value
              || get_allocator() == other.get_allocator());
-    typedef BloombergLP::bslalg::SwapUtil SwapUtil;
+    typedef BNP_Paribas::bslalg::SwapUtil SwapUtil;
     streambuf_type::swap(other);
     SwapUtil::swap(&d_wrapped_p,    &other.d_wrapped_p);
     SwapUtil::swap(&d_mutex_p,      &other.d_mutex_p);
@@ -484,7 +484,7 @@ void swap(basic_syncbuf<CHAR,TRAITS,ALLOCATOR>& a,
 //                                TYPE TRAITS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>

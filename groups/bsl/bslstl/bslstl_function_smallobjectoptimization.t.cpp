@@ -111,7 +111,7 @@ void aSsErT(bool b, const char *s, int i)
 
 namespace {
 namespace u {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
                             // ====================
                             // class IncompleteType
@@ -292,7 +292,7 @@ class SmallObjectTestTypeTest {
 
 /// This class provides a function object that verifies `Obj::IsInplaceFunc`
 /// satisfies its contract, where `Obj` is
-/// `::BloombergLP::bslstl::Function_SmallObjectOptimization`.
+/// `::BNP_Paribas::bslstl::Function_SmallObjectOptimization`.
 class IsInplaceFuncTest {
 
   public:
@@ -318,7 +318,7 @@ class IsInplaceFuncTest {
 
 /// This class provides a function object that verifies `Obj::SooFuncSize`
 /// satisfies its contract, where `Obj` is
-/// `::BloombergLP::bslstl::Function_SmallObjectOptimization`.
+/// `::BNP_Paribas::bslstl::Function_SmallObjectOptimization`.
 struct SooFuncSizeTest {
 
     // CREATORS
@@ -516,7 +516,7 @@ void SooFuncSizeTest::operator()(
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int                 test = argc > 1 ? atoi(argv[1]) : 0;
     const bool             verbose = argc > 2;

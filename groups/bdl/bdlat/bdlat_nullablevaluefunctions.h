@@ -95,7 +95,7 @@ BSLS_IDENT("$Id: $")
 // Suppose you had a type whose value could be in a "null" state.
 //
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // struct MyNullableValue {
@@ -122,7 +122,7 @@ BSLS_IDENT("$Id: $")
 // First, we should forward declare all the functions that we will implement
 // inside the `mine` namespace:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // // MANIPULATORS
@@ -160,7 +160,7 @@ BSLS_IDENT("$Id: $")
 // functions should be defined in some `.cpp` file, unless you choose to make
 // them `inline` functions.
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // // MANIPULATORS
 // void mine::bdlat_nullableValueMakeValue(MyNullableValue *object)
@@ -202,7 +202,7 @@ BSLS_IDENT("$Id: $")
 // in the `bdlat_NullableValueFunctions` namespace for the
 // `mine::MyNullableValue` type:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace bdlat_NullableValueFunctions {
 //
 // // TRAITS
@@ -452,7 +452,7 @@ BSLS_IDENT("$Id: $")
 // Finally, suppose we have another type such as `your::YourNullableType`,
 // shown below:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace your {
 //
 // class YourNullableValue {
@@ -584,7 +584,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslmf_matchanytype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                    // ======================================
                    // namespace bdlat_NullableValueFunctions

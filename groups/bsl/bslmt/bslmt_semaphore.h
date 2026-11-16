@@ -111,7 +111,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmt_semaphoreimpl_pthread.h>
 #include <bslmt_semaphoreimpl_win32.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 template <class SEMAPHORE_POLICY>

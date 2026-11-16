@@ -22,7 +22,7 @@
 #include <bsl_optional.h>
 #include <bsl_unordered_set.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

@@ -56,15 +56,15 @@ class set {
 
     /// This typedef is an alias for the comparator used internally by this
     /// set.
-    typedef BloombergLP::bslstl::SetComparator<KEY, COMPARATOR> Comparator;
+    typedef BNP_Paribas::bslstl::SetComparator<KEY, COMPARATOR> Comparator;
 
     /// This typedef is an alias for the type of nodes held by the tree (of
     /// nodes) used to implement this set.
-    typedef BloombergLP::bslstl::TreeNode<KEY>                 Node;
+    typedef BNP_Paribas::bslstl::TreeNode<KEY>                 Node;
 
     /// This typedef is an alias for the factory type used to create and
     /// destroy `Node` objects.
-    typedef BloombergLP::bslstl::TreeNodePool<KEY, ALLOCATOR>  NodeFactory;
+    typedef BNP_Paribas::bslstl::TreeNodePool<KEY, ALLOCATOR>  NodeFactory;
 
     /// This typedef is an alias for the allocator traits type associated
     /// with this container.
@@ -72,7 +72,7 @@ class set {
 
     /// This typedef is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil                 MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil                 MoveUtil;
 
     /// This class is a wrapper around the comparator and allocator data
     /// members.  It takes advantage of the empty-base optimization (EBO) so
@@ -106,7 +106,7 @@ class set {
         /// propagated to the new data wrapper.  `original` is left in a
         /// valid but unspecified state.
         DataWrapper(
-              BloombergLP::bslmf::MovableRef<DataWrapper> original);// IMPLICIT
+              BNP_Paribas::bslmf::MovableRef<DataWrapper> original);// IMPLICIT
 
         // MANIPULATORS
 
@@ -126,7 +126,7 @@ class set {
                                                // comparator and pool of `Node`
                                                // objects
 
-    BloombergLP::bslalg::RbTreeAnchor d_tree;  // balanced tree of `Node`
+    BNP_Paribas::bslalg::RbTreeAnchor d_tree;  // balanced tree of `Node`
                                                // objects
 
   public:
@@ -144,10 +144,10 @@ class set {
     typedef typename AllocatorTraits::pointer          pointer;
     typedef typename AllocatorTraits::const_pointer    const_pointer;
 
-    typedef BloombergLP::bslstl::TreeIterator<const value_type,
+    typedef BNP_Paribas::bslstl::TreeIterator<const value_type,
                                               Node,
                                               difference_type> iterator;
-    typedef BloombergLP::bslstl::TreeIterator<const value_type,
+    typedef BNP_Paribas::bslstl::TreeIterator<const value_type,
                                               Node,
                                               difference_type> const_iterator;
     typedef bsl::reverse_iterator<iterator>            reverse_iterator;
@@ -282,7 +282,7 @@ class set {
     /// contained in this set.  The allocator associated with `original` is
     /// propagated for use in the newly-created set.  `original` is left in
     /// a valid but unspecified state.
-    set(BloombergLP::bslmf::MovableRef<set> original);              // IMPLICIT
+    set(BNP_Paribas::bslmf::MovableRef<set> original);              // IMPLICIT
 
     /// Create a set having the same value as the specified `original`
     /// object that uses the specified `basicAllocator` to supply memory.
@@ -307,7 +307,7 @@ class set {
     /// that a `bslma::Allocator *` can be supplied for `basicAllocator` if
     /// the (template parameter) type `ALLOCATOR` is `bsl::allocator` (the
     /// default).
-    set(BloombergLP::bslmf::MovableRef<set>            original,
+    set(BNP_Paribas::bslmf::MovableRef<set>            original,
         const typename type_identity<ALLOCATOR>::type& basicAllocator);
 
     /// Create a set, and insert each `value_type` object in the sequence
@@ -460,7 +460,7 @@ class set {
     /// in a valid but unspecified state.  This method requires that the
     /// (template parameter) type `KEY` be `move-assignable` and
     /// `move-insertable` into this set (see {Requirements on `KEY`}).
-    set& operator=(BloombergLP::bslmf::MovableRef<set> rhs)
+    set& operator=(BNP_Paribas::bslmf::MovableRef<set> rhs)
                        BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                            AllocatorTraits::is_always_equal::value
                         && std::is_nothrow_move_assignable<COMPARATOR>::value);
@@ -519,14 +519,14 @@ class set {
     /// requires that the (template parameter) type `KEY` be
     /// `move-insertable` (see {Requirements on `KEY`}).
     pair<iterator, bool> insert(
-                             BloombergLP::bslmf::MovableRef<value_type> value);
+                             BNP_Paribas::bslmf::MovableRef<value_type> value);
 
 // {{{ BEGIN GENERATED CODE
 // The generated code below is a workaround for the absence of perfect
 // forwarding in some compilers.
     template <class LOOKUP_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value
         , pair<iterator, bool> >::type
     insert(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) value)
@@ -534,8 +534,8 @@ class set {
         typedef pair<iterator, bool> Result;
 
         int comparisonResult;
-        BloombergLP::bslalg::RbTreeNode *insertLocation =
-            BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+        BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+            BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -543,10 +543,10 @@ class set {
         if (!comparisonResult) {
             return Result(iterator(insertLocation), false);
         }
-        BloombergLP::bslalg::RbTreeNode *node =
+        BNP_Paribas::bslalg::RbTreeNode *node =
             nodeFactory().emplaceIntoNewNode(
                              BSLS_COMPILERFEATURES_FORWARD(LOOKUP_KEY, value));
-        BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                   insertLocation,
                                                   comparisonResult < 0,
                                                   node);
@@ -582,14 +582,14 @@ class set {
     /// `KEY`}).  The behavior is undefined unless `hint` is an iterator in
     /// the range `[begin() .. end()]` (both endpoints included).
     iterator insert(const_iterator                             hint,
-                    BloombergLP::bslmf::MovableRef<value_type> value);
+                    BNP_Paribas::bslmf::MovableRef<value_type> value);
 
 // {{{ BEGIN GENERATED CODE
 // The generated code below is a workaround for the absence of perfect
 // forwarding in some compilers.
     template <class LOOKUP_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value
         && !bsl::is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY),
                                 iterator>::value
@@ -599,12 +599,12 @@ class set {
     insert(const_iterator hint,
                            BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) value)
     {
-        BloombergLP::bslalg::RbTreeNode *hintNode =
-                    const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+        BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                    const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
 
         int comparisonResult;
-        BloombergLP::bslalg::RbTreeNode *insertLocation =
-            BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+        BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+            BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -614,11 +614,11 @@ class set {
             return iterator(insertLocation);
         }
 
-        BloombergLP::bslalg::RbTreeNode *node =
+        BNP_Paribas::bslalg::RbTreeNode *node =
             nodeFactory().emplaceIntoNewNode(
                              BSLS_COMPILERFEATURES_FORWARD(LOOKUP_KEY, value));
 
-        BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                   insertLocation,
                                                   comparisonResult < 0,
                                                   node);
@@ -1032,7 +1032,7 @@ class set {
     size_type erase(const key_type& key);
     template <class t_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    t_KEY>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
                         iterator>::value &&
@@ -1096,7 +1096,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     iterator find(const key_type& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -1108,12 +1108,12 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         iterator>::type
     find(const LOOKUP_KEY& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -1129,7 +1129,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     iterator lower_bound(const key_type& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1145,12 +1145,12 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         iterator>::type
     lower_bound(const LOOKUP_KEY& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1165,7 +1165,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     iterator upper_bound(const key_type& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1180,12 +1180,12 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         iterator>::type
     upper_bound(const LOOKUP_KEY& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1228,7 +1228,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
@@ -1308,7 +1308,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         bool>::type
     contains(const LOOKUP_KEY& key) const
@@ -1353,7 +1353,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     const_iterator find(const key_type& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -1365,12 +1365,12 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         const_iterator>::type
     find(const LOOKUP_KEY& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -1394,7 +1394,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         size_type>::type
     count(const LOOKUP_KEY& key) const
@@ -1421,7 +1421,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     const_iterator lower_bound(const key_type& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1437,12 +1437,12 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         const_iterator>::type
     lower_bound(const LOOKUP_KEY& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1458,7 +1458,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     const_iterator upper_bound(const key_type& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1474,12 +1474,12 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         const_iterator>::type
     upper_bound(const LOOKUP_KEY& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1522,7 +1522,7 @@ class set {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
@@ -1580,7 +1580,7 @@ template <
     class COMPARATOR,
     class ALLOC,
     class KEY =
-         typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+         typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<KEY>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1596,7 +1596,7 @@ template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
     class KEY =
-         typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+         typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 set(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
@@ -1610,7 +1610,7 @@ template <
     class INPUT_ITERATOR,
     class ALLOC,
     class KEY =
-         typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+         typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<KEY>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1707,7 +1707,7 @@ bool operator!=(const set<KEY, COMPARATOR, ALLOCATOR>& lhs,
 /// the specified `rhs` sets by using the comparison operators of `KEY` on
 /// each element; return the result of that comparison.
 template <class KEY, class COMPARATOR, class ALLOCATOR>
-BloombergLP::bslalg::SynthThreeWayUtil::Result<KEY>
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<KEY>
 operator<=>(const set<KEY, COMPARATOR, ALLOCATOR>& lhs,
             const set<KEY, COMPARATOR, ALLOCATOR>& rhs);
 
@@ -1816,7 +1816,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::DataWrapper::DataWrapper(
 template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 set<KEY, COMPARATOR, ALLOCATOR>::DataWrapper::DataWrapper(
-                          BloombergLP::bslmf::MovableRef<DataWrapper> original)
+                          BNP_Paribas::bslmf::MovableRef<DataWrapper> original)
 : ::bsl::set<KEY, COMPARATOR, ALLOCATOR>::Comparator(
                                     MoveUtil::access(original).keyComparator())
 , d_pool(MoveUtil::move(MoveUtil::access(original).d_pool))
@@ -1864,7 +1864,7 @@ template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 void set<KEY, COMPARATOR, ALLOCATOR>::quickSwapExchangeAllocators(set& other)
 {
-    BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
+    BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
     nodeFactory().swapExchangeAllocators(other.nodeFactory());
 
     // `DataWrapper` contains a `NodeFactory` object and inherits from
@@ -1882,7 +1882,7 @@ template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 void set<KEY, COMPARATOR, ALLOCATOR>::quickSwapRetainAllocators(set& other)
 {
-    BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
+    BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
     nodeFactory().swapRetainAllocators(other.nodeFactory());
 
     // See `quickSwapExchangeAllocators` (above).
@@ -1903,14 +1903,14 @@ void set<KEY, COMPARATOR, ALLOCATOR>::constructFromRange(INPUT_ITERATOR first,
     }
 
     if BSLS_KEYWORD_CONSTEXPR_CPP17 (
-        BloombergLP::bslstl::IteratorUtil::
+        BNP_Paribas::bslstl::IteratorUtil::
                       canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()) {
         const size_type numElements = static_cast<size_type>(
-            BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+            BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
         nodeFactory().reserveNodes(numElements);
     }
 
-    BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+    BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -1921,7 +1921,7 @@ void set<KEY, COMPARATOR, ALLOCATOR>::constructFromRange(INPUT_ITERATOR first,
     // 'findUniqueInsertLocation'.
 
     insert(*first);
-    BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+    BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
 
     while (++first != last) {
 
@@ -1934,9 +1934,9 @@ void set<KEY, COMPARATOR, ALLOCATOR>::constructFromRange(INPUT_ITERATOR first,
         }
 
         if (this->comparator()(*prevNode, value)) {
-            BloombergLP::bslalg::RbTreeNode *node =
+            BNP_Paribas::bslalg::RbTreeNode *node =
                                    nodeFactory().emplaceIntoNewNode(value);
-            BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+            BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                       prevNode,
                                                       false,
                                                       node);
@@ -1960,10 +1960,10 @@ void set<KEY, COMPARATOR, ALLOCATOR>::constructFromRange(
 
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_type>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     if (first == last) {
         return;                                                       // RETURN
@@ -1973,7 +1973,7 @@ void set<KEY, COMPARATOR, ALLOCATOR>::constructFromRange(
         nodeFactory().reserveNodes(numElements);
     }
 
-    BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+    BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -1984,7 +1984,7 @@ void set<KEY, COMPARATOR, ALLOCATOR>::constructFromRange(
     // 'findUniqueInsertLocation'.
 
     insert(*first); --numElements;
-    BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+    BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
 
     while (++first != last) {
 
@@ -1997,9 +1997,9 @@ void set<KEY, COMPARATOR, ALLOCATOR>::constructFromRange(
         }
 
         if (this->comparator()(*prevNode, value)) {
-            BloombergLP::bslalg::RbTreeNode *node =
+            BNP_Paribas::bslalg::RbTreeNode *node =
                                    nodeFactory().emplaceIntoNewNode(value);
-            BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+            BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                       prevNode,
                                                       false,
                                                       node);
@@ -2037,12 +2037,12 @@ void set<KEY, COMPARATOR, ALLOCATOR>::insertFromRange(INPUT_ITERATOR first,
 
     while (first != last) {
 
-        if (BloombergLP::bslstl::IteratorUtil
+        if (BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         && BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
                                               !nodeFactory().hasFreeNodes())) {
             nodeFactory().reserveNodes(
-               BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+               BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
         }
 
         insert(*first);
@@ -2062,10 +2062,10 @@ void set<KEY, COMPARATOR, ALLOCATOR>::insertFromRange(
                                                     size_t         numElements)
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_type>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     while (first != last) {
 
@@ -2126,7 +2126,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(const set& original)
 {
     if (0 < original.size()) {
         nodeFactory().reserveNodes(original.size());
-        BloombergLP::bslalg::RbTreeUtil::copyTree(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::copyTree(&d_tree,
                                                   original.d_tree,
                                                   &nodeFactory());
     }
@@ -2135,12 +2135,12 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(const set& original)
 template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 set<KEY, COMPARATOR, ALLOCATOR>::set(
-                                  BloombergLP::bslmf::MovableRef<set> original)
+                                  BNP_Paribas::bslmf::MovableRef<set> original)
 : d_compAndAlloc(MoveUtil::move(MoveUtil::access(original).d_compAndAlloc))
 , d_tree()
 {
     set& lvalue = original;
-    BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
+    BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
 }
 
 template <class KEY, class COMPARATOR, class ALLOCATOR>
@@ -2153,7 +2153,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(
 {
     if (0 < original.size()) {
         nodeFactory().reserveNodes(original.size());
-        BloombergLP::bslalg::RbTreeUtil::copyTree(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::copyTree(&d_tree,
                                                   original.d_tree,
                                                   &nodeFactory());
     }
@@ -2162,7 +2162,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(
 template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 set<KEY, COMPARATOR, ALLOCATOR>::set(
-                 BloombergLP::bslmf::MovableRef<set>            original,
+                 BNP_Paribas::bslmf::MovableRef<set>            original,
                  const typename type_identity<ALLOCATOR>::type& basicAllocator)
 : d_compAndAlloc(MoveUtil::access(original).comparator().keyComparator(),
                  basicAllocator)
@@ -2174,12 +2174,12 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(
               nodeFactory().allocator() == lvalue.nodeFactory().allocator())) {
         d_compAndAlloc.nodeFactory().adopt(
                           MoveUtil::move(lvalue.d_compAndAlloc.nodeFactory()));
-        BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
+        BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
     }
     else {
         if (0 < lvalue.size()) {
             nodeFactory().reserveNodes(lvalue.size());
-            BloombergLP::bslalg::RbTreeUtil::moveTree(&d_tree,
+            BNP_Paribas::bslalg::RbTreeUtil::moveTree(&d_tree,
                                                       &lvalue.d_tree,
                                                       &nodeFactory(),
                                                       &lvalue.nodeFactory());
@@ -2200,13 +2200,13 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(INPUT_ITERATOR    first,
     if (first != last) {
 
         const size_type numElements = static_cast<size_type>(
-            BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+            BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
 
         if (0 < numElements) {
             nodeFactory().reserveNodes(numElements);
         }
 
-        BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+        BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -2217,7 +2217,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(INPUT_ITERATOR    first,
         // `insertAt` without `findUniqueInsertLocation`.
 
         insert(*first);
-        BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+        BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
         while (++first != last) {
             // The values are not in order, so insert them normally.
 
@@ -2229,9 +2229,9 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(INPUT_ITERATOR    first,
             }
 
             if (this->comparator()(*prevNode, value)) {
-                BloombergLP::bslalg::RbTreeNode *node =
+                BNP_Paribas::bslalg::RbTreeNode *node =
                                        nodeFactory().emplaceIntoNewNode(value);
-                BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+                BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                           prevNode,
                                                           false,
                                                           node);
@@ -2255,13 +2255,13 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(INPUT_ITERATOR    first,
     if (first != last) {
 
         const size_type numElements = static_cast<size_type>(
-            BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+            BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
 
         if (0 < numElements) {
             nodeFactory().reserveNodes(numElements);
         }
 
-        BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+        BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -2272,7 +2272,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(INPUT_ITERATOR    first,
         // `insertAt` without `findUniqueInsertLocation`.
 
         insert(*first);
-        BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+        BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
         while (++first != last) {
             // The values are not in order, so insert them normally.
 
@@ -2284,9 +2284,9 @@ set<KEY, COMPARATOR, ALLOCATOR>::set(INPUT_ITERATOR    first,
             }
 
             if (this->comparator()(*prevNode, value)) {
-                BloombergLP::bslalg::RbTreeNode *node =
+                BNP_Paribas::bslalg::RbTreeNode *node =
                                        nodeFactory().emplaceIntoNewNode(value);
-                BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+                BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                           prevNode,
                                                           false,
                                                           node);
@@ -2347,7 +2347,7 @@ template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 set<KEY, COMPARATOR, ALLOCATOR>&
 set<KEY, COMPARATOR, ALLOCATOR>::operator=(
-                                       BloombergLP::bslmf::MovableRef<set> rhs)
+                                       BNP_Paribas::bslmf::MovableRef<set> rhs)
                         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                             AllocatorTraits::is_always_equal::value
                          && std::is_nothrow_move_assignable<COMPARATOR>::value)
@@ -2422,8 +2422,8 @@ pair<typename set<KEY, COMPARATOR, ALLOCATOR>::iterator, bool>
 set<KEY, COMPARATOR, ALLOCATOR>::insert(const value_type& value)
 {
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -2432,9 +2432,9 @@ set<KEY, COMPARATOR, ALLOCATOR>::insert(const value_type& value)
         return pair<iterator, bool>(iterator(insertLocation), false);
                                                                       // RETURN
     }
-    BloombergLP::bslalg::RbTreeNode *node =
+    BNP_Paribas::bslalg::RbTreeNode *node =
                                        nodeFactory().emplaceIntoNewNode(value);
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2445,12 +2445,12 @@ template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 pair<typename set<KEY, COMPARATOR, ALLOCATOR>::iterator, bool>
 set<KEY, COMPARATOR, ALLOCATOR>::insert(
-                              BloombergLP::bslmf::MovableRef<value_type> value)
+                              BNP_Paribas::bslmf::MovableRef<value_type> value)
 {
     value_type& lvalue = value;
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -2459,9 +2459,9 @@ set<KEY, COMPARATOR, ALLOCATOR>::insert(
         return pair<iterator, bool>(iterator(insertLocation), false);
                                                                       // RETURN
     }
-    BloombergLP::bslalg::RbTreeNode *node =
+    BNP_Paribas::bslalg::RbTreeNode *node =
                       nodeFactory().emplaceIntoNewNode(MoveUtil::move(lvalue));
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2474,11 +2474,11 @@ typename set<KEY, COMPARATOR, ALLOCATOR>::iterator
 set<KEY, COMPARATOR, ALLOCATOR>::insert(const_iterator    hint,
                                         const value_type& value)
 {
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -2488,9 +2488,9 @@ set<KEY, COMPARATOR, ALLOCATOR>::insert(const_iterator    hint,
         return iterator(insertLocation);                              // RETURN
     }
 
-    BloombergLP::bslalg::RbTreeNode *node =
+    BNP_Paribas::bslalg::RbTreeNode *node =
                                        nodeFactory().emplaceIntoNewNode(value);
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2501,14 +2501,14 @@ template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
 typename set<KEY, COMPARATOR, ALLOCATOR>::iterator
 set<KEY, COMPARATOR, ALLOCATOR>::insert(const_iterator    hint,
-                              BloombergLP::bslmf::MovableRef<value_type> value)
+                              BNP_Paribas::bslmf::MovableRef<value_type> value)
 {
     value_type& lvalue = value;
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -2518,10 +2518,10 @@ set<KEY, COMPARATOR, ALLOCATOR>::insert(const_iterator    hint,
         return iterator(insertLocation);                              // RETURN
     }
 
-    BloombergLP::bslalg::RbTreeNode *node =
+    BNP_Paribas::bslalg::RbTreeNode *node =
                       nodeFactory().emplaceIntoNewNode(MoveUtil::move(lvalue));
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2547,12 +2547,12 @@ void set<KEY, COMPARATOR, ALLOCATOR>::insert(INPUT_ITERATOR first,
     // method.
 
     while (first != last) {
-        if (BloombergLP::bslstl::IteratorUtil::
+        if (BNP_Paribas::bslstl::IteratorUtil::
                     canCalculateInsertDistance<INPUT_ITERATOR,INPUT_ITERATOR>()
         && BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
                                               !nodeFactory().hasFreeNodes())) {
             const size_type numElements = static_cast<size_type>(
-               BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+               BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
             nodeFactory().reserveNodes(numElements);
         }
         insert(*first);
@@ -2585,11 +2585,11 @@ pair<typename set<KEY, COMPARATOR, ALLOCATOR>::iterator, bool>
 set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                           )
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         );
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2598,7 +2598,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2614,11 +2614,11 @@ pair<typename set<KEY, COMPARATOR, ALLOCATOR>::iterator, bool>
 set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_01) arguments_01)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2627,7 +2627,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2645,12 +2645,12 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_01) arguments_01,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_02) arguments_02)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2659,7 +2659,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2679,13 +2679,13 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_02) arguments_02,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_03) arguments_03)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2694,7 +2694,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2716,14 +2716,14 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_03) arguments_03,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_04) arguments_04)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
         BSLS_COMPILERFEATURES_FORWARD(Args_04, arguments_04));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2732,7 +2732,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2756,15 +2756,15 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_04) arguments_04,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_05) arguments_05)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
         BSLS_COMPILERFEATURES_FORWARD(Args_04, arguments_04),
         BSLS_COMPILERFEATURES_FORWARD(Args_05, arguments_05));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2773,7 +2773,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2799,7 +2799,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_05) arguments_05,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_06) arguments_06)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -2807,8 +2807,8 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         BSLS_COMPILERFEATURES_FORWARD(Args_05, arguments_05),
         BSLS_COMPILERFEATURES_FORWARD(Args_06, arguments_06));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2817,7 +2817,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2845,7 +2845,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_06) arguments_06,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_07) arguments_07)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -2854,8 +2854,8 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         BSLS_COMPILERFEATURES_FORWARD(Args_06, arguments_06),
         BSLS_COMPILERFEATURES_FORWARD(Args_07, arguments_07));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2864,7 +2864,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2894,7 +2894,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_07) arguments_07,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_08) arguments_08)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -2904,8 +2904,8 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         BSLS_COMPILERFEATURES_FORWARD(Args_07, arguments_07),
         BSLS_COMPILERFEATURES_FORWARD(Args_08, arguments_08));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2914,7 +2914,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -2946,7 +2946,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_08) arguments_08,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_09) arguments_09)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -2957,8 +2957,8 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         BSLS_COMPILERFEATURES_FORWARD(Args_08, arguments_08),
         BSLS_COMPILERFEATURES_FORWARD(Args_09, arguments_09));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -2967,7 +2967,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3001,7 +3001,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_09) arguments_09,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_10) arguments_10)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -3013,8 +3013,8 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         BSLS_COMPILERFEATURES_FORWARD(Args_09, arguments_09),
         BSLS_COMPILERFEATURES_FORWARD(Args_10, arguments_10));
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -3023,7 +3023,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3038,13 +3038,13 @@ inline
 typename set<KEY, COMPARATOR, ALLOCATOR>::iterator
 set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         );
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3055,7 +3055,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint)
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3071,13 +3071,13 @@ typename set<KEY, COMPARATOR, ALLOCATOR>::iterator
 set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_01) arguments_01)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3088,7 +3088,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3106,14 +3106,14 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_01) arguments_01,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_02) arguments_02)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3124,7 +3124,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3144,15 +3144,15 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_02) arguments_02,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_03) arguments_03)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3163,7 +3163,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3185,16 +3185,16 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_03) arguments_03,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_04) arguments_04)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
         BSLS_COMPILERFEATURES_FORWARD(Args_04, arguments_04));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3205,7 +3205,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3229,17 +3229,17 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_04) arguments_04,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_05) arguments_05)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
         BSLS_COMPILERFEATURES_FORWARD(Args_04, arguments_04),
         BSLS_COMPILERFEATURES_FORWARD(Args_05, arguments_05));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3250,7 +3250,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3276,18 +3276,18 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_05) arguments_05,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_06) arguments_06)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
         BSLS_COMPILERFEATURES_FORWARD(Args_04, arguments_04),
         BSLS_COMPILERFEATURES_FORWARD(Args_05, arguments_05),
         BSLS_COMPILERFEATURES_FORWARD(Args_06, arguments_06));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3298,7 +3298,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3326,7 +3326,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_06) arguments_06,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_07) arguments_07)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -3334,11 +3334,11 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         BSLS_COMPILERFEATURES_FORWARD(Args_05, arguments_05),
         BSLS_COMPILERFEATURES_FORWARD(Args_06, arguments_06),
         BSLS_COMPILERFEATURES_FORWARD(Args_07, arguments_07));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3349,7 +3349,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3379,7 +3379,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_07) arguments_07,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_08) arguments_08)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -3388,11 +3388,11 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         BSLS_COMPILERFEATURES_FORWARD(Args_06, arguments_06),
         BSLS_COMPILERFEATURES_FORWARD(Args_07, arguments_07),
         BSLS_COMPILERFEATURES_FORWARD(Args_08, arguments_08));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3403,7 +3403,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3435,7 +3435,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_08) arguments_08,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_09) arguments_09)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -3445,11 +3445,11 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         BSLS_COMPILERFEATURES_FORWARD(Args_07, arguments_07),
         BSLS_COMPILERFEATURES_FORWARD(Args_08, arguments_08),
         BSLS_COMPILERFEATURES_FORWARD(Args_09, arguments_09));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3460,7 +3460,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3494,7 +3494,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_09) arguments_09,
                        BSLS_COMPILERFEATURES_FORWARD_REF(Args_10) arguments_10)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_01, arguments_01),
         BSLS_COMPILERFEATURES_FORWARD(Args_02, arguments_02),
         BSLS_COMPILERFEATURES_FORWARD(Args_03, arguments_03),
@@ -3505,11 +3505,11 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         BSLS_COMPILERFEATURES_FORWARD(Args_08, arguments_08),
         BSLS_COMPILERFEATURES_FORWARD(Args_09, arguments_09),
         BSLS_COMPILERFEATURES_FORWARD(Args_10, arguments_10));
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3520,7 +3520,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3538,11 +3538,11 @@ pair<typename set<KEY, COMPARATOR, ALLOCATOR>::iterator, bool>
 set<KEY, COMPARATOR, ALLOCATOR>::emplace(
                           BSLS_COMPILERFEATURES_FORWARD_REF(Args)... arguments)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args, arguments)...);
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                      &comparisonResult,
                                      &d_tree,
                                      this->comparator(),
@@ -3551,7 +3551,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace(
         nodeFactory().deleteNode(node);
         return pair<iterator, bool>(iterator(insertLocation), false);
     }
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3565,13 +3565,13 @@ typename set<KEY, COMPARATOR, ALLOCATOR>::iterator
 set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
                           BSLS_COMPILERFEATURES_FORWARD_REF(Args)... arguments)
 {
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args, arguments)...);
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
     int comparisonResult;
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findUniqueInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findUniqueInsertLocation(
                                                             &comparisonResult,
                                                             &d_tree,
                                                             this->comparator(),
@@ -3582,7 +3582,7 @@ set<KEY, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
         return iterator(insertLocation);
     }
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               comparisonResult < 0,
                                               node);
@@ -3598,11 +3598,11 @@ set<KEY, COMPARATOR, ALLOCATOR>::erase(const_iterator position)
 {
     BSLS_ASSERT_SAFE(position != end());
 
-    BloombergLP::bslalg::RbTreeNode *node =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(position.node());
-    BloombergLP::bslalg::RbTreeNode *result =
-                                   BloombergLP::bslalg::RbTreeUtil::next(node);
-    BloombergLP::bslalg::RbTreeUtil::remove(&d_tree, node);
+    BNP_Paribas::bslalg::RbTreeNode *node =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(position.node());
+    BNP_Paribas::bslalg::RbTreeNode *result =
+                                   BNP_Paribas::bslalg::RbTreeUtil::next(node);
+    BNP_Paribas::bslalg::RbTreeUtil::remove(&d_tree, node);
     nodeFactory().deleteNode(node);
     return iterator(result);
 }
@@ -3673,7 +3673,7 @@ void set<KEY, COMPARATOR, ALLOCATOR>::clear() BSLS_KEYWORD_NOEXCEPT
         BSLS_ASSERT_SAFE(0 < d_tree.numNodes());
         BSLS_ASSERT_SAFE(d_tree.firstNode() != d_tree.sentinel());
 
-        BloombergLP::bslalg::RbTreeUtil::deleteTree(&d_tree, &nodeFactory());
+        BNP_Paribas::bslalg::RbTreeUtil::deleteTree(&d_tree, &nodeFactory());
     }
 #if defined(BSLS_ASSERT_SAFE_IS_USED)
     else {
@@ -3811,7 +3811,7 @@ inline
 bool bsl::operator==(const bsl::set<KEY, COMPARATOR, ALLOCATOR>& lhs,
                      const bsl::set<KEY, COMPARATOR, ALLOCATOR>& rhs)
 {
-    return BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+    return BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
                                                     lhs.end(),
                                                     lhs.size(),
                                                     rhs.begin(),
@@ -3833,7 +3833,7 @@ bool bsl::operator!=(const bsl::set<KEY, COMPARATOR, ALLOCATOR>& lhs,
 
 template <class KEY, class COMPARATOR, class ALLOCATOR>
 inline
-BloombergLP::bslalg::SynthThreeWayUtil::Result<KEY>
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<KEY>
 bsl::operator<=>(const set<KEY, COMPARATOR, ALLOCATOR>& lhs,
                  const set<KEY, COMPARATOR, ALLOCATOR>& rhs)
 {
@@ -3842,7 +3842,7 @@ bsl::operator<=>(const set<KEY, COMPARATOR, ALLOCATOR>& lhs,
                               lhs.end(),
                               rhs.begin(),
                               rhs.end(),
-                              BloombergLP::bslalg::SynthThreeWayUtil::compare);
+                              BNP_Paribas::bslalg::SynthThreeWayUtil::compare);
 }
 
 #else
@@ -3852,7 +3852,7 @@ inline
 bool bsl::operator<(const bsl::set<KEY, COMPARATOR, ALLOCATOR>& lhs,
                     const bsl::set<KEY, COMPARATOR, ALLOCATOR>& rhs)
 {
-    return 0 > BloombergLP::bslalg::RangeCompare::lexicographical(lhs.begin(),
+    return 0 > BNP_Paribas::bslalg::RangeCompare::lexicographical(lhs.begin(),
                                                                   lhs.end(),
                                                                   lhs.size(),
                                                                   rhs.begin(),
@@ -3892,7 +3892,7 @@ inline
 typename bsl::set<KEY, COMPARATOR, ALLOCATOR>::size_type
 bsl::erase_if(set<KEY, COMPARATOR, ALLOCATOR>& s, PREDICATE predicate)
 {
-    return BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(s, predicate);
+    return BNP_Paribas::bslstl::AlgorithmUtil::containerEraseIf(s, predicate);
 }
 
 template <class KEY,  class COMPARATOR,  class ALLOCATOR>
@@ -3914,7 +3914,7 @@ void bsl::swap(bsl::set<KEY, COMPARATOR, ALLOCATOR>& a,
 //: o An ordered container uses 'bslma' allocators if the (template parameter)
 //:   type 'ALLOCATOR' is convertible from 'bslma::Allocator*'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

@@ -21,7 +21,7 @@
 #endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -312,12 +312,12 @@ class MyAllocTestDeleter {
     void operator()(TYPE *ptr) const;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <>
 struct UsesBslmaAllocator<MyAllocTestDeleter> : bsl::true_type {};
 }  // close namespace bslma
-}  // close namespace BloombergLP
+}  // close namespace BNP_Paribas
 
                           // ------------------------
                           // class MyAllocTestDeleter

@@ -25,7 +25,7 @@ BSLS_IDENT_RCSID(bdlb_bitstringutil_cpp,"$Id$ $CSID$")
 
 #include <bsl_c_limits.h>    // 'CHAR_BIT'
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::size_t;
 using bsl::uint64_t;
 
@@ -1058,7 +1058,7 @@ bsl::ostream& newlineAndIndent(bsl::ostream& stream,
     return stream;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                         // ====================

@@ -12,7 +12,7 @@
  'bslma_allocator').  If 'BSLFWD_BUILDTARGET_BSL_USING_NAMESPACES' is defined,
  the forward declaration will refer the 'bsl' type in the two-level namespace;
  otherwise, it will refer to the type in the legacy single-level namespace
- (e.g., 'bslma::Allocator' versus 'bslma_Allocator', both in the 'BloombergLP'
+ (e.g., 'bslma::Allocator' versus 'bslma_Allocator', both in the 'BNP_Paribas'
  namespace).
 
  The components in this package are provided to provide backward compatibility
@@ -65,4 +65,4 @@
 /Usage
 /-----
  See "Updating 'bsl' Clients for Two-Level Namespaces" at
- 'https://bbiportal.bloomberg.com/BDE/Solutions/BSLFWD.html'
+ 'https://bbiportal.bnpparibas.com/BDE/Solutions/BSLFWD.html'

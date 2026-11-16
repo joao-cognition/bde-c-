@@ -14,7 +14,7 @@
 #pragma GCC diagnostic ignored "-Wstringop-truncation"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

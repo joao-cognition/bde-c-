@@ -16,7 +16,7 @@
 #pragma error_messages(off, SEC_UNINITIALIZED_MEM_READ)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

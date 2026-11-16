@@ -26,7 +26,7 @@
 #include <bsl_sstream.h>   // `bsl::ostringstream`
 #include <bsl_streambuf.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;;
 

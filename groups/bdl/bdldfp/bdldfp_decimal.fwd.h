@@ -33,7 +33,7 @@
 // are unable to remove those component-private types without much extra work
 // with very little benefits.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
                     // HISTORICAL PRIVATE TYPE DECLARATIONS

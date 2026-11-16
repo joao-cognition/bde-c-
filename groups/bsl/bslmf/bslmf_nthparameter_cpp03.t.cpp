@@ -21,7 +21,7 @@
 // Expanded test driver only when compiling bslmf_nthparameter.cpp
 #ifdef COMPILING_BSLMF_NTHPARAMETER_T_CPP
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

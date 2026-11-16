@@ -155,7 +155,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_streambuf.h>  // `(char|int|pos|off|traits)_type`,
                             // `bsl::streambuf`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlsb {
 
                          // =====================

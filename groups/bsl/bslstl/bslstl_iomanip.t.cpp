@@ -16,7 +16,7 @@
 #include <stdio.h>   // `stderr`
 #include <string.h>  // `strlen`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 
 // ============================================================================

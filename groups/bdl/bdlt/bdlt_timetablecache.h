@@ -249,7 +249,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_memory.h>  // 'bsl::shared_ptr'
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 class TimetableLoader;

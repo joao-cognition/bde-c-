@@ -751,7 +751,7 @@ BSLS_IDENT("$Id: $")
 #   error "no implementation of atomics found for this platform"
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

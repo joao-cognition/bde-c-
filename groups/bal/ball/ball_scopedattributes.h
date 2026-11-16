@@ -83,7 +83,7 @@ BSLS_IDENT("$Id: $")
 #include <ball_attributecontainerlist.h>
 #include <ball_attributecontext.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // ======================

@@ -102,7 +102,7 @@ BSLS_IDENT("$Id: $")
 
 #include <vector>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bbldc {
 
                    // ====================================
@@ -341,7 +341,7 @@ bslma::Allocator *PeriodDateRangeDayCountAdapter<CONVENTION>::allocator() const
 
 // TRAITS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class CONVENTION>

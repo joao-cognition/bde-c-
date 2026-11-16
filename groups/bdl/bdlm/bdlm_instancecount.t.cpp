@@ -1,7 +1,7 @@
 // bdlm_instancecount.t.cpp                                           -*-C++-*-
 #include <bdlm_instancecount.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #include <bsla_maybeunused.h>
 
@@ -21,7 +21,7 @@ using namespace BloombergLP;
 #include <bsl_iostream.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 
@@ -122,7 +122,7 @@ extern "C" void *worker(void *arg)
 
 int main(int argc, char* argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

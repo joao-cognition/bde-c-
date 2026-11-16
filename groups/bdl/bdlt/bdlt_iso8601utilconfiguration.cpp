@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bdlt_iso8601utilconfiguration_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                       // ------------------------------

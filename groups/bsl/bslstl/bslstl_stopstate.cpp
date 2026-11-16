@@ -19,7 +19,7 @@ extern "C" {
 #include <sched.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 namespace {
 

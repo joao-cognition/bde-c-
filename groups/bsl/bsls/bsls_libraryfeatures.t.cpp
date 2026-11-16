@@ -1462,7 +1462,7 @@ bool   BSLS_LIBRARYFEATURES_HAS_CPP98_AUTO_PTR_defined =
                                                                          false;
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                              USAGE EXAMPLE

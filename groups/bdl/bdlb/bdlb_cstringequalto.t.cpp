@@ -21,7 +21,7 @@
 #include <bsl_cstring.h>
 #include <bsl_functional.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

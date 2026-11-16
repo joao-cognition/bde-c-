@@ -57,7 +57,7 @@
 // ----------------------------------------------------------------------------
 
 namespace {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 int testStatus = 0;
@@ -120,7 +120,7 @@ void aSsErT(bool condition, const char *message, int line)
 // ----------------------------------------------------------------------------
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -379,16 +379,16 @@ struct TestTransitionalUnixInterfaceUtil {
     /// `off_t` is an alias to the `off_t` type provided by the
     /// `sys/types.h` header.  It is a signed integral type used to
     /// represent quantities of bytes.
-    typedef ::BloombergLP::u::off64_t off64_t;
+    typedef ::BNP_Paribas::u::off64_t off64_t;
 
     /// `stat` is an alias to the `stat` `struct` provided by the
     /// `sys/stat.h` header.
-    typedef ::BloombergLP::u::stat64 stat64;
+    typedef ::BNP_Paribas::u::stat64 stat64;
 
     /// `time_t` is an alias to the `time_t` type provided by the
     /// `sys/types.h` header.  It represents a time point as number of
     /// seconds since January 1st 1970 in Coordinated Universal Time.
-    typedef ::BloombergLP::u::time_t time_t;
+    typedef ::BNP_Paribas::u::time_t time_t;
 
   private:
     // CLASS DATA
@@ -617,7 +617,7 @@ TestTransitionalUnixInterface *TestTransitionalUnixInterfaceUtil::interface()
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     int test = argc > 1 ? bsl::atoi(argv[1]) : 0;
     bool             verbose = argc > 2;

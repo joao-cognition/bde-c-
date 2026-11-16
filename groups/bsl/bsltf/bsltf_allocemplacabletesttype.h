@@ -176,7 +176,7 @@ BSLS_IDENT("$Id: $")
 #include <bslma_usesbslmaallocator.h>
 #include <bsltf_allocargumenttype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma { class Allocator; }
 

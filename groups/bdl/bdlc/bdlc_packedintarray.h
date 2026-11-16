@@ -180,7 +180,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_if.h>
 #endif  // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 // FORWARD DECLARATIONS
@@ -2599,7 +2599,7 @@ template <class HASHALG, class TYPE>
 inline
 void bdlc::hashAppend(HASHALG& hashAlg, const PackedIntArray<TYPE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     typedef typename PackedIntArray<TYPE>::const_iterator ci_t;
     hashAppend(hashAlg, input.length());
     for (ci_t b = input.begin(), e = input.end(); b != e; ++b) {
@@ -2610,7 +2610,7 @@ void bdlc::hashAppend(HASHALG& hashAlg, const PackedIntArray<TYPE>& input)
 }  // close enterprise namespace
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class STORAGE>

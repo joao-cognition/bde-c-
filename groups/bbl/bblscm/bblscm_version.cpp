@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bblscm_version_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #define BBL_VERSION_PATCH 0
 

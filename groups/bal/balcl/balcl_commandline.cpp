@@ -38,7 +38,7 @@ BSLS_IDENT_RCSID(balcl_commandline_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace balcl;
 
 /// This `class` calls `getenv` or its Windows equivalent.  It is necessary
@@ -737,7 +737,7 @@ void initialize(bsl::vector<OptionValue>       *data,
 //                                  COMPONENT
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balcl {
 
                           // -----------------

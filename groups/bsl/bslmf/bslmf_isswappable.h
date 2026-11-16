@@ -99,7 +99,7 @@ BSLS_IDENT("$Id: $")
      defined(BSLS_COMPILERFEATURES_SUPPORT_CONSTEXPR)         &&              \
      defined(BSLS_COMPILERFEATURES_SUPPORT_NOEXCEPT)          &&              \
      defined(BSLS_COMPILERFEATURES_SUPPORT_DECLTYPE)
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 namespace bslmf_is_swappable_impl_ns {
 // This test requires that 'using std::swap' be executed, hence the use of a
@@ -153,7 +153,7 @@ constexpr bool is_swappable_v = is_swappable<TYPE>::value;
 
 template <class TYPE>
 struct is_swappable
-    : BloombergLP::bslmf::bslmf_is_swappable_impl_ns::IsSwappable_Impl<TYPE> {
+    : BNP_Paribas::bslmf::bslmf_is_swappable_impl_ns::IsSwappable_Impl<TYPE> {
     // This 'struct' template implements a metafunction to determine whether
     // the (template parameter) 'TYPE' is swappable.  This 'struct' derives
     // from 'bsl::true_type' if the 'TYPE' is swappable, and from
@@ -184,7 +184,7 @@ constexpr bool is_swappable_v = is_swappable<TYPE>::value;
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)                &&               \
    !defined(BSLS_LIBRARYFEATURES_HAS_CPP17_BASELINE_LIBRARY) &&               \
    !defined(BSLS_PLATFORM_CMP_MSVC)
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 namespace bslmf_is_swappable_impl_ns
 {
@@ -205,8 +205,8 @@ struct IsSwappable_Impl
 template <class TYPE>
 struct IsSwappable_Impl<TYPE,
                         BSLMF_VOIDTYPE(decltype(
-                            swap(BloombergLP::bslmf::Util::declval<TYPE&>(),
-                                 BloombergLP::bslmf::Util::declval<TYPE&>())))>
+                            swap(BNP_Paribas::bslmf::Util::declval<TYPE&>(),
+                                 BNP_Paribas::bslmf::Util::declval<TYPE&>())))>
 : bsl::true_type {
     // Partial specialization to determine whether the (template parameter)
     // 'TYPE' is swappable as defined in the C++17 standard.

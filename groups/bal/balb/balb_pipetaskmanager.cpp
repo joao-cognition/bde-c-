@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(balb_pipetaskmanager_cpp,"$Id$ $CSID$")
 
 #include <bsl_iostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balb {
 
 namespace {

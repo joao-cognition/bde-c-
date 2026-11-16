@@ -22,7 +22,7 @@ BSLS_IDENT("$Id$ $CSID$")
 # include <unistd.h>     // `getpid`, `rmdir`, `unlink`
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 enum { k_PATH_BUFFER_SIZE = bsls::TestTempDirectory::k_PATH_BUFFER_SIZE };

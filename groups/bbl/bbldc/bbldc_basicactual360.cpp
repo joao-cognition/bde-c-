@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bbldc_basicactual360_cpp,"$Id$ $CSID$")
 
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bbldc {
 
                           // ---------------------

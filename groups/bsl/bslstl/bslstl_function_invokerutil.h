@@ -158,7 +158,7 @@ BSLS_IDENT("$Id: $")
 #define BSLSTL_FUNCTION_INVOKERUTIL_SUPPORT_IS_FUNC_INVOCABLE
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 #ifdef BSLSTL_FUNCTION_INVOKERUTIL_SUPPORT_IS_FUNC_INVOCABLE

@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlma_buffermanager_cpp,"$Id$ $CSID$")
 
 #include <bdlma_bufferimputil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                            // -------------------

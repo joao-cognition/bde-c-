@@ -13,7 +13,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #define BSLS_SPINLOCK_USES_AGGREGATE_INITIALIZATION
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

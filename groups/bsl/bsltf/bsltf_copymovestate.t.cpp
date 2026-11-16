@@ -10,7 +10,7 @@
 #include <cstdlib>  // atoi
 #include <cstring>  // strlen, strcmp, strncmp
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using std::fflush;
 using std::fprintf;

@@ -56,7 +56,7 @@ void bsl::PrintTo(const bsl::wstring& value, bsl::ostream *stream)
     *stream << '"';
 }
 
-void bsl::PrintTo(const BloombergLP::bslstl::StringRef&  value,
+void bsl::PrintTo(const BNP_Paribas::bslstl::StringRef&  value,
                   bsl::ostream                          *stream)
 {
     *stream << '"' << value << '"';

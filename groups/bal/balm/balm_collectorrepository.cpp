@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(balm_collectorrepository_cpp,"$Id$ $CSID$")
 
 #include <bsl_cstddef.h>           // for 'bsl::size_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 namespace u {

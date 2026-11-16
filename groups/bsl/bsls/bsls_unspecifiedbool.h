@@ -22,7 +22,7 @@ BSLS_IDENT("$Id: $")
 //
 ///Relationship to C++11
 ///---------------------
-// This component will become redundant when all Bloomberg production compilers
+// This component will become redundant when all BNP Paribas production compilers
 // support "explicit conversion operators", a feature of C++11.  An
 // `explicit operator bool()` conversion operator is superior to this C++98
 // idiom in all ways.
@@ -119,7 +119,7 @@ BSLS_IDENT("$Id: $")
 // Notice that `SimplePtr` objects behave as native pointers.  They should be
 // tested before dereferencing (as they could be null).
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

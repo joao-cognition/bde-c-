@@ -205,7 +205,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>  // 'ptrdiff_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslstl {
 

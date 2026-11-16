@@ -22,8 +22,8 @@ BSLS_IDENT_RCSID(bdlt_fixutil_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
-using namespace BloombergLP::bdlt;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bdlt;
 
                                   // ===========
                                   // struct Impl
@@ -34,7 +34,7 @@ using namespace BloombergLP::bdlt;
 class Impl {
 
     // PRIVATE TYPES
-    typedef BloombergLP::bdlt::FixUtil Util;
+    typedef BNP_Paribas::bdlt::FixUtil Util;
 
     template <class TYPE>
     struct IsString {
@@ -47,7 +47,7 @@ class Impl {
     };
 
     // FRIENDS
-    friend struct BloombergLP::bdlt::FixUtil;
+    friend struct BNP_Paribas::bdlt::FixUtil;
 
     // In all cases below, the 'STRING' template parameter is to be either
     // 'bsl::string', 'std::string', or 'std::pmr::string'.
@@ -777,7 +777,7 @@ void copyBuf(char *dst, int dstLen, const char *src, int srcLen)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                               // --------------

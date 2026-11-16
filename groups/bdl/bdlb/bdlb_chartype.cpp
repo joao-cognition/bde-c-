@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlb_chartype_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // ============================================================================
 // ***                      STATIC CONSTANT STRING VARIABLES                ***

@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(baljsn_jsonconverter, "$Id$ $CSID$")
 #include <baljsn_encoder.h>            // for testing only
 #include <baljsn_encoder_testtypes.h>  // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
 // PRIVATE MANIPULATORS

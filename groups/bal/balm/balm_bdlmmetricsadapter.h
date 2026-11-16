@@ -34,7 +34,7 @@ BSLS_IDENT("$Id: $")
 // First, we provide a metric function to be used during callback registration
 // with the `balm` monitoring system:
 // ```
-// void elidedMetric(BloombergLP::bdlm::Metric *value)
+// void elidedMetric(BNP_Paribas::bdlm::Metric *value)
 // {
 //     (void)value;
 //     // ...
@@ -96,7 +96,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
                          // ========================

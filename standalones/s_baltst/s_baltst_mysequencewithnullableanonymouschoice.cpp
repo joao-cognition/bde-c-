@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(s_baltst_mysequencewithnullableanonymouschoice_cpp,"$Id$ $CSID$
 #include <bsl_limits.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
              // -------------------------------------------------

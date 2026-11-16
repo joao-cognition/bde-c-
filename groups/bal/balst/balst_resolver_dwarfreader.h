@@ -57,7 +57,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_cstring.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
 #if defined(BALST_OBJECTFILEFORMAT_RESOLVER_DWARF)

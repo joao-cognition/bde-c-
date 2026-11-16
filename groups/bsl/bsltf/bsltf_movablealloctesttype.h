@@ -89,7 +89,7 @@ BSLS_IDENT("$Id: $")
 #include <bsltf_copymovetracker.h>
 #include <bsltf_movestate.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma { class Allocator; }
 

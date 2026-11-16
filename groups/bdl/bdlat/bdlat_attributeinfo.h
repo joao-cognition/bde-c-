@@ -38,7 +38,7 @@ BSLS_IDENT("$Id: $")
 // #include <bdlat_attributeinfo.h>
 // #include <ostream>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
 // class PrintAttributeWithInfo {
 //     // Print the attribute along with its name and annotation.
@@ -86,7 +86,7 @@ BSLS_IDENT("$Id: $")
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                          // ==========================
                          // struct bdlat_AttributeInfo

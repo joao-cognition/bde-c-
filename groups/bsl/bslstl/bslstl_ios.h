@@ -13,7 +13,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: Provide types, in the `bsl` namespace, equivalent to those
 // defined in the corresponding C++ standard header.  Include the native
-// compiler-provided standard header, and also directly include Bloomberg's
+// compiler-provided standard header, and also directly include BNP Paribas's
 // implementation of the C++ standard type (if one exists).  Finally, place the
 // included symbols from the `std` namespace (if any) into the `bsl` namespace.
 
@@ -88,7 +88,7 @@ namespace bsl {
 
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED
     // Additional symbols leaked to support transitive dependencies in higher
-    // level (non BDE) Bloomberg code.
+    // level (non BDE) BNP Paribas code.
 # if !defined(BSLS_PLATFORM_CMP_MSVC) && __cplusplus < 201703L
     // As some of these names are removed from C++17, take a sledgehammer to
     // crack this nut, and remove all non-standard exports.

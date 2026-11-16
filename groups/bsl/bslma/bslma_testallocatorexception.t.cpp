@@ -12,7 +12,7 @@
 #include <stdlib.h>     // `atoi`
 #include <string.h>     // `memcpy`, `strcmp`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                  TEST PLAN

@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(s_baltst_testattribute_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
 

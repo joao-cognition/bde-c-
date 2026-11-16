@@ -259,7 +259,7 @@ BSLS_IDENT("$Id$ $CSID$")
 //
 // 'EMAIL_PATTERN':
 //     Pattern - [A-Za-z0-9._-]+@[[A-Za-z0-9.-]+
-//     Subject - john.dow@bloomberg.net
+//     Subject - john.dow@bnpparibas.com
 //
 // 'IP_ADDRESS_PATTERN':
 //     Pattern - (?:[0-9]{1,3}\.){3}[0-9]{1,3}
@@ -427,10 +427,10 @@ BSLS_IDENT("$Id$ $CSID$")
 // ```
 // const char RFC822_MESSAGE[] =
 //     "Received: ; Fri, 23 Apr 2004 14:30:00 -0400\r\n"
-//     "Message-ID: <12345@mailgate.bloomberg.net>\r\n"
+//     "Message-ID: <12345@mailgate.bnpparibas.com>\r\n"
 //     "Date: Fri, 23 Apr 2004 14:30:00 -0400\r\n"
-//     "From: <someone@bloomberg.net>\r\n"
-//     "To: <someone_else@bloomberg.net>\r\n"
+//     "From: <someone@bnpparibas.com>\r\n"
+//     "To: <someone_else@bnpparibas.com>\r\n"
 //     "Subject: This is the subject text\r\n"
 //     "MIME-Version: 1.0\r\n"
 //     "Content-Type: text/plain\r\n"
@@ -667,7 +667,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bsls_types.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlpcre {
 
 class RegEx_MatchContext;

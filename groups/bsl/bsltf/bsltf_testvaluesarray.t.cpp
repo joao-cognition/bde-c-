@@ -29,8 +29,8 @@
 #include <ranges>  // Cannot use `bsl::ranges` from higher package.
 #endif
 
-using namespace BloombergLP;
-using namespace BloombergLP::bsltf;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bsltf;
 using bsls::NameOf;
 
 //=============================================================================

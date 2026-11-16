@@ -20,7 +20,7 @@
 #include <bsl_cstring.h>
 #include <bsl_cctype.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using bsl::cout;
 using bsl::cerr;

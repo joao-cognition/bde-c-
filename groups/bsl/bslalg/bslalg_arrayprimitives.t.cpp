@@ -35,7 +35,7 @@
 #pragma report(disable, "1540-0216")
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -180,7 +180,7 @@ namespace {
         // TYPE TRAITS
         BSLMF_NESTED_TRAIT_DECLARATION(
             MyVector,
-            BloombergLP::bslmf::IsBitwiseMoveable);
+            BNP_Paribas::bslmf::IsBitwiseMoveable);
 
         // CREATORS
 
@@ -275,7 +275,7 @@ namespace {
         if (d_capacity >= minCapacity) return;                        // RETURN
 
         TYPE *newArrayPtr = static_cast<TYPE*>(d_allocator_p->allocate(
-        BloombergLP::bslma::Allocator::size_type(minCapacity * sizeof(TYPE))));
+        BNP_Paribas::bslma::Allocator::size_type(minCapacity * sizeof(TYPE))));
 
         if (d_array_p) {
 // ```
@@ -327,7 +327,7 @@ namespace {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <class TYPE>
 struct UsesBslmaAllocator<MyVector<TYPE> > : bsl::true_type {};
@@ -1245,7 +1245,7 @@ class TestType {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <> struct UsesBslmaAllocator<TestType> : bsl::true_type {};
 }  // close namespace bslma
@@ -1412,7 +1412,7 @@ class BitwiseMoveableTestType : public TestType {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <> struct UsesBslmaAllocator<BitwiseMoveableTestType>
     : bsl::true_type {};
@@ -1481,7 +1481,7 @@ class BitwiseCopyableTestType : public TestTypeNoAlloc {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <> struct IsBitwiseCopyable<BitwiseCopyableTestType>
     : bsl::true_type {};
@@ -1556,7 +1556,7 @@ class LargeBitwiseMoveableTestType : public TestType {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <int FOOTPRINT>
 struct UsesBslmaAllocator<LargeBitwiseMoveableTestType<FOOTPRINT> >

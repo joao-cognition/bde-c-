@@ -26,7 +26,7 @@ BSLS_IDENT_RCSID(bdlt_datetime_cpp,"$Id$ $CSID$")
 
 namespace {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bdlt;
 
 int printToBufferFormatted(char       *result,
@@ -118,7 +118,7 @@ int printToBufferFormatted(char       *result,
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 // 'Datetime' is bitwise copyable only if 'Date' and 'Time' are also bitwise

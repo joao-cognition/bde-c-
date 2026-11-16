@@ -7,7 +7,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bslmt_fastpostsemaphoreimpl_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 ///Implementation Note

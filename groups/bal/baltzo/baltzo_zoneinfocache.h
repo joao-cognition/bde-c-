@@ -164,7 +164,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_map.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
 
                             // ===================

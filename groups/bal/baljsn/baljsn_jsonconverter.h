@@ -57,8 +57,8 @@ BSLS_IDENT("$Id: $")
 // ```
 //  <?xml version='1.0' encoding='UTF-8'?>
 //  <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
-//             xmlns:test='http://bloomberg.com/schemas/test'
-//             targetNamespace='http://bloomberg.com/schemas/test'
+//             xmlns:test='http://bnpparibas.com/schemas/test'
+//             targetNamespace='http://bnpparibas.com/schemas/test'
 //             elementFormDefault='unqualified'>
 //
 //      <xs:complexType name='Address'>
@@ -165,7 +165,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_string.h>   // `bsl::string`, `bslstl::StringRef`
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
 struct JsonConverter_ElementVisitor;

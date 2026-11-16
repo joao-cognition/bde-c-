@@ -9,10 +9,10 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: Provide types, in the 'bsl' namespace, equivalent to those
 // defined in the corresponding C++ standard header.  Include
-// 'bslstl_variant.h', which provides Bloomberg's implementation on all
+// 'bslstl_variant.h', which provides BNP Paribas's implementation on all
 // platforms.  Include 'bslstl_monostate.h', which uses the native
 // compiler-provided standard header when it is available and provides
-// Bloomberg's implementation otherwise.
+// BNP Paribas's implementation otherwise.
 
 #include <bslstl_monostate.h>
 #include <bslstl_variant.h>

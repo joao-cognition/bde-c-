@@ -144,7 +144,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_limits.h>
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                           // ======================
@@ -1318,7 +1318,7 @@ bsl::ostream& bdlt::operator<<(bsl::ostream&           stream,
 template <class HASHALG>
 void bdlt::hashAppend(HASHALG& hashAlg, const DatetimeInterval& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, object.d_days);
     hashAppend(hashAlg, object.d_microseconds);
 }
@@ -1332,7 +1332,7 @@ namespace bsl {
 /// This template specialization for `is_trivially_copyable` indicates that
 /// `DatetimeInterval` is a trivially copyable type.
 template <>
-struct is_trivially_copyable<BloombergLP::bdlt::DatetimeInterval> :
+struct is_trivially_copyable<BNP_Paribas::bdlt::DatetimeInterval> :
                                                                bsl::true_type {
 };
 

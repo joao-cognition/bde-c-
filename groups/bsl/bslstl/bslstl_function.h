@@ -655,10 +655,10 @@ BSLS_IDENT("$Id: $")
 
 // 'BSLS_ASSERT' filename fix -- See {'bsls_assertimputil'}
 #ifdef BSLS_ASSERTIMPUTIL_AVOID_STRING_CONSTANTS
-namespace BloombergLP {
+namespace BNP_Paribas {
 extern const char s_bslstl_function_h[];
 #undef BSLS_ASSERTIMPUTIL_FILE
-#define BSLS_ASSERTIMPUTIL_FILE BloombergLP::s_bslstl_function_h
+#define BSLS_ASSERTIMPUTIL_FILE BNP_Paribas::s_bslstl_function_h
 }  // close enterprise namespace
 #endif
 
@@ -671,7 +671,7 @@ class function;
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED
 
@@ -885,20 +885,20 @@ namespace bsl {
 /// many small structs will fit in the small object buffer, as defined in
 /// the `bslstl_function_smallobjectoptimization` component.
 template <class PROTOTYPE>
-class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
+class function : public BNP_Paribas::bslstl::Function_Variadic<PROTOTYPE> {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslstl::Function_Variadic<PROTOTYPE> Base;
-    typedef BloombergLP::bslstl::Function_Rep                 Function_Rep;
-    typedef BloombergLP::bslmf::MovableRefUtil                MovableRefUtil;
+    typedef BNP_Paribas::bslstl::Function_Variadic<PROTOTYPE> Base;
+    typedef BNP_Paribas::bslstl::Function_Rep                 Function_Rep;
+    typedef BNP_Paribas::bslmf::MovableRefUtil                MovableRefUtil;
 
     /// Abbreviation for metafunction that determines whether a reference
     /// from `FROM` can be cast to a reference to `TO` without loss of
     /// information.
     template <class FROM, class TO>
     struct IsReferenceCompatible
-    : BloombergLP::bslstl::Function_IsReferenceCompatible<FROM, TO>::type {
+    : BNP_Paribas::bslstl::Function_IsReferenceCompatible<FROM, TO>::type {
     };
 
     /// Abbreviation for metafunction used to provide a C++03-compatible
@@ -914,7 +914,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// type of the `PROTOTYPE`.
     template <class FUNC>
     struct IsInvocableWithPrototype
-    : BloombergLP::bslstl::Function_IsInvocableWithPrototype<PROTOTYPE, FUNC> {
+    : BNP_Paribas::bslstl::Function_IsInvocableWithPrototype<PROTOTYPE, FUNC> {
     };
 
 #ifndef BSLS_COMPILERFEATURES_SUPPORT_OPERATOR_EXPLICIT
@@ -923,7 +923,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// `function` is implicitly convertible to this type but is not
     /// implicitly convertible to `bool`.  In C++11 and later, `function` is
     /// explicitly convertible to `bool`, so this type is not needed.
-    typedef BloombergLP::bsls::UnspecifiedBool<function> UnspecifiedBoolUtil;
+    typedef BNP_Paribas::bsls::UnspecifiedBool<function> UnspecifiedBoolUtil;
     typedef typename UnspecifiedBoolUtil::BoolType       UnspecifiedBool;
 
   private:
@@ -952,9 +952,9 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(function,
-                                   BloombergLP::bslma::UsesBslmaAllocator);
+                                   BNP_Paribas::bslma::UsesBslmaAllocator);
     BSLMF_NESTED_TRAIT_DECLARATION(function,
-                                   BloombergLP::bslmf::UsesAllocatorArgT);
+                                   BNP_Paribas::bslmf::UsesAllocatorArgT);
     BSLMF_NESTED_TRAIT_DECLARATION(function,
                                    bsl::is_nothrow_move_constructible);
 
@@ -1086,7 +1086,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// for the problem cases, although generic code might need to be extra
     /// careful.
     template <class FUNC>
-    explicit function(const BloombergLP::bslmf::MovableRef<FUNC>& func,
+    explicit function(const BNP_Paribas::bslmf::MovableRef<FUNC>& func,
              typename enable_if<
                     ! IsReferenceCompatible<typename Decay<FUNC>::type,
                                             function>::value
@@ -1100,7 +1100,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
         // The body of this constructor must inlined inplace because the use of
         // `enable_if` will otherwise break the MSVC 2010 compiler.
 
-        installFunc(BloombergLP::bslmf::MovableRefUtil::move(func));
+        installFunc(BNP_Paribas::bslmf::MovableRefUtil::move(func));
     }
 #endif
 
@@ -1200,7 +1200,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// optimization (see class-level documentation), then it is
     /// move-constructed into the new object; otherwise ownership of the
     /// target is transferred without using the target's move constructor.
-    function(BloombergLP::bslmf::MovableRef<function> original)
+    function(BNP_Paribas::bslmf::MovableRef<function> original)
                                              BSLS_KEYWORD_NOEXCEPT; // IMPLICIT
 
     /// Create a `function` having the same value as (i.e., wrapping a copy
@@ -1211,7 +1211,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// created as if by extended copy construction using `allocator`.
     function(allocator_arg_t                          ,
              const allocator_type&                    allocator,
-             BloombergLP::bslmf::MovableRef<function> original);
+             BNP_Paribas::bslmf::MovableRef<function> original);
 
     // MANIPULATORS
 
@@ -1232,7 +1232,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// `rhs` will have a valid but unspecified value and `*this` will not
     /// be modified.  Note that an exception will never be thrown if
     /// `get_allocator() == rhs.get_allocator()`.
-    function& operator=(BloombergLP::bslmf::MovableRef<function> rhs);
+    function& operator=(BNP_Paribas::bslmf::MovableRef<function> rhs);
 
     /// Set the target of this object to the specified `rhs` callable
     /// object, destroy the previous target (if any), and return `*this`.
@@ -1372,14 +1372,14 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// is derived from `bsl::function<F>` and adds no new data members.
     ///
     /// @DEPRECATED: Use `bsl::function` instead of `bdef_Function`.
-    operator BloombergLP::bdef_Function<PROTOTYPE *>&() BSLS_KEYWORD_NOEXCEPT;
+    operator BNP_Paribas::bdef_Function<PROTOTYPE *>&() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return `*this` converted to a const `bdef_Function` reference by
     /// downcasting.  The behavior is undefined unless `bdef_Function<F*>`
     /// is derived from `bsl::function<F>` and adds no new data members.
     ///
     /// @DEPRECATED: Use `bsl::function` instead of `bdef_Function`.
-    operator const BloombergLP::bdef_Function<PROTOTYPE *>&() const
+    operator const BNP_Paribas::bdef_Function<PROTOTYPE *>&() const
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     // LEGACY ACCESSORS
@@ -1388,7 +1388,7 @@ class function : public BloombergLP::bslstl::Function_Variadic<PROTOTYPE> {
     /// for BDE compatibility and is not part of the C++ Standard Library.
     ///
     /// @DEPRECATED: Use `get_allocator()` instead.
-    BloombergLP::bslma::Allocator *allocator() const BSLS_KEYWORD_NOEXCEPT;
+    BNP_Paribas::bslma::Allocator *allocator() const BSLS_KEYWORD_NOEXCEPT;
 
     /// Return `true` if this `function` is empty or if it is non-empty and
     /// its target qualifies for the small-object optimization (and is thus
@@ -1503,7 +1503,7 @@ void swap(function<PROTOTYPE>& a,function<PROTOTYPE>& b) BSLS_KEYWORD_NOEXCEPT;
 //                     TEMPLATE AND INLINE FUNCTION DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
 
@@ -1603,7 +1603,7 @@ inline
 void bsl::function<PROTOTYPE>::installFunc(
                                   BSLS_COMPILERFEATURES_FORWARD_REF(FUNC) func)
 {
-    typedef BloombergLP::bslstl::Function_InvokerUtil InvokerUtil;
+    typedef BNP_Paribas::bslstl::Function_InvokerUtil InvokerUtil;
     typedef InvokerUtil::GenericInvoker               GenericInvoker;
     typedef typename Decay<FUNC>::type                DecayedFunc;
 
@@ -1665,7 +1665,7 @@ inline bsl::function<PROTOTYPE>::function(allocator_arg_t,
 template <class PROTOTYPE>
 inline
 bsl::function<PROTOTYPE>::function(
-       BloombergLP::bslmf::MovableRef<function> original) BSLS_KEYWORD_NOEXCEPT
+       BNP_Paribas::bslmf::MovableRef<function> original) BSLS_KEYWORD_NOEXCEPT
     : Base(MovableRefUtil::access(original).get_allocator())
 {
     this->d_rep.moveInit(&MovableRefUtil::access(original).d_rep);
@@ -1675,7 +1675,7 @@ template <class PROTOTYPE>
 inline bsl::function<PROTOTYPE>::function(
                             allocator_arg_t,
                             const allocator_type&                    allocator,
-                            BloombergLP::bslmf::MovableRef<function> original)
+                            BNP_Paribas::bslmf::MovableRef<function> original)
     : Base(allocator)
 {
     this->d_rep.moveInit(&MovableRefUtil::access(original).d_rep);
@@ -1695,7 +1695,7 @@ bsl::function<PROTOTYPE>::operator=(const function& rhs)
 template <class PROTOTYPE>
 inline bsl::function<PROTOTYPE>&
 bsl::function<PROTOTYPE>::operator=(
-                                  BloombergLP::bslmf::MovableRef<function> rhs)
+                                  BNP_Paribas::bslmf::MovableRef<function> rhs)
 {
     function temp(allocator_arg, this->get_allocator(),
                   MovableRefUtil::move(rhs));
@@ -1767,26 +1767,26 @@ bsl::function<PROTOTYPE>::target_type() const BSLS_KEYWORD_NOEXCEPT
 // CONVERSIONS TO LEGACY TYPE
 template <class PROTOTYPE>
 inline
-bsl::function<PROTOTYPE>::operator BloombergLP::bdef_Function<PROTOTYPE *>&()
+bsl::function<PROTOTYPE>::operator BNP_Paribas::bdef_Function<PROTOTYPE *>&()
                                                           BSLS_KEYWORD_NOEXCEPT
 {
-    typedef BloombergLP::bdef_Function<PROTOTYPE *> Ret;
+    typedef BNP_Paribas::bdef_Function<PROTOTYPE *> Ret;
     return *static_cast<Ret*>(this);
 }
 
 template <class PROTOTYPE>
 inline
 bsl::function<PROTOTYPE>::
-operator const BloombergLP::bdef_Function<PROTOTYPE *>&() const
+operator const BNP_Paribas::bdef_Function<PROTOTYPE *>&() const
                                                           BSLS_KEYWORD_NOEXCEPT
 {
-    typedef const BloombergLP::bdef_Function<PROTOTYPE *> Ret;
+    typedef const BNP_Paribas::bdef_Function<PROTOTYPE *> Ret;
     return *static_cast<Ret*>(this);
 }
 
 template <class PROTOTYPE>
 inline
-BloombergLP::bslma::Allocator *
+BNP_Paribas::bslma::Allocator *
 bsl::function<PROTOTYPE>::allocator() const BSLS_KEYWORD_NOEXCEPT
 {
     return get_allocator().mechanism();
@@ -1845,7 +1845,7 @@ void bsl::swap(bsl::function<PROTOTYPE>& a,
        // specialization of class template Function_InvokerUtil_Dispatch
        // --------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 /// Specialization of null checker for instantiations of `bsl::function`.

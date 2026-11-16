@@ -28,7 +28,7 @@
 # pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

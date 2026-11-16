@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BDLF_NOOP_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlf {
 
                                  // ==========

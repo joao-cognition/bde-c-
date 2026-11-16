@@ -26,7 +26,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
 // Forward
@@ -48,7 +48,7 @@ class SequenceConstRef;
 }  // close package namespace
 }  // close enterprise namespace
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;

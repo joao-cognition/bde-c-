@@ -48,7 +48,7 @@
 #include <bsl_string.h>
 #include <bsl_unordered_set.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // Suppress some bde_verify warnings for test driver.
@@ -1402,7 +1402,7 @@ int main(int argc, char *argv[])
         // Test data generated from https://github.com/nst/JSONTestSuite (MIT
         // License)
         // Generation done by the
-        // https://bbgithub.dev.bloomberg.com/mgiroux/JSONTestSuite fork's
+        // https://bbgithub.dev.bnpparibas.com/mgiroux/JSONTestSuite fork's
         // `cpp-test-data-converter.pl` script.
 
         static const TC::TestCase07Data DATA[] = {

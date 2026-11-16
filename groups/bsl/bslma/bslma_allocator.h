@@ -476,7 +476,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_cpp11.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 
@@ -625,7 +625,7 @@ class Allocator : public bsl::memory_resource {
 // FREE OPERATORS
 
 // Note that the operators `new` and `delete` are declared outside the
-// `BloombergLP` namespace so that they do not hide the standard placement
+// `BNP_Paribas` namespace so that they do not hide the standard placement
 // `new` and `delete` operators (i.e.,
 // `void *operator new(std::size_t, void *)` and
 // `void operator delete(void *)`).
@@ -636,7 +636,7 @@ class Allocator : public bsl::memory_resource {
 // overloaded the array version of operator `new`:
 // ```
 //  void *operator new[](std::size_t size,
-//                       BloombergLP::bslma::Allocator& basicAllocator)
+//                       BNP_Paribas::bslma::Allocator& basicAllocator)
 // ```
 // The user of the allocator class may expect to be able to use array
 // `operator new` as follows:
@@ -679,7 +679,7 @@ class Allocator : public bsl::memory_resource {
 /// known not to be a secondary base type of the object being deleted.
 inline
 void *operator new(std::size_t                    size,
-                   BloombergLP::bslma::Allocator& basicAllocator);
+                   BNP_Paribas::bslma::Allocator& basicAllocator);
 
 /// Use the specified `basicAllocator` to deallocate the memory at the
 /// specified `address`.  The behavior is undefined unless `address` was
@@ -688,7 +688,7 @@ void *operator new(std::size_t                    size,
 /// to be called in case of an exception.
 inline
 void operator delete(void                           *address,
-                     BloombergLP::bslma::Allocator&  basicAllocator);
+                     BNP_Paribas::bslma::Allocator&  basicAllocator);
 
 // NOTE: The following two operators are declared but never defined to force a
 // link-time error should any code inadvertently use them.
@@ -696,18 +696,18 @@ void operator delete(void                           *address,
 /// Note that this operator is intentionally not defined.
 void *operator new(
            std::size_t                    size,
-           BloombergLP::bslma::Allocator *basicAllocator) BSLS_KEYWORD_DELETED;
+           BNP_Paribas::bslma::Allocator *basicAllocator) BSLS_KEYWORD_DELETED;
 
 /// Note that this operator is intentionally not defined.
 void operator delete(
            void                          *address,
-           BloombergLP::bslma::Allocator *basicAllocator) BSLS_KEYWORD_DELETED;
+           BNP_Paribas::bslma::Allocator *basicAllocator) BSLS_KEYWORD_DELETED;
 
 // ============================================================================
 //                          INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 
@@ -768,14 +768,14 @@ typedef bslma::Allocator bdema_Allocator;
 
 inline
 void *operator new(std::size_t                    size,
-                   BloombergLP::bslma::Allocator& basicAllocator)
+                   BNP_Paribas::bslma::Allocator& basicAllocator)
 {
     return basicAllocator.allocate(size);
 }
 
 inline
 void operator delete(void                           *address,
-                     BloombergLP::bslma::Allocator&  basicAllocator)
+                     BNP_Paribas::bslma::Allocator&  basicAllocator)
 {
     basicAllocator.deallocate(address);
 }
@@ -784,7 +784,7 @@ void operator delete(void                           *address,
 template <class t_TYPE,
           class = typename bsl::enable_if<bsl::is_same<
                                   t_TYPE,
-                                  BloombergLP::bslma::Allocator>::value>::type>
+                                  BNP_Paribas::bslma::Allocator>::value>::type>
 void *operator new[](std::size_t size, t_TYPE& basicAllocator)
 {
     BSLMF_ASSERT(sizeof(t_TYPE) == 0);

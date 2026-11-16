@@ -102,7 +102,7 @@ t_TYPE exchange(t_TYPE& obj, t_OTHER_TYPE&& newValue)
 }
 # else
 }  // close namespace bsl
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 /// This component-private class template is used to implement `bsl::exchange`
 /// in C++03.  It performs an assignment in its destructor.  See the
@@ -135,19 +135,19 @@ namespace bsl {
 template <class t_TYPE, class t_OTHER_TYPE>
 t_TYPE exchange(t_TYPE& obj, const t_OTHER_TYPE& newValue)
 {
-    BloombergLP::bslstl::
+    BNP_Paribas::bslstl::
         Utility_ExchangeAssignOnDestruction<t_TYPE, const t_OTHER_TYPE>
             a(obj, newValue);
-    return t_TYPE(BloombergLP::bslmf::MovableRefUtil::move(obj));
+    return t_TYPE(BNP_Paribas::bslmf::MovableRefUtil::move(obj));
 }
 
 template <class t_TYPE, class t_OTHER_TYPE>
 t_TYPE exchange(t_TYPE& obj, t_OTHER_TYPE& newValue)
 {
-    BloombergLP::bslstl::Utility_ExchangeAssignOnDestruction<t_TYPE,
+    BNP_Paribas::bslstl::Utility_ExchangeAssignOnDestruction<t_TYPE,
                                                              t_OTHER_TYPE>
         a(obj, newValue);
-    return t_TYPE(BloombergLP::bslmf::MovableRefUtil::move(obj));
+    return t_TYPE(BNP_Paribas::bslmf::MovableRefUtil::move(obj));
 }
 # endif  // C++11
 #endif  // C++14

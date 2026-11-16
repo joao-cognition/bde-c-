@@ -329,7 +329,7 @@ void invokePatternSwap(TYPE *a, TYPE *b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` and `invokePatternSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::pair;
 using bsl::multimap;
 using bsls::NameOf;

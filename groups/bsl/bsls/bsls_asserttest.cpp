@@ -19,7 +19,7 @@ BSLS_IDENT("$Id$ $CSID$")
 //-----------------------------------------------------------------------------
 // STATIC HELPER FUNCTIONS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 namespace {

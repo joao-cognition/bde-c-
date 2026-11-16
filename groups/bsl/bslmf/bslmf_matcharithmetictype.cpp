@@ -8,7 +8,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bslmf_matchanytype.h>  // for testing only (Usage)
 #include <bslmf_nil.h>           // for testing only (Usage)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

@@ -283,7 +283,7 @@ BSLS_IDENT("$: $")
 #ifdef BSLS_SPINLOCK_USES_AGGREGATE_INITIALIZATION
 #define BSLS_SPINLOCK_UNLOCKED  { {0} }
 #else
-#define BSLS_SPINLOCK_UNLOCKED (::BloombergLP::bsls::SpinLock::s_unlocked)
+#define BSLS_SPINLOCK_UNLOCKED (::BNP_Paribas::bsls::SpinLock::s_unlocked)
 #endif
 
 #ifdef BSLS_PLATFORM_OS_WINDOWS
@@ -304,7 +304,7 @@ extern "C" {
 #include <time.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                    // ================================

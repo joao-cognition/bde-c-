@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bdlcc_fixedqueue_cpp,"$Id$$CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlcc {
 
 ///Implementation Note

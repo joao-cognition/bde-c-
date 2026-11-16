@@ -49,8 +49,8 @@
     #include <stdlib.h>  // `unsetenv`
 #endif
 
-using namespace BloombergLP;
-using namespace BloombergLP::balb;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::balb;
 using namespace bsl;
 
 // ============================================================================

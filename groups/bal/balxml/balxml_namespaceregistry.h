@@ -42,7 +42,7 @@ BSLS_IDENT("$Id: $")
 // BAEXML_XMLSCHEMA_INSTANCE    http://www.w3.org/2001/XMLSchema-instance
 // BAEXML_WSDL                  http://schemas.xmlsoap.org/wsdl/
 // BAEXML_WSDL_SOAP             http://schemas.xmlsoap.org/wsdl/soap/
-// BAEXML_BDEM                  http://bloomberg.com/schemas/bdem
+// BAEXML_BDEM                  http://bnpparibas.com/schemas/bdem
 // ```
 // Note that the above constants are negative numbers.  In addition, the
 // value, -1, is permanently assigned to the empty string.  The use of
@@ -80,7 +80,7 @@ BSLS_IDENT("$Id: $")
 // char input[100];
 //
 // // First input is a new namespace URI.
-// bsl::strcpy(input, "http://www.bloomberg.com/schemas/example.xsd");
+// bsl::strcpy(input, "http://www.bnpparibas.com/schemas/example.xsd");
 // int id1 = namespaceRegistry.lookupOrRegister(input);
 // assert(id1 >= 0);
 // assert(id1 != googleId);
@@ -104,7 +104,7 @@ BSLS_IDENT("$Id: $")
 // ```
 // assert(googleId  == namespaceRegistry.lookup(googleUri));
 // assert(balxml::NamespaceRegistry::BAEXML_BDEM ==
-//        namespaceRegistry.lookup("http://bloomberg.com/schemas/bdem"));
+//        namespaceRegistry.lookup("http://bnpparibas.com/schemas/bdem"));
 // assert(-1 == namespaceRegistry.lookup("urn:1234"));
 // ```
 // There is also a `lookup` method for performing the reverse mapping -- from
@@ -125,7 +125,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_vector.h>
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balxml {
                           // =======================
@@ -166,7 +166,7 @@ class NamespaceRegistry {
         e_XMLSCHEMA_INSTANCE, // http://www.w3.org/2001/XMLSchema-instance
         e_WSDL,               // http://schemas.xmlsoap.org/wsdl/
         e_WSDL_SOAP,          // http://schemas.xmlsoap.org/wsdl/soap/
-        e_BDEM,               // http://bloomberg.com/schemas/bdem
+        e_BDEM,               // http://bnpparibas.com/schemas/bdem
 
         BAEXML_PREDEF_MAX
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED

@@ -16,7 +16,7 @@
 
 #include <climits>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using bsl::cout;
 using bsl::cerr;

@@ -22,7 +22,7 @@ BSLS_IDENT_RCSID(baljsn_jsonformatter_cpp,"$Id$ $CSID$")
 #define POP_STACK()                                                        \
             bsl::cout << "POP_STACK TO:  " << d_stack.size() << bsl::endl;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
                           // --------------------------
                           // struct JsonFormatter_State

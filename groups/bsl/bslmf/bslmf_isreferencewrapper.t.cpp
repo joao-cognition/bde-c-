@@ -96,7 +96,7 @@ namespace u {
 template <class TYPE>
 class ReferenceWrapper {
 
-    // This class template specializes `BloombergLP::bslmf::IsReferenceWrapper`
+    // This class template specializes `BNP_Paribas::bslmf::IsReferenceWrapper`
     // to inherit from `bsl::true_type` for any specified `TYPE`.
 
   public:
@@ -114,7 +114,7 @@ class ClassType;
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// This partial `IsReferenceWrapper` specialization publicly inherits from
@@ -134,7 +134,7 @@ struct IsReferenceWrapper<u::ReferenceWrapper<TYPE> > : bsl::true_type {
 // ----------------------------------------------------------------------------
 
 namespace {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 ///Usage
 ///-----
@@ -219,7 +219,7 @@ using namespace BloombergLP;
 // ----------------------------------------------------------------------------
 
 int main(int argc, char *argv[]) {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

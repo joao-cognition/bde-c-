@@ -16,7 +16,7 @@
 #include <bsl_utility.h>        // `bsl::pair`
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

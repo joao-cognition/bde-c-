@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(bdls_filepermissions_cpp,"$Id$ $CSID$")
 #include <bsl_ios.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdls {
 
                           // ----------------------

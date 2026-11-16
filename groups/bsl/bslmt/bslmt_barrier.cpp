@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(bslmt_barrier_cpp,"$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 bslmt::Barrier::~Barrier()
 {

@@ -130,7 +130,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -1579,7 +1579,7 @@ int MyTransactionManager::enqueueTransaction(bsl::shared_ptr<MyUser>,
 // Define traits outside of the text of the usage example as they distract from
 // the core message.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template<>
@@ -1593,7 +1593,7 @@ struct UsesBslmaAllocator<NAMESPACE_USAGE_EXAMPLE_1::MyUser>
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 //-----------------------------------------------------------------------------
 
-typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
 // `MyTestObject` CLASS HIERARCHY (defined below)
 class MyTestObject;
@@ -2871,7 +2871,7 @@ struct PartiallyInitializedStruct {
 
 
 // Traits for test types:
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <>
 struct UsesBslmaAllocator<MyTestObjectFactory>
@@ -4308,7 +4308,7 @@ bslma::Allocator *AllocPropagationTestType<USES_BSLMA_ALLOC>::allocator() const
 }
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // We need to test `make_shared` function for classes that define
@@ -8076,20 +8076,20 @@ void testMyAllocatableArgWithAllocator(const int value)
 /// ```
 /// shared_ptr()
 /// shared_ptr(bsl::nullptr_t)
-/// shared_ptr(bsl::nullptr_t, BloombergLP::bslma::Allocator *)
-/// shared_ptr(bsl::nullptr_t, DELETER, BloombergLP::bslma::Allocator *)
-/// shared_ptr(bsl::nullptr_t, DELETER, BloombergLP::bslma::Allocator *,
+/// shared_ptr(bsl::nullptr_t, BNP_Paribas::bslma::Allocator *)
+/// shared_ptr(bsl::nullptr_t, DELETER, BNP_Paribas::bslma::Allocator *)
+/// shared_ptr(bsl::nullptr_t, DELETER, BNP_Paribas::bslma::Allocator *,
 ///                                                 ALLOCATOR::value_type *)
 /// shared_ptr(T *);
-/// shared_ptr(T *, BloombergLP::bslma::Allocator *);
+/// shared_ptr(T *, BNP_Paribas::bslma::Allocator *);
 /// All the converting constructors
 /// ```
 /// We also choose not to deduce from `auto_ptr` and `auto_ptr_ref`
 /// ```
 /// shared_ptr(std::auto_ptr<T> &)
-/// shared_ptr(std::auto_ptr<T> &, BloombergLP::bslma::Allocator *);
+/// shared_ptr(std::auto_ptr<T> &, BNP_Paribas::bslma::Allocator *);
 /// shared_ptr(std::auto_ptr_ref<T>)
-/// shared_ptr(std::auto_ptr_ref<T>,BloombergLP::bslma::Allocator *);
+/// shared_ptr(std::auto_ptr_ref<T>,BNP_Paribas::bslma::Allocator *);
 /// ```
 struct TestSharedPtrDeductionGuides {
 
@@ -8102,11 +8102,11 @@ struct TestSharedPtrDeductionGuides {
     /// shared_ptr(const shared_ptr<T>&)
     /// shared_ptr(      shared_ptr<T>&&)
     /// shared_ptr(unique_ptr<T, D>&&);
-    /// shared_ptr(unique_ptr<T, D>&&, BloombergLP::bslma::Allocator *);
+    /// shared_ptr(unique_ptr<T, D>&&, BNP_Paribas::bslma::Allocator *);
     /// shared_ptr(const weak_ptr<T>&);
     /// shared_ptr(      weak_ptr<T>&&);
     /// shared_ptr(ManagedPtr<T>&);
-    /// shared_ptr(ManagedPtr<T>&, BloombergLP::bslma::Allocator *);
+    /// shared_ptr(ManagedPtr<T>&, BNP_Paribas::bslma::Allocator *);
     /// ```
     static void SimpleConstructors ()
     {
@@ -8136,11 +8136,11 @@ struct TestSharedPtrDeductionGuides {
         bsl::shared_ptr sp6a(std::move(wp6));
         ASSERT_SAME_TYPE(decltype(sp6a), bsl::shared_ptr<long>);
 
-        BloombergLP::bslma::ManagedPtr<char> mp7;
+        BNP_Paribas::bslma::ManagedPtr<char> mp7;
         bsl::shared_ptr sp7a(mp7);
         ASSERT_SAME_TYPE(decltype(sp7a), bsl::shared_ptr<char>);
 
-        BloombergLP::bslma::ManagedPtr<unsigned char> mp8;
+        BNP_Paribas::bslma::ManagedPtr<unsigned char> mp8;
         bsl::shared_ptr sp8a(mp8, a);
         ASSERT_SAME_TYPE(decltype(sp8a), bsl::shared_ptr<unsigned char>);
 
@@ -8155,7 +8155,7 @@ struct TestSharedPtrDeductionGuides {
 //#define BSLSTL_SHARED_PTR_MANAGED_PTR_COMPILE_FAIL_NOT_AN_ALLOCATOR
 #if defined(BSLSTL_SHARED_PTR_MANAGED_PTR_COMPILE_FAIL_NOT_AN_ALLOCATOR)
         float                                *pf99 = nullptr;
-        BloombergLP::bslma::ManagedPtr<char>  mp99;
+        BNP_Paribas::bslma::ManagedPtr<char>  mp99;
         bsl::shared_ptr                       sp99a(mp99, pf99);
         // this should fail to compile (`float *` is not an allocator)
 #endif
@@ -8278,7 +8278,7 @@ int main(int argc, char *argv[])
             printf("\nTESTING MAKE_SHARED_FOR_OVERWRITE"
                    "\n=================================\n");
 
-        using BloombergLP::bsltf::StdStatefulAllocator;
+        using BNP_Paribas::bsltf::StdStatefulAllocator;
         typedef StdStatefulAllocator<int, true,  true,  true,  true > AllocA;
 
         const size_t SIZE = 10;
@@ -10801,14 +10801,14 @@ int main(int argc, char *argv[])
 
 
         ASSERT( (bslstl::SharedPtr_IsFactoryFor<
-                              BloombergLP::bslma::Allocator *, int>::k_VALUE));
+                              BNP_Paribas::bslma::Allocator *, int>::k_VALUE));
         ASSERT(!(bslstl::SharedPtr_IsFactoryFor<
-                              BloombergLP::bslma::Allocator,   int>::k_VALUE));
+                              BNP_Paribas::bslma::Allocator,   int>::k_VALUE));
         ASSERT(!(bslstl::SharedPtr_IsFactoryFor<int *,         int>::k_VALUE));
         ASSERT( (bslstl::SharedPtr_IsFactoryFor<
-                                               BloombergLP::bslma::Allocator *,
+                                               BNP_Paribas::bslma::Allocator *,
                                                bsl::nullptr_t>::k_VALUE));
-        ASSERT(!(bslstl::SharedPtr_IsFactoryFor<BloombergLP::bslma::Allocator,
+        ASSERT(!(bslstl::SharedPtr_IsFactoryFor<BNP_Paribas::bslma::Allocator,
                                                 bsl::nullptr_t>::k_VALUE));
 
 
@@ -14907,7 +14907,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("\nTESTING `allocate_shared<T>(A, ...)`"
                             "\n====================================\n");
 
-        using BloombergLP::bsltf::StdStatefulAllocator;
+        using BNP_Paribas::bsltf::StdStatefulAllocator;
 
         typedef StdStatefulAllocator<int, true,  true,  true,  true > ALLOC_A;
         typedef StdStatefulAllocator<int, false, false, false, false> ALLOC_B;

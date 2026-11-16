@@ -143,10 +143,10 @@ BSLS_IDENT("$Id: $")
 //     balxml::NamespaceRegistry registry;
 //     balxml::PrefixStack prefixes(&registry);
 //     int cal = prefixes.pushPrefix("cal",
-//                               "http://www.bloomberg.com/schemas/calendar");
-//     prefixes.pushPrefix("math", "http://www.bloomberg.com/schemas/math");
+//                               "http://www.bnpparibas.com/schemas/calendar");
+//     prefixes.pushPrefix("math", "http://www.bnpparibas.com/schemas/math");
 //     prefixes.pushPrefix("",  // Default namespace
-//                         "http://www.bloomberg.com/schemas/app");
+//                         "http://www.bnpparibas.com/schemas/app");
 // ```
 // Now we can parse an attribute string and the `balxml::ElementAttribute`
 // object will provide detailed information about it.
@@ -161,18 +161,18 @@ BSLS_IDENT("$Id: $")
 //     assert(0 == bsl::strcmp("date", attribute1.localName()));
 //     assert(0 == bsl::strcmp("cal", attribute1.prefix()));
 //     assert(cal == attribute1.namespaceId());
-//     assert(0 == bsl::strcmp("http://www.bloomberg.com/schemas/calendar",
+//     assert(0 == bsl::strcmp("http://www.bnpparibas.com/schemas/calendar",
 //                             attribute1.namespaceUri()));
 //     assert(0 == attribute1.flags());
 // ```
 // Results are slightly different when the attribute name has no prefix:
 // ```
-//     char attrStr2[] = "name=\"Bloomberg, L.P.\"";
+//     char attrStr2[] = "name=\"BNP Paribas, L.P.\"";
 //     balxml::ElementAttribute attribute2;
 //     parseAttribute(&attribute2, attrStr2, &prefixes);
 //
 //     assert(0 == bsl::strcmp("name", attribute2.qualifiedName()));
-//     assert(0 == bsl::strcmp("Bloomberg, L.P.", attribute2.value()));
+//     assert(0 == bsl::strcmp("BNP Paribas, L.P.", attribute2.value()));
 //     assert(0 == bsl::strcmp("name", attribute2.localName()));
 // ```
 // As per the XML namespace standard, an attribute with no namespace prefix
@@ -221,7 +221,7 @@ BSLS_IDENT("$Id: $")
 #include <bslalg_typetraits.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
 
 class PrefixStack;

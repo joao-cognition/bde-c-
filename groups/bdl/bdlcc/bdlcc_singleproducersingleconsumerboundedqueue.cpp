@@ -6,7 +6,7 @@
 BSLS_IDENT_RCSID(bdlcc_singleproducersingleconsumerboundedqueue_cpp,
                  "$Id$$CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 ///Implementation Note
 ///===================

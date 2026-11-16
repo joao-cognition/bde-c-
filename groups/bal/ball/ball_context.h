@@ -220,7 +220,7 @@ BSLS_IDENT("$Id: $")
 #endif
 #endif // BDE_OMIT_INTERNAL_DEPRECATED
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // =============

@@ -79,7 +79,7 @@ BSLS_IDENT("$Id: $")
 /// - - - - - - - - - - - - - - - -
 // Suppose you had a type that defines a "value".
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // struct MyValueType {
@@ -146,7 +146,7 @@ BSLS_IDENT("$Id: $")
 // `your::YourValueType` which has an implicit conversion from
 // `bsl::pair<int, float>`:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace your {
 //
 // struct YourValueType {
@@ -266,7 +266,7 @@ BSLS_IDENT("$Id: $")
 // Suppose someone defines a pernicious "value" type, `their::TheirValueType`,
 // having neither copy constructor nor copy assignment operator:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace their {
 //
 // class TheirValueType {
@@ -336,7 +336,7 @@ BSLS_IDENT("$Id: $")
 // infrastructure if "they" define the required overloads of
 // `bdlat_valueTypeAssign` and `bdlat_valueTypeReset` in `their` namespace:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace their {
 //
 // int bdlat_valueTypeAssign(TheirValueType        *lhs,
@@ -459,7 +459,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_if.h>
 #endif  // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                       // ==================================
                       // namespace bdlat_ValueTypeFunctions

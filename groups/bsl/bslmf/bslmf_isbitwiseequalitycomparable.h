@@ -62,7 +62,7 @@ BSLS_IDENT("$Id: $")
 // to ensure proper alignment.  We insert telemetry to count the number of
 // times `operator==` is called:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // struct SimpleType {
 //     // This 'struct' holds two data members with a byte of padding, and can
@@ -289,7 +289,7 @@ BSLS_IDENT("$Id: $")
 // trait.  First, we define a class template that is not bitwise
 // EqualityComparable, `NotComparable`:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // template <class t_TYPE>
 // struct NotComparable
@@ -376,7 +376,7 @@ BSLS_IDENT("$Id: $")
 #endif
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class t_TYPE>

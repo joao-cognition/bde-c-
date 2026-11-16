@@ -72,7 +72,7 @@
 #include <stdio.h>   // for `puts`, `printf`
 #include <stdlib.h>  // for `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_CMP_GNU
@@ -203,9 +203,9 @@ using namespace bsl;
 // [ 2] T const* target<T>() const;
 //
 // INTERNAL DEPRECATED METHODS
-// [22] operator BloombergLP::bdef_Function<PROTOTYPE *>&();
-// [22] const operator BloombergLP::bdef_Function<PROTOTYPE *>&() const;
-// [ 4] BloombergLP::bslma::Allocator *allocator() const noexcept;
+// [22] operator BNP_Paribas::bdef_Function<PROTOTYPE *>&();
+// [22] const operator BNP_Paribas::bdef_Function<PROTOTYPE *>&() const;
+// [ 4] BNP_Paribas::bslma::Allocator *allocator() const noexcept;
 // [ 5] bool isInplace() const noexcept;
 //
 // FREE FUNCTIONS
@@ -537,7 +537,7 @@ class RWrap {
 
 } // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class TYPE>
@@ -1639,7 +1639,7 @@ class TestFunctor
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// Override all heuristics for `IsBitwiseMoveable` (particularly the empty
@@ -2041,12 +2041,12 @@ class ConvertibleToObj {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // Forward reference to higher-level component, to test conversions.
 template <class FUNCPTR> class bdef_Function;
 
-/// Minimal rendering of `BloombergLP::bdef_Function` to test conversions.
+/// Minimal rendering of `BNP_Paribas::bdef_Function` to test conversions.
 template <class PROTOTYPE>
 class bdef_Function<PROTOTYPE *> : public bsl::function<PROTOTYPE> {
 
@@ -2061,7 +2061,7 @@ namespace bslstl {
 /// Specialization of trait for `bdef_Function` being convertible to
 /// `bsl::function`.
 template <class PROTOTYPE>
-struct Function_IsReferenceCompatible<BloombergLP::bdef_Function<PROTOTYPE *>,
+struct Function_IsReferenceCompatible<BNP_Paribas::bdef_Function<PROTOTYPE *>,
                                       bsl::function<PROTOTYPE> >
     : bsl::true_type {
 };
@@ -5435,7 +5435,7 @@ int main(int argc, char *argv[])
         //
         // Plan:
         // 1. Since `bdef_Function` is not defined (to avoid circular
-        //    dependencies), define `BloombergLP::bdef_Function<PROTOTYPE *>`
+        //    dependencies), define `BNP_Paribas::bdef_Function<PROTOTYPE *>`
         //    to be derived from `bsl::function<PROTOTYPE>`.
         //
         // 2. Create an object of type `bsl::function<int(const char *)>`.
@@ -5447,15 +5447,15 @@ int main(int argc, char *argv[])
         // 3. Repeat step 2 using const references.
         //
         // Testing:
-        //  operator BloombergLP::bdef_Function<PROTOTYPE *>&();
-        //  const operator BloombergLP::bdef_Function<PROTOTYPE *>&() const;
+        //  operator BNP_Paribas::bdef_Function<PROTOTYPE *>&();
+        //  const operator BNP_Paribas::bdef_Function<PROTOTYPE *>&() const;
         // --------------------------------------------------------------------
 
         if (verbose) printf("\nTESTING CONVERSION TO `bdef_Function`"
                             "\n=====================================\n");
 
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED
-        using BloombergLP::bdef_Function;
+        using BNP_Paribas::bdef_Function;
 
         bsl::function<int(const char *)>           original;
         bsl::function<int(const char *)> const&    ORIGINAL = original;
@@ -8087,7 +8087,7 @@ int main(int argc, char *argv[])
         } // End for (each item in `DATA_A`)
 
         SmallFunctor                       functor(0x30);
-        BloombergLP::bdef_Function<PROTO*> original(functor);
+        BNP_Paribas::bdef_Function<PROTO*> original(functor);
         bsl::function<PROTO>               copyObj;
 
         // Test copy assign from `bdef_Function`
@@ -8666,7 +8666,7 @@ int main(int argc, char *argv[])
         TEST(NTWRAP(simpleInnerFunction)          );
 #undef TEST
 
-        typedef BloombergLP::bdef_Function<PROTO*>  bdefObj;
+        typedef BNP_Paribas::bdef_Function<PROTO*>  bdefObj;
         SmallFunctor                                functor(0x30);
         SmallFunctor                               *target;
 
@@ -9390,7 +9390,7 @@ int main(int argc, char *argv[])
         //      function(allocator_arg_t, const allocator_type& a);
         //      function(allocator_arg_t, const allocator_type& a, nullptr_t);
         //      allocator_type get_allocator() const;
-        //      BloombergLP::bslma::Allocator *allocator() const noexcept;
+        //      BNP_Paribas::bslma::Allocator *allocator() const noexcept;
         // --------------------------------------------------------------------
 
         if (verbose)
@@ -9419,7 +9419,7 @@ int main(int argc, char *argv[])
             ASSERT(defaultAllocMonitor.isInUseSame());
 
             // Null allocator pointer behaves as though allocator were not
-            // specified (Bloomberg extension)
+            // specified (BNP Paribas extension)
             bslma::TestAllocator *nullTa_p = 0;
 
             bsl::function<int(float)> f3(bsl::allocator_arg, nullTa_p);

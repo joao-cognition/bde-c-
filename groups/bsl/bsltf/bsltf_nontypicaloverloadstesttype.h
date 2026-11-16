@@ -55,7 +55,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>       // for 'std::size_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                         // =================================

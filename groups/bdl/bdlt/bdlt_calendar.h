@@ -489,7 +489,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_iosfwd.h>
 #include <bsl_iterator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 class Calendar_BusinessDayConstIter;
@@ -2035,7 +2035,7 @@ template <class HASHALG>
 inline
 void bdlt::hashAppend(HASHALG& hashAlg, const Calendar& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, object.d_packedCalendar);
 }
 
@@ -2155,7 +2155,7 @@ bool bdlt::operator!=(const Calendar_BusinessDayConstIter& lhs,
 }  // close enterprise namespace
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(bdlsb_overflowmemoutput_cpp,"$Id$ $CSID$")
 
 #include <bsl_cstring.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlsb {
 
                           // -----------------------

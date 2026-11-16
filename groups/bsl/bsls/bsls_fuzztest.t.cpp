@@ -12,7 +12,7 @@
 #include <stdlib.h>             // atoi(), rand()
 #include <string.h>             // strcmp()
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

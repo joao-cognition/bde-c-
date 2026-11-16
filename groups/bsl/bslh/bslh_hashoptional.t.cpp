@@ -23,7 +23,7 @@
 #include <string.h>
 #include <wchar.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslh;
 
 

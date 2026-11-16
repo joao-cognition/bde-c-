@@ -33,7 +33,7 @@ BSLS_IDENT("$Id: $")
 // #ifdef BSLS_ASSERTIMPUTIL_AVOID_STRING_CONSTANTS
 // extern const char s_my_component_h[];
 // #undef BSLS_ASSERTIMPUTIL_FILE
-// #define BSLS_ASSERTIMPUTIL_FILE BloombergLP::s_my_component_h
+// #define BSLS_ASSERTIMPUTIL_FILE BNP_Paribas::s_my_component_h
 // #endif
 // ```
 // Then, at the end of your header revert the definition of the filename macro
@@ -109,7 +109,7 @@ BSLS_IDENT("$Id: $")
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
                         // ===========================
                         // Assert Macro Support Macros

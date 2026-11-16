@@ -61,25 +61,25 @@ class unordered_multimap {
     /// This `typedef` is an alias for the policy used internally by this
     /// container to extract the `KEY` value from the values maintained by
     /// this unordered multimap.
-    typedef ::BloombergLP::bslstl::UnorderedMapKeyConfiguration<const KEY,
+    typedef ::BNP_Paribas::bslstl::UnorderedMapKeyConfiguration<const KEY,
                                                                 ValueType>
                                                              ListConfiguration;
 
     /// This `typedef` is an alias for the template instantiation of the
     /// underlying `bslstl::HashTable` used to implement this unordered
     /// multimap.
-    typedef ::BloombergLP::bslstl::HashTable<ListConfiguration,
+    typedef ::BNP_Paribas::bslstl::HashTable<ListConfiguration,
                                              HASH,
                                              EQUAL,
                                              ALLOCATOR>      Impl;
 
     /// This `typedef` is an alias for the type of links maintained by the
     /// linked list of elements held by the underlying `bslstl::HashTable`.
-    typedef ::BloombergLP::bslalg::BidirectionalLink         HashTableLink;
+    typedef ::BNP_Paribas::bslalg::BidirectionalLink         HashTableLink;
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil               MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil               MoveUtil;
 
     // FRIENDS
     template <class KEY2,
@@ -108,16 +108,16 @@ class unordered_multimap {
     typedef typename AllocatorTraits::pointer          pointer;
     typedef typename AllocatorTraits::const_pointer    const_pointer;
 
-    typedef ::BloombergLP::bslstl::HashTableIterator<
+    typedef ::BNP_Paribas::bslstl::HashTableIterator<
                          value_type, difference_type>  iterator;
 
-    typedef ::BloombergLP::bslstl::HashTableIterator<
+    typedef ::BNP_Paribas::bslstl::HashTableIterator<
                    const value_type, difference_type>  const_iterator;
 
-    typedef ::BloombergLP::bslstl::HashTableBucketIterator<
+    typedef ::BNP_Paribas::bslstl::HashTableBucketIterator<
                          value_type, difference_type>  local_iterator;
 
-    typedef ::BloombergLP::bslstl::HashTableBucketIterator<
+    typedef ::BNP_Paribas::bslstl::HashTableBucketIterator<
                    const value_type, difference_type>  const_local_iterator;
 
   private:
@@ -179,7 +179,7 @@ class unordered_multimap {
     /// newly-created unordered multimap.  `original` is left in a valid but
     /// unspecified state.
     unordered_multimap(
-                  BloombergLP::bslmf::MovableRef<unordered_multimap> original);
+                  BNP_Paribas::bslmf::MovableRef<unordered_multimap> original);
 
     /// Create an unordered multimap having the same value as the specified
     /// `original` object that uses the specified `basicAllocator` to supply
@@ -212,7 +212,7 @@ class unordered_multimap {
     /// the (template parameter) type `ALLOCATOR` is `bsl::allocator` (the
     /// default).
     unordered_multimap(
-            BloombergLP::bslmf::MovableRef<unordered_multimap> original,
+            BNP_Paribas::bslmf::MovableRef<unordered_multimap> original,
             const typename type_identity<ALLOCATOR>::type&     basicAllocator);
 
     /// Create an unordered multimap, and insert each `value_type` object in
@@ -480,7 +480,7 @@ class unordered_multimap {
     /// into this unordered multimap (see {Requirements on `KEY` and
     /// `VALUE`}).
     unordered_multimap&
-    operator=(BloombergLP::bslmf::MovableRef<unordered_multimap> rhs)
+    operator=(BNP_Paribas::bslmf::MovableRef<unordered_multimap> rhs)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                 AllocatorTraits::is_always_equal::value &&
                                 std::is_nothrow_move_assignable<HASH>::value &&
@@ -540,8 +540,8 @@ class unordered_multimap {
     /// multimap.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
         {
@@ -573,8 +573,8 @@ class unordered_multimap {
     size_type erase(const key_type& key);
     template <class t_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<HASH, t_KEY>::value &&
-        BloombergLP::bslmf::IsTransparentPredicate<EQUAL,t_KEY>::value &&
+        BNP_Paribas::bslmf::IsTransparentPredicate<HASH, t_KEY>::value &&
+        BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,t_KEY>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
                         iterator>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
@@ -628,8 +628,8 @@ class unordered_multimap {
     /// unordered multimap.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       iterator>::type
     find(const LOOKUP_KEY& key)
         {
@@ -908,8 +908,8 @@ class unordered_multimap {
     /// equivalent to the specified `key`.
     template <class LOOKUP_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value &&
-            BloombergLP::bslmf::IsTransparentPredicate<EQUAL,
+        BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value &&
+            BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,
                                                        LOOKUP_KEY>::value,
         bool>::type
     contains(const LOOKUP_KEY& key) const
@@ -950,8 +950,8 @@ class unordered_multimap {
     /// equivalent-key group in this unordered multimap.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       const_iterator>::type
     find(const LOOKUP_KEY& key) const
         {
@@ -971,13 +971,13 @@ class unordered_multimap {
     /// at most one equivalent-key group in this unordered multimap.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       size_type>::type
     count(const LOOKUP_KEY& key) const
         {
             // Note: implemented inline due to Sun CC compilation error.
-            typedef ::BloombergLP::bslalg::BidirectionalNode<value_type> BNode;
+            typedef ::BNP_Paribas::bslalg::BidirectionalNode<value_type> BNode;
 
             size_type result = 0;
             for (HashTableLink *cursor = d_impl.find(key);
@@ -1011,8 +1011,8 @@ class unordered_multimap {
     /// multimap.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
         {
@@ -1065,8 +1065,8 @@ class unordered_multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       size_type>::type
     bucket(const LOOKUP_KEY& key) const
     {
@@ -1151,9 +1151,9 @@ class unordered_multimap {
 /// meets the requirements of a standard allocator.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class HASH = bsl::hash<KEY>,
     class EQUAL = bsl::equal_to<KEY>,
     class ALLOCATOR = bsl::allocator<pair<const KEY, VALUE>>,
@@ -1181,9 +1181,9 @@ template <
     class HASH,
     class EQUAL,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1207,9 +1207,9 @@ template <
     class INPUT_ITERATOR,
     class HASH,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<std::is_invocable_v<HASH, const KEY &>>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
@@ -1230,9 +1230,9 @@ template <
     class INPUT_ITERATOR,
     class HASH,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<bsl::pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1251,9 +1251,9 @@ unordered_multimap(
 template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 unordered_multimap(INPUT_ITERATOR,
@@ -1274,9 +1274,9 @@ unordered_multimap(INPUT_ITERATOR,
 template <
     class INPUT_ITERATOR,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<bsl::pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1296,9 +1296,9 @@ unordered_multimap(
 template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 unordered_multimap(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
@@ -1315,9 +1315,9 @@ unordered_multimap(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
 template <
     class INPUT_ITERATOR,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<bsl::pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1568,7 +1568,7 @@ void unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::
     BSLS_ASSERT_SAFE(this->empty());
 
     const difference_type maxInsertions =
-              ::BloombergLP::bslstl::IteratorUtil::insertDistance(first, last);
+              ::BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last);
     if (0 < maxInsertions) {
         this->reserve(maxInsertions);
     }
@@ -1611,7 +1611,7 @@ void unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::
                                                           SENTINEL       last)
 {
     const difference_type maxInsertions =
-              ::BloombergLP::bslstl::IteratorUtil::insertDistance(first, last);
+              ::BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last);
     if (0 < maxInsertions) {
         this->reserve(this->size() + maxInsertions);
     }
@@ -1704,7 +1704,7 @@ unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_multimap(
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_multimap(
-                   BloombergLP::bslmf::MovableRef<unordered_multimap> original)
+                   BNP_Paribas::bslmf::MovableRef<unordered_multimap> original)
 : d_impl(MoveUtil::move(MoveUtil::access(original).d_impl))
 {
 }
@@ -1721,7 +1721,7 @@ unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_multimap(
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_multimap(
-             BloombergLP::bslmf::MovableRef<unordered_multimap> original,
+             BNP_Paribas::bslmf::MovableRef<unordered_multimap> original,
              const typename type_identity<ALLOCATOR>::type&     basicAllocator)
 : d_impl(MoveUtil::move(MoveUtil::access(original).d_impl), basicAllocator)
 {
@@ -1881,7 +1881,7 @@ template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>&
 unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::operator=(
-                        BloombergLP::bslmf::MovableRef<unordered_multimap> rhs)
+                        BNP_Paribas::bslmf::MovableRef<unordered_multimap> rhs)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                 AllocatorTraits::is_always_equal::value &&
                                 std::is_nothrow_move_assignable<HASH>::value &&
@@ -2142,7 +2142,7 @@ unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::erase(
     //   iterate each node, destroying the associated value
     //   reclaim each node (potentially returning to a node-pool)
 
-    typedef ::BloombergLP::bslalg::BidirectionalNode<value_type> BNode;
+    typedef ::BNP_Paribas::bslalg::BidirectionalNode<value_type> BNode;
 
     if (HashTableLink *target = d_impl.find(key)) {
         target = d_impl.remove(target);
@@ -2386,7 +2386,7 @@ typename unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>:: size_type
 unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::count(
                                                      const key_type& key) const
 {
-    typedef ::BloombergLP::bslalg::BidirectionalNode<value_type> BNode;
+    typedef ::BNP_Paribas::bslalg::BidirectionalNode<value_type> BNode;
 
     size_type result = 0;
     for (HashTableLink *cursor = d_impl.find(key);
@@ -2538,7 +2538,7 @@ typename bsl::unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::size_type
 bsl::erase_if(unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>& m,
                                                            PREDICATE predicate)
 {
-    return BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(m, predicate);
+    return BNP_Paribas::bslstl::AlgorithmUtil::containerEraseIf(m, predicate);
 }
 
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
@@ -2562,7 +2562,7 @@ void bsl::swap(bsl::unordered_multimap<KEY, VALUE, HASH, EQUAL, ALLOCATOR>& a,
 //:   (template parameter) type 'ALLOCATOR' is convertible from
 //:   'bslma::Allocator*'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 
@@ -2595,8 +2595,8 @@ namespace bslmf {
 template <class KEY, class MAPPED, class HASH, class EQUAL, class ALLOCATOR>
 struct IsBitwiseMoveable<
     bsl::unordered_multimap<KEY, MAPPED, HASH, EQUAL, ALLOCATOR> >
-    : ::BloombergLP::bslmf::IsBitwiseMoveable<BloombergLP::bslstl::HashTable<
-          ::BloombergLP::bslstl::
+    : ::BNP_Paribas::bslmf::IsBitwiseMoveable<BNP_Paribas::bslstl::HashTable<
+          ::BNP_Paribas::bslstl::
               UnorderedMapKeyConfiguration<KEY, bsl::pair<const KEY, MAPPED> >,
           HASH,
           EQUAL,

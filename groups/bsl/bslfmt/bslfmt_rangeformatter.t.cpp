@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslfmt;
 
 //=============================================================================

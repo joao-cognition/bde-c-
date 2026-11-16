@@ -17,7 +17,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                                  TEST PLAN
@@ -764,7 +764,7 @@ void usageExample()
 /// template is for allocator-aware types.
 template <class TYPE,
           bool USES_BSLMA_ALLOC =
-              BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value>
+              BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value>
 class AllocatorTestUtil {
 
   public:
@@ -864,7 +864,7 @@ class TestDriver {
     // PRIVATE TYPES
 
     /// abbreviation for utility struct
-    typedef BloombergLP::bslalg::NothrowMovableUtil Util;
+    typedef BNP_Paribas::bslalg::NothrowMovableUtil Util;
 
     /// Unwrapped type
     typedef typename Util::UnwrappedType<TEST_TYPE>::type ValueType;
@@ -883,9 +883,9 @@ class TestDriver {
     static ValueCategory checkValueCategory(NonConstValueType&);
     static ValueCategory checkValueCategory(const NonConstValueType&);
     static ValueCategory checkValueCategory(
-                            BloombergLP::bslmf::MovableRef<NonConstValueType>);
+                            BNP_Paribas::bslmf::MovableRef<NonConstValueType>);
     static ValueCategory checkValueCategory(
-                      BloombergLP::bslmf::MovableRef<const NonConstValueType>);
+                      BNP_Paribas::bslmf::MovableRef<const NonConstValueType>);
 
     /// TESTING `wrap` METHOD
     static void testCase3();
@@ -910,14 +910,14 @@ typename TestDriver<TYPE>::ValueCategory TestDriver<TYPE>::checkValueCategory(
 
 template <class TYPE>
 typename TestDriver<TYPE>::ValueCategory TestDriver<TYPE>::checkValueCategory(
-                             BloombergLP::bslmf::MovableRef<NonConstValueType>)
+                             BNP_Paribas::bslmf::MovableRef<NonConstValueType>)
 {
     return e_MOVABLE_REF;
 }
 
 template <class TYPE>
 typename TestDriver<TYPE>::ValueCategory TestDriver<TYPE>::checkValueCategory(
-                       BloombergLP::bslmf::MovableRef<const NonConstValueType>)
+                       BNP_Paribas::bslmf::MovableRef<const NonConstValueType>)
 {
     return e_CONST_MOVABLE_REF;
 }
@@ -996,7 +996,7 @@ void TestDriver<TYPE>::testCase4()
         TYPE&             x   = xBuffer.object();
         const ValueType&  val = x;
 
-        BloombergLP::bslmf::MovableRef<ValueType> unwrappedX =
+        BNP_Paribas::bslmf::MovableRef<ValueType> unwrappedX =
             Util::unwrap(MoveUtil::move(x));
 
         ASSERT(checkValueCategory(Util::unwrap(MoveUtil::move(x))) ==
@@ -1012,7 +1012,7 @@ void TestDriver<TYPE>::testCase4()
         const TYPE&       x   = xBuffer.object();
         const ValueType&  val = x;
 
-        BloombergLP::bslmf::MovableRef<const ValueType> unwrappedX =
+        BNP_Paribas::bslmf::MovableRef<const ValueType> unwrappedX =
             Util::unwrap(MoveUtil::move(x));
 
         ASSERT(checkValueCategory(Util::unwrap(MoveUtil::move(x))) ==
@@ -1180,11 +1180,11 @@ int main(int argc, char *argv[])
             testCase4,
             TrackableValue,
             TrackableValueWithAlloc,
-            BloombergLP::bslalg::NothrowMovableWrapper<TrackableValue>,
-            BloombergLP::bslalg::NothrowMovableWrapper<
+            BNP_Paribas::bslalg::NothrowMovableWrapper<TrackableValue>,
+            BNP_Paribas::bslalg::NothrowMovableWrapper<
                 TrackableValueWithAlloc>,
-            BloombergLP::bslalg::NothrowMovableWrapper<const TrackableValue>,
-            BloombergLP::bslalg::NothrowMovableWrapper<
+            BNP_Paribas::bslalg::NothrowMovableWrapper<const TrackableValue>,
+            BNP_Paribas::bslalg::NothrowMovableWrapper<
                 const TrackableValueWithAlloc>);
       } break;
       case 3: {
@@ -1201,11 +1201,11 @@ int main(int argc, char *argv[])
             testCase3,
             TrackableValue,
             TrackableValueWithAlloc,
-            BloombergLP::bslalg::NothrowMovableWrapper<TrackableValue>,
-            BloombergLP::bslalg::NothrowMovableWrapper<
+            BNP_Paribas::bslalg::NothrowMovableWrapper<TrackableValue>,
+            BNP_Paribas::bslalg::NothrowMovableWrapper<
                 TrackableValueWithAlloc>,
-            BloombergLP::bslalg::NothrowMovableWrapper<const TrackableValue>,
-            BloombergLP::bslalg::NothrowMovableWrapper<
+            BNP_Paribas::bslalg::NothrowMovableWrapper<const TrackableValue>,
+            BNP_Paribas::bslalg::NothrowMovableWrapper<
                 const TrackableValueWithAlloc>);
       } break;
       case 2: {

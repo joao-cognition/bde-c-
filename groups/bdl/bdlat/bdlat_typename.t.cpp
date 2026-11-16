@@ -39,7 +39,7 @@
 #include <bsl_ostream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
@@ -291,7 +291,7 @@ bool streq(const char* s1, const char* s2)
 //@DESCRIPTION:
 //  TBD: provide annotation for `MyChoice`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -868,7 +868,7 @@ bsl::ostream& test::operator<<(bsl::ostream& stream, const test::MyChoice& rhs)
 
 // test_mychoice.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -1037,7 +1037,7 @@ bsl::ostream& MyChoice::print(bsl::ostream& stream,
 //@DESCRIPTION:
 //  TBD: provide annotation for `MyEnumeration`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -1266,7 +1266,7 @@ bsl::ostream& test::operator<<(bsl::ostream&              stream,
 
 // test_myenumeration.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -1357,7 +1357,7 @@ int MyEnumeration::fromString(MyEnumeration::Value *result,
 //
 //@DESCRIPTION:
 //  TBD: provide annotation for `MySequence`
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -1846,7 +1846,7 @@ bsl::ostream& test::operator<<(bsl::ostream&           stream,
 
 // test_mysequence.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -2013,7 +2013,7 @@ bsl::ostream& MySequence::print(bsl::ostream& stream,
 //@DESCRIPTION:
 //  TBD: provide annotation for `MyCustomizedType`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -2289,7 +2289,7 @@ bsl::ostream& test::operator<<(bsl::ostream&                 stream,
 
 // test_mycustomizedtype.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -2324,7 +2324,7 @@ const char MyCustomizedType::CLASS_NAME[] = "MyCustomizedType";
 
 class OtherType { int a; double b; };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
 /// This class overloads `bdlat_TypeName_className` to produce a name that's

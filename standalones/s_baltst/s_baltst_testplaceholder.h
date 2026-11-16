@@ -10,7 +10,7 @@ BSLS_IDENT("$Id: $")
 //@CLASSES:
 //  s_baltst::TestPlaceHolder: value-level representation of a type
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                            // =====================

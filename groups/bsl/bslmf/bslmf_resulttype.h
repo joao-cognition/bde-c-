@@ -177,7 +177,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_nil.h>
 #include <bslmf_voidtype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class t_FUNC, class t_FALLBACK, class = void>

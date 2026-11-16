@@ -17,7 +17,7 @@
 #include <bsl_utility.h> // `bsl::pair`, `bsl::make_pair`
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -229,7 +229,7 @@ class Choice_Point {
 /// - - - - - - - - - - - - - - - -
 // Suppose you had a type that defines a "value".
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    struct MyValueType {
@@ -296,7 +296,7 @@ class Choice_Point {
 // `your::YourValueType` which has an implicit conversion from
 // `bsl::pair<int, float>`:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace your {
 
    struct YourValueType {
@@ -416,7 +416,7 @@ class Choice_Point {
 // Suppose someone defines a pernicious "value" type, `their::TheirValueType`,
 // having neither copy constructor nor copy assignment operator:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace their {
 
    class TheirValueType {
@@ -486,7 +486,7 @@ class Choice_Point {
 // infrastructure if "they" define the required overloads of
 // `bdlat_valueTypeAssign` and `bdlat_valueTypeReset` in `their` namespace:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace their {
 
    int bdlat_valueTypeAssign(TheirValueType        *lhs,

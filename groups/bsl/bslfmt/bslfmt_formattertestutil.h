@@ -110,7 +110,7 @@ BSLS_IDENT("$Id: $")
 # include <type_traits>     // for 'is_constant_evaluated'
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_CONSTEXPR_CPP20
 # define BSLFMT_FORMATTER_TEST_CONSTEVAL consteval
@@ -174,7 +174,7 @@ using namespace BloombergLP;
     ARG.get()
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_FORMAT)

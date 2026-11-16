@@ -209,7 +209,7 @@ BSLS_IDENT("$Id: $")
 #include <algorithm>  // swap (C++03)
 #include <utility>    // swap (C++17)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                        // ======================
@@ -589,7 +589,7 @@ void SimplePool<VALUE, ALLOCATOR>::quickSwapExchangeAllocators(
         AllocTraits::propagate_on_container_swap::value> Propagate;
 
     using std::swap;
-    using BloombergLP::bslma::AllocatorUtil;
+    using BNP_Paribas::bslma::AllocatorUtil;
     AllocatorUtil::swap(&this->allocator(), &other.allocator(), Propagate());
     swap(d_blocksPerChunk,  other.d_blocksPerChunk);
     swap(d_freeList_p,      other.d_freeList_p);

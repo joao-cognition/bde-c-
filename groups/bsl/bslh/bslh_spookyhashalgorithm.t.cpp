@@ -17,7 +17,7 @@
 #include <string.h>
 #include <wchar.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslh;
 
 //=============================================================================
@@ -451,7 +451,7 @@ bool HashTable<TYPE, HASHER>::contains(const TYPE& value) const
 //-----------------------------------------------------------------------------
 
 typedef SpookyHashAlgorithm Obj;
-typedef BloombergLP::bsls::Types::Uint64 Uint64;
+typedef BNP_Paribas::bsls::Types::Uint64 Uint64;
 
 // ============================================================================
 //                            MAIN PROGRAM

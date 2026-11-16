@@ -64,7 +64,7 @@
 #include <bsl_thread.h>
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -1660,7 +1660,7 @@ int main(int argc, char *argv[])
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
 
           BSLMF_ASSERT(
-                    (bsl::is_same<BloombergLP::bslmt::ThreadUtil::NativeHandle,
+                    (bsl::is_same<BNP_Paribas::bslmt::ThreadUtil::NativeHandle,
                                   std::thread::native_handle_type>::value));
 
 #endif

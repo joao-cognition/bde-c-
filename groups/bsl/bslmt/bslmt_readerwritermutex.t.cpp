@@ -19,7 +19,7 @@
 #include <bsl_ostream.h>   // for `operator<<`
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

@@ -103,7 +103,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_nestedtraitdeclaration.h>
 
 #include <bsls_compilerfeatures.h>
-#include <bsls_util.h>  // for BloombergLP::bsls::Util::addressOf
+#include <bsls_util.h>  // for BNP_Paribas::bsls::Util::addressOf
 
 #ifndef BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 #include <bslmf_isbitwisemoveable.h>
@@ -211,7 +211,7 @@ reference_wrapper<T> ref(reference_wrapper<T> original);
 template <class T>
 inline
 bsl::reference_wrapper<T>::reference_wrapper(T& object)
-  : d_represented_p(BloombergLP::bsls::Util::addressOf(object))
+  : d_represented_p(BNP_Paribas::bsls::Util::addressOf(object))
 {
 }
 
@@ -261,7 +261,7 @@ bsl::reference_wrapper<T> bsl::ref(bsl::reference_wrapper<T> original)
 
 #endif // BSLMF_REFERENCEWRAPPER_IS_ALIASED
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class T>

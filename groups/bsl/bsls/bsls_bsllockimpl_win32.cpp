@@ -37,13 +37,13 @@ struct CompileTimeAssert<true>
 
 BSLS_ANNOTATION_UNUSED void size_check() {
     CompileTimeAssert<sizeof(CRITICAL_SECTION) ==
-                 sizeof(void *) * BloombergLP::bsls::BslLockImpl_win32::
+                 sizeof(void *) * BNP_Paribas::bsls::BslLockImpl_win32::
                                             k_CRITICAL_SECTION_BUFFER_SIZE>();
 }
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bslmt_once_cpp,"$Id$ $CSID$")
 
 #include <bsl_exception.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                                 // ----------
                                 // class Once

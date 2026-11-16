@@ -213,7 +213,7 @@ BSLS_IDENT("$Id: $")
 // ```
 
 #ifdef __cplusplus
-namespace BloombergLP {
+namespace BNP_Paribas {
 #endif
 
                        // ===========================
@@ -235,7 +235,7 @@ struct bsls_Platform_Assert;
 // Use this macro to trigger a compile-time error if '#error' is not supported.
 #ifdef __cplusplus
     #define BSLS_PLATFORM_COMPILER_ERROR                                      \
-                          char die[sizeof(::BloombergLP::bsls_Platform_Assert)]
+                          char die[sizeof(::BNP_Paribas::bsls_Platform_Assert)]
 #else
     #define BSLS_PLATFORM_COMPILER_ERROR char die[sizeof(bsls_Platform_Assert)]
 #endif
@@ -881,7 +881,7 @@ struct bsls_Platform_Assert;
 #endif
 
 #ifdef __cplusplus
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 // ----------------------------------------------------------------------------

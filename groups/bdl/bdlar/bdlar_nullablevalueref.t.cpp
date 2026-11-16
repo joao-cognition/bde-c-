@@ -27,7 +27,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -219,10 +219,10 @@ int main(int argc, char *argv[])
 
         // Test `bdlat_NullableValueFunctions` customization-points
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_NullableValueFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_NullableValueFunctions::
                              IsNullableValue<bdlar::NullableValueRef>::value));
             BSLMF_ASSERT((bsl::is_same<
-                ::BloombergLP::bdlat_NullableValueFunctions::
+                ::BNP_Paribas::bdlat_NullableValueFunctions::
                                       ValueType<bdlar::NullableValueRef>::Type,
                 bdlar::AnyRef
             >::value));
@@ -237,10 +237,10 @@ int main(int argc, char *argv[])
             bdlat_NullableValueFunctions::accessValue(ref, valueAccessor);
         }
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_NullableValueFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_NullableValueFunctions::
                         IsNullableValue<bdlar::NullableValueConstRef>::value));
             BSLMF_ASSERT((bsl::is_same<
-                ::BloombergLP::bdlat_NullableValueFunctions::
+                ::BNP_Paribas::bdlat_NullableValueFunctions::
                                  ValueType<bdlar::NullableValueConstRef>::Type,
                 bdlar::AnyConstRef
             >::value));

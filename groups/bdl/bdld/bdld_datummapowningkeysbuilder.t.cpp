@@ -23,10 +23,10 @@
 #include <bsl_iostream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bslstl;
-using namespace BloombergLP::bdld;
+using namespace BNP_Paribas::bdld;
 
 //=============================================================================
 //                             TEST PLAN

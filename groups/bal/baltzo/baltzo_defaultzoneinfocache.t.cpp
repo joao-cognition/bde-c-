@@ -42,7 +42,7 @@
 
 #include <bsl_c_stdlib.h>   // `putenv`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -618,7 +618,7 @@ struct TestData {
     // LINE  EXP_PATH
     // ----  --------
 #ifndef BSLS_PLATFORM_OS_WINDOWS
-    {L_,  "/opt/bbinfra/share/zoneinfo/"},    // Bloomberg stnd loc.
+    {L_,  "/opt/bbinfra/share/zoneinfo/"},    // BNP Paribas stnd loc.
     {L_,  "/opt/bb/share/zoneinfo/"},         // deprctd. BB stnd loc.
     {L_,  "/bb/data/datetime/zoneinfo/"},     // deprctd. BB stnd loc.
     {L_,  "/usr/share/zoneinfo/"},            // Unix standard loc.
@@ -1141,7 +1141,7 @@ int main(int argc, char *argv[])
             // on a build machine.
 
             // The initial three paths in the following list are
-            // Bloomberg-specific.
+            // BNP Paribas-specific.
             LOOP2_ASSERT( L_, RESULT,
                         0 == strcmp(RESULT, "/opt/bbinfra/share/zoneinfo/")
                      || 0 == strcmp(RESULT, "/opt/bb/share/zoneinfo/")

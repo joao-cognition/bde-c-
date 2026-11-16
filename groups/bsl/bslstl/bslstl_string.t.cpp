@@ -75,7 +75,7 @@
 #pragma report(disable, "1540-2924")
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 using bsls::nameOfType;
 
@@ -1090,7 +1090,7 @@ inline
 bool isNativeString(const std::basic_string<TYPE,TRAITS,ALLOC>&)
     { return true; }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 // Specialize trait to clarify for bde_verify that `LimitAllocator` does not
 // require satisfy the `UsesBslmaAllocator` trait.
@@ -6585,7 +6585,7 @@ namespace UsageExample {
 
 }  // close namespace UsageExample
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 // Specialize trait to clarify for bde_verify that `LimitAllocator` does not
 // require satisfy the `UsesBslmaAllocator` trait.

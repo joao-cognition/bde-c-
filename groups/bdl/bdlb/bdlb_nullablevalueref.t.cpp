@@ -20,7 +20,7 @@
 #include <bslstl_span.h>
 #include <bslstl_optional.h>              // bsl::optional, bsl::nullopt_t
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

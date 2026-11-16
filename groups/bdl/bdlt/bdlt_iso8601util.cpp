@@ -27,8 +27,8 @@ BSLS_IDENT_RCSID(bdlt_iso8601util_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
-using namespace BloombergLP::bdlt;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bdlt;
 
 typedef Iso8601Util                   Util;
 typedef Iso8601UtilConfiguration      GenerateConfiguration;
@@ -44,7 +44,7 @@ typedef Util::ssize_t                 ssize_t;
 class Impl {
 
     // PRIVATE TYPES
-    typedef BloombergLP::bdlt::Iso8601Util Util;
+    typedef BNP_Paribas::bdlt::Iso8601Util Util;
 
     template <class TYPE>
     struct IsString {
@@ -1860,7 +1860,7 @@ int parseIntervalImpl(bsls::Types::Int64 *weeks,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                             // ------------------

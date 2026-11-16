@@ -80,7 +80,7 @@ stop_source& stop_source::operator=(const stop_source& other)
 }
 
 stop_source& stop_source::operator=(
-       BloombergLP::bslmf::MovableRef<stop_source> other) BSLS_KEYWORD_NOEXCEPT
+       BNP_Paribas::bslmf::MovableRef<stop_source> other) BSLS_KEYWORD_NOEXCEPT
 {
     stop_source(MoveUtil::move(other)).swap(*this);
     return *this;

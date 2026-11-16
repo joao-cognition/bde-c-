@@ -249,7 +249,7 @@ BSLS_IDENT("$Id: $")
 
 #include <string>           // 'std::string', 'std::pmr::string'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balb {
                           // ========================
                           // class PipeControlChannel

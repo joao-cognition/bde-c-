@@ -46,7 +46,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslmf_detectnestedtrait.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

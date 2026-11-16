@@ -40,7 +40,7 @@
 #pragma bde_verify -TP19   // Missing or malformed standard test driver section
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslstl;
 
 //=============================================================================
@@ -403,7 +403,7 @@ class AllocatingTestType {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

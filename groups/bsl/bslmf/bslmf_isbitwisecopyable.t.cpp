@@ -28,7 +28,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                TEST PLAN
@@ -440,7 +440,7 @@ typedef struct {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <>
@@ -448,7 +448,7 @@ struct IsBitwiseCopyable<UserDefinedBcTestType> : bsl::true_type {
 };
 
 }  // close namespace bslmf
-}  // close namespace BloombergLP
+}  // close namespace BNP_Paribas
 
 
 // This test is usually disable, because enabling it should result in a compile

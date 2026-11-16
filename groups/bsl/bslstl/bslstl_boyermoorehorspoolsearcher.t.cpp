@@ -38,7 +38,7 @@
 #include <stdio.h>    // for `stdio` and `printf`
 #include <stddef.h>   // for `NULL`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP17_SEARCH_FUNCTORS
     #include <functional>
@@ -81,7 +81,7 @@ using namespace BloombergLP;
 // [ 2] RAI needleLast() const;
 // [ 2] HASH hash() const;
 // [ 2] EQUAL equal() const;
-// [ 2] BloombergLP::bslma::Allocator *allocator() const;
+// [ 2] BNP_Paribas::bslma::Allocator *allocator() const;
 // ----------------------------------------------------------------------------
 // [ 1] BREATHING TEST
 // [11] USAGE EXAMPLE
@@ -3606,7 +3606,7 @@ static void testMoveConstructors()
                                                EQUAL> Mech;
     typedef bsl::pair<RNDACC_ITR, RNDACC_ITR>         Result;
 
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     bslma::TestAllocator fa("footprint", veryVeryVeryVerbose);
     bslma::TestAllocator da("default",   veryVeryVeryVerbose);
@@ -5047,7 +5047,7 @@ int main(int argc, char *argv[])
 
             typedef CharArray<char>::const_iterator    RandConstItr;
             typedef bslstl::BoyerMooreHorspoolSearcher<RandConstItr> Mech;
-            typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+            typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
             RandConstItr begin = containerHavingRandomIterators.begin();
             RandConstItr end   = containerHavingRandomIterators.end();
@@ -6484,7 +6484,7 @@ int main(int argc, char *argv[])
         //   RAI needleLast() const;
         //   HASH hash() const;
         //   EQUAL equal() const;
-        //   BloombergLP::bslma::Allocator *allocator() const;
+        //   BNP_Paribas::bslma::Allocator *allocator() const;
         // --------------------------------------------------------------------
 
         if (verbose) printf("\n" "CONSTRUCTOR AND BASIC ACCESSORS"

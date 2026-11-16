@@ -84,7 +84,7 @@ BSLS_IDENT_RCSID(balb_performancemonitor_cpp,"$Id$ $CSID$")
 #include <bsl_cstdlib.h>
 #include <bsl_cstring.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balb {
 namespace {
 

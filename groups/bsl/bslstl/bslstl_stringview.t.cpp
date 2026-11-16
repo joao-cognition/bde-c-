@@ -270,7 +270,7 @@ void invokePatternSwap(TYPE *a, TYPE *b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` and `invokePatternSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 using bsls::nameOfType;
 
@@ -2502,7 +2502,7 @@ void TestDriver<TYPE, TRAITS>::testCase19()
 
     if (verbose) printf("for %s type.\n", NameOf<TYPE>().name());
 
-    typedef ::BloombergLP::bslh::Hash<> Hasher;
+    typedef ::BNP_Paribas::bslh::Hash<> Hasher;
     typedef Hasher::result_type         HashType;
     Hasher                              hasher;
 
@@ -7546,11 +7546,11 @@ class string {
 
     // DATA
     char                          *d_str;
-    BloombergLP::bslma::Allocator *d_alloc;
+    BNP_Paribas::bslma::Allocator *d_alloc;
 
   public:
     // CREATORS
-    string(const char *str, BloombergLP::bslma::Allocator *alloc)
+    string(const char *str, BNP_Paribas::bslma::Allocator *alloc)
     : d_alloc(alloc)
     {
         std::size_t len = std::strlen(str);

@@ -600,10 +600,10 @@ BSLS_IDENT("$Id: $")
 /// depend on available language features.
 #ifdef BDLB_SCOPEEXIT_USES_MODERN_CPP
     #define BDLB_SCOPEEXIT_PROCTOR(NAME, EXIT_FUNC) \
-        auto NAME{ BloombergLP::bdlb::ScopeExitUtil::makeScopeExit(EXIT_FUNC) }
+        auto NAME{ BNP_Paribas::bdlb::ScopeExitUtil::makeScopeExit(EXIT_FUNC) }
 #else
     #define BDLB_SCOPEEXIT_PROCTOR(NAME, EXIT_FUNC) \
-        BloombergLP::bdlb::ScopeExitAny NAME((EXIT_FUNC))
+        BNP_Paribas::bdlb::ScopeExitAny NAME((EXIT_FUNC))
 #endif
 
 /// This macro is for use by `BDLB_SCOPEEXIT_GUARD` only to provide unique
@@ -649,7 +649,7 @@ BSLS_IDENT("$Id: $")
 //                                CLASS TYPES
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                              // ===============
@@ -994,7 +994,7 @@ ScopeExitUtil::makeScopeExit(EXIT_FUNC_PARAM&& function)
 
 namespace bsl {
 template <class EXIT_FUNC>
-struct is_nothrow_move_constructible<BloombergLP::bdlb::ScopeExit<EXIT_FUNC> >
+struct is_nothrow_move_constructible<BNP_Paribas::bdlb::ScopeExit<EXIT_FUNC> >
 : is_nothrow_move_constructible<EXIT_FUNC>
 {};
 }  // close 'bsl' namespace

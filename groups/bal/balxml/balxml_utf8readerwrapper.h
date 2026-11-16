@@ -67,7 +67,7 @@ BSLS_IDENT("$Id: $")
 // ```
 // static const char TEST_XML_STRING[] =
 //    "<?xml version='1.0' encoding='UTF-8'?>\n"
-//    "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'>\n"
+//    "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'>\n"
 //    "    <name>John Smith\xe7\x8f\x8f</name>\n"
 //    "    <phone dir:phonetype='cell'>212-318-2000</phone>\n"
 //    "    <address/>\n"
@@ -142,7 +142,7 @@ BSLS_IDENT("$Id: $")
 // assert(!bsl::strcmp(prefixStack.lookupNamespacePrefix("dir"), "dir"));
 // assert(prefixStack.lookupNamespaceId("dir") == 0);
 // assert(!bsl::strcmp(prefixStack.lookupNamespaceUri("dir"),
-//                     "http://bloomberg.com/schemas/directory"));
+//                     "http://bnpparibas.com/schemas/directory"));
 // ```
 // The XML being read contains one entry describing a user, advance the users
 // name name and assert all information can be read correctly.
@@ -200,7 +200,7 @@ BSLS_IDENT("$Id: $")
 // assert(!bsl::strcmp(elemAttr.prefix(), "dir"));
 // assert(!bsl::strcmp(elemAttr.localName(), "phonetype"));
 // assert(!bsl::strcmp(elemAttr.namespaceUri(),
-//                     "http://bloomberg.com/schemas/directory"));
+//                     "http://bnpparibas.com/schemas/directory"));
 // assert( elemAttr.namespaceId() == 0);
 //
 // assert(!bsl::strcmp(prefixStack.lookupNamespaceUri(elemAttr.prefix()),
@@ -271,7 +271,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_fstream.h>
 #include <bsl_streambuf.h>
 
-namespace BloombergLP  {
+namespace BNP_Paribas  {
 namespace balxml {
 
 class ElementAttribute;

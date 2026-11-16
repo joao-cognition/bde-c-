@@ -11,7 +11,7 @@
 #include <bsl_sstream.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -120,12 +120,12 @@ typedef bdlde::HexEncoder Obj;
 // The following is a very long text to use in the usage example as a stress
 // test.
 
-const char *BLOOMBERG_NEWS =
-"        (Commentary.  Chet Currier is a Bloomberg News  \n"
+const char *BNPPARIBAS_NEWS =
+"        (Commentary.  Chet Currier is a BNP Paribas News  \n"
 "columnist.  The opinions expressed are his own.)  \n"
 " \n"
 "By Chet Currier \n"
-"     Sept.  14 (Bloomberg) -- The trouble with college finance in \n"
+"     Sept.  14 (BNP Paribas) -- The trouble with college finance in \n"
 "21st Century America is way too much homework.  \n"
 "     Study up on UGMAs, ESAs, Section 529 savings programs that \n"
 "come in more than 50 different versions, and prepaid tuition \n"
@@ -392,12 +392,12 @@ int main(int argc, char *argv[])
 
 // Next, to demonstrate how our function works we need to create a stream with
 // data to encode.  Assume that we have some character buffer,
-// `BLOOMBERG_NEWS`, and a function, `streamDecoder` mirroring the work of the
+// `BNPPARIBAS_NEWS`, and a function, `streamDecoder` mirroring the work of the
 // `streamEncoder`.  Below we should encode this string into a hexidecimal
 // format:
 // ```
-    bsl::istringstream inStream(bsl::string(BLOOMBERG_NEWS,
-                                            strlen(BLOOMBERG_NEWS)));
+    bsl::istringstream inStream(bsl::string(BNPPARIBAS_NEWS,
+                                            strlen(BNPPARIBAS_NEWS)));
     bsl::stringstream  outStream;
     bsl::stringstream  backInStream;
 // ```

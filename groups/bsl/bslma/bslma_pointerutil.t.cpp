@@ -14,7 +14,7 @@
 
 // BDE_VERIFY pragma: -TP17     // `puts` instead of `printf`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdld_manageddatum_cpp,"$Id$ $CSID$")
 #include <bslmf_assert.h>
 #include <bslmf_isbitwisecopyable.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdld {
 
                             // ------------------

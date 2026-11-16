@@ -84,7 +84,7 @@ BSLS_IDENT("$Id: $")
 
 #include <locale>     // for 'std::ctype', 'locale'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                          // ========================

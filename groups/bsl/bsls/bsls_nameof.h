@@ -26,11 +26,11 @@ BSLS_IDENT("$Id: $")
 // First, your test driver must have the following `using` statements so that
 // the template class `NameOf` and the template function `nameOfType` can be
 // referred to concisely, without having to qualify them with namespaces on
-// each call.  Note that if you've already said `using namespace BloombergLP`
-// you don't have to give the `BloombergLP::` qualifiers here:
+// each call.  Note that if you've already said `using namespace BNP_Paribas`
+// you don't have to give the `BNP_Paribas::` qualifiers here:
 // ```
-// using BloombergLP::bsls::NameOf;
-// using BloombergLP::bsls::nameOfType;
+// using BNP_Paribas::bsls::NameOf;
+// using BNP_Paribas::bsls::nameOfType;
 // ```
 // Next, we define some types in the unnamed namespace:
 // ```
@@ -70,10 +70,10 @@ BSLS_IDENT("$Id: $")
 //
 // assert(!std::strcmp("int",    nameOfType(ii)));
 // ```
-// Then, we see that `NameOf` and `nameOfType` will strip `BloombergLP::`
+// Then, we see that `NameOf` and `nameOfType` will strip `BNP_Paribas::`
 // namespace qualifiers, as well as anonymous namespace qualifiers.
 // ```
-// typedef BloombergLP::bsls::Stopwatch SW;
+// typedef BNP_Paribas::bsls::Stopwatch SW;
 //
 // const SW      sw;
 // const MyType  mt = { 2, 'a' };
@@ -82,7 +82,7 @@ BSLS_IDENT("$Id: $")
 //
 // assert(!std::strcmp("bsls::Stopwatch", NameOf<SW>()));
 // assert(!std::strcmp("bsls::Stopwatch",
-//                                   NameOf<BloombergLP::bsls::Stopwatch>()));
+//                                   NameOf<BNP_Paribas::bsls::Stopwatch>()));
 // assert(!std::strcmp("bsls::Stopwatch", nameOfType(sw)));
 //
 // assert(!std::strcmp("MyType",          NameOf<MyType>()));
@@ -114,7 +114,7 @@ BSLS_IDENT("$Id: $")
 // `LOOP_ASSERT, and `P' macros will be the primary use of this component.
 // ```
 // printf("NameOf<double>() = ");
-// BloombergLP::bsls::debugprint(NameOf<double>());
+// BNP_Paribas::bsls::debugprint(NameOf<double>());
 // printf("\n");
 //
 // typedef double DTYPE;
@@ -154,7 +154,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_bslonce.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                         // =======================

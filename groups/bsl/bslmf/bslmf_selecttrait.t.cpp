@@ -9,7 +9,7 @@
 #include <string.h>
 #include <new>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(ball_logfilecleanerutil_cpp,"$Id$ $CSID$")
 
 #include <bsl_cstddef.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 namespace {

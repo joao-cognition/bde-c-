@@ -3460,13 +3460,13 @@ BSLS_IDENT("$Id: $")
 #  define BSLS_LIBRARYFEATURES_LINKER_CHECK_NAME bsls_libraryfeatures_CPP03_ABI
 # endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 extern const char *BSLS_LIBRARYFEATURES_LINKER_CHECK_NAME;
 BSLS_LINKCOERCION_FORCE_SYMBOL_DEPENDENCY(
                            const char *,
                            bsls_libraryfeatures_assertion,
-                           BloombergLP::BSLS_LIBRARYFEATURES_LINKER_CHECK_NAME)
+                           BNP_Paribas::BSLS_LIBRARYFEATURES_LINKER_CHECK_NAME)
 
 }  // close enterprise namespace
 #endif // BSLS_LIBRARYFEATURES_FORCE_ABI_ENABLED

@@ -14,7 +14,7 @@
 #include <deque>    // usage example
 #include <string>   // breathing test, should be replaceable
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using std::deque;
 
 //=============================================================================

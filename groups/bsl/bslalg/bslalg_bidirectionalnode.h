@@ -296,7 +296,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslalg_bidirectionallink.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
                         // =======================

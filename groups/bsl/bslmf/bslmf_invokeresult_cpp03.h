@@ -33,7 +33,7 @@
 # define BSLMF_INVOKERESULT_SUPPORT_CPP17_SEMANTICS 1
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                  // ==========================================
@@ -213,7 +213,7 @@ class invoke_result;
 #if BSLMF_INVOKERESULT_VARIADIC_LIMIT_B >= 0
 template <class t_FN>
 class invoke_result<t_FN>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN>::
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN>::
       BaseType {
 
 };
@@ -222,7 +222,7 @@ class invoke_result<t_FN>
 #if BSLMF_INVOKERESULT_VARIADIC_LIMIT_B >= 1
 template <class t_FN, class t_ARGTYPES_01>
 class invoke_result<t_FN, t_ARGTYPES_01>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01>::
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01>::
       BaseType {
 
 };
@@ -233,7 +233,7 @@ template <class t_FN, class t_ARGTYPES_01,
                       class t_ARGTYPES_02>
 class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_02>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02>::
       BaseType {
 
@@ -247,7 +247,7 @@ template <class t_FN, class t_ARGTYPES_01,
 class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_02,
                           t_ARGTYPES_03>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03>::
       BaseType {
@@ -264,7 +264,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_02,
                           t_ARGTYPES_03,
                           t_ARGTYPES_04>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04>::
@@ -284,7 +284,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_03,
                           t_ARGTYPES_04,
                           t_ARGTYPES_05>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -307,7 +307,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_04,
                           t_ARGTYPES_05,
                           t_ARGTYPES_06>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -333,7 +333,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_05,
                           t_ARGTYPES_06,
                           t_ARGTYPES_07>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -362,7 +362,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_06,
                           t_ARGTYPES_07,
                           t_ARGTYPES_08>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -394,7 +394,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_07,
                           t_ARGTYPES_08,
                           t_ARGTYPES_09>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -429,7 +429,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_08,
                           t_ARGTYPES_09,
                           t_ARGTYPES_10>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -467,7 +467,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_09,
                           t_ARGTYPES_10,
                           t_ARGTYPES_11>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -508,7 +508,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_10,
                           t_ARGTYPES_11,
                           t_ARGTYPES_12>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -552,7 +552,7 @@ class invoke_result<t_FN, t_ARGTYPES_01,
                           t_ARGTYPES_11,
                           t_ARGTYPES_12,
                           t_ARGTYPES_13>
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
                                                              t_ARGTYPES_02,
                                                              t_ARGTYPES_03,
                                                              t_ARGTYPES_04,
@@ -848,7 +848,7 @@ using invoke_result_t = typename invoke_result<t_FN,
 
 template <class t_FN, class... t_ARGTYPES>
 class invoke_result
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES...>::
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES...>::
       BaseType {
 
 };
@@ -869,7 +869,7 @@ using invoke_result_t = typename invoke_result<t_FN, t_ARGTYPES...>::type;
 //                              TEMPLATE IMPLEMENTATIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
@@ -951,8 +951,8 @@ struct InvokeResult_BaseCalcUtil<t_FN> {
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -963,7 +963,7 @@ struct InvokeResult_BaseCalcUtil<t_FN> {
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn>
@@ -980,8 +980,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01> {
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -992,7 +992,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01> {
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1012,8 +1012,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1024,7 +1024,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1047,8 +1047,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1059,7 +1059,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1085,8 +1085,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1097,7 +1097,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1126,8 +1126,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1138,7 +1138,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1170,8 +1170,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1182,7 +1182,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1217,8 +1217,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1229,7 +1229,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1267,8 +1267,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1279,7 +1279,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1320,8 +1320,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1332,7 +1332,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1376,8 +1376,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1388,7 +1388,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1435,8 +1435,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1447,7 +1447,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1497,8 +1497,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1509,7 +1509,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1562,8 +1562,8 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1574,7 +1574,7 @@ struct InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES_01,
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,
@@ -1615,8 +1615,8 @@ struct InvokeResult_BaseCalcUtil {
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -1627,7 +1627,7 @@ struct InvokeResult_BaseCalcUtil {
 
   public:
 
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,

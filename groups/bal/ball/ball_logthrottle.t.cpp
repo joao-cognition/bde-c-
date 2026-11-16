@@ -97,7 +97,7 @@
 // [ 4] MULTITHREADED PRINTF
 // ----------------------------------------------------------------------------
 
-// Please do not include the entire `BloombergLP` or `bsl` namespaces into
+// Please do not include the entire `BNP_Paribas` or `bsl` namespaces into
 // this component, because we want to make sure that the macros under test
 // work properly without them.
 
@@ -166,18 +166,18 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 // ----------------------------------------------------------------------------
 
-typedef BloombergLP::ball::Category           Cat;
-typedef BloombergLP::ball::CategoryHolder     Holder;
-typedef BloombergLP::ball::CategoryManager    CategoryManager;
-typedef BloombergLP::ball::LoggerManager      LoggerManager;
-typedef BloombergLP::ball::Severity           Sev;
+typedef BNP_Paribas::ball::Category           Cat;
+typedef BNP_Paribas::ball::CategoryHolder     Holder;
+typedef BNP_Paribas::ball::CategoryManager    CategoryManager;
+typedef BNP_Paribas::ball::LoggerManager      LoggerManager;
+typedef BNP_Paribas::ball::Severity           Sev;
 typedef Sev::Level                            Level;
-typedef BloombergLP::ball::ThresholdAggregate Thresholds;
+typedef BNP_Paribas::ball::ThresholdAggregate Thresholds;
 
-typedef BloombergLP::bslma::TestAllocator     TestAllocator;
+typedef BNP_Paribas::bslma::TestAllocator     TestAllocator;
 
-typedef BloombergLP::bsls::Types::IntPtr      IntPtr;
-typedef BloombergLP::bsls::Types::Int64       Int64;
+typedef BNP_Paribas::bsls::Types::IntPtr      IntPtr;
+typedef BNP_Paribas::bsls::Types::Int64       Int64;
 
 BSLA_MAYBE_UNUSED const int TRACE = Sev::e_TRACE;
 BSLA_MAYBE_UNUSED const int DEBUG = Sev::e_DEBUG;
@@ -228,7 +228,7 @@ double doubleClock()
     const double k_BILLION = 1000 * 1000 * 1000;
 
     return static_cast<double>(
-       BloombergLP::bsls::SystemTime::nowMonotonicClock().totalNanoseconds()) /
+       BNP_Paribas::bsls::SystemTime::nowMonotonicClock().totalNanoseconds()) /
                                                                      k_BILLION;
 }
 
@@ -241,13 +241,13 @@ void doubleSleep(double timeInSeconds)
     ASSERT(timeInSeconds <= 2.0);       // Don't want this test driver to take
                                         // too long.
 
-    BloombergLP::bslmt::ThreadUtil::microSleep(static_cast<int>(
+    BNP_Paribas::bslmt::ThreadUtil::microSleep(static_cast<int>(
                                                          timeInSeconds * 1e6));
 }
 
 /// Return a different severity from the `enum` `ball::Severity::Level`
 /// every time this is called, rotating through the defined values.
-BloombergLP::ball::Severity::Level nextSev()
+BNP_Paribas::ball::Severity::Level nextSev()
 {
     static const Level severities[] = {Sev::e_TRACE,
                                        Sev::e_DEBUG,
@@ -290,14 +290,14 @@ bsl::ostream& operator<<(bsl::ostream& stream, u::TestType testType)
 /// includes the name of the specified `category` and the specified
 /// `severity`, `fileName`, `lineNumber`, and `message`, and `false`
 /// otherwise.
-static bool isRecordOkay(const BloombergLP::ball::TestObserver&  observer,
-                         const BloombergLP::ball::Category      *category,
+static bool isRecordOkay(const BNP_Paribas::ball::TestObserver&  observer,
+                         const BNP_Paribas::ball::Category      *category,
                          int                                     severity,
                          const char                             *fileName,
                          int                                     lineNumber,
                          const char                             *message)
 {
-    const BloombergLP::ball::RecordAttributes& attributes =
+    const BNP_Paribas::ball::RecordAttributes& attributes =
                                   observer.lastPublishedRecord().fixedFields();
 
     const char * const w = "isRecordOkay";
@@ -422,7 +422,7 @@ double RadiationMeterReceiver::yield()
     };
 
     const Int64 k_NS_PER_HOUR =
-                      BloombergLP::bdlt::TimeUnitRatio::k_NANOSECONDS_PER_HOUR;
+                      BNP_Paribas::bdlt::TimeUnitRatio::k_NANOSECONDS_PER_HOUR;
 //
     const Int64 k_NS_PER_INFO  = k_NS_PER_HOUR / k_NUM_INFO;
                    // long-term minimum nanoseconds per info message permitted
@@ -494,7 +494,7 @@ double RadiationMeterReceiver::yield()
 
 void simpleExample()
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
      BALL_LOG_SET_CATEGORY("SIMPLE EXAMPLE");
      bsls::Stopwatch s;
@@ -532,18 +532,18 @@ namespace MultiPeriodTest {
 /// Note that this test, described in test cases 5 and 6 where it is called, is
 /// single threaded.
 void testMain(
-             const bsl::shared_ptr<BloombergLP::ball::TestObserver>&  TO,
+             const bsl::shared_ptr<BNP_Paribas::ball::TestObserver>&  TO,
              u::TestType                                              testType,
              TestAllocator                                           *alloc)
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
     ball::LoggerManagerConfiguration lmc;
     ball::LoggerManagerScopedGuard   lmg(lmc, alloc);
     ball::LoggerManager::singleton().registerObserver(TO, "TO");
 
     ball::Administration::addCategory("sieve",
-                                      BloombergLP::ball::Severity::e_DEBUG,
-                                      BloombergLP::ball::Severity::e_DEBUG,
+                                      BNP_Paribas::ball::Severity::e_DEBUG,
+                                      BNP_Paribas::ball::Severity::e_DEBUG,
                                       0,
                                       0);
     BALL_LOG_SET_CATEGORY("sieve");
@@ -699,10 +699,10 @@ enum { k_NUM_THREADS             = 20,
        k_NANOSECONDS_PER_MESSAGE = 1000 * 1000 * 1000,
        k_ATTEMPTS_PER_THREAD     = k_PERMITTED * 100 / k_NUM_THREADS };
 
-BloombergLP::bslmt::Barrier  barrier(k_NUM_THREADS + 1);
-BloombergLP::bsls::AtomicInt atomicBarrier(0);
-BloombergLP::bsls::AtomicInt idKey(0);
-BloombergLP::bsls::AtomicInt numAttempts(0);
+BNP_Paribas::bslmt::Barrier  barrier(k_NUM_THREADS + 1);
+BNP_Paribas::bsls::AtomicInt atomicBarrier(0);
+BNP_Paribas::bsls::AtomicInt idKey(0);
+BNP_Paribas::bsls::AtomicInt numAttempts(0);
 
 /// This `class` is a functor for multithreaded testing.
 class Func {
@@ -778,25 +778,25 @@ class Func {
 /// specified `testType` indicating whether the test is `printf`-style or
 /// stream style.  Use the specified `alloc` for memory allocation.
 void testMain(
-             const bsl::shared_ptr<BloombergLP::ball::TestObserver>&  TO,
+             const bsl::shared_ptr<BNP_Paribas::ball::TestObserver>&  TO,
              u::TestType                                              testType,
              TestAllocator                                           *alloc)
 {
-    BloombergLP::ball::LoggerManagerConfiguration lmc;
-    BloombergLP::ball::LoggerManagerScopedGuard lmg(lmc, alloc);
-    BloombergLP::ball::LoggerManager::singleton().registerObserver(TO, "TO");
+    BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+    BNP_Paribas::ball::LoggerManagerScopedGuard lmg(lmc, alloc);
+    BNP_Paribas::ball::LoggerManager::singleton().registerObserver(TO, "TO");
 
     // Re "sieve" category: (1) if recorded, then also published;
     // (2) never triggered.
 
-    BloombergLP::ball::Administration::addCategory(
+    BNP_Paribas::ball::Administration::addCategory(
                                       "sieve",
-                                      BloombergLP::ball::Severity::e_DEBUG,
-                                      BloombergLP::ball::Severity::e_DEBUG,
+                                      BNP_Paribas::ball::Severity::e_DEBUG,
+                                      BNP_Paribas::ball::Severity::e_DEBUG,
                                       0,
                                       0);
 
-    BloombergLP::bslmt::ThreadGroup tg(alloc);
+    BNP_Paribas::bslmt::ThreadGroup tg(alloc);
 
     tg.addThreads(Func(testType), k_NUM_THREADS);
 
@@ -811,7 +811,7 @@ void testMain(
     tg.joinAll();
 
     const int     numPublished = TO->numPublishedRecords();
-    const BloombergLP::ball::RecordAttributes& attributes =
+    const BNP_Paribas::ball::RecordAttributes& attributes =
                                    TO->lastPublishedRecord().fixedFields();
     const char   *lastTrace  = attributes.message();
     const int     severity   = attributes.severity();
@@ -844,8 +844,8 @@ int main(int argc, char *argv[])
     cout << "TEST " << __FILE__ << " CASE " << test << endl;
 
 
-    bsl::shared_ptr<BloombergLP::ball::TestObserver> TO =
-              bsl::make_shared<BloombergLP::ball::TestObserver>(&cout);
+    bsl::shared_ptr<BNP_Paribas::ball::TestObserver> TO =
+              bsl::make_shared<BNP_Paribas::ball::TestObserver>(&cout);
 
     TestAllocator ta("test", veryVeryVeryVerbose);
 
@@ -887,24 +887,24 @@ int main(int argc, char *argv[])
         }
 
         bsl::ostringstream oss;
-        bsl::shared_ptr<BloombergLP::ball::StreamObserver> sobs =
-                     bsl::make_shared<BloombergLP::ball::StreamObserver>(&oss);
+        bsl::shared_ptr<BNP_Paribas::ball::StreamObserver> sobs =
+                     bsl::make_shared<BNP_Paribas::ball::StreamObserver>(&oss);
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
         lmc.setDefaultThresholdLevelsIfValid(
-                                          BloombergLP::ball::Severity::e_INFO);
+                                          BNP_Paribas::ball::Severity::e_INFO);
 
-        BloombergLP::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
-        BloombergLP::ball::LoggerManager::singleton().registerObserver(sobs,
+        BNP_Paribas::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManager::singleton().registerObserver(sobs,
                                                                        "SO");
 
         // Re "sieve" category: (1) if recorded, then also published;
         // (2) never triggered.
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                 "RADIATION.MONITOR",
-                                BloombergLP::ball::Severity::e_TRACE,
-                                BloombergLP::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
                                 0,
                                 0);
 
@@ -1116,19 +1116,19 @@ int main(int argc, char *argv[])
             if (veryVerbose) P(categoryThreshold);
 
             bsl::ostringstream oss(&ta);
-            bsl::shared_ptr<BloombergLP::ball::StreamObserver> sobs =
-                     bsl::make_shared<BloombergLP::ball::StreamObserver>(&oss);
+            bsl::shared_ptr<BNP_Paribas::ball::StreamObserver> sobs =
+                     bsl::make_shared<BNP_Paribas::ball::StreamObserver>(&oss);
 
-            BloombergLP::ball::LoggerManagerConfiguration lmc;
-            BloombergLP::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
-            BloombergLP::ball::LoggerManager::singleton().registerObserver(
+            BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+            BNP_Paribas::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
+            BNP_Paribas::ball::LoggerManager::singleton().registerObserver(
                                                                          sobs,
                                                                          "SO");
 
             // Re "sieve" category: (1) if recorded, then also published;
             // (2) never triggered.
 
-            BloombergLP::ball::Administration::addCategory(
+            BNP_Paribas::ball::Administration::addCategory(
                                         "sieve",
                                         categoryThreshold,
                                         categoryThreshold,
@@ -1298,18 +1298,18 @@ int main(int argc, char *argv[])
         const char  SEP     = ':';
         const int   ARGS[]  = { 1, 2, 3 };
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard lmg(lmc, &ta);
-        BloombergLP::ball::LoggerManager::singleton().registerObserver(TO,
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManager::singleton().registerObserver(TO,
                                                                        "TO");
 
         // Re "sieve" category: (1) if recorded, then also published;
         // (2) never triggered.
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                 "sieve",
-                                BloombergLP::ball::Severity::e_TRACE,
-                                BloombergLP::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
                                 0,
                                 0);
         BALL_LOG_SET_CATEGORY("sieve")
@@ -1319,54 +1319,54 @@ int main(int argc, char *argv[])
         const Cat  *CAT  = BALL_LOG_CATEGORY;
         const char *FILE = __FILE__;
 
-        const int TRACE = BloombergLP::ball::Severity::e_TRACE;
-        const int DEBUG = BloombergLP::ball::Severity::e_DEBUG;
-        const int INFO  = BloombergLP::ball::Severity::e_INFO;
-        const int WARN  = BloombergLP::ball::Severity::e_WARN;
-        const int ERROR = BloombergLP::ball::Severity::e_ERROR;
-        const int FATAL = BloombergLP::ball::Severity::e_FATAL;
+        const int TRACE = BNP_Paribas::ball::Severity::e_TRACE;
+        const int DEBUG = BNP_Paribas::ball::Severity::e_DEBUG;
+        const int INFO  = BNP_Paribas::ball::Severity::e_INFO;
+        const int WARN  = BNP_Paribas::ball::Severity::e_WARN;
+        const int ERROR = BNP_Paribas::ball::Severity::e_ERROR;
+        const int FATAL = BNP_Paribas::ball::Severity::e_FATAL;
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                      "noTRACE",
-                                     BloombergLP::ball::Severity::e_TRACE - 1,
-                                     BloombergLP::ball::Severity::e_TRACE - 1,
-                                     BloombergLP::ball::Severity::e_TRACE - 1,
-                                     BloombergLP::ball::Severity::e_TRACE - 1);
+                                     BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                     BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                     BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                     BNP_Paribas::ball::Severity::e_TRACE - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                      "noDEBUG",
-                                     BloombergLP::ball::Severity::e_DEBUG - 1,
-                                     BloombergLP::ball::Severity::e_DEBUG - 1,
-                                     BloombergLP::ball::Severity::e_DEBUG - 1,
-                                     BloombergLP::ball::Severity::e_DEBUG - 1);
+                                     BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                     BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                     BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                     BNP_Paribas::ball::Severity::e_DEBUG - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                       "noINFO",
-                                      BloombergLP::ball::Severity::e_INFO - 1,
-                                      BloombergLP::ball::Severity::e_INFO - 1,
-                                      BloombergLP::ball::Severity::e_INFO - 1,
-                                      BloombergLP::ball::Severity::e_INFO - 1);
+                                      BNP_Paribas::ball::Severity::e_INFO - 1,
+                                      BNP_Paribas::ball::Severity::e_INFO - 1,
+                                      BNP_Paribas::ball::Severity::e_INFO - 1,
+                                      BNP_Paribas::ball::Severity::e_INFO - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                       "noWARN",
-                                      BloombergLP::ball::Severity::e_WARN - 1,
-                                      BloombergLP::ball::Severity::e_WARN - 1,
-                                      BloombergLP::ball::Severity::e_WARN - 1,
-                                      BloombergLP::ball::Severity::e_WARN - 1);
+                                      BNP_Paribas::ball::Severity::e_WARN - 1,
+                                      BNP_Paribas::ball::Severity::e_WARN - 1,
+                                      BNP_Paribas::ball::Severity::e_WARN - 1,
+                                      BNP_Paribas::ball::Severity::e_WARN - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                      "noERROR",
-                                     BloombergLP::ball::Severity::e_ERROR - 1,
-                                     BloombergLP::ball::Severity::e_ERROR - 1,
-                                     BloombergLP::ball::Severity::e_ERROR - 1,
-                                     BloombergLP::ball::Severity::e_ERROR - 1);
+                                     BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                     BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                     BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                     BNP_Paribas::ball::Severity::e_ERROR - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                      "noFATAL",
-                                     BloombergLP::ball::Severity::e_FATAL - 1,
-                                     BloombergLP::ball::Severity::e_FATAL - 1,
-                                     BloombergLP::ball::Severity::e_FATAL - 1,
-                                     BloombergLP::ball::Severity::e_FATAL - 1);
+                                     BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                     BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                     BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                     BNP_Paribas::ball::Severity::e_FATAL - 1);
 
         Level sev = u::nextSev();
 
@@ -1578,10 +1578,10 @@ int main(int argc, char *argv[])
                 char                    *longString = (char *) ta.allocate(NN);
                 char                    *cpyString  = (char *) ta.allocate(NN);
 
-                BloombergLP::bslma::ManagedPtr<char>  managedLongString(
+                BNP_Paribas::bslma::ManagedPtr<char>  managedLongString(
                                                                     longString,
                                                                     &ta);
-                BloombergLP::bslma::ManagedPtr<char>  managedCpyString(
+                BNP_Paribas::bslma::ManagedPtr<char>  managedCpyString(
                                                                      cpyString,
                                                                      &ta);
 
@@ -1772,8 +1772,8 @@ int main(int argc, char *argv[])
 
         const double start = u::doubleClock();
 
-        BloombergLP::bslma::TestAllocator testAllocator(veryVeryVeryVerbose);
-        BloombergLP::bslma::DefaultAllocatorGuard taGuard(&testAllocator);
+        BNP_Paribas::bslma::TestAllocator testAllocator(veryVeryVeryVerbose);
+        BNP_Paribas::bslma::DefaultAllocatorGuard taGuard(&testAllocator);
 
         const int MAX_ARGS = 9;
 
@@ -1802,71 +1802,71 @@ int main(int argc, char *argv[])
         };
         ASSERT(MAX_ARGS + 1 == sizeof MESSAGE / sizeof *MESSAGE);
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard lmg(lmc, &ta);
-        BloombergLP::ball::LoggerManager::singleton().registerObserver(TO,
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManager::singleton().registerObserver(TO,
                                                                        "TO");
 
-        const int NONE  = BloombergLP::ball::Severity::e_TRACE + 1;
-        const int TRACE = BloombergLP::ball::Severity::e_TRACE;
-        const int DEBUG = BloombergLP::ball::Severity::e_DEBUG;
-        const int INFO  = BloombergLP::ball::Severity::e_INFO;
-        const int WARN  = BloombergLP::ball::Severity::e_WARN;
-        const int ERROR = BloombergLP::ball::Severity::e_ERROR;
-        const int FATAL = BloombergLP::ball::Severity::e_FATAL;
+        const int NONE  = BNP_Paribas::ball::Severity::e_TRACE + 1;
+        const int TRACE = BNP_Paribas::ball::Severity::e_TRACE;
+        const int DEBUG = BNP_Paribas::ball::Severity::e_DEBUG;
+        const int INFO  = BNP_Paribas::ball::Severity::e_INFO;
+        const int WARN  = BNP_Paribas::ball::Severity::e_WARN;
+        const int ERROR = BNP_Paribas::ball::Severity::e_ERROR;
+        const int FATAL = BNP_Paribas::ball::Severity::e_FATAL;
 
-        BloombergLP::ball::Administration::addCategory("pass", 0, TRACE, 0, 0);
+        BNP_Paribas::ball::Administration::addCategory("pass", 0, TRACE, 0, 0);
 
         // Re "sieve" category: (1) if recorded, then also published;
         // (2) never triggered.
 
-        BloombergLP::ball::Administration::addCategory("sieve",
+        BNP_Paribas::ball::Administration::addCategory("sieve",
                                                        TRACE,
                                                        TRACE,
                                                        0,
                                                        0);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noTRACE",
-                                   BloombergLP::ball::Severity::e_TRACE - 1,
-                                   BloombergLP::ball::Severity::e_TRACE - 1,
-                                   BloombergLP::ball::Severity::e_TRACE - 1,
-                                   BloombergLP::ball::Severity::e_TRACE - 1);
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noDEBUG",
-                                  BloombergLP::ball::Severity::e_DEBUG - 1,
-                                  BloombergLP::ball::Severity::e_DEBUG - 1,
-                                  BloombergLP::ball::Severity::e_DEBUG - 1,
-                                  BloombergLP::ball::Severity::e_DEBUG - 1);
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noINFO",
-                                  BloombergLP::ball::Severity::e_INFO - 1,
-                                  BloombergLP::ball::Severity::e_INFO - 1,
-                                  BloombergLP::ball::Severity::e_INFO - 1,
-                                  BloombergLP::ball::Severity::e_INFO - 1);
+                                  BNP_Paribas::ball::Severity::e_INFO - 1,
+                                  BNP_Paribas::ball::Severity::e_INFO - 1,
+                                  BNP_Paribas::ball::Severity::e_INFO - 1,
+                                  BNP_Paribas::ball::Severity::e_INFO - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noWARN",
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1);
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noERROR",
-                                  BloombergLP::ball::Severity::e_ERROR - 1,
-                                  BloombergLP::ball::Severity::e_ERROR - 1,
-                                  BloombergLP::ball::Severity::e_ERROR - 1,
-                                  BloombergLP::ball::Severity::e_ERROR - 1);
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noFATAL",
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1);
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1);
 
         const int   n = 1;                     // numEventsPerPeriod
         const Int64 p = 1000 * 1000 * 1000;    // NANOSECONDS_PER_MESSAGE
@@ -1889,7 +1889,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_0_ARGS);
             ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
@@ -1906,7 +1906,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_1_ARGS, 1);
             ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
@@ -1923,7 +1923,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_2_ARGS, 1, 2);
             ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
@@ -1940,7 +1940,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
             ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
@@ -1957,7 +1957,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
             ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
@@ -1974,7 +1974,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
             ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
@@ -1991,7 +1991,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5,
                                                                             6);
@@ -2010,7 +2010,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5,
                                                                          6, 7);
@@ -2029,7 +2029,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5,
                                                                       6, 7, 8);
@@ -2048,7 +2048,7 @@ int main(int argc, char *argv[])
         if (veryVerbose) cout << "BALL_LOGTHROTTLEVA(" <<
                                                    sev << ") - " << jj << endl;
         for (int ii = 0; ii < 10; ++ii) {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             BALL_LOGTHROTTLEVA(NONE, n, p, FORMAT_SPEC_9_ARGS, 1, 2, 3, 4, 5,
                                                                       6,7,8,9);
@@ -2073,13 +2073,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_0_ARGS);
@@ -2095,13 +2095,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_1_ARGS, 1);
@@ -2117,13 +2117,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
@@ -2139,13 +2139,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
@@ -2161,13 +2161,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
@@ -2183,14 +2183,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4,
                                                                             5);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
@@ -2206,14 +2206,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4,
                                                                          5, 6);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5,
@@ -2230,14 +2230,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4,
                                                                        5, 6,7);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5,
@@ -2254,14 +2254,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,
                                                                           7,8);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,7,
@@ -2278,14 +2278,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,
                                                                         7,8,9);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_TRACE(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,7,8,
@@ -2304,13 +2304,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_0_ARGS);
@@ -2326,13 +2326,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_1_ARGS, 1);
@@ -2348,13 +2348,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
@@ -2370,13 +2370,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
@@ -2392,13 +2392,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
@@ -2414,14 +2414,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4,
                                                                             5);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
@@ -2437,7 +2437,7 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4,
                                                                          5, 6);
@@ -2445,7 +2445,7 @@ int main(int argc, char *argv[])
             }
 
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5,
@@ -2462,14 +2462,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4,
                                                                        5, 6,7);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5,
@@ -2486,14 +2486,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,
                                                                           7,8);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,7,
@@ -2510,14 +2510,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,
                                                                         7,8,9);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_DEBUG(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,7,8,
@@ -2536,13 +2536,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_0_ARGS);
@@ -2558,13 +2558,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_1_ARGS, 1);
@@ -2580,13 +2580,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
@@ -2602,13 +2602,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
@@ -2624,13 +2624,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
@@ -2646,14 +2646,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4,
                                                                             5);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
@@ -2669,14 +2669,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4,
                                                                          5, 6);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5,
@@ -2693,14 +2693,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4,
                                                                        5, 6,7);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6,
@@ -2717,14 +2717,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,
                                                                           7,8);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,7,8);
@@ -2740,14 +2740,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,
                                                                         7,8,9);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_INFO(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,7,8,
@@ -2766,13 +2766,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_0_ARGS);
@@ -2788,13 +2788,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_1_ARGS, 1);
@@ -2810,13 +2810,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
@@ -2832,13 +2832,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
@@ -2854,13 +2854,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
@@ -2876,14 +2876,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4,
                                                                             5);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
@@ -2899,14 +2899,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4,
                                                                          5, 6);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5,
@@ -2923,14 +2923,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4,
                                                                        5, 6,7);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6,
@@ -2947,14 +2947,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,
                                                                           7,8);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,7,8);
@@ -2970,14 +2970,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,
                                                                         7,8,9);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_WARN(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,7,8,
@@ -2996,13 +2996,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_0_ARGS);
@@ -3018,13 +3018,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_1_ARGS, 1);
@@ -3040,13 +3040,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
@@ -3062,13 +3062,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
@@ -3084,13 +3084,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
@@ -3106,14 +3106,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4,
                                                                             5);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
@@ -3129,14 +3129,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4,
                                                                          5, 6);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5,
@@ -3153,14 +3153,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4,
                                                                        5, 6,7);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5,
@@ -3177,14 +3177,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,
                                                                           7,8);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,7,
@@ -3201,14 +3201,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,
                                                                         7,8,9);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_ERROR(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,7,8,
@@ -3227,13 +3227,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_0_ARGS);
@@ -3249,13 +3249,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_1_ARGS, 1);
@@ -3271,13 +3271,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_2_ARGS, 1, 2);
@@ -3293,13 +3293,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_3_ARGS, 1, 2, 3);
@@ -3315,13 +3315,13 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
@@ -3337,14 +3337,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4,
                                                                             5);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + 1;
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
@@ -3360,14 +3360,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4,
                                                                          5, 6);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5,
@@ -3384,14 +3384,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4,
                                                                        5, 6,7);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5,
@@ -3408,14 +3408,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,
                                                                           7,8);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_8_ARGS, 1,2,3,4,5,6,7,
@@ -3432,14 +3432,14 @@ int main(int argc, char *argv[])
         for (int ii = 0; ii < 10; ++ii) {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
                 BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,
                                                                         7,8,9);
                 ASSERT(PREVIOUS_RECORD == TO->lastPublishedRecord());
             }
 
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                      TO->lastPublishedRecord();
             const int LINE = L_ + (k_HAS_MULTILINE_OFFSET? 2 : 1);
             BALL_LOGTHROTTLEVA_FATAL(n, p, FORMAT_SPEC_9_ARGS, 1,2,3,4,5,6,7,8,
@@ -3460,7 +3460,7 @@ int main(int argc, char *argv[])
             const int                NN         = BUFLEN + EXCESS;
             char                    *longString = (char *) ta.allocate(NN);
 
-            BloombergLP::bslma::ManagedPtr<char> managedString(longString,
+            BNP_Paribas::bslma::ManagedPtr<char> managedString(longString,
                                                                &ta);
 
             bsl::fill(longString + 0, longString + NN, 'x');

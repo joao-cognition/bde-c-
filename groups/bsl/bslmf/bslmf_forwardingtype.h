@@ -307,7 +307,7 @@ BSLS_IDENT("$Id: $")
 // 2017 PTF release, 12.1.0.19.
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 
 namespace bslmf {

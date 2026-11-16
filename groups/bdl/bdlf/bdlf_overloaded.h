@@ -60,7 +60,7 @@ BSLS_IDENT("$Id: $")
 
 #include <utility>   // std::forward
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlf {
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_CTAD

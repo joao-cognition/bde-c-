@@ -187,7 +187,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_ctime.h>            // 'bsl::tm'
 #include <bsl_optional.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                             // ===================

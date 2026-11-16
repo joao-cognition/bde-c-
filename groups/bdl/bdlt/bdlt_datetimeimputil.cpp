@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bdlt_datetimeimputil_cpp,"$Id$ $CSID$")
 
 #include <bslmf_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                           // ----------------------

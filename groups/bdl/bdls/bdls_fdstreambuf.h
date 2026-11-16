@@ -366,7 +366,7 @@ BSLS_IDENT("$Id: $")
                             // 'traits_type' are within the 'bsl::streambuf'
                             // class
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdls {
 
                     // ====================================

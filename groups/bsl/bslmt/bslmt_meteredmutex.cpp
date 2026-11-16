@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(bslmt_meteredmutex_cpp,"$Id$ $CSID$")
 
 #include <bsls_types.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                             // ------------------
                             // class MeteredMutex

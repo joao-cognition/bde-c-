@@ -62,7 +62,7 @@ extern "C" {
 # undef DELETE  // Awkward Microsoft macro
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using std::numeric_limits;
 
 // This file uses really large tables
@@ -132,7 +132,7 @@ using std::numeric_limits;
 // [19] char *toChars(char *first, char *last, float value,  format, prec);
 // ----------------------------------------------------------------------------
 // [ 1] BREATHING TEST
-// [ 6] BLOOMBERG RYU INTERNALS
+// [ 6] BNPPARIBAS RYU INTERNALS
 // [20] VERIFY HEXFLOAT PARSER
 // [21] MICROSOFT TESTS DOUBLE TO CHARS W/O PRECISION
 // [22] MICROSOFT TESTS DOUBLE TO CHARS WITH PRECISION
@@ -80454,7 +80454,7 @@ void compareToOracle(const int            LINE,
     // decide to suppress such test failures.
     if (stdLen != EXPECTED_LENGTH || 0 != memcmp(stdBuf, EXPECTED, stdLen)) {
 
-#define ASSERT_PX_(EXPR, POSTFIX) BloombergLP::bsls::BslTestUtil::            \
+#define ASSERT_PX_(EXPR, POSTFIX) BNP_Paribas::bsls::BslTestUtil::            \
                                       callDebugprint(EXPR, #EXPR ": ", POSTFIX)
 
 #define ASSERT_P_(EXPR) ASSERT_PX_(EXPR, "\t")
@@ -81280,7 +81280,7 @@ void compareToOraclePrec(const int           LINE,
     // decide to suppress such test failures.
     if (stdLen != EXPECTED_LENGTH || 0 != memcmp(stdBuf, EXPECTED, stdLen)) {
 
-#define ASSERT_PX_(EXPR, POSTFIX) BloombergLP::bsls::BslTestUtil::            \
+#define ASSERT_PX_(EXPR, POSTFIX) BNP_Paribas::bsls::BslTestUtil::            \
                                       callDebugprint(EXPR, #EXPR ": ", POSTFIX)
 
 #define ASSERT_P_(EXPR) ASSERT_PX_(EXPR, "\t")
@@ -84758,8 +84758,8 @@ int main(int argc, char *argv[])
       } break;
       case 6: {
         // --------------------------------------------------------------------
-        // BLOOMBERG RYU INTERNALS
-        //  Verify "generic" functions written for the Bloomberg extensions.
+        // BNPPARIBAS RYU INTERNALS
+        //  Verify "generic" functions written for the BNP Paribas extensions.
         //
         // Concerns:
         // 1. `mantissa_countr_zero32` and `mantissa_countr_zero64`
@@ -84819,10 +84819,10 @@ int main(int argc, char *argv[])
         //    bit of the mantissa and decrease the expected exponent.
         //
         // Testing:
-        //   BLOOMBERG RYU INTERNALS
+        //   BNPPARIBAS RYU INTERNALS
         // --------------------------------------------------------------------
 
-        if (verbose) printf("BLOOMBERG RYU INTERNALS\n"
+        if (verbose) printf("BNPPARIBAS RYU INTERNALS\n"
                             "=======================\n");
 
         if (veryVerbose) puts("Verifying `mantissa_countr_zero64`");

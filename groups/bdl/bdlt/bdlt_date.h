@@ -117,7 +117,7 @@ BSLS_IDENT("$Id: $")
 // calendar.
 //
 // **WARNING**: Use of the proleptic Gregorian version of this class is
-// *disallowed* in Bloomberg code.
+// *disallowed* in BNP Paribas code.
 //
 // Over the range of dates supported by `bdlt::Date`
 // (`[0001JAN01 .. 9999DEC31]`), the proleptic Gregorian calendar (used by
@@ -227,7 +227,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                                   // ==========
@@ -274,7 +274,7 @@ class Date {
 
 #ifndef BDE_OPENSOURCE_PUBLICATION
     #ifdef BDE_USE_PROLEPTIC_DATES
-    #error 'BDE_USE_PROLEPTIC_DATES' option disallowed for Bloomberg code.
+    #error 'BDE_USE_PROLEPTIC_DATES' option disallowed for BNP Paribas code.
     #endif
 #endif
 
@@ -1094,7 +1094,7 @@ template <class HASHALG>
 inline
 void bdlt::hashAppend(HASHALG& hashAlg, const Date& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, object.d_serialDate);
 }
 
@@ -1103,7 +1103,7 @@ namespace bslmf {
 /// This template specialization for `IsBitwiseCopyable` indicates that
 /// `Date` is a bitwise copyable type.
 template <>
-struct IsBitwiseCopyable<BloombergLP::bdlt::Date> : bsl::true_type {
+struct IsBitwiseCopyable<BNP_Paribas::bdlt::Date> : bsl::true_type {
 };
 
 }  // close namespace bslmf

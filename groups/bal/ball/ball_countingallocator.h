@@ -57,7 +57,7 @@ BSLS_IDENT("$Id: $")
 // `bslma::Allocator` named `allocator`.
 // ```
 //   // First create the counting allocator using 'allocator'.
-//   BloombergLP::ball::CountingAllocator countingAllocator(allocator);
+//   BNP_Paribas::ball::CountingAllocator countingAllocator(allocator);
 //
 //   // Now create the vector using the counting allocator.
 //   bsl::vector<int> vec(&countingAllocator);
@@ -77,7 +77,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_alignmentutil.h>
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // =======================

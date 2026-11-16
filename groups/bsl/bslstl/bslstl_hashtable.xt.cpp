@@ -61,7 +61,7 @@
 #include <stdlib.h>
 #include <string.h>  // `strcmp`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #if defined(BSLS_PLATFORM_CMP_CLANG) && BSLS_PLATFORM_CMP_VERSION >= 100000
 #pragma clang diagnostic ignored "-Wdeprecated-copy"
@@ -186,7 +186,7 @@ using namespace BloombergLP;
 //
 // MANIPULATORS
 //*[ 9] operator=(const HashTable& rhs);
-// [  ] HashTable& operator=(BloombergLP::bslmf::MovableRef<HashTable> rhs);
+// [  ] HashTable& operator=(BNP_Paribas::bslmf::MovableRef<HashTable> rhs);
 // [  ] template <class... Args> Link *emplaceIfMissing(Args&&... args);
 //*[13] template <class P> Link *insert(P&& obj);
 //*[13] template <class P> Link *insert(P&& obj, const Link *hint);
@@ -398,19 +398,19 @@ namespace bsl {
               // ================================================
 
 /// This class template specialization provides a functor to determine when
-/// two `::BloombergLP::bsltf::NonEqualComparableTestType` objects have the
+/// two `::BNP_Paribas::bsltf::NonEqualComparableTestType` objects have the
 /// same value.  Usually, the primary template calls `operator==` to
 /// determine the result, but that cannot work for the test type that is
 /// specifically designed to not have an `operator==`.  In such cases, we
 /// must provide an explicit specialization of this template if we expect
 /// the test type to work in our test cases along side other types.
 template <>
-struct equal_to< ::BloombergLP::bsltf::NonEqualComparableTestType> {
+struct equal_to< ::BNP_Paribas::bsltf::NonEqualComparableTestType> {
 
     // TYPES
-    typedef ::BloombergLP::bsltf::NonEqualComparableTestType
+    typedef ::BNP_Paribas::bsltf::NonEqualComparableTestType
                                                           first_argument_type;
-    typedef ::BloombergLP::bsltf::NonEqualComparableTestType
+    typedef ::BNP_Paribas::bsltf::NonEqualComparableTestType
                                                           second_argument_type;
     typedef bool                                          result_type;
 
@@ -419,8 +419,8 @@ struct equal_to< ::BloombergLP::bsltf::NonEqualComparableTestType> {
     /// Return `true` if the specified `a` and `b` objects have the same
     /// value, and `false` otherwise.  Two `NonEqualComparableTestType`
     /// objects have the same value if ... (TBD)
-    bool operator()(const ::BloombergLP::bsltf::NonEqualComparableTestType& a,
-                    const ::BloombergLP::bsltf::NonEqualComparableTestType& b)
+    bool operator()(const ::BNP_Paribas::bsltf::NonEqualComparableTestType& a,
+                    const ::BNP_Paribas::bsltf::NonEqualComparableTestType& b)
                                                                          const;
 };
 
@@ -429,9 +429,9 @@ struct equal_to< ::BloombergLP::bsltf::NonEqualComparableTestType> {
               // ------------------------------------------------
 
 inline
-bool equal_to< ::BloombergLP::bsltf::NonEqualComparableTestType>::operator()
-                    (const ::BloombergLP::bsltf::NonEqualComparableTestType& a,
-                     const ::BloombergLP::bsltf::NonEqualComparableTestType& b)
+bool equal_to< ::BNP_Paribas::bsltf::NonEqualComparableTestType>::operator()
+                    (const ::BNP_Paribas::bsltf::NonEqualComparableTestType& a,
+                     const ::BNP_Paribas::bsltf::NonEqualComparableTestType& b)
                                                                           const
 {
     return BSL_TF_EQ(a, b);
@@ -442,13 +442,13 @@ bool equal_to< ::BloombergLP::bsltf::NonEqualComparableTestType>::operator()
                     // ========================================
 
 /// This class template specialization provides a functor to determine a
-/// hash value for `::BloombergLP::bsltf::NonEqualComparableTestType`
+/// hash value for `::BNP_Paribas::bsltf::NonEqualComparableTestType`
 /// objects.
 template <>
-struct hash< ::BloombergLP::bsltf::NonEqualComparableTestType> {
+struct hash< ::BNP_Paribas::bsltf::NonEqualComparableTestType> {
 
     // TYPES
-    typedef ::BloombergLP::bsltf::NonEqualComparableTestType argument_type;
+    typedef ::BNP_Paribas::bsltf::NonEqualComparableTestType argument_type;
     typedef size_t                                           result_type;
 
     // ACCESSORS
@@ -456,7 +456,7 @@ struct hash< ::BloombergLP::bsltf::NonEqualComparableTestType> {
     /// Return a hash for the specified `value` such that this functor
     /// satisfies the Hash requirements of the C++ Standard,
     /// [hash.requirements].
-    size_t operator()(const ::BloombergLP::bsltf::NonEqualComparableTestType&
+    size_t operator()(const ::BNP_Paribas::bsltf::NonEqualComparableTestType&
                                                                   value) const;
 };
 
@@ -465,8 +465,8 @@ struct hash< ::BloombergLP::bsltf::NonEqualComparableTestType> {
                 // ----------------------------------------
 
 // not inlining initially due to static local data
-size_t hash< ::BloombergLP::bsltf::NonEqualComparableTestType>::operator()
-          (const ::BloombergLP::bsltf::NonEqualComparableTestType& value) const
+size_t hash< ::BNP_Paribas::bsltf::NonEqualComparableTestType>::operator()
+          (const ::BNP_Paribas::bsltf::NonEqualComparableTestType& value) const
 {
     static const bsl::hash<int> k_EVALUATE_HASH = bsl::hash<int>();
     return k_EVALUATE_HASH(value.data());
@@ -485,7 +485,7 @@ typedef bslalg::BidirectionalLink Link;
 //                `debugprint` overload for `bslstl::HashTable`
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 // ADL-accessible `debugprint` function template for the test facilities to be
 // able to print any `bslstl::HashTable`.  See `bslim_bsltestutil`.
@@ -761,7 +761,7 @@ void TestTypes::debugprint(const AwkwardMaplikeElement& value)
                       // AwkwardMaplikeElement TRAITS
                       // ----------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 template <>
@@ -923,7 +923,7 @@ void TestTypes::debugprint(const MostEvilTestType& value)
                          // MostEvilTestType TRAITS
                          // -----------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 template <>
@@ -8551,11 +8551,11 @@ namespace UsageExamples {
         // PRIVATE TYPES
         typedef bsl::allocator_traits<ALLOCATOR>               AllocatorTraits;
         typedef typename AllocatorTraits::difference_type      difference_type;
-        typedef BloombergLP::bslstl::HashTableIterator<
+        typedef BNP_Paribas::bslstl::HashTableIterator<
                                           const KEY, difference_type> iterator;
 
         typedef UseEntireValueAsKey<KEY>                               HashKey;
-        typedef BloombergLP::bslstl::HashTable<HashKey,
+        typedef BNP_Paribas::bslstl::HashTable<HashKey,
                                                HASHF,
                                                EQUAL,
                                                ALLOCATOR>         ImpHashTable;
@@ -8828,7 +8828,7 @@ if (veryVerbose) puts("Usage Example1");
         typedef bsl::allocator_traits<ALLOCATOR>               AllocatorTraits;
 
         typedef UseFirstValueOfPairAsKey<bsl::pair<const KEY, VALUE> > HashKey;
-        typedef BloombergLP::bslstl::HashTable<HashKey,
+        typedef BNP_Paribas::bslstl::HashTable<HashKey,
                                                HASHF,
                                                EQUAL,
                                                ALLOCATOR>         ImpHashTable;
@@ -8927,7 +8927,7 @@ if (veryVerbose) puts("Usage Example1");
                                                                 const KEY& key)
     {
         typedef typename ImpHashTable::NodeType        HashTableNode;
-        typedef BloombergLP::bslalg::BidirectionalLink HashTableLink;
+        typedef BNP_Paribas::bslalg::BidirectionalLink HashTableLink;
 
         bool           isInserted;  // not used
         HashTableLink *node = d_impl.insertKeyIfMissing(&isInserted, key);
@@ -9002,7 +9002,7 @@ if (veryVerbose) puts("Usage Example2");
         typedef typename AllocatorTraits::difference_type      difference_type;
 
         typedef UseFirstValueOfPairAsKey<bsl::pair<const KEY, VALUE> > HashKey;
-        typedef BloombergLP::bslstl::HashTable<HashKey,
+        typedef BNP_Paribas::bslstl::HashTable<HashKey,
                                                HASHF,
                                                EQUAL,
                                                ALLOCATOR>         ImpHashTable;
@@ -9012,10 +9012,10 @@ if (veryVerbose) puts("Usage Example2");
       public:
         // TYPES
         typedef typename AllocatorTraits::size_type                  size_type;
-        typedef BloombergLP::bslstl::HashTableIterator<value_type,
+        typedef BNP_Paribas::bslstl::HashTableIterator<value_type,
                                                        difference_type>
                                                                       iterator;
-        typedef BloombergLP::bslstl::HashTableIterator<const value_type,
+        typedef BNP_Paribas::bslstl::HashTableIterator<const value_type,
                                                        difference_type>
                                                                 const_iterator;
 
@@ -9138,7 +9138,7 @@ if (veryVerbose) puts("Usage Example2");
                                                           const KEY& key) const
     {
         typedef bsl::pair<const_iterator, const_iterator>  ResultType;
-        typedef BloombergLP::bslalg::BidirectionalLink     HashTableLink;
+        typedef BNP_Paribas::bslalg::BidirectionalLink     HashTableLink;
 
         HashTableLink *first;
         HashTableLink *last;
@@ -9373,7 +9373,7 @@ if (veryVerbose) puts("Usage Example3");
     {
       private:
         // PRIVATE TYPES
-        typedef BloombergLP::bslstl::HashTable<
+        typedef BNP_Paribas::bslstl::HashTable<
                       UseOrderNumberAsKey,
                       bsl::hash<    UseOrderNumberAsKey::KeyType>,
                       bsl::equal_to<UseOrderNumberAsKey::KeyType> >
@@ -9386,14 +9386,14 @@ if (veryVerbose) puts("Usage Example3");
 // first hash table, the one that stores the records.
 // ```
 
-        typedef BloombergLP::bslstl::HashTableIterator<const MySalesRecord,
+        typedef BNP_Paribas::bslstl::HashTableIterator<const MySalesRecord,
                                                        difference_type>
                                                               ItrByOrderNumber;
 // ```
 // The `ItrPtrById` type is used to provide access to the elements of the other
 // hashtables, the ones that store pointers into the first hashtable.
 // ```
-        typedef BloombergLP::bslstl::HashTableIterator<const MySalesRecord *,
+        typedef BNP_Paribas::bslstl::HashTableIterator<const MySalesRecord *,
                                                        difference_type>
                                                                     ItrPtrById;
 // ```
@@ -9424,12 +9424,12 @@ if (veryVerbose) puts("Usage Example3");
             }
         };
 
-        typedef BloombergLP::bslstl::HashTable<
+        typedef BNP_Paribas::bslstl::HashTable<
                       UseCustomerIdAsKey,
                       bsl::hash<    UseCustomerIdAsKey::KeyType>,
                       bsl::equal_to<UseCustomerIdAsKey::KeyType> >
                                                        RecordsPtrsByCustomerId;
-        typedef BloombergLP::bslstl::HashTable<
+        typedef BNP_Paribas::bslstl::HashTable<
                       UseVendorIdAsKey,
                       bsl::hash<    UseVendorIdAsKey::KeyType>,
                       bsl::equal_to<UseVendorIdAsKey::KeyType> >
@@ -9535,7 +9535,7 @@ if (veryVerbose) puts("Usage Example3");
         // Insert into internal container that will own the record.
 
         bool                                    isInsertedFlag = false;
-        BloombergLP::bslalg::BidirectionalLink *result         =
+        BNP_Paribas::bslalg::BidirectionalLink *result         =
                 d_recordsByOrderNumber.insertIfMissing(&isInsertedFlag, value);
 
         // Index by other record attributes
@@ -9573,7 +9573,7 @@ if (veryVerbose) puts("Usage Example3");
               MySalesRecordContainer::ConstItrById>
     MySalesRecordContainer::findByCustomerId(int value) const
     {
-        typedef BloombergLP::bslalg::BidirectionalLink HashTableLink;
+        typedef BNP_Paribas::bslalg::BidirectionalLink HashTableLink;
 
         HashTableLink *first;
         HashTableLink *last;
@@ -9588,7 +9588,7 @@ if (veryVerbose) puts("Usage Example3");
               MySalesRecordContainer::ConstItrById>
     MySalesRecordContainer::findByVendorId(int value) const
     {
-        typedef BloombergLP::bslalg::BidirectionalLink HashTableLink;
+        typedef BNP_Paribas::bslalg::BidirectionalLink HashTableLink;
 
         HashTableLink *first;
         HashTableLink *last;
@@ -9766,7 +9766,7 @@ if (veryVerbose) {
 // these details from the actual usage examples as the necessary opening and
 // closing of multiple namespaces would distract from the narrative.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class KEY, class VALUE, class HASHF, class EQUAL, class ALLOCATOR>

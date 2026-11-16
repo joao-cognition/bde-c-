@@ -25,7 +25,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_alignedbuffer.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
 const size_t k_TMP_ANY_BUFFER_SIZE = sizeof(void*) * 3;

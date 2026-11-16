@@ -1,7 +1,7 @@
 // bdlat_arrayiterators.cpp                                           -*-C++-*-
 #include <bdlat_arrayiterators.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

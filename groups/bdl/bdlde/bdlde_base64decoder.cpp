@@ -169,7 +169,7 @@ static const char urlAlphabet[256] = {
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                          // -------------------

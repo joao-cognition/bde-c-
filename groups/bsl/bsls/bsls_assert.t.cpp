@@ -32,7 +32,7 @@
 #include <type_traits>
 
 static_assert(std::is_trivially_destructible<
-                          BloombergLP::bsls::AssertViolation>::value,
+                          BNP_Paribas::bsls::AssertViolation>::value,
                                             "Can use with `setjmp`/`longjmp`");
 #endif
 #endif
@@ -42,7 +42,7 @@ static_assert(std::is_trivially_destructible<
 #pragma GCC diagnostic ignored "-Wcatch-value"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 // ============================================================================
@@ -541,7 +541,7 @@ static void legacyTestDriverHandler(const char *text,
 
 /// Print the `comment`, `file`, `line` and `assertLevel` from the specified
 /// `violation` to standard output if `veryVeryVerbose` is non-zero and
-/// return.  NOTE THAT this handler is against Bloomberg default policy and
+/// return.  NOTE THAT this handler is against BNP Paribas default policy and
 /// under normal circumstances such a handler will result in termination of
 /// the program anyway.
 static void returningHandler(const bsls::AssertViolation& violation)

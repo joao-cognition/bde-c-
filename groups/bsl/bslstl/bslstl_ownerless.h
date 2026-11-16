@@ -124,11 +124,11 @@ struct owner_less<shared_ptr<ELEMENT_TYPE> > {
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Return `true` if the address of the
-    /// `BloombergLP::bslma::SharedPtrRep` object used by the specified `a`
+    /// `BNP_Paribas::bslma::SharedPtrRep` object used by the specified `a`
     /// is ordered before the address of the
-    /// `BloombergLP::bslma::SharedPtrRep` object used by the specified `b`
+    /// `BNP_Paribas::bslma::SharedPtrRep` object used by the specified `b`
     /// under the total ordering supplied by
-    /// `std::less<BloombergLP::bslma::SharedPtrRep *>`, and `false`
+    /// `std::less<BNP_Paribas::bslma::SharedPtrRep *>`, and `false`
     /// otherwise.
     bool operator()(const weak_ptr<ELEMENT_TYPE>&   a,
                     const shared_ptr<ELEMENT_TYPE>& b) const
@@ -170,11 +170,11 @@ struct owner_less<weak_ptr<ELEMENT_TYPE> > {
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Return `true` if the address of the
-    /// `BloombergLP::bslma::SharedPtrRep` object used by the specified `a`
+    /// `BNP_Paribas::bslma::SharedPtrRep` object used by the specified `a`
     /// is ordered before the address of the
-    /// `BloombergLP::bslma::SharedPtrRep` object used by the specified `b`
+    /// `BNP_Paribas::bslma::SharedPtrRep` object used by the specified `b`
     /// under the total ordering supplied by
-    /// `std::less<BloombergLP::bslma::SharedPtrRep *>`, and `false`
+    /// `std::less<BNP_Paribas::bslma::SharedPtrRep *>`, and `false`
     /// otherwise.
     bool operator()(const weak_ptr<ELEMENT_TYPE>&   a,
                     const shared_ptr<ELEMENT_TYPE>& b) const
@@ -222,11 +222,11 @@ struct owner_less<void> {
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Return `true` if the address of the
-    /// `BloombergLP::bslma::SharedPtrRep` object used by the specified `a`
+    /// `BNP_Paribas::bslma::SharedPtrRep` object used by the specified `a`
     /// is ordered before the address of the
-    /// `BloombergLP::bslma::SharedPtrRep` object used by the specified `b`
+    /// `BNP_Paribas::bslma::SharedPtrRep` object used by the specified `b`
     /// under the total ordering supplied by
-    /// `std::less<BloombergLP::bslma::SharedPtrRep *>`, and `false`
+    /// `std::less<BNP_Paribas::bslma::SharedPtrRep *>`, and `false`
     /// otherwise.
     template<class ELEMENT_TYPE_A, class ELEMENT_TYPE_B>
     bool operator()(const weak_ptr<ELEMENT_TYPE_A> &a,

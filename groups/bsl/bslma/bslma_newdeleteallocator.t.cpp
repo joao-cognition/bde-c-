@@ -45,7 +45,7 @@ int main(int argc, char *[])
 #pragma GCC diagnostic ignored "-Wsized-deallocation"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                     STANDARD BSL ASSERT TEST FUNCTION

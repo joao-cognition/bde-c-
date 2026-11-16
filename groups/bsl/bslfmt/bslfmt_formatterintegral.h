@@ -63,7 +63,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslalg_numericformatterutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                         // ============================
@@ -97,69 +97,69 @@ namespace bsl {
 /// `signed char`.
 template <class t_CHAR>
 struct formatter<signed char, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<signed char, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<signed char, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `unsigned char`.
 template <class t_CHAR>
 struct formatter<unsigned char, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<unsigned char, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<unsigned char, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `short int`.
 template <class t_CHAR>
 struct formatter<short, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<short, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<short, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `unsigned short int`.
 template <class t_CHAR>
 struct formatter<unsigned short, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<unsigned short, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<unsigned short, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type `int`.
 template <class t_CHAR>
 struct formatter<int, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<int, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<int, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `unsigned int`.
 template <class t_CHAR>
 struct formatter<unsigned, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<unsigned, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<unsigned, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `long int`.
 template <class t_CHAR>
 struct formatter<long, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<long, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<long, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `unsigned long int`.
 template <class t_CHAR>
 struct formatter<unsigned long, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<unsigned long, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<unsigned long, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `long long int`.
 template <class t_CHAR>
 struct formatter<long long, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<long long, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<long long, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `unsigned long long int`.
 template <class t_CHAR>
 struct formatter<unsigned long long, t_CHAR>
-: BloombergLP::bslfmt::FormatterIntegral_Imp<unsigned long long, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterIntegral_Imp<unsigned long long, t_CHAR> {
 };
 
 }  // close namespace bsl
@@ -169,7 +169,7 @@ struct formatter<unsigned long long, t_CHAR>
 //                            INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                         // ----------------------------
@@ -184,7 +184,7 @@ FormatterIntegral_Imp<t_VALUE, t_CHAR>::format(
                                          t_VALUE           value,
                                          t_FORMAT_CONTEXT& formatContext) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
     const int  maxPrefixSize = 4;
     char       prefixBuf[maxPrefixSize];

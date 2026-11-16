@@ -447,7 +447,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 // FORWARD DECLARATIONS
@@ -765,8 +765,8 @@ class FlatHashSet {
     /// element.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     erase(LOOKUP_KEY&& key)
     {
@@ -831,8 +831,8 @@ class FlatHashSet {
     /// existed in the set.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , typename bsl::pair<iterator, bool> >::type
     insert(LOOKUP_KEY&& key)
     {
@@ -877,8 +877,8 @@ class FlatHashSet {
     /// existed in the set.  The supplied `const_iterator` is ignored.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
          && bsl::is_convertible<LOOKUP_KEY&&, const_iterator>::value == false
          && bsl::is_convertible<const_iterator, LOOKUP_KEY&&>::value == false
           , iterator>::type
@@ -956,8 +956,8 @@ class FlatHashSet {
     /// to the specified `key`.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        &&  BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        &&  BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
         , bool>::type
     contains(const LOOKUP_KEY& key) const
     {
@@ -978,8 +978,8 @@ class FlatHashSet {
     /// keys, the returned value will be either 0 or 1.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t >::type
     count(const LOOKUP_KEY& key) const
     {
@@ -1013,8 +1013,8 @@ class FlatHashSet {
     /// element.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
     {
@@ -1033,8 +1033,8 @@ class FlatHashSet {
     /// this set.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
          , const_iterator>::type
     find(const LOOKUP_KEY& key) const
     {

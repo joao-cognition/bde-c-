@@ -143,7 +143,7 @@ BSLS_IDENT("$Id: $")
 #undef min
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlsb {
 
                        // ==========================

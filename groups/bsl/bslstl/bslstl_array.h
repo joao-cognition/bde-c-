@@ -472,7 +472,7 @@ bool operator!=(const array<VALUE_TYPE, SIZE>& lhs,
 /// the specified `rhs` arrays by using the comparison operators of
 /// `VALUE_TYPE` on each element; return the result of that comparison.
 template <class VALUE_TYPE, size_t SIZE>
-BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> operator<=>(
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> operator<=>(
                                            const array<VALUE_TYPE, SIZE>& lhs,
                                            const array<VALUE_TYPE, SIZE>& rhs);
 
@@ -611,7 +611,7 @@ struct tuple_size<bsl::array<TYPE, SIZE> > : integral_constant<size_t, SIZE>
 #endif  // !BSLSTL_ARRAY_IS_ALIASED
 
 #ifdef BSLSTL_ARRAY_IS_ALIASED
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 // HASH SPECIALIZATIONS
@@ -829,7 +829,7 @@ typename array<VALUE_TYPE, SIZE>::reference array<VALUE_TYPE, SIZE>::at(
                                                             size_type position)
 {
     if (position >= SIZE) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
             "array<...>::at(position): invalid position");
     }
     return d_data[position];
@@ -841,7 +841,7 @@ typename array<VALUE_TYPE, SIZE>::const_reference
 array<VALUE_TYPE, SIZE>::at(size_type position) const
 {
     if (position >= SIZE) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
             "array<...>::at(position): invalid position");
     }
     return d_data[position];
@@ -916,7 +916,7 @@ array<VALUE_TYPE, SIZE>::data() const BSLS_KEYWORD_NOEXCEPT
 template <class HASH_ALGORITHM, class TYPE, size_t SIZE>
 void hashAppend(HASH_ALGORITHM& hashAlgorithm, const array<TYPE, SIZE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlgorithm, SIZE);
     for (size_t i = 0; i < SIZE; ++i)
@@ -933,7 +933,7 @@ void hashAppend(HASH_ALGORITHM& hashAlgorithm, const array<TYPE, SIZE>& input)
 template <class HASH_ALGORITHM, size_t SIZE>
 void hashAppend(HASH_ALGORITHM& hashAlgorithm, const array<char, SIZE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlgorithm, SIZE);
     hashAppend(hashAlgorithm, input.data(), SIZE);
@@ -946,7 +946,7 @@ template <class VALUE_TYPE, size_t SIZE>
 bool bsl::operator==(const array<VALUE_TYPE, SIZE>& lhs,
                      const array<VALUE_TYPE, SIZE>& rhs)
 {
-    return BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+    return BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
                                                     lhs.end(),
                                                     lhs.size(),
                                                     rhs.begin(),
@@ -968,7 +968,7 @@ bool bsl::operator!=(const array<VALUE_TYPE, SIZE>& lhs,
 #ifdef BSLALG_SYNTHTHREEWAYUTIL_AVAILABLE
 
 template <class VALUE_TYPE, size_t SIZE>
-BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> bsl::operator<=>(
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> bsl::operator<=>(
                                             const array<VALUE_TYPE, SIZE>& lhs,
                                             const array<VALUE_TYPE, SIZE>& rhs)
 {
@@ -977,7 +977,7 @@ BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> bsl::operator<=>(
                               lhs.end(),
                               rhs.begin(),
                               rhs.end(),
-                              BloombergLP::bslalg::SynthThreeWayUtil::compare);
+                              BNP_Paribas::bslalg::SynthThreeWayUtil::compare);
 }
 
 #else
@@ -986,7 +986,7 @@ template <class VALUE_TYPE, size_t SIZE>
 bool bsl::operator<(const array<VALUE_TYPE, SIZE>& lhs,
                     const array<VALUE_TYPE, SIZE>& rhs)
 {
-    return 0 > BloombergLP::bslalg::RangeCompare::lexicographical(lhs.begin(),
+    return 0 > BNP_Paribas::bslalg::RangeCompare::lexicographical(lhs.begin(),
                                                                   lhs.end(),
                                                                   lhs.size(),
                                                                   rhs.begin(),
@@ -1043,14 +1043,14 @@ template<size_t INDEX, class TYPE, size_t SIZE>
 BSLS_KEYWORD_CONSTEXPR_CPP14
 TYPE&& bsl::get(array<TYPE, SIZE>&& a) BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bslmf::MovableRefUtil::move(a.d_data[INDEX]);
+    return BNP_Paribas::bslmf::MovableRefUtil::move(a.d_data[INDEX]);
 }
 
 template<size_t INDEX, class TYPE, size_t SIZE>
 BSLS_KEYWORD_CONSTEXPR
 const TYPE&& bsl::get(const array<TYPE, SIZE>&& a) BSLS_KEYWORD_NOEXCEPT
 {
-    return BloombergLP::bslmf::MovableRefUtil::move(a.d_data[INDEX]);
+    return BNP_Paribas::bslmf::MovableRefUtil::move(a.d_data[INDEX]);
 }
 #endif  // BSLS_COMPILERFEATURES_SUPPORT_RVALUE_REFERENCES
 
@@ -1058,7 +1058,7 @@ const TYPE&& bsl::get(const array<TYPE, SIZE>&& a) BSLS_KEYWORD_NOEXCEPT
 #endif  // !BSLSTL_ARRAY_IS_ALIASED
 
 #ifdef BSLSTL_ARRAY_IS_ALIASED
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 // HASH SPECIALIZATIONS
@@ -1066,7 +1066,7 @@ template <class HASH_ALGORITHM, class TYPE, size_t SIZE>
 void hashAppend(HASH_ALGORITHM&               hashAlgorithm,
                 const std::array<TYPE, SIZE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlgorithm, SIZE);
     if BSLS_KEYWORD_CONSTEXPR_CPP17 (SIZE > 0) {
@@ -1080,7 +1080,7 @@ template <class HASH_ALGORITHM, size_t SIZE>
 void hashAppend(HASH_ALGORITHM&               hashAlgorithm,
                 const std::array<char, SIZE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlgorithm, SIZE);
     hashAppend(hashAlgorithm, input.data(), SIZE);
@@ -1129,7 +1129,7 @@ array<typename remove_cv<TYPE>::type, SIZE> to_array( TYPE (&&src)[SIZE] );
 
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_VARIADIC_TEMPLATES) \
  && defined(BSLS_COMPILERFEATURES_SUPPORT_VARIABLE_TEMPLATES)
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl_to_array_impl {
 
 template <class TYPE, std::size_t SIZE, std::size_t... INDICES>
@@ -1164,7 +1164,7 @@ bsl::to_array(TYPE (&src)[SIZE])
     BSLMF_ASSERT(!bsl::is_array<TYPE>::value);
     BSLMF_ASSERT(bsl::is_copy_constructible<TYPE>::value);
 
-    return BloombergLP::bslstl_to_array_impl::to_array_lvalue_builder(
+    return BNP_Paribas::bslstl_to_array_impl::to_array_lvalue_builder(
                                              src,
                                              std::make_index_sequence<SIZE>());
 }
@@ -1178,7 +1178,7 @@ bsl::to_array(TYPE (&&src)[SIZE])
     BSLMF_ASSERT(!bsl::is_array<TYPE>::value);
     BSLMF_ASSERT(std::is_move_constructible<TYPE>::value);
 
-    return BloombergLP::bslstl_to_array_impl::to_array_rvalue_builder(
+    return BNP_Paribas::bslstl_to_array_impl::to_array_rvalue_builder(
                                              std::move(src),
                                              std::make_index_sequence<SIZE>());
 }
@@ -1231,7 +1231,7 @@ bsl::to_array(TYPE(&&src)[SIZE])
 //                                TYPE TRAITS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

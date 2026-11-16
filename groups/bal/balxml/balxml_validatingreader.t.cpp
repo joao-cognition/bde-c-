@@ -17,7 +17,7 @@
 #include <bsl_sstream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -88,7 +88,7 @@ typedef balxml::ValidatingReader Obj;
 // describing a user.
 //
 //  <?xml version='1.0' encoding='UTF-8'?>
-//  <directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'>
+//  <directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'>
 //      <name>John Smith</name>
 //      <phone dir:phonetype='cell'>212-318-2000</phone>
 //      <address/>
@@ -133,7 +133,7 @@ static const TestNode goodDocument[] = {
     { 0, Obj::e_NODE_TYPE_ELEMENT,
          "directory-entry" , 0            ,  0,
          false,
-         { { "xmlns:dir"  , "http://bloomberg.com/schemas/directory" } }     },
+         { { "xmlns:dir"  , "http://bnpparibas.com/schemas/directory" } }     },
 
     { 0, Obj::e_NODE_TYPE_ELEMENT,
          "name"           , 0             , +1,
@@ -186,7 +186,7 @@ static const TestNode badDocument[] = {
     { 0, Obj::e_NODE_TYPE_ELEMENT,
          "directory-entry" , 0            ,  0,
          false,
-         { { "xmlns:dir"  , "http://bloomberg.com/schemas/directory" } }     },
+         { { "xmlns:dir"  , "http://bnpparibas.com/schemas/directory" } }     },
 
     { 0, Obj::e_NODE_TYPE_ELEMENT,
          "name"           , 0             , +1,
@@ -790,8 +790,8 @@ unsigned int TestReader::options() const {
     const char TEST_XSD_STRING[] =
         "<?xml version='1.0' encoding='UTF-8'?>"
         "<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema'"
-        "            xmlns='http://bloomberg.com/schemas/directory'"
-        "            targetNamespace='http://bloomberg.com/schemas/directory'"
+        "            xmlns='http://bnpparibas.com/schemas/directory'"
+        "            targetNamespace='http://bnpparibas.com/schemas/directory'"
         "            elementFormDefault='qualified'"
         "            attributeFormDefault='qualified' >"
         " "
@@ -820,9 +820,9 @@ unsigned int TestReader::options() const {
 // ```
     const char TEST_GOOD_XML_STRING[] =
        "<?xml version='1.0' encoding='UTF-8'?>\n"
-       "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'\n"
+       "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'\n"
        "     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'\n"
-       "     xsi:schemaLocation='http://bloomberg.com/schemas/directory  \n"
+       "     xsi:schemaLocation='http://bnpparibas.com/schemas/directory  \n"
        "                         aaa.xsd' >\n"
        "    <name>John Smith</name>\n"
        "    <phone dir:phonetype='cell'>212-318-2000</phone>\n"
@@ -834,9 +834,9 @@ unsigned int TestReader::options() const {
 // ```
     const char TEST_BAD_XML_STRING[] =
        "<?xml version='1.0' encoding='UTF-8'?>\n"
-       "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'\n"
+       "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'\n"
        "     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'\n"
-       "     xsi:schemaLocation='http://bloomberg.com/schemas/directory  \n"
+       "     xsi:schemaLocation='http://bnpparibas.com/schemas/directory  \n"
        "                         aaa.xsd' >\n"
        "    <name>John Smith</name>\n"
        "    <phone dir:phonetype='cell'>212-318-2000</phone>\n"

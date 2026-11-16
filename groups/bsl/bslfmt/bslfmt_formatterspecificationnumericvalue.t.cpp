@@ -26,7 +26,7 @@
 #include <stdlib.h>  // `atoi`
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslfmt;
 
 // ============================================================================
@@ -345,7 +345,7 @@ struct MockArgsContext;
 
 #if !defined(BSLS_LIBRARYFEATURES_HAS_CPP20_FORMAT)
 // there is no usable `std::format`
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 /// This specialization of `basic_arg_format` for a `char`-based
 /// `MockArgsContext` is used when the standard library does not provide a

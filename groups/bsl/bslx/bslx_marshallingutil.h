@@ -203,7 +203,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_cstring.h>           // for 'bsl::memcpy'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslx {
 
                          // ======================

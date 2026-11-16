@@ -236,7 +236,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_compilerfeatures.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                     // ====================================

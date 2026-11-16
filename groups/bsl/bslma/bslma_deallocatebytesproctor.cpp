@@ -11,7 +11,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bslma_deallocatebytesproctor_cpp, "$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 }  // close enterprise namespace
 
 // ----------------------------------------------------------------------------

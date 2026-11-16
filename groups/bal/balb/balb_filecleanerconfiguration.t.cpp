@@ -23,7 +23,7 @@
 #include <bsl_cstring.h>     // strlen()
 #include <bsl_functional.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

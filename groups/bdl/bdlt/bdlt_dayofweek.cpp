@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bdlt_dayofweek_cpp,"$Id$ $CSID$")
 #include <bslmf_assert.h>
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 BSLMF_ASSERT(bdlt::DayOfWeek::e_SUN < bdlt::DayOfWeek::e_SAT);
 

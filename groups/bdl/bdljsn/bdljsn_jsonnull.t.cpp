@@ -31,7 +31,7 @@
 
 #include <stddef.h>  // `size_t`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -169,7 +169,7 @@ class MockAccumulatingHashingAlgorithm {
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

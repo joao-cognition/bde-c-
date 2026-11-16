@@ -216,7 +216,7 @@ BSLS_IDENT("$Id: $")
 //
 // #include <bdlde_base64encoder.h>
 //
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // int streamEncoder(bsl::ostream& os, bsl::istream& is)
 // {
@@ -327,7 +327,7 @@ BSLS_IDENT("$Id: $")
 //    return (is.eof() && os.good()) ? SUCCESS : IO_ERROR;
 // }
 //
-// } // Close namespace BloombergLP
+// } // Close namespace BNP_Paribas
 // ```
 // For ease of reading, we repeat the full content of the `streamencoder.cpp`
 // file without interruption.
@@ -338,7 +338,7 @@ BSLS_IDENT("$Id: $")
 //
 // #include <bdlde_base64encoder.h>
 //
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // int streamEncoder(bsl::ostream& os, bsl::istream& is)
 // {
@@ -422,7 +422,7 @@ BSLS_IDENT("$Id: $")
 //     return (is.eof() && os.good()) ? SUCCESS : IO_ERROR;
 // }
 //
-// }  // close namespace BloombergLP
+// }  // close namespace BNP_Paribas
 // ```
 
 #include <bdlscm_version.h>
@@ -437,7 +437,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_cstddef.h>
 #include <bsl_limits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                             // ===================

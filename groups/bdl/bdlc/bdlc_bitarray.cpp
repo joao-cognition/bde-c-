@@ -21,7 +21,7 @@ using bsl::uint64_t;
 // Note that we ensure that the capacity of 'd_array' is at least 1 at all
 // times.  This way we know that '&d_array.front()' is always valid.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 /// Return a value with only the specified low-order `numBits` set.  The

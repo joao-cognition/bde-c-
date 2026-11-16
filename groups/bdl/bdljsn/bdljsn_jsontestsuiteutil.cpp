@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(bdljsn_jsontestsuiteutil_cpp, "$Id$ $CSID$")
 // downloaded from:
 // https://github.com/nst/JSONTestSuite/blob/master/test_parsers
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 namespace {
 namespace u {
@@ -77,7 +77,7 @@ static const bsl::size_t  lenOpenArrayObject50000 = 250001;
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                        // ------------------------

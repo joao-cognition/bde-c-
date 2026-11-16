@@ -383,7 +383,7 @@ BSLS_IDENT("$Id: $")
 #undef  BSLH_WYHASHINCREMENTALALGORITHM_WYMUM_PSEUDO_MULTIPLY
 #define BSLH_WYHASHINCREMENTALALGORITHM_WYMUM_PSEUDO_MULTIPLY 0
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
                     // ======================================
@@ -899,11 +899,11 @@ WyHashIncrementalAlgorithm::computeHash()
 //                                TYPE TRAITS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <>
 struct IsBitwiseCopyable<
-                BloombergLP::bslh::WyHashIncrementalAlgorithm> : bsl::true_type
+                BNP_Paribas::bslh::WyHashIncrementalAlgorithm> : bsl::true_type
 {};
 }  // close namespace bslmf
 }  // close enterprise namespace

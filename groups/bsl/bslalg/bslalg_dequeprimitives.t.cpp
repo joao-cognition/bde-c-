@@ -25,7 +25,7 @@
 #include <stdlib.h>     // `atoi`
 #include <string.h>     // `strlen`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -694,7 +694,7 @@ class TestType {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <> struct UsesBslmaAllocator<TestType> : bsl::true_type {};
 }  // close namespace bslma
@@ -818,7 +818,7 @@ class BitwiseMoveableTestType : public TestType {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <> struct UsesBslmaAllocator<BitwiseMoveableTestType>
     : bsl::true_type {};
@@ -866,7 +866,7 @@ class BitwiseCopyableTestType : public TestTypeNoAlloc {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <> struct IsBitwiseCopyable<BitwiseCopyableTestType>
     : bsl::true_type {};

@@ -210,7 +210,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_pointercastutil.h>
 #include <bsls_types.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                          // =========
@@ -341,31 +341,31 @@ class Log {
 
 #define BSLS_LOG(severity, ...)                                               \
   do {                                                                        \
-    if (severity <= BloombergLP::bsls::Log::severityThreshold()) {            \
-      BloombergLP::bsls::Log::logFormattedMessage((severity),                 \
+    if (severity <= BNP_Paribas::bsls::Log::severityThreshold()) {            \
+      BNP_Paribas::bsls::Log::logFormattedMessage((severity),                 \
                                                   __FILE__,                   \
                                                   __LINE__,                   \
                                                   __VA_ARGS__);               \
     }                                                                         \
   } while(false)
 
-#define BSLS_LOG_FATAL(...)  BSLS_LOG(BloombergLP::bsls::LogSeverity::e_FATAL,\
+#define BSLS_LOG_FATAL(...)  BSLS_LOG(BNP_Paribas::bsls::LogSeverity::e_FATAL,\
                                       __VA_ARGS__)
-#define BSLS_LOG_ERROR(...)  BSLS_LOG(BloombergLP::bsls::LogSeverity::e_ERROR,\
+#define BSLS_LOG_ERROR(...)  BSLS_LOG(BNP_Paribas::bsls::LogSeverity::e_ERROR,\
                                       __VA_ARGS__)
-#define BSLS_LOG_WARN(...)   BSLS_LOG(BloombergLP::bsls::LogSeverity::e_WARN, \
+#define BSLS_LOG_WARN(...)   BSLS_LOG(BNP_Paribas::bsls::LogSeverity::e_WARN, \
                                       __VA_ARGS__)
-#define BSLS_LOG_INFO(...)   BSLS_LOG(BloombergLP::bsls::LogSeverity::e_INFO, \
+#define BSLS_LOG_INFO(...)   BSLS_LOG(BNP_Paribas::bsls::LogSeverity::e_INFO, \
                                       __VA_ARGS__)
-#define BSLS_LOG_DEBUG(...)  BSLS_LOG(BloombergLP::bsls::LogSeverity::e_DEBUG,\
+#define BSLS_LOG_DEBUG(...)  BSLS_LOG(BNP_Paribas::bsls::LogSeverity::e_DEBUG,\
                                       __VA_ARGS__)
-#define BSLS_LOG_TRACE(...)  BSLS_LOG(BloombergLP::bsls::LogSeverity::e_TRACE,\
+#define BSLS_LOG_TRACE(...)  BSLS_LOG(BNP_Paribas::bsls::LogSeverity::e_TRACE,\
                                       __VA_ARGS__)
 
 #define BSLS_LOG_SIMPLE(severity, msg)                                        \
-    (BloombergLP::bsls::Log::logMessage((severity), __FILE__, __LINE__, (msg)))
+    (BNP_Paribas::bsls::Log::logMessage((severity), __FILE__, __LINE__, (msg)))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 // ============================================================================

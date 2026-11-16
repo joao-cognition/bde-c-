@@ -64,7 +64,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_removecvq.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ========================
@@ -215,16 +215,16 @@ template <class t_TYPE>
 struct remove_pointer {
 
 #if defined(BSLS_PLATFORM_CMP_IBM)
-    typedef typename BloombergLP::bslmf::RemovePointer_Aix<
+    typedef typename BNP_Paribas::bslmf::RemovePointer_Aix<
         t_TYPE,
-        BloombergLP::bslmf::IsFunctionPointer<t_TYPE>::value>::Type type;
+        BNP_Paribas::bslmf::IsFunctionPointer<t_TYPE>::value>::Type type;
 #elif defined(BSLS_PLATFORM_CMP_MSVC)
-    typedef typename BloombergLP::bslmf::RemovePointer_Msvc<t_TYPE>::Type type;
+    typedef typename BNP_Paribas::bslmf::RemovePointer_Msvc<t_TYPE>::Type type;
 #else
     /// This `typedef` is an alias to the type pointed to by the (template
     /// parameter) `t_TYPE` if `t_TYPE` is a (possibly cv-qualified) pointer
     /// type; otherwise, `type` is an alias to `t_TYPE`.
-    typedef typename BloombergLP::bslmf::RemovePointer_Imp<t_TYPE>::Type type;
+    typedef typename BNP_Paribas::bslmf::RemovePointer_Imp<t_TYPE>::Type type;
 
 #endif
 };

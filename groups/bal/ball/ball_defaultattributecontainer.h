@@ -117,7 +117,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_functional.h>
 #include <bsl_unordered_set.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                     // ===============================

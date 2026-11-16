@@ -390,7 +390,7 @@ void invokePatternSwap(TYPE *a, TYPE *b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` and `invokePatternSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::pair;
 using bsl::multiset;
 using bsls::NameOf;
@@ -1186,7 +1186,7 @@ struct ThrowingComparator : public std::less<TYPE> {
 
     /// Return a reference, providing modifiable access to this object.
     ThrowingComparator&
-    operator=(BloombergLP::bslmf::MovableRef<ThrowingComparator>)
+    operator=(BNP_Paribas::bslmf::MovableRef<ThrowingComparator>)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false)
     {
         return *this;

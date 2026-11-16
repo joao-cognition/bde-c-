@@ -32,7 +32,7 @@
 #include <bsl_iomanip.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -288,7 +288,7 @@ XmlEl table81[] = {
           "<?xml version='1.0' encoding='UTF-8'?>" , 0 },
     {0, 0, balxml::Reader::e_NODE_TYPE_WHITESPACE, "\n" , 0},
     {0, 0, balxml::Reader::e_NODE_TYPE_ELEMENT,
-       "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'>",
+       "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'>",
                                                                            0 },
     {0, 0, balxml::Reader::e_NODE_TYPE_WHITESPACE,   "\n     ", 0 },
     {0, 0, balxml::Reader::e_NODE_TYPE_ELEMENT, "<name>" , 0 },
@@ -388,7 +388,7 @@ int usageExample()
 // ```
     static const char TEST_XML_STRING[] =
        "<?xml version='1.0' encoding='UTF-8'?>\n"
-       "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'>\n"
+       "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'>\n"
        "    <name>John Smith\xe7\x8f\x8f</name>\n"
        "    <phone dir:phonetype='cell'>212-318-2000</phone>\n"
        "    <address/>\n"
@@ -463,7 +463,7 @@ int usageExample()
     ASSERT(!bsl::strcmp(prefixStack.lookupNamespacePrefix("dir"), "dir"));
     ASSERT(prefixStack.lookupNamespaceId("dir") == 0);
     ASSERT(!bsl::strcmp(prefixStack.lookupNamespaceUri("dir"),
-                        "http://bloomberg.com/schemas/directory"));
+                        "http://bnpparibas.com/schemas/directory"));
 // ```
 // The XML being read contains one entry describing a user, advance the users
 // name name and assert all information can be read correctly.
@@ -521,7 +521,7 @@ int usageExample()
     ASSERT(!bsl::strcmp(elemAttr.prefix(), "dir"));
     ASSERT(!bsl::strcmp(elemAttr.localName(), "phonetype"));
     ASSERT(!bsl::strcmp(elemAttr.namespaceUri(),
-                        "http://bloomberg.com/schemas/directory"));
+                        "http://bnpparibas.com/schemas/directory"));
     ASSERT( elemAttr.namespaceId() == 0);
 
     ASSERT(!bsl::strcmp(prefixStack.lookupNamespaceUri(elemAttr.prefix()),
@@ -591,7 +591,7 @@ const char strXmlStart[] =
     "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
     "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
     "    elementFormDefault='qualified'\n"
-    "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+    "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
     "    bdem:package='bascfg'>\n";
 
 const char strXmlEnd[] =
@@ -1308,7 +1308,7 @@ int main(int argc, char *argv[])
           "<?xml version='1.0' encoding='UTF-8'?>\n"
           "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
           "    elementFormDefault='qualified'\n"
-          "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+          "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
           "    bdem:package='bascfg'>\n"
           "<Node0" abcd ">\n"
           "    <Element1" abcd ">element1</Element1>\n"
@@ -1613,7 +1613,7 @@ int main(int argc, char *argv[])
           "<?xml version='1.0' encoding='UTF-8'?>\n"
           "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
           "    elementFormDefault='qualified'\n"
-          "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+          "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
           "    bdem:package='bascfg'>\n"
           "<Node0" abcd ">\n"
           "    <Element1" abcd ">element1</Element1>\n"
@@ -1752,7 +1752,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>text</Node0>\n"
               "</xs:schema>";
@@ -1794,7 +1794,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0></Node1>\n"
               "</xs:schema>";
@@ -1827,7 +1827,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0/>\n"
               "</xs:schema>";
@@ -1859,7 +1859,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -1902,7 +1902,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -1944,7 +1944,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -1977,7 +1977,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -2022,7 +2022,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -2067,7 +2067,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -2157,7 +2157,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
             "    bdem:package='bascfg'>\n"
             "<Node0" abcd ">\n"
             "    <Element1" abcd ">element1"
@@ -2304,7 +2304,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>text</Node0>\n"
               "</xs:schema>";
@@ -2346,7 +2346,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0></Node1>\n"
               "</xs:schema>";
@@ -2379,7 +2379,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0/>\n"
               "</xs:schema>";
@@ -2411,7 +2411,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0><!--comment</Node0>\n"
               "</xs:schema>";
@@ -2444,7 +2444,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0><![CDATA[cdata text</Node0>\n"
               "</xs:schema>";
@@ -2477,7 +2477,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2520,7 +2520,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2563,7 +2563,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2605,7 +2605,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2647,7 +2647,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2681,7 +2681,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2713,7 +2713,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2747,7 +2747,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "<Node0>\n"
               "    <Element1>";
@@ -2783,7 +2783,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -2834,7 +2834,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -2885,7 +2885,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -3036,7 +3036,7 @@ int main(int argc, char *argv[])
           "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
           "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
           "    elementFormDefault='qualified'\n"
-          "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+          "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
           "    bdem:package='bascfg'>\n"
           "<Node0" abcd ">\n"
           "    <Element1" abcd ">element1<!-- The 1st elem has a comment -->"
@@ -3179,7 +3179,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>text</Node0>\n"
               "</xs:schema>";
@@ -3221,7 +3221,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0></Node1>\n"
               "</xs:schema>";
@@ -3254,7 +3254,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0/>\n"
               "</xs:schema>";
@@ -3286,7 +3286,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -3330,7 +3330,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -3374,7 +3374,7 @@ int main(int argc, char *argv[])
               "<?xml version='1.0' encoding='UTF-8'?>\n"
               "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
               "    elementFormDefault='qualified'\n"
-              "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+              "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
               "    bdem:package='bascfg'>\n"
               "    <Node0>"
               "        <Node0>"
@@ -3432,7 +3432,7 @@ int main(int argc, char *argv[])
                 "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
                 "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
                 "    elementFormDefault='qualified'\n"
-                "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+                "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
                 "    bdem:package='bascfg'>\n"
                 "<Node1 xsi:nil='true'/>\n"
                 "<Node2 xsi:nil='false'/>\n"
@@ -3518,7 +3518,7 @@ int main(int argc, char *argv[])
                 "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
                 "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
                 "    elementFormDefault='qualified'\n"
-                "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+                "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
                 "    bdem:package='bascfg'>\n"
                 "<Node>\n"
                 "    <Element>&lt;![CDATA[S &amp; P]]></Element>\n"
@@ -3715,7 +3715,7 @@ int main(int argc, char *argv[])
           //  <!-- RCSId_bascfg_xsd = $Id: $ -->
           //  <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
           //      elementFormDefault='qualified'
-          //      xmlns:bdem='http://bloomberg.com/schemas/bdem'
+          //      xmlns:bdem='http://bnpparibas.com/schemas/bdem'
           //      bdem:package='bascfg'>
           //      <N att='0' att='1'/>
           //  </xs:schema>
@@ -3867,7 +3867,7 @@ int main(int argc, char *argv[])
           //  <!-- RCSId_bascfg_xsd = $Id: $ -->
           //  <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
           //      elementFormDefault='qualified'
-          //      xmlns:bdem='http://bloomberg.com/schemas/bdem'
+          //      xmlns:bdem='http://bnpparibas.com/schemas/bdem'
           //      bdem:package='bascfg'>
           //      <longNamelongName/>
           // < /xs:schema>
@@ -4111,7 +4111,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
             "    bdem:package='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4163,7 +4163,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
             "    bdem:package='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4218,7 +4218,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem\n"
             "    bdem:package='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4287,7 +4287,7 @@ int main(int argc, char *argv[])
           static const char xmlRaw[] =
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem 'http://bloomberg.com/schemas/bdem'\n"
+            "    xmlns:bdem 'http://bnpparibas.com/schemas/bdem'\n"
             "    bdem:package='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4347,7 +4347,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem\"\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem\"\n"
             "    bdem:package='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4415,7 +4415,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem\"\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem\"\n"
             "    bdem:package='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4482,7 +4482,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
             "    bdem:pac=kage='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4548,7 +4548,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
             "    bdem:package='bas'cfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4615,7 +4615,7 @@ int main(int argc, char *argv[])
             "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
             "<xs:sc>hema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
             "    elementFormDefault='qualified'\n"
-            "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+            "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
             "    bdem:package='bascfg'>\n"
             "<Node0>\n"
             "    <Element1>element1</Element1>\n"
@@ -4711,7 +4711,7 @@ int main(int argc, char *argv[])
           "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
           "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
           "    elementFormDefault='qualified'\n"
-          "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+          "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
           "    bdem:package='bascfg'>\n";
 
         const char *xmlNode =
@@ -4908,7 +4908,7 @@ int main(int argc, char *argv[])
           "<!-- RCSId_bascfg_xsd = \"$Id: $\" -->\n"
           "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
           "    elementFormDefault='qualified'\n"
-          "    xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
+          "    xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
           "    bdem:package='bascfg'>\n"
           "<Node0>\n"
           "    <Element1>element1</Element1>\n"

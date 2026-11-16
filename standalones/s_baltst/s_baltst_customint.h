@@ -21,7 +21,7 @@ BSLS_IDENT_PRAGMA_ONCE
 #include <bsl_iosfwd.h>
 #include <bsl_limits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace s_baltst { class CustomInt; }
 namespace s_baltst {

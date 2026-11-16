@@ -26,7 +26,7 @@ BSLS_IDENT_RCSID(bdema_multipool_cpp,"$Id$ $CSID$")
 
 #include <new>           // placement 'new'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 enum {
     k_DEFAULT_NUM_POOLS      = 10,

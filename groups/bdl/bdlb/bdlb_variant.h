@@ -673,7 +673,7 @@ BSLS_IDENT("$Id: $")
 #define BDLB_VARIANT_USING_VARIADIC_TEMPLATES
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 struct Variant_CopyAssignVisitor;

@@ -60,7 +60,7 @@
 #endif
 
 using namespace bsl;
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslstl;
 using namespace bdld;
 
@@ -2379,12 +2379,12 @@ HashHexPrinter hexPrint(const MockAccumulatingHashingAlgorithm& hasher,
 // and we end up with the error message:
 // ```
 // error: calling `theDecimal64` with incomplete return type
-//        `bdldfp::Decimal64` (aka `BloombergLP::bdldfp::Decimal_Type64`)
+//        `bdldfp::Decimal64` (aka `BNP_Paribas::bdldfp::Decimal_Type64`)
 //    visitor(theDecimal64());
 //    ^ ~~~~~~~~~~~~~
 // note: `theDecimal64` declared here
 //    bdldfp::Decimal64 theDecimal64() const;
-// note : forward declaration of `BloombergLP::bdldfp::Decimal_Type64`
+// note : forward declaration of `BNP_Paribas::bdldfp::Decimal_Type64`
 //    class Decimal_Type64;
 //          ^
 // ```

@@ -239,7 +239,7 @@ class basic_string;
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                            // =====================

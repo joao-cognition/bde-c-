@@ -235,7 +235,7 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS) \
  && defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 # define BSLSTL_QUEUE_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T) \
-                  requires ::BloombergLP::bslmf::ContainerCompatibleRange<R, T>
+                  requires ::BNP_Paribas::bslmf::ContainerCompatibleRange<R, T>
 #else
 # define BSLSTL_QUEUE_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T)
 #endif
@@ -309,7 +309,7 @@ class queue {
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil  MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil  MoveUtil;
 
     // PRIVATE MANIPULATORS
 
@@ -335,8 +335,8 @@ class queue {
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         queue,
-        BloombergLP::bslma::UsesBslmaAllocator,
-        BloombergLP::bslma::UsesBslmaAllocator<container_type>::value);
+        BNP_Paribas::bslma::UsesBslmaAllocator,
+        BNP_Paribas::bslma::UsesBslmaAllocator<container_type>::value);
 
     // CREATORS
 
@@ -351,7 +351,7 @@ class queue {
     /// allocator associated with `original` (if any) is propagated for use
     /// in the new queue.  `original` is left in valid but unspecified
     /// state.
-    queue(BloombergLP::bslmf::MovableRef<queue> container);
+    queue(BNP_Paribas::bslmf::MovableRef<queue> container);
 
     /// Create a queue having the specified `container` that holds elements
     /// of the parameterized `VALUE` type.
@@ -361,7 +361,7 @@ class queue {
     /// `container`.  The allocator associated with `container` (if any) is
     /// propagated for use in the new queue.  `container` is left in valid
     /// but unspecified state.
-    explicit queue(BloombergLP::bslmf::MovableRef<CONTAINER> container);
+    explicit queue(BNP_Paribas::bslmf::MovableRef<CONTAINER> container);
 
     /// Create an empty queue.  This queue object uses the specified
     /// `basicAllocator` to supply memory.  Note that the `ALLOCATOR`
@@ -409,7 +409,7 @@ class queue {
     /// `CONTAINER::allocator_type` does not exist, this constructor is
     /// disabled.
     template <class ALLOCATOR>
-    queue(BloombergLP::bslmf::MovableRef<CONTAINER> container,
+    queue(BNP_Paribas::bslmf::MovableRef<CONTAINER> container,
           const ALLOCATOR&                          basicAllocator,
           typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                              ALLOCATOR>::type * = 0);
@@ -425,7 +425,7 @@ class queue {
     /// `CONTAINER::allocator_type` does not exist, this constructor is
     /// disabled.
     template <class ALLOCATOR>
-    queue(BloombergLP::bslmf::MovableRef<queue> original,
+    queue(BNP_Paribas::bslmf::MovableRef<queue> original,
           const ALLOCATOR&                      basicAllocator,
           typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                              ALLOCATOR>::type * = 0);
@@ -473,7 +473,7 @@ class queue {
     /// this queue.  `rhs` is left in a valid but unspecified state, and if
     /// an exception is thrown, `*this` is left in a valid but unspecified
     /// state.
-    queue& operator=(BloombergLP::bslmf::MovableRef<queue> rhs);
+    queue& operator=(BNP_Paribas::bslmf::MovableRef<queue> rhs);
 
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
     /// Push onto this queue a newly created `value_type` object constructed
@@ -493,7 +493,7 @@ class queue {
     /// value of the specified `value` (on entry) by moving the
     /// contents of `value` to the new object on this queue.  `value` is
     /// left in a valid but unspecified state.
-    void push(BloombergLP::bslmf::MovableRef<value_type> value);
+    void push(BNP_Paribas::bslmf::MovableRef<value_type> value);
 
     /// Push onto the back of this queue the elements of the specified `range`.
     /// Note that `range` must meet the requirements of an input range and the
@@ -566,7 +566,7 @@ queue(CONTAINER, ALLOCATOR) -> queue<typename CONTAINER::value_type, CONTAINER>;
 /// Deduce the template parameter `VALUE` from the parameters supplied to the
 /// constructor of `queue`.
 template <class INPUT_ITER,
-          class TYPE = BloombergLP::bslstl::IteratorUtil::
+          class TYPE = BNP_Paribas::bslstl::IteratorUtil::
                                                          IterVal_t<INPUT_ITER>>
 queue(INPUT_ITER, INPUT_ITER) -> queue<TYPE>;
 
@@ -576,7 +576,7 @@ queue(INPUT_ITER, INPUT_ITER) -> queue<TYPE>;
 /// standard allocator.
 template <class INPUT_ITER,
           class ALLOCATOR,
-          class TYPE = BloombergLP::bslstl::IteratorUtil::
+          class TYPE = BNP_Paribas::bslstl::IteratorUtil::
                                                          IterVal_t<INPUT_ITER>,
           class = enable_if_t<IsStdAllocator_v<ALLOCATOR>>>
 queue(INPUT_ITER, INPUT_ITER, ALLOCATOR)-> queue<TYPE, deque<TYPE, ALLOCATOR>>;
@@ -707,7 +707,7 @@ queue<VALUE, CONTAINER>::queue(const queue& original)
 
 template <class VALUE, class CONTAINER>
 inline
-queue<VALUE, CONTAINER>::queue(BloombergLP::bslmf::MovableRef<queue> original)
+queue<VALUE, CONTAINER>::queue(BNP_Paribas::bslmf::MovableRef<queue> original)
 : c(MoveUtil::move(MoveUtil::access(original).c))
 {
 }
@@ -756,7 +756,7 @@ queue<VALUE, CONTAINER>::queue(
 
 template <class VALUE, class CONTAINER>
 inline
-queue<VALUE, CONTAINER>::queue(BloombergLP::bslmf::MovableRef<CONTAINER>
+queue<VALUE, CONTAINER>::queue(BNP_Paribas::bslmf::MovableRef<CONTAINER>
                                                                      container)
 : c(MoveUtil::move(container))
 {
@@ -766,7 +766,7 @@ template <class VALUE, class CONTAINER>
 template <class ALLOCATOR>
 inline
 queue<VALUE, CONTAINER>::queue(
-           BloombergLP::bslmf::MovableRef<CONTAINER> container,
+           BNP_Paribas::bslmf::MovableRef<CONTAINER> container,
            const ALLOCATOR&                          basicAllocator,
            typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                               ALLOCATOR>::type *)
@@ -778,7 +778,7 @@ template <class VALUE, class CONTAINER>
 template <class ALLOCATOR>
 inline
 queue<VALUE, CONTAINER>::queue(
-           BloombergLP::bslmf::MovableRef<queue> original,
+           BNP_Paribas::bslmf::MovableRef<queue> original,
            const ALLOCATOR&                      basicAllocator,
            typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                               ALLOCATOR>::type *)
@@ -866,7 +866,7 @@ queue<VALUE, CONTAINER>& queue<VALUE, CONTAINER>::operator=(const queue& rhs)
 template <class VALUE, class CONTAINER>
 inline
 queue<VALUE, CONTAINER>& queue<VALUE, CONTAINER>::operator=(
-                                     BloombergLP::bslmf::MovableRef<queue> rhs)
+                                     BNP_Paribas::bslmf::MovableRef<queue> rhs)
 {
     c = MoveUtil::move(MoveUtil::access(rhs).c);
     return *this;
@@ -893,7 +893,7 @@ void queue<VALUE, CONTAINER>::push(const value_type& value)
 
 template <class VALUE, class CONTAINER>
 inline
-void queue<VALUE, CONTAINER>::push(BloombergLP::bslmf::MovableRef<value_type>
+void queue<VALUE, CONTAINER>::push(BNP_Paribas::bslmf::MovableRef<value_type>
                                                                          value)
 {
     c.push_back(MoveUtil::move(value));
@@ -931,7 +931,7 @@ void queue<VALUE, CONTAINER>::swap(queue& other)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                    bsl::is_nothrow_swappable<CONTAINER>::value)
 {
-    BloombergLP::bslalg::SwapUtil::swap(&c, &other.c);
+    BNP_Paribas::bslalg::SwapUtil::swap(&c, &other.c);
 }
 
 // ACCESSORS

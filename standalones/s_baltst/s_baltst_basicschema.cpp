@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(s_baltst_basicschema_cpp,"$Id$ $CSID$")
 #include <bsl_limits.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                      // ----------------------------------

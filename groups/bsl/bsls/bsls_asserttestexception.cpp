@@ -32,7 +32,7 @@ void freeString(const char* data)
 
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
                      // ================================
                      // class AssertTestException_String

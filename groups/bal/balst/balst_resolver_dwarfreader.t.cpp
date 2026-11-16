@@ -33,7 +33,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cin;
 using bsl::cout;
 using bsl::cerr;

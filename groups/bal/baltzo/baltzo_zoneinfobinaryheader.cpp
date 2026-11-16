@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(baltzo_zoneinfobinaryheader_cpp,"$Id$ $CSID$")
 
 #include <bslim_printer.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
 
                          // --------------------------

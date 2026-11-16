@@ -93,7 +93,7 @@ namespace bsl {
 template <class t_TYPE1, class t_TYPE2, class t_CHAR>
 class formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR> {
     // PRIVATE TYPES
-    typedef BloombergLP::bslfmt::TupleFormatSpecification<t_CHAR>
+    typedef BNP_Paribas::bslfmt::TupleFormatSpecification<t_CHAR>
                                                                  Specification;
 
     // DATA
@@ -190,9 +190,9 @@ formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR>::formatBody(
 template <class t_TYPE1, class t_TYPE2, class t_CHAR>
 BSLS_KEYWORD_CONSTEXPR_CPP20
 formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR>::formatter()
-: d_separator(BloombergLP::bslfmt::Separators<t_CHAR>::commaSeparator())
-, d_openingBracket(BloombergLP::bslfmt::Separators<t_CHAR>::openingParen())
-, d_closingBracket(BloombergLP::bslfmt::Separators<t_CHAR>::closingParen())
+: d_separator(BNP_Paribas::bslfmt::Separators<t_CHAR>::commaSeparator())
+, d_openingBracket(BNP_Paribas::bslfmt::Separators<t_CHAR>::openingParen())
+, d_closingBracket(BNP_Paribas::bslfmt::Separators<t_CHAR>::closingParen())
 {
 }
 
@@ -225,7 +225,7 @@ formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR>::parse(t_PARSE_CONTEXT& ctx)
     switch (d_spec.formatType()) {
       case Specification::e_TUPLE_PAIR_MAP:
         this->set_separator(
-                    BloombergLP::bslfmt::Separators<t_CHAR>::colonSeparator());
+                    BNP_Paribas::bslfmt::Separators<t_CHAR>::colonSeparator());
         BSLA_FALLTHROUGH;
       case Specification::e_TUPLE_NO_BRACKETS: {
         basic_string_view<t_CHAR> empty;
@@ -244,8 +244,8 @@ formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR>::parse(t_PARSE_CONTEXT& ctx)
     // unconditionally -- there is no per-element sub-specification in a
     // tuple-format-spec to suppress it, as there is for ranges.
 
-    BloombergLP::bslfmt::DebugFormatUtil::setDebugFormat(&d_underlying1);
-    BloombergLP::bslfmt::DebugFormatUtil::setDebugFormat(&d_underlying2);
+    BNP_Paribas::bslfmt::DebugFormatUtil::setDebugFormat(&d_underlying1);
+    BNP_Paribas::bslfmt::DebugFormatUtil::setDebugFormat(&d_underlying2);
 
     return ctx.begin();
 }
@@ -258,7 +258,7 @@ formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR>::format(
                                   const bsl::pair<t_TYPE1, t_TYPE2>& pair,
                                   t_FORMAT_CONTEXT&                  ctx) const
 {
-    typedef BloombergLP::bslfmt::FormatterSpecificationNumericValue
+    typedef BNP_Paribas::bslfmt::FormatterSpecificationNumericValue
                                                                   NumericValue;
 
     Specification finalSpec(d_spec);
@@ -273,7 +273,7 @@ formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR>::format(
 
     // Slow path: render the pair body into a temporary string, then emit it
     // with fill / align / width padding.
-    typedef BloombergLP::bslfmt::BufferFormatContext<t_CHAR, t_FORMAT_CONTEXT>
+    typedef BNP_Paribas::bslfmt::BufferFormatContext<t_CHAR, t_FORMAT_CONTEXT>
                                                                  BufferContext;
 
     bsl::basic_string<t_CHAR> buffer;
@@ -284,7 +284,7 @@ formatter<bsl::pair<t_TYPE1, t_TYPE2>, t_CHAR>::format(
     const basic_string_view<t_CHAR> filler(finalSpec.filler(),
                                            finalSpec.numFillerCharacters());
 
-    typedef BloombergLP::bslfmt::PadUtil<t_CHAR> PadUtil;
+    typedef BNP_Paribas::bslfmt::PadUtil<t_CHAR> PadUtil;
 
     return PadUtil::writePadded(ctx.out(),
                                 buffer,

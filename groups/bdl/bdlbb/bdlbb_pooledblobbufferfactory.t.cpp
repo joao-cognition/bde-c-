@@ -12,7 +12,7 @@
 #include <bsl_cstring.h>     // `memcpy`, `memset`
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

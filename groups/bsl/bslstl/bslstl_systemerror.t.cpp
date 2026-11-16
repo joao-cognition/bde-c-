@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -89,7 +89,7 @@ void aSsErT(bool condition, const char *message, int line)
 //            GLOBAL TYPEDEFS/CONSTANTS/FUNCTIONS FOR TESTING
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 /// Print a descriptive form of the specified `error` bracketed by the

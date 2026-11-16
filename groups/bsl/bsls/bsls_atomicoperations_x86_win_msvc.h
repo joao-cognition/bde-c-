@@ -37,7 +37,7 @@ BSLS_IDENT("$Id: $")
 // and also MSDN documentation for 'volatile' and interlocked intrinsics in
 // VC++ 2005 and later.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

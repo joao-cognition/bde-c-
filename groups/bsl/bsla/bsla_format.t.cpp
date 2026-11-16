@@ -54,7 +54,7 @@
 // [ 1] BREATHING TEST
 // ----------------------------------------------------------------------------
 
-namespace bsls = BloombergLP::bsls;
+namespace bsls = BNP_Paribas::bsls;
 
 // ============================================================================
 //                     STANDARD BSL ASSERT TEST FUNCTION
@@ -181,7 +181,7 @@ const char *test_FORMAT(const char *locale, const char *format)
 
 void use_without_diagnostic_message_FORMAT()
 {
-    printf(test_FORMAT("FR", "Name: %s"), "Michael Bloomberg");
+    printf(test_FORMAT("FR", "Name: %s"), "Michael BNP Paribas");
 }
 
 // ============================================================================
@@ -301,7 +301,7 @@ int main(int argc, char **argv)
 // `prefixName`.  No warnings occur when correct arguments are passed:
 // ```
     char buffer[1000];
-    ::printf(prefixName(buffer, e_SPANISH, "%s\n"), "Michael Bloomberg");
+    ::printf(prefixName(buffer, e_SPANISH, "%s\n"), "Michael BNP Paribas");
 //
     char name[100];
     ::sscanf("Emmanuel Macron", prefixName(buffer, e_FRENCH, "%s"), name);

@@ -373,7 +373,7 @@ BSLS_IDENT("$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
             // DEFENSIVE CHECKS FOR 'Format' ENUMERATOR VALUES
 
@@ -2107,7 +2107,7 @@ toCharsDecimalPrecisionImp(char *           first,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
                       // -----------------------------
                       // struct 'NumericFormatterUtil'

@@ -33,8 +33,8 @@
     #pragma clang diagnostic ignored "-Wdeprecated-volatile"
 #endif
 
-using namespace BloombergLP;
-using BloombergLP::bsls::NameOf;
+using namespace BNP_Paribas;
+using BNP_Paribas::bsls::NameOf;
 
 // ============================================================================
 //                                 TEST PLAN
@@ -219,7 +219,7 @@ class stub_reference_wrapper {
 }  // close unnamed namespace
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class TP>
@@ -3160,7 +3160,7 @@ int main(int argc, char *argv[])
     const bool veryVerbose     = argc > 3;  (void)veryVerbose;
     const bool veryVeryVerbose = argc > 4;  (void)veryVeryVerbose;
 
-    using BloombergLP::bslmf::InvokeResultDeductionFailed;
+    using BNP_Paribas::bslmf::InvokeResultDeductionFailed;
 
     printf("TEST " __FILE__ " CASE %d\n", test);
 
@@ -4091,7 +4091,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("\nTESTING FUNCTOR CLASS INVOCABLES"
                             "\n================================\n");
 
-        using BloombergLP::bslmf::InvokeResultDeductionFailed;
+        using BNP_Paribas::bslmf::InvokeResultDeductionFailed;
 
         typedef ManyFunc const           ManyFuncC;
         typedef ManyFunc volatile        ManyFuncV;

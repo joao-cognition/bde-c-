@@ -682,7 +682,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <stdio.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
                         // ================

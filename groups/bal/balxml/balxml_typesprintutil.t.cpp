@@ -48,12 +48,12 @@
 #include <bsl_string_view.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
 
-namespace test = BloombergLP::s_baltst;
+namespace test = BNP_Paribas::s_baltst;
 
 // ============================================================================
 //                             TEST PLAN
@@ -243,7 +243,7 @@ using TestNamespace::TestEnum;
                  // bdlat_EnumFunctions Overrides for TestEnum
                  // ==========================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlat_EnumFunctions {
 
@@ -295,7 +295,7 @@ namespace bdlat_EnumFunctions {
 //@DESCRIPTION:
 //  todo: provide annotation for `CustomizedInt`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
 class CustomizedInt {
@@ -489,7 +489,7 @@ bsl::ostream& test::operator<<(bsl::ostream& stream, const CustomizedInt& rhs)
 
 // test_customizedint.cpp                                             -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                                // ---------
@@ -604,7 +604,7 @@ bool verifyFloatingPointResult(const bsl::string_view& result,
 //  #include <sstream>
 //  #include <vector>
 //
-//  using namespace BloombergLP;
+//  using namespace BNP_Paribas;
 //
 void usageExample1()
 {

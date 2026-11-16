@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdlt_localtimeoffset_cpp,"$Id$ $CSID$")
 
 #include <bsl_c_time.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                             // ---------------------

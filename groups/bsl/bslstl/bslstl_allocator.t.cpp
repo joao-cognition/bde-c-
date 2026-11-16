@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -260,7 +260,7 @@ enum { VERBOSE_ARG_NUM = 2, VERY_VERBOSE_ARG_NUM, VERY_VERY_VERBOSE_ARG_NUM };
                     const my_FixedSizeArray<TYPE, ALLOC>& rhs);
 
 
-    namespace BloombergLP {
+    namespace BNP_Paribas {
     namespace bslma {
 
     template <class TYPE, class ALLOC>

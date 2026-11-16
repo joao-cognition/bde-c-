@@ -29,7 +29,7 @@ typedef pthread_t thread_t;
     #include <sys/time.h>
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 typedef void *(*thread_func)(void *arg);

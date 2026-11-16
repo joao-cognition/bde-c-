@@ -15,7 +15,7 @@
 
 #include <new>             // required to support use of "placement new"
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -92,11 +92,11 @@ void aSsErT(bool condition, const char *message, int line)
 #ifndef BSLS_COMPILERFEATURES_SUPPORT_RVALUE_REFERENCES
 #   define BSLMF_UTIL_FORWARD_REF(T) const T&
 #   define BSLMF_UTIL_FORWARD(T,V) \
-        ::BloombergLP::bslmf::Util::forward(V)
+        ::BNP_Paribas::bslmf::Util::forward(V)
 #else
 #   define BSLMF_UTIL_FORWARD_REF(T) T&&
 #   define BSLMF_UTIL_FORWARD(T,V)       \
-        ::BloombergLP::bsls::Util::forward<T>(V)
+        ::BNP_Paribas::bsls::Util::forward<T>(V)
 #endif
 
 struct CUtil {

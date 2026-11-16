@@ -101,7 +101,7 @@ BSLS_IDENT("$Id: $")
 ///Log Record Attributes Rendering Details
 ///---------------------------------------
 // Log record attributes are rendered as space-separated `name="value"` pairs
-// (for example: mylibrary.username="mbloomberg").  Note that attribute names
+// (for example: mylibrary.username="mbnpparibas").  Note that attribute names
 // are *not* quoted, whereas attribute values, if they are strings, are
 // *always* quoted.
 //
@@ -158,7 +158,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_set.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 class Record;

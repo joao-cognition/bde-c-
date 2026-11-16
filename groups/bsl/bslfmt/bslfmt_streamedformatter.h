@@ -52,7 +52,7 @@ BSLS_IDENT("$Id: $")
 // namespace bsl {
 // template <>
 // struct formatter<StreamableType, char> :
-// BloombergLP::bslfmt::StreamedFormatter<StreamableType> {
+// BNP_Paribas::bslfmt::StreamedFormatter<StreamableType> {
 // };
 // }  // close namespace bsl
 // ```
@@ -75,7 +75,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                           // ========================

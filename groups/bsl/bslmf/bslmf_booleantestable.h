@@ -48,7 +48,7 @@ BSLS_IDENT("$Id: $")
 
 #include <concepts>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class t_TYPE>

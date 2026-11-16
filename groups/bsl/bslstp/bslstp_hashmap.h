@@ -91,7 +91,7 @@ namespace bsl {
 
 template <class _Key, class _Tp,
           class _HashFcn =
-                      typename ::BloombergLP::bslstp::HashSelector<_Key>::Type,
+                      typename ::BNP_Paribas::bslstp::HashSelector<_Key>::Type,
           class _EqualKey = typename bsl::ComparatorSelector<_Key>::Type,
           class _Alloc = bsl::allocator< pair < const _Key, _Tp > > >
 class hash_map
@@ -264,7 +264,7 @@ void swap(hash_map<_Key, _Tp, _HashFcn, _EqualKey, _Alloc>& lhs,
 
 template <class _Key, class _Tp,
           class _HashFcn =
-                      typename ::BloombergLP::bslstp::HashSelector<_Key>::Type,
+                      typename ::BNP_Paribas::bslstp::HashSelector<_Key>::Type,
           class _EqualKey = typename bsl::ComparatorSelector<_Key>::Type,
           class _Alloc = bsl::allocator< pair < const _Key, _Tp> > >
 class hash_multimap
@@ -528,7 +528,7 @@ public:
 //: o An ordered container uses 'bslma' allocators if the parameterized
 //:     '_Alloc' is convertible from 'bslma::Allocator*'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

@@ -100,11 +100,11 @@
 #include <bsl_vector.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
-namespace test = BloombergLP::s_baltst;
+namespace test = BNP_Paribas::s_baltst;
 
 // ============================================================================
 //                             TEST PLAN
@@ -212,7 +212,7 @@ typedef baljsn::Decoder Obj;
 typedef s_baltst::DepthTestMessage     DepthTestMessage;
 typedef s_baltst::DepthTestMessageUtil DTMU;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                         // ============================
@@ -1012,7 +1012,7 @@ extern "C" void *threadFunction(void *data)
 
 }  // close namespace CASE5
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma { class Allocator; }
 namespace case4 { class FullName; }
 namespace case4 { class Employee; }
@@ -2269,7 +2269,7 @@ void Employee::reset()
 
 }  // close enterprise namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                        // =============================
@@ -2963,7 +2963,7 @@ bsl::ostream& operator<<(bsl::ostream&            stream,
 //                              BDLAT TEST TYPES
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                              // ==================
@@ -3072,7 +3072,7 @@ struct IsEnumeration<test::Enumeration1> : public bsl::true_type {
 }  // close namespace bdlat_EnumFunctions
 }  // close enterprise namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 namespace decoder {
 namespace u {
@@ -3437,8 +3437,8 @@ int main(int argc, char *argv[])
 // ```
 //  <?xml version='1.0' encoding='UTF-8'?>
 //  <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
-//             xmlns:test='http://bloomberg.com/schemas/test'
-//             targetNamespace='http://bloomberg.com/schemas/test'
+//             xmlns:test='http://bnpparibas.com/schemas/test'
+//             targetNamespace='http://bnpparibas.com/schemas/test'
 //             elementFormDefault='unqualified'>
 //
 //      <xs:complexType name='Address'>
@@ -7028,7 +7028,7 @@ int main(int argc, char *argv[])
           {  L_,  "\"YWJj\"",        "abc",                3, true  },
           {  L_,  "\"YWJjZA==\"",    "abcd",               4, true  },
 
-          {  L_,  "\"Qmxvb21iZXJnTFA=\"", "BloombergLP",  11, true  },
+          {  L_,  "\"Qmxvb21iZXJnTFA=\"", "BNP_Paribas",  11, true  },
 
           {  L_,     "",               "",                   0, false },
           {  L_,     "\"Q\"",          "",                   0, false },

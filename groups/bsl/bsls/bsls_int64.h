@@ -39,7 +39,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_platform.h>
 #include <bsls_types.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                           // =================
                           // struct bsls_Int64

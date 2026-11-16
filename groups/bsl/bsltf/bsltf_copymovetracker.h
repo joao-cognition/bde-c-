@@ -295,7 +295,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsltf_copymovestate.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                         // ===================

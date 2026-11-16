@@ -402,7 +402,7 @@ int main(int argc, char *argv[])
 
     cout << "TEST " << __FILE__ << " CASE " << test << endl;
 
-    BloombergLP::bslma::TestAllocator ta("test", veryVeryVeryVerbose);
+    BNP_Paribas::bslma::TestAllocator ta("test", veryVeryVeryVerbose);
 
     switch (test) { case 0:
       case 7 : {
@@ -683,7 +683,7 @@ int main(int argc, char *argv[])
         if (verbose) cout << "\nTESTING `PrintTo` FOR `StringRef`"
                           << "\n=================================\n";
 
-        typedef BloombergLP::bslstl::StringRef StringRef;
+        typedef BNP_Paribas::bslstl::StringRef StringRef;
 
         if (veryVerbose) cout << "Testing default-constructed `StringRef`."
                               << endl;

@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(bbldc_terminatedisda30360eom_cpp,"$Id$ $CSID$")
 #include <bdlt_date.h>
 #include <bdlt_serialdateimputil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bbldc {
 
                       // -----------------------------

@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdljsn_writeoptions_cpp,"$Id$ $CSID$")
 
 #include <bslim_printer.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                              // ------------------

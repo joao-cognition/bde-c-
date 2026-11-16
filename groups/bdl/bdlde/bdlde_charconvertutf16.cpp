@@ -192,13 +192,13 @@ BSLS_IDENT("$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 enum {
     INVALID_INPUT_BIT =
-                    BloombergLP::bdlde::CharConvertStatus::k_INVALID_INPUT_BIT,
+                    BNP_Paribas::bdlde::CharConvertStatus::k_INVALID_INPUT_BIT,
     OUT_OF_SPACE_BIT  =
-                    BloombergLP::bdlde::CharConvertStatus::k_OUT_OF_SPACE_BIT
+                    BNP_Paribas::bdlde::CharConvertStatus::k_OUT_OF_SPACE_BIT
 };
 
 /// For storing uncompressed Unicode code point (21 bit, 17 plane).
@@ -246,7 +246,7 @@ template <>
 inline
 unsigned short swappedToHost<unsigned short, 2>(unsigned short uc)
 {
-    return BloombergLP::bsls::ByteOrderUtil::swapBytes(uc);
+    return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(uc);
 }
 
 /// Return the value of the specified `uc` with its bytes swapped, where `uc`
@@ -255,7 +255,7 @@ template <>
 inline
 unsigned short hostToSwapped<unsigned short, 2>(unsigned short uc)
 {
-    return BloombergLP::bsls::ByteOrderUtil::swapBytes(uc);
+    return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(uc);
 }
 
 #if 65535 >= WCHAR_MAX  // remove unused function warning
@@ -265,7 +265,7 @@ template <>
 inline
 wchar_t swappedToHost<wchar_t, 2>(wchar_t uc)
 {
-    return BloombergLP::bsls::ByteOrderUtil::swapBytes(uc);
+    return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(uc);
 }
 
 /// Return the value of the specified `uc` with its bytes swapped, where
@@ -274,7 +274,7 @@ template <>
 inline
 wchar_t hostToSwapped<wchar_t, 2>(wchar_t uc)
 {
-    return BloombergLP::bsls::ByteOrderUtil::swapBytes(uc);
+    return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(uc);
 }
 #endif
 
@@ -285,7 +285,7 @@ template <>
 inline
 char16_t swappedToHost<char16_t, 2>(char16_t uc)
 {
-    return BloombergLP::bsls::ByteOrderUtil::swapBytes(uc);
+    return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(uc);
 }
 
 /// Return the value of the specified `uc` with its bytes swapped, where `uc`
@@ -294,7 +294,7 @@ template <>
 inline
 char16_t hostToSwapped<char16_t, 2>(char16_t uc)
 {
-    return BloombergLP::bsls::ByteOrderUtil::swapBytes(uc);
+    return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(uc);
 }
 #endif
 
@@ -978,7 +978,7 @@ struct Swapper {
     {
         BSLS_ASSERT(4 == sizeof(UTF16_WORD));
 
-        return BloombergLP::bsls::ByteOrderUtil::swapBytes(utf16Word);
+        return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(utf16Word);
     }
 };
 
@@ -1752,7 +1752,7 @@ int utf8ToUtf16Impl(CONTAINER                           *dstContainer,
                     const bsl::string_view&              srcString,
                     bsl::size_t                         *numCodePointsWritten,
                     typename CONTAINER::value_type       errorWord,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef typename CONTAINER::value_type ValueType;
 
@@ -1775,7 +1775,7 @@ int utf8ToUtf16Impl(CONTAINER                           *dstContainer,
     ValueType   *dstBuffer = &(*dstContainer)[0];
     bsl::size_t  numWordsWritten;
 
-    int rc = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int rc = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
            ? localUtf8ToUtf16(dstBuffer,
                               NoOpCapacity(),
                               srcString.data(),
@@ -1809,7 +1809,7 @@ int utf8ToUtf16Impl(CONTAINER                           *dstContainer,
                     const char                          *srcString,
                     bsl::size_t                         *numCodePointsWritten,
                     typename CONTAINER::value_type       errorWord,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef typename CONTAINER::value_type ValueType;
 
@@ -1831,7 +1831,7 @@ int utf8ToUtf16Impl(CONTAINER                           *dstContainer,
     bsl::size_t  numWordsWritten;
     ValueType   *dstBuffer = &(*dstContainer)[0];
 
-    int rc = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int rc = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
            ? localUtf8ToUtf16(dstBuffer,
                               NoOpCapacity(),
                               srcString,
@@ -1865,11 +1865,11 @@ int utf16ToUtf8Impl(CONTAINER                           *dstContainer,
                     const unsigned short                *srcString,
                     bsl::size_t                         *numCodePointsWritten,
                     char                                 errorByte,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     Utf16::ZeroBasedEnd<unsigned short> endFunctor;
 
-    return BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    return BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? localUtf16ToUtf8Container(
                      dstContainer,
                      srcString,
@@ -1892,12 +1892,12 @@ int utf16ToUtf8Impl(CONTAINER                           *dstContainer,
                     bsl::size_t                          srcLengthInWords,
                     bsl::size_t                         *numCodePointsWritten,
                     char                                 errorByte,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     Utf16::PtrBasedEnd<unsigned short> endFunctor(srcString +
                                                   srcLengthInWords);
 
-    return BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    return BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? localUtf16ToUtf8Container(
                      dstContainer,
                      srcString,
@@ -1919,12 +1919,12 @@ int utf16ToUtf8Impl(CONTAINER                           *dstContainer,
                     const bsl::wstring_view&             srcString,
                     bsl::size_t                         *numCodePointsWritten,
                     char                                 errorByte,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     Utf16::PtrBasedEnd<wchar_t> endFunctor(
                                         srcString.data() + srcString.length());
 
-    return BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    return BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? localUtf16ToUtf8Container(dstContainer,
                                            srcString.data(),
                                            endFunctor,
@@ -1945,12 +1945,12 @@ int utf16ToUtf8Impl(CONTAINER                           *dstContainer,
                     const bsl::u16string_view&           srcString,
                     bsl::size_t                         *numCodePointsWritten,
                     char                                 errorByte,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     Utf16::PtrBasedEnd<char16_t> endFunctor(
                                         srcString.data() + srcString.length());
 
-    return BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    return BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? localUtf16ToUtf8Container(dstContainer,
                                            srcString.data(),
                                            endFunctor,
@@ -1971,11 +1971,11 @@ int utf16ToUtf8Impl(CONTAINER                           *dstobject,
                     const wchar_t                       *srcString,
                     bsl::size_t                         *numCodePointsWritten,
                     char                                 errorByte,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     Utf16::ZeroBasedEnd<wchar_t> endFunctor;
 
-    return BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    return BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? localUtf16ToUtf8Container(dstobject,
                                            srcString,
                                            endFunctor,
@@ -1993,7 +1993,7 @@ int utf16ToUtf8Impl(CONTAINER                           *dstobject,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // This component overloads single routine names where the only difference
 // between args is that one is an 'unsigned short *' while the same arg in the

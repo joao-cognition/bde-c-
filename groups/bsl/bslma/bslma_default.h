@@ -668,7 +668,7 @@ BSLS_IDENT("$Id: $")
 #include <bslma_allocator.h>
 #include <bslma_newdeleteallocator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 

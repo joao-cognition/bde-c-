@@ -28,7 +28,7 @@ BSLS_IDENT_PRAGMA_ONCE
 #include <bsl_ostream.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace s_baltst { class MyEnumerationUnpreservedWithFallbackRecord; }
 namespace s_baltst {

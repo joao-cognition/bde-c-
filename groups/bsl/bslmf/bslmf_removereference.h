@@ -15,7 +15,7 @@ BSLS_IDENT("$Id: $")
 //@SEE_ALSO: bslmf_addreference
 //
 //@DESCRIPTION: This component defines two meta-functions,
-// `bsl::remove_reference` and `BloombergLP::bslmf::RemoveReference`, both of
+// `bsl::remove_reference` and `BNP_Paribas::bslmf::RemoveReference`, both of
 // which may be used to strip reference-ness (including both lvalue and rvalue
 // reference-ness, if the latter is supported by the compiler) from a type.
 //
@@ -157,7 +157,7 @@ using remove_reference_t = typename remove_reference<t_TYPE>::type;
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ======================

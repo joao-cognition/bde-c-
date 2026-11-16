@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                TEST PLAN
@@ -28,7 +28,7 @@ using namespace BloombergLP;
 // [ 4] bsl::is_unbounded_array_v
 // [ 3] bsl::is_bounded_array
 // [ 3] bsl::is_bounded_array_v
-// [ 2] BloombergLP::bslmf::IsArray::value
+// [ 2] BNP_Paribas::bslmf::IsArray::value
 // [ 1] bsl::is_array::value
 // [ 1] bsl::is_array_v
 // ----------------------------------------------------------------------------
@@ -588,7 +588,7 @@ int main(int argc, char *argv[])
         //    concern.
         //
         // Testing:
-        //   BloombergLP::bslmf::IsArray::value
+        //   BNP_Paribas::bslmf::IsArray::value
         // --------------------------------------------------------------------
 
         if (verbose) printf("\nTESTING `bslmf::IsArray::value`"

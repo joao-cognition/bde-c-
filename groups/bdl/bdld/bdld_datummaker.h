@@ -104,7 +104,7 @@
 #include <bsls_compilerfeatures.h>
 #include <bsls_types.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdld {
 
                               // ================

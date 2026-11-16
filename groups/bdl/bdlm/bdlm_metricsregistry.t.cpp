@@ -26,7 +26,7 @@
 #include <bsl_string.h>
 #include <bsl_functional.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 
@@ -135,7 +135,7 @@ BSLMF_ASSERT(sizeof(longName) > sizeof(bsl::string));
 
 static int s_testMetricCount = 0;
 
-void testMetric(BloombergLP::bdlm::Metric *value)
+void testMetric(BNP_Paribas::bdlm::Metric *value)
 {
     (void)value;
     ++s_testMetricCount;
@@ -160,14 +160,14 @@ class LargeCallback {
     // MANIPULATORS
 
     /// Do nothing.
-    void operator()(BloombergLP::bdlm::Metric*);
+    void operator()(BNP_Paribas::bdlm::Metric*);
 };
 
                            // ===================
                            // class LargeCallback
                            // ===================
 
-void LargeCallback::operator()(BloombergLP::bdlm::Metric*)
+void LargeCallback::operator()(BNP_Paribas::bdlm::Metric*)
 {
 }
 
@@ -175,13 +175,13 @@ void LargeCallback::operator()(BloombergLP::bdlm::Metric*)
                          // class Callback1
                          // ===============
 struct Callback1 {
-    void operator()(BloombergLP::bdlm::Metric*) const {}
+    void operator()(BNP_Paribas::bdlm::Metric*) const {}
 };
                          // ===============
                          // class Callback2
                          // ===============
 struct Callback2 {
-    void operator()(BloombergLP::bdlm::Metric*) const {}
+    void operator()(BNP_Paribas::bdlm::Metric*) const {}
 };
 
                          // ========================
@@ -368,7 +368,7 @@ bool TestMetricsAdapter::contains(const bdlm::MetricDescriptor& descriptor)
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 
@@ -478,9 +478,9 @@ int main(int argc, char *argv[])
                                   longName,
                                   &oa);
 
-        typedef bsl::function<void(BloombergLP::bdlm::Metric*)> Callback;
+        typedef bsl::function<void(BNP_Paribas::bdlm::Metric*)> Callback;
         Callback fn(bsl::allocator_arg, &oa, LargeCallback());
-        BloombergLP::bdlm::MetricsRegistryRegistrationHandle handle;
+        BNP_Paribas::bdlm::MetricsRegistryRegistrationHandle handle;
         mX.registerCollectionCallback(&handle, md, fn);
 
         ASSERTV(da.numBytesInUse(),
@@ -1437,7 +1437,7 @@ int main(int argc, char *argv[])
 
         ObjHandle handle;
         mX.registerCollectionCallback(&handle, descriptor, &testMetric);
-        typedef void (*CallbackPtr)(BloombergLP::bdlm::Metric*);
+        typedef void (*CallbackPtr)(BNP_Paribas::bdlm::Metric*);
         {
             // Verify that `CallbackPtr` is `decltype(&testMetric)`
             CallbackPtr ptr = &testMetric;

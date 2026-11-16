@@ -40,7 +40,7 @@ void invokeAdlSwap(TYPE& a, TYPE& b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

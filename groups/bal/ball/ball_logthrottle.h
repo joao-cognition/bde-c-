@@ -261,7 +261,7 @@ BSLS_IDENT("$Id: $")
 // };
 //
 // const Int64 k_NS_PER_HOUR =
-//                   BloombergLP::bdlt::TimeUnitRatio::k_NANOSECONDS_PER_HOUR;
+//                   BNP_Paribas::bdlt::TimeUnitRatio::k_NANOSECONDS_PER_HOUR;
 //
 // const Int64 k_NS_PER_INFO  = k_NS_PER_HOUR / k_NUM_INFO;
 //                // long-term minimum nanoseconds per info message permitted
@@ -345,18 +345,18 @@ BSLS_IDENT("$Id: $")
 #define BALL_LOGTHROTTLE_STREAM_CONST_IMP(SEVERITY,                           \
                                           MAX_SIMULTANEOUS_MESSAGES,          \
                                           NANOSECONDS_PER_MESSAGE)            \
-for (const BloombergLP::ball::CategoryHolder *ball_logthrottle_cAtEgOrYhOlDeR \
-             = BloombergLP::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
+for (const BNP_Paribas::ball::CategoryHolder *ball_logthrottle_cAtEgOrYhOlDeR \
+             = BNP_Paribas::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
                         ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER)); \
      ball_logthrottle_cAtEgOrYhOlDeR;                                         \
      ball_logthrottle_cAtEgOrYhOlDeR = 0)                                     \
-for (static BloombergLP::bdlmt::Throttle ball_logthrottle_tHrOtTlE =          \
+for (static BNP_Paribas::bdlmt::Throttle ball_logthrottle_tHrOtTlE =          \
                              BDLMT_THROTTLE_INIT((MAX_SIMULTANEOUS_MESSAGES), \
                                                  (NANOSECONDS_PER_MESSAGE));  \
      ball_logthrottle_cAtEgOrYhOlDeR                                          \
     && ball_logthrottle_tHrOtTlE.requestPermission();                         \
      )                                                                        \
-for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
+for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                       \
                                  ball_logthrottle_cAtEgOrYhOlDeR->category(), \
                                  __FILE__,                                    \
                                  __LINE__,                                    \
@@ -367,21 +367,21 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
 #define BALL_LOGTHROTTLE_STREAM_IMP(SEVERITY,                                 \
                                     MAX_SIMULTANEOUS_MESSAGES,                \
                                     NANOSECONDS_PER_MESSAGE)                  \
-for (const BloombergLP::ball::CategoryHolder *ball_logthrottle_cAtEgOrYhOlDeR \
+for (const BNP_Paribas::ball::CategoryHolder *ball_logthrottle_cAtEgOrYhOlDeR \
                        = ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER); \
      ball_logthrottle_cAtEgOrYhOlDeR                                          \
     && ball_logthrottle_cAtEgOrYhOlDeR->threshold() >= (SEVERITY)             \
-    && BloombergLP::ball::Log::isCategoryEnabled(                             \
+    && BNP_Paribas::ball::Log::isCategoryEnabled(                             \
                                           ball_logthrottle_cAtEgOrYhOlDeR,    \
                                           (SEVERITY));                        \
      ball_logthrottle_cAtEgOrYhOlDeR = 0)                                     \
-for (static BloombergLP::bdlmt::Throttle ball_logthrottle_tHrOtTlE =          \
+for (static BNP_Paribas::bdlmt::Throttle ball_logthrottle_tHrOtTlE =          \
                      BDLMT_THROTTLE_INIT((MAX_SIMULTANEOUS_MESSAGES),         \
                                          (NANOSECONDS_PER_MESSAGE));          \
      ball_logthrottle_cAtEgOrYhOlDeR                                          \
     && ball_logthrottle_tHrOtTlE.requestPermission();                         \
      )                                                                        \
-for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
+for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                       \
                                  ball_logthrottle_cAtEgOrYhOlDeR->category(), \
                                  __FILE__,                                    \
                                  __LINE__,                                    \
@@ -394,21 +394,21 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
                                      NANOSECONDS_PER_MESSAGE,                 \
                                      ...)                                     \
 do {                                                                          \
-    static BloombergLP::bdlmt::Throttle ball_logthrottle_tHrOtTlE =           \
+    static BNP_Paribas::bdlmt::Throttle ball_logthrottle_tHrOtTlE =           \
                            BDLMT_THROTTLE_INIT((MAX_SIMULTANEOUS_MESSAGES),   \
                                                (NANOSECONDS_PER_MESSAGE));    \
-    const BloombergLP::ball::CategoryHolder                                   \
+    const BNP_Paribas::ball::CategoryHolder                                   \
                                           *ball_logthrottle_cAtEgOrYhOlDeR    \
-            = BloombergLP::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(    \
+            = BNP_Paribas::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(    \
                       ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER));   \
     if (ball_logthrottle_cAtEgOrYhOlDeR &&                                    \
                            ball_logthrottle_tHrOtTlE.requestPermission()) {   \
-        BloombergLP::ball::Log_Formatter ball_logthrottle_fOrMaTtEr(          \
+        BNP_Paribas::ball::Log_Formatter ball_logthrottle_fOrMaTtEr(          \
                                ball_logthrottle_cAtEgOrYhOlDeR->category(),   \
                                __FILE__,                                      \
                                __LINE__,                                      \
                                (SEVERITY));                                   \
-        BloombergLP::ball::Log::format(                                       \
+        BNP_Paribas::ball::Log::format(                                       \
                              ball_logthrottle_fOrMaTtEr.messageBuffer(),      \
                              ball_logthrottle_fOrMaTtEr.messageBufferLen(),   \
                              __VA_ARGS__);                                    \
@@ -429,42 +429,42 @@ do {                                                                          \
 
 #define BALL_LOGTHROTTLE_TRACE(                                               \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))              \
                                                          BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGTHROTTLE_DEBUG(                                               \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))              \
                                                          BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGTHROTTLE_INFO(                                                \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_INFO,    \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO,    \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))              \
                                                          BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGTHROTTLE_WARN(                                                \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_WARN,    \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN,    \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))              \
                                                          BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGTHROTTLE_ERROR(                                               \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_ERROR,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))              \
                                                          BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGTHROTTLE_FATAL(                                               \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_FATAL,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))              \
                                                          BALL_LOG_OUTPUT_STREAM
@@ -482,37 +482,37 @@ do {                                                                          \
 
 #define BALL_LOGTHROTTLE_TRACE_BLOCK(                                         \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))
 
 #define BALL_LOGTHROTTLE_DEBUG_BLOCK(                                         \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))
 
 #define BALL_LOGTHROTTLE_INFO_BLOCK(                                          \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_INFO,    \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO,    \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))
 
 #define BALL_LOGTHROTTLE_WARN_BLOCK(                                          \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_WARN,    \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN,    \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))
 
 #define BALL_LOGTHROTTLE_ERROR_BLOCK(                                         \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_ERROR,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))
 
 #define BALL_LOGTHROTTLE_FATAL_BLOCK(                                         \
                           MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \
-    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_FATAL,   \
+    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL,   \
                                       (MAX_SIMULTANEOUS_MESSAGES),            \
                                       (NANOSECONDS_PER_MESSAGE))
 
@@ -525,22 +525,22 @@ do {                                                                          \
                            NANOSECONDS_PER_MESSAGE,                           \
                            ...)                                               \
 do {                                                                          \
-    static BloombergLP::bdlmt::Throttle ball_logthrottle_tHrOtTlE =           \
+    static BNP_Paribas::bdlmt::Throttle ball_logthrottle_tHrOtTlE =           \
                              BDLMT_THROTTLE_INIT((MAX_SIMULTANEOUS_MESSAGES), \
                                                  (NANOSECONDS_PER_MESSAGE));  \
-    const BloombergLP::ball::CategoryHolder *ball_logthrottle_cAtEgOrYhOlDeR  \
+    const BNP_Paribas::ball::CategoryHolder *ball_logthrottle_cAtEgOrYhOlDeR  \
                       = ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER);  \
     if (ball_logthrottle_cAtEgOrYhOlDeR->threshold() >= (SEVERITY)            \
-       && BloombergLP::ball::Log::isCategoryEnabled(                          \
+       && BNP_Paribas::ball::Log::isCategoryEnabled(                          \
                                             ball_logthrottle_cAtEgOrYhOlDeR,  \
                                             (SEVERITY))                       \
        && ball_logthrottle_tHrOtTlE.requestPermission()) {                    \
-        BloombergLP::ball::Log_Formatter ball_logthrottle_fOrMaTtEr(          \
+        BNP_Paribas::ball::Log_Formatter ball_logthrottle_fOrMaTtEr(          \
                                  ball_logthrottle_cAtEgOrYhOlDeR->category(), \
                                  __FILE__,                                    \
                                  __LINE__,                                    \
                                  (SEVERITY));                                 \
-        BloombergLP::ball::Log::format(                                       \
+        BNP_Paribas::ball::Log::format(                                       \
                                ball_logthrottle_fOrMaTtEr.messageBuffer(),    \
                                ball_logthrottle_fOrMaTtEr.messageBufferLen(), \
                                __VA_ARGS__);                                  \
@@ -550,7 +550,7 @@ do {                                                                          \
 #define BALL_LOGTHROTTLEVA_TRACE(MAX_SIMULTANEOUS_MESSAGES,                   \
                                  NANOSECONDS_PER_MESSAGE,                     \
                                  ...)                                         \
-    BALL_LOGTHROTTLEVA_CONST_IMP(BloombergLP::ball::Severity::e_TRACE,        \
+    BALL_LOGTHROTTLEVA_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE,        \
                                  (MAX_SIMULTANEOUS_MESSAGES),                 \
                                  (NANOSECONDS_PER_MESSAGE),                   \
                                  __VA_ARGS__)
@@ -558,7 +558,7 @@ do {                                                                          \
 #define BALL_LOGTHROTTLEVA_DEBUG(MAX_SIMULTANEOUS_MESSAGES,                   \
                                  NANOSECONDS_PER_MESSAGE,                     \
                                  ...)                                         \
-    BALL_LOGTHROTTLEVA_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG,        \
+    BALL_LOGTHROTTLEVA_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG,        \
                                  (MAX_SIMULTANEOUS_MESSAGES),                 \
                                  (NANOSECONDS_PER_MESSAGE),                   \
                                  __VA_ARGS__)
@@ -566,7 +566,7 @@ do {                                                                          \
 #define BALL_LOGTHROTTLEVA_INFO( MAX_SIMULTANEOUS_MESSAGES,                   \
                                  NANOSECONDS_PER_MESSAGE,                     \
                                  ...)                                         \
-    BALL_LOGTHROTTLEVA_CONST_IMP(BloombergLP::ball::Severity::e_INFO,         \
+    BALL_LOGTHROTTLEVA_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO,         \
                                  (MAX_SIMULTANEOUS_MESSAGES),                 \
                                  (NANOSECONDS_PER_MESSAGE),                   \
                                  __VA_ARGS__)
@@ -574,7 +574,7 @@ do {                                                                          \
 #define BALL_LOGTHROTTLEVA_WARN( MAX_SIMULTANEOUS_MESSAGES,                   \
                                  NANOSECONDS_PER_MESSAGE,                     \
                                  ...)                                         \
-    BALL_LOGTHROTTLEVA_CONST_IMP(BloombergLP::ball::Severity::e_WARN,         \
+    BALL_LOGTHROTTLEVA_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN,         \
                                  (MAX_SIMULTANEOUS_MESSAGES),                 \
                                  (NANOSECONDS_PER_MESSAGE),                   \
                                  __VA_ARGS__)
@@ -582,7 +582,7 @@ do {                                                                          \
 #define BALL_LOGTHROTTLEVA_ERROR(MAX_SIMULTANEOUS_MESSAGES,                   \
                                  NANOSECONDS_PER_MESSAGE,                     \
                                  ...)                                         \
-    BALL_LOGTHROTTLEVA_CONST_IMP(BloombergLP::ball::Severity::e_ERROR,        \
+    BALL_LOGTHROTTLEVA_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR,        \
                                  (MAX_SIMULTANEOUS_MESSAGES),                 \
                                  (NANOSECONDS_PER_MESSAGE),                   \
                                  __VA_ARGS__)
@@ -590,7 +590,7 @@ do {                                                                          \
 #define BALL_LOGTHROTTLEVA_FATAL(MAX_SIMULTANEOUS_MESSAGES,                   \
                                  NANOSECONDS_PER_MESSAGE,                     \
                                  ...)                                         \
-    BALL_LOGTHROTTLEVA_CONST_IMP(BloombergLP::ball::Severity::e_FATAL,        \
+    BALL_LOGTHROTTLEVA_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL,        \
                                  (MAX_SIMULTANEOUS_MESSAGES),                 \
                                  (NANOSECONDS_PER_MESSAGE),                   \
                                  __VA_ARGS__)

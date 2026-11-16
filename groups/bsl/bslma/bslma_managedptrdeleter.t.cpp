@@ -14,7 +14,7 @@
 #include <stdio.h>     // `printf`
 #include <stdlib.h>    // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                                  TEST PLAN
@@ -198,7 +198,7 @@ void StatefulFactory<TYPE>::destroy(TYPE *object) const
 
 // `debugprint` support for `bsl` types
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 void debugprint(const ManagedPtrDeleter& obj)

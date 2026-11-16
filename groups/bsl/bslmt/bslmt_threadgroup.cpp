@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bslmt_threadgroup_cpp,"$Id$ $CSID$")
 
 #include <bsl_algorithm.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
                          // =======================

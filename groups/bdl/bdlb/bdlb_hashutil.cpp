@@ -32,7 +32,7 @@ BSLS_IDENT_RCSID(bdlb_hashutil_cpp,"$Id$ $CSID$")
 // though, so I let things be.
 //..
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #define FALLTHROUGH BSLS_ANNOTATION_FALLTHROUGH
 

@@ -153,7 +153,7 @@ enum {
 };
 
 // STATIC HELPER FUNCTIONS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -549,7 +549,7 @@ namespace {
 /// Run the appropriate `fstat` or `fstat64` function on the specified file
 /// `descriptor`, returning the results in the specified `statResult`.
 static inline
-int performFStat(BloombergLP::bdls::FilesystemUtil::FileDescriptor  descriptor,
+int performFStat(BNP_Paribas::bdls::FilesystemUtil::FileDescriptor  descriptor,
                  StatResult                                        *statResult)
 {
 #if   defined(U_USE_UNIX_FILE_SYSTEM_INTERFACE)
@@ -591,7 +591,7 @@ extern "C" {
 /// itself as one of the values `EPERM`, `EACCES`, or `ENOENT` and 1
 /// otherwise.
 static
-int bloombergLP_bdls_FileSystemUtil_isNotFilePermissionsError(
+int bnp_Paribas_bdls_FileSystemUtil_isNotFilePermissionsError(
                                                           const char *,
                                                           int         errorNum)
 {
@@ -623,13 +623,13 @@ int bloombergLP_bdls_FileSystemUtil_isNotFilePermissionsError(
 
 typedef int (*IsNotFilePermissionsErrorFuncPtr)(const char *, int);
 static const IsNotFilePermissionsErrorFuncPtr isNotFilePermissionsError_p =
-                    &bloombergLP_bdls_FileSystemUtil_isNotFilePermissionsError;
+                    &bnp_Paribas_bdls_FileSystemUtil_isNotFilePermissionsError;
 
 }  // close extern "C"
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 /// A `thunk` to be bound to the specified `vector` that can be called to
@@ -908,7 +908,7 @@ int makeDirectory(const char *path, bool isPrivate)
 /// 0 on success and a non-zero value otherwise.
 static
 int u_removeContentsOfTree(
-           const BloombergLP::bdls::FilesystemUtil::FileDescriptor dirFD,
+           const BNP_Paribas::bdls::FilesystemUtil::FileDescriptor dirFD,
            const bsls::TimeInterval&                               nfsDeadline)
 {
     typedef bdls::FilesystemUtil::FileDescriptor FileDescriptor;

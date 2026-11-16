@@ -147,7 +147,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 template <class TYPE>
@@ -1271,11 +1271,11 @@ void hashAppend(HASHALG& hashAlg, const NullableValue<TYPE>& input);
 /// the `isNull` method for the two objects is the same; otherwise this
 /// function provides the basic guarantee.
 template <class TYPE>
-typename bsl::enable_if<BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value,
+typename bsl::enable_if<BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value,
                         void>::type
 swap(NullableValue<TYPE>& lhs, NullableValue<TYPE>& rhs);
 template <class TYPE>
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value,
                         void>::type
 swap(NullableValue<TYPE>& lhs, NullableValue<TYPE>& rhs);
 
@@ -2570,7 +2570,7 @@ void bdlb::hashAppend(HASHALG& hashAlg, const NullableValue<TYPE>& input)
 
 template <class TYPE>
 inline
-typename bsl::enable_if<BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value,
+typename bsl::enable_if<BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value,
                         void>::type
 bdlb::swap(NullableValue<TYPE>& lhs, NullableValue<TYPE>& rhs)
 {
@@ -2580,7 +2580,7 @@ bdlb::swap(NullableValue<TYPE>& lhs, NullableValue<TYPE>& rhs)
 
 template <class TYPE>
 inline
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value,
                         void>::type
 bdlb::swap(NullableValue<TYPE>& lhs, NullableValue<TYPE>& rhs)
 {
@@ -2595,7 +2595,7 @@ bdlb::swap(NullableValue<TYPE>& lhs, NullableValue<TYPE>& rhs)
 
 namespace std {
 template <typename _Tp>
-inline constexpr bool __is_optional_v<BloombergLP::bdlb::NullableValue<_Tp>> =
+inline constexpr bool __is_optional_v<BNP_Paribas::bdlb::NullableValue<_Tp>> =
     true;
 }
 #endif // BSLSTL_OPTIONAL_CPP20_IS_OPTIONAL_GNU_WORKAROUND_NEEDED
@@ -2607,7 +2607,7 @@ inline constexpr bool __is_optional_v<BloombergLP::bdlb::NullableValue<_Tp>> =
 namespace std {
 template <typename _Tp>
 inline
-constexpr bool _Is_specialization_v<BloombergLP::bdlb::NullableValue<_Tp>,
+constexpr bool _Is_specialization_v<BNP_Paribas::bdlb::NullableValue<_Tp>,
                                     std::optional> = true;
 }
 #endif  // BSLSTL_OPTIONAL_CPP20_IS_OPTIONAL_MSVC_WORKAROUND_NEEDED

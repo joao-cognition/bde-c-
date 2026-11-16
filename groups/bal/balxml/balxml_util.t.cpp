@@ -8,7 +8,7 @@
 #include <bsl_iostream.h>
 #include <bsl_sstream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -83,7 +83,7 @@ static  const char * goodSchema =
 "        elementFormDefault='qualified'"
 "        xmlns='http://www.w3.org/2001/XMLSchema'"
 "        xmlns:xs='http://www.w3.org/2001/XMLSchema'"
-"        xmlns:bdem='http://bloomberg.com/schemas/bdem'"
+"        xmlns:bdem='http://bnpparibas.com/schemas/bdem'"
 "        xmlns:m_bascalc='http://localhost:2000/calc.wsdl'"
 "        xmlns:tns='http://localhost:2000/calc.wsdl'"
 "   <xs:complexType name='Options'>"
@@ -109,7 +109,7 @@ static  const char * badSchema1 =
 " <schema elementFormDefault='qualified'"
 "        xmlns='http://www.w3.org/2001/XMLSchema'"
 "        xmlns:xs='http://www.w3.org/2001/XMLSchema'"
-"        xmlns:bdem='http://bloomberg.com/schemas/bdem'"
+"        xmlns:bdem='http://bnpparibas.com/schemas/bdem'"
 "        xmlns:m_bascalc='http://localhost:2000/calc.wsdl'"
 "        xmlns:tns='http://localhost:2000/calc.wsdl'"
 "   <xs:complexType name='Options'>"

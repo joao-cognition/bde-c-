@@ -33,7 +33,7 @@ BSLS_IDENT_RCSID(bdldfp_decimalconvertutil_cpp,"$Id$ $CSID$")
 
 #include <math.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
 namespace {

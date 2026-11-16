@@ -73,9 +73,9 @@
 #include <bsl_iomanip.h>
 #include <bsl_iterator.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
-namespace test = BloombergLP::s_baltst;
+namespace test = BNP_Paribas::s_baltst;
 
 // ============================================================================
 //                             TEST PLAN
@@ -571,7 +571,7 @@ void verifyTimeTypesLengthAnomalies(bsl::size_t             MAX_LEN,
 // BDE_VERIFY pragma: push
 // BDE_VERIFY pragma: -MR01
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                       // ===============================
@@ -1860,7 +1860,7 @@ struct IsEnumeration<test::Enumeration1> : public bsl::true_type {
 //                               USAGE EXAMPLE
 // ----------------------------------------------------------------------------
 // ```
-    namespace BloombergLP {
+    namespace BNP_Paribas {
     namespace usage {
 
     /// This struct represents a sequence containing a `string` member, an
@@ -2247,7 +2247,7 @@ struct IsEnumeration<test::Enumeration1> : public bsl::true_type {
 
 static void usageExample()
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 ///Usage
 ///-----
 // This section illustrates intended use of this component.
@@ -2362,7 +2362,7 @@ int LLVMFuzzerTestOneInput(const uint8_t *bytes, size_t size)
     options.setSkipUnknownElements(FuzzUtil::consumeBool(&data));
     options.setDefaultEmptyStrings(FuzzUtil::consumeBool(&data));
 
-    using BloombergLP::s_baltst::Request;
+    using BNP_Paribas::s_baltst::Request;
     tryDeserialize<Request>(data, options);
 
     if (testStatus > 0) {

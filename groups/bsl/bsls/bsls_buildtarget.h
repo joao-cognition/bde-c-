@@ -108,12 +108,12 @@ BSLS_IDENT("$Id: $")
 // +=========================================+==============================+
 // | universally distributed code            | no label                     |
 // +-----------------------------------------+------------------------------+
-// | Bloomberg-only code                     | BDE_OPENSOURCE_PUBLICATION   |
+// | BNP Paribas-only code                     | BDE_OPENSOURCE_PUBLICATION   |
 // +-----------------------------------------+------------------------------+
 // | universally distributed code deprecated | BDE_OMIT_DEPRECATED          |
 // | before BDE 3.2                          |                              |
 // +-----------------------------------------+------------------------------+
-// | Bloomberg-only code deprecated before   | BDE_OMIT_INTERNAL_DEPRECATED |
+// | BNP Paribas-only code deprecated before   | BDE_OMIT_INTERNAL_DEPRECATED |
 // | BDE 3.2                                 |                              |
 // +-----------------------------------------+------------------------------+
 // ```
@@ -206,7 +206,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_linkcoercion.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // ============================================================================
 //                           BDE_BUILD_TARGET_EXC/BDE_BUILD_TARGET_NO_EXC

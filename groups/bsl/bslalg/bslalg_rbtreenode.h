@@ -304,7 +304,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bsls_types.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
                         // ================

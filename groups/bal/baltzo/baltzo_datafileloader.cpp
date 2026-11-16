@@ -32,7 +32,7 @@ BSLS_IDENT_RCSID(baltzo_datafileloader_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 const char *INVALID_PATH    = "! INVALID_FILE_PATH !";
 
@@ -198,7 +198,7 @@ int loadTimeZoneImpl(baltzo::Zoneinfo              *result,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
 
                             // --------------------

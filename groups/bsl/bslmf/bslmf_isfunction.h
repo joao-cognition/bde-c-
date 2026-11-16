@@ -77,7 +77,7 @@ BSLS_IDENT("$Id: $")
 // function types on this platform.  This implementation relies on the fact
 // that you cannot form an array of function types.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 struct IsFunction_Imp {
@@ -119,7 +119,7 @@ template <class t_TYPE>
 struct is_function
 : integral_constant<
       bool,
-      sizeof(BloombergLP::bslmf::IsFunction_Imp::test<t_TYPE>(0, 0)) == 1> {
+      sizeof(BNP_Paribas::bslmf::IsFunction_Imp::test<t_TYPE>(0, 0)) == 1> {
     // This 'struct' template implements the 'is_function' meta-function
     // defined in the C++11 standard [meta.unary.cat] to determine if the
     // (template parameter) 't_TYPE' is a function type.  This 'struct' derives

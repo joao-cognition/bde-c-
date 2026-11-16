@@ -59,16 +59,16 @@ class multimap {
 
     /// This typedef is an alias for the comparator used internally by this
     /// multimap.
-    typedef BloombergLP::bslstl::MapComparator<KEY, VALUE, COMPARATOR>
+    typedef BNP_Paribas::bslstl::MapComparator<KEY, VALUE, COMPARATOR>
                                                                Comparator;
 
     /// This typedef is an alias for the type of nodes held by the tree (of
     /// nodes) used to implement this multimap.
-    typedef BloombergLP::bslstl::TreeNode<ValueType>           Node;
+    typedef BNP_Paribas::bslstl::TreeNode<ValueType>           Node;
 
     /// This typedef is an alias for the factory type used to create and
     /// destroy `Node` objects.
-    typedef BloombergLP::bslstl::TreeNodePool<ValueType, ALLOCATOR>
+    typedef BNP_Paribas::bslstl::TreeNodePool<ValueType, ALLOCATOR>
                                                                NodeFactory;
 
     /// This typedef is an alias for the allocator traits type associated
@@ -77,7 +77,7 @@ class multimap {
 
     /// This typedef is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil                 MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil                 MoveUtil;
 
     /// This class is a wrapper around the comparator and allocator data
     /// members.  It takes advantage of the empty-base optimization (EBO) so
@@ -111,7 +111,7 @@ class multimap {
         /// propagated to the new data wrapper.  `original` is left in a
         /// valid but unspecified state.
         DataWrapper(
-              BloombergLP::bslmf::MovableRef<DataWrapper> original);// IMPLICIT
+              BNP_Paribas::bslmf::MovableRef<DataWrapper> original);// IMPLICIT
 
         // MANIPULATORS
 
@@ -131,7 +131,7 @@ class multimap {
                                                // comparator and pool of 'Node'
                                                // objects
 
-    BloombergLP::bslalg::RbTreeAnchor d_tree;  // balanced tree of 'Node'
+    BNP_Paribas::bslalg::RbTreeAnchor d_tree;  // balanced tree of 'Node'
                                                // objects
 
   public:
@@ -149,11 +149,11 @@ class multimap {
     typedef typename AllocatorTraits::pointer          pointer;
     typedef typename AllocatorTraits::const_pointer    const_pointer;
 
-    typedef BloombergLP::bslstl::TreeIterator<value_type,
+    typedef BNP_Paribas::bslstl::TreeIterator<value_type,
                                               Node,
                                               difference_type> iterator;
 
-    typedef BloombergLP::bslstl::TreeIterator<const value_type,
+    typedef BNP_Paribas::bslstl::TreeIterator<const value_type,
                                               Node,
                                               difference_type> const_iterator;
 
@@ -228,12 +228,12 @@ class multimap {
     /// Return an address providing modifiable access to the specified
     /// `node`.  The behavior is undefined unless `node` is the address of a
     /// `Node` object.
-    static Node *toNode(BloombergLP::bslalg::RbTreeNode *node);
+    static Node *toNode(BNP_Paribas::bslalg::RbTreeNode *node);
 
     /// Return an address providing non-modifiable access to the specified
     /// `node`.  The behavior is undefined unless `node` is the address of a
     /// `Node` object.
-    static const Node *toNode(const BloombergLP::bslalg::RbTreeNode *node);
+    static const Node *toNode(const BNP_Paribas::bslalg::RbTreeNode *node);
 
     // PRIVATE MANIPULATORS
 
@@ -364,7 +364,7 @@ class multimap {
     /// associated with `original` is propagated for use in the
     /// newly-created multimap.  `original` is left in a valid but
     /// unspecified state.
-    multimap(BloombergLP::bslmf::MovableRef<multimap> original);    // IMPLICIT
+    multimap(BNP_Paribas::bslmf::MovableRef<multimap> original);    // IMPLICIT
 
     /// Create a multimap having the same value as the specified `original`
     /// object that uses the specified `basicAllocator` to supply memory.
@@ -389,7 +389,7 @@ class multimap {
     /// {Requirements on `KEY` and `VALUE`}).  Note that a 'bslma::Allocator
     /// *` can be supplied for `basicAllocator' if the (template parameter)
     /// `ALLOCATOR` is `bsl::allocator` (the default).
-    multimap(BloombergLP::bslmf::MovableRef<multimap>       original,
+    multimap(BNP_Paribas::bslmf::MovableRef<multimap>       original,
              const typename type_identity<ALLOCATOR>::type& basicAllocator);
 
     /// Create a multimap, and insert each `value_type` object in the
@@ -530,7 +530,7 @@ class multimap {
     /// `VALUE`}).
     multimap& operator=(const multimap& rhs);
 
-    multimap& operator=(BloombergLP::bslmf::MovableRef<multimap> rhs)
+    multimap& operator=(BNP_Paribas::bslmf::MovableRef<multimap> rhs)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                            AllocatorTraits::is_always_equal::value &&
                            std::is_nothrow_move_assignable<COMPARATOR>::value);
@@ -813,7 +813,7 @@ class multimap {
     size_type erase(const key_type& key);
     template <class t_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    t_KEY>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
                         iterator>::value &&
@@ -880,7 +880,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     iterator find(const key_type& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -892,12 +892,12 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         iterator>::type
     find(const LOOKUP_KEY& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -913,7 +913,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     iterator lower_bound(const key_type& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -929,12 +929,12 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         iterator>::type
     lower_bound(const LOOKUP_KEY& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -950,7 +950,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     iterator upper_bound(const key_type& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -966,12 +966,12 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         iterator>::type
     upper_bound(const LOOKUP_KEY& key)
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1009,7 +1009,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
@@ -1084,7 +1084,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         bool>::type
     contains(const LOOKUP_KEY& key) const
@@ -1130,7 +1130,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     const_iterator find(const key_type& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -1142,12 +1142,12 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         const_iterator>::type
     find(const LOOKUP_KEY& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::find(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::find(
             d_tree, this->comparator(), key));
     }
 
@@ -1173,7 +1173,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         size_type>::type
     count(const LOOKUP_KEY& key) const
@@ -1201,7 +1201,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     const_iterator lower_bound(const key_type& key) const
     {
-        return iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1218,12 +1218,12 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         const_iterator>::type
     lower_bound(const LOOKUP_KEY& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::lowerBound(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::lowerBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1239,7 +1239,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     const_iterator upper_bound(const key_type& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1255,12 +1255,12 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         const_iterator>::type
     upper_bound(const LOOKUP_KEY& key) const
     {
-        return const_iterator(BloombergLP::bslalg::RbTreeUtil::upperBound(
+        return const_iterator(BNP_Paribas::bslalg::RbTreeUtil::upperBound(
             d_tree, this->comparator(), key));
     }
 
@@ -1298,7 +1298,7 @@ class multimap {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<COMPARATOR,
+        BNP_Paribas::bslmf::IsTransparentPredicate<COMPARATOR,
                                                    LOOKUP_KEY>::value,
         pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
@@ -1325,12 +1325,12 @@ class multimap {
 /// standard allocator.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class COMPARATOR = std::less<KEY>,
     class ALLOCATOR = bsl::allocator<
-             BloombergLP::bslstl::IteratorUtil::IterToAlloc_t<INPUT_ITERATOR>>,
+             BNP_Paribas::bslstl::IteratorUtil::IterToAlloc_t<INPUT_ITERATOR>>,
     class = bsl::enable_if_t<!bsl::IsStdAllocator_v<COMPARATOR>>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
@@ -1350,9 +1350,9 @@ template <
     class INPUT_ITERATOR,
     class COMPARATOR,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1366,9 +1366,9 @@ multimap(INPUT_ITERATOR, INPUT_ITERATOR, COMPARATOR, ALLOC *)
 template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 multimap(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
@@ -1381,9 +1381,9 @@ multimap(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
 template <
     class INPUT_ITERATOR,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1491,7 +1491,7 @@ bool operator!=(const multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& lhs,
 /// `bsl::pair<const KEY, VALUE>` on each element; return the result of that
 /// comparison.
 template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
-BloombergLP::bslalg::SynthThreeWayUtil::Result<pair<const KEY, VALUE>>
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<pair<const KEY, VALUE>>
 operator<=>(const multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& lhs,
             const multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& rhs);
 
@@ -1604,7 +1604,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::DataWrapper::DataWrapper(
 template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
 inline
 multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::DataWrapper::DataWrapper(
-                          BloombergLP::bslmf::MovableRef<DataWrapper> original)
+                          BNP_Paribas::bslmf::MovableRef<DataWrapper> original)
 : ::bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::Comparator(
                                     MoveUtil::access(original).keyComparator())
 , d_pool(MoveUtil::move(MoveUtil::access(original).d_pool))
@@ -1676,7 +1676,7 @@ inline
 void multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::quickSwapExchangeAllocators(
                                                                multimap& other)
 {
-    BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
+    BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
     nodeFactory().swapExchangeAllocators(other.nodeFactory());
 
     // 'DataWrapper' contains a 'NodeFactory' object and inherits from
@@ -1695,7 +1695,7 @@ inline
 void multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::quickSwapRetainAllocators(
                                                                multimap& other)
 {
-    BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
+    BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &other.d_tree);
     nodeFactory().swapRetainAllocators(other.nodeFactory());
 
     // See 'quickSwapExchangeAllocators' (above).
@@ -1718,13 +1718,13 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::constructFromRange(
     }
 
     if BSLS_KEYWORD_CONSTEXPR_CPP17 (
-        BloombergLP::bslstl::IteratorUtil::
+        BNP_Paribas::bslstl::IteratorUtil::
                       canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()) {
         nodeFactory().reserveNodes(
-               BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+               BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
     }
 
-    BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+    BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -1735,7 +1735,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::constructFromRange(
     // 'findInsertLocation'.
 
     insert(*first);
-    BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+    BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
 
     while (++first != last) {
 
@@ -1748,9 +1748,9 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::constructFromRange(
         }
 
         // For multimap, we always insert even if keys are equal
-        BloombergLP::bslalg::RbTreeNode *node =
+        BNP_Paribas::bslalg::RbTreeNode *node =
                                nodeFactory().emplaceIntoNewNode(value);
-        BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                   prevNode,
                                                   false,
                                                   node);
@@ -1774,10 +1774,10 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::constructFromRange(
 
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_type>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     if (first == last) {
         return;                                                       // RETURN
@@ -1787,7 +1787,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::constructFromRange(
         nodeFactory().reserveNodes(numElements);
     }
 
-    BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+    BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -1798,7 +1798,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::constructFromRange(
     // 'findInsertLocation'.
 
     insert(*first); --numElements;
-    BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+    BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
 
     while (++first != last) {
 
@@ -1811,9 +1811,9 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::constructFromRange(
         }
 
         // For multimap, we always insert even if keys are equal
-        BloombergLP::bslalg::RbTreeNode *node =
+        BNP_Paribas::bslalg::RbTreeNode *node =
                                nodeFactory().emplaceIntoNewNode(value);
-        BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                   prevNode,
                                                   false,
                                                   node);
@@ -1846,12 +1846,12 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::insertFromRange(
 
     while (first != last) {
 
-        if (BloombergLP::bslstl::IteratorUtil
+        if (BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         && BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
                                               !nodeFactory().hasFreeNodes())) {
             nodeFactory().reserveNodes(
-               BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+               BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
         }
 
         insert(*first);
@@ -1871,10 +1871,10 @@ void multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::insertFromRange(
                                                     size_t         numElements)
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_type>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     while (first != last) {
 
@@ -1936,7 +1936,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(const multimap& original)
 {
     if (0 < original.size()) {
         nodeFactory().reserveNodes(original.size());
-        BloombergLP::bslalg::RbTreeUtil::copyTree(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::copyTree(&d_tree,
                                                   original.d_tree,
                                                   &nodeFactory());
     }
@@ -1945,12 +1945,12 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(const multimap& original)
 template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
 inline
 multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
-                             BloombergLP::bslmf::MovableRef<multimap> original)
+                             BNP_Paribas::bslmf::MovableRef<multimap> original)
 : d_compAndAlloc(MoveUtil::move(MoveUtil::access(original).d_compAndAlloc))
 , d_tree()
 {
     multimap& lvalue = original;
-    BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
+    BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
 }
 
 template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
@@ -1963,7 +1963,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
 {
     if (0 < original.size()) {
         nodeFactory().reserveNodes(original.size());
-        BloombergLP::bslalg::RbTreeUtil::copyTree(&d_tree,
+        BNP_Paribas::bslalg::RbTreeUtil::copyTree(&d_tree,
                                                   original.d_tree,
                                                   &nodeFactory());
     }
@@ -1972,7 +1972,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
 template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
 inline
 multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
-                 BloombergLP::bslmf::MovableRef<multimap> original,
+                 BNP_Paribas::bslmf::MovableRef<multimap> original,
                  const typename type_identity<ALLOCATOR>::type& basicAllocator)
 : d_compAndAlloc(MoveUtil::access(original).comparator().keyComparator(),
                  basicAllocator)
@@ -1984,12 +1984,12 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
               nodeFactory().allocator() == lvalue.nodeFactory().allocator())) {
         d_compAndAlloc.nodeFactory().adopt(
                           MoveUtil::move(lvalue.d_compAndAlloc.nodeFactory()));
-        BloombergLP::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
+        BNP_Paribas::bslalg::RbTreeUtil::swap(&d_tree, &lvalue.d_tree);
     }
     else {
         if (0 < lvalue.size()) {
             nodeFactory().reserveNodes(lvalue.size());
-            BloombergLP::bslalg::RbTreeUtil::moveTree(&d_tree,
+            BNP_Paribas::bslalg::RbTreeUtil::moveTree(&d_tree,
                                                       &lvalue.d_tree,
                                                       &nodeFactory(),
                                                       &lvalue.nodeFactory());
@@ -2011,13 +2011,13 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
     if (first != last) {
 
         const size_type numElements = static_cast<size_type>(
-            BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+            BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
 
         if (0 < numElements) {
             nodeFactory().reserveNodes(numElements);
         }
 
-        BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+        BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -2028,7 +2028,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
         // 'insertAt'.
 
         insert(*first);
-        BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+        BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
         while (++first != last) {
             // The values are not in order, so insert them normally.
 
@@ -2038,9 +2038,9 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
                 insert(++first, last);
                 break;
             }
-            BloombergLP::bslalg::RbTreeNode *node =
+            BNP_Paribas::bslalg::RbTreeNode *node =
                 nodeFactory().emplaceIntoNewNode(value);
-            BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+            BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                       prevNode,
                                                       false,
                                                       node);
@@ -2063,13 +2063,13 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
     if (first != last) {
 
         const size_type numElements = static_cast<size_type>(
-            BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+            BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
 
         if (0 < numElements) {
             nodeFactory().reserveNodes(numElements);
         }
 
-        BloombergLP::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
+        BNP_Paribas::bslalg::RbTreeUtilTreeProctor<NodeFactory> proctor(
                                                                &d_tree,
                                                                &nodeFactory());
 
@@ -2080,7 +2080,7 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
         // 'insertAt'.
 
         insert(*first);
-        BloombergLP::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
+        BNP_Paribas::bslalg::RbTreeNode *prevNode = d_tree.rootNode();
         while (++first != last) {
             // The values are not in order, so insert them normally.
 
@@ -2090,9 +2090,9 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::multimap(
                 insert(++first, last);
                 break;
             }
-            BloombergLP::bslalg::RbTreeNode *node =
+            BNP_Paribas::bslalg::RbTreeNode *node =
                 nodeFactory().emplaceIntoNewNode(value);
-            BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+            BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                                       prevNode,
                                                       false,
                                                       node);
@@ -2153,7 +2153,7 @@ template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
 inline
 multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>&
 multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::operator=(
-                                  BloombergLP::bslmf::MovableRef<multimap> rhs)
+                                  BNP_Paribas::bslmf::MovableRef<multimap> rhs)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                             AllocatorTraits::is_always_equal::value &&
                             std::is_nothrow_move_assignable<COMPARATOR>::value)
@@ -2230,16 +2230,16 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::insert(const value_type& value)
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(&leftChild,
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(&leftChild,
                                                             &d_tree,
                                                             this->comparator(),
                                                             value.first);
 
-    BloombergLP::bslalg::RbTreeNode *node =
+    BNP_Paribas::bslalg::RbTreeNode *node =
         nodeFactory().emplaceIntoNewNode(value);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2261,12 +2261,12 @@ void multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::insert(INPUT_ITERATOR first,
     // 'BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY'.
 
     while (first != last) {
-        if (BloombergLP::bslstl::IteratorUtil
+        if (BNP_Paribas::bslstl::IteratorUtil
                  ::canCalculateInsertDistance<INPUT_ITERATOR, INPUT_ITERATOR>()
         && BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
                                               !nodeFactory().hasFreeNodes())) {
             const size_type numElements = static_cast<size_type>(
-               BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+               BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
 
             nodeFactory().reserveNodes(numElements);
         }
@@ -2296,20 +2296,20 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::insert(const_iterator    hint,
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(&leftChild,
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(&leftChild,
                                                             &d_tree,
                                                             this->comparator(),
                                                             value.first,
                                                             hintNode);
 
-    BloombergLP::bslalg::RbTreeNode *node =
+    BNP_Paribas::bslalg::RbTreeNode *node =
         nodeFactory().emplaceIntoNewNode(value);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2344,17 +2344,17 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace(
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         );
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                &leftChild,
                                &d_tree,
                                this->comparator(),
                                static_cast<const Node *>(node)->value().first);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2372,17 +2372,17 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace(
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_1, args_1));
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                &leftChild,
                                &d_tree,
                                this->comparator(),
                                static_cast<const Node *>(node)->value().first);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2402,18 +2402,18 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace(
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_1, args_1),
         BSLS_COMPILERFEATURES_FORWARD(Args_2, args_2));
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                &leftChild,
                                &d_tree,
                                this->comparator(),
                                static_cast<const Node *>(node)->value().first);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2430,21 +2430,21 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint)
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         );
 
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                    const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                    const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                 &leftChild,
                                 &d_tree,
                                 this->comparator(),
                                 static_cast<const Node *>(node)->value().first,
                                 hintNode);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2462,21 +2462,21 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_1, args_1));
 
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                    const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                    const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                 &leftChild,
                                 &d_tree,
                                 this->comparator(),
                                 static_cast<const Node *>(node)->value().first,
                                 hintNode);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2496,22 +2496,22 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args_1, args_1),
         BSLS_COMPILERFEATURES_FORWARD(Args_2, args_2));
 
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                    const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                    const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                 &leftChild,
                                 &d_tree,
                                 this->comparator(),
                                 static_cast<const Node *>(node)->value().first,
                                 hintNode);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2531,17 +2531,17 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace(
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args, args)...);
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                &leftChild,
                                &d_tree,
                                this->comparator(),
                                static_cast<const Node *>(node)->value().first);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2557,21 +2557,21 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::emplace_hint(const_iterator hint,
 {
     bool leftChild;
 
-    BloombergLP::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
+    BNP_Paribas::bslalg::RbTreeNode *node = nodeFactory().emplaceIntoNewNode(
         BSLS_COMPILERFEATURES_FORWARD(Args, args)...);
 
-    BloombergLP::bslalg::RbTreeNode *hintNode =
-                    const_cast<BloombergLP::bslalg::RbTreeNode *>(hint.node());
+    BNP_Paribas::bslalg::RbTreeNode *hintNode =
+                    const_cast<BNP_Paribas::bslalg::RbTreeNode *>(hint.node());
 
-    BloombergLP::bslalg::RbTreeNode *insertLocation =
-        BloombergLP::bslalg::RbTreeUtil::findInsertLocation(
+    BNP_Paribas::bslalg::RbTreeNode *insertLocation =
+        BNP_Paribas::bslalg::RbTreeUtil::findInsertLocation(
                                 &leftChild,
                                 &d_tree,
                                 this->comparator(),
                                 static_cast<const Node *>(node)->value().first,
                                 hintNode);
 
-    BloombergLP::bslalg::RbTreeUtil::insertAt(&d_tree,
+    BNP_Paribas::bslalg::RbTreeUtil::insertAt(&d_tree,
                                               insertLocation,
                                               leftChild,
                                               node);
@@ -2588,11 +2588,11 @@ multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::erase(const_iterator position)
 {
     BSLS_ASSERT_SAFE(position != end());
 
-    BloombergLP::bslalg::RbTreeNode *node =
-                const_cast<BloombergLP::bslalg::RbTreeNode *>(position.node());
-    BloombergLP::bslalg::RbTreeNode *result =
-                                   BloombergLP::bslalg::RbTreeUtil::next(node);
-    BloombergLP::bslalg::RbTreeUtil::remove(&d_tree, node);
+    BNP_Paribas::bslalg::RbTreeNode *node =
+                const_cast<BNP_Paribas::bslalg::RbTreeNode *>(position.node());
+    BNP_Paribas::bslalg::RbTreeNode *result =
+                                   BNP_Paribas::bslalg::RbTreeUtil::next(node);
+    BNP_Paribas::bslalg::RbTreeUtil::remove(&d_tree, node);
     nodeFactory().deleteNode(node);
     return iterator(result);
 }
@@ -2677,7 +2677,7 @@ void multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::clear() BSLS_KEYWORD_NOEXCEPT
         BSLS_ASSERT_SAFE(0 < d_tree.numNodes());
         BSLS_ASSERT_SAFE(d_tree.firstNode() != d_tree.sentinel());
 
-        BloombergLP::bslalg::RbTreeUtil::deleteTree(&d_tree, &nodeFactory());
+        BNP_Paribas::bslalg::RbTreeUtil::deleteTree(&d_tree, &nodeFactory());
     }
 #if defined(BSLS_ASSERT_SAFE_IS_USED)
     else {
@@ -2825,7 +2825,7 @@ bool bsl::operator==(
                    const bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& lhs,
                    const bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& rhs)
 {
-    return BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+    return BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
                                                     lhs.end(),
                                                     lhs.size(),
                                                     rhs.begin(),
@@ -2848,7 +2848,7 @@ bool bsl::operator!=(
 
 template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
 inline
-BloombergLP::bslalg::SynthThreeWayUtil::Result<bsl::pair<const KEY, VALUE>>
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<bsl::pair<const KEY, VALUE>>
 bsl::operator<=>(const multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& lhs,
                  const multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& rhs)
 {
@@ -2857,7 +2857,7 @@ bsl::operator<=>(const multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& lhs,
                               lhs.end(),
                               rhs.begin(),
                               rhs.end(),
-                              BloombergLP::bslalg::SynthThreeWayUtil::compare);
+                              BNP_Paribas::bslalg::SynthThreeWayUtil::compare);
 }
 
 #else
@@ -2868,7 +2868,7 @@ bool bsl::operator<(
                    const bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& lhs,
                    const bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& rhs)
 {
-    return 0 > BloombergLP::bslalg::RangeCompare::lexicographical(lhs.begin(),
+    return 0 > BNP_Paribas::bslalg::RangeCompare::lexicographical(lhs.begin(),
                                                                   lhs.end(),
                                                                   lhs.size(),
                                                                   rhs.begin(),
@@ -2916,7 +2916,7 @@ typename bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>::size_type
 bsl::erase_if(bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>&      m,
                                                            PREDICATE predicate)
 {
-    return BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(m, predicate);
+    return BNP_Paribas::bslstl::AlgorithmUtil::containerEraseIf(m, predicate);
 }
 
 template <class KEY, class VALUE, class COMPARATOR, class ALLOCATOR>
@@ -2937,7 +2937,7 @@ void bsl::swap(bsl::multimap<KEY, VALUE, COMPARATOR, ALLOCATOR>& a,
 //: o An ordered container uses 'bslma' allocators if the (template parameter)
 //:   type 'ALLOCATOR' is convertible from 'bslma::Allocator *'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

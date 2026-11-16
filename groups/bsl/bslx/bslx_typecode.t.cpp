@@ -23,7 +23,7 @@
     #pragma GCC diagnostic ignored "-Wstringop-overflow="
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bslx;
 

@@ -94,7 +94,7 @@ BSLS_IDENT("$Id: $")
 
 #include <stdexcept>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 // FORWARD DECLARATIONS

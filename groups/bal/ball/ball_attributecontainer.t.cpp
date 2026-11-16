@@ -17,7 +17,7 @@
 #include <bsl_set.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -104,7 +104,7 @@ typedef ball::AttributeContainer Obj;
 ///- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // In the following example we develop a `ball::AttributeContainer`
 // implementation specifically intended for a service offline that will perform
-// rule-based logging based on a service client's bloomberg "uuid", "luw",
+// rule-based logging based on a service client's bnpparibas "uuid", "luw",
 // and "firm number".  We define the class `ServiceAttributes` that contains 3
 // integer `ball::Attribute` values with the names "uuid", "luw", and
 // "firmNumber".
@@ -132,9 +132,9 @@ typedef ball::AttributeContainer Obj;
 // readable.
 // ```
         // DATA
-        ball::Attribute d_uuid;        // bloomberg user id
-        ball::Attribute d_luw;         // bloomberg luw
-        ball::Attribute d_firmNumber;  // bloomberg firm number
+        ball::Attribute d_uuid;        // bnpparibas user id
+        ball::Attribute d_luw;         // bnpparibas luw
+        ball::Attribute d_firmNumber;  // bnpparibas firm number
 
         // ...
 

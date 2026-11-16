@@ -14,7 +14,7 @@
 #include <bslx_byteoutstream.h>     // for testing only
 #include <bslx_genericinstream.h>   // for testing only
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

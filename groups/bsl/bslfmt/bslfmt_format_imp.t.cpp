@@ -15,7 +15,7 @@
 #include <stdlib.h>  // `atoi`
 #include <string.h>   // `strcmp`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 

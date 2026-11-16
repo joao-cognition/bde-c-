@@ -79,7 +79,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS/TYPES FOR TESTING
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 struct SwapTester {
     bool swapped;
@@ -113,7 +113,7 @@ void swap(SwapContainer & a, SwapContainer & b)
 
 }  // close enterprise namespace
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             USAGE EXAMPLE

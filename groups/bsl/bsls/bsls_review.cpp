@@ -22,7 +22,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <mutex>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 namespace {
@@ -159,13 +159,13 @@ void Review::invokeLanguageContractHandler(
     }
     int count = Review::updateCount(myCount);
 
-    BloombergLP::bsls::ReviewViolation bslsViolation(
+    BNP_Paribas::bsls::ReviewViolation bslsViolation(
         violation.comment().data(),
         violation.file_name().data(),
         violation.line_number(),
         violation.assertion_level().data(),
         count);
-    BloombergLP::bsls::Review::invokeHandler(bslsViolation);
+    BNP_Paribas::bsls::Review::invokeHandler(bslsViolation);
 }
 #endif
 

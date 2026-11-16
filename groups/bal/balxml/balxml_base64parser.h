@@ -55,7 +55,7 @@ BSLS_IDENT("$Id: $")
 // #include <iterator>
 // #include <vector>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
 // int loadFromBase64Stream(bsl::vector<char> *result, bsl::istream& stream)
 // {
@@ -108,7 +108,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_assert.h>
 #include <bsls_review.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
 
                           // ========================

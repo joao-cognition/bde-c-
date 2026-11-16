@@ -9,7 +9,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: Provide types, in the 'bsl' namespace, equivalent to those
 // defined in the corresponding C++ standard header.  Include the native
-// compiler-provided standard header, and also directly include Bloomberg's
+// compiler-provided standard header, and also directly include BNP Paribas's
 // implementation of the C++ standard type (if one exists).  Finally, place the
 // included symbols from the 'std' namespace (if any) into the 'bsl' namespace.
 
@@ -68,10 +68,10 @@ template <std::size_t I, class TYPE> using tuple_element_t =
 }  // close namespace bsl
 #endif  // `<tuple>` provided by standard library
 
-// Include Bloomberg's implementation, unless compilation is configured to
-// override native types in the 'std' namespace with Bloomberg's
+// Include BNP Paribas's implementation, unless compilation is configured to
+// override native types in the 'std' namespace with BNP Paribas's
 // implementation, in which case the implementation file will be included by
-// the Bloomberg supplied standard header file.
+// the BNP Paribas supplied standard header file.
 
 #endif
 

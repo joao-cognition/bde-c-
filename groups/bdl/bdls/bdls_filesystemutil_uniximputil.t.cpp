@@ -55,7 +55,7 @@
 // ----------------------------------------------------------------------------
 
 namespace {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 int testStatus = 0;
@@ -117,7 +117,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                           ENTITIES FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -361,16 +361,16 @@ struct TestUnixInterfaceUtil {
     /// `sys/types.h` header.  It is a signed integral type used to
     /// represent quantities of bytes.  Note that, depending on the build
     /// configuration, this type may have 32 or 64 bits.
-    typedef ::BloombergLP::u::off_t off_t;
+    typedef ::BNP_Paribas::u::off_t off_t;
 
     /// `stat` is an alias to the `stat` `struct` provided by the
     /// `sys/stat.h` header.
-    typedef ::BloombergLP::u::stat stat;
+    typedef ::BNP_Paribas::u::stat stat;
 
     /// `time_t` is an alias to the `time_t` type provided by the
     /// `sys/types.h` header.  It represents a time point as number of
     /// seconds since January 1st 1970 in Coordinated Universal Time.
-    typedef ::BloombergLP::u::time_t time_t;
+    typedef ::BNP_Paribas::u::time_t time_t;
 
   private:
     // CLASS DATA
@@ -592,7 +592,7 @@ TestUnixInterface *TestUnixInterfaceUtil::interface()
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     int test = argc > 1 ? bsl::atoi(argv[1]) : 0;
     bool             verbose = argc > 2;

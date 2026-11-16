@@ -64,9 +64,9 @@ BSLS_IDENT("$Id$ $CSID$")
 
 namespace bsl {
     BSLMF_ASSERT(bsl::is_trivially_copyable<string_view>::value);
-    BSLMF_ASSERT(BloombergLP::bslmf::IsTriviallyCopyableCheck<
+    BSLMF_ASSERT(BNP_Paribas::bslmf::IsTriviallyCopyableCheck<
                                                           string_view>::value);
-    BSLMF_ASSERT(BloombergLP::bslmf::IsBitwiseMoveable<string_view>::value);
+    BSLMF_ASSERT(BNP_Paribas::bslmf::IsBitwiseMoveable<string_view>::value);
 }  // close namespace bsl
 
 #if defined (BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY) && \

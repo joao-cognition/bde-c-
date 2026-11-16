@@ -103,7 +103,7 @@ BSLS_IDENT("$Id: $")
      defined(BSLS_COMPILERFEATURES_SUPPORT_CONSTEXPR)         &&              \
      defined(BSLS_COMPILERFEATURES_SUPPORT_NOEXCEPT)          &&              \
      defined(BSLS_COMPILERFEATURES_SUPPORT_DECLTYPE)
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 namespace bslmf_is_nothrow_swappable_impl_ns {
 // This test requires that 'using std::swap' be executed, hence the use of a
@@ -159,8 +159,8 @@ constexpr bool is_nothrow_swappable_v = is_nothrow_swappable<TYPE>::value;
 
 template <class TYPE>
 struct is_nothrow_swappable
-: BloombergLP::bslmf::If<
-      BloombergLP::bslmf::bslmf_is_nothrow_swappable_impl_ns::
+: BNP_Paribas::bslmf::If<
+      BNP_Paribas::bslmf::bslmf_is_nothrow_swappable_impl_ns::
           IsNoThrowSwappable_Impl<TYPE>::isNoexcept(),
       bsl::true_type,
       bsl::false_type>::Type {
@@ -197,7 +197,7 @@ constexpr bool is_nothrow_swappable_v =
      defined(BSLS_COMPILERFEATURES_SUPPORT_CONSTEXPR)         &&              \
      defined(BSLS_COMPILERFEATURES_SUPPORT_NOEXCEPT)          &&              \
      defined(BSLS_COMPILERFEATURES_SUPPORT_DECLTYPE)
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 namespace bslmf_is_nothrow_swappable_impl_ns {
 // This test requires that 'using std::swap' be executed, hence the use of a
@@ -252,8 +252,8 @@ IsNoThrowSwappable_Impl<
     typename bsl::enable_if<bsl::is_swappable<TYPE>::value, void>::type>
 ::isNoexcept()
 {
-    return noexcept(swap(BloombergLP::bslmf::Util::declval<TYPE&>(),
-                         BloombergLP::bslmf::Util::declval<TYPE&>()));
+    return noexcept(swap(BNP_Paribas::bslmf::Util::declval<TYPE&>(),
+                         BNP_Paribas::bslmf::Util::declval<TYPE&>()));
 }
 
 }  // close namespace bslmf_is_nothrow_swappable_impl_ns

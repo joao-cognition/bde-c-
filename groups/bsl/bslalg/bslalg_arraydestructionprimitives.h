@@ -103,7 +103,7 @@ BSLS_IDENT("$Id: $")
 #include <stddef.h>  // 'size_t'
 #include <cstring>  // 'memset', 'memcpy', and 'memmove'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

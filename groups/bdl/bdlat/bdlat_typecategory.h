@@ -435,7 +435,7 @@ BSLS_IDENT("$Id: $")
 // First, we declare a `printCategoryAndValue` function that has a template
 // parameter `TYPE`:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // /// Print the category of the specified `object` followed by the value
@@ -576,7 +576,7 @@ BSLS_IDENT("$Id: $")
 // First, we define `mine::PrintAccessor`, a functor that encapsulates the
 // action to be taken:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // class PrintAccessor {
@@ -707,7 +707,7 @@ BSLS_IDENT("$Id: $")
 // First, we define a class, `mine::MyDynamicType`, that can hold one of two
 // value types: either a `bsl::vector<char>` or a `bsl::string`.
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // /// This class can represent data in two forms: either a `bsl::string`
@@ -749,10 +749,10 @@ BSLS_IDENT("$Id: $")
 // "dynamic" class (for calculations at compile time).
 //
 // Then, to denote that this class is a dynamic type, we specialize the
-// `bdlat_TypeCategoryDeclareDynamic` meta-function in the `BloombergLP`
+// `bdlat_TypeCategoryDeclareDynamic` meta-function in the `BNP_Paribas`
 // namespace:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 //     template <>
 //     struct bdlat_TypeCategoryDeclareDynamic<mine::MyDynamicType>
@@ -765,7 +765,7 @@ BSLS_IDENT("$Id: $")
 // `bdlat_typeCategory(Manipulate|Access)(Array|Simple)`, each overloaded for
 // our type, `MyDynamicType`.
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 //  bdlat_TypeCategory::Value
@@ -928,7 +928,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                          // =======================================
                          // struct bdlat_TypeCategoryDeclareDynamic

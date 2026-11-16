@@ -685,7 +685,7 @@ BSLS_IDENT("$Id: $")
 // thread's attribute context.  We will use these attributes later, to create a
 // logging rule that enables verbose logging only for a particular user.
 // ```
-// /// Process the specified `data` associated with the specified Bloomberg
+// /// Process the specified `data` associated with the specified BNP Paribas
 // /// `uuid`, `luw`, and `terminalNumber`.
 // void processData(int                      uuid,
 //                  int                      luw,
@@ -967,44 +967,44 @@ BSLS_IDENT("$Id: $")
                        // ===========================
 
 #define BALL_LOG_SET_CATEGORY(CATEGORY)                                       \
-    static BloombergLP::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {      \
-        { BloombergLP::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },      \
+    static BNP_Paribas::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {      \
+        { BNP_Paribas::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },      \
                                                              { 0 }, { 0 }     \
     };                                                                        \
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!BALL_LOG_CATEGORY)) {          \
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                                   \
-        BloombergLP::ball::Log::setCategory(&BALL_LOG_CATEGORYHOLDER,         \
+        BNP_Paribas::ball::Log::setCategory(&BALL_LOG_CATEGORYHOLDER,         \
                                             CATEGORY);                        \
     }
 
 #define BALL_LOG_SET_CATEGORY_HIERARCHICALLY(CATEGORY)                        \
-    static BloombergLP::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {      \
-        { BloombergLP::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },      \
+    static BNP_Paribas::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {      \
+        { BNP_Paribas::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },      \
                                                              { 0 }, { 0 }     \
     };                                                                        \
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!BALL_LOG_CATEGORY)) {          \
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                                   \
-        BloombergLP::ball::Log::setCategoryHierarchically(                    \
+        BNP_Paribas::ball::Log::setCategoryHierarchically(                    \
                                             &BALL_LOG_CATEGORYHOLDER,         \
                                             CATEGORY);                        \
     }
 
 #define BALL_LOG_SET_DYNAMIC_CATEGORY(CATEGORY)                               \
-    const BloombergLP::ball::Category *BALL_LOG_DYNAMIC_CATEGORY =            \
-                               BloombergLP::ball::Log::setCategory(CATEGORY); \
-    BloombergLP::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {             \
-        { BloombergLP::ball::CategoryHolder::e_DYNAMIC_CATEGORY },            \
-        { const_cast<BloombergLP::ball::Category *>(                          \
+    const BNP_Paribas::ball::Category *BALL_LOG_DYNAMIC_CATEGORY =            \
+                               BNP_Paribas::ball::Log::setCategory(CATEGORY); \
+    BNP_Paribas::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {             \
+        { BNP_Paribas::ball::CategoryHolder::e_DYNAMIC_CATEGORY },            \
+        { const_cast<BNP_Paribas::ball::Category *>(                          \
                                                 BALL_LOG_DYNAMIC_CATEGORY) }, \
         { 0 }                                                                 \
     };
 
 #define BALL_LOG_SET_DYNAMIC_CATEGORY_HIERARCHICALLY(CATEGORY)                \
-    const BloombergLP::ball::Category *BALL_LOG_DYNAMIC_CATEGORY =            \
-                 BloombergLP::ball::Log::setCategoryHierarchically(CATEGORY); \
-    BloombergLP::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {             \
-        { BloombergLP::ball::CategoryHolder::e_DYNAMIC_CATEGORY },            \
-        { const_cast<BloombergLP::ball::Category *>(                          \
+    const BNP_Paribas::ball::Category *BALL_LOG_DYNAMIC_CATEGORY =            \
+                 BNP_Paribas::ball::Log::setCategoryHierarchically(CATEGORY); \
+    BNP_Paribas::ball::CategoryHolder BALL_LOG_CATEGORYHOLDER = {             \
+        { BNP_Paribas::ball::CategoryHolder::e_DYNAMIC_CATEGORY },            \
+        { const_cast<BNP_Paribas::ball::Category *>(                          \
                                                 BALL_LOG_DYNAMIC_CATEGORY) }, \
         { 0 }                                                                 \
     };
@@ -1015,21 +1015,21 @@ BSLS_IDENT("$Id: $")
 
 #define BALL_LOG_SET_CLASS_CATEGORY(CATEGORY)                                 \
     static                                                                    \
-    const BloombergLP::ball::CategoryHolder *ball_log_getCategoryHolder(      \
-                     const BloombergLP::ball::CategoryHolder& categoryHolder) \
+    const BNP_Paribas::ball::CategoryHolder *ball_log_getCategoryHolder(      \
+                     const BNP_Paribas::ball::CategoryHolder& categoryHolder) \
     {                                                                         \
         return &categoryHolder;                                               \
     }                                                                         \
     static                                                                    \
-    const BloombergLP::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
+    const BNP_Paribas::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
     {                                                                         \
-        static BloombergLP::ball::CategoryHolder holder = {                   \
-            { BloombergLP::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
+        static BNP_Paribas::ball::CategoryHolder holder = {                   \
+            { BNP_Paribas::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
                                                                  { 0 }, { 0 } \
         };                                                                    \
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!holder.category())) {      \
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                               \
-            BloombergLP::ball::Log::setCategory(&holder, CATEGORY);           \
+            BNP_Paribas::ball::Log::setCategory(&holder, CATEGORY);           \
         }                                                                     \
         return &holder;                                                       \
     }                                                                         \
@@ -1037,21 +1037,21 @@ BSLS_IDENT("$Id: $")
 
 #define BALL_LOG_SET_CLASS_CATEGORY_HIERARCHICALLY(CATEGORY)                  \
     static                                                                    \
-    const BloombergLP::ball::CategoryHolder *ball_log_getCategoryHolder(      \
-                     const BloombergLP::ball::CategoryHolder& categoryHolder) \
+    const BNP_Paribas::ball::CategoryHolder *ball_log_getCategoryHolder(      \
+                     const BNP_Paribas::ball::CategoryHolder& categoryHolder) \
     {                                                                         \
         return &categoryHolder;                                               \
     }                                                                         \
     static                                                                    \
-    const BloombergLP::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
+    const BNP_Paribas::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
     {                                                                         \
-        static BloombergLP::ball::CategoryHolder holder = {                   \
-            { BloombergLP::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
+        static BNP_Paribas::ball::CategoryHolder holder = {                   \
+            { BNP_Paribas::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
                                                                  { 0 }, { 0 } \
         };                                                                    \
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!holder.category())) {      \
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                               \
-            BloombergLP::ball::Log::setCategoryHierarchically(&holder,        \
+            BNP_Paribas::ball::Log::setCategoryHierarchically(&holder,        \
                                                               CATEGORY);      \
         }                                                                     \
         return &holder;                                                       \
@@ -1065,15 +1065,15 @@ BSLS_IDENT("$Id: $")
 #define BALL_LOG_SET_NAMESPACE_CATEGORY(CATEGORY)                             \
 namespace {                                                                   \
     static                                                                    \
-    const BloombergLP::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
+    const BNP_Paribas::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
     {                                                                         \
-        static BloombergLP::ball::CategoryHolder holder = {                   \
-            { BloombergLP::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
+        static BNP_Paribas::ball::CategoryHolder holder = {                   \
+            { BNP_Paribas::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
                                                                  { 0 }, { 0 } \
         };                                                                    \
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!holder.category())) {      \
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                               \
-            BloombergLP::ball::Log::setCategory(&holder, CATEGORY);           \
+            BNP_Paribas::ball::Log::setCategory(&holder, CATEGORY);           \
         }                                                                     \
         return &holder;                                                       \
     }                                                                         \
@@ -1083,15 +1083,15 @@ namespace {                                                                   \
 #define BALL_LOG_SET_NAMESPACE_CATEGORY_HIERARCHICALLY(CATEGORY)              \
 namespace {                                                                   \
     static                                                                    \
-    const BloombergLP::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
+    const BNP_Paribas::ball::CategoryHolder *ball_log_getCategoryHolder(int)  \
     {                                                                         \
-        static BloombergLP::ball::CategoryHolder holder = {                   \
-            { BloombergLP::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
+        static BNP_Paribas::ball::CategoryHolder holder = {                   \
+            { BNP_Paribas::ball::CategoryHolder::e_UNINITIALIZED_CATEGORY },  \
                                                                  { 0 }, { 0 } \
         };                                                                    \
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!holder.category())) {      \
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                               \
-            BloombergLP::ball::Log::setCategoryHierarchically(&holder,        \
+            BNP_Paribas::ball::Log::setCategoryHierarchically(&holder,        \
                                                               CATEGORY);      \
         }                                                                     \
         return &holder;                                                       \
@@ -1107,12 +1107,12 @@ namespace {                                                                   \
 // constant.
 
 #define BALL_LOG_STREAM_CONST_IMP(SEVERITY)                                   \
-for (const BloombergLP::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
-               BloombergLP::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
+for (const BNP_Paribas::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
+               BNP_Paribas::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
                         ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER)); \
      ball_log_cAtEgOrYhOlDeR;                                                 \
      )                                                                        \
-for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
+for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                       \
                                          ball_log_cAtEgOrYhOlDeR->category(), \
                                          __FILE__,                            \
                                          __LINE__,                            \
@@ -1124,14 +1124,14 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
 // cost in performance.
 
 #define BALL_LOG_STREAM_IMP(SEVERITY)                                         \
-for (const BloombergLP::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
+for (const BNP_Paribas::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
                          ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER); \
      ball_log_cAtEgOrYhOlDeR                                                  \
      && ball_log_cAtEgOrYhOlDeR->threshold() >= (SEVERITY)                    \
-     && BloombergLP::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR,    \
+     && BNP_Paribas::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR,    \
                                                   (SEVERITY));                \
      )                                                                        \
-for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
+for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                       \
                                          ball_log_cAtEgOrYhOlDeR->category(), \
                                          __FILE__,                            \
                                          __LINE__,                            \
@@ -1147,48 +1147,48 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
     BALL_LOG_STREAM_IMP((SEVERITY)) BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOG_TRACE                                                        \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE)           \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOG_DEBUG                                                        \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG)           \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOG_INFO                                                         \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_INFO)            \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO)            \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOG_WARN                                                         \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_WARN)            \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN)            \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOG_ERROR                                                        \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_ERROR)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR)           \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOG_FATAL                                                        \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_FATAL)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL)           \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOG_STREAM_BLOCK(SEVERITY) BALL_LOG_STREAM_IMP((SEVERITY))
 
 #define BALL_LOG_TRACE_BLOCK                                                  \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE)
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE)
 
 #define BALL_LOG_DEBUG_BLOCK                                                  \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG)
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG)
 
 #define BALL_LOG_INFO_BLOCK                                                   \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_INFO)
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO)
 
 #define BALL_LOG_WARN_BLOCK                                                   \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_WARN)
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN)
 
 #define BALL_LOG_ERROR_BLOCK                                                  \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_ERROR)
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR)
 
 #define BALL_LOG_FATAL_BLOCK                                                  \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_FATAL)
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL)
 
 #define BALL_LOG_END ""
 
@@ -1200,12 +1200,12 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
 // constant.
 
 #define BALL_LOGCB_STREAM_CONST_IMP(SEVERITY, CALLBACK)                       \
-for (const BloombergLP::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
-               BloombergLP::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
+for (const BNP_Paribas::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
+               BNP_Paribas::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
                         ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER)); \
      ball_log_cAtEgOrYhOlDeR;                                                 \
      )                                                                        \
-for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
+for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                       \
                                          ball_log_cAtEgOrYhOlDeR->category(), \
                                          __FILE__,                            \
                                          __LINE__,                            \
@@ -1218,14 +1218,14 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
 // run-time, at a cost in performance.
 
 #define BALL_LOGCB_STREAM_IMP(SEVERITY, CALLBACK)                             \
-for (const BloombergLP::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
+for (const BNP_Paribas::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =       \
                          ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER); \
      ball_log_cAtEgOrYhOlDeR                                                  \
      && ball_log_cAtEgOrYhOlDeR->threshold() >= (SEVERITY)                    \
-     && BloombergLP::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR,    \
+     && BNP_Paribas::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR,    \
                                                   (SEVERITY));                \
      )                                                                        \
-for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
+for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                       \
                                          ball_log_cAtEgOrYhOlDeR->category(), \
                                          __FILE__,                            \
                                          __LINE__,                            \
@@ -1242,32 +1242,32 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
     BALL_LOGCB_STREAM_IMP((BALL_SEVERITY), (CALLBACK)) BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGCB_TRACE(CALLBACK)                                            \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE,         \
                                 (CALLBACK))                                   \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGCB_DEBUG(CALLBACK)                                            \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG,         \
                                 (CALLBACK))                                   \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGCB_INFO(CALLBACK)                                             \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_INFO,          \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO,          \
                                 (CALLBACK))                                   \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGCB_WARN(CALLBACK)                                             \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_WARN,          \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN,          \
                                 (CALLBACK))                                   \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGCB_ERROR(CALLBACK)                                            \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_ERROR,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR,         \
                                 (CALLBACK))                                   \
     BALL_LOG_OUTPUT_STREAM
 
 #define BALL_LOGCB_FATAL(CALLBACK)                                            \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_FATAL,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL,         \
                                 (CALLBACK))                                   \
     BALL_LOG_OUTPUT_STREAM
 
@@ -1275,27 +1275,27 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
     BALL_LOGCB_STREAM_IMP((BALL_SEVERITY), (CALLBACK))
 
 #define BALL_LOGCB_TRACE_BLOCK(CALLBACK)                                      \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE,         \
                                 (CALLBACK))
 
 #define BALL_LOGCB_DEBUG_BLOCK(CALLBACK)                                      \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG,         \
                                 (CALLBACK))
 
 #define BALL_LOGCB_INFO_BLOCK(CALLBACK)                                       \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_INFO,          \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO,          \
                                 (CALLBACK))
 
 #define BALL_LOGCB_WARN_BLOCK(CALLBACK)                                       \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_WARN,          \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN,          \
                                 (CALLBACK))
 
 #define BALL_LOGCB_ERROR_BLOCK(CALLBACK)                                      \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_ERROR,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR,         \
                                 (CALLBACK))
 
 #define BALL_LOGCB_FATAL_BLOCK(CALLBACK)                                      \
-    BALL_LOGCB_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_FATAL,         \
+    BALL_LOGCB_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL,         \
                                 (CALLBACK))
 
 #define BALL_LOGCB_END ""
@@ -1309,15 +1309,15 @@ for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                       \
 
 #define BALL_LOGVA_CONST_IMP(SEVERITY, ...)                                   \
 do {                                                                          \
-    if (const BloombergLP::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =    \
-               BloombergLP::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
+    if (const BNP_Paribas::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =    \
+               BNP_Paribas::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(   \
                       ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER))) { \
-        BloombergLP::ball::Log_Formatter ball_log_fOrMaTtEr(                  \
+        BNP_Paribas::ball::Log_Formatter ball_log_fOrMaTtEr(                  \
                                        ball_log_cAtEgOrYhOlDeR->category(),   \
                                        __FILE__,                              \
                                        __LINE__,                              \
                                        (SEVERITY));                           \
-        BloombergLP::ball::Log::format(ball_log_fOrMaTtEr.messageBuffer(),    \
+        BNP_Paribas::ball::Log::format(ball_log_fOrMaTtEr.messageBuffer(),    \
                                        ball_log_fOrMaTtEr.messageBufferLen(), \
                                        __VA_ARGS__);                          \
     }                                                                         \
@@ -1332,39 +1332,39 @@ do {                                                                          \
 
 #define BALL_LOGVA(SEVERITY, ...)                                             \
 do {                                                                          \
-    const BloombergLP::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =        \
+    const BNP_Paribas::ball::CategoryHolder *ball_log_cAtEgOrYhOlDeR =        \
                          ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER); \
     if (ball_log_cAtEgOrYhOlDeR->threshold() >= (SEVERITY) &&                 \
-           BloombergLP::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR, \
+           BNP_Paribas::ball::Log::isCategoryEnabled(ball_log_cAtEgOrYhOlDeR, \
                                                      (SEVERITY))) {           \
-        BloombergLP::ball::Log_Formatter ball_log_fOrMaTtEr(                  \
+        BNP_Paribas::ball::Log_Formatter ball_log_fOrMaTtEr(                  \
                                        ball_log_cAtEgOrYhOlDeR->category(),   \
                                        __FILE__,                              \
                                        __LINE__,                              \
                                        (SEVERITY));                           \
-        BloombergLP::ball::Log::format(ball_log_fOrMaTtEr.messageBuffer(),    \
+        BNP_Paribas::ball::Log::format(ball_log_fOrMaTtEr.messageBuffer(),    \
                                        ball_log_fOrMaTtEr.messageBufferLen(), \
                                        __VA_ARGS__);                          \
     }                                                                         \
 } while(0)
 
 #define BALL_LOGVA_TRACE(...)                                                 \
-    BALL_LOGVA_CONST_IMP(BloombergLP::ball::Severity::e_TRACE, __VA_ARGS__)
+    BALL_LOGVA_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE, __VA_ARGS__)
 
 #define BALL_LOGVA_DEBUG(...)                                                 \
-    BALL_LOGVA_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG, __VA_ARGS__)
+    BALL_LOGVA_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG, __VA_ARGS__)
 
 #define BALL_LOGVA_INFO( ...)                                                 \
-    BALL_LOGVA_CONST_IMP(BloombergLP::ball::Severity::e_INFO,  __VA_ARGS__)
+    BALL_LOGVA_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO,  __VA_ARGS__)
 
 #define BALL_LOGVA_WARN( ...)                                                 \
-    BALL_LOGVA_CONST_IMP(BloombergLP::ball::Severity::e_WARN,  __VA_ARGS__)
+    BALL_LOGVA_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN,  __VA_ARGS__)
 
 #define BALL_LOGVA_ERROR(...)                                                 \
-    BALL_LOGVA_CONST_IMP(BloombergLP::ball::Severity::e_ERROR, __VA_ARGS__)
+    BALL_LOGVA_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR, __VA_ARGS__)
 
 #define BALL_LOGVA_FATAL(...)                                                 \
-    BALL_LOGVA_CONST_IMP(BloombergLP::ball::Severity::e_FATAL, __VA_ARGS__)
+    BALL_LOGVA_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL, __VA_ARGS__)
 
                        // ==============
                        // Utility Macros
@@ -1372,11 +1372,11 @@ do {                                                                          \
 
 #define BALL_LOG_IS_ENABLED(SEVERITY)                                         \
     ((BALL_LOG_THRESHOLD >= (SEVERITY))                                       \
-     && BloombergLP::ball::Log::isCategoryEnabled(                            \
+     && BNP_Paribas::ball::Log::isCategoryEnabled(                            \
                          ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER), \
                          (SEVERITY)))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 
 namespace ball {
@@ -1398,8 +1398,8 @@ namespace ball {
 /// category holders (see "Logging Macro Reuse" in the "IMPLEMENTATION
 /// NOTES" of the component implementation file for details).
 inline
-const BloombergLP::ball::CategoryHolder* ball_log_getCategoryHolder(
-                       const BloombergLP::ball::CategoryHolder& categoryHolder)
+const BNP_Paribas::ball::CategoryHolder* ball_log_getCategoryHolder(
+                       const BNP_Paribas::ball::CategoryHolder& categoryHolder)
 {
     return &categoryHolder;
 }

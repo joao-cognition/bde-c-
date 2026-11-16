@@ -1245,7 +1245,7 @@ BSLS_IDENT("$Id: $")
 #include <bdlt_datetime.h>
 #include <bdlt_time.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balcl {
 

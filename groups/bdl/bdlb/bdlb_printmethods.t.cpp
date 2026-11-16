@@ -21,7 +21,7 @@
 #include <variant>
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP17_BASELINE_LIBRARY
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 // ============================================================================
@@ -497,7 +497,7 @@ class TestType_NoTraits {
 // The following template specializations declare the traits for the above
 // types.  Each needs to be in the same namespace as the primary traits
 // template.
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlb {
 template <> struct HasPrintMethod<TestType_PrintMethod> :

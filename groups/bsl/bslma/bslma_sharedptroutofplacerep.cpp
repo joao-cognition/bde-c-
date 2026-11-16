@@ -8,7 +8,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bslma_destructionutil.h>  // for testing only
 #include <bslma_testallocator.h>    // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 }  // close package namespace

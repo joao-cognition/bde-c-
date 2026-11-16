@@ -18,7 +18,7 @@ struct Identity {
     const T& operator()(const T& x) const { return x; }
 };
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 template class bsl::hashtable<int, int, DumbHasher<int>, Identity<int>,
                               SimpleEq<int>, bsl::allocator<int> >;

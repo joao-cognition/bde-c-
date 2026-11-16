@@ -20,8 +20,8 @@
 #include <bsl_iostream.h>
 #include <bsl_set.h>
 
-using namespace BloombergLP;
-using namespace BloombergLP::bdlt;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bdlt;
 using namespace bsl;
 
 //=============================================================================

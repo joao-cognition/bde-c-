@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(bdlt_defaultcalendarcache_cpp,"$Id$ $CSID$")
 #include <bsl_climits.h>  // 'INT_MAX'
 #include <bsl_new.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 namespace {

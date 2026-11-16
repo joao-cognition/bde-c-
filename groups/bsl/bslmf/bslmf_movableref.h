@@ -637,13 +637,13 @@ BSLS_IDENT("$Id: $")
 /// `BSLMF_MOVABLEREF_DEDUCE(bsl::pair<T1, T2>)` for which the types `T1`
 /// and `T2` are deducible, even though the macro argument contains a comma.
 #   define BSLMF_MOVABLEREF_DEDUCE(...)                                       \
-        ::BloombergLP::bslmf::MovableRef_Deduced<__VA_ARGS__>
+        ::BNP_Paribas::bslmf::MovableRef_Deduced<__VA_ARGS__>
 #else
 #    define BSLMF_MOVABLEREF_DEDUCE(...)                                      \
-        ::BloombergLP::bslmf::MovableRef<__VA_ARGS__>
+        ::BNP_Paribas::bslmf::MovableRef<__VA_ARGS__>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 struct MovableRefUtil;

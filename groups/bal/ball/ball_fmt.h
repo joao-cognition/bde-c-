@@ -202,27 +202,27 @@ BSLS_IDENT("$Id: $")
         __VA_ARGS__)
 
 #define BALL_FMT_TRACE(...)                                                   \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE)           \
     BALL_FMT(__VA_ARGS__)
 
 #define BALL_FMT_DEBUG(...)                                                   \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_DEBUG)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_DEBUG)           \
     BALL_FMT(__VA_ARGS__)
 
 #define BALL_FMT_INFO(...)                                                    \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_INFO)            \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_INFO)            \
     BALL_FMT(__VA_ARGS__)
 
 #define BALL_FMT_WARN(...)                                                    \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_WARN)            \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_WARN)            \
     BALL_FMT(__VA_ARGS__)
 
 #define BALL_FMT_ERROR(...)                                                   \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_ERROR)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_ERROR)           \
     BALL_FMT(__VA_ARGS__)
 
 #define BALL_FMT_FATAL(...)                                                   \
-    BALL_LOG_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_FATAL)           \
+    BALL_LOG_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_FATAL)           \
     BALL_FMT(__VA_ARGS__)
 
 #endif  // INCLUDED_BALL_FMT

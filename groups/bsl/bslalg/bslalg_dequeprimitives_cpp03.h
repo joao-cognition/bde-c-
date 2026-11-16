@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLALG_DEQUEPRIMITIVES_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

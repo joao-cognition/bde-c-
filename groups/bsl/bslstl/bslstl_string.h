@@ -734,7 +734,7 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS) \
  && defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 # define BSLSTL_STRING_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T) \
-                  requires ::BloombergLP::bslmf::ContainerCompatibleRange<R, T>
+                  requires ::BNP_Paribas::bslmf::ContainerCompatibleRange<R, T>
 #else
 # define BSLSTL_STRING_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T)
 #endif
@@ -900,17 +900,17 @@ using String_ComparisonCategoryType =
 /// `basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>`).
 #define BSLSTL_STRING_ONLY_STRINGVIEW_ENABLE_IF_T(...)                        \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslstl::IsConvertibleToStringView<                       \
+        BNP_Paribas::bslstl::IsConvertibleToStringView<                       \
             CHAR_TYPE,                                                        \
             CHAR_TRAITS,                                                      \
             BSLSTL_STRINGVIEWLIKEPARAM_TYPE_IF_COMPLETE>::value               \
-     && !BloombergLP::bslstl::IsConvertibleToCString<                         \
+     && !BNP_Paribas::bslstl::IsConvertibleToCString<                         \
             CHAR_TYPE,                                                        \
             BSLSTL_STRINGVIEWLIKEPARAM_TYPE_IF_COMPLETE>::value               \
-     && !BloombergLP::bslmf::IsAccessibleBaseOf<                              \
+     && !BNP_Paribas::bslmf::IsAccessibleBaseOf<                              \
             bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>,             \
             STRING_VIEW_LIKE_TYPE>::value                                     \
-     && !BloombergLP::bslmf::IsAccessibleBaseOf<                              \
+     && !BNP_Paribas::bslmf::IsAccessibleBaseOf<                              \
             std::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>,             \
             STRING_VIEW_LIKE_TYPE>::value,                                    \
         __VA_ARGS__>::type
@@ -987,9 +987,9 @@ class String_Imp {
     /// externally allocated memory, pointed to by `d_start_p`.
     union {
 
-        BloombergLP::bsls::AlignedBuffer<
+        BNP_Paribas::bsls::AlignedBuffer<
                         SHORT_BUFFER_BYTES,
-                        BloombergLP::bsls::AlignmentFromType<CHAR_TYPE>::VALUE>
+                        BNP_Paribas::bsls::AlignmentFromType<CHAR_TYPE>::VALUE>
                    d_short;     // short string buffer
         CHAR_TYPE *d_start_p;   // pointer to the data on heap
     };
@@ -1003,7 +1003,7 @@ class String_Imp {
     // `CHAR_TYPE` is required to be a POD as per the Standard, which makes
     // `CHAR_TYPE` bitwise-movable, so `String_Imp` is also bitwise-movable.
     BSLMF_NESTED_TRAIT_DECLARATION(String_Imp,
-                                   BloombergLP::bslmf::IsBitwiseMoveable);
+                                   BNP_Paribas::bslmf::IsBitwiseMoveable);
 
     // CLASS METHODS
 
@@ -1170,18 +1170,18 @@ template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 class basic_string
     : private String_Imp<CHAR_TYPE,
                          typename allocator_traits<ALLOCATOR>::size_type>
-    , private BloombergLP::bslalg::ContainerBase<ALLOCATOR>
+    , private BNP_Paribas::bslalg::ContainerBase<ALLOCATOR>
 {
 
     // PRIVATE TYPES
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil         MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil         MoveUtil;
 
     /// This `typedef` is an alias for a utility class that provides many
     /// useful functions that operate on allocators.
-    typedef BloombergLP::bslma::AllocatorUtil          AllocatorUtil;
+    typedef BNP_Paribas::bslma::AllocatorUtil          AllocatorUtil;
 
     /// This `typedef` is an alias for the allocator traits type associated
     /// with this container.
@@ -1215,14 +1215,14 @@ class basic_string
     /// bitwise-movable.
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                       basic_string,
-                      BloombergLP::bslmf::IsBitwiseMoveable,
-                      BloombergLP::bslmf::IsBitwiseMoveable<ALLOCATOR>::value);
+                      BNP_Paribas::bslmf::IsBitwiseMoveable,
+                      BNP_Paribas::bslmf::IsBitwiseMoveable<ALLOCATOR>::value);
 
   private:
     // PRIVATE TYPES
     typedef String_Imp<CHAR_TYPE, size_type>                     Imp;
 
-    typedef BloombergLP::bslalg::ContainerBase<ALLOCATOR>        ContainerBase;
+    typedef BNP_Paribas::bslalg::ContainerBase<ALLOCATOR>        ContainerBase;
 
     // FRIENDS
 
@@ -1370,8 +1370,8 @@ class basic_string
                               INPUT_ITER                               first,
                               INPUT_ITER                               last,
                               const char                              *message,
-                              BloombergLP::bslmf::MatchArithmeticType  ,
-                              BloombergLP::bslmf::Nil                  );
+                              BNP_Paribas::bslmf::MatchArithmeticType  ,
+                              BNP_Paribas::bslmf::Nil                  );
 
     /// Match non-integral type for `INPUT_ITER`.
     template <class INPUT_ITER>
@@ -1379,8 +1379,8 @@ class basic_string
                                      INPUT_ITER                        first,
                                      INPUT_ITER                        last,
                                      const char                       *message,
-                                     BloombergLP::bslmf::MatchAnyType  ,
-                                     BloombergLP::bslmf::MatchAnyType  );
+                                     BNP_Paribas::bslmf::MatchAnyType  ,
+                                     BNP_Paribas::bslmf::MatchAnyType  );
 
     /// Assign to this string the value of the string described by the
     /// specified `first` and `second` values, and return a reference
@@ -1510,8 +1510,8 @@ class basic_string
                            size_type                               outNumChars,
                            INPUT_ITER                              first,
                            INPUT_ITER                              last,
-                           BloombergLP::bslmf::MatchArithmeticType ,
-                           BloombergLP::bslmf::Nil                 );
+                           BNP_Paribas::bslmf::MatchArithmeticType ,
+                           BNP_Paribas::bslmf::Nil                 );
 
     /// Match non-integral type for `INPUT_ITER`.
     template <class INPUT_ITER>
@@ -1520,8 +1520,8 @@ class basic_string
                            size_type                               outNumChars,
                            INPUT_ITER                              first,
                            INPUT_ITER                              last,
-                           BloombergLP::bslmf::MatchAnyType        ,
-                           BloombergLP::bslmf::MatchAnyType        );
+                           BNP_Paribas::bslmf::MatchAnyType        ,
+                           BNP_Paribas::bslmf::MatchAnyType        );
 
     /// Specialized replacement for input iterators using repeated `push_back`
     /// operations.  The optionally supplied `inNumChars` is ignored for
@@ -1728,7 +1728,7 @@ class basic_string
     /// the new string.  The allocator associated with `original` is
     /// propagated for use in the newly-created string.  `original` is left
     /// in a valid but unspecified state.
-    basic_string(BloombergLP::bslmf::MovableRef<basic_string> original)
+    basic_string(BNP_Paribas::bslmf::MovableRef<basic_string> original)
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Create a string that has the same value as the specified `original`
@@ -1737,7 +1737,7 @@ class basic_string
     /// string if `basicAllocator == original.get_allocator()`, and are
     /// copied (in linear time) using `basicAllocator` otherwise.
     /// `original` is left in a valid but unspecified state.
-    basic_string(BloombergLP::bslmf::MovableRef<basic_string> original,
+    basic_string(BNP_Paribas::bslmf::MovableRef<basic_string> original,
                  const ALLOCATOR&                             basicAllocator);
 
     /// Create a string that has the same value as the substring starting at
@@ -1749,7 +1749,7 @@ class basic_string
     /// copied (in linear time) using `basicAllocator` otherwise.  `original`
     /// is left in a valid but unspecified state.  Throw `out_of_range` if
     /// `position > original.length()`.
-    basic_string(BloombergLP::bslmf::MovableRef<basic_string> original,
+    basic_string(BNP_Paribas::bslmf::MovableRef<basic_string> original,
                  size_type                                    position,
                  const ALLOCATOR&                             basicAllocator =
                                                                   ALLOCATOR());
@@ -1766,7 +1766,7 @@ class basic_string
     /// copied (in linear time) using `basicAllocator` otherwise.  `original`
     /// is left in a valid but unspecified state.  Throw `out_of_range` if
     /// `position > original.length()`.
-    basic_string(BloombergLP::bslmf::MovableRef<basic_string> original,
+    basic_string(BNP_Paribas::bslmf::MovableRef<basic_string> original,
                  size_type                                    position,
                  size_type                                    numChars,
                  const ALLOCATOR&                             basicAllocator =
@@ -1877,7 +1877,7 @@ class basic_string
     /// characters as `strRef`.  Optionally specify a `basicAllocator` used
     /// to supply memory.  If `basicAllocator` is not specified, then a
     /// default-constructed allocator is used.
-    basic_string(const BloombergLP::bslstl::StringRefData<CHAR_TYPE>& strRef,
+    basic_string(const BNP_Paribas::bslstl::StringRefData<CHAR_TYPE>& strRef,
                  const ALLOCATOR& basicAllocator = ALLOCATOR());    // IMPLICIT
 
     /// Create a string that has the same value as the specified `object`.
@@ -1935,12 +1935,12 @@ class basic_string
     /// aforementioned trait).  `rhs` is left in a valid but unspecified
     /// state.
 #ifndef DOXYGEN_SKIP
-    basic_string& operator=(BloombergLP::bslmf::MovableRef<basic_string> rhs)
+    basic_string& operator=(BNP_Paribas::bslmf::MovableRef<basic_string> rhs)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
             AllocatorTraits::propagate_on_container_move_assignment::value ||
             AllocatorTraits::is_always_equal::value);
 #else
-    basic_string& operator=(BloombergLP::bslmf::MovableRef<basic_string> rhs);
+    basic_string& operator=(BNP_Paribas::bslmf::MovableRef<basic_string> rhs);
 #endif
 
     /// Assign to this string the value of the specified `rhs` object, and
@@ -2189,7 +2189,7 @@ class basic_string
     /// unspecified state.  Note that this method has exactly the same
     /// behavior as the corresponding `operator=`.
     basic_string& assign(
-                      BloombergLP::bslmf::MovableRef<basic_string> replacement)
+                      BNP_Paribas::bslmf::MovableRef<basic_string> replacement)
                                     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false);
 
     /// Assign to this string the value of the optionally specified
@@ -3399,7 +3399,7 @@ basic_string(basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>, SZ, SZ, ALLOC *)
 template <
     class INPUT_ITER,
     class CHAR_TYPE =
-             typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITER>,
+             typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITER>,
     class ALLOCATOR = bsl::allocator<CHAR_TYPE>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
@@ -3413,7 +3413,7 @@ basic_string(INPUT_ITER, INPUT_ITER, ALLOCATOR = ALLOCATOR())
 template <
     class INPUT_ITER,
     class CHAR_TYPE =
-             typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITER>,
+             typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITER>,
     class ALLOC,
     class DEFAULT_ALLOCATOR = bsl::allocator<CHAR_TYPE>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
@@ -4106,7 +4106,7 @@ std::size_t hashBasicString(const wstring& str);
 /// to allow character arrays to be hashed without converting them first.
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 struct hash<basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> >
-    : ::BloombergLP::bslh::Hash<>
+    : ::BNP_Paribas::bslh::Hash<>
 {
     // PUBLIC ACCESSORS
 
@@ -4128,7 +4128,7 @@ struct hash<basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> >
 // for `string` and `wstring` makes the problematic cases work.
 
 template <>
-struct hash<string> : ::BloombergLP::bslh::Hash<>
+struct hash<string> : ::BNP_Paribas::bslh::Hash<>
 {
     // PUBLIC ACCESSORS
 
@@ -4142,7 +4142,7 @@ struct hash<string> : ::BloombergLP::bslh::Hash<>
 };
 
 template <>
-struct hash<wstring> : ::BloombergLP::bslh::Hash<>
+struct hash<wstring> : ::BNP_Paribas::bslh::Hash<>
 {
     // PUBLIC ACCESSORS
 
@@ -4159,7 +4159,7 @@ struct hash<wstring> : ::BloombergLP::bslh::Hash<>
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 /// Pass the specified `input` string to the specified `hashAlg` hashing
@@ -4249,16 +4249,16 @@ void String_Imp<CHAR_TYPE, SIZE_TYPE>::swap(String_Imp& other)
 {
     if (!isShortString() && !other.isShortString()) {
         // If both strings are long, swap the individual fields.
-        BloombergLP::bslalg::ScalarPrimitives::swap(d_length, other.d_length);
-        BloombergLP::bslalg::ScalarPrimitives::swap(d_capacity,
+        BNP_Paribas::bslalg::ScalarPrimitives::swap(d_length, other.d_length);
+        BNP_Paribas::bslalg::ScalarPrimitives::swap(d_capacity,
                                                     other.d_capacity);
-        BloombergLP::bslalg::ScalarPrimitives::swap(d_start_p,
+        BNP_Paribas::bslalg::ScalarPrimitives::swap(d_start_p,
                                                     other.d_start_p);
     }
     else {
         // Otherwise bitwise-swap the whole objects (relies on the
         // BitwiseMoveable type trait).
-        BloombergLP::bslalg::ScalarPrimitives::swap(*this, other);
+        BNP_Paribas::bslalg::ScalarPrimitives::swap(*this, other);
     }
 }
 
@@ -4356,7 +4356,7 @@ basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::privateThrowLengthError(
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(maxLengthExceeded)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(message);
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(message);
     }
 }
 
@@ -4369,7 +4369,7 @@ basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::privateThrowOutOfRange(
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(outOfRange)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(message);
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(message);
     }
 }
 
@@ -4568,7 +4568,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateAppend(
                                            std::forward_iterator_tag  )
 {
     BSLS_ASSERT_SAFE(numChars == static_cast<size_type>(
-              BloombergLP::bslstl::IteratorUtil::insertDistance(first, last)));
+              BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last)));
 
     privateThrowLengthError(numChars > max_size() - length(), message);
 
@@ -4612,7 +4612,7 @@ basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::privateAppend(
                                  last,
                                  message,
                                  first,
-                                 BloombergLP::bslmf::Nil());
+                                 BNP_Paribas::bslmf::Nil());
 }
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
@@ -4637,8 +4637,8 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateAppendDispatch(
                               INPUT_ITER                              first,
                               INPUT_ITER                              last,
                               const char                              *message,
-                              BloombergLP::bslmf::MatchArithmeticType ,
-                              BloombergLP::bslmf::Nil                 )
+                              BNP_Paribas::bslmf::MatchArithmeticType ,
+                              BNP_Paribas::bslmf::Nil                 )
 {
     return privateAppend((size_type)first, (CHAR_TYPE)last, message);
 }
@@ -4651,8 +4651,8 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateAppendDispatch(
                                      INPUT_ITER                        first,
                                      INPUT_ITER                        last,
                                      const char                       *message,
-                                     BloombergLP::bslmf::MatchAnyType  ,
-                                     BloombergLP::bslmf::MatchAnyType  )
+                                     BNP_Paribas::bslmf::MatchAnyType  ,
+                                     BNP_Paribas::bslmf::MatchAnyType  )
 {
     typename iterator_traits<INPUT_ITER>::iterator_category tag;
     return privateAppend(first, last, message, tag);
@@ -4767,7 +4767,7 @@ void basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateInsertDispatch(
                            first,
                            last,
                            first,
-                           BloombergLP::bslmf::Nil());
+                           BNP_Paribas::bslmf::Nil());
 }
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
@@ -5031,8 +5031,8 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateReplaceDispatch(
                               size_type                               numChars,
                               INPUT_ITER                              first,
                               INPUT_ITER                              last,
-                              BloombergLP::bslmf::MatchArithmeticType ,
-                              BloombergLP::bslmf::Nil                 )
+                              BNP_Paribas::bslmf::MatchArithmeticType ,
+                              BNP_Paribas::bslmf::Nil                 )
 {
     return replace(position, numChars, (size_type)first, (CHAR_TYPE)last);
 }
@@ -5046,8 +5046,8 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateReplaceDispatch(
                                  size_type                         numChars,
                                  INPUT_ITER                        first,
                                  INPUT_ITER                        last,
-                                 BloombergLP::bslmf::MatchAnyType  ,
-                                 BloombergLP::bslmf::MatchAnyType  )
+                                 BNP_Paribas::bslmf::MatchAnyType  ,
+                                 BNP_Paribas::bslmf::MatchAnyType  )
 {
     typename iterator_traits<INPUT_ITER>::iterator_category tag;
     return privateReplace(position, numChars, first, last, tag);
@@ -5130,7 +5130,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateReplace(
                                          std::forward_iterator_tag )
 {
     BSLS_ASSERT_SAFE(inNumChars == static_cast<size_type>(
-              BloombergLP::bslstl::IteratorUtil::insertDistance(first, last)));
+              BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last)));
     (void) last;
 
     privateThrowOutOfRange(
@@ -5368,7 +5368,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::privateNumCharsInRange(
                                                                category;
     return is_same<input_iterator_tag, category>::value
         ? npos
-        : BloombergLP::bslstl::IteratorUtil::insertDistance(first,last);
+        : BNP_Paribas::bslstl::IteratorUtil::insertDistance(first,last);
 }
 
 // CREATORS
@@ -5380,7 +5380,7 @@ inline
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string()
                                                           BSLS_KEYWORD_NOEXCEPT
 : Imp()
-, BloombergLP::bslalg::ContainerBase<allocator_type>(ALLOCATOR())
+, BNP_Paribas::bslalg::ContainerBase<allocator_type>(ALLOCATOR())
 {
     CHAR_TRAITS::assign(*begin(), CHAR_TYPE());
 }
@@ -5431,7 +5431,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
-                         BloombergLP::bslmf::MovableRef<basic_string> original)
+                         BNP_Paribas::bslmf::MovableRef<basic_string> original)
                                                           BSLS_KEYWORD_NOEXCEPT
 : Imp(original)
 , ContainerBase(MoveUtil::access(original).get_allocator())
@@ -5445,7 +5445,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
-                   BloombergLP::bslmf::MovableRef<basic_string> original,
+                   BNP_Paribas::bslmf::MovableRef<basic_string> original,
                    const ALLOCATOR&                             basicAllocator)
 : Imp(original)
 , ContainerBase(basicAllocator)
@@ -5465,7 +5465,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
-                   BloombergLP::bslmf::MovableRef<basic_string> original,
+                   BNP_Paribas::bslmf::MovableRef<basic_string> original,
                    size_type                                    position,
                    const ALLOCATOR&                             basicAllocator)
 : Imp(original)
@@ -5477,7 +5477,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
-                   BloombergLP::bslmf::MovableRef<basic_string> original,
+                   BNP_Paribas::bslmf::MovableRef<basic_string> original,
                    size_type                                    position,
                    size_type                                    numChars,
                    const ALLOCATOR&                             basicAllocator)
@@ -5599,7 +5599,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::basic_string(
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::basic_string(
-           const BloombergLP::bslstl::StringRefData<CHAR_TYPE>& strRef,
+           const BNP_Paribas::bslstl::StringRefData<CHAR_TYPE>& strRef,
            const ALLOCATOR&                                     basicAllocator)
 : Imp()
 , ContainerBase(basicAllocator)
@@ -5702,7 +5702,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>&
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::operator=(
-                              BloombergLP::bslmf::MovableRef<basic_string> rhs)
+                              BNP_Paribas::bslmf::MovableRef<basic_string> rhs)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
               AllocatorTraits::propagate_on_container_move_assignment::value ||
               AllocatorTraits::is_always_equal::value)
@@ -6175,7 +6175,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>&
 basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::assign(
-                      BloombergLP::bslmf::MovableRef<basic_string> replacement)
+                      BNP_Paribas::bslmf::MovableRef<basic_string> replacement)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false)
 {
     basic_string& other = replacement;
@@ -6960,7 +6960,7 @@ basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOCATOR>::replace(
                                   stringFirst,
                                   stringLast,
                                   stringFirst,
-                                  BloombergLP::bslmf::Nil());
+                                  BNP_Paribas::bslmf::Nil());
 }
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
@@ -8037,8 +8037,8 @@ BSLS_PLATFORM_AGGRESSIVE_INLINE
 std::size_t hash<basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> >::
 operator()(const basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& input) const
 {
-    using ::BloombergLP::bslh::hashAppend;
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    using ::BNP_Paribas::bslh::hashAppend;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input.data(), sizeof(CHAR_TYPE) * input.size());
     hashAppend(hashAlg, input.size());
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -8050,9 +8050,9 @@ std::size_t hash<basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> >::
 operator()(const CHAR_TYPE *input) const
 {
     BSLS_ASSERT_SAFE(input);
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     std::size_t length = CHAR_TRAITS::length(input);
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input, sizeof(CHAR_TYPE) * length);
     hashAppend(hashAlg, length);
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -8063,8 +8063,8 @@ operator()(const CHAR_TYPE *input) const
 inline
 std::size_t hash<string>::operator()(const string& input) const
 {
-    using ::BloombergLP::bslh::hashAppend;
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    using ::BNP_Paribas::bslh::hashAppend;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input.data(), input.size());
     hashAppend(hashAlg, input.size());
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -8074,9 +8074,9 @@ inline
 std::size_t hash<string>::operator()(const char *input) const
 {
     BSLS_ASSERT_SAFE(input);
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     std::size_t length = char_traits<char>::length(input);
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input, length);
     hashAppend(hashAlg, length);
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -8085,8 +8085,8 @@ std::size_t hash<string>::operator()(const char *input) const
 inline
 std::size_t hash<wstring>::operator()(const wstring& input) const
 {
-    using ::BloombergLP::bslh::hashAppend;
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    using ::BNP_Paribas::bslh::hashAppend;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input.data(), sizeof(wchar_t) * input.size());
     hashAppend(hashAlg, input.size());
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -8096,9 +8096,9 @@ inline
 std::size_t hash<wstring>::operator()(const wchar_t *input) const
 {
     BSLS_ASSERT_SAFE(input);
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     std::size_t length = char_traits<wchar_t>::length(input);
-    ::BloombergLP::bslh::Hash<>::HashAlgorithm hashAlg;
+    ::BNP_Paribas::bslh::Hash<>::HashAlgorithm hashAlg;
     hashAlg(input, sizeof(wchar_t) * length);
     hashAppend(hashAlg, length);
     return static_cast<std::size_t>(hashAlg.computeHash());
@@ -8550,7 +8550,7 @@ bsl::operator+(bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> && lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& lvalue = lhs;
     lvalue.append(rhs);
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
@@ -8561,7 +8561,7 @@ bsl::operator+(const basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>&  lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& lvalue = rhs;
     lvalue.insert(0, lhs);
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
@@ -8572,7 +8572,7 @@ bsl::operator+(bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>&& lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& lvalue = lhs;
     lvalue.append(rhs);
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 #endif
 
@@ -8599,7 +8599,7 @@ bsl::operator+(const std::basic_string<CHAR_TYPE,CHAR_TRAITS,ALLOC1>& lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOC2>& lvalue = rhs;
     lvalue.insert(0, lhs.c_str(), lhs.size());
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOC2>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 #endif
 
@@ -8626,7 +8626,7 @@ bsl::operator+(bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOC1> &&   lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOC1>& lvalue = lhs;
     lvalue.append(rhs.c_str(), rhs.length());
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOC1>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 #endif
 
@@ -8660,7 +8660,7 @@ bsl::operator+(const CHAR_TYPE                                        *lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& lvalue = rhs;
     lvalue.insert(0, lhs);
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 #endif
 
@@ -8687,7 +8687,7 @@ bsl::operator+(CHAR_TYPE                                               lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& lvalue = rhs;
     lvalue.insert(lvalue.begin(), lhs);
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 #endif
 
@@ -8720,7 +8720,7 @@ bsl::operator+(bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> &&  lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& lvalue = lhs;
     lvalue.append(rhs);
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 #endif
 
@@ -8747,7 +8747,7 @@ bsl::operator+(bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> && lhs,
     basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& lvalue = lhs;
     lvalue.push_back(rhs);
     return basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>(
-        BloombergLP::bslmf::MovableRefUtil::move(lvalue));
+        BNP_Paribas::bslmf::MovableRefUtil::move(lvalue));
 }
 #endif
 
@@ -8990,7 +8990,7 @@ void bsl::hashAppend(
                 HASHALG&                                               hashAlg,
                 const basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAlg(input.data(), sizeof(CHAR_TYPE)*input.size());
     hashAppend(hashAlg, input.size());
 }
@@ -9000,10 +9000,10 @@ BSLS_PLATFORM_AGGRESSIVE_INLINE
 std::size_t bsl::hashBasicString(
                     const basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& str)
 {
-    return ::BloombergLP::bslh::Hash<>()(str);
+    return ::BNP_Paribas::bslh::Hash<>()(str);
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 template <class HASHALG, class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 BSLS_PLATFORM_AGGRESSIVE_INLINE
@@ -9028,7 +9028,7 @@ void bslh::hashAppend(
 // o A sequence container uses 'bslma' allocators if the (template parameter)
 //   type 'ALLOCATOR' is convertible from 'bslma::Allocator *'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

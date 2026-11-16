@@ -39,7 +39,7 @@
 #pragma warning(disable:4312)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -219,7 +219,7 @@ bsl::ostream& operator<<(bsl::ostream& stream, u::VecType value)
     return stream;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 bsl::ostream& operator<<(bsl::ostream& out, const TestAllocator& ta)

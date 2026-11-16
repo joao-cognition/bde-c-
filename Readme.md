@@ -1,4 +1,15 @@
-[![Alexandria doxygen](https://badges.dev.bloomberg.com/badge//Alexandria%20|%20Doxygen/blue?icon=fa-book-open)](https://alexandria.dev.bloomberg.com/bbgh/bde/bde/)
+<p align="center">
+  <a href="https://github.com/joao-cognition/bde-c-">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/bde_logo_label_dark.svg">
+      <img src="docs/brand/bde_logo_label.svg" width="70%" alt="BNP Paribas">
+    </picture>
+  </a>
+</p>
+
+[![Platform](https://img.shields.io/badge/BNP%20Paribas-Core%20Libraries-00915A)](#)
+[![License](https://img.shields.io/badge/License-Apache_2.0-00915A)](LICENSE)
+[![C++](https://img.shields.io/badge/C++-03%20%7C%2011%20%7C%2017%20%7C%2020-00915A)](#)
 
 BDE Libraries
 =============
@@ -12,20 +23,20 @@ Documentation and Build Links
 
 For more information about BDE libraries follow the links below.
 
-Open Source
------------
+Upstream (open source)
+----------------------
 
 * [Online Library Documentation](https://bloomberg.github.io/bde)
 * [BDE Build Tools](https://bloomberg.github.io/bde-tools/)
 * [BDE Build Instructions](https://bloomberg.github.io/bde/library_information/build.html)
 
 
-Bloomberg LP (internal)
+BNP Paribas (internal)
 -----------------------
 
-* [Online Library Documentation](https://bde.bloomberg.com/bde)
-* [BDE Build Tools](https://bde.bloomberg.com/bde-tools/)
-* [BDE Build Instructions](https://bde.bloomberg.com/bde/library_information/build.html)
+* [Online Library Documentation](https://bde.bnpparibas.com/bde)
+* [BDE Build Tools](https://bde.bnpparibas.com/bde-tools/)
+* [BDE Build Instructions](https://bde.bnpparibas.com/bde/library_information/build.html)
 
 
 Build Instructions
@@ -34,7 +45,7 @@ BDE uses a build system based on [cmake](https://cmake.org).  The build system i
 BDE tools repository (see [Documentation Links](#documentation-links)).
 
 * [Build instructions for open source users](https://bloomberg.github.io/bde/library_information/build.html)
-* [Build instructions for Bloomberg LP users](https://bde.bloomberg.com/bde/library_information/build.html)
+* [Build instructions for BNP Paribas users](https://bde.bnpparibas.com/bde/library_information/build.html)
 
 Prerequisites
 -------------
@@ -56,7 +67,7 @@ The following commands can be used to configure and build the BDE repository:
    ```shell
    $ git clone https://github.com/bloomberg/bde-tools.git
    $ export PATH=$PWD/bde-tools/bin:$PATH      # add bde-tools to the 'PATH'
-   $ git clone https://github.com/bloomberg/bde.git
+   $ git clone https://github.com/joao-cognition/bde-c-.git
    $ cd bde
    ```
 
@@ -85,9 +96,9 @@ The following commands can be used to configure and build the BDE repository:
    $ bbs_build build --test run
    ```
 
-Build Instructions (Bloomberg LP)
+Build Instructions (BNP Paribas)
 ---------------------------------
-Please see the more complete [build instructions for Bloomberg LP users](https://bde.bloomberg.com/bde/library_information/build.html).
+Please see the more complete [build instructions for BNP Paribas users](https://bde.bnpparibas.com/bde/library_information/build.html).
 
 The following commands can be used to configure and build the BDE repository:
 1. Clone the `bde-tools` and `bde` repositories and add `bde-tools` to your `PATH`:

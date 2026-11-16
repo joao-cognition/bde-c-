@@ -17,7 +17,7 @@ SyncBuf_Mutex *SyncBuf_MutexUtil::get(void *streambuf) BSLS_KEYWORD_NOEXCEPT
 {
     BSLS_ASSERT(streambuf);
 #if BSLS_COMPILERFEATURES_CPLUSPLUS < 201103L  // C++03
-    using namespace BloombergLP::bsls;
+    using namespace BNP_Paribas::bsls;
     static SyncBuf_Mutex *mutex = 0;
     static BslOnce        once  = BSLS_BSLONCE_INITIALIZER;
 

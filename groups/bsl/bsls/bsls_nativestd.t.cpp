@@ -108,8 +108,8 @@ static int veryVeryVerbose = 0;
 ///-----
 // In the following example we use the `native_std` prefix to access the native
 // implementation of `std::string`, even when the compilation is configured to
-// override the use of native STL types with Bloomberg provided STL types
-// (i.e., bde-stl mode, used by Bloomberg managed code):
+// override the use of native STL types with BNP Paribas provided STL types
+// (i.e., bde-stl mode, used by BNP Paribas managed code):
 // ```
 #include <bsls_nativestd.h>
 #include <string>

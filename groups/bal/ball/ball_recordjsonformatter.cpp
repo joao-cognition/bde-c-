@@ -287,11 +287,11 @@ BSLS_IDENT_RCSID(ball_recordjsonformatter_cpp,"$Id$ $CSID$")
 #include <bsl_set.h>
 #include <bsl_sstream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 namespace {
 
-typedef BloombergLP::bslma::AllocatorUtil AllocUtil;
+typedef BNP_Paribas::bslma::AllocatorUtil AllocUtil;
 
 // Keys *and* default field names for formatters
 const char *const k_KEY_TIMESTAMP        = "timestamp";
@@ -1821,7 +1821,7 @@ int FormatUtil::formatAttribute(baljsn::SimpleFormatter *formatter,
     return -1;
 }
 
-}  // close unnamed namespace within BloombergLP::ball
+}  // close unnamed namespace within BNP_Paribas::ball
 
                         // -------------------------
                         // class RecordJsonFormatter

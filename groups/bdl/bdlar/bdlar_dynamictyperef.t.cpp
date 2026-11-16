@@ -24,7 +24,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -137,7 +137,7 @@ class MyDynamicType {
 
 }  // close namespace test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 template <>
 struct bdlat_TypeCategoryDeclareDynamic<test::MyDynamicType> : bsl::true_type {

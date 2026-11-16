@@ -570,7 +570,7 @@ BSLS_IDENT("$Id: $")
 // ERROR myfunction.h:17 BSLS_REVIEW failure (myfunction.h:17 level:R-DBG):
 //                                'x > 0' Please run "/bb/bin/showfunc.tsk ...
 // ```
-// `showfunc.tsk` is a Bloomberg application that can be used (along with the
+// `showfunc.tsk` is a BNP Paribas application that can be used (along with the
 // task binary) to convert the reported stack addresses to a more traditional
 // stack trace with a function call stack.
 //
@@ -788,15 +788,15 @@ BSLS_IDENT("$Id: $")
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_CONSTEXPR_CPP14
     #define BSLS_REVIEW_REVIEW_COUNT_IMP                                      \
-        const int lastCount = BloombergLP::bsls::Review::updateCount(         \
+        const int lastCount = BNP_Paribas::bsls::Review::updateCount(         \
             []{                                                               \
-                static BloombergLP::bsls::Review::Count count = {0};          \
+                static BNP_Paribas::bsls::Review::Count count = {0};          \
                 return &count;                                                \
             }() );
 #else
     #define BSLS_REVIEW_REVIEW_COUNT_IMP                                      \
-        static BloombergLP::bsls::Review::Count count = {0};                  \
-        const int lastCount = BloombergLP::bsls::Review::updateCount(&count);
+        static BNP_Paribas::bsls::Review::Count count = {0};                  \
+        const int lastCount = BNP_Paribas::bsls::Review::updateCount(&count);
 #endif
 
                            // ======================
@@ -818,8 +818,8 @@ BSLS_IDENT("$Id: $")
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!(X))) {                    \
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                               \
             BSLS_REVIEW_REVIEW_COUNT_IMP;                                     \
-            BloombergLP::bsls::Review::invokeHandler(                         \
-                BloombergLP::bsls::ReviewViolation(#X,                        \
+            BNP_Paribas::bsls::Review::invokeHandler(                         \
+                BNP_Paribas::bsls::ReviewViolation(#X,                        \
                                                    BSLS_ASSERTIMPUTIL_FILE,   \
                                                    BSLS_ASSERTIMPUTIL_LINE,   \
                                                    LVL,                       \
@@ -844,12 +844,12 @@ BSLS_IDENT("$Id: $")
 // 'BSLS_REVIEW_INVOKE' is always active.
 #define BSLS_REVIEW_INVOKE(X) do {                                            \
         BSLS_REVIEW_REVIEW_COUNT_IMP;                                         \
-        BloombergLP::bsls::Review::invokeHandler(                             \
-            BloombergLP::bsls::ReviewViolation(                               \
+        BNP_Paribas::bsls::Review::invokeHandler(                             \
+            BNP_Paribas::bsls::ReviewViolation(                               \
                                   X,                                          \
                                   BSLS_ASSERTIMPUTIL_FILE,                    \
                                   BSLS_ASSERTIMPUTIL_LINE,                    \
-                                  BloombergLP::bsls::Review::k_LEVEL_INVOKE,  \
+                                  BNP_Paribas::bsls::Review::k_LEVEL_INVOKE,  \
                                   lastCount));                                \
     } while (false)
 
@@ -863,8 +863,8 @@ BSLS_IDENT("$Id: $")
 
 #define BSLS_REVIEW_UNREACHABLE_IMP(X,LVL) do {                               \
         BSLS_REVIEW_REVIEW_COUNT_IMP;                                         \
-        BloombergLP::bsls::Review::invokeHandler(                             \
-            BloombergLP::bsls::ReviewViolation(                               \
+        BNP_Paribas::bsls::Review::invokeHandler(                             \
+            BNP_Paribas::bsls::ReviewViolation(                               \
                                   X,                                          \
                                   BSLS_ASSERTIMPUTIL_FILE,                    \
                                   BSLS_ASSERTIMPUTIL_LINE,                    \
@@ -905,11 +905,11 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_REVIEW_SAFE_IS_ACTIVE)
     #define BSLS_REVIEW_SAFE(X) BSLS_REVIEW_REVIEW_IMP(                       \
                                      X,                                       \
-                                     BloombergLP::bsls::Review::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Review::k_LEVEL_SAFE)
 #else
     #define BSLS_REVIEW_SAFE(X) BSLS_REVIEW_DISABLED_IMP(                     \
                                      X,                                       \
-                                     BloombergLP::bsls::Review::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Review::k_LEVEL_SAFE)
 #endif
 
 // Define 'BSLS_REVIEW_SAFE_UNREACHABLE' accordingly.
@@ -917,12 +917,12 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_REVIEW_SAFE_IS_ACTIVE)
     #define BSLS_REVIEW_SAFE_UNREACHABLE(X) BSLS_REVIEW_UNREACHABLE_IMP(      \
                                      X,                                       \
-                                     BloombergLP::bsls::Review::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Review::k_LEVEL_SAFE)
 #else
     #define BSLS_REVIEW_SAFE_UNREACHABLE(X)                                   \
                              BSLS_REVIEW_UNREACHABLE_DISABLED_IMP(            \
                                      X,                                       \
-                                     BloombergLP::bsls::Review::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Review::k_LEVEL_SAFE)
 #endif
 
                                 // ===========
@@ -952,11 +952,11 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_REVIEW_IS_ACTIVE)
     #define BSLS_REVIEW(X) BSLS_REVIEW_REVIEW_IMP(                            \
                                    X,                                         \
-                                   BloombergLP::bsls::Review::k_LEVEL_REVIEW)
+                                   BNP_Paribas::bsls::Review::k_LEVEL_REVIEW)
 #else
     #define BSLS_REVIEW(X) BSLS_REVIEW_DISABLED_IMP(                          \
                                    X,                                         \
-                                   BloombergLP::bsls::Review::k_LEVEL_REVIEW)
+                                   BNP_Paribas::bsls::Review::k_LEVEL_REVIEW)
 #endif
 
 // Define 'BSLS_REVIEW_UNREACHABLE' accordingly.
@@ -964,12 +964,12 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_REVIEW_IS_ACTIVE)
     #define BSLS_REVIEW_UNREACHABLE(X) BSLS_REVIEW_UNREACHABLE_IMP(           \
                                    X,                                         \
-                                   BloombergLP::bsls::Review::k_LEVEL_REVIEW)
+                                   BNP_Paribas::bsls::Review::k_LEVEL_REVIEW)
 #else
     #define BSLS_REVIEW_UNREACHABLE(X)                                        \
                              BSLS_REVIEW_UNREACHABLE_DISABLED_IMP(            \
                                    X,                                         \
-                                   BloombergLP::bsls::Review::k_LEVEL_REVIEW)
+                                   BNP_Paribas::bsls::Review::k_LEVEL_REVIEW)
 #endif
 
                               // ===============
@@ -993,11 +993,11 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_REVIEW_OPT_IS_ACTIVE)
     #define BSLS_REVIEW_OPT(X) BSLS_REVIEW_REVIEW_IMP(                        \
                                       X,                                      \
-                                      BloombergLP::bsls::Review::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Review::k_LEVEL_OPT)
 #else
     #define BSLS_REVIEW_OPT(X) BSLS_REVIEW_DISABLED_IMP(                      \
                                       X,                                      \
-                                      BloombergLP::bsls::Review::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Review::k_LEVEL_OPT)
 #endif
 
 // Define 'BSLS_REVIEW_OPT_UNREACHABLE' accordingly.
@@ -1005,19 +1005,19 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_REVIEW_OPT_IS_ACTIVE)
     #define BSLS_REVIEW_OPT_UNREACHABLE(X) BSLS_REVIEW_UNREACHABLE_IMP(       \
                                       X,                                      \
-                                      BloombergLP::bsls::Review::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Review::k_LEVEL_OPT)
 #else
     #define BSLS_REVIEW_OPT_UNREACHABLE(X)                                    \
                              BSLS_REVIEW_UNREACHABLE_DISABLED_IMP(            \
                                       X,                                      \
-                                      BloombergLP::bsls::Review::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Review::k_LEVEL_OPT)
 #endif
 
 // A nested include guard is needed to support the test driver implementation.
 #ifndef BSLS_REVIEW_RECURSIVELY_INCLUDED_TESTDRIVER_GUARD
 #define BSLS_REVIEW_RECURSIVELY_INCLUDED_TESTDRIVER_GUARD
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                            // =====================

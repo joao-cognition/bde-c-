@@ -8,8 +8,8 @@ BSLS_IDENT("$Id$ $CSID$")
 #if defined(BSLS_PLATFORM_CPU_ARM) && defined(BSLS_PLATFORM_CPU_32_BIT) &&    \
     defined(BSLS_PLATFORM_CMP_MSVC)
 
-namespace BloombergLP {
-}  // close namespace BloombergLP
+namespace BNP_Paribas {
+}  // close namespace BNP_Paribas
 
 #endif
 

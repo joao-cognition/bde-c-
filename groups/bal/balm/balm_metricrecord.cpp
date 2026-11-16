@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(balm_metricrecord_cpp,"$Id$ $CSID$")
 #include <bsl_cfloat.h>  // DBL_MAX
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                           // ------------------------
                           // class balm::MetricRecord

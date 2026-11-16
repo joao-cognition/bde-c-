@@ -26,7 +26,7 @@ BSLS_IDENT_RCSID(bslmt_readerwriterlock_cpp,"$Id$ $CSID$")
 
 #include <bsls_types.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #ifdef BSLS_PLATFORM_OS_AIX // IBM does not properly inline these constants
 const unsigned long long bslmt::ReaderWriterLock::WRITER_MASK;

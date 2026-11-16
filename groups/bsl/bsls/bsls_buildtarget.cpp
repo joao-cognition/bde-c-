@@ -6,7 +6,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <bsls_bsltestutil.h>  // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 extern const int BSLS_BUILDTARGET_IS_UNIQUE = 1;
 

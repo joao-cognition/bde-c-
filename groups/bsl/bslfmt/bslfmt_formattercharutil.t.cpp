@@ -13,7 +13,7 @@
 #include <string.h>   // `strlen`, `strcmp`, `memset`
 #include <wchar.h>    // `wcscmp`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslfmt;
 
 

@@ -171,7 +171,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 // FORWARD DECLARATIONS
@@ -340,8 +340,8 @@ class FlatHashTable
     /// `hashValue == d_hasher(key)`.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     indexOfKeyTransparent(bool              *notFound,
                           const LOOKUP_KEY&  key,
@@ -390,8 +390,8 @@ class FlatHashTable
     /// behavior is undefined unless `hashValue == d_hasher(key)`.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     findTransparentKey(const LOOKUP_KEY& key, bsl::size_t hashValue) const
     {
@@ -559,8 +559,8 @@ class FlatHashTable
     /// range will contain at most one entry.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
     {
@@ -598,8 +598,8 @@ class FlatHashTable
     /// invalidates all iterators, and references to the removed element.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     erase(LOOKUP_KEY&& key)
     {
@@ -643,8 +643,8 @@ class FlatHashTable
     /// an entry exists, and `end()` otherwise.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , iterator>::type
     find(const LOOKUP_KEY& key)
     {
@@ -685,8 +685,8 @@ class FlatHashTable
     /// call).
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     insertTransparent(LOOKUP_KEY&& key)
     {
@@ -781,7 +781,7 @@ class FlatHashTable
     /// C++03, `VALUE` must also be `copy-constructible`.
     template <class... ARGS>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                                      ARGS&&...                           args);
 
     /// If a key equivalent to the specified `key` already exists in this map
@@ -795,8 +795,8 @@ class FlatHashTable
     /// C++03, `VALUE` must also be `copy-constructible`.
     template <class LOOKUP_KEY, class... ARGS>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(LOOKUP_KEY&& key, ARGS&&... args)
     {
@@ -896,8 +896,8 @@ class FlatHashTable
     /// range will contain at most one entry.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
         {
@@ -921,8 +921,8 @@ class FlatHashTable
     //  if no such entry exists in this table.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , const_iterator>::type
     find(const LOOKUP_KEY& key) const
         {
@@ -2126,7 +2126,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                                       ARGS&&...                           args)
 {
     const KEY&  k = key;

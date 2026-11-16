@@ -62,7 +62,7 @@ BSLS_IDENT("$Id: $")
 // #include <sstream>
 // #include <string>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
 // int parseDouble(double *result, const char *data, int dataLength);
 //
@@ -133,7 +133,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_memory.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balxml {
                            // ======================

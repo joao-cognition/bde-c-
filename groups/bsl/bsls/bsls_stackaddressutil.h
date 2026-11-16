@@ -22,7 +22,7 @@ BSLS_IDENT("$Id: $")
 // This component also provides a function, `formatCheapStack`, that builds a
 // current stack trace and formats it with instructions on how to use
 // `showfunc.tsk` to print out a stack trace matching where this function was
-// called.  This is a Bloomberg standard "cheapstack" output.
+// called.  This is a BNP Paribas standard "cheapstack" output.
 //
 ///Usage
 ///-----
@@ -240,7 +240,7 @@ BSLS_IDENT("$Id: $")
 ///- - - - - - - - - - - - - - - - - -
 // In this example we demonstrate how to use `formatCheapStack` to generate a
 // string containing the current stack trace and instructions on how to print
-// it out from `showfunc.tsk`.  Note that `showfunc.tsk` is a Bloomberg tool
+// it out from `showfunc.tsk`.  Note that `showfunc.tsk` is a BNP Paribas tool
 // that, when given an executable along with a series of function addresses
 // from a process that was running that executable, will print out a
 // human-readable stack trace with the names of the functions being called in
@@ -301,7 +301,7 @@ BSLS_IDENT("$Id: $")
                       // class bsls::StackAddressUtil
                       // ============================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 /// This struct provides a namespace for the function to obtain return
@@ -358,9 +358,9 @@ class StackAddressUtil {
                           int      maxFrames);
 
     /// Load the specified `output` buffer having the specified `length`
-    /// with the Bloomberg standard "cheapstack" contents as a
+    /// with the BNP Paribas standard "cheapstack" contents as a
     /// null-terminated string.  On successfully obtaining the current call
-    /// stack, this will be instructions on how to run the Bloomberg tool
+    /// stack, this will be instructions on how to run the BNP Paribas tool
     /// `showfunc.tsk` (with the optionally specified `taskname`, otherwise
     /// with an attempt to obtain the system-specific process name) to get
     /// details of the current call stack where `formatCheapStack` was

@@ -26,7 +26,7 @@
 // Warning: the following `using` declarations interfere with the testing of
 // the macros defined in this component.  Please do not un-comment them.
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 // using namespace bsl;
 //
 // Also note that such a `using` in the unnamed namespace applies to all code
@@ -115,7 +115,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 // ----------------------------------------------------------------------------
 
-using BloombergLP::bslma::TestAllocator;
+using BNP_Paribas::bslma::TestAllocator;
 
 static bool verbose;
 static bool veryVerbose;
@@ -144,14 +144,14 @@ namespace u {
 /// `severity`, `fileName`, `lineNumber`, and `message`, and `false`
 /// otherwise.
 static bool isRecordOkay(
-           const bsl::shared_ptr<BloombergLP::ball::TestObserver>&  observer,
-           const BloombergLP::ball::Category                       *category,
+           const bsl::shared_ptr<BNP_Paribas::ball::TestObserver>&  observer,
+           const BNP_Paribas::ball::Category                       *category,
            int                                                      severity,
            const char                                              *fileName,
            int                                                      lineNumber,
            const char                                              *message)
 {
-    const BloombergLP::ball::RecordAttributes& attributes =
+    const BNP_Paribas::ball::RecordAttributes& attributes =
                                  observer->lastPublishedRecord().fixedFields();
 
     bool status = 0   == bsl::strcmp(category->categoryName(),
@@ -261,7 +261,7 @@ int main(int argc, char *argv[])
         if (verbose) bsl::cout << "\nUSAGE EXAMPLES"
                                << "\n==============" << bsl::endl;
 
-        using namespace BloombergLP;    // OK here
+        using namespace BNP_Paribas;    // OK here
 
         ball::LoggerManagerConfiguration lmConfig;
         lmConfig.setDefaultThresholdLevelsIfValid(ball::Severity::e_TRACE);
@@ -387,46 +387,46 @@ int main(int argc, char *argv[])
         const char  SEP     = ':';
         const int   ARGS[]  = { 1, 2, 3 };
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
 
-        bsl::shared_ptr<BloombergLP::ball::TestObserver> observer(
-               new (ta) BloombergLP::ball::TestObserver(&bsl::cout, &ta), &ta);
+        bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer(
+               new (ta) BNP_Paribas::ball::TestObserver(&bsl::cout, &ta), &ta);
 
-        BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+        BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
         ASSERT(0 == manager.registerObserver(observer, "test"));
 
         // Re "sieve" category: (1) if recorded, then also published;
         // (2) never triggered.
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                 "sieve",
-                                BloombergLP::ball::Severity::e_TRACE,
-                                BloombergLP::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
                                 0,
                                 0);
         BALL_LOG_SET_CATEGORY("sieve")
 
         BALL_LOG_TRACE << "This will load the category";
 
-        const BloombergLP::ball::Category *CAT  = BALL_LOG_CATEGORY;
+        const BNP_Paribas::ball::Category *CAT  = BALL_LOG_CATEGORY;
         const char                        *FILE = __FILE__;
 
-        const int TRACE = BloombergLP::ball::Severity::e_TRACE;
-        const int DEBUG = BloombergLP::ball::Severity::e_DEBUG;
-        const int INFO  = BloombergLP::ball::Severity::e_INFO;
-        const int WARN  = BloombergLP::ball::Severity::e_WARN;
-        const int ERROR = BloombergLP::ball::Severity::e_ERROR;
-        const int FATAL = BloombergLP::ball::Severity::e_FATAL;
+        const int TRACE = BNP_Paribas::ball::Severity::e_TRACE;
+        const int DEBUG = BNP_Paribas::ball::Severity::e_DEBUG;
+        const int INFO  = BNP_Paribas::ball::Severity::e_INFO;
+        const int WARN  = BNP_Paribas::ball::Severity::e_WARN;
+        const int ERROR = BNP_Paribas::ball::Severity::e_ERROR;
+        const int FATAL = BNP_Paribas::ball::Severity::e_FATAL;
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                            "noTRACE",
-                           BloombergLP::ball::Severity::e_TRACE - 1,
-                           BloombergLP::ball::Severity::e_TRACE - 1,
-                           BloombergLP::ball::Severity::e_TRACE - 1,
-                           BloombergLP::ball::Severity::e_TRACE - 1);
+                           BNP_Paribas::ball::Severity::e_TRACE - 1,
+                           BNP_Paribas::ball::Severity::e_TRACE - 1,
+                           BNP_Paribas::ball::Severity::e_TRACE - 1,
+                           BNP_Paribas::ball::Severity::e_TRACE - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_FMT_TRACE`" << bsl::endl;
@@ -458,12 +458,12 @@ int main(int argc, char *argv[])
             ASSERT(u::isRecordOkay(observer, CAT, TRACE, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                               "noDEBUG",
-                              BloombergLP::ball::Severity::e_DEBUG - 1,
-                              BloombergLP::ball::Severity::e_DEBUG - 1,
-                              BloombergLP::ball::Severity::e_DEBUG - 1,
-                              BloombergLP::ball::Severity::e_DEBUG - 1);
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_FMT_DEBUG`" << bsl::endl;
@@ -495,12 +495,12 @@ int main(int argc, char *argv[])
             ASSERT(u::isRecordOkay(observer, CAT, DEBUG, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                "noINFO",
-                               BloombergLP::ball::Severity::e_INFO - 1,
-                               BloombergLP::ball::Severity::e_INFO - 1,
-                               BloombergLP::ball::Severity::e_INFO - 1,
-                               BloombergLP::ball::Severity::e_INFO - 1);
+                               BNP_Paribas::ball::Severity::e_INFO - 1,
+                               BNP_Paribas::ball::Severity::e_INFO - 1,
+                               BNP_Paribas::ball::Severity::e_INFO - 1,
+                               BNP_Paribas::ball::Severity::e_INFO - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_FMT_INFO`" << bsl::endl;
@@ -532,12 +532,12 @@ int main(int argc, char *argv[])
             ASSERT(u::isRecordOkay(observer, CAT, INFO, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noWARN",
-                                  BloombergLP::ball::Severity::e_WARN - 1,
-                                  BloombergLP::ball::Severity::e_WARN - 1,
-                                  BloombergLP::ball::Severity::e_WARN - 1,
-                                  BloombergLP::ball::Severity::e_WARN - 1);
+                                  BNP_Paribas::ball::Severity::e_WARN - 1,
+                                  BNP_Paribas::ball::Severity::e_WARN - 1,
+                                  BNP_Paribas::ball::Severity::e_WARN - 1,
+                                  BNP_Paribas::ball::Severity::e_WARN - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_FMT_WARN`" << bsl::endl;
@@ -569,12 +569,12 @@ int main(int argc, char *argv[])
             ASSERT(u::isRecordOkay(observer, CAT, WARN, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                 "noERROR",
-                                BloombergLP::ball::Severity::e_ERROR - 1,
-                                BloombergLP::ball::Severity::e_ERROR - 1,
-                                BloombergLP::ball::Severity::e_ERROR - 1,
-                                BloombergLP::ball::Severity::e_ERROR - 1);
+                                BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                BNP_Paribas::ball::Severity::e_ERROR - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_FMT_ERROR`" << bsl::endl;
@@ -606,12 +606,12 @@ int main(int argc, char *argv[])
             ASSERT(u::isRecordOkay(observer, CAT, ERROR, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noFATAL",
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1);
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_FMT_FATAL`" << bsl::endl;

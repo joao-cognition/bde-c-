@@ -19,12 +19,12 @@ BSLS_IDENT("$Id$ $CSID$")
 // else, so it's guaranteed to be 'true'.  It is used only by the destructor
 // of 'u::TailCallGuard' below.
 
-bool bloombergLP_bslstl_StdExceptUtil_alwaysTrue = true;
+bool bnp_Paribas_bslstl_StdExceptUtil_alwaysTrue = true;
 
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslstl;
 
 
@@ -122,15 +122,15 @@ struct TailCallGuard {
 
 TailCallGuard::~TailCallGuard()
 {
-    if (!bloombergLP_bslstl_StdExceptUtil_alwaysTrue) {
-        bloombergLP_bslstl_StdExceptUtil_alwaysTrue = true;
+    if (!bnp_Paribas_bslstl_StdExceptUtil_alwaysTrue) {
+        bnp_Paribas_bslstl_StdExceptUtil_alwaysTrue = true;
     }
 }
 
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                         //====================

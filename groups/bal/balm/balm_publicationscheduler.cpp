@@ -27,7 +27,7 @@ BSLS_IDENT_RCSID(balm_publicationscheduler_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
                                 // ========
                                 // IsVector
@@ -156,7 +156,7 @@ int getCategoryScheduleImp(VECTOR               *result,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
                    // =====================================

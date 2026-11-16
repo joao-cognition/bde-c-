@@ -27,7 +27,7 @@ size_t type_index::hash_code() const BSLS_KEYWORD_NOEXCEPT
 #else
     const char *contents = d_targetType_p->name();
 
-    BloombergLP::bslh::SpookyHashAlgorithm hasher;
+    BNP_Paribas::bslh::SpookyHashAlgorithm hasher;
     hasher(contents, strlen(contents));
     return static_cast<size_t>(hasher.computeHash());
 #endif

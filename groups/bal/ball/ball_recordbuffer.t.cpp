@@ -26,7 +26,7 @@
 #undef ERROR
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -115,7 +115,7 @@ static int verbose;
 static int veryVerbose;
 static int veryVeryVerbose;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace ball {
 

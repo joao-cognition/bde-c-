@@ -131,7 +131,7 @@ BSLS_IDENT("$Id: $")
 // function argument of type `true_type`, the second takes and extra function
 // argument of type `false_type`:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // template <class t_TYPE>
 // void destructiveMoveArrayImp(t_TYPE *to,
@@ -395,7 +395,7 @@ BSLS_IDENT("$Id: $")
 // "control" template that is not bit-wise moveable.  First, we define the
 // non-bit-wise-moveable template, `NonMoveableTemplate`:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // template <class t_TYPE>
 // struct NonMoveableTemplate
@@ -495,7 +495,7 @@ BSLS_IDENT("$Id: $")
 //
 // First, we declare a normal empty class that *is* bitwise moveable:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace xyza {
 //
 // class MoveableEmptyClass
@@ -580,7 +580,7 @@ BSLS_IDENT("$Id: $")
 # define BSLMF_ISBITWISEMOVEABLE_NO_SUPPORT_FOR_ARRAY_OF_UNKNOWN_BOUND 1
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 
@@ -634,7 +634,7 @@ struct IsBitwiseMoveable_Imp<t_TYPE, false> {
     defined(BSLMF_ISTRIVIALLYCOPYABLE_NATIVE_IMPLEMENTATION)
     // In C++11 and beyond, we can accurately detect trivial-copiable types
     // which would allow us to remove the one-byte heuristic used above.
-    // Testing with gcc-5 on Bloomberg production software indicates that there
+    // Testing with gcc-5 on BNP Paribas production software indicates that there
     // are many 1-byte types, which are conceptually bitwise moveable, that are
     // not correctly marked bitwise moveable (for example, any 1-byte
     // code-generated type).  For the moment we have decided not to enable more

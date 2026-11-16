@@ -54,7 +54,7 @@
 #include <bsl_cstring.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -628,7 +628,7 @@ class NoAllocTestType {
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
 #undef  FN
 #define FN(n) typedef NoAllocTestArg<n> Arg##n;
@@ -673,7 +673,7 @@ class NoAllocTestType {
 
     /// Create a test object having the same value as the specified
     /// `original`.
-    NoAllocTestType(BloombergLP::bslmf::MovableRef<NoAllocTestType> original)
+    NoAllocTestType(BNP_Paribas::bslmf::MovableRef<NoAllocTestType> original)
         BSLS_KEYWORD_NOEXCEPT;
 
     // MANIPULATORS
@@ -1253,7 +1253,7 @@ struct ParametrizedMovableAllocTestType : public bsltf::MovableAllocTestType {
 
 }  // close namespace Testcase_19
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <unsigned N>
@@ -1765,7 +1765,7 @@ NoAllocTestType::NoAllocTestType(const NoAllocTestType& original)
 #define FN(n) d_a##n(MoveUtil::move(MoveUtil::access(original).d_a##n))
 inline
 NoAllocTestType::NoAllocTestType(
-BloombergLP::bslmf::MovableRef<NoAllocTestType> original) BSLS_KEYWORD_NOEXCEPT
+BNP_Paribas::bslmf::MovableRef<NoAllocTestType> original) BSLS_KEYWORD_NOEXCEPT
 : C14(FN)
 {
 }

@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bdlt_timetableloader_cpp,"$Id$ $CSID$")
 #include <bdlt_datetime.h>   // for testing only
 #include <bdlt_timetable.h>  // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                           // ---------------------

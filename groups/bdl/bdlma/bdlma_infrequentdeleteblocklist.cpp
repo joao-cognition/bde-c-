@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(bdlma_infrequentdeleteblocklist_cpp,"$Id$ $CSID$")
 #include <bsls_assert.h>
 #include <bsls_performancehint.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // HELPER FUNCTIONS
 

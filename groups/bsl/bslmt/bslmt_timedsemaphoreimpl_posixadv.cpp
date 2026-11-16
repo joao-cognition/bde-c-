@@ -18,7 +18,7 @@ BSLS_IDENT_RCSID(bslmt_timedsemaphoreimpl_posixadv_cpp,"$Id$ $CSID$")
 #include <bsl_ctime.h>
 #include <bsl_c_errno.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
              // ================================================
              // class TimedSemaphoreImpl<PosixAdvTimedSemaphore>

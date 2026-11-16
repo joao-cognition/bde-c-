@@ -9,7 +9,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bslma_testallocator.h>        // for testing only
 #include <bslma_usesbslmaallocator.h>   // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 void DestructionUtil::scribbleOverMemory(void *address, size_t numBytes)

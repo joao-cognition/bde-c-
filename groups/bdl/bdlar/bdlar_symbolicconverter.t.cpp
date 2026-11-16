@@ -19,7 +19,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -103,7 +103,7 @@ void aSsErT(bool condition, const char *message, int line)
 //@DESCRIPTION:
 //  TBD: provide annotation for `ChoiceA`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -684,7 +684,7 @@ bsl::ostream& test::operator<<(bsl::ostream& stream, const test::ChoiceA& rhs)
 
 // test_choicea.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -853,7 +853,7 @@ bsl::ostream& ChoiceA::print(
 //  TBD: provide annotation for `ChoiceB`
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -1433,7 +1433,7 @@ bsl::ostream& test::operator<<(bsl::ostream& stream, const test::ChoiceB& rhs)
 
 // test_choiceb.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -1599,7 +1599,7 @@ bsl::ostream& ChoiceB::print(bsl::ostream& stream,
 //@DESCRIPTION:
 //  TBD: provide annotation for `CustomizedA`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -1873,7 +1873,7 @@ bsl::ostream& test::operator<<(bsl::ostream&            stream,
 
 // test_customizeda.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -1918,7 +1918,7 @@ const char CustomizedA::CLASS_NAME[] = "CustomizedA";
 //@DESCRIPTION:
 //  TBD: provide annotation for `CustomizedB`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -2192,7 +2192,7 @@ bsl::ostream& test::operator<<(bsl::ostream&            stream,
 
 // test_customizedb.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -2237,7 +2237,7 @@ const char CustomizedB::CLASS_NAME[] = "CustomizedB";
 //@DESCRIPTION:
 //  TBD: provide annotation for `EnumerationA`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -2468,7 +2468,7 @@ bsl::ostream& test::operator<<(bsl::ostream&             stream,
 
 // test_enumerationa.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -2560,7 +2560,7 @@ int EnumerationA::fromString(EnumerationA::Value *result,
 //@DESCRIPTION:
 //  TBD: provide annotation for `EnumerationB`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -2791,7 +2791,7 @@ bsl::ostream& test::operator<<(bsl::ostream&             stream,
 
 // test_enumerationb.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -2883,7 +2883,7 @@ int EnumerationB::fromString(EnumerationB::Value *result,
 //@DESCRIPTION:
 //  TBD: provide annotation for `SequenceA`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -3373,7 +3373,7 @@ bsl::ostream& test::operator<<(bsl::ostream&          stream,
 
 // test_sequencea.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -3532,7 +3532,7 @@ bsl::ostream& SequenceA::print(bsl::ostream& stream,
 //@DESCRIPTION:
 //  TBD: provide annotation for `SequenceB`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -4022,7 +4022,7 @@ bsl::ostream& test::operator<<(bsl::ostream&          stream,
 
 // test_sequenceb.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -4181,7 +4181,7 @@ bsl::ostream& SequenceB::print(bsl::ostream& stream,
 //@DESCRIPTION:
 //  TBD: provide annotation for `Employee`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -4772,7 +4772,7 @@ bsl::ostream& test::operator<<(bsl::ostream& stream, const test::Employee& rhs)
 
 // test_employee.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -4982,7 +4982,7 @@ bsl::ostream& Employee::print(bsl::ostream& stream,
 //@DESCRIPTION:
 //  TBD: provide annotation for `Trainee`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -5516,7 +5516,7 @@ bsl::ostream& test::operator<<(bsl::ostream& stream, const test::Trainee& rhs)
 
 // test_trainee.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -5696,7 +5696,7 @@ bsl::ostream& Trainee::print(bsl::ostream& stream,
 //@DESCRIPTION:
 //  TBD: provide annotation for `MixedSequence`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 
@@ -6482,7 +6482,7 @@ bsl::ostream& test::operator<<(bsl::ostream&              stream,
 
 // test_mixedsequence.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                                // ---------
@@ -6762,7 +6762,7 @@ bsl::ostream& MixedSequence::print(bsl::ostream& stream,
 // ```
 // <?xml version='1.0' encoding='UTF-8'?>
 // <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
-//            xmlns:bdem='http://bloomberg.com/schemas/bdem'
+//            xmlns:bdem='http://bnpparibas.com/schemas/bdem'
 //            elementFormDefault='unqualified'>
 //
 //     <xs:complexType name='Employee'>
@@ -6800,7 +6800,7 @@ bsl::ostream& MixedSequence::print(bsl::ostream& stream,
 //
 // #include <bdlar_symbolicconverter.h>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
    int hireTrainee(test::Employee       *result,
                    const test::Trainee&  trainee,

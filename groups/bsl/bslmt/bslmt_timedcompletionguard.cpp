@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(bslmt_timedcompletionguard_cpp,"$Id$ $CSID$")
 
 #include <limits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 // CLASS DATA

@@ -21,10 +21,10 @@ enum {
 
 // STATIC METHODS
 static inline
-BloombergLP::bsls::Types::size_type calculateMaxAlignedSize(
-                                 BloombergLP::bsls::Types::size_type totalSize)
+BNP_Paribas::bsls::Types::size_type calculateMaxAlignedSize(
+                                 BNP_Paribas::bsls::Types::size_type totalSize)
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const bsls::Types::size_type objectAlignmentMin =
                                    bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT - 1;
@@ -35,7 +35,7 @@ BloombergLP::bsls::Types::size_type calculateMaxAlignedSize(
     return ret;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                       // -----------------------------

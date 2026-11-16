@@ -769,7 +769,7 @@ static bool u_warnPrint(const char *name, const void *value)
 /// of the expression have value 'value'.  This function is intended only to be
 /// called by the macro 'u_P'.  Return 'false'.
 static bool u_warnPrint(const char                       *name,
-                        BloombergLP::bsls::Types::Uint64  value)
+                        BNP_Paribas::bsls::Types::Uint64  value)
 {
     u_zprintf("%s = %llu\n", name, value);
 
@@ -791,7 +791,7 @@ static bool u_warnPrint(const char *name,
 /// of the expression have value 'value'.  This function is intended only to be
 /// called by the macro 'u_PH'.  Return 'false'.
 static bool u_warnPrintHex(const char                        *expr,
-                           BloombergLP::bsls::Types::Uint64   value)
+                           BNP_Paribas::bsls::Types::Uint64   value)
 {
     u_zprintf("%s = 0x%llx\n", expr, value);
 
@@ -874,7 +874,7 @@ int u_zprintf(const char *, ...)
 using bsl::size_t;
 using bsl::ssize;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 namespace u {

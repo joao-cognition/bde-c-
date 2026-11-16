@@ -17,7 +17,7 @@ typedef HANDLE my_thread_t;
 typedef pthread_t my_thread_t;
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsls;
 
 // ============================================================================

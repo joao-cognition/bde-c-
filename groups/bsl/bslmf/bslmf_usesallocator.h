@@ -85,7 +85,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_compilerfeatures.h>
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// This `struct` template derives from `bsl::false_type` when the (template
@@ -122,7 +122,7 @@ namespace bsl {
 /// meta-function defined in the C++11 standard [allocator.uses.trait].
 template <class t_TYPE, class t_ALLOCATOR_TYPE>
 struct uses_allocator
-: BloombergLP::bslmf::UsesAllocator_Imp<t_TYPE, t_ALLOCATOR_TYPE>::type {
+: BNP_Paribas::bslmf::UsesAllocator_Imp<t_TYPE, t_ALLOCATOR_TYPE>::type {
 };
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_VARIABLE_TEMPLATES

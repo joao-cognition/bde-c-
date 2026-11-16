@@ -51,7 +51,7 @@
 
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -445,7 +445,7 @@ void logMessageHandler(bsls::LogSeverity::Enum  severity,
     match.push_back("std::length_error");
     match.push_back("test case 5");
     match.push_back("Stack Trace:\n");
-    match.push_back("BloombergLP");
+    match.push_back("BNP_Paribas");
     U_PUSH_COLONS(match);
     match.push_back("bslstl");
     U_PUSH_COLONS(match);
@@ -528,7 +528,7 @@ void top()
         // Dladdr never provides source file names for anything,
         // Windows often doesn't provide the source file name.
 
-        matches.push_back("BloombergLP");
+        matches.push_back("BNP_Paribas");
         U_PUSH_COLONS(matches);
         matches.push_back("balst");
         U_PUSH_COLONS(matches);
@@ -551,7 +551,7 @@ void top()
         matches.push_back("\n");
     }
     else {
-        matches.push_back("BloombergLP");
+        matches.push_back("BNP_Paribas");
         U_PUSH_COLONS(matches);
         matches.push_back("balst");
         U_PUSH_COLONS(matches);

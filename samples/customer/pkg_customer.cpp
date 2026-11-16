@@ -19,7 +19,7 @@ bsl::ostream& Customer::print(bsl::ostream& stream,
                               int           level,
                               int           spacesPerLevel) const
 {
-    BloombergLP::bslim::Printer printer(&stream, level, spacesPerLevel);
+    BNP_Paribas::bslim::Printer printer(&stream, level, spacesPerLevel);
     printer.start();
     printer.printAttribute("firstName", d_firstName);
     printer.printAttribute("lastName",  d_lastName);
@@ -33,7 +33,7 @@ bsl::ostream& Customer::print(bsl::ostream& stream,
 // FREE OPERATORS
 bsl::ostream& operator<<(bsl::ostream& stream, const Customer& object)
 {
-    BloombergLP::bslim::Printer printer(&stream, 0, -1);
+    BNP_Paribas::bslim::Printer printer(&stream, 0, -1);
     printer.start();
     printer.printValue(object.firstName());
     printer.printValue(object.lastName());

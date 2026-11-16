@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLMA_ALLOCATORUTIL_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // FORWARD DECLARATIONS

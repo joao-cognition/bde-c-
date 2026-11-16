@@ -10,7 +10,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <new>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 /// A `bslma_NewDeleteAllocator_Singleton` is a buffer with the right size
 /// and alignment to hold a `bslma::NewDeleteAllocator` object.

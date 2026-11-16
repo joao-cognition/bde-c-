@@ -27,7 +27,7 @@ BSLS_IDENT("$Id: $")
 ///-----------------
 // DWARF is a format for detailed debugging information.  It is not a complete
 // format, but is used within other formats.  It is used within ELF on Linux,
-// but not (yet) on Solaris at Bloomberg (currently the ELF format on Solaris
+// but not (yet) on Solaris at BNP Paribas (currently the ELF format on Solaris
 // still uses STABS).  It is used within the Mach-O format (also known as the
 // `Dladdr` format in this file) used on Darwin.  It is also used by the Clang
 // compiler (which uses ELF).
@@ -42,7 +42,7 @@ BSLS_IDENT("$Id: $")
 ///- - - - - - - - - -
 // Linux g++ 7.1.0 uses DWARF version 4, while g++ 5.4.0 and before use DWARF
 // version 3.  At the moment the required system header, `dwarf.h`, is not
-// available in the Bloomberg production build `chroot` environment, so
+// available in the BNP Paribas production build `chroot` environment, so
 // support for dwarf formats is disabled.
 //
 // DWARF support on Clang is problematic and not currrently implemented, see
@@ -103,7 +103,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balst {
                            // ======================

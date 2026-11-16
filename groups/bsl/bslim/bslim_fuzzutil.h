@@ -99,7 +99,7 @@ BSLS_IDENT("$Id: $")
 #include <string>
 #include <vector>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslim {
 
                               // ===============

@@ -17,7 +17,7 @@
 #include <new>
 #include <utility>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -204,7 +204,7 @@ struct my_Class0 {
 struct my_Class1 : my_Class0 {
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 // Being empty, `my_Class1` would normally be implicitly bitwise moveable.
@@ -280,7 +280,7 @@ struct ConvertibleToAnyWithTraits : my_Class0 {
     operator T() const { return T(); }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 /// Even though the nested trait logic is disabled by the template
@@ -510,7 +510,7 @@ namespace BSLALG_TYPETRAITS_USAGE_EXAMPLE {
         // TRAITS
         BSLALG_DECLARE_NESTED_TRAITS(
                              MyTestTypeWithBslmaAllocatorTraits,
-                             BloombergLP::bslalg::TypeTraitUsesBslmaAllocator);
+                             BNP_Paribas::bslalg::TypeTraitUsesBslmaAllocator);
 
         // CREATORS
         MyTestTypeWithBslmaAllocatorTraits() {}

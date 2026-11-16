@@ -10,7 +10,7 @@
 #include <bsl_cstdlib.h> // `bsl::atoi`
 #include <bsl_ostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;

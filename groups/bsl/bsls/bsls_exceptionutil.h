@@ -361,7 +361,7 @@ BSLS_IDENT("$Id: $")
 
 #endif // BDE_BUILD_TARGET_EXC
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 }  // close enterprise namespace
 
 #endif // ! defined(INCLUDED_BSLS_EXCEPTIONUTIL)

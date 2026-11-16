@@ -152,7 +152,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlcc {
 
 template <class KEY,
@@ -339,7 +339,7 @@ class StripedUnorderedContainerImpl_Bucket {
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     // DATA
 

@@ -318,7 +318,7 @@ BSLS_IDENT("$Id: $")
 // BDE_VERIFY pragma: push
 // BDE_VERIFY pragma: -FABC01
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 /// This `struct` provides a namespace for a suite of pure procedures

@@ -20,7 +20,7 @@
 # error This component should not depend on 'bslma_allocatortraits'
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using std::printf;
 using std::fprintf;
 using std::fflush;
@@ -260,7 +260,7 @@ struct NegativeMissingBoth {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 /// Specialize trait under test when auto-detection would fail.

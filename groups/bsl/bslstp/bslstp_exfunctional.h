@@ -281,7 +281,7 @@ struct ComparatorSelector<const char *>
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstp {
 
                     // ======================

@@ -57,7 +57,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <stdint.h>     // 'uintptr_t'
 #include <typeinfo>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                  // =================================
@@ -69,7 +69,7 @@ namespace bslstl {
 /// Upon destruction of this object, the destructor of `TYPE` is invoked on
 /// the shared object.
 template <class TYPE, class ALLOCATOR>
-class SharedPtrAllocateInplaceRep : public BloombergLP::bslma::SharedPtrRep {
+class SharedPtrAllocateInplaceRep : public BNP_Paribas::bslma::SharedPtrRep {
 
     // PRIVATE TYPES
     typedef typename bsl::allocator_traits<ALLOCATOR>::
@@ -174,7 +174,7 @@ class SharedPtrAllocateInplaceRep : public BloombergLP::bslma::SharedPtrRep {
 /// of the array is destructed.
 template <class TYPE, class ALLOCATOR>
 class SharedPtrArrayAllocateInplaceRep
-                                    : public BloombergLP::bslma::SharedPtrRep {
+                                    : public BNP_Paribas::bslma::SharedPtrRep {
 
   private:
     // PRIVATE TYPES

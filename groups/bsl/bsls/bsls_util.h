@@ -117,7 +117,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_keyword.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 
@@ -238,7 +238,7 @@ struct Util {
 // avoid additional template bloat in the 'big' only to support a class design
 // that is almost certainly an error.
 #ifdef BSLS_PLATFORM_CMP_MSVC
-#   define BSLS_UTIL_ADDRESSOF(OBJ) ::BloombergLP::bsls::Util::addressOf(OBJ)
+#   define BSLS_UTIL_ADDRESSOF(OBJ) ::BNP_Paribas::bsls::Util::addressOf(OBJ)
 
 #   if !defined(BDE_USE_ADDRESSOF)
 #       define BDE_USE_ADDRESSOF

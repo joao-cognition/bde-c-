@@ -17,7 +17,7 @@ enum {
                                 // size (in bytes)
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // HELPER FUNCTIONS
 

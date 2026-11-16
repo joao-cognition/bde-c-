@@ -20,7 +20,7 @@
 
 #include <string>       // for `std::string`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #if defined(BSLS_PLATFORM_CMP_MSVC)
@@ -733,7 +733,7 @@ int main(int argc, char **argv)
             bsl::cout << ss.str();
 
         // This fails with error: no type named `iterator_category` in 'struct
-        // std::iterator_traits<BloombergLP::bdlb::TokenizerIterator>'.
+        // std::iterator_traits<BNP_Paribas::bdlb::TokenizerIterator>'.
         // Alternative test case:
         bsl::copy(tokenizer.begin(), tokenizer.end(),
                   bsl::back_inserter(tokens)); // DOESN'T COMPILE EITHER

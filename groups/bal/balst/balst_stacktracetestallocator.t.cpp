@@ -60,7 +60,7 @@
 
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -122,7 +122,7 @@ using bsl::flush;
 // [16] o demanglingPreferredFlag
 //      o #ifdef appropriate for platform, do reports with & without
 //        `demanglingPreferredFlag` by searching for
-//        `BloombergLP::balst::StackTraceTestAllocator::` in the report -- it
+//        `BNP_Paribas::balst::StackTraceTestAllocator::` in the report -- it
 //        will be present if demangling is done, it won't if not
 // [15] o Underrun detection
 //      o Verify that writing before the beginning of the buffer from 1 byte
@@ -1406,9 +1406,9 @@ int main(int argc, char *argv[])
 //  ---------------------------------------------------------------------------
 //  Allocation trace 1, 1 block(s) in use.
 //  Stack trace at allocation time:
-//  (0): BloombergLP::balst::StackTraceTestAllocator::allocate(int)+0x17d at 0x
+//  (0): BNP_Paribas::balst::StackTraceTestAllocator::allocate(int)+0x17d at 0x
 //  805e741 in balst_stacktracetestallocator.t.dbg_exc_mt
-//  (1): BloombergLP::bslma::TestAllocator::allocate(int)+0x12c at 0x8077398 in
+//  (1): BNP_Paribas::bslma::TestAllocator::allocate(int)+0x12c at 0x8077398 in
 //   balst_stacktracetestallocator.t.dbg_exc_mt
 //  (2): ShipsCrew::copy(bsl::basic_string<char, std::char_traits<char>, bsl::a
 //  llocator<char> > const&)+0x31 at 0x804c3db in balst_stacktracetestallocator
@@ -1416,7 +1416,7 @@ int main(int argc, char *argv[])
 //  (3): ShipsCrew::setCook(bsl::basic_string<char, std::char_traits<char>, bsl
 //  ::allocator<char> > const&)+0x2d at 0x804c4c1 in balst_stacktracetestalloca
 //  tor.t.dbg_exc_mt
-//  (4): ShipsCrew::ShipsCrew(char const*, BloombergLP::bslma::Allocator*)+0x23
+//  (4): ShipsCrew::ShipsCrew(char const*, BNP_Paribas::bslma::Allocator*)+0x23
 //  4 at 0x804c738 in balst_stacktracetestallocator.t.dbg_exc_mt
 //  (5): main+0x53c at 0x804d55e in balst_stacktracetestallocator.t.dbg_exc_mt
 //  (6): __libc_start_main+0xdc at 0x182e9c in /lib/libc.so.6
@@ -1987,10 +1987,10 @@ int main(int argc, char *argv[])
         // Plan:
         // The character ':' does not occur in mangled names, but it will occur
         // in demangled names.  Since the method
-        // `BloombergLP::balst::StackTraceTestAllocator::allocator` will always
+        // `BNP_Paribas::balst::StackTraceTestAllocator::allocator` will always
         // be in a stack trace, we can verify that demangling was successful by
         // searching the stack trace for
-        // `BloombergLP::balst::StackTraceTestAllocator::`.  (Note that the
+        // `BNP_Paribas::balst::StackTraceTestAllocator::`.  (Note that the
         // routine name `allocator` gets distorted to `.allocator` on AIX).
         //
         // 1. Iterate through both values of the boolean variable
@@ -2003,7 +2003,7 @@ int main(int argc, char *argv[])
         // 4. Call `reportBlocksInUse`
         // 5. Release memory and destroy the STTA.
         // 6. Observe that whether the substring
-        //    `BloombergLP::balst::StackTraceTestAllocator` is found is
+        //    `BNP_Paribas::balst::StackTraceTestAllocator` is found is
         //    consistent with `demangleExpected`.
         //---------------------------------------------------------------------
 
@@ -2038,7 +2038,7 @@ int main(int argc, char *argv[])
             }
 
             const bool FOUND = npos != ss.str().find(
-                              "BloombergLP::balst::StackTraceTestAllocator::");
+                              "BNP_Paribas::balst::StackTraceTestAllocator::");
             LOOP3_ASSERT(ss.str(), demangleExpected, FOUND,
                                                     FOUND == demangleExpected);
 
@@ -3706,7 +3706,7 @@ int main(int argc, char *argv[])
                 ASSERT(npos != report.find("1 block(s) in use"));
                 ASSERT((npos != report.find("woof")) == isWoof);
                 if (e_CAN_FIND_SYMBOLS) {
-                    ASSERT(npos != report.find("BloombergLP"));
+                    ASSERT(npos != report.find("BNP_Paribas"));
                     ASSERT(npos != report.find("balst"));
                     ASSERT(npos != report.find("StackTraceTestAllocator"));
                     ASSERT(npos != report.find("allocate"));
@@ -3795,7 +3795,7 @@ int main(int argc, char *argv[])
             if (e_CAN_FIND_SYMBOLS) {
                 // Windows sometimes mangles symbols backwards.
 
-                ASSERT(npos != (pos = outStr.find("BloombergLP",pos)));
+                ASSERT(npos != (pos = outStr.find("BNP_Paribas",pos)));
                 if (e_WINDOWS) pos = 0;
                 ASSERT(npos != (pos = outStr.find("StackTraceTestAllocator",
                                                                 pos)));

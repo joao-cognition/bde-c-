@@ -30,7 +30,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_type_traits.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
                            // ==============
@@ -38,7 +38,7 @@ namespace bdlar {
                            // ==============
 
 template<class t_TYPE>
-struct IsArray : ::BloombergLP::bdlat_ArrayFunctions::IsArray<t_TYPE> {
+struct IsArray : ::BNP_Paribas::bdlat_ArrayFunctions::IsArray<t_TYPE> {
 };
 
 // bsl::vector<char> is a simple type
@@ -50,14 +50,14 @@ struct IsArray<bsl::vector<char> > : bsl::false_type {
                            // struct IsChoice
                            // ===============
 
-using ::BloombergLP::bdlat_ChoiceFunctions::IsChoice;
+using ::BNP_Paribas::bdlat_ChoiceFunctions::IsChoice;
 
                            // ===================
                            // struct IsCustomized
                            // ===================
 
 template<class t_TYPE>
-struct IsCustomized : ::BloombergLP::bdlat_CustomizedTypeFunctions::
+struct IsCustomized : ::BNP_Paribas::bdlat_CustomizedTypeFunctions::
                                                      IsCustomizedType<t_TYPE> {
 };
 
@@ -66,7 +66,7 @@ struct IsCustomized : ::BloombergLP::bdlat_CustomizedTypeFunctions::
                            // =============
 
 template<class t_TYPE>
-struct IsEnum : ::BloombergLP::bdlat_EnumFunctions::IsEnumeration<t_TYPE> {
+struct IsEnum : ::BNP_Paribas::bdlat_EnumFunctions::IsEnumeration<t_TYPE> {
 };
 
                            // =================
@@ -74,7 +74,7 @@ struct IsEnum : ::BloombergLP::bdlat_EnumFunctions::IsEnumeration<t_TYPE> {
                            // =================
 
 template<class t_TYPE>
-struct IsNullable : ::BloombergLP::bdlat_NullableValueFunctions::
+struct IsNullable : ::BNP_Paribas::bdlat_NullableValueFunctions::
                                                       IsNullableValue<t_TYPE> {
 };
 
@@ -82,7 +82,7 @@ struct IsNullable : ::BloombergLP::bdlat_NullableValueFunctions::
                            // struct IsSequence
                            // =================
 
-using ::BloombergLP::bdlat_SequenceFunctions::IsSequence;
+using ::BNP_Paribas::bdlat_SequenceFunctions::IsSequence;
 
                            // ===============
                            // struct IsSimple

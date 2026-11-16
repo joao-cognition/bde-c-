@@ -150,7 +150,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslscm_version.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 
@@ -185,10 +185,10 @@ class NestedTraitDeclaration {
                     // ====================================
 
 #define BSLMF_NESTED_TRAIT_DECLARATION(t_TYPE, t_TRAIT)                       \
-    operator BloombergLP::bslmf::NestedTraitDeclaration<t_TYPE, t_TRAIT>()    \
+    operator BNP_Paribas::bslmf::NestedTraitDeclaration<t_TYPE, t_TRAIT>()    \
         const                                                                 \
     {                                                                         \
-        return BloombergLP::bslmf::NestedTraitDeclaration<t_TYPE, t_TRAIT>(); \
+        return BNP_Paribas::bslmf::NestedTraitDeclaration<t_TYPE, t_TRAIT>(); \
     }
 
 #ifdef __CDT_PARSER__
@@ -197,10 +197,10 @@ class NestedTraitDeclaration {
 #define BSLMF_NESTED_TRAIT_DECLARATION_IF(t_TYPE, t_TRAIT, t_COND)
 #else
 #define BSLMF_NESTED_TRAIT_DECLARATION_IF(t_TYPE, t_TRAIT, t_COND)            \
-    operator BloombergLP::bslmf::                                             \
+    operator BNP_Paribas::bslmf::                                             \
         NestedTraitDeclaration<t_TYPE, t_TRAIT, t_COND>() const               \
     {                                                                         \
-        return BloombergLP::bslmf::                                           \
+        return BNP_Paribas::bslmf::                                           \
             NestedTraitDeclaration<t_TYPE, t_TRAIT, t_COND>();                \
     }
 #endif

@@ -205,7 +205,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <typeinfo>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                  // ====================================
@@ -217,7 +217,7 @@ namespace bslstl {
 /// destruction of this object, the parameterized `DELETER` type is invoked
 /// on the pointer to the shared object.
 template <class TYPE, class DELETER, class ALLOCATOR>
-class SharedPtrAllocateOutofplaceRep : public BloombergLP::bslma::SharedPtrRep
+class SharedPtrAllocateOutofplaceRep : public BNP_Paribas::bslma::SharedPtrRep
                                                                               {
 
     // PRIVATE TYPES

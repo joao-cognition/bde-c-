@@ -27,7 +27,7 @@
 #include <bsl_cstdlib.h>     // atoi
 #include <bsl_cstring.h>     // strcmp
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC

@@ -127,7 +127,7 @@
 // deprecate an API they might either apply an attribute to the API that would
 // generate a warning, or they would use `#ifdef` to remove deprecated code
 // when it is built with appropriate options.  These solutions have a practical
-// shortcoming in a production environment like Bloomberg's, where code changes
+// shortcoming in a production environment like BNP Paribas's, where code changes
 // in lower-level libraries cannot be checked in if they break the build of
 // (higher-level) client libraries.  In such a system, well-meaning clients
 // might build their libraries using `-Werror` (to turn compilation warnings
@@ -436,7 +436,7 @@
 // grppkg_fooutil.cpp:43: warning: function 'abcxyz::SomeUtil::someFunction'
 // is explicitly deprecated.
 // ```
-// **WARNING**: Clients at Bloomberg *must* *not* define
+// **WARNING**: Clients at BNP Paribas *must* *not* define
 // `BB_WARN_ALL_DEPRECATIONS_FOR_TESTING_ONLY` in a production build.  This
 // flag should be used for development builds only.
 //

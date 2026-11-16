@@ -45,7 +45,7 @@ BSLS_IDENT_RCSID(bdlde_crc32c_cpp,"$Id$ $CSID$")
 # include <sparc_crc32c.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
 namespace {

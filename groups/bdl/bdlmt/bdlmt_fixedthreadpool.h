@@ -351,7 +351,7 @@ BSLS_IDENT("$Id: $")
 
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlmt {
 

@@ -115,7 +115,7 @@ BSLS_IDENT("$Id: $")
 // Suppose you had a type, `mine::MyIntArray`, that provides the essential
 // features of an "array" type.
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // class MyIntArray {
@@ -199,7 +199,7 @@ BSLS_IDENT("$Id: $")
 // First, we should forward declare all the functions that we will implement
 // inside the `mine` namespace:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // // MANIPULATORS
@@ -244,7 +244,7 @@ BSLS_IDENT("$Id: $")
 // functions should be defined in some `.cpp` file, unless you choose to make
 // them `inline` functions.
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // // MANIPULATORS
@@ -292,7 +292,7 @@ BSLS_IDENT("$Id: $")
 // in the `bdlat_ArrayFunctions` namespace for the
 // `mine::MyIntArray` type:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace bdlat_ArrayFunctions {
 //
 // // TRAITS
@@ -533,7 +533,7 @@ BSLS_IDENT("$Id: $")
 /// - - - - - - - - - - - - - - - - - - -
 // Suppose we have another type such as `your::YourFloatArray`, shown below:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace your {
 //
 // class YourFloatArray {
@@ -691,7 +691,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_cstdlib.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                        // ==============================
                        // namespace bdlat_ArrayFunctions

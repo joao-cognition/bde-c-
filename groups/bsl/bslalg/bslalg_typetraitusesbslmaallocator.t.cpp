@@ -9,7 +9,7 @@
 #include <stdio.h>      // `printf`
 #include <stdlib.h>     // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -88,7 +88,7 @@ struct AnotherAllocatorAware {
 class NotAllocating {
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <>
 struct UsesBslmaAllocator<AllocatorAware> : bsl::true_type {};

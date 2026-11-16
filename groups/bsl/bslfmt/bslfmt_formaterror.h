@@ -59,7 +59,7 @@ BSLS_IDENT("$Id: $")
 
 #include <stdexcept>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                            // ==================
@@ -106,7 +106,7 @@ namespace bsl {
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_FORMAT)
     using std::format_error;
 #else
-    using BloombergLP::bslfmt::format_error;
+    using BNP_Paribas::bslfmt::format_error;
 #endif
 
 }  // close namespace bsl
@@ -118,7 +118,7 @@ namespace bsl {
 
 #if !defined(BSLS_LIBRARYFEATURES_HAS_CPP20_FORMAT)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                            // ------------------

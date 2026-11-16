@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(bdlde_sha1_cpp,"$Id$ $CSID$")
 #include <bsl_type_traits.h>
 #include <bslmf_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 namespace {
 

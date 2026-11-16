@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdlt_currenttime_cpp,"$Id$ $CSID$")
 
 #include <bsls_systemtime.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                             // -----------------

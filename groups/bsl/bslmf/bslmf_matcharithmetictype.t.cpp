@@ -11,7 +11,7 @@
 #include <stdlib.h>  // `atoi`
 #include <typeinfo>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

@@ -43,7 +43,7 @@ BSLS_IDENT_RCSID(bdlmt_multiprioritythreadpool_cpp,"$Id$ $CSID$")
 
 #include <bsl_csignal.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

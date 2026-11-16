@@ -16,7 +16,7 @@ BSLS_IDENT("$Id: $")
 #include <s_baltst_testsequence.h>
 #include <s_baltst_testsequenceutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                          // ==========================

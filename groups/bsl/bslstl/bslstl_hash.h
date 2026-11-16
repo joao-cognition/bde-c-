@@ -311,7 +311,7 @@ BSLS_IDENT("$Id: $")
 // template <class HASH_ALGORITHM>
 // void hashAppend(HASH_ALGORITHM &hashAlg, const Point &point)
 // {
-//     using ::BloombergLP::bslh::hashAppend;
+//     using ::BNP_Paribas::bslh::hashAppend;
 //     hashAppend(hashAlg, point.d_x);
 //     hashAppend(hashAlg, point.d_y);
 // }
@@ -446,7 +446,7 @@ namespace bsl {
 /// be implemented for the type.  For more details on `hashAppend` and
 /// `bslh::Hash` see the component `bslh_hash`.
 template <class TYPE>
-struct hash : ::BloombergLP::bslh::Hash<> {
+struct hash : ::BNP_Paribas::bslh::Hash<> {
 
     // PUBLIC ACCESSORS
 
@@ -994,7 +994,7 @@ template <class TYPE>
 inline
 std::size_t hash<TYPE>::operator()(const TYPE& value) const
 {
-    return ::BloombergLP::bslh::Hash<>::operator()(value);
+    return ::BNP_Paribas::bslh::Hash<>::operator()(value);
 }
 
 inline

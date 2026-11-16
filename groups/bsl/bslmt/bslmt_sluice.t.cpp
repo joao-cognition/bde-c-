@@ -32,7 +32,7 @@
 #include <bsl_c_time.h>
 #include <bsl_c_stdio.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

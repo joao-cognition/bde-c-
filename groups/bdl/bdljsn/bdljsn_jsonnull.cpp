@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bdljsn_jsonnull_cpp, "$Id$ $CSID$")
 
 #include <bsl_ostream.h>  // `bsl::operator<<`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                                // --------------

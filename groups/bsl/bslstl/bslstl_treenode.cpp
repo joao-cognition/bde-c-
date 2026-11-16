@@ -6,7 +6,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <bslstl_string.h>            // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 }  // close namespace bslalg

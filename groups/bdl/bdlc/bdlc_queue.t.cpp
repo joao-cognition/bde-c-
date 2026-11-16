@@ -23,7 +23,7 @@
 #undef SS  // Solaris 5.10/x86 sys/regset.h via stdlib.h
 #undef ES
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_PRAGMA_GCC_DIAGNOSTIC_GCC

@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdlt_packedcalendar_cpp,"$Id$ $CSID$")
 #include <bsl_algorithm.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 // HELPER FUNCTION DATA

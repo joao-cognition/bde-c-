@@ -27,7 +27,7 @@
 #include <bsl_string.h>                   // `bsl::string`, `bsl::to_string`
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;

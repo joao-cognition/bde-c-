@@ -92,7 +92,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslmf_removecv.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 

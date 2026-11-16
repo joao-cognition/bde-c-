@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlt_posixdateimputil_cpp,"$Id$ $CSID$")
 
 #include <bsls_preconditions.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 namespace {

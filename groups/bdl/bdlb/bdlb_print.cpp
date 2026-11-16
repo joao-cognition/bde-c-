@@ -14,7 +14,7 @@ BSLS_IDENT_RCSID(bdlb_print_cpp,"$Id$ $CSID$")
 #include <bsl_iomanip.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // COMPILE-TIME ASSERTIONS
 BSLMF_ASSERT(4 == sizeof(void *) || 8 == sizeof(void *));

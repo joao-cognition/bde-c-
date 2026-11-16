@@ -29,7 +29,7 @@
 #include <bsl_set.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
@@ -1022,7 +1022,7 @@ int main(int argc, char *argv[])
 
                 try {
                     mX.reserveCapacity(500);
-                } catch (BloombergLP::bslma::TestAllocatorException& e) {
+                } catch (BNP_Paribas::bslma::TestAllocatorException& e) {
                     caught = true;
                 }
                 ASSERT(caught);
@@ -1041,7 +1041,7 @@ int main(int argc, char *argv[])
 
                 try {
                     mX.reserveCapacity(500);
-                } catch (BloombergLP::bslma::TestAllocatorException& e) {
+                } catch (BNP_Paribas::bslma::TestAllocatorException& e) {
                     caught = true;
                 }
                 ASSERT(caught);
@@ -1390,7 +1390,7 @@ int main(int argc, char *argv[])
 
                     try {
                         ASSERT(0 == mX.allocate());
-                    } catch (BloombergLP::bslma::TestAllocatorException& e) {
+                    } catch (BNP_Paribas::bslma::TestAllocatorException& e) {
                         caught = true;
                     }
                     ASSERT(caught);
@@ -1471,7 +1471,7 @@ int main(int argc, char *argv[])
 
                     try {
                         ASSERT(0 == mX.allocate());
-                    } catch (BloombergLP::bslma::TestAllocatorException& e) {
+                    } catch (BNP_Paribas::bslma::TestAllocatorException& e) {
                         caught = true;
                     }
                     ASSERT(caught);

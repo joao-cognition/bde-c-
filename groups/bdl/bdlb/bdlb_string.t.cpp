@@ -26,7 +26,7 @@
 #include <strings.h>         // `bsl::strcasecmp`, `bsl::strncasecmp`
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout; using bsl::flush; using bsl::endl; using bsl::cerr;
 
 // ============================================================================
@@ -995,7 +995,7 @@ int main(int argc, char *argv[])
             "a  ", " b ", "  c", "ab ", "a c", " bc", "abc",
 
             // strings of length 4 and above
-            "    ", "3210", "Bloomberg LP.",
+            "    ", "3210", "BNP Paribas",
             "1234567890abcdefghijklmnopqrstuvwxyz~!@#$%^&*()_+-=`{}|[]\\\t\n ",
         0};
 
@@ -1057,7 +1057,7 @@ int main(int argc, char *argv[])
             "ppp", "   ", "???", "111", "  p", " p ", "p  ",
 
             // strings of length 4 and above
-            "Test string", " Bloomberg LP. ",
+            "Test string", " BNP Paribas ",
         0};
 
         static const char CHARS[] = {

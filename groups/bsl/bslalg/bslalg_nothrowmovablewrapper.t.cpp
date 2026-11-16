@@ -21,7 +21,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                                  TEST PLAN
@@ -678,7 +678,7 @@ void usageExample1()
 /// is for allocator-aware types.
 template <class TYPE,
           bool  USES_BSLMA_ALLOC =
-              BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value>
+              BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value>
 class AllocatorTestUtil {
 
   public:
@@ -1322,25 +1322,25 @@ void TestDriver<TYPE>::testCase3()
     //
     // Testing:
     //   bsl::is_nothrow_move_constructible<NothrowMovableWrapper>
-    //   BloombergLP::bslma::UsesBslmaAllocator<NothrowMovableWrapper>
-    //   BloombergLP::bslmf::UsesAllocatorArgT<NothrowMovableWrapper>
-    //   BloombergLP::bslmf::IsBitwiseMoveable<NothrowMovableWrapper>
+    //   BNP_Paribas::bslma::UsesBslmaAllocator<NothrowMovableWrapper>
+    //   BNP_Paribas::bslmf::UsesAllocatorArgT<NothrowMovableWrapper>
+    //   BNP_Paribas::bslmf::IsBitwiseMoveable<NothrowMovableWrapper>
     //   typedef TYPE ValueType;
     //   typedef ...  allocator_type;
     // --------------------------------------------------------------------
     {
-        ASSERT(BloombergLP::bslma::UsesBslmaAllocator<Obj>::value ==
-               BloombergLP::bslma::UsesBslmaAllocator<ValueType>::value);
-        ASSERT(BloombergLP::bslmf::UsesAllocatorArgT<Obj>::value ==
-               BloombergLP::bslma::UsesBslmaAllocator<ValueType>::value);
-        ASSERT(BloombergLP::bslmf::IsBitwiseMoveable<Obj>::value ==
-               BloombergLP::bslmf::IsBitwiseMoveable<ValueType>::value);
+        ASSERT(BNP_Paribas::bslma::UsesBslmaAllocator<Obj>::value ==
+               BNP_Paribas::bslma::UsesBslmaAllocator<ValueType>::value);
+        ASSERT(BNP_Paribas::bslmf::UsesAllocatorArgT<Obj>::value ==
+               BNP_Paribas::bslma::UsesBslmaAllocator<ValueType>::value);
+        ASSERT(BNP_Paribas::bslmf::IsBitwiseMoveable<Obj>::value ==
+               BNP_Paribas::bslmf::IsBitwiseMoveable<ValueType>::value);
 
         ASSERT((bsl::is_same<typename Obj::ValueType, ValueType>::value));
-        ASSERT((BloombergLP::bslma::UsesBslmaAllocator<ValueType>::value &&
+        ASSERT((BNP_Paribas::bslma::UsesBslmaAllocator<ValueType>::value &&
                 bsl::is_same<typename Obj::allocator_type,
                              bsl::allocator<char> >::value) ||
-               !(BloombergLP::bslma::UsesBslmaAllocator<ValueType>::value));
+               !(BNP_Paribas::bslma::UsesBslmaAllocator<ValueType>::value));
 
         ASSERT((bsl::is_nothrow_move_constructible<Obj>::value));
     }

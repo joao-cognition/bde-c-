@@ -6,7 +6,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                TEST PLAN
@@ -22,7 +22,7 @@ using namespace BloombergLP;
 //
 //-----------------------------------------------------------------------------
 // PUBLIC CLASS DATA
-// [ 2] BloombergLP::bslmf::IsSame::value
+// [ 2] BNP_Paribas::bslmf::IsSame::value
 // [ 1] bsl::is_same::value
 // [ 1] bsl::is_same_v
 //

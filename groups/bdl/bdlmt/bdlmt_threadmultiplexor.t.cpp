@@ -31,7 +31,7 @@
 #pragma GCC diagnostic ignored "-Wconversion"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using bsl::cout;
 using bsl::cerr;

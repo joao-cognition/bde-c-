@@ -8,7 +8,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bsltf_simpletesttype.h>       // for testing only
 #include <bsltf_templatetestfacility.h> // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 

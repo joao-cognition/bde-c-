@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(bdlt_calendarutil_cpp,"$Id$ $CSID$")
 #include <bdlt_date.h>
 #include <bdlt_serialdateimputil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                            // ===================

@@ -46,7 +46,7 @@ const char base64url[] = {
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                          // -------------------

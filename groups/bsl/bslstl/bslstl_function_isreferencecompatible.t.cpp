@@ -8,7 +8,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -122,12 +122,12 @@ class function {
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 template <class PROTOTYPE>
 class bdef_Function;
 
-/// Stub implementation of `BloombergLP::bdef_Function` for testing.  An
+/// Stub implementation of `BNP_Paribas::bdef_Function` for testing.  An
 /// object of this type is never created in this test driver, but conversion
 /// to and from this type is tested.
 template <class PROTOTYPE>
@@ -140,7 +140,7 @@ namespace bslstl {
 // that references to `bdef_Function` can be used as references to
 // `bsl::function`.
 template <class PROTOTYPE>
-struct Function_IsReferenceCompatible<BloombergLP::bdef_Function<PROTOTYPE *>,
+struct Function_IsReferenceCompatible<BNP_Paribas::bdef_Function<PROTOTYPE *>,
                                       bsl::function<PROTOTYPE> >
 : bsl::true_type {
 };
@@ -164,7 +164,7 @@ struct DerivedClass : BaseClass {
 template <class FROM, class TO, bool EXP, int LINE>
 void testIsReferenceCompatible()
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const bool res = bslstl::Function_IsReferenceCompatible<FROM, TO>::value;
     LOOP_ASSERT(LINE, EXP == res);

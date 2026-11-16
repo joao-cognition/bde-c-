@@ -35,7 +35,7 @@
 // clang-format on
 #else
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

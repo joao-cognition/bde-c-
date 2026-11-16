@@ -28,7 +28,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_type_traits.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
                            // =================

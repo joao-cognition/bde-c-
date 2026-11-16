@@ -79,7 +79,7 @@
 
 #include <bsl_cstring.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 BSLMF_ASSERT(sizeof(unsigned int) == 4);
 

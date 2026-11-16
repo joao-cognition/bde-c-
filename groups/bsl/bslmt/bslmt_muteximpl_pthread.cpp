@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bslmt_muteximpl_pthread_cpp,"$Id$ $CSID$")
 
 #ifdef BSLMT_PLATFORM_POSIX_THREADS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // Assert 'sizeof' assumption that is made in destructor (below).
 

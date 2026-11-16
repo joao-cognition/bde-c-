@@ -78,7 +78,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_locale.h>
 #include <bsl_streambuf.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlsb {
 
                               // ==============

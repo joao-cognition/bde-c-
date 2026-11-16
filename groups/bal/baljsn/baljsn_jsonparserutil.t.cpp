@@ -53,7 +53,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using bsl::cout;
 using bsl::cerr;
@@ -2779,7 +2779,7 @@ int main(int argc, char *argv[])
           {  L_,  "\"YWJj\"",        "abc",                3, true  },
           {  L_,  "\"YWJjZA==\"",    "abcd",               4, true  },
 
-          {  L_,  "\"Qmxvb21iZXJnTFA=\"", "BloombergLP",  11, true  },
+          {  L_,  "\"Qmxvb21iZXJnTFA=\"", "BNP_Paribas",  11, true  },
           {  L_,  "",                "",                   0, false },
           {  L_,  "\"Q\"",           "",                   0, false },
           {  L_,  "\"QV\"",          "",                   0, false },

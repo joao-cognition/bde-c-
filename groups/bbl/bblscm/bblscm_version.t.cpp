@@ -6,7 +6,7 @@
 #include <bsl_cstring.h>
 #include <bsl_cstdio.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 static int testStatus = 0;
 static bool verbose = false;

@@ -35,7 +35,7 @@
 
 #include <bsl_c_stdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

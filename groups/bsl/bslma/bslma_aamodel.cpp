@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bslma_aamodel_cpp, "$Id$ $CSID$")
 #include <bslma_default.h>        // For testing only
 #include <bslma_testallocator.h>  // For testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 }  // close enterprise namespace
 
 // ----------------------------------------------------------------------------

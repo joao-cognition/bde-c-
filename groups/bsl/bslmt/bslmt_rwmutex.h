@@ -46,7 +46,7 @@ BSLS_IDENT("$Id: $")
 #endif
 #include <bsl_cstddef.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 template <class THREAD_POLICY>

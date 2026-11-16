@@ -15,7 +15,7 @@
   #include <bsl_iostream.h>
   #include <bsl_memory.h>
 
-  using namespace BloombergLP;
+  using namespace BNP_Paribas;
 
 // The following example demonstrates the use of attributes and rules to
 // conditionally enable logging.
@@ -29,7 +29,7 @@
 // logging rule that enables verbose logging only for a particular user.
 // ```
 
-    /// Process the specified `data` associated with the specified Bloomberg
+    /// Process the specified `data` associated with the specified BNP Paribas
     /// `uuid`, `luw`, and `terminalNumber`.
     void processData(int                      uuid,
                      int                      luw,

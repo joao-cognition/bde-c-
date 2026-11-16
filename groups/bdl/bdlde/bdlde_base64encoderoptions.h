@@ -241,7 +241,7 @@ BSLS_IDENT_PRAGMA_ONCE
 
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                           // ==========================
@@ -388,7 +388,7 @@ bsl::ostream& operator<<(bsl::ostream&               stream,
 namespace bsl {
 
 template <>
-struct is_trivially_copyable<BloombergLP::bdlde::Base64EncoderOptions> :
+struct is_trivially_copyable<BNP_Paribas::bdlde::Base64EncoderOptions> :
                                                              bsl::true_type {};
 
 
@@ -398,7 +398,7 @@ struct is_trivially_copyable<BloombergLP::bdlde::Base64EncoderOptions> :
 //                         INLINE FUNCTION DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                         // --------------------------

@@ -24,7 +24,7 @@
     #define SIZE_MAX bsl::numeric_limits<bsl::size_t>::max()
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cerr;
 using bsl::cout;
 using bsl::endl;

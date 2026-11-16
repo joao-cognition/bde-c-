@@ -17,7 +17,7 @@
 // No `using` statements: this entire test driver is outside the enterprise
 // namespace, to test the fact that ADL will find these `operator<<` operators
 // from outside the `bsltf` namespace.  (even though they're in the
-// `BloombergLP::bsltf` namespace).
+// `BNP_Paribas::bsltf` namespace).
 
 //=============================================================================
 //                             TEST PLAN
@@ -98,7 +98,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                     GLOBAL TYPEDEFS FOR TESTING
 // ----------------------------------------------------------------------------
 
-typedef BloombergLP::bsltf::TemplateTestFacility TTF;
+typedef BNP_Paribas::bsltf::TemplateTestFacility TTF;
 
 namespace {
 namespace u {
@@ -249,7 +249,7 @@ int main(int argc, char *argv[])
 //
 // Then, in `main`, we define a `bsltf::SimpleTestType` object `st`:
 // ```
-    BloombergLP::bsltf::SimpleTestType st;
+    BNP_Paribas::bsltf::SimpleTestType st;
 // ```
 // Now, we do some output, assigning `st` several different values and
 // streaming them out:
@@ -307,9 +307,9 @@ int main(int argc, char *argv[])
         if (verbose) printf("TEST STREAMING SUPPORTED BSLTF TYPES\n"
                             "====================================\n");
 
-        namespace bt = BloombergLP::bsltf;
+        namespace bt = BNP_Paribas::bsltf;
 
-        BloombergLP::bslma::TestAllocator ta(veryVeryVeryVerbose);
+        BNP_Paribas::bslma::TestAllocator ta(veryVeryVeryVerbose);
 
         {
             bt::AllocBitwiseMoveableTestType o1 =
@@ -716,7 +716,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("BREATHING TEST\n"
                             "==============\n");
 
-        BloombergLP::bsltf::SimpleTestType stt;
+        BNP_Paribas::bsltf::SimpleTestType stt;
 
         u::TestStreamer ts;
         ASSERT(INT_MIN == ts.value());

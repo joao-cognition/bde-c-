@@ -20,7 +20,7 @@
 #include <bsl_iostream.h>
 #include <bsl_set.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

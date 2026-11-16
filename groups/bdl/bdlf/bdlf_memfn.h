@@ -175,7 +175,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_platform.h>
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 
 namespace bdlf {
@@ -1221,7 +1221,7 @@ MemFnUtil::memFn(PROTOTYPE func, const INSTANCE& object)
 //                                TYPE TRAITS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class PROTOTYPE, class INSTANCE>

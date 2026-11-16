@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(balb_filecleanerutil_cpp,"$Id$ $CSID$")
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balb {
 
                            // ----------------------

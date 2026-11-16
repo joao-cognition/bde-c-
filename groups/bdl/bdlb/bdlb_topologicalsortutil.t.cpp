@@ -17,7 +17,7 @@
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bdlb;
 
@@ -219,7 +219,7 @@ class CustomEdge {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 /// This `struct` `TopologicalSortUtilEdgeTraits<CustomEdge>` customizes

@@ -89,7 +89,7 @@ extern "C" {
 
 }  // extern "C"
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 template <class THREAD_POLICY>

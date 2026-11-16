@@ -25,7 +25,7 @@
 #include <bsl_list.h>
 #include <bsl_map.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================
@@ -209,7 +209,7 @@ union Header {
 static inline
 int calculateMaxAlignedSize(int totalSize)
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int objectAlignmentMin = bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT - 1;
     const int ret = (totalSize + objectAlignmentMin) & ~(objectAlignmentMin);

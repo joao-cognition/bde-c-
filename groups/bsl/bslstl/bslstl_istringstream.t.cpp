@@ -347,7 +347,7 @@ void testCase2()
     if (verbose) printf("\nDEFAULT CTOR"
                         "\n============\n");
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     for (int ti = 0; ti < NUM_STRLEN_DATA; ++ti) {
         const int  LENGTH = STRLEN_DATA[ti].d_length;
@@ -493,7 +493,7 @@ void testCase3()
                         "\n========================\n");
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP11_STREAM_MOVE
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     if (veryVerbose) {
         printf("\nTesting move construction with short string.\n");
@@ -677,7 +677,7 @@ void testCase4()
     if (verbose) printf("\n'str' MANIPULATOR AND `str` ACCESSOR"
                         "\n====================================\n");
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     bslma::TestAllocator         da("default", veryVeryVeryVerbose);
     bslma::DefaultAllocatorGuard dag(&da);
@@ -731,7 +731,7 @@ void testCase4()
         // support `rebind`.  This limitation can be lifted once we fully
         // support C++20, where `rebind` is removed and rebind requests are
         // made through `allocator_traits`.  See {DRQS 168075157} and
-        // https://github.com/bloomberg/bde/pull/268
+        // https://github.com/joao-cognition/bde-c-/pull/268
         for (int tj = 0; tj < NUM_STRLEN_DATA; ++tj) {
             typedef std::allocator<CharT> OtherAllocator;
             typedef bsl::basic_string<CharT,
@@ -764,7 +764,7 @@ void testCase4()
             loadString(&mT, LENGTH_TJ);
             loadString(&oT, LENGTH_TJ);
 
-            mX.str(BloombergLP::bslmf::MovableRefUtil::move(T));
+            mX.str(BNP_Paribas::bslmf::MovableRefUtil::move(T));
             ASSERT(X.str() == oT);
             ASSERT(X.view() == oT);
             // test strings that will be changed by a move
@@ -872,7 +872,7 @@ void testCase5()
     if (verbose) printf("\nOPENMODE CTOR"
                         "\n=============\n");
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     for (int ti = 0; ti < NUM_OPENMODE_DATA; ++ti) {
         const Mode MODE = OPENMODE_DATA[ti].d_mode;
@@ -1057,7 +1057,7 @@ void testCase6()
     if (verbose) printf("\nSTRING CTOR"
                         "\n===========\n");
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     for (int ti = 0; ti < NUM_STRLEN_DATA; ++ti) {
         const int  LENGTH = STRLEN_DATA[ti].d_length;
@@ -1158,7 +1158,7 @@ void testCase6()
 
         // Once again, only with MovableRef
         for (char cfg = 'a'; cfg <= 'c'; ++cfg) {
-            typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+            typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
             const char CONFIG = cfg;  // how we specify the allocator
 
@@ -1503,7 +1503,7 @@ void testCase7()
     if (verbose) printf("\nSTRING & OPENMODE CTOR"
                         "\n======================\n");
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     for (int ti = 0; ti < NUM_OPENMODE_DATA; ++ti) {
         const Mode MODE = OPENMODE_DATA[ti].d_mode;
@@ -1613,7 +1613,7 @@ void testCase7()
 
             // Once again, only with MovableRef
             for (char cfg = 'a'; cfg <= 'c'; ++cfg) {
-                typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+                typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
                 const char CONFIG = cfg;  // how we specify the allocator
 
@@ -1949,7 +1949,7 @@ void testCase8()
     if (verbose) printf("\nCONCERN: Standard allocator can be used"
                         "\n=======================================\n");
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     typedef bsltf::StdTestAllocator<CharT>                            StdAlloc;
 
@@ -2104,7 +2104,7 @@ void testCase9()
                         "\n============\n");
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     if (verbose) printf("\n\tTesting basic behavior.\n");
     {
@@ -2221,7 +2221,7 @@ int main(int argc, char *argv[])
         veryVeryVerbose = argc > 4;
     veryVeryVeryVerbose = argc > 5;
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     // CONCERN: In no case does memory come from the global allocator.
 

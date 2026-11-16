@@ -8,7 +8,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bslma_default.h>                      // for testing only
 #include <bslma_defaultallocatorguard.h>        // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

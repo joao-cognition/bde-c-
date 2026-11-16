@@ -49,7 +49,7 @@
 // platforms.
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                  TEST PLAN
@@ -1967,7 +1967,7 @@ void validateManagedState(unsigned int                          LINE,
 
 // `debugprint` support for `bsl` types
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 void debugprint(const ManagedPtrDeleter& obj)
@@ -7147,7 +7147,7 @@ class AllocArgumentType {
     /// Assign to this object the value of the specified `rhs` object.  Note
     /// that `rhs` is left in a valid but unspecified state.
     AllocArgumentType&
-    operator=(BloombergLP::bslmf::MovableRef<AllocArgumentType> rhs);
+    operator=(BNP_Paribas::bslmf::MovableRef<AllocArgumentType> rhs);
 
     // ACCESSORS
 
@@ -7309,7 +7309,7 @@ AllocArgumentType<N>::operator=(const AllocArgumentType& rhs)
 template <int N>
 inline
 AllocArgumentType<N>& AllocArgumentType<N>::operator=(
-                         BloombergLP::bslmf::MovableRef<AllocArgumentType> rhs)
+                         BNP_Paribas::bslmf::MovableRef<AllocArgumentType> rhs)
 {
     AllocArgumentType& lvalue = rhs;
 
@@ -8260,7 +8260,7 @@ bool operator!=(const AllocEmplacableTestType<USES_BSLMA_ALLOC>& lhs,
 } // close unnamed namespace
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // We need to test `makeManaged` and `allocateManaged` functions for classes
@@ -10404,7 +10404,7 @@ void Harness::testCase18_OverAlignedTest()
 
     const std::size_t overalignSize = sizeof(OverAlignedInt);
     const std::size_t overalignAlignment =
-        BloombergLP::bsls::AlignmentFromType<OverAlignedInt>::VALUE;
+        BNP_Paribas::bsls::AlignmentFromType<OverAlignedInt>::VALUE;
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_ALIGNAS
     ASSERT(overalignAlignment >= 64);

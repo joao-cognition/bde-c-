@@ -1,6 +1,6 @@
 # ***************************************************************
-# This is an internal Bloomberg Conan recipe.                   *
-# This recipe does not work outside of Bloomberg infrastructure *
+# This is an internal BNP Paribas Conan recipe.                   *
+# This recipe does not work outside of BNP Paribas infrastructure *
 # ***************************************************************
 
 import re

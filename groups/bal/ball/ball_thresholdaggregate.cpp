@@ -20,7 +20,7 @@ BSLS_IDENT_RCSID(ball_thresholdaggregate_cpp,"$Id$ $CSID$")
 #undef max
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // ------------------------

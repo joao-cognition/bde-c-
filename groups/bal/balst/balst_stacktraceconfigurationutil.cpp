@@ -4,7 +4,7 @@
 
 #include <bsls_atomicoperations.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 namespace {
 namespace u {
@@ -14,7 +14,7 @@ bsls::AtomicOperations::AtomicTypes::Int disableStackResolving = { false };
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
                              // -----------------

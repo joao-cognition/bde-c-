@@ -42,7 +42,7 @@
 #include <bsl_string.h>      // `bslstl::StringRef`
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -2259,7 +2259,7 @@ int main(int argc, const char *argv[])  {
  && defined(BSLS_PLATFORM_CMP_MSVC)   \
  && BSLS_PLATFORM_CMP_VERSION <= 1900 // MSVC 2015 (error)
             typedef Obj& (Obj::*structOperatorPtr)(
-                                        const BloombergLP::balcl::OptionInfo&);
+                                        const BNP_Paribas::balcl::OptionInfo&);
 #else
             typedef Obj& (Obj::*structOperatorPtr)(const OptionInfo&);
 #endif

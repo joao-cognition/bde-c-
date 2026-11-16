@@ -94,7 +94,7 @@ struct is_nothrow_move_constructible;
          ? false                                                              \
          : ::std::is_nothrow_move_constructible<t_TYPE>::value)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                    // =====================================
@@ -319,7 +319,7 @@ namespace bsl {
 /// there are no cv-qualified partial specializations of this trait.
 template <class t_TYPE>
 struct is_nothrow_move_constructible
-: BloombergLP::bslmf::IsNothrowMoveConstructible_Impl<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsNothrowMoveConstructible_Impl<t_TYPE>::type {
 };
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_VARIABLE_TEMPLATES

@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(ball_multiplexobserver_cpp,"$Id$ $CSID$")
 
 #include <bsl_iostream.h>                // for warning print only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                          // -----------------------

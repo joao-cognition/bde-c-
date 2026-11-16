@@ -470,7 +470,7 @@ BSLS_IDENT("$Id: $")
 
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
                           // ================================

@@ -9,7 +9,7 @@
 #include <bsl_cstdint.h>
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

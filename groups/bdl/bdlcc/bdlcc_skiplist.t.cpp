@@ -66,7 +66,7 @@
 #include <bsl_c_ctype.h>
 #include <bsl_c_stdlib.h>     // `rand_r`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -763,7 +763,7 @@ bsl::ostream& operator<<(bsl::ostream& stream, ValueSemanticTest::LMode mode)
 //                             TEST DRIVER CLASS
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 // For some reason, Solaris CC wasn't able to find these '<' operators when

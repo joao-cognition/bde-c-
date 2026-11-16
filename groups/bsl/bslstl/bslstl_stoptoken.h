@@ -162,7 +162,7 @@ namespace bsl {
 template <class t_CALLBACK> class stop_callback;
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                          // ==========================
@@ -234,7 +234,7 @@ class StopCallback_CallbackStorage {
   public:
     // TYPES
     typedef typename bsl::conditional<
-        BloombergLP::bslma::UsesBslmaAllocator<t_CALLBACK>::value,
+        BNP_Paribas::bslma::UsesBslmaAllocator<t_CALLBACK>::value,
         bsl::allocator<char>,
         StopCallback_NoAlloc>::type allocator_type;
 
@@ -391,8 +391,8 @@ class stop_token {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslstl::StopToken_RefCountedState RefCountedState;
-    typedef BloombergLP::bslmf::MovableRefUtil             MoveUtil;
+    typedef BNP_Paribas::bslstl::StopToken_RefCountedState RefCountedState;
+    typedef BNP_Paribas::bslmf::MovableRefUtil             MoveUtil;
 
     // DATA
 
@@ -456,7 +456,7 @@ class stop_token {
     /// Create a `stop_token` object that refers to the same stop state (or
     /// lack) thereof as the specified `original` object, and reset
     /// `original` to not refer to a stop state.
-    stop_token(BloombergLP::bslmf::MovableRef<stop_token> original)
+    stop_token(BNP_Paribas::bslmf::MovableRef<stop_token> original)
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Destroy this object.
@@ -471,7 +471,7 @@ class stop_token {
     /// Set this object to refer to the stop state (or lack thereof) that
     /// the specified `other` object refers to, and reset `other` to not
     /// refer to a stop state.
-    stop_token& operator=(BloombergLP::bslmf::MovableRef<stop_token> other)
+    stop_token& operator=(BNP_Paribas::bslmf::MovableRef<stop_token> other)
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Set `*this` to refer to the stop state (or lack thereof) that the
@@ -518,8 +518,8 @@ class stop_source {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslstl::StopToken_RefCountedState RefCountedState;
-    typedef BloombergLP::bslmf::MovableRefUtil             MoveUtil;
+    typedef BNP_Paribas::bslstl::StopToken_RefCountedState RefCountedState;
+    typedef BNP_Paribas::bslmf::MovableRefUtil             MoveUtil;
 
     // DATA
 
@@ -578,7 +578,7 @@ class stop_source {
     /// Create a `stop_source` object that refers to the stop state (or lack
     /// thereof) referred to by the specified `original`, and reset
     /// `original` to not refer to a stop state.
-    stop_source(BloombergLP::bslmf::MovableRef<stop_source> original)
+    stop_source(BNP_Paribas::bslmf::MovableRef<stop_source> original)
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Create a `stop_source` object that refers to a distinct stop state,
@@ -598,7 +598,7 @@ class stop_source {
     /// Set this object to refer to the stop state (or lack thereof) that
     /// the specified `other` object refers to, and reset `other` to not
     /// refer to a stop state.
-    stop_source& operator=(BloombergLP::bslmf::MovableRef<stop_source> other)
+    stop_source& operator=(BNP_Paribas::bslmf::MovableRef<stop_source> other)
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Set `*this` to refer to the stop state (or lack thereof) that the
@@ -658,18 +658,18 @@ class stop_callback {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     // DATA
 
     // object that holds the `t_CALLBACK` object or reference and can be a
     // member of the intrusive linked list maintained by
     // `bslstl_StopState`
-    BloombergLP::bslstl::StopCallback_Node<t_CALLBACK> d_node;
+    BNP_Paribas::bslstl::StopCallback_Node<t_CALLBACK> d_node;
 
     // pointer to the stop state on which `d_node` is scheduled to be
     // invoked, if any
-    bsl::shared_ptr<BloombergLP::bslstl::StopState>    d_state_p;
+    bsl::shared_ptr<BNP_Paribas::bslstl::StopState>    d_state_p;
 
     // PRIVATE MANIPULATORS
 
@@ -688,7 +688,7 @@ class stop_callback {
 
     /// The allocator type is `bsl::allocator<char>` if `t_CALLBACK` is
     /// allocator-aware, and an empty dummy type otherwise.
-    typedef typename BloombergLP::bslstl::StopCallback_Node<
+    typedef typename BNP_Paribas::bslstl::StopCallback_Node<
         t_CALLBACK>::allocator_type allocator_type;
 
     // CREATORS
@@ -712,7 +712,7 @@ class stop_callback {
           const allocator_type&                      alloc = allocator_type());
     template <class t_ARG>
     explicit stop_callback(
-          BloombergLP::bslmf::MovableRef<stop_token> token,
+          BNP_Paribas::bslmf::MovableRef<stop_token> token,
           BSLS_COMPILERFEATURES_FORWARD_REF(t_ARG)   arg,
           const allocator_type&                      alloc = allocator_type());
     template <class t_ARG>
@@ -722,7 +722,7 @@ class stop_callback {
           const allocator_type&                      alloc = allocator_type());
     template <class t_ARG>
     explicit stop_callback(
-          BloombergLP::bslmf::MovableRef<stop_token> token,
+          BNP_Paribas::bslmf::MovableRef<stop_token> token,
           t_ARG&                                     arg,
           const allocator_type&                      alloc = allocator_type());
 
@@ -749,7 +749,7 @@ stop_callback(stop_token, t_CALLBACK) -> stop_callback<t_CALLBACK>;
 #endif
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <class t_CALLBACK>
 struct UsesBslmaAllocator<bsl::stop_callback<t_CALLBACK> >
@@ -762,7 +762,7 @@ struct UsesBslmaAllocator<bsl::stop_callback<t_CALLBACK> >
 //                              INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                          // --------------------------
@@ -800,7 +800,7 @@ StopCallback_CallbackStorage<t_CALLBACK, t_IS_REFERENCE>::
                             const allocator_type&                    allocator,
                             BSLS_COMPILERFEATURES_FORWARD_REF(t_ARG) arg)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
                                     d_buf.address(),
                                     mechanism(allocator),
                                     BSLS_COMPILERFEATURES_FORWARD(t_ARG, arg));
@@ -811,7 +811,7 @@ template <class t_ARG>
 StopCallback_CallbackStorage<t_CALLBACK, t_IS_REFERENCE>::
     StopCallback_CallbackStorage(const allocator_type& allocator, t_ARG& arg)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(d_buf.address(),
+    BNP_Paribas::bslma::ConstructionUtil::construct(d_buf.address(),
                                                     mechanism(allocator),
                                                     arg);
 }
@@ -820,7 +820,7 @@ template <class t_CALLBACK, bool t_IS_REFERENCE>
 StopCallback_CallbackStorage<t_CALLBACK,
                              t_IS_REFERENCE>::~StopCallback_CallbackStorage()
 {
-    BloombergLP::bslma::DestructionUtil::destroy(d_buf.address());
+    BNP_Paribas::bslma::DestructionUtil::destroy(d_buf.address());
 }
 
 template <class t_CALLBACK, bool t_IS_REFERENCE>
@@ -930,7 +930,7 @@ stop_token::stop_token(const stop_token& original) BSLS_KEYWORD_NOEXCEPT
 }
 
 inline
-stop_token::stop_token(BloombergLP::bslmf::MovableRef<stop_token> original)
+stop_token::stop_token(BNP_Paribas::bslmf::MovableRef<stop_token> original)
                                                           BSLS_KEYWORD_NOEXCEPT
 : d_state_p(MoveUtil::move(MoveUtil::access(original).d_state_p))
 {
@@ -952,7 +952,7 @@ stop_token& stop_token::operator=(
 
 inline
 stop_token& stop_token::operator=(
-        BloombergLP::bslmf::MovableRef<stop_token> other) BSLS_KEYWORD_NOEXCEPT
+        BNP_Paribas::bslmf::MovableRef<stop_token> other) BSLS_KEYWORD_NOEXCEPT
 {
     d_state_p = MoveUtil::move(MoveUtil::access(other).d_state_p);
     return *this;
@@ -976,7 +976,7 @@ stop_source::stop_source(nostopstate_t) BSLS_KEYWORD_NOEXCEPT
 }
 
 inline
-stop_source::stop_source(BloombergLP::bslmf::MovableRef<stop_source> original)
+stop_source::stop_source(BNP_Paribas::bslmf::MovableRef<stop_source> original)
                                                           BSLS_KEYWORD_NOEXCEPT
 : d_state_p(MoveUtil::move(MoveUtil::access(original).d_state_p))
 {
@@ -1018,7 +1018,7 @@ stop_callback<t_CALLBACK>::stop_callback(
 template <class t_CALLBACK>
 template <class t_ARG>
 stop_callback<t_CALLBACK>::stop_callback(
-                              BloombergLP::bslmf::MovableRef<stop_token> token,
+                              BNP_Paribas::bslmf::MovableRef<stop_token> token,
                               BSLS_COMPILERFEATURES_FORWARD_REF(t_ARG)   arg,
                               const allocator_type&                      alloc)
 : d_node(alloc, BSLS_COMPILERFEATURES_FORWARD(t_ARG, arg))
@@ -1041,7 +1041,7 @@ stop_callback<t_CALLBACK>::stop_callback(const stop_token&     token,
 template <class t_CALLBACK>
 template <class t_ARG>
 stop_callback<t_CALLBACK>::stop_callback(
-                              BloombergLP::bslmf::MovableRef<stop_token> token,
+                              BNP_Paribas::bslmf::MovableRef<stop_token> token,
                               t_ARG&                                     arg,
                               const allocator_type&                      alloc)
 : d_node(alloc, arg)

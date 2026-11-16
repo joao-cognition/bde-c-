@@ -128,7 +128,7 @@
 #include <bsl_unordered_map.h>
 #include <bsl_unordered_set.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -720,7 +720,7 @@ bool bdlat_sequenceHasAttribute(const TestSequence0& /* object */,
 
 using baexml_Decoder_TestNamespace::TestSequence0;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_SequenceFunctions {
     template <>
     struct IsSequence<TestSequence0> : bsl::true_type {
@@ -882,7 +882,7 @@ bool bdlat_sequenceHasAttribute(const TestSequence1&, int attributeId)
 
 using baexml_Decoder_TestNamespace::TestSequence1;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_SequenceFunctions {
     template <>
     struct IsSequence<TestSequence1> : bsl::true_type {
@@ -1087,7 +1087,7 @@ bool bdlat_sequenceHasAttribute(const TestSequence2&, int attributeId)
 
 using baexml_Decoder_TestNamespace::TestSequence2;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_SequenceFunctions {
 template <>
 struct IsSequence<TestSequence2>
@@ -1161,7 +1161,7 @@ bool bdlat_choiceHasSelection(const TestChoice0& /* object */,
 
 using baexml_Decoder_TestNamespace::TestChoice0;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ChoiceFunctions {
     template <>
     struct IsChoice<TestChoice0> : bsl::true_type {
@@ -1314,7 +1314,7 @@ bool bdlat_choiceHasSelection(const TestChoice1&, int id)
 
 using baexml_Decoder_TestNamespace::TestChoice1;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ChoiceFunctions {
     template <>
     struct IsChoice<TestChoice1> : bsl::true_type {
@@ -1508,7 +1508,7 @@ bool bdlat_choiceHasSelection(const TestChoice2&, int id)
 
 using baexml_Decoder_TestNamespace::TestChoice2;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ChoiceFunctions {
     template <>
     struct IsChoice<TestChoice2> : bsl::true_type {
@@ -1723,7 +1723,7 @@ int bdlat_sequenceAccessAttribute(const TestSequenceWithVector& object,
 
 using baexml_Decoder_TestNamespace::TestSequenceWithVector;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_SequenceFunctions {
     template <>
     struct IsSequence<TestSequenceWithVector> : bsl::true_type {
@@ -2121,7 +2121,7 @@ using baexml_Decoder_TestNamespace::TestVectorElemTypeContext;
       // Associate `TestVectorElemType` With `TestVectorElemTypeContext`
       // ===============================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
     template <>
     struct Decoder_SelectContext<TestVectorElemType> {
@@ -2140,7 +2140,7 @@ struct DummyEnumeration {
     };
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlat_EnumFunctions {
 
@@ -2166,7 +2166,7 @@ public:
     const int& toInt() { return d_i; }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlat_CustomizedTypeFunctions {
 
@@ -2182,7 +2182,7 @@ namespace bdlat_CustomizedTypeFunctions {
 }  // close namespace bdlat_CustomizedTypeFunctions
 }  // close enterprise namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                                // ==============
@@ -4244,8 +4244,8 @@ R(L_,  s(na0,na1,n(i0),n(i1))   , t, t, x(S,x(A0,V0   ),x(A1,V1   )) )  // *
 //..
 //  <?xml version='1.0' encoding='UTF-8'?>
 //  <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
-//             xmlns:test='http://bloomberg.com/schemas/test'
-//             targetNamespace='http://bloomberg.com/schemas/test'
+//             xmlns:test='http://bnpparibas.com/schemas/test'
+//             targetNamespace='http://bnpparibas.com/schemas/test'
 //             elementFormDefault='unqualified'>
 //
 //      <xs:complexType name='Address'>
@@ -4281,7 +4281,7 @@ R(L_,  s(na0,na1,n(i0),n(i1))   , t, t, x(S,x(A0,V0   ),x(A1,V1   )) )  // *
 // ```
 //  #include <test_employee.h>
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     int usageExample1()
     {
@@ -4329,7 +4329,7 @@ R(L_,  s(na0,na1,n(i0),n(i1))   , t, t, x(S,x(A0,V0   ),x(A1,V1   )) )  // *
 // ```
 //  #include <test_employee.h>
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     int usageExample2()
     {
@@ -13633,9 +13633,9 @@ int main(int argc, char *argv[])
     const char SCHEMA[] =
         "<?xml version='1.0' encoding='UTF-8'?>\n"
         "<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'\n"
-        "           xmlns:tns='urn:x-bloomberg-com:test'\n"
-        "           xmlns:bdem='http://bloomberg.com/schemas/bdem'\n"
-        "           targetNamespace='urn:x-bloomberg-com:test'\n"
+        "           xmlns:tns='urn:x-bnpparibas-com:test'\n"
+        "           xmlns:bdem='http://bnpparibas.com/schemas/bdem'\n"
+        "           targetNamespace='urn:x-bnpparibas-com:test'\n"
         "           bdem:package='test'\n"
         "           elementFormDefault='qualified'>\n"
         ""

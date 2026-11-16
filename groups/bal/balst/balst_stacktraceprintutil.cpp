@@ -24,7 +24,7 @@ BSLS_IDENT_RCSID(balst_stacktraceprintutil_cpp,"$Id$ $CSID$")
 #pragma optimize("", off)
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balst {
                          // -------------------------

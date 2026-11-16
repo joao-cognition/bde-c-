@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bslmt_saturatedtimeconversionimputil_cpp,"$Id$ $CSID$")
 #include <bsls_assert.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // PRIVATE CONSTANTS
 enum {

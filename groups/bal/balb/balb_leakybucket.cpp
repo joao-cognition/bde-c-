@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(balb_leakybucket.cpp,"$Id$ $CSID$")
 
 #include <bsl_c_math.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

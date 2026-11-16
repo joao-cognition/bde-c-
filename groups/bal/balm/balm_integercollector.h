@@ -27,8 +27,8 @@ BSLS_IDENT("$Id: $")
 //
 ///Alternative Systems for Telemetry
 ///---------------------------------
-// Bloomberg software may alternatively use the GUTS telemetry API, which is
-// integrated into Bloomberg infrastructure.
+// BNP Paribas software may alternatively use the GUTS telemetry API, which is
+// integrated into BNP Paribas infrastructure.
 //
 ///Thread Safety
 ///-------------
@@ -87,7 +87,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_types.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
                            // ======================

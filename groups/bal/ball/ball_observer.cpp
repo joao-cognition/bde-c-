@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(ball_observer_cpp,"$Id$ $CSID$")
 #include <bslmf_assert.h>
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                          // --------------

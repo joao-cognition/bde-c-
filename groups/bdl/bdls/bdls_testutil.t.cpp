@@ -34,8 +34,8 @@
 // Ensure that the `BDLS_TESTUTIL_*` macros do not require:
 //  using namespace bsl;
 
-using namespace BloombergLP;
-using namespace BloombergLP::bsltf;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bsltf;
 
 //=============================================================================
 //                             TEST PLAN

@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(bslmt_qlock_cpp,"$Id$ $CSID$")
 
 namespace {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 typedef bslmt::Semaphore *SemaphorePtr;
 
@@ -192,7 +192,7 @@ SemaphorePtr getSemaphoreForCurrentThread()
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                           // ---------------------
                           // class QLock_EventFlag

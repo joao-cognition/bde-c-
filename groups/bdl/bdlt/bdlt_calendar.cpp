@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdlt_calendar_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 // The implementation requires that the return value for an unsuccessful

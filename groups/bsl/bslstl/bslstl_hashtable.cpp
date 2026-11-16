@@ -16,7 +16,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <algorithm>         // 'lower_bound'
 #include <limits>
 
-namespace BloombergLP
+namespace BNP_Paribas
 {
 namespace bslstl
 {

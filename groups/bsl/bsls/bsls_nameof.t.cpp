@@ -19,7 +19,7 @@
 #include <stdio.h>       // sprintf()
 #include <stdlib.h>      // atoi()
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                 TEST PLAN
@@ -100,7 +100,7 @@ static bool veryVeryVeryVerbose;
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 struct Stopwatch {
@@ -113,11 +113,11 @@ struct Stopwatch {
 // First, your test driver must have the following `using` statements so that
 // the template class `NameOf` and the template function `nameOfType` can be
 // referred to concisely, without having to qualify them with namespaces on
-// each call.  Note that if you've already said `using namespace BloombergLP`
-// you don't have to give the `BloombergLP::` qualifiers here:
+// each call.  Note that if you've already said `using namespace BNP_Paribas`
+// you don't have to give the `BNP_Paribas::` qualifiers here:
 // ```
-    using BloombergLP::bsls::NameOf;
-    using BloombergLP::bsls::nameOfType;
+    using BNP_Paribas::bsls::NameOf;
+    using BNP_Paribas::bsls::nameOfType;
 // ```
 // Next, we define some types in the unnamed namespace:
 // ```
@@ -143,7 +143,7 @@ static bool eq(const char *lhs, const char *rhs)
     return !std::strcmp(lhs, rhs);
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 template <class TYPE>
@@ -243,10 +243,10 @@ int main(int argc, char *argv[])
 //
     ASSERT(!std::strcmp("int",    nameOfType(ii)));
 // ```
-// Then, we see that `NameOf` and `nameOfType` will strip `BloombergLP::`
+// Then, we see that `NameOf` and `nameOfType` will strip `BNP_Paribas::`
 // namespace qualifiers, as well as anonymous namespace qualifiers.
 // ```
-    typedef BloombergLP::bsls::Stopwatch SW;
+    typedef BNP_Paribas::bsls::Stopwatch SW;
 //
     const SW      sw;
     const MyType  mt = { 2, 'a' };
@@ -255,7 +255,7 @@ int main(int argc, char *argv[])
 //
     ASSERT(!std::strcmp("bsls::Stopwatch", NameOf<SW>()));
     ASSERT(!std::strcmp("bsls::Stopwatch",
-                                      NameOf<BloombergLP::bsls::Stopwatch>()));
+                                      NameOf<BNP_Paribas::bsls::Stopwatch>()));
     ASSERT(!std::strcmp("bsls::Stopwatch", nameOfType(sw)));
 //
     ASSERT(!std::strcmp("MyType",          NameOf<MyType>()));
@@ -289,7 +289,7 @@ if (verbose) {
 // ```
 if (verbose) {
     printf("NameOf<double>() = ");
-    BloombergLP::bsls::debugprint(NameOf<double>());
+    BNP_Paribas::bsls::debugprint(NameOf<double>());
     printf("\n");
 }
 //
@@ -343,9 +343,9 @@ if (verbose) {
         if (verbose) printf("BREATHING TEST\n"
                             "==============\n");
 
-        using BloombergLP::bsls::NameOf;
-        using BloombergLP::bsls::nameOfType;
-        using BloombergLP::bsls::Pretty;
+        using BNP_Paribas::bsls::NameOf;
+        using BNP_Paribas::bsls::nameOfType;
+        using BNP_Paribas::bsls::Pretty;
 
         int             ii = 0;
         MyType          mt;

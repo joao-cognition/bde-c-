@@ -18,7 +18,7 @@
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif // BSLS_PLATFORM_CMP_CLANG
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bslx;
 

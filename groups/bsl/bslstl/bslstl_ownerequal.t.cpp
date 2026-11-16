@@ -22,7 +22,7 @@
 #include <type_traits>   // std::is_trivially_copyable
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

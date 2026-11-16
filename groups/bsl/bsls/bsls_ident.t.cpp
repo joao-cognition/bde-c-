@@ -8,7 +8,7 @@
 #include <cstdlib>              // `atoi`
 #include <iostream>
 
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

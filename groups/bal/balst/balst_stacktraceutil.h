@@ -251,7 +251,7 @@ BSLS_IDENT("$Id: $")
 // 0x10001e438 0x10001e3b8 0x10001e3b0 0x10001e3b0 0x10001e3b0 0x10001e3b0 ...
 // ```
 // The hex stack traces can be translated to a human-readable stack trace
-// using tools outside of BDE, such as Bloomberg's `/bb/bin/showfunc.tsk`:
+// using tools outside of BDE, such as BNP Paribas's `/bb/bin/showfunc.tsk`:
 // ```
 // $ /bb/bin/showfunc.tsk <path to executable> 0x10001e438 0x10001e3b8 ...
 // 0x10001e438 .traceExample3__Fv + 64
@@ -273,7 +273,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
 /// This `struct` serves as a namespace for a collection of functions that

@@ -34,7 +34,7 @@ BSLS_IDENT_RCSID(bdls_pipeutil_cpp,"$Id$ $CSID$")
 #include <bsl_cctype.h>
 #include <bsl_algorithm.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // HELPER FUNCTIONS
 

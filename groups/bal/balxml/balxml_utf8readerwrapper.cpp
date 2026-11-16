@@ -58,7 +58,7 @@ const char *nonNullStr(const char *str)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
 
                                 // ------------

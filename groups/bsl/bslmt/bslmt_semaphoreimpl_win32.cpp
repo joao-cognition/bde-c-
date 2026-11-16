@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(bslmt_semaphoreimpl_win32_cpp,"$Id$ $CSID$")
 
 #ifdef BSLMT_PLATFORM_WIN32_THREADS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
               // ---------------------------------------------
               // class SemaphoreImpl<Platform::Win32Semaphore>

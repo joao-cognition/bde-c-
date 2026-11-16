@@ -50,7 +50,7 @@ BSLS_IDENT_RCSID(baltzo_zoneinfobinaryreader_cpp,"$Id$ $CSID$")
 //:        o time/tzset.c         (source for working with tz data)
 //:        o time/tzfile.c        (source for loading tz data)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

@@ -510,7 +510,7 @@ using enable_if_t = typename enable_if<t_COND, t_TYPE>::type;
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 

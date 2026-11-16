@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdld_datumarraybuilder_cpp, "$Id$ $CSID$")
 #include <bsl_cstring.h>
 #include <bsl_memory.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdld {
 
 namespace {

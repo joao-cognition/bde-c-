@@ -167,7 +167,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_iterator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 #if defined(BSLS_LIBRARYFEATURES_STDCPP_LIBCSTD)

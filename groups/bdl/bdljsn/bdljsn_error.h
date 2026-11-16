@@ -96,7 +96,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_string.h>
 #include <bsl_string_view.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                                 // ===========
@@ -418,7 +418,7 @@ template <class HASHALG>
 inline
 void bdljsn::hashAppend(HASHALG& hashAlgorithm, const Error& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlgorithm, object.location());
     hashAppend(hashAlgorithm, object.message());
 }

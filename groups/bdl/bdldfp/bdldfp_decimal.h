@@ -546,7 +546,7 @@ BSLS_IDENT("$Id$")
 // bdldfp::Decimal128  nan = "nan"_d128;
 // ```
 // The operators providing literals are available in the
-// `BloombergLP::bdldfp::literals::DecimalLiterals` namespace (where `literals`
+// `BNP_Paribas::bdldfp::literals::DecimalLiterals` namespace (where `literals`
 // and `DecimalLiterals` are both inline namespaces). Because of inline
 // namespaces, there are several viable options for a using declaration, but
 // *we* *recommend* `using namespace bdldfp::DecimalLiterals`, which minimizes
@@ -645,15 +645,15 @@ BSLS_IDENT("$Id$")
              // Portable decimal floating-point literal support
 
 #define BDLDFP_DECIMAL_DF(lit)                                                \
-    BloombergLP::bdldfp::Decimal32(BDLDFP_DECIMALIMPUTIL_DF(lit))
+    BNP_Paribas::bdldfp::Decimal32(BDLDFP_DECIMALIMPUTIL_DF(lit))
 
 #define BDLDFP_DECIMAL_DD(lit)                                                \
-    BloombergLP::bdldfp::Decimal64(BDLDFP_DECIMALIMPUTIL_DD(lit))
+    BNP_Paribas::bdldfp::Decimal64(BDLDFP_DECIMALIMPUTIL_DD(lit))
 
 #define BDLDFP_DECIMAL_DL(lit)                                                \
-    BloombergLP::bdldfp::Decimal128(BDLDFP_DECIMALIMPUTIL_DL(lit))
+    BNP_Paribas::bdldfp::Decimal128(BDLDFP_DECIMALIMPUTIL_DL(lit))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
 typedef Decimal_Type32  Decimal32;
@@ -4756,7 +4756,7 @@ class faux_numeric_limits;
 
 /// Explicit full specialization of the standard "traits" template
 /// `std::numeric_limits` for the type
-/// `BloombergLP::bdldfp::Decimal_StandardNamespaceCanary`.  Note that this
+/// `BNP_Paribas::bdldfp::Decimal_StandardNamespaceCanary`.  Note that this
 /// specialization is required for technical reasons and it is identical to
 /// the non-specialized default traits.
 template<class DUMMY_TYPE>
@@ -4766,7 +4766,7 @@ class faux_numeric_limits<Decimal_StandardNamespaceCanary, DUMMY_TYPE>
   public:
     // CLASS DATA
 
-    /// `BloombergLP::bdldfp::Decimal_StandardNamespaceCanary` is not a
+    /// `BNP_Paribas::bdldfp::Decimal_StandardNamespaceCanary` is not a
     /// numeric type.
     static const bool is_specialized = false;
 };
@@ -4776,87 +4776,87 @@ class faux_numeric_limits<Decimal_StandardNamespaceCanary, DUMMY_TYPE>
     // ==============================================================
 
 template<class DUMMY_TYPE>
-class faux_numeric_limits<BloombergLP::bdldfp::Decimal32, DUMMY_TYPE> {
+class faux_numeric_limits<BNP_Paribas::bdldfp::Decimal32, DUMMY_TYPE> {
         // Explicit full specialization of the standard "traits" template
-        // 'std::numeric_limits' for the type 'BloombergLP::bdldfp::Decimal32'.
+        // 'std::numeric_limits' for the type 'BNP_Paribas::bdldfp::Decimal32'.
 
   public:
     // CLASS DATA
 
     /// The template instance
-    /// `std::numeric_limits<BloombergLP::bdldfp::Decimal32>` is
+    /// `std::numeric_limits<BNP_Paribas::bdldfp::Decimal32>` is
     /// meaningfully specialized.  Also means that
-    /// `BloombergLP::bdldfp::Decimal32` is a numeric type.
+    /// `BNP_Paribas::bdldfp::Decimal32` is a numeric type.
     static const bool is_specialized = true;
 
     /// The maximum number of significant digits, in the native (10) radix
-    /// of the `BloombergLP::bdldfp::Decimal32` type that the type is able
+    /// of the `BNP_Paribas::bdldfp::Decimal32` type that the type is able
     /// to represent.  Defined to be 7 by IEEE-754.
     static const int digits = 7;
 
     /// The maximum number of significant decimal digits that the
-    /// `BloombergLP::bdldfp::Decimal32` type is able to represent.  Defined
+    /// `BNP_Paribas::bdldfp::Decimal32` type is able to represent.  Defined
     /// to be 7 by IEEE-754.
     static const int digits10 = digits;
 
     /// The number of significant decimal digits necessary to uniquely
     /// represent the significant digits of any
-    /// `BloombergLP::bdldfp::Decimal32` value.  Note that max_digit10 is
+    /// `BNP_Paribas::bdldfp::Decimal32` value.  Note that max_digit10 is
     /// the same as digits10 for decimal floating-point values.
     static const int max_digits10 = digits;
 
-    /// `BloombergLP::bdldfp::Decimal32` is a signed type.
+    /// `BNP_Paribas::bdldfp::Decimal32` is a signed type.
     static const bool is_signed = true;
 
-    /// `BloombergLP::bdldfp::Decimal32` is not an integer type.
+    /// `BNP_Paribas::bdldfp::Decimal32` is not an integer type.
     static const bool is_integer = false;
 
-    /// `BloombergLP::bdldfp::Decimal32` is not an exact type, i.e.:
+    /// `BNP_Paribas::bdldfp::Decimal32` is not an exact type, i.e.:
     /// calculations done on the type are not free of rounding errors.  Note
     /// that integer and possibly rational types may be exact,
     /// floating-point types are never exact.
     static const bool is_exact = false;
 
-    /// The base for `BloombergLP::bdldfp::Decimal32` is decimal or 10.
+    /// The base for `BNP_Paribas::bdldfp::Decimal32` is decimal or 10.
     static const int radix = 10;
 
     /// The lowest possible negative exponent for the native base of the
-    /// `BloombergLP::bdldfp::Decimal32` type that does not yet represent a
+    /// `BNP_Paribas::bdldfp::Decimal32` type that does not yet represent a
     /// denormal number.  Defined to be -95 by IEEE-754.
     static const int min_exponent = -95;
 
     /// The lowest possible negative decimal exponent in the
-    /// `BloombergLP::bdldfp::Decimal32` type that does not yet represent a
+    /// `BNP_Paribas::bdldfp::Decimal32` type that does not yet represent a
     /// denormal number.  Defined to be -95 by IEEE-754.  Note that
     /// `min_exponent10` is the same as `min_exponent` for decimal types.
     static const int min_exponent10 = min_exponent;
 
     /// The highest possible positive exponent for the native base of the
-    /// `BloombergLP::bdldfp::Decimal32` type that represents a finite
+    /// `BNP_Paribas::bdldfp::Decimal32` type that represents a finite
     /// value.  Defined to be 96 by IEEE-754.
     static const int max_exponent = 96;
 
     /// The highest possible positive decimal exponent of the
-    /// `BloombergLP::bdldfp::Decimal32` type that represents a finite
+    /// `BNP_Paribas::bdldfp::Decimal32` type that represents a finite
     /// value.  Defined to be 97 by IEEE-754.  Note that `max_exponent10` is
     /// the same as `max_exponent` for decimal types.
     static const int max_exponent10 = max_exponent;
 
-    /// `BloombergLP::bdldfp::Decimal32` can represent infinity.
+    /// `BNP_Paribas::bdldfp::Decimal32` can represent infinity.
     static const bool has_infinity = true;
 
-    /// `BloombergLP::bdldfp::Decimal32` can be a non-signaling Not a
+    /// `BNP_Paribas::bdldfp::Decimal32` can be a non-signaling Not a
     /// Number.
     static const bool has_quiet_NaN = true;
 
-    /// `BloombergLP::bdldfp::Decimal32` can be a signaling Not a Number.
+    /// `BNP_Paribas::bdldfp::Decimal32` can be a signaling Not a Number.
     static const bool has_signaling_NaN = true;
 
-    /// `BloombergLP::bdldfp::Decimal32` may contain denormal values.
+    /// `BNP_Paribas::bdldfp::Decimal32` may contain denormal values.
     BSLS_ANNOTATION_DEPRECATED
     static const std::float_denorm_style has_denorm = std::denorm_present;
 
-    /// `BloombergLP::bdldfp::Decimal32` is able to distinguish loss of
+    /// `BNP_Paribas::bdldfp::Decimal32` is able to distinguish loss of
     /// precision (floating-point underflow) due to denormalization from
     /// other causes.
     static const bool has_denorm_loss = true;
@@ -4879,7 +4879,7 @@ class faux_numeric_limits<BloombergLP::bdldfp::Decimal32, DUMMY_TYPE> {
     static const bool traps = true;
 
     /// The highest possible precision in the
-    /// `BloombergLP::bdldfp::Decimal32` type that is large enough to
+    /// `BNP_Paribas::bdldfp::Decimal32` type that is large enough to
     /// output the smallest non-zero denormalized value in fixed notation.
     static const int max_precision = digits10 - 1 + (-min_exponent10);
 
@@ -4895,87 +4895,87 @@ class faux_numeric_limits<BloombergLP::bdldfp::Decimal32, DUMMY_TYPE> {
     // ==============================================================
 
 template<class DUMMY_TYPE>
-class faux_numeric_limits<BloombergLP::bdldfp::Decimal64, DUMMY_TYPE> {
+class faux_numeric_limits<BNP_Paribas::bdldfp::Decimal64, DUMMY_TYPE> {
         // Explicit full specialization of the standard "traits" template
-        // 'std::numeric_limits' for the type 'BloombergLP::bdldfp::Decimal64'.
+        // 'std::numeric_limits' for the type 'BNP_Paribas::bdldfp::Decimal64'.
 
   public:
     // CLASS DATA
 
     /// The template instance
-    /// `std::numeric_limits<BloombergLP::bdldfp::Decimal64>` is
+    /// `std::numeric_limits<BNP_Paribas::bdldfp::Decimal64>` is
     /// meaningfully specialized.  Also means that
-    /// `BloombergLP::bdldfp::Decimal64` is a numeric type.
+    /// `BNP_Paribas::bdldfp::Decimal64` is a numeric type.
     static const bool is_specialized = true;
 
     /// The maximum number of significant digits, in the native (10) radix
-    /// of the `BloombergLP::bdldfp::Decimal64` type that the type is able
+    /// of the `BNP_Paribas::bdldfp::Decimal64` type that the type is able
     /// to represent.  Defined to be 16 by IEEE-754.
     static const int digits = 16;
 
     /// The maximum number of significant decimal digits that the
-    /// `BloombergLP::bdldfp::Decimal64` type is able to represent.  Defined
+    /// `BNP_Paribas::bdldfp::Decimal64` type is able to represent.  Defined
     /// to be 16 by IEEE-754.
     static const int digits10 = digits;
 
     /// The number of significant decimal digits necessary to uniquely
     /// represent the significant digits of any
-    /// `BloombergLP::bdldfp::Decimal64` value.  Note that max_digit10 is
+    /// `BNP_Paribas::bdldfp::Decimal64` value.  Note that max_digit10 is
     /// the same as digits10 for decimal floating-point values.
     static const int max_digits10 = digits;
 
-    /// `BloombergLP::bdldfp::Decimal64` is a signed type.
+    /// `BNP_Paribas::bdldfp::Decimal64` is a signed type.
     static const bool is_signed = true;
 
-    /// `BloombergLP::bdldfp::Decimal64` is not an integer type.
+    /// `BNP_Paribas::bdldfp::Decimal64` is not an integer type.
     static const bool is_integer = false;
 
-    /// `BloombergLP::bdldfp::Decimal64` is not an exact type, i.e.:
+    /// `BNP_Paribas::bdldfp::Decimal64` is not an exact type, i.e.:
     /// calculations done on the type are not free of rounding errors.  Note
     /// that integer and possibly rational types may be exact,
     /// floating-point types are never exact.
     static const bool is_exact = false;
 
-    /// The base for `BloombergLP::bdldfp::Decimal64` is decimal or 10.
+    /// The base for `BNP_Paribas::bdldfp::Decimal64` is decimal or 10.
     static const int radix = 10;
 
     /// The lowest possible negative exponent for the native base of the
-    /// `BloombergLP::bdldfp::Decimal64` type that does not yet represent a
+    /// `BNP_Paribas::bdldfp::Decimal64` type that does not yet represent a
     /// denormal number.  Defined to be -383 by IEEE-754.
     static const int min_exponent = -383;
 
     /// The lowest possible negative decimal exponent in the
-    /// `BloombergLP::bdldfp::Decimal64` type that does not yet represent a
+    /// `BNP_Paribas::bdldfp::Decimal64` type that does not yet represent a
     /// denormal number.  Defined to be -382 by IEEE-754.  Note that
     /// `min_exponent10` is the same as `min_exponent` for decimal types.
     static const int min_exponent10 = min_exponent;
 
     /// The highest possible positive exponent for the native base of the
-    /// `BloombergLP::bdldfp::Decimal64` type that represents a finite
+    /// `BNP_Paribas::bdldfp::Decimal64` type that represents a finite
     /// value.  Defined to be 384 by IEEE-754.
     static const int max_exponent = 384;
 
     /// The highest possible positive decimal exponent of the
-    /// `BloombergLP::bdldfp::Decimal64` type that represents a finite
+    /// `BNP_Paribas::bdldfp::Decimal64` type that represents a finite
     /// value.  Defined to be 384 by IEEE-754.  Note that `max_exponent10`
     /// is the same as `max_exponent` for decimal types.
     static const int max_exponent10 = max_exponent;
 
-    /// `BloombergLP::bdldfp::Decimal64` can represent infinity.
+    /// `BNP_Paribas::bdldfp::Decimal64` can represent infinity.
     static const bool has_infinity = true;
 
-    /// `BloombergLP::bdldfp::Decimal64` can be a non-signaling Not a
+    /// `BNP_Paribas::bdldfp::Decimal64` can be a non-signaling Not a
     /// Number.
     static const bool has_quiet_NaN = true;
 
-    /// `BloombergLP::bdldfp::Decimal64` can be a signaling Not a Number.
+    /// `BNP_Paribas::bdldfp::Decimal64` can be a signaling Not a Number.
     static const bool has_signaling_NaN = true;
 
-    /// `BloombergLP::bdldfp::Decimal64` may contain denormal values.
+    /// `BNP_Paribas::bdldfp::Decimal64` may contain denormal values.
     BSLS_ANNOTATION_DEPRECATED
     static const std::float_denorm_style has_denorm = std::denorm_present;
 
-    /// `BloombergLP::bdldfp::Decimal64` is able to distinguish loss of
+    /// `BNP_Paribas::bdldfp::Decimal64` is able to distinguish loss of
     /// precision (floating-point underflow) due to denormalization from
     /// other causes.
     static const bool has_denorm_loss = true;
@@ -4998,7 +4998,7 @@ class faux_numeric_limits<BloombergLP::bdldfp::Decimal64, DUMMY_TYPE> {
     static const bool tinyness_before = true;
 
     /// The highest possible precision in the
-    /// `BloombergLP::bdldfp::Decimal64` type that is large enough to
+    /// `BNP_Paribas::bdldfp::Decimal64` type that is large enough to
     /// output the smallest non-zero denormalized value in fixed notation.
     static const int max_precision = digits10 - 1 + (-min_exponent10);
 
@@ -5012,88 +5012,88 @@ class faux_numeric_limits<BloombergLP::bdldfp::Decimal64, DUMMY_TYPE> {
     // ===============================================================
 
 template<class DUMMY_TYPE>
-class faux_numeric_limits<BloombergLP::bdldfp::Decimal128, DUMMY_TYPE> {
+class faux_numeric_limits<BNP_Paribas::bdldfp::Decimal128, DUMMY_TYPE> {
         // Explicit full specialization of the standard "traits" template
         // 'std::numeric_limits' for the type
-        // 'BloombergLP::bdldfp::Decimal128'.
+        // 'BNP_Paribas::bdldfp::Decimal128'.
 
   public:
     // CLASS DATA
 
     /// The template instance
-    /// `std::numeric_limits<BloombergLP::bdldfp::Decimal128>` is
+    /// `std::numeric_limits<BNP_Paribas::bdldfp::Decimal128>` is
     /// meaningfully specialized.  Also means that
-    /// `BloombergLP::bdldfp::Decimal128` is a numeric type.
+    /// `BNP_Paribas::bdldfp::Decimal128` is a numeric type.
     static const bool is_specialized = true;
 
     /// The maximum number of significant digits, in the native (10) radix
-    /// of the `BloombergLP::bdldfp::Decimal128` type that the type is able
+    /// of the `BNP_Paribas::bdldfp::Decimal128` type that the type is able
     /// to represent.  Defined to be 34 by IEEE-754.
     static const int digits = 34;
 
     /// The maximum number of significant decimal digits that the
-    /// `BloombergLP::bdldfp::Decimal128` type is able to represent.
+    /// `BNP_Paribas::bdldfp::Decimal128` type is able to represent.
     /// Defined to be 34 by IEEE-754.
     static const int digits10 = digits;
 
     /// The number of significant decimal digits necessary to uniquely
     /// represent the significant digits of any
-    /// `BloombergLP::bdldfp::Decimal128` value.  Note that max_digit10 is
+    /// `BNP_Paribas::bdldfp::Decimal128` value.  Note that max_digit10 is
     /// the same as digits10 for decimal floating-point values.
     static const int max_digits10 = digits;
 
-    /// `BloombergLP::bdldfp::Decimal128` is a signed type.
+    /// `BNP_Paribas::bdldfp::Decimal128` is a signed type.
     static const bool is_signed = true;
 
-    /// `BloombergLP::bdldfp::Decimal128` is not an integer type.
+    /// `BNP_Paribas::bdldfp::Decimal128` is not an integer type.
     static const bool is_integer = false;
 
-    /// `BloombergLP::bdldfp::Decimal128` is not an exact type, i.e.:
+    /// `BNP_Paribas::bdldfp::Decimal128` is not an exact type, i.e.:
     /// calculations done on the type are not free of rounding errors.  Note
     /// that integer and possibly rational types may be exact,
     /// floating-point types are never exact.
     static const bool is_exact = false;
 
-    /// The base for `BloombergLP::bdldfp::Decimal128` is decimal or 10.
+    /// The base for `BNP_Paribas::bdldfp::Decimal128` is decimal or 10.
     static const int radix = 10;
 
     /// The lowest possible negative exponent for the native base of the
-    /// `BloombergLP::bdldfp::Decimal128` type that does not yet represent a
+    /// `BNP_Paribas::bdldfp::Decimal128` type that does not yet represent a
     /// denormal number.  Defined to be -6143 by IEEE-754.
     static const int min_exponent = -6143;
 
     /// The lowest possible negative decimal exponent in the
-    /// `BloombergLP::bdldfp::Decimal128` type that does not yet represent a
+    /// `BNP_Paribas::bdldfp::Decimal128` type that does not yet represent a
     /// denormal number.  Defined to be -6142 by IEEE-754.  Note that
     /// `min_exponent10` is the same as `min_exponent` for decimal types.
     static const int min_exponent10 = min_exponent;
 
     /// The highest possible positive exponent for the native base of the
-    /// `BloombergLP::bdldfp::Decimal128` type that represents a finite
+    /// `BNP_Paribas::bdldfp::Decimal128` type that represents a finite
     /// value.  Defined to be 385 by IEEE-754.
     static const int max_exponent = 6144;
 
     /// The highest possible positive decimal exponent of the
-    /// `BloombergLP::bdldfp::Decimal128` type that represents a finite
+    /// `BNP_Paribas::bdldfp::Decimal128` type that represents a finite
     /// value.  Defined to be 6145 by IEEE-754.  Note that `max_exponent10`
     /// is the same as `max_exponent` for decimal types.
     static const int max_exponent10 = max_exponent;
 
-    /// `BloombergLP::bdldfp::Decimal128` can represent infinity.
+    /// `BNP_Paribas::bdldfp::Decimal128` can represent infinity.
     static const bool has_infinity = true;
 
-    /// `BloombergLP::bdldfp::Decimal128` can be a non-signaling Not a
+    /// `BNP_Paribas::bdldfp::Decimal128` can be a non-signaling Not a
     /// Number.
     static const bool has_quiet_NaN = true;
 
-    /// `BloombergLP::bdldfp::Decimal128` can be a signaling Not a Number.
+    /// `BNP_Paribas::bdldfp::Decimal128` can be a signaling Not a Number.
     static const bool has_signaling_NaN = true;
 
-    /// `BloombergLP::bdldfp::Decimal128` may contain denormal values.
+    /// `BNP_Paribas::bdldfp::Decimal128` may contain denormal values.
     BSLS_ANNOTATION_DEPRECATED
     static const std::float_denorm_style has_denorm = std::denorm_present;
 
-    /// `BloombergLP::bdldfp::Decimal128` is able to distinguish loss of
+    /// `BNP_Paribas::bdldfp::Decimal128` is able to distinguish loss of
     /// precision (floating-point underflow) due to denormalization from
     /// other causes.
     static const bool has_denorm_loss = true;
@@ -5116,7 +5116,7 @@ class faux_numeric_limits<BloombergLP::bdldfp::Decimal128, DUMMY_TYPE> {
     static const bool tinyness_before = true;
 
     /// The highest possible precision in the
-    /// `BloombergLP::bdldfp::Decimal128` type that is large enough to
+    /// `BNP_Paribas::bdldfp::Decimal128` type that is large enough to
     /// output the smallest non-zero denormalized value in fixed notation.
     static const int max_precision = digits10 - 1 + (-min_exponent10);
 
@@ -5362,13 +5362,13 @@ namespace std {
 
 /// Explicit full specialization of the standard "traits" template
 /// `std::numeric_limits` for the type
-/// `BloombergLP::bdldfp::Decimal_StandardNamespaceCanary`.  Note that this
+/// `BNP_Paribas::bdldfp::Decimal_StandardNamespaceCanary`.  Note that this
 /// specialization is required for technical reasons and it is identical to
 /// the non-specialized default traits.
 template<>
-class numeric_limits<BloombergLP::bdldfp::Decimal_StandardNamespaceCanary>
-    : public BloombergLP::bdldfp::faux_numeric_limits<
-        BloombergLP::bdldfp::Decimal_StandardNamespaceCanary> {
+class numeric_limits<BNP_Paribas::bdldfp::Decimal_StandardNamespaceCanary>
+    : public BNP_Paribas::bdldfp::faux_numeric_limits<
+        BNP_Paribas::bdldfp::Decimal_StandardNamespaceCanary> {
 };
 
              // ==================================================
@@ -5376,48 +5376,48 @@ class numeric_limits<BloombergLP::bdldfp::Decimal_StandardNamespaceCanary>
              // ==================================================
 
 template<>
-class numeric_limits<BloombergLP::bdldfp::Decimal32>
-    : public BloombergLP::bdldfp::faux_numeric_limits<
-        BloombergLP::bdldfp::Decimal32> {
+class numeric_limits<BNP_Paribas::bdldfp::Decimal32>
+    : public BNP_Paribas::bdldfp::faux_numeric_limits<
+        BNP_Paribas::bdldfp::Decimal32> {
         // Explicit full specialization of the standard "traits" template
-        // 'std::numeric_limits' for the type 'BloombergLP::bdldfp::Decimal32'.
+        // 'std::numeric_limits' for the type 'BNP_Paribas::bdldfp::Decimal32'.
 
   public:
     // CLASS METHODS
 
     /// Return the smallest positive (also non-zero) number
-    /// `BloombergLP::bdldfp::Decimal32` can represent (IEEE-754: +1e-95).
-    static BloombergLP::bdldfp::Decimal32 min() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal32` can represent (IEEE-754: +1e-95).
+    static BNP_Paribas::bdldfp::Decimal32 min() BSLS_KEYWORD_NOEXCEPT;
 
-    /// Return the largest number `BloombergLP::bdldfp::Decimal32` can
+    /// Return the largest number `BNP_Paribas::bdldfp::Decimal32` can
     /// represent (IEEE-754: +9.999999e+96).
-    static BloombergLP::bdldfp::Decimal32 max() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal32 max() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the difference between 1 and the smallest value representable
-    /// by the `BloombergLP::bdldfp::Decimal32` type.  (IEEE-754: +1e-6)
-    static BloombergLP::bdldfp::Decimal32 epsilon() BSLS_KEYWORD_NOEXCEPT;
+    /// by the `BNP_Paribas::bdldfp::Decimal32` type.  (IEEE-754: +1e-6)
+    static BNP_Paribas::bdldfp::Decimal32 epsilon() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the maximum rounding error for the
-    /// `BloombergLP::bdldfp::Decimal32` type.  The actual value returned
+    /// `BNP_Paribas::bdldfp::Decimal32` type.  The actual value returned
     /// depends on the current decimal floating point rounding setting.
-    static BloombergLP::bdldfp::Decimal32 round_error() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal32 round_error() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the smallest non-zero denormalized value for the
-    /// `BloombergLP::bdldfp::Decimal32` type.  (IEEE-754: +0.000001E-95)
-    static BloombergLP::bdldfp::Decimal32 denorm_min() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal32` type.  (IEEE-754: +0.000001E-95)
+    static BNP_Paribas::bdldfp::Decimal32 denorm_min() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the value that represents positive infinity for the
-    /// `BloombergLP::bdldfp::Decimal32` type.
-    static BloombergLP::bdldfp::Decimal32 infinity() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal32` type.
+    static BNP_Paribas::bdldfp::Decimal32 infinity() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return a value that represents non-signaling NaN for the
-    /// `BloombergLP::bdldfp::Decimal32` type.
-    static BloombergLP::bdldfp::Decimal32 quiet_NaN() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal32` type.
+    static BNP_Paribas::bdldfp::Decimal32 quiet_NaN() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return a value that represents signaling NaN for the
-    /// `BloombergLP::bdldfp::Decimal32` type.
+    /// `BNP_Paribas::bdldfp::Decimal32` type.
     static
-    BloombergLP::bdldfp::Decimal32 signaling_NaN() BSLS_KEYWORD_NOEXCEPT;
+    BNP_Paribas::bdldfp::Decimal32 signaling_NaN() BSLS_KEYWORD_NOEXCEPT;
 };
 
              // ==================================================
@@ -5425,49 +5425,49 @@ class numeric_limits<BloombergLP::bdldfp::Decimal32>
              // ==================================================
 
 template<>
-class numeric_limits<BloombergLP::bdldfp::Decimal64>
-    : public BloombergLP::bdldfp::faux_numeric_limits<
-        BloombergLP::bdldfp::Decimal64> {
+class numeric_limits<BNP_Paribas::bdldfp::Decimal64>
+    : public BNP_Paribas::bdldfp::faux_numeric_limits<
+        BNP_Paribas::bdldfp::Decimal64> {
         // Explicit full specialization of the standard "traits" template
-        // 'std::numeric_limits' for the type 'BloombergLP::bdldfp::Decimal64'.
+        // 'std::numeric_limits' for the type 'BNP_Paribas::bdldfp::Decimal64'.
 
   public:
     // CLASS METHODS
 
     /// Return the smallest positive (also non-zero) number
-    /// `BloombergLP::bdldfp::Decimal64` can represent (IEEE-754: +1e-383).
-    static BloombergLP::bdldfp::Decimal64 min() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal64` can represent (IEEE-754: +1e-383).
+    static BNP_Paribas::bdldfp::Decimal64 min() BSLS_KEYWORD_NOEXCEPT;
 
-    /// Return the largest number `BloombergLP::bdldfp::Decimal64` can
+    /// Return the largest number `BNP_Paribas::bdldfp::Decimal64` can
     /// represent (IEEE-754: +9.999999999999999e+384).
-    static BloombergLP::bdldfp::Decimal64 max() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal64 max() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the difference between 1 and the smallest value representable
-    /// by the `BloombergLP::bdldfp::Decimal64` type.  (IEEE-754: +1e-15)
-    static BloombergLP::bdldfp::Decimal64 epsilon() BSLS_KEYWORD_NOEXCEPT;
+    /// by the `BNP_Paribas::bdldfp::Decimal64` type.  (IEEE-754: +1e-15)
+    static BNP_Paribas::bdldfp::Decimal64 epsilon() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the maximum rounding error for the
-    /// `BloombergLP::bdldfp::Decimal64` type.  The actual value returned
+    /// `BNP_Paribas::bdldfp::Decimal64` type.  The actual value returned
     /// depends on the current decimal floating point rounding setting.
-    static BloombergLP::bdldfp::Decimal64 round_error() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal64 round_error() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the smallest non-zero denormalized value for the
-    /// `BloombergLP::bdldfp::Decimal64` type.  (IEEE-754:
+    /// `BNP_Paribas::bdldfp::Decimal64` type.  (IEEE-754:
     /// +0.000000000000001e-383)
-    static BloombergLP::bdldfp::Decimal64 denorm_min() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal64 denorm_min() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the value that represents positive infinity for the
-    /// `BloombergLP::bdldfp::Decimal64` type.
-    static BloombergLP::bdldfp::Decimal64 infinity() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal64` type.
+    static BNP_Paribas::bdldfp::Decimal64 infinity() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return a value that represents non-signaling NaN for the
-    /// `BloombergLP::bdldfp::Decimal64` type.
-    static BloombergLP::bdldfp::Decimal64 quiet_NaN() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal64` type.
+    static BNP_Paribas::bdldfp::Decimal64 quiet_NaN() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return a value that represents signaling NaN for the
-    /// `BloombergLP::bdldfp::Decimal64` type.
+    /// `BNP_Paribas::bdldfp::Decimal64` type.
     static
-    BloombergLP::bdldfp::Decimal64 signaling_NaN() BSLS_KEYWORD_NOEXCEPT;
+    BNP_Paribas::bdldfp::Decimal64 signaling_NaN() BSLS_KEYWORD_NOEXCEPT;
 
 };
 
@@ -5476,51 +5476,51 @@ class numeric_limits<BloombergLP::bdldfp::Decimal64>
             // ===================================================
 
 template<>
-class numeric_limits<BloombergLP::bdldfp::Decimal128>
-    : public BloombergLP::bdldfp::faux_numeric_limits<
-        BloombergLP::bdldfp::Decimal128> {
+class numeric_limits<BNP_Paribas::bdldfp::Decimal128>
+    : public BNP_Paribas::bdldfp::faux_numeric_limits<
+        BNP_Paribas::bdldfp::Decimal128> {
         // Explicit full specialization of the standard "traits" template
         // 'std::numeric_limits' for the type
-        // 'BloombergLP::bdldfp::Decimal128'.
+        // 'BNP_Paribas::bdldfp::Decimal128'.
 
   public:
     // CLASS METHODS
 
     /// Return the smallest positive (also non-zero) number
-    /// `BloombergLP::bdldfp::Decimal128` can represent (IEEE-754:
+    /// `BNP_Paribas::bdldfp::Decimal128` can represent (IEEE-754:
     /// +1e-6143).
-    static BloombergLP::bdldfp::Decimal128 min() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal128 min() BSLS_KEYWORD_NOEXCEPT;
 
-    /// Return the largest number `BloombergLP::bdldfp::Decimal128` can
+    /// Return the largest number `BNP_Paribas::bdldfp::Decimal128` can
     /// represent (IEEE-754: +9.999999999999999999999999999999999e+6144).
-    static BloombergLP::bdldfp::Decimal128 max() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal128 max() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the difference between 1 and the smallest value representable
-    /// by the `BloombergLP::bdldfp::Decimal128` type.  (IEEE-754: +1e-33)
-    static BloombergLP::bdldfp::Decimal128 epsilon() BSLS_KEYWORD_NOEXCEPT;
+    /// by the `BNP_Paribas::bdldfp::Decimal128` type.  (IEEE-754: +1e-33)
+    static BNP_Paribas::bdldfp::Decimal128 epsilon() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the maximum rounding error for the
-    /// `BloombergLP::bdldfp::Decimal128` type.  The actual value returned
+    /// `BNP_Paribas::bdldfp::Decimal128` type.  The actual value returned
     /// depends on the current decimal floating point rounding setting.
-    static BloombergLP::bdldfp::Decimal128 round_error() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal128 round_error() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the smallest non-zero denormalized value for the
-    /// `BloombergLP::bdldfp::Decimal128` type.  (IEEE-754:
+    /// `BNP_Paribas::bdldfp::Decimal128` type.  (IEEE-754:
     /// +0.000000000000000000000000000000001e-6143)
-    static BloombergLP::bdldfp::Decimal128 denorm_min() BSLS_KEYWORD_NOEXCEPT;
+    static BNP_Paribas::bdldfp::Decimal128 denorm_min() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return the value that represents positive infinity for the
-    /// `BloombergLP::bdldfp::Decimal128` type.
-    static BloombergLP::bdldfp::Decimal128 infinity() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal128` type.
+    static BNP_Paribas::bdldfp::Decimal128 infinity() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return a value that represents non-signaling NaN for the
-    /// `BloombergLP::bdldfp::Decimal128` type.
-    static BloombergLP::bdldfp::Decimal128 quiet_NaN() BSLS_KEYWORD_NOEXCEPT;
+    /// `BNP_Paribas::bdldfp::Decimal128` type.
+    static BNP_Paribas::bdldfp::Decimal128 quiet_NaN() BSLS_KEYWORD_NOEXCEPT;
 
     /// Return a value that represents signaling NaN for the
-    /// `BloombergLP::bdldfp::Decimal128` type.
+    /// `BNP_Paribas::bdldfp::Decimal128` type.
     static
-    BloombergLP::bdldfp::Decimal128 signaling_NaN() BSLS_KEYWORD_NOEXCEPT;
+    BNP_Paribas::bdldfp::Decimal128 signaling_NaN() BSLS_KEYWORD_NOEXCEPT;
 };
 
 }  // close namespace std
@@ -5529,7 +5529,7 @@ class numeric_limits<BloombergLP::bdldfp::Decimal128>
 //                            INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
                       // THE DECIMAL FLOATING-POINT TYPES
@@ -8910,7 +8910,7 @@ template <class HASHALG>
 inline
 void bdldfp::hashAppend(HASHALG& hashAlg, const bdldfp::Decimal32& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     bdldfp::Decimal32 normalizedObject = DecimalImpUtil::normalize(
                                                                object.value());
@@ -8921,7 +8921,7 @@ template <class HASHALG>
 inline
 void bdldfp::hashAppend(HASHALG& hashAlg, const bdldfp::Decimal64& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     bdldfp::Decimal64 normalizedObject = DecimalImpUtil::normalize(
                                                                object.value());
@@ -8933,7 +8933,7 @@ template <class HASHALG>
 inline
 void bdldfp::hashAppend(HASHALG& hashAlg, const bdldfp::Decimal128& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     bdldfp::Decimal128 normalizedObject = DecimalImpUtil::normalize(
                                                                object.value());
@@ -8949,27 +8949,27 @@ namespace bsl {
 /// This template partial specialization defines `bsl::formatter` for
 /// `bdldfp::Decimal32` values for both (`char` and `wchar_t`) character types.
 template <class t_CHAR>
-struct formatter<BloombergLP::bdldfp::Decimal32, t_CHAR>
-: BloombergLP::bdldfp::Decimal_BslFmtFormatterImpl<
-                                                BloombergLP::bdldfp::Decimal32,
+struct formatter<BNP_Paribas::bdldfp::Decimal32, t_CHAR>
+: BNP_Paribas::bdldfp::Decimal_BslFmtFormatterImpl<
+                                                BNP_Paribas::bdldfp::Decimal32,
                                                 t_CHAR>
 { };
 
 /// This template partial specialization defines `bsl::formatter` for
 /// `bdldfp::Decimal64` values for both (`char` and `wchar_t`) character types.
 template <class t_CHAR>
-struct formatter<BloombergLP::bdldfp::Decimal64, t_CHAR>
-: BloombergLP::bdldfp::Decimal_BslFmtFormatterImpl<
-                                                BloombergLP::bdldfp::Decimal64,
+struct formatter<BNP_Paribas::bdldfp::Decimal64, t_CHAR>
+: BNP_Paribas::bdldfp::Decimal_BslFmtFormatterImpl<
+                                                BNP_Paribas::bdldfp::Decimal64,
                                                 t_CHAR>
 { };
 
 /// This template partial specialization defines `bsl::formatter` for
 /// `bdldfp::Decimal128` values for both (`char` & `wchar_t`) character types.
 template <class t_CHAR>
-struct formatter<BloombergLP::bdldfp::Decimal128, t_CHAR>
-: BloombergLP::bdldfp::Decimal_BslFmtFormatterImpl<
-                                               BloombergLP::bdldfp::Decimal128,
+struct formatter<BNP_Paribas::bdldfp::Decimal128, t_CHAR>
+: BNP_Paribas::bdldfp::Decimal_BslFmtFormatterImpl<
+                                               BNP_Paribas::bdldfp::Decimal128,
                                                t_CHAR>
 { };
 

@@ -48,7 +48,7 @@ BSLS_IDENT("$Id: $")
 # define BALCL_OPTIONINFO_HAS_CONSTRUCTORS
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balcl {
 
                         // =================

@@ -8,7 +8,7 @@
 #include <stdlib.h>     // atoi()
 #include <typeinfo>     // for typeid, but bad levelization.
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

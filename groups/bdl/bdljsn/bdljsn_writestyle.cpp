@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdljsn_writestye_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                              // -----------------

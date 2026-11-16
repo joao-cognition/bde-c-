@@ -40,7 +40,7 @@ BSLS_IDENT("$Id$")
 #include <bsl_cstring.h>
 #include <bsl_c_errno.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
                           // ==============================

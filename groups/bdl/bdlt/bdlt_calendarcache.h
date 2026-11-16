@@ -268,7 +268,7 @@ BSLS_IDENT("$Id: $")
 #include <bslalg_typetraitusesbslmaallocator.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 class CalendarLoader;
@@ -486,7 +486,7 @@ class CalendarCache {
 
 // TRAITS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

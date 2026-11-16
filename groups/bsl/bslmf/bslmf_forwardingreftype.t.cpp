@@ -29,7 +29,7 @@
 
 #include <typeinfo>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #if defined(BSLS_PLATFORM_CMP_MSVC)
 #pragma warning(disable: 4521) // test classes offer multiple copy constructors

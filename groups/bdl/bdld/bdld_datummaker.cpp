@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(bdld_datummaker_cpp, "$Id$ $CSID$")
 // 'BSLS_COMPILERFEATURES_FORWARD', and 'BSLS_COMPILERFEATURES_FORWARDING_REF'
 // macros.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdld {
 
                               // ----------------

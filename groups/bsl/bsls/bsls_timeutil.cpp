@@ -40,7 +40,7 @@ BSLS_IDENT("$Id$ $CSID$")
     #include <mach/thread_act.h>    // thread_info(), THREAD_BASIC_INFO
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

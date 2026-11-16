@@ -74,7 +74,7 @@
 #include <s_baltst_testselection.h>
 #include <s_baltst_testsequence.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -195,7 +195,7 @@ typedef bsls::Types::Uint64                   Uint64;
 //                          TEST ENTITY DECLARATIONS
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 namespace encoder {
 namespace u {
@@ -1127,7 +1127,7 @@ int main(int argc, char *argv[])
                  << "TESTING USAGE EXAMPLE" << endl
                  << "=====================" << endl;
 
-        namespace test = ::BloombergLP::s_baltst;
+        namespace test = ::BNP_Paribas::s_baltst;
 
 ///Usage
 ///-----
@@ -1145,8 +1145,8 @@ int main(int argc, char *argv[])
 // ```
 //  <?xml version='1.0' encoding='UTF-8'?>
 //  <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
-//             xmlns:test='http://bloomberg.com/schemas/test'
-//             targetNamespace='http://bloomberg.com/schemas/test'
+//             xmlns:test='http://bnpparibas.com/schemas/test'
+//             targetNamespace='http://bnpparibas.com/schemas/test'
 //             elementFormDefault='unqualified'>
 //
 //      <xs:complexType name='Address'>
@@ -1830,7 +1830,7 @@ int main(int argc, char *argv[])
 
         {
             bsl::ostringstream                          out;
-            BloombergLP::s_baltst::MySequenceWithChoice obj;
+            BNP_Paribas::s_baltst::MySequenceWithChoice obj;
 
             baljsn::Encoder        encoder;
             baljsn::EncoderOptions options;
@@ -1848,7 +1848,7 @@ int main(int argc, char *argv[])
                           << ((0 == loop) ? "false\n" : "true\n");
 
             bsl::ostringstream                                           out;
-            BloombergLP::s_baltst::MySequenceWithNullableAnonymousChoice obj;
+            BNP_Paribas::s_baltst::MySequenceWithNullableAnonymousChoice obj;
 
             baljsn::Encoder        encoder;
             baljsn::EncoderOptions options;
@@ -1903,7 +1903,7 @@ int main(int argc, char *argv[])
                  << "=============================" << endl;
         {
             bsl::ostringstream                          out;
-            BloombergLP::s_baltst::MySequenceWithChoice obj;
+            BNP_Paribas::s_baltst::MySequenceWithChoice obj;
 
             baljsn::Encoder        encoder;
             baljsn::EncoderOptions options;
@@ -3989,7 +3989,7 @@ int main(int argc, char *argv[])
 //                          TEST ENTITY DEFINITIONS
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 

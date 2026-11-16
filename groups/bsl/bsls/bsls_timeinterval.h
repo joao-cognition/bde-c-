@@ -64,7 +64,7 @@ BSLS_IDENT("$Id: $")
 // assert(100     == i2.nanoseconds());
 // ```
 // The operators providing literals are available in the
-// `BloombergLP::bsls::literals::TimeIntervalLiterals` namespace (where
+// `BNP_Paribas::bsls::literals::TimeIntervalLiterals` namespace (where
 // `literals` and `TimeIntervalLiterals` are both inline namespaces). Because
 // of inline namespaces, there are several viable options for a using
 // declaration, but *we* *recommend*
@@ -147,7 +147,7 @@ BSLS_IDENT("$Id: $")
 #define BSLS_TIMEINTERVAL_PROVIDES_CHRONO_CONVERSIONS
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 #ifdef BSLS_TIMEINTERVAL_PROVIDES_CHRONO_CONVERSIONS
@@ -1694,7 +1694,7 @@ bsls::TimeInterval bsls::TimeIntervalLiterals::operator""_ns(
 //..
 //  namespace bsl {
 //  template <>
-//  struct is_trivially_copyable<BloombergLP::bsls::TimeInterval> :
+//  struct is_trivially_copyable<BNP_Paribas::bsls::TimeInterval> :
 //                                                            bsl::true_type {
 //      // This template specialization for 'is_trivially_copyable' indicates
 //      // that 'Date' is a trivially copyable type.

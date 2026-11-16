@@ -258,12 +258,12 @@ BSLS_IDENT("$Id: $")
 //     // PRIVATE TYPES
 //     typedef bsl::allocator_traits<ALLOCATOR>               AllocatorTraits;
 //     typedef typename AllocatorTraits::difference_type      difference_type;
-//     typedef BloombergLP::bslstl::HashTableIterator<
+//     typedef BNP_Paribas::bslstl::HashTableIterator<
 //                                       const KEY, difference_type> iterator;
 //
 //     typedef UseEntireValueAsKey<KEY>                               HashKey;
 //
-//     typedef BloombergLP::bslstl::HashTable<HashKey,
+//     typedef BNP_Paribas::bslstl::HashTable<HashKey,
 //                                            HASHF,
 //                                            EQUAL,
 //                                            ALLOCATOR>         ImpHashTable;
@@ -532,7 +532,7 @@ BSLS_IDENT("$Id: $")
 //     typedef bsl::allocator_traits<ALLOCATOR>               AllocatorTraits;
 //
 //     typedef UseFirstValueOfPairAsKey<bsl::pair<const KEY, VALUE> > HashKey;
-//     typedef BloombergLP::bslstl::HashTable<HashKey,
+//     typedef BNP_Paribas::bslstl::HashTable<HashKey,
 //                                            HASHF,
 //                                            EQUAL,
 //                                            ALLOCATOR>         ImpHashTable;
@@ -629,7 +629,7 @@ BSLS_IDENT("$Id: $")
 //                                                             const KEY& key)
 // {
 //     typedef typename HashTable::NodeType           HashTableNode;
-//     typedef BloombergLP::bslalg::BidirectionalLink HashTableLink;
+//     typedef BNP_Paribas::bslalg::BidirectionalLink HashTableLink;
 //
 //     bool           isInserted;  // not used
 //     HashTableLink *node = d_impl.insertKeyIfMissing(&isInserted, key);
@@ -699,7 +699,7 @@ BSLS_IDENT("$Id: $")
 //     typedef typename AllocatorTraits::difference_type      difference_type;
 //
 //     typedef UseFirstValueOfPairAsKey<bsl::pair<const KEY, VALUE> > HashKey;
-//     typedef BloombergLP::bslstl::HashTable<HashKey,
+//     typedef BNP_Paribas::bslstl::HashTable<HashKey,
 //                                            HASHF,
 //                                            EQUAL,
 //                                            ALLOCATOR>         ImpHashTable;
@@ -710,9 +710,9 @@ BSLS_IDENT("$Id: $")
 //   public:
 //     // TYPES
 //     typedef typename AllocatorTraits::size_type                  size_type;
-//     typedef BloombergLP::bslstl::HashTableIterator<
+//     typedef BNP_Paribas::bslstl::HashTableIterator<
 //                                     value_type, difference_type>  iterator;
-//     typedef BloombergLP::bslstl::HashTableIterator<
+//     typedef BNP_Paribas::bslstl::HashTableIterator<
 //                          const value_type, difference_type> const_iterator;
 //
 //     // CREATORS
@@ -830,7 +830,7 @@ BSLS_IDENT("$Id: $")
 //                                                       const KEY& key) const
 // {
 //     typedef bsl::pair<const_iterator, const_iterator>  ResultType;
-//     typedef BloombergLP::bslalg::BidirectionalLink     HashTableLink;
+//     typedef BNP_Paribas::bslalg::BidirectionalLink     HashTableLink;
 //
 //     HashTableLink *first;
 //     HashTableLink *last;
@@ -1061,7 +1061,7 @@ BSLS_IDENT("$Id: $")
 // {
 //   private:
 //     // PRIVATE TYPES
-//     typedef BloombergLP::bslstl::HashTable<
+//     typedef BNP_Paribas::bslstl::HashTable<
 //                   UseOrderNumberAsKey,
 //                   bsl::hash<    UseOrderNumberAsKey::KeyType>,
 //                   bsl::equal_to<UseOrderNumberAsKey::KeyType> >
@@ -1074,14 +1074,14 @@ BSLS_IDENT("$Id: $")
 // first hash table, the one that stores the records.
 // ```
 //
-//       typedef BloombergLP::bslstl::HashTableIterator<const MySalesRecord,
+//       typedef BNP_Paribas::bslstl::HashTableIterator<const MySalesRecord,
 //                                                      difference_type>
 //                                                            ItrByOrderNumber;
 // ```
 // The `ItrPtrById` type is used to provide access to the elements of the other
 // hashtables, the ones that store pointers into the first hashtable.
 // ```
-//     typedef BloombergLP::bslstl::HashTableIterator<const MySalesRecord *,
+//     typedef BNP_Paribas::bslstl::HashTableIterator<const MySalesRecord *,
 //                                                    difference_type>
 //                                                                 ItrPtrById;
 // ```
@@ -1112,12 +1112,12 @@ BSLS_IDENT("$Id: $")
 //         }
 //     };
 //
-//     typedef BloombergLP::bslstl::HashTable<
+//     typedef BNP_Paribas::bslstl::HashTable<
 //                   UseCustomerIdAsKey,
 //                   bsl::hash<    UseCustomerIdAsKey::KeyType>,
 //                   bsl::equal_to<UseCustomerIdAsKey::KeyType> >
 //                                                    RecordsPtrsByCustomerId;
-//     typedef BloombergLP::bslstl::HashTable<
+//     typedef BNP_Paribas::bslstl::HashTable<
 //                   UseVendorIdAsKey,
 //                   bsl::hash<    UseVendorIdAsKey::KeyType>,
 //                   bsl::equal_to<UseVendorIdAsKey::KeyType> >
@@ -1218,7 +1218,7 @@ BSLS_IDENT("$Id: $")
 //     // Insert into internal container that will own the record.
 //
 //     bool                                    isInsertedFlag = false;
-//     BloombergLP::bslalg::BidirectionalLink *result         =
+//     BNP_Paribas::bslalg::BidirectionalLink *result         =
 //             d_recordsByOrderNumber.insertIfMissing(&isInsertedFlag, value);
 //
 //     // Index by other record attributes
@@ -1256,7 +1256,7 @@ BSLS_IDENT("$Id: $")
 //        MySalesRecordContainer::ConstItrById>
 // MySalesRecordContainer::findByCustomerId(int value) const
 // {
-//     typedef BloombergLP::bslalg::BidirectionalLink HashTableLink;
+//     typedef BNP_Paribas::bslalg::BidirectionalLink HashTableLink;
 //
 //     HashTableLink *first;
 //     HashTableLink *last;
@@ -1271,7 +1271,7 @@ BSLS_IDENT("$Id: $")
 //        MySalesRecordContainer::ConstItrById>
 // MySalesRecordContainer::findByVendorId(int value) const
 // {
-//     typedef BloombergLP::bslalg::BidirectionalLink HashTableLink;
+//     typedef BNP_Paribas::bslalg::BidirectionalLink HashTableLink;
 //
 //     HashTableLink *first;
 //     HashTableLink *last;
@@ -1496,7 +1496,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslstl {
 
@@ -2192,7 +2192,7 @@ class HashTable {
     /// organize elements in this hash-table.  The allocator associated with
     /// `original` is propagated for use in the newly created hash-table.
     /// `original` is left in a valid but unspecified state.
-    HashTable(BloombergLP::bslmf::MovableRef<HashTable> original);
+    HashTable(BNP_Paribas::bslmf::MovableRef<HashTable> original);
 
     /// Create a hash-table having the same value (and `maxLoadFactor`) as
     /// the specified `original` object that uses the specified
@@ -2222,7 +2222,7 @@ class HashTable {
     /// is not exceeded.  Also note that a `bslma::Allocator *` can be
     /// supplied for `basicAllocator` if the (template parameter)
     /// `ALLOCATOR` is `bsl::allocator` (the default).
-    HashTable(BloombergLP::bslmf::MovableRef<HashTable> original,
+    HashTable(BNP_Paribas::bslmf::MovableRef<HashTable> original,
               const ALLOCATOR&                          basicAllocator);
 
     /// Destroy this object.
@@ -2260,7 +2260,7 @@ class HashTable {
     /// defined by the (template parameter) type `KEY_CONFIG` be both
     /// `move-assignable` and `move-insertable` into this hash-table (see
     /// {Requirements on `KEY_CONFIG`}).
-    HashTable& operator=(BloombergLP::bslmf::MovableRef<HashTable> rhs);
+    HashTable& operator=(BNP_Paribas::bslmf::MovableRef<HashTable> rhs);
 
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
     /// Insert into this hash-table a newly-created `ValueType` object,
@@ -3651,7 +3651,7 @@ HashTable(const HashTable& original)
 template <class KEY_CONFIG, class HASHER, class COMPARATOR, class ALLOCATOR>
 inline
 HashTable<KEY_CONFIG, HASHER, COMPARATOR, ALLOCATOR>::HashTable(
-                            BloombergLP::bslmf::MovableRef<HashTable> original)
+                            BNP_Paribas::bslmf::MovableRef<HashTable> original)
 : d_parameters(MoveUtil::move(MoveUtil::access(original).d_parameters))
 , d_anchor(HashTable_ImpDetails::defaultBucketAddress(), 1, 0)
 , d_size()

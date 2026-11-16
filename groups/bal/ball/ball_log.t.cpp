@@ -98,7 +98,7 @@
 // Warning: the following `using` declarations interfere with the testing of
 // the macros defined in this component.  Please do not un-comment them.
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 // using namespace bsl;
 //
 // Also note that such a `using` in the unnamed namespace applies to all code
@@ -237,22 +237,22 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 // ----------------------------------------------------------------------------
 
-typedef BloombergLP::ball::Log                Obj;
-typedef BloombergLP::ball::Log_Stream         LogStream;
+typedef BNP_Paribas::ball::Log                Obj;
+typedef BNP_Paribas::ball::Log_Stream         LogStream;
 
-typedef BloombergLP::ball::Category           Cat;
-typedef BloombergLP::ball::CategoryHolder     Holder;
-typedef BloombergLP::ball::CategoryManager    CategoryManager;
-typedef BloombergLP::ball::LoggerManager      LoggerManager;
-typedef BloombergLP::ball::Severity           Sev;
-typedef BloombergLP::ball::TestObserver       TestObserver;
-typedef BloombergLP::ball::ThresholdAggregate Thresholds;
+typedef BNP_Paribas::ball::Category           Cat;
+typedef BNP_Paribas::ball::CategoryHolder     Holder;
+typedef BNP_Paribas::ball::CategoryManager    CategoryManager;
+typedef BNP_Paribas::ball::LoggerManager      LoggerManager;
+typedef BNP_Paribas::ball::Severity           Sev;
+typedef BNP_Paribas::ball::TestObserver       TestObserver;
+typedef BNP_Paribas::ball::ThresholdAggregate Thresholds;
 
-typedef BloombergLP::bslma::TestAllocator     TestAllocator;
+typedef BNP_Paribas::bslma::TestAllocator     TestAllocator;
 
-typedef BloombergLP::bsls::Types::IntPtr      IntPtr;
+typedef BNP_Paribas::bsls::Types::IntPtr      IntPtr;
 
-typedef BloombergLP::bdls::TempDirectoryGuard TempDirectoryGuard;
+typedef BNP_Paribas::bdls::TempDirectoryGuard TempDirectoryGuard;
 
 const int TRACE = Sev::e_TRACE;
 const int DEBUG = Sev::e_DEBUG;
@@ -298,7 +298,7 @@ bsl::string tempDirPrefix(int test)
     }
     bsl::ostringstream oss;
     oss << (user && *user ? user : "unknown") << "-ball_log-" << test << '-'
-        << BloombergLP::bdls::ProcessUtil::getProcessId() << '-';
+        << BNP_Paribas::bdls::ProcessUtil::getProcessId() << '-';
     return oss.str();
 }
 #endif
@@ -310,9 +310,9 @@ TestAllocator ta("u::ta");
 /// `i` to i'th thread.  Finally join all the threads.
 void executeInParallel(
                      int                                            numThreads,
-                     BloombergLP::bslmt::ThreadUtil::ThreadFunction func)
+                     BNP_Paribas::bslmt::ThreadUtil::ThreadFunction func)
 {
-    using namespace BloombergLP;  // okay here
+    using namespace BNP_Paribas;  // okay here
 
     bslmt::ThreadUtil::Handle *threads =
                                      new bslmt::ThreadUtil::Handle[numThreads];
@@ -331,7 +331,7 @@ void executeInParallel(
 inline
 char *messageBuffer()
 {
-    BloombergLP::bslmt::Mutex *mutex = 0;
+    BNP_Paribas::bslmt::Mutex *mutex = 0;
     int                        bufferSize = 0;
     char                      *buffer =
                                  Obj::obtainMessageBuffer(&mutex, &bufferSize);
@@ -342,7 +342,7 @@ char *messageBuffer()
 inline
 int messageBufferSize()
 {
-    BloombergLP::bslmt::Mutex *mutex = 0;
+    BNP_Paribas::bslmt::Mutex *mutex = 0;
     int                        bufferSize = 0;
     Obj::obtainMessageBuffer(&mutex, &bufferSize);
     Obj::releaseMessageBuffer(mutex);
@@ -354,14 +354,14 @@ int messageBufferSize()
 /// `severity`, `fileName`, `lineNumber`, and `message`, and `false`
 /// otherwise.
 static bool isRecordOkay(
-           const bsl::shared_ptr<BloombergLP::ball::TestObserver>&  observer,
-           const BloombergLP::ball::Category                       *category,
+           const bsl::shared_ptr<BNP_Paribas::ball::TestObserver>&  observer,
+           const BNP_Paribas::ball::Category                       *category,
            int                                                      severity,
            const char                                              *fileName,
            int                                                      lineNumber,
            const char                                              *message)
 {
-    const BloombergLP::ball::RecordAttributes& attributes =
+    const BNP_Paribas::ball::RecordAttributes& attributes =
                                  observer->lastPublishedRecord().fixedFields();
 
     bool status = 0   == bsl::strcmp(category->categoryName(),
@@ -383,7 +383,7 @@ static bool isRecordOkay(
 }
 
 static int numIncCallback = 0;
-void incCallback(BloombergLP::ball::UserFields *list)
+void incCallback(BNP_Paribas::ball::UserFields *list)
 {
     ASSERT(list);
     ++numIncCallback;
@@ -432,7 +432,7 @@ void logNamespaceOverride() {
 //                             USAGE EXAMPLE 8
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 ///Example 8: Class-Scope Logging
 /// - - - - - - - - - - - - - - -
@@ -532,7 +532,7 @@ namespace BloombergLP {
 //                             USAGE EXAMPLE 7
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 class Point {
     int d_x;
@@ -606,7 +606,7 @@ class Point {
 //                             USAGE EXAMPLE 6
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 ///Example 6: Rule-Based Logging
 ///- - - - - - - - - - - - - - -
@@ -622,7 +622,7 @@ namespace BloombergLP {
 // logging rule that enables verbose logging only for a particular user.
 // ```
 
-/// Process the specified `data` associated with the specified Bloomberg
+/// Process the specified `data` associated with the specified BNP Paribas
 /// `uuid`, `luw`, and `terminalNumber`.
 void processData(int                      uuid,
                  int                      luw,
@@ -679,7 +679,7 @@ namespace BALL_LOG_TEST_CASE_35 {
 /// logging macro corresponding to the specified `level` and return
 /// `level`.
 template <int DEPTH>
-int recurseStreamBasedMacros(BloombergLP::ball::Severity::Level level)
+int recurseStreamBasedMacros(BNP_Paribas::ball::Severity::Level level)
 {
     BALL_LOG_SET_CATEGORY("Recursion");
 
@@ -731,7 +731,7 @@ int recurseStreamBasedMacros(BloombergLP::ball::Severity::Level level)
 /// Invoke the stream-based logging macro corresponding to the specified
 /// `level` and return `level`.
 template <>
-int recurseStreamBasedMacros<0>(BloombergLP::ball::Severity::Level level)
+int recurseStreamBasedMacros<0>(BNP_Paribas::ball::Severity::Level level)
 {
     BALL_LOG_SET_CATEGORY("Recursion");
 
@@ -766,7 +766,7 @@ int recurseStreamBasedMacros<0>(BloombergLP::ball::Severity::Level level)
 /// logging macro corresponding to the specified `level` and return
 /// `level`.
 template <int DEPTH>
-int recursePrintfStyleMacros(BloombergLP::ball::Severity::Level level)
+int recursePrintfStyleMacros(BNP_Paribas::ball::Severity::Level level)
 {
     BALL_LOG_SET_CATEGORY("Recursion");
 
@@ -812,7 +812,7 @@ int recursePrintfStyleMacros(BloombergLP::ball::Severity::Level level)
 /// Invoke the `printf`-style logging macro corresponding to the specified
 /// `level` and return `level`.
 template<>
-int recursePrintfStyleMacros<0>(BloombergLP::ball::Severity::Level level)
+int recursePrintfStyleMacros<0>(BNP_Paribas::ball::Severity::Level level)
 {
     BALL_LOG_SET_CATEGORY("Recursion");
 
@@ -845,7 +845,7 @@ int recursePrintfStyleMacros<0>(BloombergLP::ball::Severity::Level level)
 
 /// Stub implementation of callback for testing recursive use of logging
 /// macros.
-void recurseCallback(BloombergLP::ball::UserFields *fields)
+void recurseCallback(BNP_Paribas::ball::UserFields *fields)
 {
     (void)fields;  // suppress warning
 }
@@ -854,8 +854,8 @@ void recurseCallback(BloombergLP::ball::UserFields *fields)
 /// result to the callback logging macro corresponding to the specified
 /// `level` and return `level`.
 void recurseStreamBasedMacrosCallback(
-                                    BloombergLP::ball::UserFields      *fields,
-                                    BloombergLP::ball::Severity::Level  level)
+                                    BNP_Paribas::ball::UserFields      *fields,
+                                    BNP_Paribas::ball::Severity::Level  level)
 {
     (void)fields;  // suppress warning
 
@@ -896,8 +896,8 @@ void recurseStreamBasedMacrosCallback(
 /// the result to the callback logging macro corresponding to the specified
 /// `level` and return `level`.
 void recursePrintfStyleMacrosCallback(
-                                    BloombergLP::ball::UserFields      *fields,
-                                    BloombergLP::ball::Severity::Level  level)
+                                    BNP_Paribas::ball::UserFields      *fields,
+                                    BNP_Paribas::ball::Severity::Level  level)
 {
     (void)fields;  // suppress warning
 
@@ -936,14 +936,14 @@ void recursePrintfStyleMacrosCallback(
 
 /// Invoke the callback logging macro corresponding to the specified
 /// `level`.
-void recurseCallbackMacrosCallback(BloombergLP::ball::UserFields      *fields,
-                                   BloombergLP::ball::Severity::Level  level)
+void recurseCallbackMacrosCallback(BNP_Paribas::ball::UserFields      *fields,
+                                   BNP_Paribas::ball::Severity::Level  level)
 {
     (void)fields;  // suppress warning
 
     BALL_LOG_SET_CATEGORY("Recursion");
 
-    bsl::function <void(BloombergLP::ball::UserFields *)> callback =
+    bsl::function <void(BNP_Paribas::ball::UserFields *)> callback =
                                                               &recurseCallback;
 
     switch (level) {
@@ -979,7 +979,7 @@ void recurseCallbackMacrosCallback(BloombergLP::ball::UserFields      *fields,
 
 namespace BALL_LOG_HIERARCHICAL_CATEGORIES {
 
-namespace Blp = BloombergLP;
+namespace Blp = BNP_Paribas;
 typedef Blp::ball::Severity                     S;
 typedef S::Level                                Lev;
 typedef Blp::ball::Category                     Cat;
@@ -1850,7 +1850,7 @@ void ClassScopeLoggerA::inlineMethodThatLogsToClassCategory() const
 // CLASS METHODS
 void ClassScopeLoggerA::classMethodThatLogsToClassCategory()
 {
-    bsl::function<void(BloombergLP::ball::UserFields *)> callback =
+    bsl::function<void(BNP_Paribas::ball::UserFields *)> callback =
                                                                &u::incCallback;
 
     BALL_LOGCB_DEBUG(callback) << "callback DEBUG log to class-scope category";
@@ -1993,7 +1993,7 @@ int         numIterations = 0;
 extern "C" {
 void *workerThread24(void *)
 {
-    typedef BloombergLP::ball::Severity Severity;
+    typedef BNP_Paribas::ball::Severity Severity;
 
     BALL_LOG_SET_DYNAMIC_CATEGORY(categoryName);
     for (int i = 0; i < numIterations; ++i) {
@@ -2026,7 +2026,7 @@ int         numIterations = 0;
 extern "C" {
 void *workerThread23(void *)
 {
-    typedef BloombergLP::ball::Severity Severity;
+    typedef BNP_Paribas::ball::Severity Severity;
 
     BALL_LOG_SET_CATEGORY(categoryName);
     for (int i = 0; i < numIterations; ++i) {
@@ -2112,7 +2112,7 @@ enum {
 
 char message[MAX_MSG_SIZE + 1];
 int randomSizes[NUM_MSGS];
-BloombergLP::bslmt::Mutex categoryMutex;
+BNP_Paribas::bslmt::Mutex categoryMutex;
 
 extern "C" {
 void *workerThread18(void *)
@@ -2146,11 +2146,11 @@ namespace BALL_LOG_TEST_CASE_17 {
 static
 void macrosTest(int                                    test,
                 bool                                   loggerManagerExistsFlag,
-                const BloombergLP::ball::TestObserver& testObserver,
+                const BNP_Paribas::ball::TestObserver& testObserver,
                 int                                    numPublishedSoFar)
 {
     ASSERT(loggerManagerExistsFlag ==
-                            BloombergLP::ball::LoggerManager::isInitialized());
+                            BNP_Paribas::ball::LoggerManager::isInitialized());
 
     (void)test;  // used on Unix only
 
@@ -2160,7 +2160,7 @@ void macrosTest(int                                    test,
     TempDirectoryGuard tempDirGuard(u::tempDirPrefix(test));
 
     bsl::string filename(tempDirGuard.getTempDirName());
-    BloombergLP::bdls::PathUtil::appendRaw(&filename,
+    BNP_Paribas::bdls::PathUtil::appendRaw(&filename,
                                             "test17_stderr");
 
     fflush(stderr);
@@ -2174,7 +2174,7 @@ void macrosTest(int                                    test,
 
     u::CerrBufferGuard cerrBufferGuard;
 
-    bsl::function<void(BloombergLP::ball::UserFields *)> callback =
+    bsl::function<void(BNP_Paribas::ball::UserFields *)> callback =
                                                                &u::incCallback;
 
     BALL_LOG_SET_CATEGORY("Logger Manager Comes and Goes");
@@ -2239,7 +2239,7 @@ namespace BALL_LOG_TEST_CASE_15 {
 /// This concrete implementation of `ball::Observer` maintains a count of
 /// the number of messages published to it and gives access to that count
 /// through `publishCount`.
-class my_PublishCountingObserver : public BloombergLP::ball::Observer {
+class my_PublishCountingObserver : public BNP_Paribas::ball::Observer {
 
     // DATA
     int d_publishCount;  // count of calls made to the `publish` method
@@ -2263,8 +2263,8 @@ class my_PublishCountingObserver : public BloombergLP::ball::Observer {
 
     /// Increment the count maintained by this observer by 1, and ignore any
     /// arguments that were supplied.
-    void publish(const BloombergLP::ball::Record&,
-                 const BloombergLP::ball::Context&) BSLS_KEYWORD_OVERRIDE
+    void publish(const BNP_Paribas::ball::Record&,
+                 const BNP_Paribas::ball::Context&) BSLS_KEYWORD_OVERRIDE
     {
         ++d_publishCount;
     }
@@ -2295,7 +2295,7 @@ enum {
 
 char message[MAX_MSG_SIZE + 1];
 int randomSizes[NUM_MSGS];
-BloombergLP::bslmt::Mutex categoryMutex;
+BNP_Paribas::bslmt::Mutex categoryMutex;
 
 extern "C" {
 void *workerThread13(void *)
@@ -2328,7 +2328,7 @@ enum {
 
 char message[MAX_MSG_SIZE + 1];
 int randomSizes[NUM_MSGS];
-BloombergLP::bslmt::Mutex categoryMutex;
+BNP_Paribas::bslmt::Mutex categoryMutex;
 extern "C" {
 void *workerThread12(void *)
 {
@@ -2359,8 +2359,8 @@ enum {
 };
 
 char                      message[MAX_MSG_SIZE + 1];
-int                       severity = BloombergLP::ball::Severity::e_TRACE;
-BloombergLP::bslmt::Mutex categoryMutex;
+int                       severity = BNP_Paribas::ball::Severity::e_TRACE;
+BNP_Paribas::bslmt::Mutex categoryMutex;
 
 extern "C" {
 void *workerThread11(void *)
@@ -2409,17 +2409,17 @@ enum {
 };
 
 char message[MAX_MSG_SIZE + 1];
-BloombergLP::ball::Severity::Level severity =
-                                          BloombergLP::ball::Severity::e_TRACE;
-BloombergLP::bslmt::Mutex categoryMutex;
+BNP_Paribas::ball::Severity::Level severity =
+                                          BNP_Paribas::ball::Severity::e_TRACE;
+BNP_Paribas::bslmt::Mutex categoryMutex;
 
 /// Return the number of log messages to be produced for current severity
 /// level.
 int numMsgs()
 {
-    return BloombergLP::ball::Severity::e_TRACE == severity
+    return BNP_Paribas::ball::Severity::e_TRACE == severity
          ? NUM_MSGS_TRACE
-         : BloombergLP::ball::Severity::e_INFO  == severity
+         : BNP_Paribas::ball::Severity::e_INFO  == severity
          ? NUM_MSGS_INFO
          : 0;
 }
@@ -2433,7 +2433,7 @@ int numMsgs()
 #define BALL_OLD_LOG_END BALL_OLD_LOG_REAL_END
 
 #define BALL_LOG_STREAM_OLD(BALL_SEVERITY) {                                  \
-    using namespace BloombergLP;                                              \
+    using namespace BNP_Paribas;                                              \
     if (BALL_LOG_THRESHOLD >= (BALL_SEVERITY)) {                              \
         if (ball::Log::isCategoryEnabled(                                     \
                           ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER),\
@@ -2443,7 +2443,7 @@ int numMsgs()
             BALL_OLD_STREAM
 
 #define BALL_LOG_STREAM_OLD_UNLIKELY(BALL_SEVERITY) {                         \
-    using namespace BloombergLP;                                              \
+    using namespace BNP_Paribas;                                              \
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(                                \
                                  BALL_LOG_THRESHOLD >= (BALL_SEVERITY))) {    \
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                                   \
@@ -2455,10 +2455,10 @@ int numMsgs()
             BALL_OLD_STREAM
 
 #define BALL_LOG_OLD_TRACE BALL_LOG_STREAM_OLD_UNLIKELY(                      \
-                                          BloombergLP::ball::Severity::e_TRACE)
+                                          BNP_Paribas::ball::Severity::e_TRACE)
 
 #define BALL_LOG_OLD_INFO                                                     \
-                       BALL_LOG_STREAM_OLD(BloombergLP::ball::Severity::e_INFO)
+                       BALL_LOG_STREAM_OLD(BNP_Paribas::ball::Severity::e_INFO)
 
 /// Log test message.
 struct Util {
@@ -2533,10 +2533,10 @@ void *(*workerThread10FuncPtr)(void *);
 extern "C" {
 void *workerThread10(void *)
 {
-    ASSERT(BloombergLP::ball::Severity::e_TRACE == severity ||
-           BloombergLP::ball::Severity::e_INFO  == severity);
+    ASSERT(BNP_Paribas::ball::Severity::e_TRACE == severity ||
+           BNP_Paribas::ball::Severity::e_INFO  == severity);
 
-    for (int i = BloombergLP::ball::Severity::e_TRACE == severity
+    for (int i = BNP_Paribas::ball::Severity::e_TRACE == severity
                ? NUM_MSGS_TRACE
                : NUM_MSGS_INFO; 0 < i; --i) {
         (*workerThread10FuncPtr)(NULL);
@@ -2595,7 +2595,7 @@ enum {
     // memory allocated for each record and memory required by buffer to
     // accommodate the record handles.
     REC_BUF_LIMIT = NUM_THREADS * EXP_N_TOTAL *
-                                 (sizeof (BloombergLP::ball::Record) + 400)
+                                 (sizeof (BNP_Paribas::ball::Record) + 400)
 };
 
 enum { RECORD, PUBLISH, TRIGGER };
@@ -2603,11 +2603,11 @@ enum { RECORD, PUBLISH, TRIGGER };
 /// This thread-safe, concrete implementation of `ball::Observer` stores all
 /// the messages published to it in a vector and provide access to the
 /// vector by `get` method.
-class my_Observer : public BloombergLP::ball::Observer {
+class my_Observer : public BNP_Paribas::ball::Observer {
 
     // DATA
     bsl::vector<bsl::string> d_publishedMessages;
-    BloombergLP::bslmt::Mutex d_mutex;
+    BNP_Paribas::bslmt::Mutex d_mutex;
 
   public:
     // CREATORS
@@ -2617,8 +2617,8 @@ class my_Observer : public BloombergLP::ball::Observer {
     // MANIPULATORS
     using Observer::publish;  // avoid hiding base class method
 
-    void publish(const BloombergLP::ball::Record&  record,
-                 const BloombergLP::ball::Context&) BSLS_KEYWORD_OVERRIDE
+    void publish(const BNP_Paribas::ball::Record&  record,
+                 const BNP_Paribas::ball::Context&) BSLS_KEYWORD_OVERRIDE
     {
         d_mutex.lock();
         d_publishedMessages.push_back(record.fixedFields().message());
@@ -2639,7 +2639,7 @@ class my_Observer : public BloombergLP::ball::Observer {
     }
 };
 
-BloombergLP::bslmt::Mutex categoryMutex;
+BNP_Paribas::bslmt::Mutex categoryMutex;
 
 extern "C" {
 void *workerThread9(void *arg)
@@ -2658,7 +2658,7 @@ void *workerThread9(void *arg)
     // - the event it will cause
 
     const int id = static_cast<int>(
-                      reinterpret_cast<BloombergLP::bsls::Types::IntPtr>(arg));
+                      reinterpret_cast<BNP_Paribas::bsls::Types::IntPtr>(arg));
 
     categoryMutex.lock();
     BALL_LOG_SET_CATEGORY("main category");
@@ -2720,11 +2720,11 @@ namespace BALL_LOG_TEST_CASE_5 {
 static
 void macrosTest(int                                    test,
                 bool                                   loggerManagerExistsFlag,
-                const BloombergLP::ball::TestObserver& testObserver,
+                const BNP_Paribas::ball::TestObserver& testObserver,
                 int                                    numPublishedSoFar)
 {
     ASSERT(loggerManagerExistsFlag ==
-                            BloombergLP::ball::LoggerManager::isInitialized());
+                            BNP_Paribas::ball::LoggerManager::isInitialized());
 
     (void)test;  // used on Unix only
 
@@ -2734,7 +2734,7 @@ void macrosTest(int                                    test,
     TempDirectoryGuard tempDirGuard(u::tempDirPrefix(test));
 
     bsl::string filename(tempDirGuard.getTempDirName());
-    BloombergLP::bdls::PathUtil::appendRaw(&filename, "test5_stderr");
+    BNP_Paribas::bdls::PathUtil::appendRaw(&filename, "test5_stderr");
 
     fflush(stderr);
     int fd = creat(filename.c_str(), 0777);
@@ -2768,8 +2768,8 @@ void macrosTest(int                                    test,
     if (verbose)
         bsl::cout << "Safely invoked stream-style macros." << bsl::endl;
 
-    BloombergLP::ball::Severity::Level severity =
-                                           BloombergLP::ball::Severity::e_WARN;
+    BNP_Paribas::ball::Severity::Level severity =
+                                           BNP_Paribas::ball::Severity::e_WARN;
 
     BALL_LOGVA(severity, "Hello?");
     BALL_LOGVA(severity, "Hello? %d", 1);
@@ -2828,9 +2828,9 @@ struct ThreadFunctor {
     {
         BALL_LOG_SET_CATEGORY("CATEGORY_5");
 
-        typedef BloombergLP::bsls::Types::Uint64 Uint64;
+        typedef BNP_Paribas::bsls::Types::Uint64 Uint64;
 
-        const Uint64 id = BloombergLP::bslmt::ThreadUtil::selfIdAsUint64();
+        const Uint64 id = BNP_Paribas::bslmt::ThreadUtil::selfIdAsUint64();
 
         for (unsigned i = 0; i < 4000000000U; ++i) {
             BALL_LOG_ERROR << "ERROR " << id;
@@ -2963,7 +2963,7 @@ int main(int argc, char *argv[])
         if (verbose) bsl::cout << "\nUSAGE EXAMPLE"
                                << "\n=============" << bsl::endl;
 
-            using namespace BloombergLP;    // OK here
+            using namespace BNP_Paribas;    // OK here
 
             ball::LoggerManagerConfiguration lmConfig;
             lmConfig.setDefaultThresholdLevelsIfValid(Sev::e_TRACE);
@@ -3040,7 +3040,7 @@ if (verbose) bsl::cout << "Example 1: A Basic Logging Example" << bsl::endl;
                                << "CLASS-SCOPE LOGGING USAGE EXAMPLE\n"
                                << "=================================\n";
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         {
             bslma::TestAllocator ta(veryVeryVeryVerbose);
@@ -3107,7 +3107,7 @@ if (verbose) bsl::cout << "Example 1: A Basic Logging Example" << bsl::endl;
                                << "RULE-BASED LOGGING USAGE EXAMPLE\n"
                                << "================================\n";
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
 // Next we demonstrate how to create a logging rule that sets the pass-through
 // logging threshold to `ball::Severity::e_TRACE` (i.e., enables verbose
@@ -3186,7 +3186,7 @@ if (verbose) bsl::cout << "Example 1: A Basic Logging Example" << bsl::endl;
                                << bsl::endl << "============="
                                << bsl::endl;
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         if (verbose) bsl::cout << "Initialize logger manager" << bsl::endl;
 
@@ -3395,11 +3395,11 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (verbose) bsl::cout << "Utility usage" << bsl::endl;
         {
-            static const BloombergLP::ball::Category *category =
-                       BloombergLP::ball::Log::setCategory("EQUITY.NASD.SUNW");
+            static const BNP_Paribas::ball::Category *category =
+                       BNP_Paribas::ball::Log::setCategory("EQUITY.NASD.SUNW");
             {
-                using BloombergLP::ball::Log;
-                using BloombergLP::ball::Severity;
+                using BNP_Paribas::ball::Log;
+                using BNP_Paribas::ball::Severity;
                 if (category->isEnabled(ball::Severity::e_INFO)) {
                     const char *formatSpec =
                                          "[7] %d shares of %s sold at %f\n";
@@ -3407,7 +3407,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                       u::messageBufferSize(),
                                       formatSpec, 400, "SUNW", 5.65);
                     ball::Log::logMessage(category,
-                                         BloombergLP::ball::Severity::e_INFO,
+                                         BNP_Paribas::ball::Severity::e_INFO,
                                          __FILE__, __LINE__,
                                          u::messageBuffer());
                     if (veryVeryVerbose) P(u::messageBuffer());
@@ -3450,12 +3450,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         using namespace BALL_LOG_TEST_CASE_35;
 
-        typedef BloombergLP::ball::StreamObserver  StreamObserver;
+        typedef BNP_Paribas::ball::StreamObserver  StreamObserver;
 
         TestAllocator ta(veryVeryVeryVerbose);
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
 
         LoggerManager& manager = LoggerManager::singleton();
 
@@ -3717,41 +3717,41 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             BALL_LOG_SET_CATEGORY("Recursion");
 
-            bsl::function <void(BloombergLP::ball::UserFields *)> callback;
+            bsl::function <void(BNP_Paribas::ball::UserFields *)> callback;
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseStreamBasedMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_FATAL);
             BALL_LOGCB_FATAL(callback) << "Outer FATAL";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseStreamBasedMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_ERROR);
             BALL_LOGCB_ERROR(callback) << "Outer ERROR";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                           &recurseStreamBasedMacrosCallback,
-                                          BloombergLP::bdlf::PlaceHolders::_1,
+                                          BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_WARN);
             BALL_LOGCB_WARN(callback) << "Outer WARN";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseStreamBasedMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_INFO);
             BALL_LOGCB_INFO(callback) << "Outer INFO";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseStreamBasedMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_DEBUG);
             BALL_LOGCB_DEBUG(callback) << "Outer DEBUG";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseStreamBasedMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_TRACE);
             BALL_LOGCB_TRACE(callback) << "Outer TRACE";
         }
@@ -3760,41 +3760,41 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             BALL_LOG_SET_CATEGORY("Recursion");
 
-            bsl::function <void(BloombergLP::ball::UserFields *)> callback;
+            bsl::function <void(BNP_Paribas::ball::UserFields *)> callback;
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recursePrintfStyleMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_FATAL);
             BALL_LOGCB_FATAL(callback) << "Outer FATAL";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recursePrintfStyleMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_ERROR);
             BALL_LOGCB_ERROR(callback) << "Outer ERROR";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recursePrintfStyleMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_WARN);
             BALL_LOGCB_WARN(callback) << "Outer WARN";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recursePrintfStyleMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_INFO);
             BALL_LOGCB_INFO(callback) << "Outer INFO";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recursePrintfStyleMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_DEBUG);
             BALL_LOGCB_DEBUG(callback) << "Outer DEBUG";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recursePrintfStyleMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_TRACE);
             BALL_LOGCB_TRACE(callback) << "Outer TRACE";
         }
@@ -3804,41 +3804,41 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             BALL_LOG_SET_CATEGORY("Recursion");
 
-            bsl::function <void(BloombergLP::ball::UserFields *)> callback;
+            bsl::function <void(BNP_Paribas::ball::UserFields *)> callback;
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseCallbackMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_FATAL);
             BALL_LOGCB_FATAL(callback) << "Outer FATAL";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseCallbackMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_ERROR);
             BALL_LOGCB_ERROR(callback) << "Outer ERROR";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseCallbackMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_WARN);
             BALL_LOGCB_WARN(callback) << "Outer WARN";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseCallbackMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_INFO);
             BALL_LOGCB_INFO(callback) << "Outer INFO";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseCallbackMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_DEBUG);
             BALL_LOGCB_DEBUG(callback) << "Outer DEBUG";
 
-            callback = BloombergLP::bdlf::BindUtil::bind(
+            callback = BNP_Paribas::bdlf::BindUtil::bind(
                                            &recurseCallbackMacrosCallback,
-                                           BloombergLP::bdlf::PlaceHolders::_1,
+                                           BNP_Paribas::bdlf::PlaceHolders::_1,
                                            Sev::e_TRACE);
             BALL_LOGCB_TRACE(callback) << "Outer TRACE";
         }
@@ -3897,7 +3897,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                              "==========================================\n";
 
         namespace TC = BALL_LOG_HIERARCHICAL_CATEGORIES;
-        namespace Blp = BloombergLP;
+        namespace Blp = BNP_Paribas;
 
         typedef TC::Cat                    Cat;
         typedef Blp::ball::LoggerManager   Manager;
@@ -4221,7 +4221,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                              "==========================================\n";
 
         namespace TC = BALL_LOG_HIERARCHICAL_CATEGORIES;
-        namespace Blp = BloombergLP;
+        namespace Blp = BNP_Paribas;
 
         typedef TC::Cat                     Cat;
         typedef Blp::ball::LoggerManager    Manager;
@@ -4572,7 +4572,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                              "===============================\n";
 
         namespace TC = BALL_LOG_HIERARCHICAL_CATEGORIES;
-        namespace Blp = BloombergLP;
+        namespace Blp = BNP_Paribas;
 
         typedef TC::Cat                     Cat;
         typedef Blp::ball::LoggerManager    Manager;
@@ -4865,9 +4865,9 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << "\n==================================="
                                << bsl::endl;
 
-        namespace Blp = BloombergLP;
+        namespace Blp = BNP_Paribas;
 
-        bsl::function<void(BloombergLP::ball::UserFields *)> callback =
+        bsl::function<void(BNP_Paribas::ball::UserFields *)> callback =
                                                                &u::incCallback;
         Blp::bslma::TestAllocator ta(veryVeryVeryVerbose);
 
@@ -5044,10 +5044,10 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << "\n==================================="
                                << bsl::endl;
 
-        namespace Blp = BloombergLP;
+        namespace Blp = BNP_Paribas;
         typedef Blp::ball::Severity Sev;
 
-        bsl::function<void(BloombergLP::ball::UserFields *)> callback =
+        bsl::function<void(BNP_Paribas::ball::UserFields *)> callback =
                                                                &u::incCallback;
 
         Blp::bslma::TestAllocator ta(veryVeryVeryVerbose);
@@ -5676,7 +5676,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << "\n================================="
                                << bsl::endl;
 
-        namespace Blp = BloombergLP;
+        namespace Blp = BNP_Paribas;
 
         Blp::bslma::TestAllocator ta(veryVeryVeryVerbose);
 
@@ -6337,7 +6337,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << "\n==============================="
                                << bsl::endl;
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         bslma::TestAllocator ta(veryVeryVeryVerbose);
         ball::LoggerManagerConfiguration lmc;
@@ -6505,7 +6505,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << bsl::endl;
 
         using namespace BALL_LOG_TEST_CASE_29;
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         bslma::TestAllocator ta(veryVeryVeryVerbose);
         ball::LoggerManagerConfiguration lmc;
@@ -6699,7 +6699,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         //   BALL_IS_ENABLED(SEVERITY)
         // --------------------------------------------------------------------
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         if (verbose) bsl::cout << "\nTESTING `BALL_LOG_IS_ENABLED(SEVERITY)`"
                                << "\n======================================="
@@ -6763,7 +6763,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             BALL_LOG_SET_CATEGORY("TEST.CATEGORY3");
             for (int i = 0; i < NUM_DATA; ++i) {
-                BloombergLP::ball::Rule rule("TEST.CATEGORY3",
+                BNP_Paribas::ball::Rule rule("TEST.CATEGORY3",
                                              OFF, DATA[i], OFF, OFF);
                 manager.addRule(rule);
                 for (int j = 1;  j < NUM_DATA; ++j) {
@@ -6806,7 +6806,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << "TESTING RULE-BASED LOGGING: `logMessage`\n"
                       << "========================================\n";
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         int VALUES[] = { 1,
                          Sev::e_FATAL - 1,
@@ -6983,7 +6983,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << "TESTING RULE-BASED LOGGING: `isCategoryEnabled`\n"
                       << "===============================================\n";
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         int VALUES[] = { 1,
                          Sev::e_FATAL - 1,
@@ -7133,20 +7133,20 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             bsl::cout << "\tTesting macro correctness with a logger manager."
                       << bsl::endl;
         {
-            BloombergLP::bslma::TestAllocator ta(veryVeryVeryVerbose);
-            BloombergLP::ball::LoggerManagerConfiguration lmc;
+            BNP_Paribas::bslma::TestAllocator ta(veryVeryVeryVerbose);
+            BNP_Paribas::ball::LoggerManagerConfiguration lmc;
             lmc.setDefaultThresholdLevelsIfValid(
-                  BloombergLP::ball::Severity::e_TRACE,  // record level
-                  BloombergLP::ball::Severity::e_WARN,   // passthrough level
-                  BloombergLP::ball::Severity::e_ERROR,  // trigger level
-                  BloombergLP::ball::Severity::e_FATAL); // triggerAll level
+                  BNP_Paribas::ball::Severity::e_TRACE,  // record level
+                  BNP_Paribas::ball::Severity::e_WARN,   // passthrough level
+                  BNP_Paribas::ball::Severity::e_ERROR,  // trigger level
+                  BNP_Paribas::ball::Severity::e_FATAL); // triggerAll level
 
-            BloombergLP::ball::LoggerManagerScopedGuard guard(lmc, &ta);
-            BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+            BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc, &ta);
+            BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
-            bsl::shared_ptr<BloombergLP::ball::TestObserver> observer =
-                 bsl::make_shared<BloombergLP::ball::TestObserver>(&bsl::cout);
+            bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer =
+                 bsl::make_shared<BNP_Paribas::ball::TestObserver>(&bsl::cout);
 
             ASSERT(0 == manager.registerObserver(observer, "test"));
 
@@ -7208,20 +7208,20 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             bsl::cout << "\tTesting macro correctness with a logger manager."
                       << bsl::endl;
         {
-            BloombergLP::bslma::TestAllocator ta(veryVeryVeryVerbose);
-            BloombergLP::ball::LoggerManagerConfiguration lmc;
+            BNP_Paribas::bslma::TestAllocator ta(veryVeryVeryVerbose);
+            BNP_Paribas::ball::LoggerManagerConfiguration lmc;
             lmc.setDefaultThresholdLevelsIfValid(
-                  BloombergLP::ball::Severity::e_TRACE,  // record level
-                  BloombergLP::ball::Severity::e_WARN,   // passthrough level
-                  BloombergLP::ball::Severity::e_ERROR,  // trigger level
-                  BloombergLP::ball::Severity::e_FATAL); // triggerAll level
+                  BNP_Paribas::ball::Severity::e_TRACE,  // record level
+                  BNP_Paribas::ball::Severity::e_WARN,   // passthrough level
+                  BNP_Paribas::ball::Severity::e_ERROR,  // trigger level
+                  BNP_Paribas::ball::Severity::e_FATAL); // triggerAll level
 
-            BloombergLP::ball::LoggerManagerScopedGuard guard(lmc, &ta);
-            BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+            BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc, &ta);
+            BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
-            bsl::shared_ptr<BloombergLP::ball::TestObserver> observer =
-                 bsl::make_shared<BloombergLP::ball::TestObserver>(&bsl::cout);
+            bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer =
+                 bsl::make_shared<BNP_Paribas::ball::TestObserver>(&bsl::cout);
 
             ASSERT(0 == manager.registerObserver(observer, "test"));
 
@@ -7281,20 +7281,20 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             bsl::cout << "\tTesting macro correctness with a logger manager."
                       << bsl::endl;
         {
-            BloombergLP::bslma::TestAllocator ta(veryVeryVeryVerbose);
-            BloombergLP::ball::LoggerManagerConfiguration lmc;
+            BNP_Paribas::bslma::TestAllocator ta(veryVeryVeryVerbose);
+            BNP_Paribas::ball::LoggerManagerConfiguration lmc;
             lmc.setDefaultThresholdLevelsIfValid(
-                  BloombergLP::ball::Severity::e_TRACE,  // record level
-                  BloombergLP::ball::Severity::e_WARN,   // passthrough level
-                  BloombergLP::ball::Severity::e_ERROR,  // trigger level
-                  BloombergLP::ball::Severity::e_FATAL); // triggerAll level
+                  BNP_Paribas::ball::Severity::e_TRACE,  // record level
+                  BNP_Paribas::ball::Severity::e_WARN,   // passthrough level
+                  BNP_Paribas::ball::Severity::e_ERROR,  // trigger level
+                  BNP_Paribas::ball::Severity::e_FATAL); // triggerAll level
 
-            BloombergLP::ball::LoggerManagerScopedGuard guard(lmc, &ta);
-            BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+            BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc, &ta);
+            BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
-            bsl::shared_ptr<BloombergLP::ball::TestObserver> observer =
-                 bsl::make_shared<BloombergLP::ball::TestObserver>(&bsl::cout);
+            bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer =
+                 bsl::make_shared<BNP_Paribas::ball::TestObserver>(&bsl::cout);
 
             ASSERT(0 == manager.registerObserver(observer, "test"));
 
@@ -7353,20 +7353,20 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             bsl::cout << "\tTesting macro correctness with a logger manager."
                       << bsl::endl;
         {
-            BloombergLP::bslma::TestAllocator ta(veryVeryVeryVerbose);
-            BloombergLP::ball::LoggerManagerConfiguration lmc;
+            BNP_Paribas::bslma::TestAllocator ta(veryVeryVeryVerbose);
+            BNP_Paribas::ball::LoggerManagerConfiguration lmc;
             lmc.setDefaultThresholdLevelsIfValid(
-               BloombergLP::ball::Severity::e_TRACE,  // record level
-               BloombergLP::ball::Severity::e_WARN,   // passthrough level
-               BloombergLP::ball::Severity::e_ERROR,  // trigger level
-               BloombergLP::ball::Severity::e_FATAL); // triggerAll level
+               BNP_Paribas::ball::Severity::e_TRACE,  // record level
+               BNP_Paribas::ball::Severity::e_WARN,   // passthrough level
+               BNP_Paribas::ball::Severity::e_ERROR,  // trigger level
+               BNP_Paribas::ball::Severity::e_FATAL); // triggerAll level
 
-            BloombergLP::ball::LoggerManagerScopedGuard guard(lmc, &ta);
-            BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+            BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc, &ta);
+            BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
-            bsl::shared_ptr<BloombergLP::ball::TestObserver> observer =
-                 bsl::make_shared<BloombergLP::ball::TestObserver>(&bsl::cout);
+            bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer =
+                 bsl::make_shared<BNP_Paribas::ball::TestObserver>(&bsl::cout);
 
             ASSERT(0 == manager.registerObserver(observer, "test"));
 
@@ -7408,7 +7408,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << "Testing static functions\n"
                       << "========================\n";
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         const int UC = Holder::e_UNINITIALIZED_CATEGORY;
         const int DC = Holder::e_DYNAMIC_CATEGORY;
@@ -7546,7 +7546,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << "Test ball::Log_Stream" << bsl::endl
                                << "=====================" << bsl::endl;
 
-        using namespace BloombergLP;  // okay here
+        using namespace BNP_Paribas;  // okay here
 
         static const struct {
             int         d_line;            // line number
@@ -7588,8 +7588,8 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         bslma::DefaultAllocatorGuard guard(&da);
 
         CategoryManager CM(&ta);
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard lmg(lmc);
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard lmg(lmc);
 
         for (int i = 0; i < NUM_DATA; ++i) {
             const int     LINE        = DATA[i].d_line;
@@ -7651,7 +7651,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << "=====================================\n";
 
         using namespace BALL_LOG_TEST_CASE_18;
-        namespace Blp = BloombergLP;
+        namespace Blp = BNP_Paribas;
 
         for (int i = 0; i < MAX_MSG_SIZE; ++i) {
             message[i] = 'X';
@@ -7717,29 +7717,29 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             bsl::cout << "\tTesting macro correctness with a logger manager."
                       << bsl::endl;
         {
-            BloombergLP::ball::LoggerManagerConfiguration lmc;
+            BNP_Paribas::ball::LoggerManagerConfiguration lmc;
             lmc.setDefaultThresholdLevelsIfValid(
-                  BloombergLP::ball::Severity::e_TRACE,  // record level
-                  BloombergLP::ball::Severity::e_WARN,   // passthrough level
-                  BloombergLP::ball::Severity::e_ERROR,  // trigger level
-                  BloombergLP::ball::Severity::e_FATAL); // triggerAll level
+                  BNP_Paribas::ball::Severity::e_TRACE,  // record level
+                  BNP_Paribas::ball::Severity::e_WARN,   // passthrough level
+                  BNP_Paribas::ball::Severity::e_ERROR,  // trigger level
+                  BNP_Paribas::ball::Severity::e_FATAL); // triggerAll level
 
-            BloombergLP::ball::LoggerManagerScopedGuard guard(lmc);
-            BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+            BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc);
+            BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
-            bsl::shared_ptr<BloombergLP::ball::TestObserver> observer =
-                 bsl::make_shared<BloombergLP::ball::TestObserver>(&bsl::cout);
+            bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer =
+                 bsl::make_shared<BNP_Paribas::ball::TestObserver>(&bsl::cout);
 
             ASSERT(0 == manager.registerObserver(observer, "test"));
 
             // Re "sieve" category: (1) if recorded, then also published;
             // (2) never triggered.
 
-            BloombergLP::ball::Administration::addCategory(
+            BNP_Paribas::ball::Administration::addCategory(
                                          "sieve",
-                                         BloombergLP::ball::Severity::e_INFO,
-                                         BloombergLP::ball::Severity::e_INFO,
+                                         BNP_Paribas::ball::Severity::e_INFO,
+                                         BNP_Paribas::ball::Severity::e_INFO,
                                          0,
                                          0);
             BALL_LOG_SET_DYNAMIC_CATEGORY("sieve")
@@ -7759,7 +7759,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
             manager.setCategory("sieve",
                                 0,
-                                BloombergLP::ball::Severity::e_WARN,
+                                BNP_Paribas::ball::Severity::e_WARN,
                                 0,
                                 0);
 
@@ -7865,12 +7865,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         using namespace BALL_LOG_TEST_CASE_17;
 
-        BloombergLP::ball::TestObserver  testObserver(&bsl::cout);
-        BloombergLP::ball::TestObserver *TO = &testObserver;
+        BNP_Paribas::ball::TestObserver  testObserver(&bsl::cout);
+        BNP_Paribas::ball::TestObserver *TO = &testObserver;
 
-        bsl::shared_ptr<BloombergLP::ball::Observer> observerWrapper(
+        bsl::shared_ptr<BNP_Paribas::ball::Observer> observerWrapper(
                                     TO,
-                                    BloombergLP::bslstl::SharedPtrNilDeleter(),
+                                    BNP_Paribas::bslstl::SharedPtrNilDeleter(),
                                     &ta);
 
         ASSERT(0 == TO->numPublishedRecords());
@@ -7879,13 +7879,13 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             macrosTest(test, false, *TO, TO->numPublishedRecords());
 
             {
-                 BloombergLP::ball::LoggerManagerConfiguration lmc;
+                 BNP_Paribas::ball::LoggerManagerConfiguration lmc;
                  ASSERT(0 == lmc.setDefaultThresholdLevelsIfValid(0,
                                                                   TRACE,
                                                                   0,
                                                                   0));
 
-                 BloombergLP::ball::LoggerManagerScopedGuard guard(lmc);
+                 BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc);
 
                  LoggerManager::singleton().registerObserver(observerWrapper,
                                                              "default");
@@ -7914,7 +7914,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << "===================================="
                                << bsl::endl;
 
-        bsl::function<void(BloombergLP::ball::UserFields *)> callback =
+        bsl::function<void(BNP_Paribas::ball::UserFields *)> callback =
                                                                &u::incCallback;
         u::numIncCallback = 0;
 
@@ -7922,23 +7922,23 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         const char  SEP     = ':';
         const int   ARGS[]  = { 1, 2, 3 };
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard guard(lmc, &ta);
-        BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc, &ta);
+        BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
-        bsl::shared_ptr<BloombergLP::ball::TestObserver> observer =
-                 bsl::make_shared<BloombergLP::ball::TestObserver>(&bsl::cout);
+        bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer =
+                 bsl::make_shared<BNP_Paribas::ball::TestObserver>(&bsl::cout);
 
         ASSERT(0 == manager.registerObserver(observer, "test"));
 
         // Re "sieve" category: (1) if recorded, then also published;
         // (2) never triggered.
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                           "sieve",
-                                          BloombergLP::ball::Severity::e_TRACE,
-                                          BloombergLP::ball::Severity::e_TRACE,
+                                          BNP_Paribas::ball::Severity::e_TRACE,
+                                          BNP_Paribas::ball::Severity::e_TRACE,
                                           0,
                                           0);
         BALL_LOG_SET_CATEGORY("sieve")
@@ -7948,19 +7948,19 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         const Cat  *CAT   = BALL_LOG_CATEGORY;
         const char *FILE  = __FILE__;
 
-        const int TRACE = BloombergLP::ball::Severity::e_TRACE;
-        const int DEBUG = BloombergLP::ball::Severity::e_DEBUG;
-        const int INFO  = BloombergLP::ball::Severity::e_INFO;
-        const int WARN  = BloombergLP::ball::Severity::e_WARN;
-        const int ERROR = BloombergLP::ball::Severity::e_ERROR;
-        const int FATAL = BloombergLP::ball::Severity::e_FATAL;
+        const int TRACE = BNP_Paribas::ball::Severity::e_TRACE;
+        const int DEBUG = BNP_Paribas::ball::Severity::e_DEBUG;
+        const int INFO  = BNP_Paribas::ball::Severity::e_INFO;
+        const int WARN  = BNP_Paribas::ball::Severity::e_WARN;
+        const int ERROR = BNP_Paribas::ball::Severity::e_ERROR;
+        const int FATAL = BNP_Paribas::ball::Severity::e_FATAL;
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noTRACE",
-                                  BloombergLP::ball::Severity::e_TRACE - 1,
-                                  BloombergLP::ball::Severity::e_TRACE - 1,
-                                  BloombergLP::ball::Severity::e_TRACE - 1,
-                                  BloombergLP::ball::Severity::e_TRACE - 1);
+                                  BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                  BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                  BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                  BNP_Paribas::ball::Severity::e_TRACE - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOGCB_TRACE`" << bsl::endl;
@@ -7983,12 +7983,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, TRACE, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noDEBUG",
-                                   BloombergLP::ball::Severity::e_DEBUG - 1,
-                                   BloombergLP::ball::Severity::e_DEBUG - 1,
-                                   BloombergLP::ball::Severity::e_DEBUG - 1,
-                                   BloombergLP::ball::Severity::e_DEBUG - 1);
+                                   BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                   BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                   BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                   BNP_Paribas::ball::Severity::e_DEBUG - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOGCB_DEBUG`" << bsl::endl;
@@ -8011,12 +8011,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, DEBUG, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                     "noINFO",
-                                    BloombergLP::ball::Severity::e_INFO - 1,
-                                    BloombergLP::ball::Severity::e_INFO - 1,
-                                    BloombergLP::ball::Severity::e_INFO - 1,
-                                    BloombergLP::ball::Severity::e_INFO - 1);
+                                    BNP_Paribas::ball::Severity::e_INFO - 1,
+                                    BNP_Paribas::ball::Severity::e_INFO - 1,
+                                    BNP_Paribas::ball::Severity::e_INFO - 1,
+                                    BNP_Paribas::ball::Severity::e_INFO - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOGCB_INFO`" << bsl::endl;
@@ -8039,12 +8039,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, INFO, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noWARN",
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1);
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOGCB_WARN`" << bsl::endl;
@@ -8067,12 +8067,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, WARN, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noERROR",
-                                   BloombergLP::ball::Severity::e_ERROR - 1,
-                                   BloombergLP::ball::Severity::e_ERROR - 1,
-                                   BloombergLP::ball::Severity::e_ERROR - 1,
-                                   BloombergLP::ball::Severity::e_ERROR - 1);
+                                   BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                   BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                   BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                   BNP_Paribas::ball::Severity::e_ERROR - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOGCB_ERROR`" << bsl::endl;
@@ -8095,12 +8095,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, ERROR, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noFATAL",
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1);
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOGCB_FATAL`" << bsl::endl;
@@ -8222,7 +8222,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << bsl::endl << "===========" << bsl::endl;
 
         using namespace BALL_LOG_TEST_CASE_15;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         ball::LoggerManagerConfiguration configuration;
         configuration.setDefaultThresholdLevelsIfValid(
@@ -8284,7 +8284,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << bsl::endl;
         }
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         ball::LoggerManagerConfiguration lmc;
         lmc.setDefaultThresholdLevelsIfValid(
@@ -8359,7 +8359,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         }
 
         using namespace BALL_LOG_TEST_CASE_13;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         int i;
         for (i = 0; i < MAX_MSG_SIZE; ++i) {
@@ -8429,7 +8429,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         }
 
         using namespace BALL_LOG_TEST_CASE_12;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         int i;
         for (i = 0; i < MAX_MSG_SIZE; ++i) {
@@ -8498,7 +8498,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         if (!verbose) break;
 
         using namespace BALL_LOG_TEST_CASE_11;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         for (int i = 0; i < MAX_MSG_SIZE; ++i) {
             message[i] = 'X';
@@ -8508,7 +8508,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         severity = veryVerbose ? ball::Severity::e_INFO
                                : ball::Severity::e_DEBUG;
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
         lmc.setDefaultThresholdLevelsIfValid(
                                  ball::Severity::e_TRACE,  // record level
                                  ball::Severity::e_WARN,   // passthrough level
@@ -8585,7 +8585,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         if (!verbose) break;
 
         using namespace BALL_LOG_TEST_CASE_10;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         for (int i = 0; i < MAX_MSG_SIZE; ++i) {
             message[i] = 'X';
@@ -8708,7 +8708,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         }
 
         using namespace BALL_LOG_TEST_CASE_9;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         ASSERT(EXP_N_TOTAL == EXP_N_RECORD + EXP_N_PUBLISH + EXP_N_TRIGGER);
 
@@ -8786,7 +8786,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << "\n==========================" << bsl::endl;
         }
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         ball::LoggerManagerConfiguration lmc;
 
@@ -8859,7 +8859,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << "\n====================================" << bsl::endl;
         }
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         char helloWorld1[] = "hello world 1";
         char helloWorld2[] = "hello world 2";
@@ -8892,7 +8892,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                  ball::Severity::e_ERROR,  // trigger level
                                  ball::Severity::e_FATAL); // triggerAll level
 
-            BloombergLP::ball::LoggerManagerScopedGuard guard(lmc, &ta);
+            BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc, &ta);
 
             bsl::ostringstream os;
             bsl::shared_ptr<ball::StreamObserver> observer =
@@ -8992,7 +8992,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         }
 
         using namespace BALL_LOG_TEST_CASE_6;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         ball::LoggerManagerConfiguration lmc;
         lmc.setDefaultThresholdLevelsIfValid(
@@ -9055,12 +9055,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         using namespace BALL_LOG_TEST_CASE_5;
 
-        BloombergLP::ball::TestObserver  testObserver(&bsl::cout);
-        BloombergLP::ball::TestObserver *TO = &testObserver;
+        BNP_Paribas::ball::TestObserver  testObserver(&bsl::cout);
+        BNP_Paribas::ball::TestObserver *TO = &testObserver;
 
-        bsl::shared_ptr<BloombergLP::ball::Observer> observerWrapper(
+        bsl::shared_ptr<BNP_Paribas::ball::Observer> observerWrapper(
                                     TO,
-                                    BloombergLP::bslstl::SharedPtrNilDeleter(),
+                                    BNP_Paribas::bslstl::SharedPtrNilDeleter(),
                                     &ta);
 
         ASSERT(0 == TO->numPublishedRecords());
@@ -9069,13 +9069,13 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             macrosTest(test, false, *TO, TO->numPublishedRecords());
 
             {
-                 BloombergLP::ball::LoggerManagerConfiguration lmc;
+                 BNP_Paribas::ball::LoggerManagerConfiguration lmc;
                  ASSERT(0 == lmc.setDefaultThresholdLevelsIfValid(0,
                                                                   TRACE,
                                                                   0,
                                                                   0));
 
-                 BloombergLP::ball::LoggerManagerScopedGuard guard(lmc);
+                 BNP_Paribas::ball::LoggerManagerScopedGuard guard(lmc);
 
                  LoggerManager::singleton().registerObserver(observerWrapper,
                                                              "default");
@@ -9105,24 +9105,24 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         const char  SEP     = ':';
         const int   ARGS[]  = { 1, 2, 3 };
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
 
-        bsl::shared_ptr<BloombergLP::ball::TestObserver> observer(
-               new (ta) BloombergLP::ball::TestObserver(&bsl::cout, &ta), &ta);
+        bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer(
+               new (ta) BNP_Paribas::ball::TestObserver(&bsl::cout, &ta), &ta);
 
-        BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+        BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
         ASSERT(0 == manager.registerObserver(observer, "test"));
 
         // Re "sieve" category: (1) if recorded, then also published;
         // (2) never triggered.
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                 "sieve",
-                                BloombergLP::ball::Severity::e_TRACE,
-                                BloombergLP::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
+                                BNP_Paribas::ball::Severity::e_TRACE,
                                 0,
                                 0);
         BALL_LOG_SET_CATEGORY("sieve")
@@ -9132,19 +9132,19 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         const Cat  *CAT  = BALL_LOG_CATEGORY;
         const char *FILE = __FILE__;
 
-        const int TRACE = BloombergLP::ball::Severity::e_TRACE;
-        const int DEBUG = BloombergLP::ball::Severity::e_DEBUG;
-        const int INFO  = BloombergLP::ball::Severity::e_INFO;
-        const int WARN  = BloombergLP::ball::Severity::e_WARN;
-        const int ERROR = BloombergLP::ball::Severity::e_ERROR;
-        const int FATAL = BloombergLP::ball::Severity::e_FATAL;
+        const int TRACE = BNP_Paribas::ball::Severity::e_TRACE;
+        const int DEBUG = BNP_Paribas::ball::Severity::e_DEBUG;
+        const int INFO  = BNP_Paribas::ball::Severity::e_INFO;
+        const int WARN  = BNP_Paribas::ball::Severity::e_WARN;
+        const int ERROR = BNP_Paribas::ball::Severity::e_ERROR;
+        const int FATAL = BNP_Paribas::ball::Severity::e_FATAL;
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                            "noTRACE",
-                           BloombergLP::ball::Severity::e_TRACE - 1,
-                           BloombergLP::ball::Severity::e_TRACE - 1,
-                           BloombergLP::ball::Severity::e_TRACE - 1,
-                           BloombergLP::ball::Severity::e_TRACE - 1);
+                           BNP_Paribas::ball::Severity::e_TRACE - 1,
+                           BNP_Paribas::ball::Severity::e_TRACE - 1,
+                           BNP_Paribas::ball::Severity::e_TRACE - 1,
+                           BNP_Paribas::ball::Severity::e_TRACE - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOG_TRACE`" << bsl::endl;
@@ -9164,12 +9164,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, TRACE, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                               "noDEBUG",
-                              BloombergLP::ball::Severity::e_DEBUG - 1,
-                              BloombergLP::ball::Severity::e_DEBUG - 1,
-                              BloombergLP::ball::Severity::e_DEBUG - 1,
-                              BloombergLP::ball::Severity::e_DEBUG - 1);
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                              BNP_Paribas::ball::Severity::e_DEBUG - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOG_DEBUG`" << bsl::endl;
@@ -9189,12 +9189,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, DEBUG, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                "noINFO",
-                               BloombergLP::ball::Severity::e_INFO - 1,
-                               BloombergLP::ball::Severity::e_INFO - 1,
-                               BloombergLP::ball::Severity::e_INFO - 1,
-                               BloombergLP::ball::Severity::e_INFO - 1);
+                               BNP_Paribas::ball::Severity::e_INFO - 1,
+                               BNP_Paribas::ball::Severity::e_INFO - 1,
+                               BNP_Paribas::ball::Severity::e_INFO - 1,
+                               BNP_Paribas::ball::Severity::e_INFO - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOG_INFO`" << bsl::endl;
@@ -9214,12 +9214,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, INFO, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noWARN",
-                                  BloombergLP::ball::Severity::e_WARN - 1,
-                                  BloombergLP::ball::Severity::e_WARN - 1,
-                                  BloombergLP::ball::Severity::e_WARN - 1,
-                                  BloombergLP::ball::Severity::e_WARN - 1);
+                                  BNP_Paribas::ball::Severity::e_WARN - 1,
+                                  BNP_Paribas::ball::Severity::e_WARN - 1,
+                                  BNP_Paribas::ball::Severity::e_WARN - 1,
+                                  BNP_Paribas::ball::Severity::e_WARN - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOG_WARN`" << bsl::endl;
@@ -9239,12 +9239,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, WARN, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                 "noERROR",
-                                BloombergLP::ball::Severity::e_ERROR - 1,
-                                BloombergLP::ball::Severity::e_ERROR - 1,
-                                BloombergLP::ball::Severity::e_ERROR - 1,
-                                BloombergLP::ball::Severity::e_ERROR - 1);
+                                BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                BNP_Paribas::ball::Severity::e_ERROR - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOG_ERROR`" << bsl::endl;
@@ -9264,12 +9264,12 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             ASSERT(u::isRecordOkay(observer, CAT, ERROR, FILE, LINE, MESSAGE));
         }
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noFATAL",
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1);
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1);
 
         if (veryVerbose)
             bsl::cout << "\tTesting `BALL_LOG_FATAL`" << bsl::endl;
@@ -9384,8 +9384,8 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                << "Testing `printf-style` Macros" << bsl::endl
                                << "=============================" << bsl::endl;
 
-        BloombergLP::bslma::TestAllocator testAllocator(veryVeryVeryVerbose);
-        BloombergLP::bslma::DefaultAllocatorGuard taGuard(&testAllocator);
+        BNP_Paribas::bslma::TestAllocator testAllocator(veryVeryVeryVerbose);
+        BNP_Paribas::bslma::DefaultAllocatorGuard taGuard(&testAllocator);
 
         const int MAX_ARGS = 9;
 
@@ -9418,76 +9418,76 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         };
         ASSERT(MAX_ARGS + 1 == sizeof MSG / sizeof *MSG);
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
 
-        bsl::shared_ptr<BloombergLP::ball::TestObserver> observer(
-               new (ta) BloombergLP::ball::TestObserver(&bsl::cout, &ta), &ta);
+        bsl::shared_ptr<BNP_Paribas::ball::TestObserver> observer(
+               new (ta) BNP_Paribas::ball::TestObserver(&bsl::cout, &ta), &ta);
 
-        BloombergLP::ball::LoggerManager& manager =
-                                 BloombergLP::ball::LoggerManager::singleton();
+        BNP_Paribas::ball::LoggerManager& manager =
+                                 BNP_Paribas::ball::LoggerManager::singleton();
 
         ASSERT(0 == manager.registerObserver(observer, "test"));
 
-        const int TRACE = BloombergLP::ball::Severity::e_TRACE;
-        const int DEBUG = BloombergLP::ball::Severity::e_DEBUG;
-        const int INFO  = BloombergLP::ball::Severity::e_INFO;
-        const int WARN  = BloombergLP::ball::Severity::e_WARN;
-        const int ERROR = BloombergLP::ball::Severity::e_ERROR;
-        const int FATAL = BloombergLP::ball::Severity::e_FATAL;
+        const int TRACE = BNP_Paribas::ball::Severity::e_TRACE;
+        const int DEBUG = BNP_Paribas::ball::Severity::e_DEBUG;
+        const int INFO  = BNP_Paribas::ball::Severity::e_INFO;
+        const int WARN  = BNP_Paribas::ball::Severity::e_WARN;
+        const int ERROR = BNP_Paribas::ball::Severity::e_ERROR;
+        const int FATAL = BNP_Paribas::ball::Severity::e_FATAL;
 
-        BloombergLP::ball::Administration::addCategory("pass", 0, TRACE, 0, 0);
+        BNP_Paribas::ball::Administration::addCategory("pass", 0, TRACE, 0, 0);
 
         // Re "sieve" category: (1) if recorded, then also published;
         // (2) never triggered.
 
-        BloombergLP::ball::Administration::addCategory("sieve",
+        BNP_Paribas::ball::Administration::addCategory("sieve",
                                                        TRACE,
                                                        TRACE,
                                                        0,
                                                        0);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noTRACE",
-                                   BloombergLP::ball::Severity::e_TRACE - 1,
-                                   BloombergLP::ball::Severity::e_TRACE - 1,
-                                   BloombergLP::ball::Severity::e_TRACE - 1,
-                                   BloombergLP::ball::Severity::e_TRACE - 1);
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1,
+                                   BNP_Paribas::ball::Severity::e_TRACE - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noDEBUG",
-                                  BloombergLP::ball::Severity::e_DEBUG - 1,
-                                  BloombergLP::ball::Severity::e_DEBUG - 1,
-                                  BloombergLP::ball::Severity::e_DEBUG - 1,
-                                  BloombergLP::ball::Severity::e_DEBUG - 1);
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1,
+                                  BNP_Paribas::ball::Severity::e_DEBUG - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noINFO",
-                                  BloombergLP::ball::Severity::e_INFO - 1,
-                                  BloombergLP::ball::Severity::e_INFO - 1,
-                                  BloombergLP::ball::Severity::e_INFO - 1,
-                                  BloombergLP::ball::Severity::e_INFO - 1);
+                                  BNP_Paribas::ball::Severity::e_INFO - 1,
+                                  BNP_Paribas::ball::Severity::e_INFO - 1,
+                                  BNP_Paribas::ball::Severity::e_INFO - 1,
+                                  BNP_Paribas::ball::Severity::e_INFO - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noWARN",
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1,
-                                   BloombergLP::ball::Severity::e_WARN - 1);
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1,
+                                   BNP_Paribas::ball::Severity::e_WARN - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                   "noERROR",
-                                  BloombergLP::ball::Severity::e_ERROR - 1,
-                                  BloombergLP::ball::Severity::e_ERROR - 1,
-                                  BloombergLP::ball::Severity::e_ERROR - 1,
-                                  BloombergLP::ball::Severity::e_ERROR - 1);
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1,
+                                  BNP_Paribas::ball::Severity::e_ERROR - 1);
 
-        BloombergLP::ball::Administration::addCategory(
+        BNP_Paribas::ball::Administration::addCategory(
                                    "noFATAL",
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1,
-                                   BloombergLP::ball::Severity::e_FATAL - 1);
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1,
+                                   BNP_Paribas::ball::Severity::e_FATAL - 1);
 
         BALL_LOG_SET_CATEGORY("sieve")
 
@@ -9581,7 +9581,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 0\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_0_ARGS);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9593,7 +9593,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 1\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_1_ARGS, 1);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9605,7 +9605,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 2\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_2_ARGS, 1, 2);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9617,7 +9617,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 3\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_3_ARGS, 1, 2, 3);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9629,7 +9629,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 4\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9641,7 +9641,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 5\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9653,7 +9653,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 6\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5, 6);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9665,7 +9665,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 7\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6, 7);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9677,7 +9677,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 8\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5, 6, 7, 8);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9689,7 +9689,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
         if (veryVerbose) bsl::cout << "\tTesting `BALL_LOGVA` - 9\n";
         {
-            const BloombergLP::ball::Record PREVIOUS_RECORD =
+            const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
             BALL_LOGVA(255, FORMAT_SPEC_9_ARGS, 1, 2, 3, 4, 5, 6, 7, 8, 9);
             ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9704,7 +9704,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9720,7 +9720,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9736,7 +9736,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9752,7 +9752,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9768,7 +9768,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9784,7 +9784,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9800,7 +9800,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5, 6);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9816,7 +9816,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6, 7);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9832,7 +9832,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5, 6, 7, 8);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9848,7 +9848,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noTRACE")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_TRACE(FORMAT_SPEC_9_ARGS,
                                  1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -9865,7 +9865,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9881,7 +9881,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9897,7 +9897,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9913,7 +9913,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9929,7 +9929,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9945,7 +9945,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9961,7 +9961,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5, 6);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9977,7 +9977,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6, 7);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -9993,7 +9993,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5, 6, 7, 8);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10009,7 +10009,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noDEBUG")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_DEBUG(FORMAT_SPEC_9_ARGS,
                                  1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -10026,7 +10026,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10042,7 +10042,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10058,7 +10058,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10074,7 +10074,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10090,7 +10090,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10106,7 +10106,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10122,7 +10122,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5, 6);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10138,7 +10138,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6, 7);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10154,7 +10154,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5, 6, 7, 8);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10170,7 +10170,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noINFO")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_INFO(FORMAT_SPEC_9_ARGS, 1, 2, 3, 4, 5, 6, 7, 8, 9);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10186,7 +10186,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10202,7 +10202,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10218,7 +10218,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10234,7 +10234,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10250,7 +10250,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10266,7 +10266,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10282,7 +10282,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5, 6);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10298,7 +10298,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6, 7);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10314,7 +10314,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5, 6, 7, 8);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10330,7 +10330,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noWARN")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_WARN(FORMAT_SPEC_9_ARGS, 1, 2, 3, 4, 5, 6, 7, 8, 9);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10346,7 +10346,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10362,7 +10362,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10378,7 +10378,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10394,7 +10394,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10410,7 +10410,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10426,7 +10426,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10442,7 +10442,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5, 6);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10458,7 +10458,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6, 7);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10474,7 +10474,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5, 6, 7, 8);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10491,7 +10491,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             {
                 BALL_LOG_SET_CATEGORY("noERROR")
 
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_ERROR(FORMAT_SPEC_9_ARGS,
                                  1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -10509,7 +10509,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
 
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_0_ARGS);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10525,7 +10525,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_1_ARGS, 1);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10541,7 +10541,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_2_ARGS, 1, 2);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10557,7 +10557,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_3_ARGS, 1, 2, 3);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10573,7 +10573,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_4_ARGS, 1, 2, 3, 4);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10589,7 +10589,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_5_ARGS, 1, 2, 3, 4, 5);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10605,7 +10605,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_6_ARGS, 1, 2, 3, 4, 5, 6);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10621,7 +10621,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_7_ARGS, 1, 2, 3, 4, 5, 6, 7);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10637,7 +10637,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_8_ARGS, 1, 2, 3, 4, 5, 6, 7, 8);
                 ASSERT(PREVIOUS_RECORD == observer->lastPublishedRecord());
@@ -10653,7 +10653,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         {
             {
                 BALL_LOG_SET_CATEGORY("noFATAL")
-                const BloombergLP::ball::Record PREVIOUS_RECORD =
+                const BNP_Paribas::ball::Record PREVIOUS_RECORD =
                                                observer->lastPublishedRecord();
                 BALL_LOGVA_FATAL(FORMAT_SPEC_9_ARGS,
                                  1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -11692,8 +11692,8 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
             }
         }
 
-        BloombergLP::ball::LoggerManagerConfiguration lmc;
-        BloombergLP::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
+        BNP_Paribas::ball::LoggerManagerConfiguration lmc;
+        BNP_Paribas::ball::LoggerManagerScopedGuard   lmg(lmc, &ta);
 
         {
             const char *CATEGORY_NAME1 = "EQUITY.NASD";
@@ -11710,8 +11710,8 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
 
             BALL_LOG_TRACE << "This will load the category";
 
-            BloombergLP::ball::Administration::setMaxNumCategories(3);
-            ASSERT(3 == BloombergLP::ball::Administration::maxNumCategories());
+            BNP_Paribas::ball::Administration::setMaxNumCategories(3);
+            ASSERT(3 == BNP_Paribas::ball::Administration::maxNumCategories());
             {
                 const char *CATEGORY_NAME2 = "EQUITY.NYSE";
                 BALL_LOG_SET_CATEGORY(CATEGORY_NAME2)
@@ -11763,7 +11763,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                                     BALL_LOG_CATEGORY->categoryName()));
         }
         for (int i = 0; i < 2; ++i) {
-            BloombergLP::ball::Administration::setMaxNumCategories(4 + i);
+            BNP_Paribas::ball::Administration::setMaxNumCategories(4 + i);
 
             bsl::ostringstream os;
             os << "CAT" << i;
@@ -11813,7 +11813,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
                       << "\n=========================" << bsl::endl;
         }
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         ball::LoggerManagerConfiguration lmc;
         ball::LoggerManagerScopedGuard   lmg(lmc);
@@ -11888,7 +11888,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
          if (veryVerbose) bsl::cout << "\tTesting `logMessage`" << bsl::endl;
          {
              const Cat  *CAT  = ball::Log::setCategory("EQUITY.NASD");
-             const int   SEV  = BloombergLP::ball::Severity::e_WARN;
+             const int   SEV  = BNP_Paribas::ball::Severity::e_WARN;
              const char *FILE = __FILE__;
              const int   LINE = 1066;
              const char *MSG  = "logMessage test";
@@ -11923,7 +11923,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         // --------------------------------------------------------------------
 
         using namespace BALL_LOG_TEST_CASE_MINUS_1;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         ball::LoggerManagerConfiguration lmc;
         ball::LoggerManagerScopedGuard   lmg(lmc);
@@ -11969,7 +11969,7 @@ if (verbose) bsl::cout << "printf-style macro usage" << bsl::endl;
         // --------------------------------------------------------------------
 
         using namespace BALL_LOG_TEST_CASE_MINUS_2;
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         const int CYCLES_NUM     = 5;
         double    totalTimes     = 0;

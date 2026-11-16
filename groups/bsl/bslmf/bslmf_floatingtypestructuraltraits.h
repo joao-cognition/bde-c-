@@ -38,7 +38,7 @@ BSLS_IDENT("$Id: $")
 #include <stdint.h>
 #include <string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 

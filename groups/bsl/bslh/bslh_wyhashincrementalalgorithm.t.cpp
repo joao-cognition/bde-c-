@@ -30,7 +30,7 @@
 # pragma intrinsic(_umul128)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                  TEST PLAN

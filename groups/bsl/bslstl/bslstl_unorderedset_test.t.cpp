@@ -60,7 +60,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using bsls::NameOf;
 
@@ -1351,7 +1351,7 @@ struct ThrowingHash : public bsl::hash<TYPE> {
 
     /// Return a reference, providing modifiable access to this object.
     ThrowingHash&
-    operator=(BloombergLP::bslmf::MovableRef<ThrowingHash>)
+    operator=(BNP_Paribas::bslmf::MovableRef<ThrowingHash>)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false)
     {
         return *this;
@@ -1411,7 +1411,7 @@ struct ThrowingAssignmentPredicate : public bsl::equal_to<TYPE> {
 
     /// Return a reference, providing modifiable access to this object.
     ThrowingAssignmentPredicate&
-    operator=(BloombergLP::bslmf::MovableRef<ThrowingAssignmentPredicate>)
+    operator=(BNP_Paribas::bslmf::MovableRef<ThrowingAssignmentPredicate>)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false)
     {
         return *this;
@@ -7792,7 +7792,7 @@ void TestDriver<KEY, HASH, EQUAL, ALLOC>::testCase17()
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS) \
  && defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 
-    static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+    static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                           SRC,
                                           typename SRC::iterator::value_type>);
 

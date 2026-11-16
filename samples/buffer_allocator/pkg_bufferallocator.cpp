@@ -11,14 +11,14 @@ namespace pkg {
                         // ---------------------
 
 // MANIPULATORS
-void *BufferAllocator::allocate(BloombergLP::bsls::Types::size_type size)
+void *BufferAllocator::allocate(BNP_Paribas::bsls::Types::size_type size)
 {
     // Calculate the appropriate aligned offset.
 
     const int offset =
-                    BloombergLP::bsls::AlignmentUtil::calculateAlignmentOffset(
+                    BNP_Paribas::bsls::AlignmentUtil::calculateAlignmentOffset(
                          d_buffer_p + d_cursor,
-                         BloombergLP::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT);
+                         BNP_Paribas::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT);
 
     if (d_cursor + offset + size > d_bufferSize) {
         return d_allocator_p->allocate(size);                         // RETURN

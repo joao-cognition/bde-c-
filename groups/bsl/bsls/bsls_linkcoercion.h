@@ -102,7 +102,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #if defined(BSLS_PLATFORM_OS_LINUX)
     // Note: we cannot detect the version of the binutils here, so we

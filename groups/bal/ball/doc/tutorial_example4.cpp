@@ -4,7 +4,7 @@
   #ifndef INCLUDED_F_LOG
   #define INCLUDED_F_LOG
 
-  namespace BloombergLP {
+  namespace BNP_Paribas {
 
   /// Log the specified `message` at the `ball::Severity::e_INFO` severity
   /// level.  The category to which `message` is logged is defined in
@@ -23,7 +23,7 @@
 
   #include <ball_log.h>
 
-  namespace BloombergLP {
+  namespace BNP_Paribas {
 
   void logThisInfoMsg(const char *message)
   {
@@ -56,7 +56,7 @@
 
 //  #include <f_log.h>
 
-  using namespace BloombergLP;
+  using namespace BNP_Paribas;
 
   int main(int argc, char *argv[])
   {

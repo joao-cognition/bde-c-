@@ -68,12 +68,12 @@ void vprint_unicode(std::string_view fmt, std::format_args args)
 
 #else
 
-using BloombergLP::bslfmt::print;
-using BloombergLP::bslfmt::println;
-using BloombergLP::bslfmt::vprint_nonunicode;
-using BloombergLP::bslfmt::vprint_nonunicode_buffered;
-using BloombergLP::bslfmt::vprint_unicode;
-using BloombergLP::bslfmt::vprint_unicode_buffered;
+using BNP_Paribas::bslfmt::print;
+using BNP_Paribas::bslfmt::println;
+using BNP_Paribas::bslfmt::vprint_nonunicode;
+using BNP_Paribas::bslfmt::vprint_nonunicode_buffered;
+using BNP_Paribas::bslfmt::vprint_unicode;
+using BNP_Paribas::bslfmt::vprint_unicode_buffered;
 
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP23_PRINT
 

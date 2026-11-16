@@ -10,7 +10,7 @@
 #pragma bde_verify -MN04   // Pointer members must end in `_p`
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -376,7 +376,7 @@ void assertPrint(const char* (&names)[7],
 //                           TYPES FOR TESTING
 //-----------------------------------------------------------------------------
 
-typedef BloombergLP::bsls::BslSourceNameParserUtil Util;
+typedef BNP_Paribas::bsls::BslSourceNameParserUtil Util;
 
 //=============================================================================
 //                     GLOBAL VARIABLES FOR TESTING

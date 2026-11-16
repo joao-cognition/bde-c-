@@ -23,7 +23,7 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_PLATFORM_CMP_CLANG)
 #if __has_extension(c_atomic) || __has_extension(cxx_atomic)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

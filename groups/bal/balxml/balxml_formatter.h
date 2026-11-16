@@ -258,7 +258,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_streambuf.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
 
 class Formatter;

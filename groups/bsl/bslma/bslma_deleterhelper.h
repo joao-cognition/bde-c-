@@ -89,7 +89,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_assert.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 

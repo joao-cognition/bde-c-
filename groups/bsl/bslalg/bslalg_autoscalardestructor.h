@@ -31,7 +31,7 @@ BSLS_IDENT("$Id: $")
 #include <bslalg_scalardestructionprimitives.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

@@ -20,7 +20,7 @@ BSLS_IDENT("$Id$ $CSID$")
 // until the Bloomberg LP copyright banner below.  Changes made to the original
 // code include:
 //
-//: 1  Adding BloombergLP and bslh namespaces
+//: 1  Adding BNP_Paribas and bslh namespaces
 //:
 //: 2  Renaming 'siphash' to 'SipHashAlgorithm'
 //:
@@ -73,7 +73,7 @@ BSLS_IDENT("$Id$ $CSID$")
 //-----------------------------------------------------------------------------
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslh {
 

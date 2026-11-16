@@ -37,7 +37,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_nativestd.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl { class BadWeakPtr; }
 }  // close enterprise namespace
 
@@ -45,13 +45,13 @@ namespace bsl {
 #if 0
 typedef std::bad_weak_ptr bad_weak_ptr;
 #else
-typedef ::BloombergLP::bslstl::BadWeakPtr bad_weak_ptr;
+typedef ::BNP_Paribas::bslstl::BadWeakPtr bad_weak_ptr;
 #endif
 
 }  // close namespace bsl
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                        // ================

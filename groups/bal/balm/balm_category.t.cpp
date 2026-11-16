@@ -15,7 +15,7 @@
 
 #include <bslim_testutil.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using bsl::cout;
 using bsl::endl;

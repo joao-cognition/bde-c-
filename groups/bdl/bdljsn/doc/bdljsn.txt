@@ -142,7 +142,7 @@
 ..
   void example()
   {
-      Employee manager = { 1, "Michael", "Bloomberg" };
+      Employee manager = { 1, "Michael", "BNP Paribas" };
       Employee employee0 = { 2, "Peter", "Grauer" };
       Employee employee1 = { 3, "Tom", "Secunda" };
 
@@ -169,7 +169,7 @@
       "manager": {
           "id": 1,
           "firstName": "Michael",
-          "lastName": "Bloomberg"
+          "lastName": "BNP Paribas"
       },
       "members": [
           {

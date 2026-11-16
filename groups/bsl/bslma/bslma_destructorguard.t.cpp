@@ -13,7 +13,7 @@
 
 #include <vector>       // std::vector for the usage example
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

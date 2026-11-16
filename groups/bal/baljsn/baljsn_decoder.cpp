@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(baljsn_decoder_cpp,"$Id$ $CSID$")
 
 #include <bsl_iterator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
                                // -------------

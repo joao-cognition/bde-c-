@@ -20,7 +20,7 @@ BSLS_IDENT_RCSID(baltzo_zoneinfocache_cpp, "$Id$ $CSID$")
 #include <bsl_set.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
 
                             // -------------------

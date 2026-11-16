@@ -400,7 +400,7 @@ void invokePatternSwap(TYPE *a, TYPE *b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` and `invokePatternSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::pair;
 using bsl::set;
 using bsls::NameOf;
@@ -1279,7 +1279,7 @@ struct ThrowingComparator : public std::less<TYPE> {
 
     /// Return a reference, providing modifiable access to this object.
     ThrowingComparator&
-    operator=(BloombergLP::bslmf::MovableRef<ThrowingComparator>)
+    operator=(BNP_Paribas::bslmf::MovableRef<ThrowingComparator>)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false)
     {
         return *this;
@@ -7897,7 +7897,7 @@ void TestDriver<KEY, COMP, ALLOC>::testCase12()
 
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS) \
  && defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
-    static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+    static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                                     TestValues,
                                                     typename Obj::value_type>);
     static_assert(bsl::ranges::sized_range<TestValues>);

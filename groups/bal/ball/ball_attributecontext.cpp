@@ -57,7 +57,7 @@ BSLS_IDENT_RCSID(ball_attributecontext_cpp,"$Id$ $CSID$")
 // that they are made so by the fact that they are called under a lock in
 // 'ball::LoggerManager' code ('initSingletonImpl' and 'shutDownSingleton').
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                // ------------------------------------------

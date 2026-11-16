@@ -34,7 +34,7 @@
 #include <bsl_string.h>     // `bslstl::StringRef`
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

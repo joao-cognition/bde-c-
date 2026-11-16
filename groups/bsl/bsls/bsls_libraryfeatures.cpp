@@ -323,7 +323,7 @@ BSLS_IDENT("$Id$ $CSID$")
 # endif
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 #define STRINGIFY2(a) #a
 #define STRINGIFY(a) STRINGIFY2(a)
 

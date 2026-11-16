@@ -22,8 +22,8 @@
 #pragma warning(disable:4312)
 #endif
 
-using namespace BloombergLP;
-using namespace BloombergLP::bslalg;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bslalg;
 
 // ============================================================================
 //                             TEST PLAN

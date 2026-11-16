@@ -18,7 +18,7 @@
 
 // Warning: the following `using` declarations interfere with the testing of
 // the macros defined in this component.  Please do not uncomment them.
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 // using namespace std;
 
 //=============================================================================
@@ -103,8 +103,8 @@ static void aSsErT(int c, const char *s, int i)
 //                         GLOBAL TYPEDEF FOR TESTING
 //-----------------------------------------------------------------------------
 
-typedef BloombergLP::bsls::Types::Int64  Int64;
-typedef BloombergLP::bsls::Types::Uint64 Uint64;
+typedef BNP_Paribas::bsls::Types::Int64  Int64;
+typedef BNP_Paribas::bsls::Types::Uint64 Uint64;
 
 //=============================================================================
 //                    GLOBAL HELPER FUNCTIONS FOR TESTING
@@ -222,7 +222,7 @@ int main(int argc, char *argv[])
         // TESTING MACRO SAFETY
         //
         // Concerns:
-        //   1. The macros should be usable outside `namespace` `BloombergLP`
+        //   1. The macros should be usable outside `namespace` `BNP_Paribas`
         //      and `namespace` `std`.
         //
         //   2. The macros should be usable within conditional statements
@@ -245,7 +245,7 @@ int main(int argc, char *argv[])
 
         if (verbose) std::cout <<
             "\nTesting macro in unbracketed context and absence of using"
-            "namespace BloombergLP" << std::endl;
+            "namespace BNP_Paribas" << std::endl;
 
         // Input values
         const short INPUT16 = static_cast<short>(0xabcd);

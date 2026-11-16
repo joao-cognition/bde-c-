@@ -216,16 +216,16 @@ BSLS_IDENT("$Id: $")
 
 #else  // BSLS_PLATFORM_IS_LITTLE_ENDIAN
 
-#define BSLS_BYTEORDER_NTOH(x) BloombergLP::bsls::ByteOrderUtil::swapBytes(x)
+#define BSLS_BYTEORDER_NTOH(x) BNP_Paribas::bsls::ByteOrderUtil::swapBytes(x)
 
 #define BSLS_BYTEORDER_NTOHS(x)                                               \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes16(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes16(x)
 
 #define BSLS_BYTEORDER_NTOHL(x)                                               \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes32(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes32(x)
 
 #define BSLS_BYTEORDER_NTOHLL(x)                                              \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes64(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes64(x)
 
 #define BSLS_BYTEORDER_HTON(x)   BSLS_BYTEORDER_NTOH(x)
 
@@ -290,41 +290,41 @@ BSLS_IDENT("$Id: $")
 #define BSLS_BYTEORDER_HOST_U64_TO_LE(x) (x)
 
 #define BSLS_BYTEORDER_BE_U16_TO_HOST(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes16(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes16(x)
 #define BSLS_BYTEORDER_BE_U32_TO_HOST(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes32(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes32(x)
 #define BSLS_BYTEORDER_BE_U64_TO_HOST(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes64(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes64(x)
 
 #define BSLS_BYTEORDER_HOST_U16_TO_BE(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes16(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes16(x)
 #define BSLS_BYTEORDER_HOST_U32_TO_BE(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes32(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes32(x)
 #define BSLS_BYTEORDER_HOST_U64_TO_BE(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes64(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes64(x)
 
 #define BSLS_BYTEORDER_LE_TO_HOST(x) (x)
 #define BSLS_BYTEORDER_HOST_TO_LE(x) (x)
 #define BSLS_BYTEORDER_BE_TO_HOST(x)                                          \
-                                 BloombergLP::bsls::ByteOrderUtil::swapBytes(x)
+                                 BNP_Paribas::bsls::ByteOrderUtil::swapBytes(x)
 #define BSLS_BYTEORDER_HOST_TO_BE(x)                                          \
-                                 BloombergLP::bsls::ByteOrderUtil::swapBytes(x)
+                                 BNP_Paribas::bsls::ByteOrderUtil::swapBytes(x)
 
 #else  // BSLS_PLATFORM_IS_BIG_ENDIAN
 
 #define BSLS_BYTEORDER_LE_U16_TO_HOST(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes16(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes16(x)
 #define BSLS_BYTEORDER_LE_U32_TO_HOST(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes32(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes32(x)
 #define BSLS_BYTEORDER_LE_U64_TO_HOST(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes64(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes64(x)
 
 #define BSLS_BYTEORDER_HOST_U16_TO_LE(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes16(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes16(x)
 #define BSLS_BYTEORDER_HOST_U32_TO_LE(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes32(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes32(x)
 #define BSLS_BYTEORDER_HOST_U64_TO_LE(x)                                      \
-                               BloombergLP::bsls::ByteOrderUtil::swapBytes64(x)
+                               BNP_Paribas::bsls::ByteOrderUtil::swapBytes64(x)
 
 #define BSLS_BYTEORDER_BE_U16_TO_HOST(x) (x)
 #define BSLS_BYTEORDER_BE_U32_TO_HOST(x) (x)
@@ -335,9 +335,9 @@ BSLS_IDENT("$Id: $")
 #define BSLS_BYTEORDER_HOST_U64_TO_BE(x) (x)
 
 #define BSLS_BYTEORDER_LE_TO_HOST(x)                                          \
-                                 BloombergLP::bsls::ByteOrderUtil::swapBytes(x)
+                                 BNP_Paribas::bsls::ByteOrderUtil::swapBytes(x)
 #define BSLS_BYTEORDER_HOST_TO_LE(x)                                          \
-                                 BloombergLP::bsls::ByteOrderUtil::swapBytes(x)
+                                 BNP_Paribas::bsls::ByteOrderUtil::swapBytes(x)
 #define BSLS_BYTEORDER_BE_TO_HOST(x) (x)
 #define BSLS_BYTEORDER_HOST_TO_BE(x) (x)
 

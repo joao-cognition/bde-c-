@@ -123,7 +123,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bsl_utility.h>
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES

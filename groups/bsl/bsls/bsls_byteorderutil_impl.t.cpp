@@ -21,7 +21,7 @@
 // [1] `BSLS_BYTEORDERUTIL_IMPL_GENERIC_SWAP{16,32,64}`
 //-----------------------------------------------------------------------------
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using std::printf;
 using std::fprintf;
 using std::fflush;
@@ -90,8 +90,8 @@ void aSsErT(bool b, const char *s, int i)
 //                         GLOBAL TYPEDEF FOR TESTING
 //-----------------------------------------------------------------------------
 
-typedef BloombergLP::bsls::Types::Int64  Int64;
-typedef BloombergLP::bsls::Types::Uint64 Uint64;
+typedef BNP_Paribas::bsls::Types::Int64  Int64;
+typedef BNP_Paribas::bsls::Types::Uint64 Uint64;
 
 //=============================================================================
 //                    GLOBAL HELPER FUNCTIONS FOR TESTING

@@ -12,7 +12,7 @@
 #include <bsl_cstring.h>  // for bsl::strcpy
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
     char input[100];
 
     // First input is a new namespace URI.
-    bsl::strcpy(input, "http://www.bloomberg.com/schemas/example.xsd");
+    bsl::strcpy(input, "http://www.bnpparibas.com/schemas/example.xsd");
     int id1 = namespaceRegistry.lookupOrRegister(input);
     ASSERT(id1 >= 0);
     ASSERT(id1 != googleId);
@@ -174,7 +174,7 @@ int main(int argc, char *argv[])
 // ```
     ASSERT(googleId  == namespaceRegistry.lookup(googleUri));
     ASSERT(balxml::NamespaceRegistry::e_BDEM ==
-           namespaceRegistry.lookup("http://bloomberg.com/schemas/bdem"));
+           namespaceRegistry.lookup("http://bnpparibas.com/schemas/bdem"));
     ASSERT(-1 == namespaceRegistry.lookup("urn:1234"));
 // ```
 // There is also a `lookup` method for performing the reverse mapping -- from
@@ -367,10 +367,10 @@ int main(int argc, char *argv[])
             const char *s = X.lookup(i);
             ASSERT(0 == bsl::strcmp("http://www.w3.org/XML/1998/namespace",s));
 
-            i = X.lookup("http://bloomberg.com/schemas/bdem");
+            i = X.lookup("http://bnpparibas.com/schemas/bdem");
             ASSERT(Obj::e_BDEM == i);
             s = X.lookup(i);
-            ASSERT(0 == bsl::strcmp("http://bloomberg.com/schemas/bdem", s));
+            ASSERT(0 == bsl::strcmp("http://bnpparibas.com/schemas/bdem", s));
 
             // Copy construct and compare for equality
             const bsls::Types::Int64 aAllocs = ta.numBlocksTotal();

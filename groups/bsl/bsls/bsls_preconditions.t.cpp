@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>               // atoi(), rand()
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                              TEST PLAN

@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(bdls_fdstreambuf_cpp,"$Id$ $CSID$")
 #include <bsl_locale.h>
 #include <bsl_streambuf.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                      // ------------------------------------

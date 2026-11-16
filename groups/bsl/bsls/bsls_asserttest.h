@@ -541,10 +541,10 @@ BSLS_IDENT("$Id: $")
     try {                                                                     \
         BSLS_ASSERTTEST_EVAL_STATEMENT_IMP(STATEMENT_UNDER_TEST)              \
                                                                               \
-        ASSERT(BloombergLP::bsls::AssertTest::tryProbe(RESULT, LVL));         \
+        ASSERT(BNP_Paribas::bsls::AssertTest::tryProbe(RESULT, LVL));         \
     }                                                                         \
-    catch (const BloombergLP::bsls::AssertTestException& e) {                 \
-        ASSERT(BloombergLP::bsls::AssertTest::catchProbe(                     \
+    catch (const BNP_Paribas::bsls::AssertTestException& e) {                 \
+        ASSERT(BNP_Paribas::bsls::AssertTest::catchProbe(                     \
                                             RESULT,                           \
                                             BSLS_ASSERTTEST_CHECK_LEVEL_ARG,  \
                                             LVL,                              \
@@ -691,10 +691,10 @@ BSLS_IDENT("$Id: $")
     try {                                                                     \
         BSLS_ASSERTTEST_EVAL_STATEMENT_IMP(STATEMENT_UNDER_TEST)              \
                                                                               \
-        ASSERT(BloombergLP::bsls::AssertTest::tryProbeRaw(RESULT, LVL));      \
+        ASSERT(BNP_Paribas::bsls::AssertTest::tryProbeRaw(RESULT, LVL));      \
     }                                                                         \
-    catch (const BloombergLP::bsls::AssertTestException& e) {                 \
-        ASSERT(BloombergLP::bsls::AssertTest::catchProbeRaw(                  \
+    catch (const BNP_Paribas::bsls::AssertTestException& e) {                 \
+        ASSERT(BNP_Paribas::bsls::AssertTest::catchProbeRaw(                  \
                                             RESULT,                           \
                                             BSLS_ASSERTTEST_CHECK_LEVEL_ARG,  \
                                             LVL,                              \
@@ -770,7 +770,7 @@ BSLS_IDENT("$Id: $")
 #ifndef BSLS_ASSERTTEST_RECURSIVELY_INCLUDED_TESTDRIVER_GUARD
 #define BSLS_ASSERTTEST_RECURSIVELY_INCLUDED_TESTDRIVER_GUARD
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                               // ================

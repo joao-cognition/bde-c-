@@ -71,7 +71,7 @@ BSLS_IDENT("$Id: $")
 # include <locale>
 #endif  // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                          // ===========================
@@ -127,21 +127,21 @@ namespace bsl {
 /// `void *`.
 template <class t_CHAR>
 struct formatter<void *, t_CHAR>
-: BloombergLP::bslfmt::FormatterPointer_Imp<void *, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterPointer_Imp<void *, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `const void *`.
 template <class t_CHAR>
 struct formatter<const void *, t_CHAR>
-: BloombergLP::bslfmt::FormatterPointer_Imp<const void *, t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterPointer_Imp<const void *, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for the type
 /// `bsl::nullptr_t`.
 template <class t_CHAR>
 struct formatter<bsl::nullptr_t, t_CHAR>
-: BloombergLP::bslfmt::FormatterPointer_Nullptr<t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterPointer_Nullptr<t_CHAR> {
 };
 
 }  // close namespace bsl
@@ -150,7 +150,7 @@ struct formatter<bsl::nullptr_t, t_CHAR>
 //                            INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                          // -----------------------
@@ -165,7 +165,7 @@ FormatterPointer_Imp<t_VALUE, t_CHAR>::format(
                                          t_VALUE           ptrValue,
                                          t_FORMAT_CONTEXT& formatContext) const
 {
-    typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+    typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
     typedef StandardFormatSpecification<t_CHAR>       Specification;
     typedef bsls::Types::UintPtr                      UintPtr;
 

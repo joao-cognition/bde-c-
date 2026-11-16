@@ -74,7 +74,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>  // for `std::ptrdiff_t`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                     // ==============================
@@ -133,8 +133,8 @@ namespace bsl {
 /// This template partial specialization defines `bsl::formatter` for
 /// `bdlb::Guid` values for both `char` and `wchar_t` character types.
 template <class t_CHAR>
-struct formatter<BloombergLP::bdlb::Guid, t_CHAR>
-: BloombergLP::bdlb::Guid_BslFmtFormatterImpl<t_CHAR> {
+struct formatter<BNP_Paribas::bdlb::Guid, t_CHAR>
+: BNP_Paribas::bdlb::Guid_BslFmtFormatterImpl<t_CHAR> {
 };
 
 }  // close namespace bsl
@@ -147,7 +147,7 @@ struct formatter<BloombergLP::bdlb::Guid, t_CHAR>
 // specializations, because `bdlb::Guid` satisfies `std::ranges::input_range`.
 template <>
 inline constexpr std::range_format
-    std::format_kind<BloombergLP::bdlb::Guid> = std::range_format::disabled;
+    std::format_kind<BNP_Paribas::bdlb::Guid> = std::range_format::disabled;
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP23_RANGE_FORMAT
 
 
@@ -155,7 +155,7 @@ inline constexpr std::range_format
 //                            INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                     // ------------------------------

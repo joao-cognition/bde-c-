@@ -431,7 +431,7 @@ BSLS_IDENT("$Id: $")
 
 #include <utility>  // for 'std::pair'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                     // ===================================

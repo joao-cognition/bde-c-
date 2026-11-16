@@ -35,7 +35,7 @@
 #pragma error_messages(off, SEC_UNINITIALIZED_MEM_READ)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP17_SEARCH_FUNCTORS
     #include <functional>

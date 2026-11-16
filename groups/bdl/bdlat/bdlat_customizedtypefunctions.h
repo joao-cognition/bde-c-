@@ -91,11 +91,11 @@ BSLS_IDENT("$Id: $")
 // #include <sstream>
 // #include <string>
 //
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // /// Identification number for the US and Canada.  It is a 9-digit number
-// /// consisting of 8 digits and a check digit.  The Bloomberg ID will be
+// /// consisting of 8 digits and a check digit.  The BNP Paribas ID will be
 // /// returned for Corp, Govt, Pfd if a CUSIP is not available.
 // class Cusip {
 //   private:
@@ -246,7 +246,7 @@ BSLS_IDENT("$Id: $")
 //     };
 //
 // }  // close namespace bdlat_CustomizedTypeFunctions
-// }  // close namespace BloombergLP
+// }  // close namespace BNP_Paribas
 // ```
 // The `bdlat` infrastructure (and any component that uses this infrastructure)
 // will now recognize `mine::Cusip` as a "customized" type.
@@ -257,13 +257,13 @@ BSLS_IDENT("$Id: $")
 // declaring `mine::Cusip` to have the `bdlat_TypeTraitBasicCustomizedType`
 // trait as follows:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // // TRAITS
 //
 // BDLAT_DECL_CUSTOMIZEDTYPE_WITH_ALLOCATOR_TRAITS(mine::Cusip)
 //
-// }  // close namespace BloombergLP
+// }  // close namespace BNP_Paribas
 // ```
 // Again, the `bdlat` infrastructure (and any component that uses this
 // infrastructure) will now recognize `mine::Cusip` as a "customized" type.
@@ -330,7 +330,7 @@ BSLS_IDENT("$Id: $")
 // For completeness, we finish by providing the straightforward details of the
 // implementation of the class `Cusip`:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // // CREATORS
@@ -432,7 +432,7 @@ BSLS_IDENT("$Id: $")
 // }
 //
 // }  // close namespace mine
-// }  // close namespace BloombergLP
+// }  // close namespace BNP_Paribas
 // ```
 
 #include <bdlscm_version.h>
@@ -457,7 +457,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                   // =======================================
                   // namespace bdlat_CustomizedTypeFunctions

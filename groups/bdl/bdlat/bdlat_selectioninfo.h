@@ -38,7 +38,7 @@ BSLS_IDENT("$Id: $")
 // #include <bdlat_selectioninfo.h>
 // #include <ostream>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
 // class PrintSelectionWithInfo {
 //     // Print the selection along with its name and annotation.
@@ -85,7 +85,7 @@ BSLS_IDENT("$Id: $")
 #include <bslalg_typetraits.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                          // ==========================
                          // struct bdlat_SelectionInfo

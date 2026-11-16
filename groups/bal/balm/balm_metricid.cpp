@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(balm_metricid_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
 BSLMF_ASSERT(bslmf::IsTriviallyCopyableCheck<MetricId>::value);

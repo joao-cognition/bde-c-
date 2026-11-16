@@ -82,11 +82,11 @@ BSLS_IDENT("$Id: $")
 /// of specific instantiations of the primary TypeList template.  Eventually
 /// these partial template specializations will be eliminated, when the
 /// individually named members are no longer used throughout the whole of
-/// the Bloomberg codebase.
+/// the BNP Paribas codebase.
 #define BSLMF_TYPELIST_USING_VARIADIC_TEMPLATES
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 
@@ -120,7 +120,7 @@ struct TypeListTypeAt {
                          // struct TypeListTypeOf
                          // =====================
 
-/// Classic Bloomberg code uses a 1-based index into the type list.
+/// Classic BNP Paribas code uses a 1-based index into the type list.
 template <int t_INDEX, class t_LIST, class t_DEFAULTTYPE = Nil>
 using TypeListTypeOf = TypeListTypeAt<static_cast<unsigned int>(t_INDEX - 1),
                                       t_LIST,

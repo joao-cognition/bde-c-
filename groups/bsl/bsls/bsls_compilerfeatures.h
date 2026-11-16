@@ -2248,9 +2248,9 @@ BSLS_IDENT("$Id: $")
 
   #if defined(__cplusplus) && BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
 
-    #define BSLS_COMPILERFEATURES_NILT BloombergLP::bsls::CompilerFeaturesNilT
+    #define BSLS_COMPILERFEATURES_NILT BNP_Paribas::bsls::CompilerFeaturesNilT
 
-    #define BSLS_COMPILERFEATURES_NILV BloombergLP::bsls::CompilerFeaturesNilV
+    #define BSLS_COMPILERFEATURES_NILV BNP_Paribas::bsls::CompilerFeaturesNilV
 
     #define BSLS_COMPILERFEATURES_NILTR(n) BSLS_COMPILERFEATURES_NILT,
 
@@ -2264,7 +2264,7 @@ BSLS_IDENT("$Id: $")
         BSLS_MACROREPEAT(n,BSLS_COMPILERFEATURES_NILVR)                      \
                                                     BSLS_COMPILERFEATURES_NILV
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 enum CompilerFeaturesNilT { COMPILERFEATURESNILV = 0x7fff6f76 };
@@ -2293,7 +2293,7 @@ enum CompilerFeaturesNilT { COMPILERFEATURESNILV = 0x7fff6f76 };
     // rvalue/lvalue-ness.
 
   #define BSLS_COMPILERFEATURES_FORWARD(T,V)                                 \
-                                        ::BloombergLP::bslmf::Util::forward(V)
+                                        ::BNP_Paribas::bslmf::Util::forward(V)
     // On compilers that support C++11 perfect forwarding, replace with
     // 'bsl::forward<T>(V)', i.e., use perfect-forwarding; otherwise, replace
     // with '(V)', the classic way to forward arguments safely.
@@ -2301,13 +2301,13 @@ enum CompilerFeaturesNilT { COMPILERFEATURESNILV = 0x7fff6f76 };
 #else  // !defined simulate forwarding
 
   // Use real perfect-forwarding; no workaround needed.  Note that the explicit
-  // 'BloombergLP' qualification is needed for 'bsls::Util' when it is used
+  // 'BNP_Paribas' qualification is needed for 'bsls::Util' when it is used
   // from within namespace 'bsl', the BDE standard library implementation.
 
   #define BSLS_COMPILERFEATURES_FORWARD_REF(T) T&&
 
   #define BSLS_COMPILERFEATURES_FORWARD(T,V)                                 \
-                                      ::BloombergLP::bsls::Util::forward<T>(V)
+                                      ::BNP_Paribas::bsls::Util::forward<T>(V)
 
 #endif  // forward-workaround for simulation
 

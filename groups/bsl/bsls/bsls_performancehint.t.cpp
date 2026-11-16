@@ -4,7 +4,7 @@
 #include <bsls_bsltestutil.h>
 #include <bsls_compilerfeatures.h>
 #include <bsls_platform.h>
-#include <bsls_types.h> // `BloombergLP::bsls::Types::Int64`
+#include <bsls_types.h> // `BNP_Paribas::bsls::Types::Int64`
 #include <bsls_unspecifiedbool.h>
 
 #include <algorithm>   // `std::sort`
@@ -42,8 +42,8 @@
 // Therefore, only the small usage example will be verified.
 //
 // In addition, macro safety is tested in all test cases.  The common
-// `using namespace BloombergLP` statement is intentionally ommitted to confirm
-// that these macros are validly used outside of namespace `BloombergLP`.
+// `using namespace BNP_Paribas` statement is intentionally ommitted to confirm
+// that these macros are validly used outside of namespace `BNP_Paribas`.
 //
 // The test cases of this test driver fall into three categories:
 //  - Verification of usage examples (compile correctness).
@@ -176,7 +176,7 @@ int64_t getTimer()
 int64_t getTimerUser()
 {
 #if defined(BSLS_PLATFORM_OS_WINDOWS)
-    static const BloombergLP::bsls::Types::Int64 s_nsecsPerUnit = 100;
+    static const BNP_Paribas::bsls::Types::Int64 s_nsecsPerUnit = 100;
 
     FILETIME crtnTm, exitTm, krnlTm, userTm;
     ULARGE_INTEGER userTimer;
@@ -195,10 +195,10 @@ int64_t getTimerUser()
     return userTimer.QuadPart * s_nsecsPerUnit;
 #else
 
-    static BloombergLP::bsls::Types::Int64 s_nsecsPerSecond      = 1000
+    static BNP_Paribas::bsls::Types::Int64 s_nsecsPerSecond      = 1000
                                                                  * 1000
                                                                  * 1000;
-    static BloombergLP::bsls::Types::Int64 s_nsecsPerMicrosecond = 1000;
+    static BNP_Paribas::bsls::Types::Int64 s_nsecsPerMicrosecond = 1000;
 
     struct rusage usage;
 
@@ -208,12 +208,12 @@ int64_t getTimerUser()
                        // `&usage`.  Possible errors all require invalid input
                        // to `getrusage`.
 
-    BloombergLP::bsls::Types::Int64 timeSec  = 0;
-    BloombergLP::bsls::Types::Int64 timeUsec = 0;
+    BNP_Paribas::bsls::Types::Int64 timeSec  = 0;
+    BNP_Paribas::bsls::Types::Int64 timeUsec = 0;
 
-    timeSec  = static_cast<BloombergLP::bsls::Types::Int64>(
+    timeSec  = static_cast<BNP_Paribas::bsls::Types::Int64>(
                                                         usage.ru_utime.tv_sec);
-    timeUsec = static_cast<BloombergLP::bsls::Types::Int64>(
+    timeUsec = static_cast<BNP_Paribas::bsls::Types::Int64>(
                                                        usage.ru_utime.tv_usec);
     return timeSec * s_nsecsPerSecond + timeUsec * s_nsecsPerMicrosecond;
 #endif
@@ -419,7 +419,7 @@ namespace UsageExample1 {
 namespace UsageExample3 {
 
 // Note that the local `Stopwatch` class is used below in lieu of
-// `BloombergLP::bsls::Stopwatch` to avoid a cyclic depenency between
+// `BNP_Paribas::bsls::Stopwatch` to avoid a cyclic depenency between
 // components.
 
 ///Example 3: Cache Line Prefetching
@@ -458,7 +458,7 @@ namespace UsageExample3 {
 
     int main()
     {
-     // BloombergLP::bsls::Stopwatch timer;
+     // BNP_Paribas::bsls::Stopwatch timer;
         Stopwatch timer;
         timer.start();
         for (int i = 0; i < 10; ++i) {
@@ -482,7 +482,7 @@ namespace UsageExample3 {
     void add2(int *arrayA, int *arrayB)
     {
         for (int i = 0; i < SIZE / 8; ++i){
-            using namespace BloombergLP; // Generally avoid `using` in this TD.
+            using namespace BNP_Paribas; // Generally avoid `using` in this TD.
             bsls::PerformanceHint::prefetchForWriting((int *) arrayA + 16);
             bsls::PerformanceHint::prefetchForReading((int *) arrayB + 16);
 
@@ -689,9 +689,9 @@ void addWithoutPrefetch(int *arrayW, int *arrayR)
 
         // Omit prefetch
 
-    //  BloombergLP::bsls::PerformanceHint::prefetchForWriting(
+    //  BNP_Paribas::bsls::PerformanceHint::prefetchForWriting(
     //                                         const_cast<int *>(arrayW + 16));
-    //  BloombergLP::bsls::PerformanceHint::prefetchForReading(
+    //  BNP_Paribas::bsls::PerformanceHint::prefetchForReading(
     //                                         const_cast<int *>(arrayR + 16));
         *arrayW += *(arrayR++);
         ++arrayW;
@@ -721,9 +721,9 @@ void addWithPrefetch(int *arrayW, int *arrayR)
 
         // cast away the volatile qualifiers when calling `prefetch*`:
 
-        BloombergLP::bsls::PerformanceHint::prefetchForWriting(
+        BNP_Paribas::bsls::PerformanceHint::prefetchForWriting(
                                                const_cast<int *>(arrayW + 16));
-        BloombergLP::bsls::PerformanceHint::prefetchForReading(
+        BNP_Paribas::bsls::PerformanceHint::prefetchForReading(
                                                const_cast<int *>(arrayR + 16));
 
         *arrayW += *(arrayR++);
@@ -900,12 +900,12 @@ namespace BoolCoercion {
 /// `bsl::shared_ptr<T>` and `bslma::ManagedPtr<T>`.
 class TestSmartPtr {
 
-    typedef BloombergLP::bsls::UnspecifiedBool<TestSmartPtr>::
+    typedef BNP_Paribas::bsls::UnspecifiedBool<TestSmartPtr>::
                                                              BoolType BoolType;
 
   public:
     operator BoolType() const {
-        return BloombergLP::bsls::UnspecifiedBool<TestSmartPtr>::trueValue();
+        return BNP_Paribas::bsls::UnspecifiedBool<TestSmartPtr>::trueValue();
     }
 };
 
@@ -920,7 +920,7 @@ class TestFunction {
     }
 #else
   private:
-    typedef BloombergLP::bsls::UnspecifiedBool<TestFunction>
+    typedef BNP_Paribas::bsls::UnspecifiedBool<TestFunction>
                                           UnspecifiedBoolUtil;
     typedef UnspecifiedBoolUtil::BoolType UnspecifiedBool;
 

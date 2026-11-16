@@ -294,7 +294,7 @@ public:
   }
 
   /* TODO:
-  typedef BloombergLP::bslstl::TraitsGroupStlUnorderedContainer<
+  typedef BNP_Paribas::bslstl::TraitsGroupStlUnorderedContainer<
     _Val,
     _HF,
     _EqK,
@@ -307,8 +307,8 @@ public:
       _M_hash(__ht._M_hash),
       _M_equals(__ht._M_equals),
       _M_get_key(__ht._M_get_key),
-      _M_buckets(BloombergLP::bslstp::Util::copyContainerAllocator(__ht.get_allocator())),
-      _M_num_elements(BloombergLP::bslstp::Util::copyContainerAllocator((const _M_node_allocator_type&)__ht._M_num_elements), (size_type)0)
+      _M_buckets(BNP_Paribas::bslstp::Util::copyContainerAllocator(__ht.get_allocator())),
+      _M_num_elements(BNP_Paribas::bslstp::Util::copyContainerAllocator((const _M_node_allocator_type&)__ht._M_num_elements), (size_type)0)
   {
     _M_copy_from(__ht);
   }
@@ -344,7 +344,7 @@ public:
 
   void swap(_Self& __ht)
   {
-    BloombergLP::bslstp::Util::swapContainers(*this, __ht, QuickSwap());
+    BNP_Paribas::bslstp::Util::swapContainers(*this, __ht, QuickSwap());
   }
 
   iterator begin()
@@ -551,7 +551,7 @@ private:
     _Node* __n = _M_num_elements.allocatorRef().allocate(1);
     __n->_M_next = 0;
     BSLS_TRY {
-      BloombergLP::bslma::ConstructionUtil::construct(
+      BNP_Paribas::bslma::ConstructionUtil::construct(
                                              BSLS_UTIL_ADDRESSOF(__n->_M_val),
                                              _M_num_elements.get_allocator(),
                                              __obj);
@@ -566,7 +566,7 @@ private:
 
   void _M_delete_node(_Node* __n)
   {
-    BloombergLP::bslma::DestructionUtil::destroy(
+    BNP_Paribas::bslma::DestructionUtil::destroy(
                                              BSLS_UTIL_ADDRESSOF(__n->_M_val));
     _M_num_elements.allocatorRef().deallocate(__n, 1);
   }

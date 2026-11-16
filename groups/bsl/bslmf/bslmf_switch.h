@@ -226,11 +226,11 @@ BSLS_IDENT("$Id: $")
 /// aliases of specific instantiations of the primary Switch template.
 /// Eventually these partial template specializations will be eliminated,
 /// when the individually named members are no longer used throughout the
-/// whole of the Bloomberg codebase.
+/// whole of the BNP Paribas codebase.
 #define BSLMF_SWITCH_USING_VARIADIC_TEMPLATES
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 

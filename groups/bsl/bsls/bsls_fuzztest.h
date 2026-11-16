@@ -226,23 +226,23 @@ BSLS_IDENT("$Id: $")
 #if defined(BDE_BUILD_TARGET_EXC)
 #define BSLS_FUZZTEST_EVALUATE_IMP(X) do {                                    \
         try {                                                                 \
-            BloombergLP::bsls::FuzzTestPreconditionTracker::initStaticState(  \
+            BNP_Paribas::bsls::FuzzTestPreconditionTracker::initStaticState(  \
                                                                    __FILE__); \
             X;                                                                \
         }                                                                     \
-        catch (BloombergLP::bsls::FuzzTestPreconditionException& ftpe) {      \
-            BloombergLP::bsls::FuzzTestPreconditionTracker::handleException(  \
+        catch (BNP_Paribas::bsls::FuzzTestPreconditionException& ftpe) {      \
+            BNP_Paribas::bsls::FuzzTestPreconditionTracker::handleException(  \
                                                                        ftpe); \
         }                                                                     \
     } while (false)
 
 #define BSLS_FUZZTEST_EVALUATE_RAW_IMP(X) do {                                \
         try {                                                                 \
-            BloombergLP::bsls::FuzzTestPreconditionTracker::initStaticState(  \
+            BNP_Paribas::bsls::FuzzTestPreconditionTracker::initStaticState(  \
                                                                    __FILE__); \
             X;                                                                \
         }                                                                     \
-        catch (BloombergLP::bsls::FuzzTestPreconditionException& ftpe) {      \
+        catch (BNP_Paribas::bsls::FuzzTestPreconditionException& ftpe) {      \
         }                                                                     \
     } while (false)
 
@@ -272,7 +272,7 @@ BSLS_IDENT("$Id: $")
 
 #endif  // defined(BDE_ACTIVATE_FUZZ_TESTING)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                          // =================================

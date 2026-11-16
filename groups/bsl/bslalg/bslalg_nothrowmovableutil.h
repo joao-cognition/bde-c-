@@ -289,7 +289,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_movableref.h>
 #include <bslmf_removecv.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 // FORWARD DECLARATION

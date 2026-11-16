@@ -233,7 +233,7 @@ BSLS_IDENT("$Id: $")
 # include <type_traits>
 #endif // BSLS_COMPILERFEATURES_SUPPORT_TRAITS_HEADER
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                            // ========================

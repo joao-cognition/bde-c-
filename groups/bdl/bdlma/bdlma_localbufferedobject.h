@@ -199,7 +199,7 @@ BSLS_IDENT("$Id: $")
 #define BDLMA_LOCAL_BUFFERED_VALUE_IS_ASSIGNABLE(DST, SRC) true
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                         // =========================
@@ -249,7 +249,7 @@ class LocalBufferedObject {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(LocalBufferedObject,
-                                   BloombergLP::bslmf::UsesAllocatorArgT);
+                                   BNP_Paribas::bslmf::UsesAllocatorArgT);
 
     // CREATORS
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES

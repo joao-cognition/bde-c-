@@ -155,7 +155,7 @@ BSLS_IDENT("$Id: $")
 #define BSLIM_TESTUTIL_ASSERT(X)                                              \
     aSsErT(!(X), #X, __LINE__);
 
-#define BSLIM_TESTUTIL_DEBUG_REP(X) BloombergLP::bslim::TestUtil::debugRep(X)
+#define BSLIM_TESTUTIL_DEBUG_REP(X) BNP_Paribas::bslim::TestUtil::debugRep(X)
 
 #define BSLIM_TESTUTIL_LOOP0_ASSERT                                           \
     BSLIM_TESTUTIL_ASSERT
@@ -276,7 +276,7 @@ BSLS_IDENT("$Id: $")
 #define BSLIM_TESTUTIL_T_                                                     \
     bsl::cout << "\t" << bsl::flush;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslim {
 
                         // ==============
