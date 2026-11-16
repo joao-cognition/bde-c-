@@ -32,7 +32,7 @@
 #include <bsl_string_view.h>
 #include <bsl_utility.h>     // `bsl::pair`, `bsl::make_pair`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 
@@ -431,7 +431,7 @@ MyNumericUtil::parseInt(int              *value,
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? bsl::atoi(argv[1]) : 0;
 

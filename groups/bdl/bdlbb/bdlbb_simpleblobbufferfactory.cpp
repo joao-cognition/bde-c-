@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(bdlbb_simpleblobbufferfactory,"$Id$ $CSID$")
 #include <bsl_climits.h>
 #include <bsl_cstring.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlbb {
 
                          // -------------------------

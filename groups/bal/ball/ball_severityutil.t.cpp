@@ -11,7 +11,7 @@
 #include <bsl_cstdlib.h>     // atoi()
 #include <bsl_cstring.h>     // strlen(), memset(), memcpy(), memcmp()
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================

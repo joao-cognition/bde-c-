@@ -460,7 +460,7 @@ BSLS_IDENT("$Id: $")
 
 #include <stddef.h>  // for 'size_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
                       // ===========================
@@ -947,12 +947,12 @@ struct IsBitwiseMoveable<bslh::Hash<TYPE> >
 
 namespace bsl {
 template <class TYPE>
-struct is_trivially_default_constructible< ::BloombergLP::bslh::Hash<TYPE> >
+struct is_trivially_default_constructible< ::BNP_Paribas::bslh::Hash<TYPE> >
 : bsl::true_type
 {};
 
 template <class TYPE>
-struct is_trivially_copyable< ::BloombergLP::bslh::Hash<TYPE> >
+struct is_trivially_copyable< ::BNP_Paribas::bslh::Hash<TYPE> >
 : bsl::true_type
 {};
 }  // close namespace bsl

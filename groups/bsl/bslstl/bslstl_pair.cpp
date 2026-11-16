@@ -5,7 +5,7 @@
 // were provided, it would cause compilation errors on valid code, as in the
 // example below:
 //..
-//  namespace BloombergLP {
+//  namespace BNP_Paribas {
 //
 //  void foo()
 //  {
@@ -15,7 +15,7 @@
 //      make_pair(str, price);  // error, won't compile
 //  }
 //
-//  }  // close namespace BloombergLP
+//  }  // close namespace BNP_Paribas
 //..
 // The above code will not compile because of ambiguity between
 // 'std::make_pair' and 'bsl::make_pair' caused by ADL (Argument Dependent
@@ -34,7 +34,7 @@
 // namespace 'std' and 'bsl' namespaces appear in the template parameters, both
 // namespaces are considered as potential candidates that contain the function
 // for 'make_pair'.  If 'make_pair' were defined in the 'bsl' namespace (i.e.,
-// provided by Bloomberg), then the compiler would have a choice of two valid
+// provided by BNP Paribas), then the compiler would have a choice of two valid
 // implementations ('bsl::make_pair' and 'std::make_pair') and would emit a
 // compilation error.
 //
@@ -51,7 +51,7 @@
 //..
 // 'std::make_pair' will return a 'std::pair', which is then implicitly
 // converted to a 'bsl::pair' by the conversion constructor.  This approach
-// both maintain consistency with existing Bloomberg managed code (where pairs
+// both maintain consistency with existing BNP Paribas managed code (where pairs
 // take allocators), and does not cause overloading ambiguity.  The only
 // limitation is that conversion will not occur automatically for arguments of
 // template functions:
@@ -101,7 +101,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT("$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

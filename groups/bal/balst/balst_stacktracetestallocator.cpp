@@ -38,7 +38,7 @@ BSLS_IDENT_RCSID(balst_stacktracetestallocator_cpp,"$Id$ $CSID$")
 
 namespace {
 
-typedef BloombergLP::bsls::StackAddressUtil AddressUtil;
+typedef BNP_Paribas::bsls::StackAddressUtil AddressUtil;
 
 enum {
     /// On some platforms, gathering the stack pointers wastes one frame
@@ -48,14 +48,14 @@ enum {
     /// it is of no interest to the user.
     k_IGNORE_FRAMES = AddressUtil::k_IGNORE_FRAMES,
 
-    k_MAX_ALIGNMENT = BloombergLP::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT,
+    k_MAX_ALIGNMENT = BNP_Paribas::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT,
 
     k_DEFAULT_NUM_RECORDED_FRAMES = 12
 };
 
 BSLMF_ASSERT(0 == k_MAX_ALIGNMENT % sizeof(void *));
 
-typedef BloombergLP::bsls::Types::UintPtr UintPtr;
+typedef BNP_Paribas::bsls::Types::UintPtr UintPtr;
 
 /// Calculate, at compile time, the maximum of two `int` values.
 template <int A, int B>
@@ -105,7 +105,7 @@ int getTraceBufferLength(int specifiedMaxRecordedFrames)
     return ret;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balst {
 

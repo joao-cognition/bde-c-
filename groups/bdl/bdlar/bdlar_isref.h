@@ -17,7 +17,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_type_traits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
 // Forward

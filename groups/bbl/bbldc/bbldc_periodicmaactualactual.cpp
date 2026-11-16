@@ -38,7 +38,7 @@ static bool isSortedAndUnique(const ITER& begin, const ITER& end)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bbldc {
 
 // STATIC HELPER FUNCTIONS

@@ -19,7 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -271,7 +271,7 @@ struct TestUtil {
     }
 
     template <class TYPE, class RANGE>
-             requires BloombergLP::bslmf::ContainerCompatibleRange<RANGE, TYPE>
+             requires BNP_Paribas::bslmf::ContainerCompatibleRange<RANGE, TYPE>
     static int function(TYPE value, RANGE range) {
         (void) value;
         (void) range;

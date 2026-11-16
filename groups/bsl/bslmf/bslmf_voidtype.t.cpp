@@ -15,7 +15,7 @@
 #include <type_traits> // `std::void_t`, `std::true_type`, `std::false_type`
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

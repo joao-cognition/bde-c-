@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlat_selectioninfo_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                          // --------------------------
                          // struct bdlat_SelectionInfo

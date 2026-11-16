@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(bslmt_mutex_cpp,"$Id$ $CSID$")
 #include <windows.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 void bslmt::MutexAssert_Imp::assertIsLockedImpl(Mutex      *mutex,
                                                 const char *text,

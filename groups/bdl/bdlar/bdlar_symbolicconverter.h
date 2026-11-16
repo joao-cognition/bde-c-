@@ -41,7 +41,7 @@ BSLS_IDENT("$Id: $")
 // ```
 // <?xml version='1.0' encoding='UTF-8'?>
 // <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
-//            xmlns:bdem='http://bloomberg.com/schemas/bdem'
+//            xmlns:bdem='http://bnpparibas.com/schemas/bdem'
 //            elementFormDefault='unqualified'>
 //
 //     <xs:complexType name='Employee'>
@@ -79,7 +79,7 @@ BSLS_IDENT("$Id: $")
 //
 // #include <bdlar_symbolicconverter.h>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
 // int hireTrainee(test::Employee       *result,
 //                 const test::Trainee&  trainee,
@@ -120,7 +120,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
                             // ========================

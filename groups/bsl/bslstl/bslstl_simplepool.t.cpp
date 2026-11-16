@@ -30,7 +30,7 @@
 #include <string.h>
 #include <ctype.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 using namespace bslstl;
 

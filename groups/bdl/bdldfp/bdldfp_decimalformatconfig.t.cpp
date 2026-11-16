@@ -13,7 +13,7 @@
 #include <bsl_cstdlib.h>
 #include <bsl_cstring.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::flush;
@@ -162,7 +162,7 @@ static bslma::TestAllocator *pa;
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 //-----------------------------------------------------------------------------
 
-namespace BDEC = BloombergLP::bdldfp;
+namespace BDEC = BNP_Paribas::bdldfp;
 typedef BDEC::DecimalFormatConfig Obj;
 
 struct DefaultDataRow {

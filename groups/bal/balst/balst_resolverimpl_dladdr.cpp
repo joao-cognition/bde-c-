@@ -74,7 +74,7 @@ namespace abi = __cxxabiv1;
 // the tests under valgrind on Darwin and observing that there were no memory
 // leaks.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 namespace u {

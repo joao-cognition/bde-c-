@@ -64,7 +64,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #include <bsls_platform.h>
 
@@ -1676,7 +1676,7 @@ class ContainerCompatibleRange {
     auto end() const { return const_sentinel(d_value.end()); }
 };
 
-static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                                  ContainerCompatibleRange<int>,
                                                  int>);
 static_assert(bsl::forward_iterator<
@@ -1784,7 +1784,7 @@ class ContainerCompatibleSizedRange {
     auto size() const { return d_value.size(); }
 };
 
-static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                             ContainerCompatibleSizedRange<int>,
                                             int>);
 static_assert(bsl::ranges::sized_range<ContainerCompatibleSizedRange<int>>);
@@ -2038,7 +2038,7 @@ class SortedSpecGen
     }
 };  // End class SortedSpecGen
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class ALLOCATOR>
@@ -7422,7 +7422,7 @@ void TestDriver<TYPE,ALLOC>::test19_swap()
     //    `member swap`, the test need only be performed once.
     //
     //   1. By calling free `swap`, no namespace specified.  The only namespace
-    //      in scope when this `swap` is called is `BloombergLP`, and there is
+    //      in scope when this `swap` is called is `BNP_Paribas`, and there is
     //      no `swap` in that namespace.
     //
     //   2. By calling member `swap`.
@@ -14786,8 +14786,8 @@ void TestDriver<TYPE,ALLOC>::test01_breathingTest()
 class IncompleteTypeSupportChecker {
 
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil                      MoveUtil;
-    typedef BloombergLP::bslmf::MovableRef<IncompleteTypeSupportChecker>
+    typedef BNP_Paribas::bslmf::MovableRefUtil                      MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRef<IncompleteTypeSupportChecker>
                                                                     MovableRef;
 
   public:
@@ -16390,7 +16390,7 @@ int main(int argc, char *argv[])
 
             ASSERT(2 * initialSize - 1 == IT.size() );
 
-            mIT.push_back(BloombergLP::bslmf::MovableRefUtil::move(source4));
+            mIT.push_back(BNP_Paribas::bslmf::MovableRefUtil::move(source4));
                                                                           // 34
             ASSERT(2 * initialSize == IT.size() );
 
@@ -16398,7 +16398,7 @@ int main(int argc, char *argv[])
 
             ASSERT(2 * initialSize + 1 == IT.size() );
 
-            mIT.push_front(BloombergLP::bslmf::MovableRefUtil::move(source5));
+            mIT.push_front(BNP_Paribas::bslmf::MovableRefUtil::move(source5));
                                                                           // 36
             ASSERT(2 * initialSize + 2 == IT.size() );
 
@@ -16417,7 +16417,7 @@ int main(int argc, char *argv[])
 
             mIter = mIT.insert(
                             mIT.cbegin(),
-                            BloombergLP::bslmf::MovableRefUtil::move(source6));
+                            BNP_Paribas::bslmf::MovableRefUtil::move(source6));
                                                                           // 39
             ASSERT(2 * initialSize + 5 == IT.size());
             ASSERT(IT.begin()          == mIter    );
@@ -16446,7 +16446,7 @@ int main(int argc, char *argv[])
             ASSERT(2 * initialSize + 20 == IT.size()     );
             ASSERT(0                    == source7.size());
 
-            mIT.merge(BloombergLP::bslmf::MovableRefUtil::move(source8));
+            mIT.merge(BNP_Paribas::bslmf::MovableRefUtil::move(source8));
                                                                           // 44
             ASSERT(2 * initialSize + 25 == IT.size());
 
@@ -16455,7 +16455,7 @@ int main(int argc, char *argv[])
             ASSERT(2 * initialSize + 30 == IT.size()     );
             ASSERT(0                    == source9.size());
 
-            mIT.merge(BloombergLP::bslmf::MovableRefUtil::move(source10),
+            mIT.merge(BNP_Paribas::bslmf::MovableRefUtil::move(source10),
                       comparator);                                        // 46
 
             ASSERT(2 * initialSize + 35 == IT.size());
@@ -16492,7 +16492,7 @@ int main(int argc, char *argv[])
             ASSERT(8 == IT.size());
 
             mIT.splice(IT.begin(),
-                       BloombergLP::bslmf::MovableRefUtil::move(source11));
+                       BNP_Paribas::bslmf::MovableRefUtil::move(source11));
                                                                           // 53
             ASSERT(8 == IT.size());
 
@@ -16501,7 +16501,7 @@ int main(int argc, char *argv[])
             ASSERT(9 == IT.size());
 
             mIT.splice(IT.begin(),
-                       BloombergLP::bslmf::MovableRefUtil::move(source12),
+                       BNP_Paribas::bslmf::MovableRefUtil::move(source12),
                        source12.cbegin());                                // 55
             ASSERT(10 == IT.size());
 
@@ -16513,7 +16513,7 @@ int main(int argc, char *argv[])
             ASSERT(15 == IT.size());
 
             mIT.splice(IT.begin(),
-                       BloombergLP::bslmf::MovableRefUtil::move(source13),
+                       BNP_Paribas::bslmf::MovableRefUtil::move(source13),
                        source13.cbegin(),
                        source13.cend());                                  // 57
 

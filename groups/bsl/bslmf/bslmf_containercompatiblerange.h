@@ -128,7 +128,7 @@ BSLS_IDENT("$Id: $")
 #include <concepts>
 #include <ranges>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// Require that (template parameter) `t_RANGE` meets the requirements of

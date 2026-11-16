@@ -132,7 +132,7 @@ BSLS_IDENT("$Id: $")
 #endif
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP20_FORMAT
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 /// Simple trait type that tells is `t_TYPE` is an instance of
@@ -372,10 +372,10 @@ template <class t_ARG, class t_CHAR>
           !std::is_same_v<t_ARG, t_CHAR *>                                   &&
           !std::is_same_v<t_ARG, const t_CHAR *>                             &&
           !std::is_same_v<std::remove_extent_t<t_ARG>, const t_CHAR>         &&
-          !BloombergLP::bslfmt::FormatterBase_IsStdBasicString<t_ARG>::value &&
-          !BloombergLP::bslfmt::FormatterBase_IsStdBasicStringView<
+          !BNP_Paribas::bslfmt::FormatterBase_IsStdBasicString<t_ARG>::value &&
+          !BNP_Paribas::bslfmt::FormatterBase_IsStdBasicStringView<
               t_ARG>::value                                                  &&
-          !BloombergLP::bslfmt::FormatterBase_IsStdChronoCpp20FormattableType<
+          !BNP_Paribas::bslfmt::FormatterBase_IsStdChronoCpp20FormattableType<
               t_ARG>::value                                                  &&
           std::default_initializable<bsl::formatter<t_ARG, t_CHAR> >)
 struct formatter<t_ARG, t_CHAR> : bsl::formatter<t_ARG, t_CHAR> {};

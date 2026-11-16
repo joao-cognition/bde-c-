@@ -20,7 +20,7 @@ BSLS_IDENT_RCSID(bdls_memoryutil_cpp,"$Id$ $CSID$")
 #include <bsl_c_stdlib.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #ifdef BSLS_PLATFORM_OS_WINDOWS
 

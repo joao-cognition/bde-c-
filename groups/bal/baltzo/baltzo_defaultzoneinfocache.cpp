@@ -24,7 +24,7 @@ BSLS_IDENT_RCSID(baltzo_defaultzoneinfocache_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 template <class CCHAR_VECTOR>
 struct IsCCharVector {
@@ -40,9 +40,9 @@ struct IsCCharVector {
 // Potential locations of TZ Database time-zone information.
 static const char *BALTZO_DATA_LOCATIONS[] = {
 #ifndef BSLS_PLATFORM_OS_WINDOWS
-    "/opt/bbinfra/share/zoneinfo/",// Bloomberg standard data location
-    "/opt/bb/share/zoneinfo/",     // deprecated Bloomberg stnd data location
-    "/bb/data/datetime/zoneinfo/", // deprecated Bloomberg stnd data location
+    "/opt/bbinfra/share/zoneinfo/",// BNP Paribas standard data location
+    "/opt/bb/share/zoneinfo/",     // deprecated BNP Paribas stnd data location
+    "/bb/data/datetime/zoneinfo/", // deprecated BNP Paribas stnd data location
     "/usr/share/zoneinfo/",        // Unix standard location (Linux, OSX)
     "/usr/share/lib/zoneinfo/",    // Solaris standard location
 #endif
@@ -92,7 +92,7 @@ void loadDefaultZoneinfoDataLocationsImp(CCHAR_VECTOR *locations)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
 
                          // --------------------------

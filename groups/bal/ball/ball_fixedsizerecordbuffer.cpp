@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(ball_fixedsizerecordbuffer_cpp,"$Id$ $CSID$")
 #include <bslmt_lockguard.h>
 #include <bslmt_recursivemutex.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // ---------------------------

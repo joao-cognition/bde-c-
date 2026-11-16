@@ -68,7 +68,7 @@
     // changes in the expected `strtod` anomalies).
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

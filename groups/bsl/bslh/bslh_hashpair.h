@@ -54,7 +54,7 @@ BSLS_IDENT("$Id: $")
 
 #include <utility> // 'std::pair'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 // FREE FUNCTIONS

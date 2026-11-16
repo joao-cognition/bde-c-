@@ -22,7 +22,7 @@
 // inheritance.
 // ----------------------------------------------------------------------------
 // PUBLIC CLASS DATA
-// [ 2] BloombergLP::bslmf::IsAccessibleBaseOf::value
+// [ 2] BNP_Paribas::bslmf::IsAccessibleBaseOf::value
 // ----------------------------------------------------------------------------
 // [ 1] USAGE EXAMPLE
 
@@ -88,7 +88,7 @@ void aSsErT(bool condition, const char *message, int line)
 # define BSLMF_ISACCESSIBLEBASEOF_PRIVATE_AND_AMBIGUOUS_BASE_SFINAE_SUPPORTED
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 class Base {
 };
@@ -244,7 +244,7 @@ void example2()
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

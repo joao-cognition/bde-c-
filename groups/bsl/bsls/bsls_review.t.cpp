@@ -26,7 +26,7 @@
 #pragma GCC diagnostic ignored "-Wcatch-value"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 // ============================================================================
@@ -208,7 +208,7 @@ void handle_contract_violation(const std::contract_violation& violation)
     // `violation`.  Note that this is the replacable function that GCC will
     // look for when handling a contract violation.
 {
-    BloombergLP::bsls::Review::invokeLanguageContractHandler(violation);
+    BNP_Paribas::bsls::Review::invokeLanguageContractHandler(violation);
 }
 
 #endif
@@ -602,7 +602,7 @@ inline int FunctionsV2::myFunc(int x, int y)
 // ERROR myfunction.h:17 BSLS_REVIEW failure (myfunction.h:17 level:R-DBG):
 //                                'x > 0' Please run "/bb/bin/showfunc.tsk ...
 // ```
-// `showfunc.tsk` is a Bloomberg application that can be used (along with the
+// `showfunc.tsk` is a BNP Paribas application that can be used (along with the
 // task binary) to convert the reported stack addresses to a more traditional
 // stack trace with a function call stack.
 //
@@ -2312,7 +2312,7 @@ void test_case_7() {
                                          " of default handler\n" , i);
 
             HandlerLoggingTest::clear();
-            BloombergLP::bsls::Types::Int64 prev_count =
+            BNP_Paribas::bsls::Types::Int64 prev_count =
                 HandlerLoggingTest::s_loggerInvocationCount;
 
             int line = L_ + 1;
@@ -3534,7 +3534,7 @@ void test_case_m4() {
                                          " of default handler\n" , i);
 
             HandlerLoggingTest::clear();
-            BloombergLP::bsls::Types::Int64 prev_count =
+            BNP_Paribas::bsls::Types::Int64 prev_count =
                 HandlerLoggingTest::s_loggerInvocationCount;
 
             int line = L_ + 1;

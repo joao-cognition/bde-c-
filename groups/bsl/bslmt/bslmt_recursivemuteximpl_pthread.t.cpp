@@ -12,7 +12,7 @@
 #include <bsl_ctime.h>
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLMT_PLATFORM_POSIX_THREADS

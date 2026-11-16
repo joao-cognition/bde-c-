@@ -150,7 +150,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_limits.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 // FORWARD DECLARATIONS
@@ -2039,7 +2039,7 @@ void bdlc::swap(CompactedArray<TYPE>& a, CompactedArray<TYPE>& b)
 template <class HASHALG, class TYPE>
 void bdlc::hashAppend(HASHALG& hashAlg, const CompactedArray<TYPE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     typedef typename CompactedArray<TYPE>::const_iterator citer;
     hashAppend(hashAlg, input.length());
     for (citer b = input.begin(), e = input.end(); b != e; ++b) {
@@ -2051,7 +2051,7 @@ void bdlc::hashAppend(HASHALG& hashAlg, const CompactedArray<TYPE>& input)
 
 // TRAITS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class TYPE>

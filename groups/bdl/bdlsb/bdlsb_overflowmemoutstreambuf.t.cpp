@@ -26,7 +26,7 @@
 
 #include <bsl_cctype.h>      // isdigit(), isupper(), islower()
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

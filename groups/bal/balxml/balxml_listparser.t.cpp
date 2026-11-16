@@ -17,7 +17,7 @@
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -426,7 +426,7 @@ int HelperFunctions::parse(double *result, const char *data, int dataLength)
 //  #include <sstream>
 //  #include <string>
 //
-//  using namespace BloombergLP;
+//  using namespace BNP_Paribas;
 //
 int parseDouble(double *result, const char *data, int dataLength);
 

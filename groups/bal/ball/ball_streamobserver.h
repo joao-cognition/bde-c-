@@ -152,7 +152,7 @@
 #include <bsl_iosfwd.h>
 #include <bsl_functional.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 class Context;

@@ -6,7 +6,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <stdio.h>  // for 'printf'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                            // ------------------

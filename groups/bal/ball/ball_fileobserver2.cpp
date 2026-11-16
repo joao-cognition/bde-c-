@@ -62,7 +62,7 @@ BSLS_IDENT_RCSID(ball_fileobserver2_cpp,"$Id$ $CSID$")
 #define snprintf _snprintf
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 namespace {

@@ -42,7 +42,7 @@
 #include <ranges>
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslstl;
 
 #ifdef BSLS_PLATFORM_CMP_GNU
@@ -304,7 +304,7 @@ class CountingHashAlgorithm {
 template <class CONTAINER>
 void verifyElementWiseHashAppend(int line, const CONTAINER& container)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     CountingHashAlgorithm actual;
     hashAppend(actual, container);
@@ -2899,7 +2899,7 @@ void TestDriver<TYPE, SIZE>::testCase22()
 
     if (verbose) printf("\t\tof length " ZU "\n", SIZE);
 
-    typedef ::BloombergLP::bslh::Hash<> Hasher;
+    typedef ::BNP_Paribas::bslh::Hash<> Hasher;
     typedef Hasher::result_type         HashType;
     Hasher                              hasher;
 
@@ -2956,7 +2956,7 @@ void TestDriver<TYPE, SIZE>::testCase22()
 
         Hasher::HashAlgorithm expected;
         {
-            using ::BloombergLP::bslh::hashAppend;
+            using ::BNP_Paribas::bslh::hashAppend;
 
             hashAppend(expected, SIZE);
             for (size_t k = 0; k < SIZE; ++k) {
@@ -5460,7 +5460,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("Count the calls made for `array<char, N>`."
                             "  (C-6)\n");
         {
-            using ::BloombergLP::bslh::hashAppend;
+            using ::BNP_Paribas::bslh::hashAppend;
 
             const std::size_t SIZE_ONLY     = 1;  // the size
             const std::size_t SIZE_AND_DATA = 2;  // the size, then the data

@@ -35,7 +35,7 @@
 #include <bsls_systemtime.h>
 #include <bsls_platform.h>
 #include <bsls_timeutil.h>  // For CachePerformance
-#include <bsls_types.h>     // For `BloombergLP::bsls::Types::Int64`
+#include <bsls_types.h>     // For `BNP_Paribas::bsls::Types::Int64`
 
 #include <bsl_algorithm.h>
 #include <bsl_climits.h>
@@ -62,7 +62,7 @@ using bsl::endl;
 using bsl::ends;
 using bsl::flush;
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                                  TEST PLAN

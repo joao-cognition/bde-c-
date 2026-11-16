@@ -26,7 +26,7 @@
 // BDE_VERIFY pragma: -FD01  // Test-machinery lacks a contract
 // BDE_VERIFY pragma: -TP18  // Test-case banners are ALL-CAPS
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #if defined(BSLS_COMPILERFEATURES_SIMULATE_FORWARD_WORKAROUND)
 # define BSL_DO_NOT_TEST_MOVE_FORWARDING 1
@@ -321,7 +321,7 @@ class MyTestArg {
     /// Create a `MyTestArg` object having the same value as the specified
     /// `original`.  Note that `original` is left in a valid but unspecified
     /// state.
-    MyTestArg(BloombergLP::bslmf::MovableRef<MyTestArg> original);
+    MyTestArg(BNP_Paribas::bslmf::MovableRef<MyTestArg> original);
 
     //! ~ArgumentType() = default;
         // Destroy this object.
@@ -335,7 +335,7 @@ class MyTestArg {
     /// Assign to this object the value of the specified `rhs` object, and
     /// return a reference providing modifiable access to this object.  Note
     /// that `rhs` is left in a valid but unspecified state.
-    MyTestArg& operator=(BloombergLP::bslmf::MovableRef<MyTestArg> rhs);
+    MyTestArg& operator=(BNP_Paribas::bslmf::MovableRef<MyTestArg> rhs);
 
     // ACCESSORS
 
@@ -648,7 +648,7 @@ MyTestArg<N>::MyTestArg(const MyTestArg& original)
 template <int N>
 inline
 MyTestArg<N>::MyTestArg(
-                  BloombergLP::bslmf::MovableRef<MyTestArg> original)
+                  BNP_Paribas::bslmf::MovableRef<MyTestArg> original)
 : d_movedFrom(MoveState::e_NOT_MOVED)
 , d_movedInto(MoveState::e_MOVED)
 {
@@ -677,7 +677,7 @@ MyTestArg<N>& MyTestArg<N>::operator=(const MyTestArg& rhs)
 template <int N>
 inline
 MyTestArg<N>&
-MyTestArg<N>::operator=(BloombergLP::bslmf::MovableRef<MyTestArg> rhs)
+MyTestArg<N>::operator=(BNP_Paribas::bslmf::MovableRef<MyTestArg> rhs)
 {
     MyTestArg& lvalue = rhs;
 

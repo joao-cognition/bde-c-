@@ -13,7 +13,7 @@ BSLS_IDENT("$Id: $")
 //
 //@SEE_ALSO: ISO C++ Standard, <ostream>, <print>
 //
-//@DESCRIPTION: This component provides, in the `BloombergLP::bslfmt`
+//@DESCRIPTION: This component provides, in the `BNP_Paribas::bslfmt`
 // namespace, the `print` and related functions exposed by the standard
 // <ostream> header.  These are available for C++03 and later.
 
@@ -48,7 +48,7 @@ BSLS_IDENT("$Id: $")
 # define BSLFMT_FORMAT_STRING_PARAMETER bsl::format_string
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                               // --------------

@@ -36,7 +36,7 @@ BSLS_IDENT("$Id: $")
 /// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // In the following example we develop a `ball::AttributeContainer`
 // implementation specifically intended for a service offline that will perform
-// rule-based logging, governed by the service client's Bloomberg "uuid",
+// rule-based logging, governed by the service client's BNP Paribas "uuid",
 // "luw", and "firm number".  We define a class `ServiceAttributes` that
 // contains three integer `ball::Attribute` values having the names "uuid",
 // "luw", and "firmNumber".
@@ -63,9 +63,9 @@ BSLS_IDENT("$Id: $")
 // but the implementation of `hasValue()` would be less readable.
 // ```
 //     // DATA
-//     ball::Attribute d_uuid;        // Bloomberg user id
-//     ball::Attribute d_luw;         // Bloomberg luw
-//     ball::Attribute d_firmNumber;  // Bloomberg firm number
+//     ball::Attribute d_uuid;        // BNP Paribas user id
+//     ball::Attribute d_luw;         // BNP Paribas luw
+//     ball::Attribute d_firmNumber;  // BNP Paribas firm number
 //
 //     // ...
 //
@@ -365,7 +365,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_functional.h>
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 class Attribute;

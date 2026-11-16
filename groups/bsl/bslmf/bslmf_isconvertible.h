@@ -15,7 +15,7 @@ BSLS_IDENT("$Id: $")
 //@SEE_ALSO: bslmf_integralconstant
 //
 //@DESCRIPTION: This component defines two meta-functions,
-// `bsl::is_convertible` and `BloombergLP::bslmf::IsConvertible` and a template
+// `bsl::is_convertible` and `BNP_Paribas::bslmf::IsConvertible` and a template
 // variable `bsl::is_convertible_v`, that represents the result value of the
 // `bsl::is_convertible` meta-function.  All these meta-functions may be used
 // to check whether an implicit conversion exists from one type to another.
@@ -215,7 +215,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_convertible_v =
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                  // =========================================
@@ -269,16 +269,16 @@ struct is_convertible
 : ::bsl::integral_constant<
       bool,
       ::std::is_convertible<
-          typename BloombergLP::bslmf::IsConvertible_CheckComplete<
+          typename BNP_Paribas::bslmf::IsConvertible_CheckComplete<
               t_FROM_TYPE>::type,
-          typename BloombergLP::bslmf::IsConvertible_CheckComplete<
+          typename BNP_Paribas::bslmf::IsConvertible_CheckComplete<
               t_TO_TYPE>::type>::value> {
 };
 
 }  // close namespace bsl
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ==========================
@@ -603,7 +603,7 @@ namespace bsl {
 /// (possibly cv-qualified) `void` types.
 template <class t_FROM_TYPE, class t_TO_TYPE>
 struct is_convertible_dispatch
-: BloombergLP::bslmf::IsConvertible_Conditional<t_FROM_TYPE, t_TO_TYPE>::type {
+: BNP_Paribas::bslmf::IsConvertible_Conditional<t_FROM_TYPE, t_TO_TYPE>::type {
 };
 
 /// This set of rules corresponds with the reference binding rules in c++11,
@@ -769,7 +769,7 @@ struct is_convertible_dispatch<const volatile t_TYPE&, const volatile t_TYPE&>
 /// move) constructible.
 template <class t_TYPE>
 struct is_convertible_dispatch<volatile t_TYPE, t_TYPE>
-: BloombergLP::bslmf::IsConvertible_Conditional<t_TYPE, t_TYPE>::type {
+: BNP_Paribas::bslmf::IsConvertible_Conditional<t_TYPE, t_TYPE>::type {
 };
 
 template <class t_FROM_TYPE, class t_TO_TYPE>
@@ -808,7 +808,7 @@ struct is_convertible_dispatch<volatile t_FROM_TYPE&, t_TO_TYPE>
 : bsl::conditional<
       bsl::is_fundamental<t_FROM_TYPE>::value,
       typename bsl::is_convertible_dispatch<t_FROM_TYPE, t_TO_TYPE>::type,
-      typename BloombergLP::bslmf::IsConvertible_Conditional<
+      typename BNP_Paribas::bslmf::IsConvertible_Conditional<
           volatile t_FROM_TYPE,
           t_TO_TYPE>::type>::type {
 };
@@ -830,7 +830,7 @@ struct is_convertible
 }  // close namespace bsl
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ====================

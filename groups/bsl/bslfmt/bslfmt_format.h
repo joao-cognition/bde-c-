@@ -207,7 +207,7 @@ BSLS_IDENT("$Id: $")
 //                  int                                  yearValue,
 //                  bool                                 paddingRequired) const
 //      {
-//          typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+//          typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 //
 //          char  buffer[4];
 //          char *bufferEnd = NFUtil::toChars(buffer, buffer + 4, yearValue);
@@ -227,14 +227,14 @@ BSLS_IDENT("$Id: $")
 //              }
 //
 //              if (numPaddingCharacters) {
-//                  outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//                  outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                      t_CHAR>::outputFromChar(paddingStr,
 //                                              paddingStr +
 //                                                  numPaddingCharacters,
 //                                              outIterator);
 //              }
 //          }
-//          outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//          outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //              t_CHAR>::outputFromChar(buffer, bufferEnd, outIterator);
 //      }
 //
@@ -247,7 +247,7 @@ BSLS_IDENT("$Id: $")
 //                  int                                  monthOrDayValue,
 //                  bool                                 paddingRequired) const
 //      {
-//          typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+//          typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 //
 //          char  buffer[2];
 //          char *bufferEnd = NFUtil::toChars(buffer,
@@ -256,11 +256,11 @@ BSLS_IDENT("$Id: $")
 //
 //          if (paddingRequired) {
 //              if (10 > monthOrDayValue) {
-//                  outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//                  outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                      t_CHAR>::outputFromChar('0', outIterator);
 //              }
 //          }
-//          outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//          outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //              t_CHAR>::outputFromChar(buffer, bufferEnd, outIterator);
 //      }
 // ```
@@ -368,16 +368,16 @@ BSLS_IDENT("$Id: $")
 //              outputMonthDay<t_FORMAT_CONTEXT>(outIterator,
 //                                               value.day(),
 //                                               false);
-//              outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//              outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                  t_CHAR>::outputFromChar(' ', outIterator);
 //
 //              // Outputting month
 //              const char *month = months[value.month() - 1];
-//              outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//              outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                  t_CHAR>::outputFromChar(month,
 //                                          month + std::strlen(month),
 //                                          outIterator);
-//              outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//              outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                  t_CHAR>::outputFromChar(' ', outIterator);
 //
 //              // Outputting year
@@ -386,14 +386,14 @@ BSLS_IDENT("$Id: $")
 //          else if (e_NUMERIC == d_format) {  // 1999-10-23
 //              // Outputting year
 //              outputYear<t_FORMAT_CONTEXT>(outIterator, value.year(), true);
-//              outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//              outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                  t_CHAR>::outputFromChar('-', outIterator);
 //
 //              // Outputting month
 //              outputMonthDay<t_FORMAT_CONTEXT>(outIterator,
 //                                               value.month(),
 //                                               true);
-//              outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//              outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                  t_CHAR>::outputFromChar('-', outIterator);
 //
 //              // Outputting day
@@ -476,30 +476,30 @@ BSLS_IDENT("$Id: $")
 #if !defined(BSLS_LIBRARYFEATURES_HAS_CPP20_FORMAT)
 
 namespace bsl {
-using BloombergLP::bslfmt::basic_format_arg;
-using BloombergLP::bslfmt::basic_format_args;
-using BloombergLP::bslfmt::basic_format_context;
-using BloombergLP::bslfmt::basic_format_parse_context;
-using BloombergLP::bslfmt::basic_format_string;
-using BloombergLP::bslfmt::format;
-using BloombergLP::bslfmt::format_args;
-using BloombergLP::bslfmt::format_context;
-using BloombergLP::bslfmt::format_error;
-using BloombergLP::bslfmt::format_parse_context;
-using BloombergLP::bslfmt::format_string;
-using BloombergLP::bslfmt::format_to;
-using BloombergLP::bslfmt::format_to_n;
-using BloombergLP::bslfmt::format_to_n_result;
-using BloombergLP::bslfmt::formatted_size;
-using BloombergLP::bslfmt::make_format_args;
-using BloombergLP::bslfmt::make_wformat_args;
-using BloombergLP::bslfmt::vformat;
-using BloombergLP::bslfmt::vformat_to;
-using BloombergLP::bslfmt::visit_format_arg;
-using BloombergLP::bslfmt::wformat_args;
-using BloombergLP::bslfmt::wformat_context;
-using BloombergLP::bslfmt::wformat_parse_context;
-using BloombergLP::bslfmt::wformat_string;
+using BNP_Paribas::bslfmt::basic_format_arg;
+using BNP_Paribas::bslfmt::basic_format_args;
+using BNP_Paribas::bslfmt::basic_format_context;
+using BNP_Paribas::bslfmt::basic_format_parse_context;
+using BNP_Paribas::bslfmt::basic_format_string;
+using BNP_Paribas::bslfmt::format;
+using BNP_Paribas::bslfmt::format_args;
+using BNP_Paribas::bslfmt::format_context;
+using BNP_Paribas::bslfmt::format_error;
+using BNP_Paribas::bslfmt::format_parse_context;
+using BNP_Paribas::bslfmt::format_string;
+using BNP_Paribas::bslfmt::format_to;
+using BNP_Paribas::bslfmt::format_to_n;
+using BNP_Paribas::bslfmt::format_to_n_result;
+using BNP_Paribas::bslfmt::formatted_size;
+using BNP_Paribas::bslfmt::make_format_args;
+using BNP_Paribas::bslfmt::make_wformat_args;
+using BNP_Paribas::bslfmt::vformat;
+using BNP_Paribas::bslfmt::vformat_to;
+using BNP_Paribas::bslfmt::visit_format_arg;
+using BNP_Paribas::bslfmt::wformat_args;
+using BNP_Paribas::bslfmt::wformat_context;
+using BNP_Paribas::bslfmt::wformat_parse_context;
+using BNP_Paribas::bslfmt::wformat_string;
 }  // close namespace bsl
 
 #else  // !defined(BSLS_LIBRARYFEATURES_HAS_CPP20_FORMAT)
@@ -542,11 +542,11 @@ using std::wformat_string;
 #else
 // The native `<format>` is used for `char` only.  `wchar_t` formatting uses
 // the `bslfmt` implementation.
-using BloombergLP::bslfmt::visit_format_arg;
-using BloombergLP::bslfmt::wformat_args;
-using BloombergLP::bslfmt::wformat_context;
-using BloombergLP::bslfmt::wformat_parse_context;
-using BloombergLP::bslfmt::wformat_string;
+using BNP_Paribas::bslfmt::visit_format_arg;
+using BNP_Paribas::bslfmt::wformat_args;
+using BNP_Paribas::bslfmt::wformat_context;
+using BNP_Paribas::bslfmt::wformat_parse_context;
+using BNP_Paribas::bslfmt::wformat_string;
 #endif
 
 // FREE FUNCTIONS
@@ -928,7 +928,7 @@ auto bsl::make_wformat_args(t_ARGS&... args)
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_WFORMAT)
     return std::make_wformat_args(args...);
 #else
-    return BloombergLP::bslfmt::make_wformat_args(args...);
+    return BNP_Paribas::bslfmt::make_wformat_args(args...);
 #endif
 }
 
@@ -1161,7 +1161,7 @@ void bsl::vformat_to(wstring *out, std::wstring_view fmt, wformat_args args)
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_WFORMAT)
     std::vformat_to(std::back_inserter(*out), fmt, args);
 #else
-    BloombergLP::bslfmt::vformat_to(std::back_inserter(*out), fmt, args);
+    BNP_Paribas::bslfmt::vformat_to(std::back_inserter(*out), fmt, args);
 #endif
 }
 
@@ -1203,7 +1203,7 @@ t_OUT bsl::format_to(t_OUT                     out,
                      wformat_string<t_ARGS...> fmtStr,
                      t_ARGS&&...               args)
 {
-    return BloombergLP::bslfmt::vformat_to(std::move(out),
+    return BNP_Paribas::bslfmt::vformat_to(std::move(out),
                                            fmtStr.get(),
                                            bsl::make_wformat_args(args...));
 }
@@ -1295,7 +1295,7 @@ std::size_t bsl::formatted_size(const std::locale&       loc,
 template <class t_OUT>
 t_OUT bsl::vformat_to(t_OUT out, std::wstring_view fmt, wformat_args args)
 {
-    return BloombergLP::bslfmt::vformat_to(std::move(out), fmt, args);
+    return BNP_Paribas::bslfmt::vformat_to(std::move(out), fmt, args);
 }
 #endif
 

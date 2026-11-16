@@ -5,7 +5,7 @@
 
 BSLS_IDENT_RCSID(balscm_version_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #define BAL_VERSION_PATCH 0
 

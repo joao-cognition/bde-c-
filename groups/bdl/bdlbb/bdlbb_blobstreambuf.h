@@ -38,7 +38,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_streambuf.h>
 #include <bsl_cstddef.h>  // bsl::size_t
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlbb { class Blob; }
 namespace bdlbb {
 

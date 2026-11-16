@@ -10,7 +10,7 @@
 
 // Warning: the following `using` declarations interfere with the testing of
 // the macros defined in this component.  Please do not uncomment them.
-//  using namespace BloombergLP;
+//  using namespace BNP_Paribas;
 //  using namespace std;
 
 //=============================================================================
@@ -366,7 +366,7 @@ int main(int argc, char *argv[])
         // TESTING MACRO SAFETY
         //
         // Concerns:
-        // 1. The macros should be usable outside `namespace` `BloombergLP` and
+        // 1. The macros should be usable outside `namespace` `BNP_Paribas` and
         //    `namespace` `std`.
         //
         // Plan:

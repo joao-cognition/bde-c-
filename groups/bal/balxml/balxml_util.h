@@ -40,7 +40,7 @@ BSLS_IDENT("$Id: $")
 //     "        elementFormDefault='qualified'"
 //     "        xmlns='http://www.w3.org/2001/XMLSchema'"
 //     "        xmlns:xs='http://www.w3.org/2001/XMLSchema'"
-//     "        xmlns:bdem='http://bloomberg.com/schemas/bdem'"
+//     "        xmlns:bdem='http://bnpparibas.com/schemas/bdem'"
 //     "        xmlns:m_bascalc='http://localhost:2000/calc.wsdl'"
 //     "        xmlns:tns='http://localhost:2000/calc.wsdl'"
 //     "   <xs:complexType name='Options'>"
@@ -66,7 +66,7 @@ BSLS_IDENT("$Id: $")
 //     "        elementFormDefault='qualified'"
 //     "        xmlns='http://www.w3.org/2001/XMLSchema'"
 //     "        xmlns:xs='http://www.w3.org/2001/XMLSchema'"
-//     "        xmlns:bdem='http://bloomberg.com/schemas/bdem'"
+//     "        xmlns:bdem='http://bnpparibas.com/schemas/bdem'"
 //     "        xmlns:m_bascalc='http://localhost:2000/calc.wsdl'"
 //     "        xmlns:tns='http://localhost:2000/calc.wsdl'"
 //     "   <xs:complexType name='Options'>"
@@ -110,7 +110,7 @@ BSLS_IDENT("$Id: $")
 
 #include <string>                   // 'std::string', 'std::pmr::string'
 
-namespace BloombergLP  {
+namespace BNP_Paribas  {
 namespace balxml {
 
                                 // ===========

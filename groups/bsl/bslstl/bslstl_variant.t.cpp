@@ -35,7 +35,7 @@
 #include <iostream>  // usage example
 #include <utility>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC_GCC
@@ -68,9 +68,9 @@ using namespace bsl;
 // [ 2] typename bsl::allocator<char> allocator_type;
 //
 // TRAITS
-// [ 2] BloombergLP::bslmf::IsBitwiseMoveable
-// [ 2] BloombergLP::bslma::UsesBslmaAllocator
-// [ 2] BloombergLP::bslmf::UsesAllocatorArgT
+// [ 2] BNP_Paribas::bslmf::IsBitwiseMoveable
+// [ 2] BNP_Paribas::bslma::UsesBslmaAllocator
+// [ 2] BNP_Paribas::bslmf::UsesAllocatorArgT
 //
 // CREATORS
 // [ 4] variant();
@@ -219,7 +219,7 @@ static bool veryVerbose;
 static bool veryVeryVerbose;
 static bool veryVeryVeryVerbose;
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 typedef bslmf::MovableRefUtil MoveUtil;
@@ -6462,23 +6462,23 @@ struct CallablePassByConstRRef {
         static int i = CHAR_TYPE;
         return static_cast<t_TYPE>(i);
     }
-    t_TYPE operator()(BloombergLP::bslmf::MovableRef<int>)
+    t_TYPE operator()(BNP_Paribas::bslmf::MovableRef<int>)
     {
         static int i = INT_TYPE_R;
         return static_cast<t_TYPE>(i);
     }
 
-    t_TYPE operator()(BloombergLP::bslmf::MovableRef<long>)
+    t_TYPE operator()(BNP_Paribas::bslmf::MovableRef<long>)
     {
         static int i = LONG_TYPE_R;
         return static_cast<t_TYPE>(i);
     }
-    t_TYPE operator()(BloombergLP::bslmf::MovableRef<char>)
+    t_TYPE operator()(BNP_Paribas::bslmf::MovableRef<char>)
     {
         static int i = CHAR_TYPE_R;
         return static_cast<t_TYPE>(i);
     }
-    t_TYPE operator()(BloombergLP::bslmf::MovableRef<const int>)
+    t_TYPE operator()(BNP_Paribas::bslmf::MovableRef<const int>)
     {
         static int i = CONST_INT_TYPE_R;
         return static_cast<t_TYPE>(i);
@@ -6594,7 +6594,7 @@ int checkQualification(const int&&)
     return RVALUE_CONST_REF;
 }
 #else
-int checkQualification(BloombergLP::bslmf::MovableRef<int>)
+int checkQualification(BNP_Paribas::bslmf::MovableRef<int>)
 {
     return RVALUE_REF;
 }
@@ -11857,7 +11857,7 @@ void testCase5e()
                                    double>::value));
 
     struct FromDouble {
-        FromDouble(double, BloombergLP::bslma::Allocator * = nullptr) {}
+        FromDouble(double, BNP_Paribas::bslma::Allocator * = nullptr) {}
                                                                     // IMPLICIT
 
         BSLMF_NESTED_TRAIT_DECLARATION(FromDouble, bslma::UsesBslmaAllocator);

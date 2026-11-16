@@ -530,7 +530,7 @@ BSLS_IDENT("$Id: $")
 
 #include <stdlib.h>  // for 'atoi'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                         // ====================================
@@ -1071,12 +1071,12 @@ void debugprint(const WellBehavedMoveOnlyAllocTestType& obj);
 
 #define BSLTF_TEMPLATETESTFACILITY_COMPARE_EQUAL(FIRST_ARGUMENT,              \
                                                  SECOND_ARGUMENT)             \
-        ::BloombergLP::bsltf::TemplateTestFacility_CompareHelper::            \
+        ::BNP_Paribas::bsltf::TemplateTestFacility_CompareHelper::            \
                                     areEqual(FIRST_ARGUMENT, SECOND_ARGUMENT)
 
 #define BSLTF_TEMPLATETESTFACILITY_COMPARE_NOT_EQUAL(FIRST_ARGUMENT,          \
                                                  SECOND_ARGUMENT)             \
-        ::BloombergLP::bsltf::TemplateTestFacility_CompareHelper::            \
+        ::BNP_Paribas::bsltf::TemplateTestFacility_CompareHelper::            \
                                  areNotEqual(FIRST_ARGUMENT, SECOND_ARGUMENT)
 
 // ============================================================================

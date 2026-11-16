@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bdlde_charconvertstatus,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                           // ------------------------

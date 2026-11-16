@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(balber_berencoder_cpp,"$Id$ $CSID$")
 
 #include <bslma_default.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                    // --------------------------------------
                    // class balber::BerEncoder::MemOutStream

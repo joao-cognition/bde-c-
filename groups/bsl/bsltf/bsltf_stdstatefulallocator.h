@@ -163,7 +163,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                         // ==========================
@@ -458,7 +458,7 @@ StdStatefulAllocator<TYPE,
                                        bslma::Allocator::size_type numElements)
 {
     if (numElements > this->max_size()) {
-        BloombergLP::bsls::BslExceptionUtil::throwBadAlloc();
+        BNP_Paribas::bsls::BslExceptionUtil::throwBadAlloc();
     }
 
     return static_cast<TYPE *>(d_allocator_p->allocate(
@@ -554,7 +554,7 @@ max_size() const
     // 'bslma::Allocator::size_type' is just an alias for 'std::size_t'.  First
     // demonstrate that is true:
 
-    BSLMF_ASSERT((bsl::is_same<BloombergLP::bslma::Allocator::size_type,
+    BSLMF_ASSERT((bsl::is_same<BNP_Paribas::bslma::Allocator::size_type,
                                                          std::size_t>::value));
 
     static const std::size_t MAX_NUM_BYTES    = ~std::size_t(0);

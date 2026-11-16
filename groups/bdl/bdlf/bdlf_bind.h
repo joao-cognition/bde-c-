@@ -898,7 +898,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_if.h>
 #endif  // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlf {
 
@@ -1239,7 +1239,7 @@ class BindWrapper {
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     // DATA
     bsl::shared_ptr<const bdlf::Bind<t_RET, t_FUNC, t_BOUND_TUPLE> > d_impl;

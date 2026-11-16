@@ -78,7 +78,7 @@ static const char u_assertBailString[] = {
 // these functions in DWARF compiles, otherwise get unused messages.
 
 static bool warnPrint(const char                       *name,
-                      BloombergLP::bsls::Types::Uint64  value)
+                      BNP_Paribas::bsls::Types::Uint64  value)
     // Print out the specified 'value' and the specified 'name', which is the
     // name of the expression have value 'value'.  This function is intended
     // only to be called by the macro 'P'.  Return 'false'.
@@ -89,7 +89,7 @@ static bool warnPrint(const char                       *name,
 }
 
 static bool warnPrintHex(const char                        *expr,
-                         BloombergLP::bsls::Types::Uint64   value)
+                         BNP_Paribas::bsls::Types::Uint64   value)
     // Print out the specified 'value' and the specified 'name', which is the
     // name of the expression have value 'value'.  This function is intended
     // only to be called by the macro 'PH'.  Return 'false'.
@@ -169,7 +169,7 @@ int u_zprintf(const char *, ...)
     // Do nothing.
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
                         // -----------------------------

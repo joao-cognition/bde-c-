@@ -137,7 +137,7 @@
 #include <bsl_vector.h>
 #include <bsl_cstdlib.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                      // ===============================
@@ -352,7 +352,7 @@ class ConcurrentFixedPool {
 /// ```
 inline
 void *operator new(bsl::size_t                              size,
-                   BloombergLP::bdlma::ConcurrentFixedPool& pool);
+                   BNP_Paribas::bdlma::ConcurrentFixedPool& pool);
 
 /// Use the specified `pool` to deallocate the memory at the specified
 /// `address`.  The behavior is undefined unless `address` was allocated
@@ -362,9 +362,9 @@ void *operator new(bsl::size_t                              size,
 /// `bdlma::ConcurrentFixedPool::deleteObject()` instead.
 inline
 void operator delete(void                                     *address,
-                     BloombergLP::bdlma::ConcurrentFixedPool&  pool);
+                     BNP_Paribas::bdlma::ConcurrentFixedPool&  pool);
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
 // ============================================================================
@@ -445,9 +445,9 @@ bslma::Allocator *ConcurrentFixedPool::allocator() const
 
 inline
 void *operator new(bsl::size_t                              size,
-                   BloombergLP::bdlma::ConcurrentFixedPool& pool)
+                   BNP_Paribas::bdlma::ConcurrentFixedPool& pool)
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
     BSLS_ASSERT((int) size <= pool.objectSize()
         && bsls::AlignmentUtil::calculateAlignmentFromSize((int)size)
         <= bsls::AlignmentUtil::calculateAlignmentFromSize(pool.objectSize()));
@@ -458,7 +458,7 @@ void *operator new(bsl::size_t                              size,
 
 inline
 void operator delete(void                                     *address,
-                     BloombergLP::bdlma::ConcurrentFixedPool&  pool)
+                     BNP_Paribas::bdlma::ConcurrentFixedPool&  pool)
 {
     pool.deallocate(address);
 }

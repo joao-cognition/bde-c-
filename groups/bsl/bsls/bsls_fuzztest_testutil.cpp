@@ -4,7 +4,7 @@
 
 #include <bsls_preconditions.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 void FuzzTest_TestUtil::triggerAssert()

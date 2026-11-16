@@ -100,7 +100,7 @@ BSLS_IDENT("$Id: $")
 /// the condition is satisfied.
 #define BSLSTL_STRINGVIEWLIKEPARAM_ENABLE_IF_T(...)                           \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslstl::IsConvertibleToStringView<                       \
+        BNP_Paribas::bslstl::IsConvertibleToStringView<                       \
             CHAR_TYPE,                                                        \
             CHAR_TRAITS,                                                      \
             BSLSTL_STRINGVIEWLIKEPARAM_TYPE_IF_COMPLETE>::value,              \
@@ -116,11 +116,11 @@ BSLS_IDENT("$Id: $")
 /// conditions are satisfied.
 #define BSLSTL_STRINGVIEWLIKEPARAM_ONLY_ENABLE_IF_T(...)                      \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslstl::IsConvertibleToStringView<                       \
+        BNP_Paribas::bslstl::IsConvertibleToStringView<                       \
             CHAR_TYPE,                                                        \
             CHAR_TRAITS,                                                      \
             BSLSTL_STRINGVIEWLIKEPARAM_TYPE_IF_COMPLETE>::value               \
-     && !BloombergLP::bslstl::IsConvertibleToCString<                         \
+     && !BNP_Paribas::bslstl::IsConvertibleToCString<                         \
             CHAR_TYPE,                                                        \
             BSLSTL_STRINGVIEWLIKEPARAM_TYPE_IF_COMPLETE>::value,              \
         __VA_ARGS__>::type

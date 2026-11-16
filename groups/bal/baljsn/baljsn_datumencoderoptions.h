@@ -108,7 +108,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_objectbuffer.h>
 #include <bsls_review.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace baljsn { class DatumEncoderOptions; }
 namespace baljsn {

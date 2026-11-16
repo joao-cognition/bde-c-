@@ -27,7 +27,7 @@
 
 #include <bsl_c_time.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_CMP_CLANG

@@ -28,7 +28,7 @@
 #include <bsl_iostream.h>
 #include <bsl_sstream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -547,7 +547,7 @@ if (verbose)
 
         if (verbose) cout << "Brute force test of several dates." << endl;
         {
-            typedef ::BloombergLP::bslh::Hash<> Hasher;
+            typedef ::BNP_Paribas::bslh::Hash<> Hasher;
 
             bdlt::Date d1; // P-1
             bdlt::Date d2(1999, 12, 31);

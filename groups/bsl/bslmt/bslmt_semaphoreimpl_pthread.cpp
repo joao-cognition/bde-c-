@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(bslmt_semaphoreimpl_pthread_cpp,"$Id$ $CSID$")
 
 #include <bsl_c_errno.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
               // ---------------------------------------------
               // class SemaphoreImpl<Platform::PosixSemaphore>

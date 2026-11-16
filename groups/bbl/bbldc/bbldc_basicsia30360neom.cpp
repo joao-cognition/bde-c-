@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bbldc_basicsia30360neom_cpp,"$Id$ $CSID$")
 
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bbldc {
 
 // STATIC METHODS

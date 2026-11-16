@@ -195,20 +195,20 @@ int bsl::stoi(const string& str, std::size_t *pos, int base)
     long value = strtol(str.c_str(), &ptr, base);
 
     if (errno == ERANGE) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoi");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
     }
     else if (sizeof(int) < sizeof(long) // proxy for 'long' has a wider range
-         && (static_cast<BloombergLP::bsls::Types::Int64>(value) >
+         && (static_cast<BNP_Paribas::bsls::Types::Int64>(value) >
                                              std::numeric_limits<int>::max() ||
-             static_cast<BloombergLP::bsls::Types::Int64>(value) <
+             static_cast<BNP_Paribas::bsls::Types::Int64>(value) <
                                           std::numeric_limits<int>::min() ) ) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoi");
     }
 
     if (pos) {
@@ -239,20 +239,20 @@ int bsl::stoi(const wstring& str, std::size_t *pos, int base)
     long value = wcstol(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoi");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoi");
     }
     else if (sizeof(int) < sizeof(long) // proxy for 'long' has a wider range
-         && (static_cast<BloombergLP::bsls::Types::Int64>(value) >
+         && (static_cast<BNP_Paribas::bsls::Types::Int64>(value) >
                                              std::numeric_limits<int>::max() ||
-             static_cast<BloombergLP::bsls::Types::Int64>(value) <
+             static_cast<BNP_Paribas::bsls::Types::Int64>(value) <
                                           std::numeric_limits<int>::min() ) ) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoi");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoi");
     }
 
     if (pos) {
@@ -283,13 +283,13 @@ long bsl::stol(const string& str, std::size_t* pos, int base)
     long value = strtol(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stol");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stol");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stol");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stol");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stol");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stol");
     }
 
     if (pos){
@@ -320,13 +320,13 @@ long bsl::stol(const wstring& str, std::size_t *pos, int base)
     long value = wcstol(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stol");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stol");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stol");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stol");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stol");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stol");
     }
 
     if (pos) {
@@ -357,13 +357,13 @@ unsigned long bsl::stoul(const string& str, std::size_t *pos, int base)
     unsigned long value = strtoul(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoul");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoul");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
     }
 
     if (pos){
@@ -396,13 +396,13 @@ unsigned long bsl::stoul(const wstring&  str,
     unsigned long value = wcstoul(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoul");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoul");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoul");
     }
 
     if (pos) {
@@ -433,13 +433,13 @@ long long bsl::stoll(const string& str, std::size_t *pos, int base)
     long long value = strtoll(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoll");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoll");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
     }
 
     if (pos) {
@@ -470,13 +470,13 @@ long long bsl::stoll(const wstring& str, std::size_t *pos, int base)
     long long value = wcstoll(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoll");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoll");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoll");
     }
 
     if (pos) {
@@ -507,13 +507,13 @@ unsigned long long bsl::stoull(const string& str, std::size_t *pos, int base)
     unsigned long long value = strtoull(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoull");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoull");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
     }
 
     if (pos) {
@@ -544,13 +544,13 @@ unsigned long long bsl::stoull(const wstring& str, std::size_t *pos, int base)
     unsigned long long value = wcstoull(str.c_str(), &ptr, base);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stoull");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stoull");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stoull");
     }
 
     if (pos) {
@@ -570,13 +570,13 @@ double bsl::stod(const string& str, std::size_t *pos)
     double value = strtod(str.c_str(), &ptr);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stod");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stod");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stod");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stod");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stod");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stod");
     }
 
     if (pos) {
@@ -596,13 +596,13 @@ double bsl::stod(const wstring& str, std::size_t *pos)
     double value = wcstod(str.c_str(), &ptr);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stod");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stod");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stod");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stod");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stod");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stod");
     }
 
     if (pos) {
@@ -623,13 +623,13 @@ float bsl::stof(const string& str, std::size_t *pos)
     float value = strtof(str.c_str(), &ptr);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stof");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stof");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stof");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stof");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stof");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stof");
     }
 
     if (pos) {
@@ -649,13 +649,13 @@ float bsl::stof(const wstring& str, std::size_t *pos)
     float value = wcstof(str.c_str(), &ptr);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stof");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stof");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stof");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stof");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stof");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stof");
     }
 
     if (pos) {
@@ -675,13 +675,13 @@ long double bsl::stold(const string& str, std::size_t *pos)
     long double value = strtold(str.c_str(), &ptr);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stold");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stold");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stold");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stold");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stold");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stold");
     }
 
     if (pos) {
@@ -701,13 +701,13 @@ long double bsl::stold(const wstring& str, std::size_t *pos)
     long double value = wcstold(str.c_str(), &ptr);
 
     if (errno == ERANGE){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange("stold");
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange("stold");
     }
     else if (0 != errno) {
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stold");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stold");
     }
     else if (ptr == str.c_str()){
-        BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument("stold");
+        BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument("stold");
     }
 
     if (pos) {
@@ -964,7 +964,7 @@ bsl::string operator ""_S(const char *characterString, std::size_t length)
     BSLS_ASSERT_SAFE(characterString || 0 == length);
     return bsl::string(characterString,
                        length,
-                       BloombergLP::bslma::Default::globalAllocator());
+                       BNP_Paribas::bslma::Default::globalAllocator());
 }
 
 bsl::wstring operator ""_S(const wchar_t *characterString, std::size_t length)
@@ -972,7 +972,7 @@ bsl::wstring operator ""_S(const wchar_t *characterString, std::size_t length)
     BSLS_ASSERT_SAFE(characterString || 0 == length);
     return bsl::wstring(characterString,
                         length,
-                        BloombergLP::bslma::Default::globalAllocator());
+                        BNP_Paribas::bslma::Default::globalAllocator());
 }
 #endif
 

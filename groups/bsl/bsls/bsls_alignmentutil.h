@@ -180,7 +180,7 @@ BSLS_IDENT("$Id: $")
 #include <type_traits>  // `std::aligned_storage`, `std::integral_constant`
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

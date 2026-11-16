@@ -133,7 +133,7 @@ BSLS_IDENT("$Id: $")
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP14_INTEGER_SEQUENCE
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
                      // =============================================
                      // private struct MakeIntegerSequence_ConcatUtil
@@ -287,7 +287,7 @@ using MakeIntegerSequence_Impl_t =
 /// integer values of the specified type `t_T` in a range of [0..t_N) having
 /// the specified t_N-value length.
 template <class t_T, t_T t_N>
-using MakeIntegerSequence = BloombergLP::bslmf::
+using MakeIntegerSequence = BNP_Paribas::bslmf::
     MakeIntegerSequence_Impl_t<t_T, bsl::integral_constant<std::size_t, t_N> >;
 
 }  // close package namespace

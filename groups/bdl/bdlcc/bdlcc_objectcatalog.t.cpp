@@ -54,7 +54,7 @@
 #include <bsl_queue.h>
 #include <bsl_utility.h>
                                                                       // RETURN
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -1035,7 +1035,7 @@ struct GetMoved<ELEMENT, 1> {
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // TRAITS
@@ -3783,7 +3783,7 @@ int main(int argc, char *argv[])
         BSLTF_TEMPLATETESTFACILITY_RUN_EACH_TYPE(
                                 TestDriver,
                                 testCaseBreathingCopyOrMovable,
-                                BloombergLP::bsltf::MoveOnlyAllocTestType,
+                                BNP_Paribas::bsltf::MoveOnlyAllocTestType,
                                 bsltf::MoveOnlyAllocTestType,
                                 bsltf::MovableTestType,
                                 bsltf::MovableAllocTestType);

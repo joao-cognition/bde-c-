@@ -21,7 +21,7 @@ int gethostname(char *name, size_t len)
 #endif
 
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 ///Advanced Features Example 2: Customizing Attribute Collection
 ///- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

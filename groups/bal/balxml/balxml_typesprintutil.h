@@ -120,7 +120,7 @@ BSLS_IDENT("$Id: $")
 // #include <sstream>
 // #include <vector>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
 // void usageExample1()
 // {
@@ -213,7 +213,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
 
                            // =====================

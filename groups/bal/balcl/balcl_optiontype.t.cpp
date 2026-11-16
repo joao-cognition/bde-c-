@@ -25,7 +25,7 @@
 //#include <bsl_type_traits.h> // `bsl::is_same` (disallowed pre-C++11)
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

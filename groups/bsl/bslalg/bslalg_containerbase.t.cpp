@@ -32,7 +32,7 @@
 
 #include <new>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using std::printf;
 using std::fflush;
 

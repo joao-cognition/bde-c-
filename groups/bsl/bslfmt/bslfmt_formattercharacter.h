@@ -69,7 +69,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>  // `std::size_t`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                 // =========================================
@@ -173,36 +173,36 @@ namespace bsl {
 /// `char` and `wchar_t`.
 template <>
 struct formatter<char, wchar_t>
-: BloombergLP::bslfmt::FormatterCharacter_Imp<char, wchar_t> {
+: BNP_Paribas::bslfmt::FormatterCharacter_Imp<char, wchar_t> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 };
 
 /// This is a specialization of the `bsl::formatter` template for the type
 /// `char`.
 template <>
 struct formatter<char, char>
-: BloombergLP::bslfmt::FormatterCharacter_Imp<char, char> {
+: BNP_Paribas::bslfmt::FormatterCharacter_Imp<char, char> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 };
 
 /// This is a specialization of the `bsl::formatter` template for the type
 /// `wchar_t`.
 template <>
 struct formatter<wchar_t, wchar_t>
-: BloombergLP::bslfmt::FormatterCharacter_Imp<wchar_t, wchar_t> {
+: BNP_Paribas::bslfmt::FormatterCharacter_Imp<wchar_t, wchar_t> {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(
                           formatter,
-                          BloombergLP::bslfmt::SupportsDebugFormat);
+                          BNP_Paribas::bslfmt::SupportsDebugFormat);
 };
 
 }  // close namespace bsl
@@ -211,7 +211,7 @@ struct formatter<wchar_t, wchar_t>
 //                            INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                          // -----------------------------

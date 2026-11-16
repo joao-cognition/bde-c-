@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(balst_streamer,"$Id$ $CSID$")
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
                             // -----------------------

@@ -1002,7 +1002,7 @@ BSLS_IDENT("$Id$ $CSID$")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                     // ============================
@@ -2623,7 +2623,7 @@ namespace bsl {
 
 template <class TARGET_TYPE>
 struct is_nothrow_move_constructible<
-    BloombergLP::bslma::ManagedPtr<TARGET_TYPE> > : bsl::true_type
+    BNP_Paribas::bslma::ManagedPtr<TARGET_TYPE> > : bsl::true_type
 {
 };
 

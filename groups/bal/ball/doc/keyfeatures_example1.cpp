@@ -6,7 +6,7 @@
 #include <ball_scopedattribute.h>
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 ///Key Example 1: Writing to a Log
 ///- - - - - - - - - - - - - - - -
@@ -99,7 +99,7 @@ using namespace BloombergLP;
 // string) with any observer that supports them, as we do in the subsequent
 // example.
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
     int main()
     {
         ball::LoggerManagerConfiguration configuration;

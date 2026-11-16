@@ -272,7 +272,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <typeinfo>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                         // ==================

@@ -27,7 +27,7 @@ BSLS_IDENT("$Id$")
 
 #include <bdldfp_intelimpwrapper.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
                         // ====================

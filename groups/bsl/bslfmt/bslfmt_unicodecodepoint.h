@@ -25,7 +25,7 @@ BSLS_IDENT("$Id: $")
 
 #include <string.h>  // `size_t`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                         // ======================

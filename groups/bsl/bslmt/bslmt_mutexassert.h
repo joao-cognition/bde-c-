@@ -248,7 +248,7 @@ BSLS_IDENT("$Id: $")
 
 #if defined(BSLS_ASSERT_IS_ACTIVE)
     #define BSLMT_MUTEXASSERT_IS_LOCKED(mutex_p) do {                         \
-        BloombergLP::bslmt::MutexAssert_Imp::assertIsLockedImpl(              \
+        BNP_Paribas::bslmt::MutexAssert_Imp::assertIsLockedImpl(              \
                            (mutex_p),                                         \
                            "BSLMT_MUTEXASSERT_IS_LOCKED(" #mutex_p ")",       \
                            __FILE__,                                          \
@@ -259,7 +259,7 @@ BSLS_IDENT("$Id: $")
 
 #if defined(BSLS_ASSERT_SAFE_IS_ACTIVE)
     #define BSLMT_MUTEXASSERT_IS_LOCKED_SAFE(mutex_p) do {                    \
-        BloombergLP::bslmt::MutexAssert_Imp::assertIsLockedImpl(              \
+        BNP_Paribas::bslmt::MutexAssert_Imp::assertIsLockedImpl(              \
                            (mutex_p),                                         \
                            "BSLMT_MUTEXASSERT_IS_LOCKED_SAFE(" #mutex_p ")",  \
                            __FILE__,                                          \
@@ -270,7 +270,7 @@ BSLS_IDENT("$Id: $")
 
 #if defined(BSLS_ASSERT_OPT_IS_ACTIVE)
     #define BSLMT_MUTEXASSERT_IS_LOCKED_OPT(mutex_p) do {                     \
-        BloombergLP::bslmt::MutexAssert_Imp::assertIsLockedImpl(              \
+        BNP_Paribas::bslmt::MutexAssert_Imp::assertIsLockedImpl(              \
                            (mutex_p),                                         \
                            "BSLMT_MUTEXASSERT_IS_LOCKED_OPT(" #mutex_p ")",   \
                            __FILE__,                                          \
@@ -279,7 +279,7 @@ BSLS_IDENT("$Id: $")
     #define BSLMT_MUTEXASSERT_IS_LOCKED_OPT(mutex_p) ((void) 0)
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 class Mutex;

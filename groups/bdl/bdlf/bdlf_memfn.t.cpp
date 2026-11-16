@@ -15,7 +15,7 @@
 
 #include <bsl_c_stdlib.h>     // atoi()
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================
@@ -683,7 +683,7 @@ DEFINE_TEST_CASE(9) {
 
         if (verbose) cout << "Check class `bdlf::MemFn`:" << endl;
         {
-            typedef BloombergLP::bdlf::MemFn<
+            typedef BNP_Paribas::bdlf::MemFn<
                         bool (ConstructibleFromPointerToSelf::*)()> MemFnType;
 
             // Windows compiler balks at the following:
@@ -702,7 +702,7 @@ DEFINE_TEST_CASE(9) {
 
         if (verbose) cout << "Check class `bdlf::MemFnInstance`:" << endl;
         {
-            typedef BloombergLP::bdlf::MemFnInstance<
+            typedef BNP_Paribas::bdlf::MemFnInstance<
                         bool (ConstructibleFromPointerToSelf::*)(),
                                   ConstructibleFromPointerToSelf *>  MemFnType;
 

@@ -1165,7 +1165,7 @@ bsl::span<TYPE, EXTENT>::at(size_type index) const
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(index >= size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                            "span<T, static_extent>::at(index): invalid index");
     }
     return d_data_p[index];
@@ -1526,7 +1526,7 @@ bsl::span<TYPE, bsl::dynamic_extent>::at(size_type index) const
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(index >= size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                           "span<T, dynamic_extent>::at(index): invalid index");
     }
     return d_data_p[index];

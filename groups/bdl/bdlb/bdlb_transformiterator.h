@@ -209,7 +209,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_resulttype.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 // FORWARD DECLARATIONS

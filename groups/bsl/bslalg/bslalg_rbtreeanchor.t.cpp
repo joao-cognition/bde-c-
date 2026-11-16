@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bslalg;
 
 //=============================================================================
@@ -149,7 +149,7 @@ void aSsErT(bool condition, const char *message, int line)
 //-----------------------------------------------------------------------------
 
 // Fundamental-type-specific print functions.
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 inline void debugprint(const RbTreeAnchor& val) {

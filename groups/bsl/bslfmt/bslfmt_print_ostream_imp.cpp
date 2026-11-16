@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bslfmt_print_ostream_imp_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 void vprint_nonunicode(std::ostream&    stream,

@@ -30,7 +30,7 @@
 
 #include <typeinfo>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::flush;
@@ -117,7 +117,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BDEC = BloombergLP::bdldfp;
+namespace BDEC = BNP_Paribas::bdldfp;
 
 typedef bdldfp::DecimalFormatConfig         Config;
 typedef bdldfp::DecimalUtil                 Util;
@@ -6150,7 +6150,7 @@ int main(int argc, char* argv[])
 
             // Parse the price.
             BDEC::Decimal64 price =
-                BloombergLP::bdldfp::DecimalUtil::makeDecimal64(
+                BNP_Paribas::bdldfp::DecimalUtil::makeDecimal64(
                     data[i].d_mantissa, data[i].d_exponent);
 
             // Update the aggregate data.
@@ -6335,7 +6335,7 @@ int main(int argc, char* argv[])
 
                 // Parse the price.
                 BDEC::Decimal64 price =
-                    BloombergLP::bdldfp::DecimalUtil::makeDecimal64(
+                    BNP_Paribas::bdldfp::DecimalUtil::makeDecimal64(
                                        data[i].d_mantissa, data[i].d_exponent);
 
                 // Update the aggregate data.

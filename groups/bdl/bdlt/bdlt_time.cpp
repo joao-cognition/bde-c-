@@ -30,7 +30,7 @@ BSLS_IDENT_RCSID(bdlt_time_cpp,"$Id$ $CSID$")
 // for the time value, and to leave the high-order 16 bits empty in case
 // storing a time value in 6 bytes is valuable (e.g., 'bdld::Datum').
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 BSLMF_ASSERT(bslmf::IsBitwiseCopyable<Time>::value);

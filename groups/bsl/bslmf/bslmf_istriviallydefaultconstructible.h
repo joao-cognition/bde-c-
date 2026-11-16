@@ -165,7 +165,7 @@ struct is_trivially_default_constructible;
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
            // ==================================================
@@ -253,7 +253,7 @@ namespace bsl {
 /// inherit from `bsl::true_type` for them.
 template <class t_TYPE>
 struct is_trivially_default_constructible
-: BloombergLP::bslmf::IsTriviallyDefaultConstructible_Imp<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsTriviallyDefaultConstructible_Imp<t_TYPE>::type {
 };
 
 /// This partial specialization ensures that const-qualified types have the

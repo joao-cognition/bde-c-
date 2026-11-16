@@ -29,7 +29,7 @@ enum {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 

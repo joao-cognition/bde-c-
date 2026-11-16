@@ -9,7 +9,7 @@
 #include <bsl_iostream.h>
 #include <bsl_sstream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -134,9 +134,9 @@ typedef balber::BerDecoderOptions Obj;
 //
 // <?xml version="1.0" encoding="UTF-8"?>
 // <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-//            xmlns:bdem="http://bloomberg.com/schemas/bdem"
-//            xmlns="http://bloomberg.com/schemas/test_codec"
-//            targetNamespace="http://bloomberg.com/schemas/test_codec"
+//            xmlns:bdem="http://bnpparibas.com/schemas/bdem"
+//            xmlns="http://bnpparibas.com/schemas/test_codec"
+//            targetNamespace="http://bnpparibas.com/schemas/test_codec"
 //            elementFormDefault="qualified">
 //     <!-- "$Id: $  $CSID:  $  $SCMId:  $" -->
 //
@@ -282,7 +282,7 @@ typedef balber::BerDecoderOptions Obj;
 
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test { class BerDecoderOptionsV1; }
 namespace test {
@@ -709,7 +709,7 @@ int BerDecoderOptionsV1::maxSequenceSize() const
 // NOTICE:
 //      Copyright (C) Bloomberg L.P., 2019
 //      All Rights Reserved.
-//      Property of Bloomberg L.P. (BLP)
+//      Property of BNP Paribas (BNPP)
 //      This software is made available solely pursuant to the
 //      terms of a BLP license agreement which governs its use.
 // ------------------------------ END-OF-FILE ---------------------------------
@@ -729,7 +729,7 @@ int BerDecoderOptionsV1::maxSequenceSize() const
 #include <bsl_limits.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
                          // -------------------------
@@ -887,7 +887,7 @@ bsl::ostream& BerDecoderOptionsV1::print(
 // NOTICE:
 //      Copyright (C) Bloomberg L.P., 2019
 //      All Rights Reserved.
-//      Property of Bloomberg L.P. (BLP)
+//      Property of BNP Paribas (BNPP)
 //      This software is made available solely pursuant to the
 //      terms of a BLP license agreement which governs its use.
 // ------------------------------ END-OF-FILE ---------------------------------

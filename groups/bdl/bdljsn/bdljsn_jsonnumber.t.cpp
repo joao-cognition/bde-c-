@@ -38,7 +38,7 @@
 #include <bsl_string_view.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -973,7 +973,7 @@ void testCase11F(int                  argc,
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? bsl::atoi(argv[1]) : 0;
 

@@ -150,7 +150,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_copy_constructible_v =
 
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                        // ==============================
@@ -203,7 +203,7 @@ namespace bsl {
 /// including the remaining `const`-qualified types.
 template <class t_TYPE>
 struct is_copy_constructible
-: BloombergLP::bslmf::IsCopyConstructible_Imp<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsCopyConstructible_Imp<t_TYPE>::type {
 };
 
 /// This partial specialization ensures that const-qualified types have the

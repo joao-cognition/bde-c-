@@ -208,7 +208,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstdlib>  // std::size_t
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // FORWARD DECLARATIONS

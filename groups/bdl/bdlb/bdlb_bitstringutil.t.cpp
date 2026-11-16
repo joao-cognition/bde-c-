@@ -22,7 +22,7 @@
 
 #include <bsl_c_limits.h>    // `CHAR_BIT`, `INT_MAX`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;

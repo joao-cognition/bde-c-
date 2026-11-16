@@ -21,7 +21,7 @@
 
 #ifdef BALST_OBJECTFILEFORMAT_RESOLVER_WINDOWS
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cin;
 using bsl::cout;
 using bsl::cerr;
@@ -362,8 +362,8 @@ int main(int argc, char *argv[])
               case 2: {
                 sourceName      = "balst_resolverimpl_windows.cpp";
                 mangleMatch     = "resolve";
-                demangledSymbol = "BloombergLP::balst::ResolverImpl<"
-                                "BloombergLP::balst::ObjectFileFormat::Windows"
+                demangledSymbol = "BNP_Paribas::balst::ResolverImpl<"
+                                "BNP_Paribas::balst::ObjectFileFormat::Windows"
                                                                   ">::resolve";
                 expLineNumber   = -1;
                 isStaticFunc = false;

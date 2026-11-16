@@ -17,7 +17,7 @@
 #include <bsl_iostream.h>
 #include <bsl_sstream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -661,7 +661,7 @@ int main(int argc, char *argv[])
 // properties of those objects:
 // ```
     ball::ManagedAttribute p1("uuid", 4044457);
-    ball::ManagedAttribute p2("name", "Bloomberg");
+    ball::ManagedAttribute p2("name", "BNP Paribas");
 
     ASSERT("uuid" == p1.key());
     ASSERT("name" == p2.key());
@@ -669,7 +669,7 @@ int main(int argc, char *argv[])
     ASSERT(true        == p1.value().is<int>());
     ASSERT(4044457     == p1.value().the<int>());
     ASSERT(true        == p2.value().is<bsl::string>());
-    ASSERT("Bloomberg" == p2.value().the<bsl::string>());
+    ASSERT("BNP Paribas" == p2.value().the<bsl::string>());
 // ```
 // Finaly, we show that `ball::ManagedAttribute` manages the storage for the
 // attribute name after construction:

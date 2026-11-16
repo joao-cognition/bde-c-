@@ -153,7 +153,7 @@ BSLS_IDENT("$Id: $")
 // bool operator==(const MyContainer<VALUE_TYPE>& lhs,
 //                 const MyContainer<VALUE_TYPE>& rhs)
 // {
-//     return BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+//     return BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
 //                                                     lhs.end(),
 //                                                     lhs.size(),
 //                                                     rhs.begin(),
@@ -166,7 +166,7 @@ BSLS_IDENT("$Id: $")
 // bool operator!=(const MyContainer<VALUE_TYPE>& lhs,
 //                 const MyContainer<VALUE_TYPE>& rhs)
 // {
-//     return !BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+//     return !BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
 //                                                      lhs.end(),
 //                                                      lhs.size(),
 //                                                      rhs.begin(),
@@ -252,7 +252,7 @@ BSLS_IDENT("$Id: $")
 //   public:
 //     // TRAITS
 //     BSLMF_NESTED_TRAIT_DECLARATION(MyPoint,
-//                           BloombergLP::bslmf::IsBitwiseEqualityComparable);
+//                           BNP_Paribas::bslmf::IsBitwiseEqualityComparable);
 //
 //     // CREATORS
 //     MyPoint(int x, int y);
@@ -331,7 +331,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cwchar>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

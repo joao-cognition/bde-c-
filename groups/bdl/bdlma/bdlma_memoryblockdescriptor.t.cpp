@@ -22,7 +22,7 @@
 #include <unistd.h>             // `pipe`, `close` and `dup`.
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC

@@ -6,7 +6,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_EXTERN_TEMPLATE
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 template class StringRefImp<char>;

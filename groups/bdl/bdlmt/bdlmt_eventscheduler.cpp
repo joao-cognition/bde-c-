@@ -80,16 +80,16 @@ class InstanceCountedNullFunctor {
     }
 };
 
-void startLagMetric(BloombergLP::bdlm::Metric                *value,
-                    const BloombergLP::bdlmt::EventScheduler *object)
+void startLagMetric(BNP_Paribas::bdlm::Metric                *value,
+                    const BNP_Paribas::bdlmt::EventScheduler *object)
 {
-    BloombergLP::bsls::TimeInterval now  = object->now();
-    BloombergLP::bsls::TimeInterval next = object->nextPendingEventTime();
+    BNP_Paribas::bsls::TimeInterval now  = object->now();
+    BNP_Paribas::bsls::TimeInterval next = object->nextPendingEventTime();
     if (now <= next) {
-        *value = BloombergLP::bdlm::Metric::Gauge(0.0);
+        *value = BNP_Paribas::bdlm::Metric::Gauge(0.0);
     }
     else {
-        *value = BloombergLP::bdlm::Metric::Gauge(
+        *value = BNP_Paribas::bdlm::Metric::Gauge(
                                           (now - next).totalSecondsAsDouble());
     }
 }
@@ -97,7 +97,7 @@ void startLagMetric(BloombergLP::bdlm::Metric                *value,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // STATIC FUNCTIONS
 static inline

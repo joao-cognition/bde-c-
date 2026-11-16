@@ -126,7 +126,7 @@ BSLS_IDENT("$Id: $")
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP14_INTEGER_SEQUENCE
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
                             // ======================
                             // struct IntegerSequence

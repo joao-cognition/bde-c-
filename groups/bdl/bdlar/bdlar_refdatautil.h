@@ -16,7 +16,7 @@ BSLS_IDENT("$Id: $")
 #include <bdlar_anyrefdata.h>
 #include <bdlar_vtableutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
                            // ==================

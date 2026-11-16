@@ -59,7 +59,7 @@ BSLS_IDENT("$Id: $")
 //   conversely, will ignore the allocator only for *non-AA* and *stl-AA*
 //   types.  For *legacy-AA*, *bsl-AA*, and *pmr-AA* types, an incompatible
 //   allocator will result in a compilation failure.  This special case exists
-//   to avoid subtle errors in the Bloomberg code base where a bad allocator
+//   to avoid subtle errors in the BNP Paribas code base where a bad allocator
 //   argument is used in a situation where allocator propagation is expected.
 // * This component does not provide special handling for `std::pair`.
 //
@@ -569,7 +569,7 @@ BSLS_IDENT("$Id: $")
 // `d_value` variable, an optimization known prior to C++17 as "copy elision".
 // This optimization is required by the C++17 standard and is optional in
 // pre-2017 standards, but is implemented in all of the C++11 compilers for
-// which this component is expected to be used at Bloomberg.
+// which this component is expected to be used at BNP Paribas.
 //
 // Next, we implement the assignment operators, which simply call `setValue`:
 // ```
@@ -670,7 +670,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 struct ConstructionUtil_Imp;

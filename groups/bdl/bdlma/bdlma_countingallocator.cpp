@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(bdlma_countingallocator_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 namespace {
 

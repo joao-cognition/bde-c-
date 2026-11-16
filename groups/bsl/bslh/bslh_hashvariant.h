@@ -79,7 +79,7 @@ BSLS_IDENT("$Id: $")
 
 #define BSLH_HASHVARIANT_DEFINE_HASH_MONOSTATE  1
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 // FREE FUNCTIONS

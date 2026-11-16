@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLMA_SHAREDPTRINPLACEREP_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                       // =========================
@@ -411,8 +411,8 @@ struct SharedPtrInplaceRep_ImpUtil {
     template <class TYPE>
     static const TYPE& forward(const TYPE& reference);
     template <class TYPE>
-    static BloombergLP::bslmf::MovableRef<TYPE> forward(
-                        const BloombergLP::bslmf::MovableRef<TYPE>& reference);
+    static BNP_Paribas::bslmf::MovableRef<TYPE> forward(
+                        const BNP_Paribas::bslmf::MovableRef<TYPE>& reference);
 
     /// Destroy the specified `object`.
     template <class TYPE>
@@ -441,8 +441,8 @@ const TYPE& SharedPtrInplaceRep_ImpUtil::forward(const TYPE& reference)
 
 template <class TYPE>
 inline
-BloombergLP::bslmf::MovableRef<TYPE> SharedPtrInplaceRep_ImpUtil::forward(
-                         const BloombergLP::bslmf::MovableRef<TYPE>& reference)
+BNP_Paribas::bslmf::MovableRef<TYPE> SharedPtrInplaceRep_ImpUtil::forward(
+                         const BNP_Paribas::bslmf::MovableRef<TYPE>& reference)
 {
     return reference;
 }

@@ -14,7 +14,7 @@ BSLS_IDENT_RCSID(bslfmt_unicodecodepoint_cpp, "$Id$ $CSID$")
 #include <bslstl_algorithm.h>
 
 namespace {
-typedef BloombergLP::bslfmt::FormatterUnicodeData UnicodeData;
+typedef BNP_Paribas::bslfmt::FormatterUnicodeData UnicodeData;
 
 // LOCAL MACROS
 #define UNLIKELY(EXPRESSION) BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(EXPRESSION)
@@ -252,7 +252,7 @@ static bool isLowSurrogateValue(unsigned int value)
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 void UnicodeCodePoint::extractUtf8(const void *bytes, size_t maxBytes)

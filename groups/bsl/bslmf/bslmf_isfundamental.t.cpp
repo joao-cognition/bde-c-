@@ -20,7 +20,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                TEST PLAN
@@ -37,7 +37,7 @@ using namespace BloombergLP;
 //
 //-----------------------------------------------------------------------------
 // PUBLIC CLASS DATA
-// [ 2] BloombergLP::bslmf::IsFundamental::value
+// [ 2] BNP_Paribas::bslmf::IsFundamental::value
 // [ 1] bsl::is_fundamental::value
 // [ 1] bsl::is_fundamental_v
 // ----------------------------------------------------------------------------

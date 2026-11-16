@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -31,7 +31,7 @@ using namespace BloombergLP;
 // are functionally equivalent, we will use the same set of types for both.
 //
 //-----------------------------------------------------------------------------
-// [ 1] BloombergLP::bslmf::IsPolymorphic::value
+// [ 1] BNP_Paribas::bslmf::IsPolymorphic::value
 // [ 3] bsl::is_polymorphic::value
 //
 //-----------------------------------------------------------------------------

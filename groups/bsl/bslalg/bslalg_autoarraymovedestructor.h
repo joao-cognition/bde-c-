@@ -175,7 +175,7 @@ BSLS_IDENT("$Id: $")
 // }
 //
 // // TRAITS
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // namespace bslma {
 // template <> struct UsesBslmaAllocator<TestType> : bsl::true_type {};
@@ -352,7 +352,7 @@ BSLS_IDENT("$Id: $")
 #include <cstddef>        // 'std::size_t'
 #include <cstring>        // 'memset', 'memcpy', 'memmove'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

@@ -18,7 +18,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: This component defines four meta-functions, -- `bsl::is_array`,
 // `bsl::is_bounded_array`, `bsl::is_unbounded_array`, and
-// `BloombergLP::bslmf::IsArray` and three template variables, --
+// `BNP_Paribas::bslmf::IsArray` and three template variables, --
 // `bsl::is_array_v`, `bsl::is_bounded_array_v`, and
 // `bsl::is_unbounded_array_v` --  that contain the result values of the
 // corresponding meta-functions.  The `is_array` meta-functions may be used to
@@ -223,7 +223,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_unbounded_array_v =
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ==============

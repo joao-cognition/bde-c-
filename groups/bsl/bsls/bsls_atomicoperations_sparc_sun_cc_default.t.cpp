@@ -4,7 +4,7 @@
 
 #include <cstdlib>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 int main(int argc, char *argv[])

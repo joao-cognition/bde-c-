@@ -8,7 +8,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bsls_asserttestexception.h> // for testing only
 #include <bsls_types.h>               // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 namespace {
 /// This parameterized `struct` is declared but not defined except for the

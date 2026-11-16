@@ -425,7 +425,7 @@ template <class HASHALG>
 inline
 void bsl::hashAppend(HASHALG& hashAlg, const type_index& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, object.hash_code());
 }
 

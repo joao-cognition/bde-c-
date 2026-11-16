@@ -2,7 +2,7 @@
 # Alexandria doc generation as a PR verify check.
 services:
   alexandria-docs:
-    image: artprod.dev.bloomberg.com/alexandria/alexandria-generator-do2:stable
+    image: artprod.dev.bnpparibas.com/alexandria/alexandria-generator-do2:stable
     volumes:
       - .:/alexandria/source:ro
       - /tmp/alexandria-bde-generated:/alexandria/generated
@@ -28,7 +28,7 @@ services:
           echo "      alexandria-cli generate" >&2
           echo "" >&2
           echo "  Full install + usage instructions:" >&2
-          echo "      https://tutti.prod.bloomberg.com/alexandria/alexandria-cli/README" >&2
+          echo "      https://tutti.prod.bnpparibas.com/alexandria/alexandria-cli/README" >&2
           echo "=======================================================================" >&2
           echo "" >&2
         fi

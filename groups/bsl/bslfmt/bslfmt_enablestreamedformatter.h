@@ -86,7 +86,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                        // ==============================
@@ -113,8 +113,8 @@ template <class t_STREAMABLE>
 struct formatter<
     t_STREAMABLE,
     typename bsl::enable_if<
-        BloombergLP::bslfmt::EnableStreamedFormatter<t_STREAMABLE>::value,
-        char>::type> : BloombergLP::bslfmt::StreamedFormatter<t_STREAMABLE> {
+        BNP_Paribas::bslfmt::EnableStreamedFormatter<t_STREAMABLE>::value,
+        char>::type> : BNP_Paribas::bslfmt::StreamedFormatter<t_STREAMABLE> {
 };
 
 }  // close namespace bsl

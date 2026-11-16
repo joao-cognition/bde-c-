@@ -16,7 +16,7 @@
 #include <string.h>     // `strlen`
 #include <new>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -192,7 +192,7 @@ class TestType {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <> struct UsesBslmaAllocator<TestType> : bsl::true_type {};
 }  // close namespace bslma

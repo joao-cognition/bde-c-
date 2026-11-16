@@ -43,7 +43,7 @@
 
 using std::printf;
 using std::fflush;
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_PRAGMA_GCC_DIAGNOSTIC_GCC
 #pragma GCC diagnostic ignored "-Wclass-memaccess"

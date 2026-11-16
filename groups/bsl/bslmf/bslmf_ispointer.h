@@ -15,7 +15,7 @@ BSLS_IDENT("$Id: $")
 //@SEE_ALSO: bslmf_integralconstant
 //
 //@DESCRIPTION: This component defines two meta-functions, `bsl::is_pointer`
-// and `BloombergLP::bslmf::IsPointer` and a template variable
+// and `BNP_Paribas::bslmf::IsPointer` and a template variable
 // `bsl::is_pointer_v`, that represents the result value of the
 // `bsl::is_pointer` meta-function.  All these meta-functions may be used to
 // query whether or not a type is a pointer type.
@@ -139,7 +139,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_pointer_v =
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ================

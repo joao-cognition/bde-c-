@@ -53,7 +53,7 @@
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                                 TEST PLAN
@@ -164,8 +164,8 @@ void aSsErT(bool condition, const char *message, int line)
 //                              TEST APPARATUS
 // ----------------------------------------------------------------------------
 
-typedef BloombergLP::bdljsn::NumberUtil          Obj;
-typedef BloombergLP::bdljsn::NumberUtil_ImpUtil  ImpUtil;
+typedef BNP_Paribas::bdljsn::NumberUtil          Obj;
+typedef BNP_Paribas::bdljsn::NumberUtil_ImpUtil  ImpUtil;
 typedef bsls::Types::Int64                       Int64;
 typedef bsls::Types::Uint64                      Uint64;
 
@@ -705,7 +705,7 @@ struct AsIntegralTest {
 
     // CONSTANTS
     static const bool s_isSignedType =
-              BloombergLP::bdljsn::NumberUtil_IsSigned<t_INTEGRAL_TYPE>::value;
+              BNP_Paribas::bdljsn::NumberUtil_IsSigned<t_INTEGRAL_TYPE>::value;
 
     /// See documentation for test case 10.
     static void testCase10()
@@ -1169,7 +1169,7 @@ int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

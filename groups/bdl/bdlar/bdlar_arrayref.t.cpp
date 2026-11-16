@@ -27,7 +27,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -213,10 +213,10 @@ int main(int argc, char *argv[])
 
         // Test `bdlat_ArrayFunctions` customization-points
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_ArrayFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_ArrayFunctions::
                                              IsArray<bdlar::ArrayRef>::value));
             BSLMF_ASSERT((bsl::is_same<
-                ::BloombergLP::bdlat_ArrayFunctions::
+                ::BNP_Paribas::bdlat_ArrayFunctions::
                                             ElementType<bdlar::ArrayRef>::Type,
                 bdlar::AnyRef
             >::value));
@@ -232,10 +232,10 @@ int main(int argc, char *argv[])
             bdlat_ArrayFunctions::accessElement(ref, elementAccessor, 1);
         }
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_ArrayFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_ArrayFunctions::
                                         IsArray<bdlar::ArrayConstRef>::value));
             BSLMF_ASSERT((bsl::is_same<
-                ::BloombergLP::bdlat_ArrayFunctions::
+                ::BNP_Paribas::bdlat_ArrayFunctions::
                                        ElementType<bdlar::ArrayConstRef>::Type,
                 bdlar::AnyConstRef
             >::value));

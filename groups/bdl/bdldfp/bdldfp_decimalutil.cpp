@@ -28,7 +28,7 @@ BSLS_IDENT_RCSID(bdldfp_decimalutil_cpp,"$Id$ $CSID$")
 #include <bdldfp_intelimpwrapper.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
 

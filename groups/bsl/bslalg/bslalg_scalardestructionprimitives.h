@@ -97,7 +97,7 @@ BSLS_IDENT("$Id: $")
 #include <cstring>  // 'memset', 'memcpy', 'memmove'
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 /// This alias is defined for backward compatibility.

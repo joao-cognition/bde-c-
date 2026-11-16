@@ -30,7 +30,7 @@
 #include <unistd.h>
 #include <sys/stat.h>    // chmod
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -699,8 +699,8 @@ int main(int argc, char *argv[])
 
                 SM(0, "funcGlobalOne(int)");
                 SM(3, "S::funcGlobalMethod(int)");
-                SM(4, "BloombergLP::balst::ResolverImpl"
-                      "<BloombergLP::balst::ObjectFileFormat::Elf>::"
+                SM(4, "BNP_Paribas::balst::ResolverImpl"
+                      "<BNP_Paribas::balst::ObjectFileFormat::Elf>::"
                       "test()");
                 if (!e_IS_LINUX || !e_IS_CLANG) {
                     // The linux clang demangler has a bug where it fails on

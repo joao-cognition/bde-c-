@@ -79,7 +79,7 @@ BSLS_IDENT("$Id: $")
 #include <bslalg_typetraits.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                            // ====================
@@ -154,7 +154,7 @@ void DefaultDeleter<TYPE>::deleteObject(TYPE *instance)
 
 // TRAITS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class TYPE>

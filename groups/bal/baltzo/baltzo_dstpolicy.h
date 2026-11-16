@@ -71,7 +71,7 @@ BSLS_IDENT("$Id: $")
 #include <bsla_deprecated.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
                               // ================
                               // struct DstPolicy

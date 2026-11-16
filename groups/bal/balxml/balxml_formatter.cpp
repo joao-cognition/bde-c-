@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(balxml_formatter_cpp,"$Id$ $CSID$")
 
 #include <bdlb_print.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
 
                            // ---------------------

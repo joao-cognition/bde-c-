@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(bsltf_copymovetracker_cpp, "$Id$ $CSID$")
 
 #include <bslmf_util.h>  // FOR TESTING ONLY
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 }  // close enterprise namespace
 
 // ----------------------------------------------------------------------------

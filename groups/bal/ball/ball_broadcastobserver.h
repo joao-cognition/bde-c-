@@ -163,7 +163,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_unordered_map.h>
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 class Record;

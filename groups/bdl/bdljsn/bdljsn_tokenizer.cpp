@@ -60,7 +60,7 @@ BSLS_IDENT_RCSID(bdljsn_tokenizer_cpp, "$Id$ $CSID$")
 // the same state of tokenizer is legal with one combination of options and
 // illegal with others.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 static const char *g_WHITESPACE_DEFAULT = " \n\t\v\r\f";

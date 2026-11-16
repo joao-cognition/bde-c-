@@ -21,7 +21,7 @@
 #pragma GCC diagnostic ignored "-Wstringop-overread"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -86,7 +86,7 @@ struct MyArrayType {
     typedef bdlat_TypeCategory::Array Category;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ArrayFunctions {
     template <>
     struct IsArray<MyArrayType> : public bsl::true_type {
@@ -99,7 +99,7 @@ struct MyChoiceType {
     typedef bdlat_TypeCategory::Choice Category;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ChoiceFunctions {
     template <>
     struct IsChoice<MyChoiceType> : public bsl::true_type {
@@ -112,7 +112,7 @@ struct MyCustomizedType {
     typedef bdlat_TypeCategory::CustomizedType Category;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_CustomizedTypeFunctions {
     template <>
     struct IsCustomizedType<MyCustomizedType> : public bsl::true_type {
@@ -125,7 +125,7 @@ struct MyEnumerationType {
     typedef bdlat_TypeCategory::Enumeration Category;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_EnumFunctions {
     template <>
     struct IsEnumeration<MyEnumerationType> : public bsl::true_type {
@@ -138,7 +138,7 @@ struct MyNullableValueType {
     typedef bdlat_TypeCategory::NullableValue Category;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_NullableValueFunctions {
     template <>
     struct IsNullableValue<MyNullableValueType> : public bsl::true_type {
@@ -151,7 +151,7 @@ struct MySequenceType {
     typedef bdlat_TypeCategory::Sequence Category;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_SequenceFunctions {
     template <>
     struct IsSequence<MySequenceType> : public bsl::true_type {
@@ -177,7 +177,7 @@ struct MyDeclaredDynamicType {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
     template <>
     struct bdlat_TypeCategoryDeclareDynamic<MyDeclaredDynamicType>
     : public bsl::true_type {
@@ -240,7 +240,7 @@ struct MyAutoDetectDynamicType {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlat_SequenceFunctions {
     template <>
@@ -420,7 +420,7 @@ struct MyAccessor {
 // First, we declare a `printCategoryAndValue` function that has a template
 // parameter `TYPE`:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    /// Print the category of the specified `object` followed by the value
@@ -518,7 +518,7 @@ struct MyAccessor {
 // Finally, we can exercise the `printCategoryAndValue` function on objects
 // that fall in different (non-dynamic) type categories.
 // ```
-   using namespace BloombergLP;
+   using namespace BNP_Paribas;
 
    void runUsageExample1()
    {
@@ -563,7 +563,7 @@ struct MyAccessor {
 // First, we define `mine::PrintAccessor`, a functor that encapsulates the
 // action to be taken:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    class PrintAccessor {
@@ -650,7 +650,7 @@ struct MyAccessor {
 // given object dispatch control to the corresponding overload of the accessor
 // functor:
 // ```
-   using namespace BloombergLP;
+   using namespace BNP_Paribas;
 
    void runUsageExample2()
    {
@@ -696,7 +696,7 @@ struct MyAccessor {
 // First, we define a class, `mine::MyDynamicType`, that can hold one of two
 // value types: either a `bsl::vector<char>` or a `bsl::string`.
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    /// This class can represent data in two forms: either a `bsl::string`
@@ -738,10 +738,10 @@ struct MyAccessor {
 // "dynamic" class (for calculations at compile time).
 //
 // Then, to denote that this class is a dynamic type, we specialize the
-// `bdlat_TypeCategoryDeclareDynamic` meta-function in the `BloombergLP`
+// `bdlat_TypeCategoryDeclareDynamic` meta-function in the `BNP_Paribas`
 // namespace:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
 
        template <>
        struct bdlat_TypeCategoryDeclareDynamic<mine::MyDynamicType>
@@ -754,7 +754,7 @@ struct MyAccessor {
 // `bdlat_typeCategory(Manipulate|Access)(Array|Simple)`, each overloaded for
 // our type, `MyDynamicType`.
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
     bdlat_TypeCategory::Value

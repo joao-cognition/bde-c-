@@ -147,7 +147,7 @@ static const char hexValueTable[128] =
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                            // ----------

@@ -91,7 +91,7 @@
  collect a buffer of 'void *'s which are return addresses from the stack, which
  can be obtained very quickly and without doing any disk access, to be
  expensively resolved to human-readable format later using
- 'balst_stacktraceutil' or the Bloomberg stand-alone program 'showfunc.tsk'.
+ 'balst_stacktraceutil' or the BNP Paribas stand-alone program 'showfunc.tsk'.
 
  As an example of this, the component 'balst_stacktracetestallocator' needs to
  do a stack trace on every memory allocation.  To do a fully-resolved stack

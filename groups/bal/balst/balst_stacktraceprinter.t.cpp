@@ -39,7 +39,7 @@
 
 #if !defined(BSLS_PLATFORM_OS_CYGWIN)
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;

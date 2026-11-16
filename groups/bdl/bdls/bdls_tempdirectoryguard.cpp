@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdls_tempdirectoryguard_cpp, "$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdls {
 
 TempDirectoryGuard::TempDirectoryGuard(const bsl::string_view&  prefix,

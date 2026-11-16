@@ -27,7 +27,7 @@ BSLS_IDENT("$Id: $")
 // properties of those objects:
 // ```
 // ball::ManagedAttribute p1("uuid", 4044457);
-// ball::ManagedAttribute p2("name", "Bloomberg");
+// ball::ManagedAttribute p2("name", "BNP Paribas");
 //
 // assert("uuid" == p1.key());
 // assert("name" == p2.key());
@@ -35,7 +35,7 @@ BSLS_IDENT("$Id: $")
 // assert(true        == p1.value().is<int>());
 // assert(4044457     == p1.value().the<int>());
 // assert(true        == p2.value().is<bsl::string>());
-// assert("Bloomberg" == p2.value().the<bsl::string>());
+// assert("BNP Paribas" == p2.value().the<bsl::string>());
 // ```
 // Finally, we show that `ball::ManagedAttribute` manages the storage for the
 // attribute name after construction:
@@ -63,7 +63,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // ======================

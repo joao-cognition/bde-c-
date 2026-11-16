@@ -73,7 +73,7 @@ BSLS_IDENT("$Id: $")
 #include <bslim_fuzzdataview.h>
 #include <bslim_fuzzutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                             // ===============

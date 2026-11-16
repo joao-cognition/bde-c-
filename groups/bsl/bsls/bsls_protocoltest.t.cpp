@@ -28,7 +28,7 @@
 #  pragma GCC diagnostic ignored "-Wdangling-reference"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                 TEST PLAN

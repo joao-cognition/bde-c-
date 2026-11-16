@@ -344,7 +344,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_exception.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #if defined(BSLS_PLATFORM_CMP_MSVC)
 #   define BSLMT_ONCE_UNIQNUM __COUNTER__
@@ -573,10 +573,10 @@ class OnceGuard {
 // once-region, then leave the once-region at the end.  Each invocation of this
 // macro within a source file supplies a different `doOnceObj` name.
 #define BSLMT_ONCE_DO_IMP(doOnceObj)                                          \
-    static BloombergLP::bslmt::Once doOnceObj = BSLMT_ONCE_INITIALIZER;       \
+    static BNP_Paribas::bslmt::Once doOnceObj = BSLMT_ONCE_INITIALIZER;       \
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(                    /* NOLINT */\
                                            doOnceObj.isMaybeUninitialized())) \
-        for (BloombergLP::bslmt::OnceGuard                        /* NOLINT */\
+        for (BNP_Paribas::bslmt::OnceGuard                        /* NOLINT */\
                                                 bslmt_doOnceGuard(&doOnceObj);\
              bslmt_doOnceGuard.enter(); bslmt_doOnceGuard.leave())
 

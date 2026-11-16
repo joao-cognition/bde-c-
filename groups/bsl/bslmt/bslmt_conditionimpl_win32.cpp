@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(bslmt_conditionimpl_win32_cpp,"$Id$ $CSID$")
 
 #ifdef BSLMT_PLATFORM_WIN32_THREADS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                // -------------------------------------------
                // class ConditionImpl<Platform::Win32Threads>

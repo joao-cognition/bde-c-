@@ -332,7 +332,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslalg_rbtreenode.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                         // ==============

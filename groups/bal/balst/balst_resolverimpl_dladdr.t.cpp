@@ -19,7 +19,7 @@
 
 #ifdef BALST_OBJECTFILEFORMAT_RESOLVER_DLADDR
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cin;
 using bsl::cout;
 using bsl::cerr;
@@ -592,16 +592,16 @@ int main(int argc, char *argv[])
 //              SM(2, "funcStaticInlineOne(int)");    // Darwin doesn't
                                                       // demangle statics
                 SM(3, "qsort");
-                const char *resName = "BloombergLP::"
+                const char *resName = "BNP_Paribas::"
                                       "balst::ResolverImpl"
-                                      "<BloombergLP::"
+                                      "<BNP_Paribas::"
                                       "balst::ObjectFileFormat::Dladdr>::"
                                       "resolve(";
                 int resNameLen = (int) bsl::strlen(resName);
                 const char *name4 = stackTrace[4].symbolName().c_str();
                 LOOP2_ASSERT(name4, resName,
                                           safeCmp(name4, resName, resNameLen));
-                resName = "BloombergLP::bdlt::DateUtil::nextDayOfWeek(";
+                resName = "BNP_Paribas::bdlt::DateUtil::nextDayOfWeek(";
                 resNameLen = (int) bsl::strlen(resName);
                 const char *name5 = stackTrace[5].symbolName().c_str();
                 LOOP2_ASSERT(name5, resName,

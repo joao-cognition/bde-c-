@@ -154,7 +154,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_iosfwd.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 // FORWARD DECLARATIONS
@@ -1129,7 +1129,7 @@ template <class HASHALG>
 inline
 void bdlt::hashAppend(HASHALG& hashAlg, const TimetableTransition& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlg, object.datetime());
     hashAppend(hashAlg, object.code());
@@ -1279,7 +1279,7 @@ inline
 void bdlt::hashAppend(HASHALG&                               hashAlg,
                       const Timetable_CompactableTransition& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlg, object.time());
     hashAppend(hashAlg, object.code());
@@ -1393,7 +1393,7 @@ template <class HASHALG>
 inline
 void bdlt::hashAppend(HASHALG& hashAlg, const Timetable_Day& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlg, object.d_initialTransitionCode);
     hashAppend(hashAlg, object.d_transitions);
@@ -1585,7 +1585,7 @@ template <class HASHALG>
 inline
 void bdlt::hashAppend(HASHALG& hashAlg, const Timetable& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     hashAppend(hashAlg, object.d_firstDate);
     hashAppend(hashAlg, object.d_lastDate);
@@ -1716,7 +1716,7 @@ bool bdlt::operator!=(const Timetable_ConstIterator& lhs,
 
 // TRAITS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

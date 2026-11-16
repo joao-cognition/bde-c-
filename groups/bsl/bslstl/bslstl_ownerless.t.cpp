@@ -18,7 +18,7 @@
 #include <stdlib.h>      // atoi
 #include <string.h>      // strcmp, strcpy
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

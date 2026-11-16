@@ -42,7 +42,7 @@
 #pragma GCC diagnostic pop
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 // ============================================================================
 //                             TEST PLAN

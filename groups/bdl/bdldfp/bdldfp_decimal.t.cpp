@@ -43,7 +43,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::flush;
@@ -213,7 +213,7 @@ static bslma::TestAllocator *pa;
     #define u_GCC_UBSAN_DENORMAL_WORKAROUND                                   1
 #endif  // gcc with ubsan
 
-namespace BDEC = BloombergLP::bdldfp;
+namespace BDEC = BNP_Paribas::bdldfp;
 
 //=============================================================================
 //                               USAGE EXAMPLE
@@ -2273,7 +2273,7 @@ void TestDriver::testCase7()
                            << "Testing `hashAppend`" << bsl::endl
                            << "====================" << bsl::endl;
 
-    typedef ::BloombergLP::bslh::Hash<> Hasher;
+    typedef ::BNP_Paribas::bslh::Hash<> Hasher;
     typedef Hasher::result_type         HashType;
 
     Hasher hasher;

@@ -21,7 +21,7 @@
 #include <bsl_utility.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -254,11 +254,11 @@ void populateDummyData(bsl::map<DatabaseKey, DatabaseValue> *values)
 /// test succeeds and `false` otherwise.
 template<int TEST_OFFSET>
 bool doubleAlignmentTestImpl(bool                               verbose,
-                             BloombergLP::bslma::TestAllocator& ta)
+                             BNP_Paribas::bslma::TestAllocator& ta)
 {
     char dummy[TEST_OFFSET];
 
-    BloombergLP::bdlma::LocalSequentialAllocator<sizeof(double)> lsa(&ta);
+    BNP_Paribas::bdlma::LocalSequentialAllocator<sizeof(double)> lsa(&ta);
 
     if (verbose) {
         cout << "Alignment=" << TEST_OFFSET << ":"
@@ -283,7 +283,7 @@ bool doubleAlignmentTestImpl(bool                               verbose,
 template<int ALIGNMENT>
 bool doubleAlignmentTest(bool verbose)
 {
-    BloombergLP::bslma::TestAllocator ta;
+    BNP_Paribas::bslma::TestAllocator ta;
     return doubleAlignmentTestImpl<ALIGNMENT>(verbose, ta);
 }
 

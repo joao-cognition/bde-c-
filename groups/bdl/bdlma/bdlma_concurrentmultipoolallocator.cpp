@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlma_concurrentmultipoolallocator_cpp,"$Id$ $CSID$")
 
 #include <bsls_performancehint.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                     // ----------------------------------

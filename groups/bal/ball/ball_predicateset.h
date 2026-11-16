@@ -21,7 +21,7 @@ BSLS_IDENT("$Id: $")
 
 #include <ball_managedattributeset.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 /// @DEPRECATED: Use `ball::ManagedAttributeSet` instead.

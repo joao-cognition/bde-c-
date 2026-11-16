@@ -20,7 +20,7 @@
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -129,11 +129,11 @@ namespace Obj = bdlat_CustomizedTypeFunctions;
 // #include <sstream>
 // #include <string>
 
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    /// Identification number for the US and Canada.  It is a 9-digit number
-   /// consisting of 8 digits and a check digit.  The Bloomberg ID will be
+   /// consisting of 8 digits and a check digit.  The BNP Paribas ID will be
    /// returned for Corp, Govt, Pfd if a CUSIP is not available.
    class Cusip {
      private:
@@ -284,7 +284,7 @@ namespace Obj = bdlat_CustomizedTypeFunctions;
        };
 
    }  // close namespace bdlat_CustomizedTypeFunctions
-   }  // close namespace BloombergLP
+   }  // close namespace BNP_Paribas
 // ```
 // The `bdlat` infrastructure (and any component that uses this infrastructure)
 // will now recognize `mine::Cusip` as a "customized" type.
@@ -295,13 +295,13 @@ namespace Obj = bdlat_CustomizedTypeFunctions;
 // declaring `mine::Cusip` to have the `bdlat_TypeTraitBasicCustomizedType`
 // trait as follows:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
 
    // TRAITS
 
    BDLAT_DECL_CUSTOMIZEDTYPE_WITH_ALLOCATOR_TRAITS(mine::Cusip)
 
-   }  // close namespace BloombergLP
+   }  // close namespace BNP_Paribas
 // ```
 // Again, the `bdlat` infrastructure (and any component that uses this
 // infrastructure) will now recognize `mine::Cusip` as a "customized" type.
@@ -368,7 +368,7 @@ namespace Obj = bdlat_CustomizedTypeFunctions;
 // For completeness, we finish by providing the straightforward details of the
 // implementation of the class `Cusip`:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    // CREATORS
@@ -470,7 +470,7 @@ namespace Obj = bdlat_CustomizedTypeFunctions;
    }
 
    }  // close namespace mine
-   }  // close namespace BloombergLP
+   }  // close namespace BNP_Paribas
 // ```
 
 // ============================================================================
@@ -484,7 +484,7 @@ int main(int argc, char *argv[])
 //  int veryVerbose = argc > 3;
 //  int veryVeryVerbose = argc > 4;
 
-    using BloombergLP::mine::Cusip;
+    using BNP_Paribas::mine::Cusip;
 
     cout << "TEST " << __FILE__ << " CASE " << test << endl;
 

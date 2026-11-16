@@ -64,7 +64,7 @@ namespace bsl {
 
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED
     // Export additional names, leaked to support transitive dependencies in
-    // higher level (non BDE) Bloomberg code.
+    // higher level (non BDE) BNP Paribas code.
 # if !defined(BSLS_PLATFORM_CMP_MSVC) && __cplusplus < 201703L
     // As some of these names are removed from C++17, take a sledgehammer to
     // crack this nut, and remove all non-standard exports.
@@ -105,9 +105,9 @@ namespace bsl {
 template <class CHAR, class TRAITS>
 basic_ostream<CHAR,TRAITS>& emit_on_flush(basic_ostream<CHAR,TRAITS>& stream)
 {
-    using BloombergLP::bslstl::SyncBufBase;
+    using BNP_Paribas::bslstl::SyncBufBase;
     if (SyncBufBase *p = dynamic_cast<SyncBufBase*>(stream.rdbuf())) {
-        BloombergLP::bslstl::SyncBufBaseUtil::setEmitOnSync(p, true);
+        BNP_Paribas::bslstl::SyncBufBaseUtil::setEmitOnSync(p, true);
     }
     return stream;
 }
@@ -115,7 +115,7 @@ basic_ostream<CHAR,TRAITS>& emit_on_flush(basic_ostream<CHAR,TRAITS>& stream)
 template <class CHAR, class TRAITS>
 basic_ostream<CHAR,TRAITS>& flush_emit(basic_ostream<CHAR,TRAITS>& stream)
 {
-    using BloombergLP::bslstl::SyncBufBase;
+    using BNP_Paribas::bslstl::SyncBufBase;
     stream.flush();
     if (SyncBufBase *p = dynamic_cast<SyncBufBase*>(stream.rdbuf())) {
         typename basic_ostream<CHAR,TRAITS>::sentry ok(stream);
@@ -123,7 +123,7 @@ basic_ostream<CHAR,TRAITS>& flush_emit(basic_ostream<CHAR,TRAITS>& stream)
             stream.setstate(ios_base::badbit);
         }
         else {
-            if (!BloombergLP::bslstl::SyncBufBaseUtil::emitInternal(p)) {
+            if (!BNP_Paribas::bslstl::SyncBufBaseUtil::emitInternal(p)) {
                 stream.setstate(ios_base::badbit);
             }
         }
@@ -134,9 +134,9 @@ basic_ostream<CHAR,TRAITS>& flush_emit(basic_ostream<CHAR,TRAITS>& stream)
 template <class CHAR, class TRAITS>
 basic_ostream<CHAR,TRAITS>& noemit_on_flush(basic_ostream<CHAR,TRAITS>& stream)
 {
-    using BloombergLP::bslstl::SyncBufBase;
+    using BNP_Paribas::bslstl::SyncBufBase;
     if (SyncBufBase *p = dynamic_cast<SyncBufBase*>(stream.rdbuf())) {
-        BloombergLP::bslstl::SyncBufBaseUtil::setEmitOnSync(p, false);
+        BNP_Paribas::bslstl::SyncBufBaseUtil::setEmitOnSync(p, false);
     }
     return stream;
 }

@@ -29,7 +29,7 @@ BSLS_IDENT("$Id: $")
      || (defined(BSLS_PLATFORM_CMP_CLANG)                                     \
               && BSLS_PLATFORM_CMP_VERSION < 30100))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

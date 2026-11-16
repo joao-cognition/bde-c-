@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BDLC_FLATHASHTABLE_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 // FORWARD DECLARATIONS
@@ -195,8 +195,8 @@ class FlatHashTable
     /// `hashValue == d_hasher(key)`.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     indexOfKeyTransparent(bool              *notFound,
                           const LOOKUP_KEY&  key,
@@ -245,8 +245,8 @@ class FlatHashTable
     /// behavior is undefined unless `hashValue == d_hasher(key)`.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     findTransparentKey(const LOOKUP_KEY& key, bsl::size_t hashValue) const
     {
@@ -414,8 +414,8 @@ class FlatHashTable
     /// range will contain at most one entry.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
     {
@@ -613,8 +613,8 @@ class FlatHashTable
 // forwarding in some compilers.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     erase(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key)
     {
@@ -657,8 +657,8 @@ class FlatHashTable
     /// an entry exists, and `end()` otherwise.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , iterator>::type
     find(const LOOKUP_KEY& key)
     {
@@ -691,8 +691,8 @@ class FlatHashTable
 // forwarding in some compilers.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     insertTransparent(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key)
     {
@@ -927,13 +927,13 @@ class FlatHashTable
 
 #if BDLC_FLATHASHTABLE_VARIADIC_LIMIT_D >= 0
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key);
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key);
 #endif  // BDLC_FLATHASHTABLE_VARIADIC_LIMIT_D >= 0
 
 #if BDLC_FLATHASHTABLE_VARIADIC_LIMIT_D >= 1
     template <class ARGS_01>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01);
 #endif  // BDLC_FLATHASHTABLE_VARIADIC_LIMIT_D >= 1
 
@@ -941,7 +941,7 @@ class FlatHashTable
     template <class ARGS_01,
               class ARGS_02>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02);
 #endif  // BDLC_FLATHASHTABLE_VARIADIC_LIMIT_D >= 2
@@ -951,7 +951,7 @@ class FlatHashTable
               class ARGS_02,
               class ARGS_03>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03);
@@ -963,7 +963,7 @@ class FlatHashTable
               class ARGS_03,
               class ARGS_04>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -977,7 +977,7 @@ class FlatHashTable
               class ARGS_04,
               class ARGS_05>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -993,7 +993,7 @@ class FlatHashTable
               class ARGS_05,
               class ARGS_06>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -1011,7 +1011,7 @@ class FlatHashTable
               class ARGS_06,
               class ARGS_07>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -1031,7 +1031,7 @@ class FlatHashTable
               class ARGS_07,
               class ARGS_08>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -1053,7 +1053,7 @@ class FlatHashTable
               class ARGS_08,
               class ARGS_09>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -1077,7 +1077,7 @@ class FlatHashTable
               class ARGS_09,
               class ARGS_10>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                            BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -1094,8 +1094,8 @@ class FlatHashTable
 #if BDLC_FLATHASHTABLE_VARIADIC_LIMIT_D >= 0
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key)
     {
@@ -1122,8 +1122,8 @@ class FlatHashTable
 #if BDLC_FLATHASHTABLE_VARIADIC_LIMIT_D >= 1
     template <class LOOKUP_KEY, class ARGS_01>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01)
@@ -1153,8 +1153,8 @@ class FlatHashTable
     template <class LOOKUP_KEY, class ARGS_01,
                                 class ARGS_02>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1187,8 +1187,8 @@ class FlatHashTable
                                 class ARGS_02,
                                 class ARGS_03>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1224,8 +1224,8 @@ class FlatHashTable
                                 class ARGS_03,
                                 class ARGS_04>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1264,8 +1264,8 @@ class FlatHashTable
                                 class ARGS_04,
                                 class ARGS_05>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1307,8 +1307,8 @@ class FlatHashTable
                                 class ARGS_05,
                                 class ARGS_06>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1353,8 +1353,8 @@ class FlatHashTable
                                 class ARGS_06,
                                 class ARGS_07>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1402,8 +1402,8 @@ class FlatHashTable
                                 class ARGS_07,
                                 class ARGS_08>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1454,8 +1454,8 @@ class FlatHashTable
                                 class ARGS_08,
                                 class ARGS_09>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1509,8 +1509,8 @@ class FlatHashTable
                                 class ARGS_09,
                                 class ARGS_10>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
@@ -1563,13 +1563,13 @@ class FlatHashTable
 
     template <class... ARGS>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                               BSLS_COMPILERFEATURES_FORWARD_REF(ARGS)... args);
 
     template <class LOOKUP_KEY, class... ARGS>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key,
                 BSLS_COMPILERFEATURES_FORWARD_REF(ARGS)... args)
@@ -1670,8 +1670,8 @@ class FlatHashTable
     /// range will contain at most one entry.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
         {
@@ -1695,8 +1695,8 @@ class FlatHashTable
     //  if no such entry exists in this table.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , const_iterator>::type
     find(const LOOKUP_KEY& key) const
         {
@@ -3717,7 +3717,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key)
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key)
 {
     const KEY&  k = key;
     bool        notFound;
@@ -3746,7 +3746,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01)
 {
     const KEY&  k = key;
@@ -3778,7 +3778,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02)
 {
@@ -3813,7 +3813,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03)
@@ -3851,7 +3851,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -3892,7 +3892,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -3936,7 +3936,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -3983,7 +3983,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -4033,7 +4033,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -4086,7 +4086,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -4142,7 +4142,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_01) args_01,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_02) args_02,
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARGS_03) args_03,
@@ -4222,7 +4222,7 @@ bsl::pair<typename
                   FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::iterator,
           bool>
 FlatHashTable<KEY, ENTRY, ENTRY_UTIL, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                                BSLS_COMPILERFEATURES_FORWARD_REF(ARGS)... args)
 {
     const KEY&  k = key;

@@ -16,7 +16,7 @@ BSLS_IDENT_RCSID(baljsn_tokenizer_cpp, "$Id$ $CSID$")
 #include <bsl_cstring.h>
 #include <bsl_ios.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
                               // ---------------------------
                               // class JsonTokenizer_Visitor

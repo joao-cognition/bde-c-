@@ -396,7 +396,7 @@
 
 /Implementation Classes and Components
 /-------------------------------------
- The 'bslmt' package is supported on all Bloomberg platforms.  In order to
+ The 'bslmt' package is supported on all BNP Paribas platforms.  In order to
  accomplish this, 'bslmt' provides platform-specific implementations of thread
  primitives.  The following components provide platform-specific
  implementations:

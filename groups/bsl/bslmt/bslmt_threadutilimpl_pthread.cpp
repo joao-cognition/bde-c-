@@ -43,7 +43,7 @@ BSLS_IDENT_RCSID(bslmt_threadutilimpl_pthread_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // 'man (2) prctl' from Linux 2.6.9 says the thread name buffer must
 // accommodate at least 16 bytes, for both setting and getting.
@@ -206,7 +206,7 @@ class MachClockGuard {
                // class ThreadUtilImpl<Platform::PosixThreads>
                // --------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // CLASS DATA
 const pthread_t

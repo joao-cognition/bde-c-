@@ -30,7 +30,7 @@
 #pragma GCC diagnostic ignored "-Warray-bounds"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================
@@ -210,7 +210,7 @@ bsl::size_t bdlat_arraySize(const FixedArray<SIZE, TYPE>& array);
 
 }  // close namespace Test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ArrayFunctions {
     // META FUNCTIONS
     template <int SIZE, class TYPE>
@@ -369,7 +369,7 @@ bsl::size_t Test::bdlat_arraySize(const Test::FixedArray<SIZE, TYPE>& array)
 
    // Definitions needed for Usage but not shown in the header file
 
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace your {
 
    class YourFloatArray {
@@ -423,7 +423,7 @@ bsl::size_t Test::bdlat_arraySize(const Test::FixedArray<SIZE, TYPE>& array)
    }  // close namespace your
    }  // close enterprise namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace your {
 
 void YourFloatArray::setSize(bsl::size_t newSize)
@@ -524,7 +524,7 @@ struct ElementType<your::YourFloatArray> {
 // Suppose you had a type, `mine::MyIntArray`, that provides the essential
 // features of an "array" type.
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    class MyIntArray {
@@ -608,7 +608,7 @@ struct ElementType<your::YourFloatArray> {
 // First, we should forward declare all the functions that we will implement
 // inside the `mine` namespace:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    // MANIPULATORS
@@ -653,7 +653,7 @@ struct ElementType<your::YourFloatArray> {
 // functions should be defined in some `.cpp` file, unless you choose to make
 // them `inline` functions.
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    // MANIPULATORS
@@ -701,7 +701,7 @@ struct ElementType<your::YourFloatArray> {
 // in the `bdlat_ArrayFunctions` namespace for the
 // `mine::MyIntArray` type:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace bdlat_ArrayFunctions {
 
    // TRAITS
@@ -942,7 +942,7 @@ struct ElementType<your::YourFloatArray> {
 /// - - - - - - - - - - - - - - - - - - -
 // Suppose we have another type such as `your::YourFloatArray`, shown below:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace your {
 //
 // class YourFloatArray {

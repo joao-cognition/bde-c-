@@ -13,7 +13,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bslmf_addvolatile.h>              // for testing only
 #include <bslmf_nestedtraitdeclaration.h>   // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 }  // close package namespace

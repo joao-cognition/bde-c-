@@ -14,7 +14,7 @@ BSLS_IDENT_RCSID(bsls_bslonce_cpp,"$Id$ $CSID$")
 #include <sched.h>  // sched_yield
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 namespace {

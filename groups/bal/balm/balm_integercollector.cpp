@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(balm_integercollector_cpp,"$Id$ $CSID$")
 
 #include <bsl_climits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                         // ----------------------------
                         // class balm::IntegerCollector

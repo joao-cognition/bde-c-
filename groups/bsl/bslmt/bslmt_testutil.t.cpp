@@ -43,7 +43,7 @@
 #endif
 
 // Ensure that the `BSLMT_TESTUTIL_*` macros do not require:
-//  using namespace BloombergLP;
+//  using namespace BNP_Paribas;
 //  using namespace bsl;
 
 //=============================================================================
@@ -189,12 +189,12 @@ static void realaSsErT(bool b, const char *s, int i)
 #define REALL_                                                                \
     __LINE__
 
-typedef BloombergLP::bslma::Allocator     Allocator;
-typedef BloombergLP::bslma::TestAllocator TestAllocator;
-typedef BloombergLP::bslmt::TestUtil      Obj;
-typedef BloombergLP::bslmt::ThreadUtil    Util;
-typedef BloombergLP::bsls::AtomicInt      AtomicInt;
-typedef BloombergLP::bslmt::Mutex         Mutex;
+typedef BNP_Paribas::bslma::Allocator     Allocator;
+typedef BNP_Paribas::bslma::TestAllocator TestAllocator;
+typedef BNP_Paribas::bslmt::TestUtil      Obj;
+typedef BNP_Paribas::bslmt::ThreadUtil    Util;
+typedef BNP_Paribas::bsls::AtomicInt      AtomicInt;
+typedef BNP_Paribas::bslmt::Mutex         Mutex;
 
 #if defined(BSLS_PLATFORM_OS_WINDOWS)
     #define U_SLASH_STR "\\"
@@ -432,7 +432,7 @@ namespace Usage {
     {
         // ..
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
 
         Util::Handle handles[k_NUM_THREADS];
         for (int ii = 0; ii < k_NUM_THREADS; ++ii) {
@@ -1003,7 +1003,7 @@ bsl::ostringstream          *separateOut_p;
 
 u::OutputRedirector         *outputRedirector_p = 0;
 
-BloombergLP::bslmt::Mutex    patternVecMutex;
+BNP_Paribas::bslmt::Mutex    patternVecMutex;
 bsl::vector<const char *>    patternVec(&ta);
 
 /// Data for one thread.  All the variables will be initialized to have
@@ -1045,7 +1045,7 @@ struct TestFunctor {
     void push(const char *str) const
     {
         if (d_enablePush) {
-            BloombergLP::bslmt::LockGuard<BloombergLP::bslmt::Mutex> guard(
+            BNP_Paribas::bslmt::LockGuard<BNP_Paribas::bslmt::Mutex> guard(
                                                              &patternVecMutex);
 
             patternVec.push_back(str);
@@ -2730,10 +2730,10 @@ int main(int argc, char *argv[])
         }
 
         // Ensure that all the above macros still work with namespace
-        // `BloombergLP` in scope.
+        // `BNP_Paribas` in scope.
 
         if (verbose) {
-            using namespace BloombergLP;
+            using namespace BNP_Paribas;
 
             BSLMT_TESTUTIL_Q(BSLMT_TESTUTIL_L_);
             BSLMT_TESTUTIL_P_(b);

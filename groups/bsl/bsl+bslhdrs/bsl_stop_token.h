@@ -9,7 +9,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: Provide types, in the 'bsl' namespace, equivalent to those
 // defined in the corresponding C++ standard header.  Include
-// 'bslstl_stoptoken.h', which provides Bloomberg's implementation on all
+// 'bslstl_stoptoken.h', which provides BNP Paribas's implementation on all
 // platforms.
 
 #include <bslstl_stoptoken.h>

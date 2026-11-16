@@ -126,9 +126,9 @@ enum {
     // never set.
 
     k_INVALID_INPUT_BIT =
-                    BloombergLP::bdlde::CharConvertStatus::k_INVALID_INPUT_BIT,
+                    BNP_Paribas::bdlde::CharConvertStatus::k_INVALID_INPUT_BIT,
     k_OUT_OF_SPACE_BIT  =
-                    BloombergLP::bdlde::CharConvertStatus::k_OUT_OF_SPACE_BIT
+                    BNP_Paribas::bdlde::CharConvertStatus::k_OUT_OF_SPACE_BIT
 };
 
 enum Utf8Bits {
@@ -326,7 +326,7 @@ struct Swapper {
 inline
 unsigned int Swapper::swapBytes(unsigned int x)
 {
-    return BloombergLP::bsls::ByteOrderUtil::swapBytes(x);
+    return BNP_Paribas::bsls::ByteOrderUtil::swapBytes(x);
 }
 
                           // ========================
@@ -1488,7 +1488,7 @@ template <class VECTOR>
 int utf8ToUtf32Impl(VECTOR                              *dstVector,
                     const char                          *srcString,
                     unsigned int                         errorWord,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef Utf8ToUtf32Translator<NoopCapacity,
                                   Utf8ZeroBasedEnd,
@@ -1505,7 +1505,7 @@ int utf8ToUtf32Impl(VECTOR                              *dstVector,
 
     bsl::size_t numWordsWritten;
 
-    int ret = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int ret = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
               ? NoSwapTranslator::translate(&dstVector->front(),
                                             0,
                                             endFunctor,
@@ -1559,7 +1559,7 @@ template <class VECTOR>
 int utf8ToUtf32Impl(VECTOR                              *dstVector,
                     const bsl::string_view&              srcString,
                     unsigned int                         errorWord,
-                    BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                    BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef Utf8ToUtf32Translator<NoopCapacity,
                                   Utf8PtrBasedEnd,
@@ -1576,7 +1576,7 @@ int utf8ToUtf32Impl(VECTOR                              *dstVector,
 
     bsl::size_t numWordsWritten;
 
-    int ret = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int ret = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
               ? NoSwapTranslator::translate(&dstVector->front(),
                                             0,
                                             endFunctor,
@@ -1626,7 +1626,7 @@ int utf32ToUtf8StringImpl(
                      const unsigned int                  *srcString,
                      bsl::size_t                         *numCodePointsWritten,
                      unsigned char                        errorByte,
-                     BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                     BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef Utf32ToUtf8Translator<NoopCapacity,
                                   Utf32ZeroBasedEnd,
@@ -1637,7 +1637,7 @@ int utf32ToUtf8StringImpl(
 
     Utf32ZeroBasedEnd endFunctor;
 
-    bsl::size_t bufferLen = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    bsl::size_t bufferLen = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? utf8BufferLengthNeeded<Utf32ZeroBasedEnd, NoopSwapper>(
                                                                     srcString,
                                                                     endFunctor,
@@ -1654,7 +1654,7 @@ int utf32ToUtf8StringImpl(
         numCodePointsWritten = &localNumCodePointsWritten;
     }
     char *begin = &(*dstString)[0];
-    int   ret = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int   ret = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                 ? NoSwapTranslator::translate(begin,
                                               0,
                                               endFunctor,
@@ -1694,7 +1694,7 @@ int utf32ToUtf8StringImpl(
                      bsl::size_t                          srcStringLength,
                      bsl::size_t                         *numCodePointsWritten,
                      unsigned char                        errorByte,
-                     BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                     BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef Utf32ToUtf8Translator<NoopCapacity,
                                   Utf32PtrBasedEnd,
@@ -1705,7 +1705,7 @@ int utf32ToUtf8StringImpl(
 
     Utf32PtrBasedEnd endFunctor(srcString + srcStringLength);
 
-    bsl::size_t bufferLen = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    bsl::size_t bufferLen = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? utf8BufferLengthNeeded<Utf32PtrBasedEnd, NoopSwapper>(
                                                                     srcString,
                                                                     endFunctor,
@@ -1722,7 +1722,7 @@ int utf32ToUtf8StringImpl(
         numCodePointsWritten = &localNumCodePointsWritten;
     }
     char *begin = &(*dstString)[0];
-    int   ret = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int   ret = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                 ? NoSwapTranslator::translate(begin,
                                               0,
                                               endFunctor,
@@ -1761,7 +1761,7 @@ int utf32ToUtf8VectorImpl(
                      const unsigned int                  *srcString,
                      bsl::size_t                         *numCodePointsWritten,
                      unsigned char                        errorByte,
-                     BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                     BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef Utf32ToUtf8Translator<NoopCapacity,
                                   Utf32ZeroBasedEnd,
@@ -1770,7 +1770,7 @@ int utf32ToUtf8VectorImpl(
                                   Utf32ZeroBasedEnd,
                                   Swapper>   SwapTranslator;
 
-    bsl::size_t bufferLen = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    bsl::size_t bufferLen = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? utf8BufferLengthNeeded<Utf32ZeroBasedEnd, NoopSwapper>(
                                                            srcString,
                                                            Utf32ZeroBasedEnd(),
@@ -1787,7 +1787,7 @@ int utf32ToUtf8VectorImpl(
         numCodePointsWritten = &localNumCodePointsWritten;
     }
     char *begin = &dstVector->front();
-    int   ret   = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int   ret   = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                   ? NoSwapTranslator::translate(begin,
                                                 0,
                                                 Utf32ZeroBasedEnd(),
@@ -1823,7 +1823,7 @@ int utf32ToUtf8VectorImpl(
                      bsl::size_t                          srcStringLength,
                      bsl::size_t                         *numCodePointsWritten,
                      unsigned char                        errorByte,
-                     BloombergLP::bdlde::ByteOrder::Enum  byteOrder)
+                     BNP_Paribas::bdlde::ByteOrder::Enum  byteOrder)
 {
     typedef Utf32ToUtf8Translator<NoopCapacity,
                                   Utf32PtrBasedEnd,
@@ -1834,7 +1834,7 @@ int utf32ToUtf8VectorImpl(
 
     Utf32PtrBasedEnd endFunctor(srcString + srcStringLength);
 
-    bsl::size_t bufferLen = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    bsl::size_t bufferLen = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                ? utf8BufferLengthNeeded<Utf32PtrBasedEnd, NoopSwapper>(
                                                                     srcString,
                                                                     endFunctor,
@@ -1850,7 +1850,7 @@ int utf32ToUtf8VectorImpl(
         numCodePointsWritten = &localNumCodePointsWritten;
     }
     char *begin = &dstVector->front();
-    int   ret   = BloombergLP::bdlde::ByteOrder::e_HOST == byteOrder
+    int   ret   = BNP_Paribas::bdlde::ByteOrder::e_HOST == byteOrder
                   ? NoSwapTranslator::translate(begin,
                                                 0,
                                                 endFunctor,
@@ -1881,7 +1881,7 @@ int utf32ToUtf8VectorImpl(
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                           // -----------------------

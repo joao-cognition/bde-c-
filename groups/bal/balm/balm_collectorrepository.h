@@ -32,8 +32,8 @@ BSLS_IDENT("$Id: $")
 //
 ///Alternative Systems for Telemetry
 ///---------------------------------
-// Bloomberg software may alternatively use the GUTS telemetry API, which is
-// integrated into Bloomberg infrastructure.
+// BNP Paribas software may alternatively use the GUTS telemetry API, which is
+// integrated into BNP Paribas infrastructure.
 //
 ///Thread Safety
 ///-------------
@@ -121,7 +121,7 @@ BSLS_IDENT("$Id: $")
 
 #include <vector>                   // 'std::vector', 'std::pmr::vector'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
 class Category;

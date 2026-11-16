@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(bdlc_packedintarray,"$Id$ $CSID$")
 
 #include <bsl_cstdint.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
                       // -------------------------------

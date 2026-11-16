@@ -537,9 +537,9 @@ template <size_t t_INDEX, class t_VARIANT>
 struct Variant_GetIndexReturnTypeImpl<
     true,
     t_INDEX,
-    BloombergLP::bslmf::MovableRef<t_VARIANT>,
+    BNP_Paribas::bslmf::MovableRef<t_VARIANT>,
     t_VARIANT> {
-    typedef BloombergLP::bslmf::MovableRef<
+    typedef BNP_Paribas::bslmf::MovableRef<
         typename bsl::variant_alternative<t_INDEX, t_VARIANT>::type>
         type;
 };
@@ -552,7 +552,7 @@ struct Variant_GetIndexReturnTypeImpl<
 /// are not provided.
 template <size_t t_INDEX,
           class  t_ARG,
-          class  t_VARIANT = typename BloombergLP::bslmf::MovableRefUtil::
+          class  t_VARIANT = typename BNP_Paribas::bslmf::MovableRefUtil::
               Decay<t_ARG>::type>
 struct Variant_GetIndexReturnType;
 
@@ -597,8 +597,8 @@ get(t_VARIANT&                                obj);
 template <size_t t_INDEX, class t_VARIANT>
 typename Variant_GetIndexReturnType<
     t_INDEX,
-    BloombergLP::bslmf::MovableRef<t_VARIANT> >::type
-get(BloombergLP::bslmf::MovableRef<t_VARIANT> obj);
+    BNP_Paribas::bslmf::MovableRef<t_VARIANT> >::type
+get(BNP_Paribas::bslmf::MovableRef<t_VARIANT> obj);
 
 /// Return a reference to the alternative object with type (template parameter)
 /// `t_TYPE` in the specified `obj`.  If `t_TYPE` is not the type of the
@@ -612,9 +612,9 @@ template <class t_TYPE, class t_VARIANT>
 typename Variant_GetTypeReturnType<const t_TYPE&, t_VARIANT>::type get(
                                 const t_VARIANT&                          obj);
 template <class t_TYPE, class t_VARIANT>
-typename Variant_GetTypeReturnType<BloombergLP::bslmf::MovableRef<t_TYPE>,
+typename Variant_GetTypeReturnType<BNP_Paribas::bslmf::MovableRef<t_TYPE>,
                                    t_VARIANT>::type get(
-                                BloombergLP::bslmf::MovableRef<t_VARIANT> obj);
+                                BNP_Paribas::bslmf::MovableRef<t_VARIANT> obj);
 
 // Return a pointer to the alternative object with index (template parameter)
 // `t_INDEX` in the specified `obj`, or a null pointer if `obj` itself is a
@@ -715,7 +715,7 @@ operator<=>(const variant<t_ALTS...>& lhs, const variant<t_ALTS...>& rhs);
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 // COMPONENT-PRIVATE TAG TYPES
 
@@ -739,8 +739,8 @@ template <class t_HEAD, class... t_TAIL>
 struct Variant_UsesBslmaAllocatorAny
 : bsl::integral_constant<
       bool,
-      BloombergLP::bslma::UsesBslmaAllocator<t_HEAD>::value ||
-          BloombergLP::bslstl::Variant_UsesBslmaAllocatorAny<
+      BNP_Paribas::bslma::UsesBslmaAllocator<t_HEAD>::value ||
+          BNP_Paribas::bslstl::Variant_UsesBslmaAllocatorAny<
           t_TAIL...>::value> {
 };
 
@@ -759,7 +759,7 @@ template <class t_HEAD, class... t_TAIL>
 struct Variant_IsBitwiseMoveableAll
 : bsl::integral_constant<
       bool,
-      BloombergLP::bslmf::IsBitwiseMoveable<t_HEAD>::value &&
+      BNP_Paribas::bslmf::IsBitwiseMoveable<t_HEAD>::value &&
           Variant_IsBitwiseMoveableAll<t_TAIL...>::value> {
 };
 
@@ -818,9 +818,9 @@ struct Variant_IsAssignable : bsl::true_type {
 /// from the specified `TYPE`.
 #define BSLSTL_VARIANT_DEFINE_IF_CONSTRUCTS_FROM(VARIANT, TYPE)               \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslstl::Variant_ConstructsFromType<VARIANT,              \
+        BNP_Paribas::bslstl::Variant_ConstructsFromType<VARIANT,              \
                                                         TYPE>::value,         \
-        BloombergLP::bslstl::Variant_NoSuchType>::type
+        BNP_Paribas::bslstl::Variant_NoSuchType>::type
 
 /// This component-private macro is used as a constraint in function
 /// declarations which require the specified `VARIANT` to be constructible
@@ -828,20 +828,20 @@ struct Variant_IsAssignable : bsl::true_type {
 #define BSLSTL_VARIANT_DECLARE_IF_CONSTRUCTS_FROM(VARIANT, TYPE)              \
     BSLSTL_VARIANT_DEFINE_IF_CONSTRUCTS_FROM(                                 \
                         VARIANT,                                              \
-                        TYPE) = BloombergLP::bslstl::Variant_NoSuchType(0)
+                        TYPE) = BNP_Paribas::bslstl::Variant_NoSuchType(0)
 
 /// This component-private macro is used as a constraint when defining
 /// constructors of `variant` from the corresponding `std::variant`.
 #define BSLSTL_VARIANT_DEFINE_IF_CONSTRUCTS_FROM_STD(STD_VARIANT)             \
     bsl::enable_if_t<                                                         \
-        BloombergLP::bslstl::variant_constructsFromStd<variant, STD_VARIANT>, \
-        BloombergLP::bslstl::Variant_NoSuchType>
+        BNP_Paribas::bslstl::variant_constructsFromStd<variant, STD_VARIANT>, \
+        BNP_Paribas::bslstl::Variant_NoSuchType>
 
 /// This component-private macro is used as a constraintwhen declaring
 /// constructors of `variant` from the corresponding `std::variant`.
 #define BSLSTL_VARIANT_DECLARE_IF_CONSTRUCTS_FROM_STD(STD_VARIANT)            \
     BSLSTL_VARIANT_DEFINE_IF_CONSTRUCTS_FROM_STD(STD_VARIANT)                 \
-        = BloombergLP::bslstl::Variant_NoSuchType(0)
+        = BNP_Paribas::bslstl::Variant_NoSuchType(0)
 
 /// This component-private macro is used as a constraint in function
 /// definitions which require the specified `TYPE` to be a unique
@@ -851,22 +851,22 @@ struct Variant_IsAssignable : bsl::true_type {
 /// where `variant<t_HEAD, t_TAIL...>` expands to an invalid construct.
 #define BSLSTL_VARIANT_DEFINE_IF_HAS_UNIQUE_TYPE(TYPE)                        \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslstl::Variant_HasUniqueType<TYPE, variant>::value,     \
-        BloombergLP::bslstl::Variant_NoSuchType>::type
+        BNP_Paribas::bslstl::Variant_HasUniqueType<TYPE, variant>::value,     \
+        BNP_Paribas::bslstl::Variant_NoSuchType>::type
 
 /// This component-private macro is used as a constraint in function
 /// declarations which require the specified `TYPE` to be a unique
 /// alternative in `variant<t_HEAD, t_TAIL...>`.
 #define BSLSTL_VARIANT_DECLARE_IF_HAS_UNIQUE_TYPE(TYPE)                       \
     BSLSTL_VARIANT_DEFINE_IF_HAS_UNIQUE_TYPE(                                 \
-                           TYPE) = BloombergLP::bslstl::Variant_NoSuchType(0)
+                           TYPE) = BNP_Paribas::bslstl::Variant_NoSuchType(0)
 
 /// This component-private macro expands to the check for whether the
 /// specified `TYPE` is a unique alternative in
 /// `variant<t_HEAD, t_TAIL...>`. See definition `Variant_HasUniqueType`
 /// for more details.
 #define BSLSTL_VARIANT_HAS_UNIQUE_TYPE(TYPE)                                  \
-    BloombergLP::bslstl::                                                     \
+    BNP_Paribas::bslstl::                                                     \
         Variant_HasUniqueType<TYPE, variant<t_HEAD, t_TAIL...> >::value
 
 /// This component-private macro expands to the type of alternative at
@@ -880,14 +880,14 @@ struct Variant_IsAssignable : bsl::true_type {
 /// alternative in the specified `VARIANT` that is identical to the
 /// specified `TYPE`, or `bsl::variant_npos` if no such alternative exists.
 #define BSLSTL_VARIANT_INDEX_OF(TYPE, VARIANT)                                \
-    BloombergLP::bslstl::Variant_TypeToIndex<TYPE, VARIANT>::value
+    BNP_Paribas::bslstl::Variant_TypeToIndex<TYPE, VARIANT>::value
 
 /// This component-private macro expands to the index of the first
 /// alternative in the specified `VARIANT` that is a "unique" best match for
 /// conversion from `std::declval<TYPE>()`.  See the documentation for
 /// `Variant_ConvertIndex` for more details.
 #define BSLSTL_VARIANT_CONVERT_INDEX_OF(TYPE, VARIANT)                        \
-    BloombergLP::bslstl::Variant_ConvertIndex<TYPE, VARIANT>::value
+    BNP_Paribas::bslstl::Variant_ConvertIndex<TYPE, VARIANT>::value
 
 /// This component-private macro expands to the type of the alternative
 /// in the specified `VARIANT` that is a "unique" best match for conversion
@@ -903,7 +903,7 @@ struct Variant_IsAssignable : bsl::true_type {
 /// specified `VISITOR` and specified `VAROBJ` as arguments.  See the
 /// documentation of `Variant_ImpUtil::visitId` for more details.
 #define BSLSTL_VARIANT_VISITID(RET, VISITOR, VAROBJ)                          \
-    BloombergLP::bslstl::Variant_ImpUtil::visitId<RET>(VISITOR, VAROBJ);
+    BNP_Paribas::bslstl::Variant_ImpUtil::visitId<RET>(VISITOR, VAROBJ);
 
 /// This component-private metafunction provides implementation for
 /// `Variant_TypeToIndex`.  It evaluates to `t_INDEX + i` where `i` is the
@@ -1942,7 +1942,7 @@ struct Variant_Function {
     /// the type of the active alternative.
     static t_RET functionImpl(t_VISITOR& visitor, t_VARIANT& variant)
     {
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
         return visitor(ImpUtil::unsafeGet<t_ALT_TYPE>(variant));
     }
 };
@@ -1956,7 +1956,7 @@ struct Variant_Function<void, t_VISITOR, t_VARIANT, t_ALT_TYPE> {
 
     static void functionImpl(t_VISITOR& visitor, t_VARIANT& variant)
     {
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
         visitor(ImpUtil::unsafeGet<t_ALT_TYPE>(variant));
     }
 };
@@ -1971,8 +1971,8 @@ struct Variant_MoveFunction {
     /// `t_ALT_TYPE`.
     static t_RET functionImpl(t_VISITOR& visitor, t_VARIANT& variant)
     {
-        typedef BloombergLP::bslmf::MovableRefUtil   MoveUtil;
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslmf::MovableRefUtil   MoveUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
         return visitor(
                       MoveUtil::move(ImpUtil::unsafeGet<t_ALT_TYPE>(variant)));
@@ -1988,8 +1988,8 @@ struct Variant_MoveFunction<void, t_VISITOR, t_VARIANT, t_ALT_TYPE> {
 
     static void functionImpl(t_VISITOR& visitor, t_VARIANT& variant)
     {
-        typedef BloombergLP::bslmf::MovableRefUtil   MoveUtil;
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslmf::MovableRefUtil   MoveUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
         visitor(MoveUtil::move(ImpUtil::unsafeGet<t_ALT_TYPE>(variant)));
     }
@@ -2008,7 +2008,7 @@ struct Variant_FunctionId {
     /// occurs multiple times in `t_VARIANT`.
     static t_RET functionImpl(t_VISITOR& visitor, t_VARIANT& variant)
     {
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
         static const size_t t_INDEX = BSLSTL_VARIANT_INDEX_OF(
             t_ALT_TYPE, typename bsl::remove_cv<t_VARIANT>::type);
 
@@ -2140,7 +2140,7 @@ namespace bsl {
 template <class t_RET, class t_VISITOR, class t_VARIANT>
 t_RET visit(t_VISITOR&& visitor, t_VARIANT&& variant)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (variant.valueless_by_exception()) {
         BSLS_THROW(bsl::bad_variant_access());
@@ -2165,10 +2165,10 @@ template <class t_VISITOR, class t_VARIANT>
 auto visit(t_VISITOR&& visitor, t_VARIANT&& variant) ->
 typename bsl::invoke_result<
     t_VISITOR&&,
-    decltype(get<0>(BloombergLP::bslstl::Variant_ImpUtil::
+    decltype(get<0>(BNP_Paribas::bslstl::Variant_ImpUtil::
                     asVariant(std::forward<t_VARIANT>(variant))))>::type
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
     typedef decltype(ImpUtil::asVariant(std::forward<t_VARIANT>(variant)))
                                                              VariantFwdRefType;
     typedef typename bsl::invoke_result<
@@ -2177,7 +2177,7 @@ typename bsl::invoke_result<
                       asVariant(std::forward<t_VARIANT>(variant))))>::type RET;
 
     static_assert(
-        BloombergLP::bslstl::
+        BNP_Paribas::bslstl::
           Variant_IsSameReturnType<RET, t_VISITOR&&, VariantFwdRefType>::value,
         "The value type and category of invoking the visitor with "
         "every alternative is not the same");
@@ -2200,7 +2200,7 @@ typename bsl::invoke_result<
 template <class t_RET, class t_VISITOR, class t_VARIANT>
 t_RET visitR(t_VISITOR& visitor, t_VARIANT&& variant)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
     return visit<t_RET>(visitor,
                         ImpUtil::asVariant(std::forward<t_VARIANT>(variant)));
 }
@@ -2222,7 +2222,7 @@ t_RET visitR(t_VISITOR& visitor, t_VARIANT&& variant)
 template <class t_RET, class t_VISITOR, class t_VARIANT>
 t_RET visitR(t_VISITOR& visitor, t_VARIANT& variant)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (variant.valueless_by_exception()) {
         BSLS_THROW(bsl::bad_variant_access());
@@ -2246,9 +2246,9 @@ t_RET visitR(t_VISITOR& visitor, t_VARIANT& variant)
 /// type parameter is explicitly specified.
 template <class t_RET, class t_VISITOR, class t_VARIANT>
 t_RET visitR(t_VISITOR&                                visitor,
-             BloombergLP::bslmf::MovableRef<t_VARIANT> variant)
+             BNP_Paribas::bslmf::MovableRef<t_VARIANT> variant)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     t_VARIANT& lvalue = variant;
     if (lvalue.valueless_by_exception()) {
@@ -2268,7 +2268,7 @@ typename bsl::invoke_result<
     typename bsl::variant_alternative<0, t_VARIANT>::type&>::type
 visit(t_VISITOR& visitor, t_VARIANT& variant)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (variant.valueless_by_exception()) {
         BSLS_THROW(bsl::bad_variant_access());
@@ -2278,7 +2278,7 @@ visit(t_VISITOR& visitor, t_VARIANT& variant)
         typename bsl::variant_alternative<0, t_VARIANT>::type&>::type Ret;
 
     BSLMF_ASSERT(
-        (BloombergLP::bslstl::
+        (BNP_Paribas::bslstl::
              Variant_IsSameReturnType<Ret, t_VISITOR, t_VARIANT&>::value));
 
     return ImpUtil::visit<Ret>(visitor, ImpUtil::asVariant(variant));
@@ -2293,11 +2293,11 @@ visit(t_VISITOR& visitor, t_VARIANT& variant)
 template <class t_VISITOR, class t_VARIANT>
 typename bsl::invoke_result<
     t_VISITOR&,
-    BloombergLP::bslmf::MovableRef<
+    BNP_Paribas::bslmf::MovableRef<
         typename bsl::variant_alternative<0, t_VARIANT>::type> >::type
-visit(t_VISITOR& visitor, BloombergLP::bslmf::MovableRef<t_VARIANT> variant)
+visit(t_VISITOR& visitor, BNP_Paribas::bslmf::MovableRef<t_VARIANT> variant)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     t_VARIANT& lvalue = variant;
     if (lvalue.valueless_by_exception()) {
@@ -2305,13 +2305,13 @@ visit(t_VISITOR& visitor, BloombergLP::bslmf::MovableRef<t_VARIANT> variant)
     }
     typedef typename bsl::invoke_result<
         t_VISITOR&,
-        BloombergLP::bslmf::MovableRef<
+        BNP_Paribas::bslmf::MovableRef<
             typename bsl::variant_alternative<0, t_VARIANT>::type> >::type Ret;
 
-    BSLMF_ASSERT((BloombergLP::bslstl::Variant_IsSameReturnType<
+    BSLMF_ASSERT((BNP_Paribas::bslstl::Variant_IsSameReturnType<
                   Ret,
                   t_VISITOR,
-                  BloombergLP::bslmf::MovableRef<t_VARIANT> >::value));
+                  BNP_Paribas::bslmf::MovableRef<t_VARIANT> >::value));
 
     return ImpUtil::moveVisit<Ret>(visitor, ImpUtil::asVariant(lvalue));
 }
@@ -2320,7 +2320,7 @@ visit(t_VISITOR& visitor, BloombergLP::bslmf::MovableRef<t_VARIANT> variant)
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                           // ========================
@@ -2490,7 +2490,7 @@ union Variant_Union<void, void> {
 };
 
 template <>
-union Variant_Union<BloombergLP::bsls::CompilerFeaturesNilT> {
+union Variant_Union<BNP_Paribas::bsls::CompilerFeaturesNilT> {
 };
 
 /// The implementation of this template uses template recursion because C++
@@ -2555,7 +2555,7 @@ class Variant_MoveConstructVisitor {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     // DATA
     t_VARIANT_BASE *d_variant_p;
@@ -2631,7 +2631,7 @@ class Variant_CopyAssignVisitor {
         // cv-qualification.
         typedef typename bsl::variant_alternative<t_INDEX, t_VARIANT>::type
                                                      Alt_Type;
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
         ImpUtil::unsafeGet<Alt_Type>(*d_variant_p) = value;
 #endif  // BSL_VARIANT_FULL_IMPLEMENTATION
@@ -2649,7 +2649,7 @@ class Variant_MoveAssignVisitor {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     // DATA
     t_VARIANT *d_variant_p;
@@ -2680,7 +2680,7 @@ class Variant_MoveAssignVisitor {
 #ifdef BSL_VARIANT_FULL_IMPLEMENTATION
         bsl::get<t_INDEX>(*d_variant_p) = MoveUtil::move(value);
 #else
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
         ImpUtil::unsafeGet<t_TYPE>(*d_variant_p) = MoveUtil::move(value);
 #endif  // BSL_VARIANT_FULL_IMPLEMENTATION
     }
@@ -2771,7 +2771,7 @@ struct Variant_DestructorVisitor {
             typedef                                                           \
                 typename bsl::variant_alternative<t_INDEX, t_VARIANT>::type   \
                                                                     Alt_Type; \
-            typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;             \
+            typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;             \
             return (ImpUtil::unsafeGet<Alt_Type>(*d_variant_p) OP value);     \
         }                                                                     \
     };                                                                        \
@@ -2833,16 +2833,16 @@ class Variant_SwapVisitor {
     void operator()(bsl::in_place_index_t<t_INDEX>, t_TYPE& value) const
     {
 #ifdef BSL_VARIANT_FULL_IMPLEMENTATION
-        BloombergLP::bslalg::SwapUtil::swap(
+        BNP_Paribas::bslalg::SwapUtil::swap(
                          BSLS_UTIL_ADDRESSOF(value),
                          BSLS_UTIL_ADDRESSOF(bsl::get<t_INDEX>(*d_variant_p)));
 #else
-        typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+        typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
             // When invoking this visitor in C++03, 't_INDEX' may not be the
             // index of the active alternative, but it will be an index of an
             // alternative of same type. Swap can not be invoked on a constant
             // variant, so the cv qualifications will match.
-        BloombergLP::bslalg::SwapUtil::swap(
+        BNP_Paribas::bslalg::SwapUtil::swap(
               BSLS_UTIL_ADDRESSOF(value),
               BSLS_UTIL_ADDRESSOF((ImpUtil::unsafeGet<t_TYPE>(*d_variant_p))));
 #endif  // BSL_VARIANT_FULL_IMPLEMENTATION
@@ -2879,7 +2879,7 @@ class Variant_HashVisitor {
     template <class t_TYPE>
     void operator()(t_TYPE& value) const
     {
-        using BloombergLP::bslh::hashAppend;
+        using BNP_Paribas::bslh::hashAppend;
         hashAppend(d_hashAlg, value);
     }
 };
@@ -2900,7 +2900,7 @@ struct Variant_AllocatorBase {
     /// `bsl::allocator<char>`.  The returned pointer will be ignored (and
     /// not dereferenced) when passed to
     /// `bslma::ConstructionUtil::construct`.
-    BloombergLP::bslma::Allocator *mechanism() const
+    BNP_Paribas::bslma::Allocator *mechanism() const
     {
         return NULL;
     }
@@ -2911,7 +2911,7 @@ template <>
 struct Variant_AllocatorBase<true> {
 
     // TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
     typedef bsl::allocator<char>               allocator_type;
 
     // PUBLIC DATA
@@ -2940,7 +2940,7 @@ struct Variant_AllocatorBase<true> {
     // ACCESSORS
 
     /// Return the mechanism of the stored allocator.
-    BloombergLP::bslma::Allocator *mechanism() const
+    BNP_Paribas::bslma::Allocator *mechanism() const
     {
         return d_allocator.mechanism();
     }
@@ -2959,17 +2959,17 @@ struct Variant_AllocatorBase<true> {
 /// hierarchy.
 template <class t_HEAD, class... t_TAIL>
 struct Variant_Base
-: public BloombergLP::bslstl::Variant_AllocatorBase<
-      BloombergLP::bslstl::Variant_UsesBslmaAllocatorAny<t_HEAD,
+: public BNP_Paribas::bslstl::Variant_AllocatorBase<
+      BNP_Paribas::bslstl::Variant_UsesBslmaAllocatorAny<t_HEAD,
                                                          t_TAIL...>::value> {
 
     // TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
-    typedef BloombergLP::bslstl::Variant_AllocatorBase<
-        BloombergLP::bslstl::Variant_UsesBslmaAllocatorAny<t_HEAD,
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslstl::Variant_AllocatorBase<
+        BNP_Paribas::bslstl::Variant_UsesBslmaAllocatorAny<t_HEAD,
                                                            t_TAIL...>::value>
         AllocBase;
-    typedef BloombergLP::bslstl::Variant_Union<t_HEAD, t_TAIL...>
+    typedef BNP_Paribas::bslstl::Variant_Union<t_HEAD, t_TAIL...>
                                             Variant_Union;
     typedef bsl::variant<t_HEAD, t_TAIL...> Variant;
 
@@ -2980,7 +2980,7 @@ struct Variant_Base
 
     /// Type alias to the allocator type used by `variant`.
     typedef typename bsl::conditional<
-        BloombergLP::bslstl::Variant_UsesBslmaAllocatorAny<t_HEAD,
+        BNP_Paribas::bslstl::Variant_UsesBslmaAllocatorAny<t_HEAD,
                                                            t_TAIL...>::value,
         bsl::allocator<char>,
         NoAlloc>::type allocator_type;
@@ -2997,18 +2997,18 @@ struct Variant_Base
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         Variant_Base,
-        BloombergLP::bslma::UsesBslmaAllocator,
-        (BloombergLP::bslstl::
+        BNP_Paribas::bslma::UsesBslmaAllocator,
+        (BNP_Paribas::bslstl::
              Variant_UsesBslmaAllocatorAny<t_HEAD, t_TAIL...>::value));
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         Variant_Base,
-        BloombergLP::bslmf::UsesAllocatorArgT,
-        (BloombergLP::bslstl::
+        BNP_Paribas::bslmf::UsesAllocatorArgT,
+        (BNP_Paribas::bslstl::
              Variant_UsesBslmaAllocatorAny<t_HEAD, t_TAIL...>::value));
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         Variant_Base,
-        BloombergLP::bslmf::IsBitwiseMoveable,
-        (BloombergLP::bslstl::Variant_IsBitwiseMoveableAll<t_HEAD,
+        BNP_Paribas::bslmf::IsBitwiseMoveable,
+        (BNP_Paribas::bslstl::Variant_IsBitwiseMoveableAll<t_HEAD,
                                                            t_TAIL...>::value));
 
     // CREATORS
@@ -3111,7 +3111,7 @@ struct Variant_Base
     /// If the `original` object is not valueless by exception, the contained
     /// value is move-constructed from the contained value of `original`.  All
     /// alternatives shall be move constructible.
-    Variant_Base(BloombergLP::bslmf::MovableRef<Variant> original);
+    Variant_Base(BNP_Paribas::bslmf::MovableRef<Variant> original);
 
     /// Create a `Variant_Base` object holding the alternative with index
     /// (template parameter) `t_INDEX`, which is value-initialized.  If this
@@ -3276,7 +3276,7 @@ struct Variant_Base
                  const Variant&       original);
     Variant_Base(bsl::allocator_arg_t,
                  allocator_type                          allocator,
-                 BloombergLP::bslmf::MovableRef<Variant> original);
+                 BNP_Paribas::bslmf::MovableRef<Variant> original);
 
     /// Create a `Variant_Base` object holding the alternative with index
     /// (template parameter) `t_INDEX`, which is value-initialized.  If this
@@ -3637,7 +3637,7 @@ struct Variant_Base
     /// object exits via an exception, this `Variant_Base` object is left in
     /// a valueless by exception state.  All alternatives shall be move
     /// constructible and move assignable.
-    Variant_Base& operator=(BloombergLP::bslmf::MovableRef<Variant_Base> rhs);
+    Variant_Base& operator=(BNP_Paribas::bslmf::MovableRef<Variant_Base> rhs);
 
     /// Destroy the contained value, if any.
     void reset() BSLS_KEYWORD_NOEXCEPT;
@@ -3655,39 +3655,39 @@ namespace bsl {
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
 template <class t_HEAD, class... t_TAIL>
 class variant
-: private BloombergLP::bslstl::Variant_Base<t_HEAD, t_TAIL...>
+: private BNP_Paribas::bslstl::Variant_Base<t_HEAD, t_TAIL...>
 #ifdef BSL_VARIANT_FULL_IMPLEMENTATION
 ,
-  private BloombergLP::bslstl::Variant_SMFBase<
-      BloombergLP::bslstl::Variant_IsCopyConstructibleAll<t_HEAD,
+  private BNP_Paribas::bslstl::Variant_SMFBase<
+      BNP_Paribas::bslstl::Variant_IsCopyConstructibleAll<t_HEAD,
                                                           t_TAIL...>::value,
-      BloombergLP::bslstl::Variant_IsMoveConstructibleAll<t_HEAD,
+      BNP_Paribas::bslstl::Variant_IsMoveConstructibleAll<t_HEAD,
                                                           t_TAIL...>::value,
-      BloombergLP::bslstl::Variant_IsCopyConstructibleAll<t_HEAD,
+      BNP_Paribas::bslstl::Variant_IsCopyConstructibleAll<t_HEAD,
                                                           t_TAIL...>::value &&
-          BloombergLP::bslstl::Variant_IsCopyAssignableAll<t_HEAD,
+          BNP_Paribas::bslstl::Variant_IsCopyAssignableAll<t_HEAD,
                                                            t_TAIL...>::value,
-      BloombergLP::bslstl::Variant_IsMoveConstructibleAll<t_HEAD,
+      BNP_Paribas::bslstl::Variant_IsMoveConstructibleAll<t_HEAD,
                                                           t_TAIL...>::value &&
-          BloombergLP::bslstl::Variant_IsMoveAssignableAll<t_HEAD,
+          BNP_Paribas::bslstl::Variant_IsMoveAssignableAll<t_HEAD,
                                                            t_TAIL...>::value>
 #endif  // BSL_VARIANT_FULL_IMPLEMENTATION
 {
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil                   MoveUtil;
-    typedef BloombergLP::bslstl::Variant_Base<t_HEAD, t_TAIL...> Variant_Base;
-    typedef BloombergLP::bslstl::Variant_Union<t_HEAD, t_TAIL...>
+    typedef BNP_Paribas::bslmf::MovableRefUtil                   MoveUtil;
+    typedef BNP_Paribas::bslstl::Variant_Base<t_HEAD, t_TAIL...> Variant_Base;
+    typedef BNP_Paribas::bslstl::Variant_Union<t_HEAD, t_TAIL...>
         Variant_Union;
 
     // FRIENDS
-    friend struct BloombergLP::bslstl::Variant_ImpUtil;
+    friend struct BNP_Paribas::bslstl::Variant_ImpUtil;
         // This struct contains functions that require access to the
         // 'Variant_Union' subobject.  Note that because 'variant' is not
         // standard-layout in the allocator-aware case, we cannot easily cast
         // between the variant object and its 'Variant_Union' subobject.
 
-    friend struct BloombergLP::bslstl::Variant_Base<t_HEAD, t_TAIL...>;
+    friend struct BNP_Paribas::bslstl::Variant_Base<t_HEAD, t_TAIL...>;
         // 'Variant_Base' must be able to downcast from 'Variant_Base' to
         // 'variant' (which is privately derived from 'Variant_Base').
 
@@ -3695,18 +3695,18 @@ class variant
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         variant,
-        BloombergLP::bslma::UsesBslmaAllocator,
-        (BloombergLP::bslstl::
+        BNP_Paribas::bslma::UsesBslmaAllocator,
+        (BNP_Paribas::bslstl::
              Variant_UsesBslmaAllocatorAny<t_HEAD, t_TAIL...>::value));
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         variant,
-        BloombergLP::bslmf::UsesAllocatorArgT,
-        (BloombergLP::bslstl::
+        BNP_Paribas::bslmf::UsesAllocatorArgT,
+        (BNP_Paribas::bslstl::
              Variant_UsesBslmaAllocatorAny<t_HEAD, t_TAIL...>::value));
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         variant,
-        BloombergLP::bslmf::IsBitwiseMoveable,
-        (BloombergLP::bslstl::Variant_IsBitwiseMoveableAll<t_HEAD,
+        BNP_Paribas::bslmf::IsBitwiseMoveable,
+        (BNP_Paribas::bslstl::Variant_IsBitwiseMoveableAll<t_HEAD,
                                                            t_TAIL...>::value));
 
     // TYPES
@@ -3778,13 +3778,13 @@ class variant
     explicit variant(
                   t_STD_VARIANT&& original,
                   BSLSTL_VARIANT_DECLARE_IF_CONSTRUCTS_FROM_STD(t_STD_VARIANT))
-    : Variant_Base(BloombergLP::bslstl::Variant_ConstructFromStdTag(),
+    : Variant_Base(BNP_Paribas::bslstl::Variant_ConstructFromStdTag(),
                    original.index())
     {
         // MSVC 19.22 and later has a bug where if this constructor is defined
         // out of line, it becomes non-explicit in copy-list-initialization.
         if (!valueless_by_exception()) {
-            BloombergLP::bslstl::Variant_ImpUtil::
+            BNP_Paribas::bslstl::Variant_ImpUtil::
                 ConstructFromStdVisitor<variant, decltype(original)>
                     visitor(*this, original);
             BSLSTL_VARIANT_VISITID(void, visitor, *this);
@@ -3945,7 +3945,7 @@ class variant
     template <
         class t_FIRST = t_HEAD,
         class         = typename bsl::enable_if_t<
-            BloombergLP::bslstl::
+            BNP_Paribas::bslstl::
                 Variant_IsCopyConstructibleAll<t_FIRST, t_TAIL...>::value> >
     variant(bsl::allocator_arg_t,
             allocator_type allocator,
@@ -3967,7 +3967,7 @@ class variant
     template <
         class t_FIRST = t_HEAD,
         class         = typename bsl::enable_if_t<
-            BloombergLP::bslstl::
+            BNP_Paribas::bslstl::
                 Variant_IsMoveConstructibleAll<t_FIRST, t_TAIL...>::value> >
     variant(bsl::allocator_arg_t, allocator_type allocator, variant&& original)
     : Variant_Base(bsl::allocator_arg_t(), allocator, std::move(original))
@@ -3993,13 +3993,13 @@ class variant
                   BSLSTL_VARIANT_DECLARE_IF_CONSTRUCTS_FROM_STD(t_STD_VARIANT))
     : Variant_Base(bsl::allocator_arg_t(),
                    allocator,
-                   BloombergLP::bslstl::Variant_ConstructFromStdTag(),
+                   BNP_Paribas::bslstl::Variant_ConstructFromStdTag(),
                    original.index())
     {
         // MSVC 19.22 and later has a bug where if this constructor is defined
         // out of line, it becomes non-explicit in copy-list-initialization.
         if (!valueless_by_exception()) {
-            BloombergLP::bslstl::Variant_ImpUtil::
+            BNP_Paribas::bslstl::Variant_ImpUtil::
                 ConstructFromStdVisitor<variant, decltype(original)>
                     visitor(*this, original);
             BSLSTL_VARIANT_VISITID(void, visitor, *this);
@@ -4158,7 +4158,7 @@ class variant
     /// valueless by exception, the contained value is move-constructed from
     /// the contained value of `original`.  All alternatives shall be move
     /// constructible.
-    variant(BloombergLP::bslmf::MovableRef<variant> original);
+    variant(BNP_Paribas::bslmf::MovableRef<variant> original);
 
     /// Create a `variant` object whose contained value is copy or move
     /// constructed from the specified `value`.  If (template parameter)
@@ -4495,7 +4495,7 @@ class variant
             const variant&       original);
     variant(bsl::allocator_arg_t,
             allocator_type                          allocator,
-            BloombergLP::bslmf::MovableRef<variant> original);
+            BNP_Paribas::bslmf::MovableRef<variant> original);
 
     /// Create a `variant` object whose contained value is copy or move
     /// constructed from the specified `value`.  If (template parameter)
@@ -5031,7 +5031,7 @@ class variant
     /// resolution only if `t_TYPE` is a unique alternative.
     template <class t_TYPE>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace();
 
@@ -5048,19 +5048,19 @@ class variant
     /// in overload resolution only if `t_TYPE` is a unique alternative.
     template <class t_TYPE, class t_ARG_01>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01);
 
     template <class t_TYPE, class t_ARG_01, class t_ARG_02>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01, const t_ARG_02& arg_02);
 
     template <class t_TYPE, class t_ARG_01, class t_ARG_02, class t_ARG_03>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5072,7 +5072,7 @@ class variant
               class t_ARG_03,
               class t_ARG_04>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5086,7 +5086,7 @@ class variant
               class t_ARG_04,
               class t_ARG_05>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5102,7 +5102,7 @@ class variant
               class t_ARG_05,
               class t_ARG_06>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5120,7 +5120,7 @@ class variant
               class t_ARG_06,
               class t_ARG_07>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5140,7 +5140,7 @@ class variant
               class t_ARG_07,
               class t_ARG_08>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5162,7 +5162,7 @@ class variant
               class t_ARG_08,
               class t_ARG_09>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5186,7 +5186,7 @@ class variant
               class t_ARG_09,
               class t_ARG_10>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, variant>::value,
         t_TYPE&>::type
     emplace(const t_ARG_01& arg_01,
             const t_ARG_02& arg_02,
@@ -5425,7 +5425,7 @@ class variant
     /// * `noexcept` specification is not implemented
     template <class t_TYPE>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_AssignsFromType<variant, t_TYPE>::value,
+        BNP_Paribas::bslstl::Variant_AssignsFromType<variant, t_TYPE>::value,
         variant&>::type
     operator=(t_TYPE&& value)
     {
@@ -5468,7 +5468,7 @@ class variant
     /// alternative object throws an exception, this `variant` object is left
     /// in a valueless by exception state.  All alternatives shall be move
     /// constructible and move assignable.
-    variant& operator=(BloombergLP::bslmf::MovableRef<variant> rhs);
+    variant& operator=(BNP_Paribas::bslmf::MovableRef<variant> rhs);
 
     /// Assign to this object the specified `value`.  If (template parameter)
     /// `t_TYPE` is `bslmf::MovableRef<T>`, then the alternative corresponding
@@ -5485,7 +5485,7 @@ class variant
     /// left in the valueless by exception state.
     template <class t_TYPE>
     typename bsl::enable_if<
-        BloombergLP::bslstl::Variant_AssignsFromType<variant, t_TYPE>::value,
+        BNP_Paribas::bslstl::Variant_AssignsFromType<variant, t_TYPE>::value,
         variant&>::type
     operator=(const t_TYPE& value);
 
@@ -5510,7 +5510,7 @@ class variant
 
     // ACCESSORS
 #ifdef BSL_VARIANT_FULL_IMPLEMENTATION
-    template <bool t_USES_BSLMA_ALLOC = BloombergLP::bslstl::
+    template <bool t_USES_BSLMA_ALLOC = BNP_Paribas::bslstl::
                   Variant_UsesBslmaAllocatorAny<t_HEAD, t_TAIL...>::value,
               class = typename bsl::enable_if_t<t_USES_BSLMA_ALLOC> >
 #endif  // BSL_VARIANT_FULL_IMPLEMENTATION
@@ -5557,7 +5557,7 @@ class variant
 //                           INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                            // ---------------------
@@ -5808,7 +5808,7 @@ template <class... t_ARGS>
 inline
 Variant_DataImp<t_TYPE>::Variant_DataImp(t_ARGS&&... args)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(), std::forward<t_ARGS>(args)...);
 }
 #endif  // BSL_VARIANT_FULL_IMPLEMENTATION
@@ -5912,7 +5912,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(const Variant_Base& original)
 , d_type(bsl::variant_npos)
 {
     if (original.d_type != bsl::variant_npos) {
-        BloombergLP::bslstl::Variant_CopyConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_CopyConstructVisitor<Variant_Base>
             copyConstructor(this);
         BSLSTL_VARIANT_VISITID(
             void, copyConstructor, static_cast<const Variant&>(original));
@@ -5926,7 +5926,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(Variant_Base&& original)
 , d_type(bsl::variant_npos)
 {
     if (original.d_type != bsl::variant_npos) {
-        BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
             moveConstructor(this);
         BSLSTL_VARIANT_VISITID(
             void, moveConstructor, static_cast<Variant&>(original));
@@ -5962,7 +5962,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
 , d_type(bsl::variant_npos)
 {
     if (original.index() != bsl::variant_npos) {
-        BloombergLP::bslstl::Variant_CopyConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_CopyConstructVisitor<Variant_Base>
             copyConstructor(this);
         BSLSTL_VARIANT_VISITID(void, copyConstructor, original);
     }
@@ -5977,7 +5977,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
 , d_type(bsl::variant_npos)
 {
     if (original.index() != bsl::variant_npos) {
-        BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
             moveConstructor(this);
         BSLSTL_VARIANT_VISITID(void, moveConstructor, original);
     }
@@ -6031,7 +6031,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base()
 {
     typedef typename bsl::remove_cv<t_HEAD>::type Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism());
 }
@@ -6043,7 +6043,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(const Variant& original)
 , d_type(bsl::variant_npos)
 {
     if (!original.valueless_by_exception()) {
-        BloombergLP::bslstl::Variant_CopyConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_CopyConstructVisitor<Variant_Base>
             copyConstructor(this);
         BSLSTL_VARIANT_VISITID(void, copyConstructor, original);
             // In C++03, if there are nonunique alternatives,
@@ -6056,13 +6056,13 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(const Variant& original)
 template <class t_HEAD, class... t_TAIL>
 inline
 Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
-                              BloombergLP::bslmf::MovableRef<Variant> original)
+                              BNP_Paribas::bslmf::MovableRef<Variant> original)
 : AllocBase(MoveUtil::access(original))
 , d_type(bsl::variant_npos)
 {
     Variant& lvalue = original;
     if (!lvalue.valueless_by_exception()) {
-        BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
             moveConstructor(this);
         BSLSTL_VARIANT_VISITID(void, moveConstructor, lvalue);
             // In C++03, if there are nonunique alternatives,
@@ -6083,7 +6083,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>)
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism());
 }
@@ -6101,7 +6101,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01);
@@ -6121,7 +6121,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6143,7 +6143,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6170,7 +6170,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6200,7 +6200,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6233,7 +6233,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6269,7 +6269,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6308,7 +6308,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6350,7 +6350,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6395,7 +6395,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::in_place_index_t<t_INDEX>,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6417,7 +6417,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
 : AllocBase(allocator)
 , d_type(0)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<t_HEAD *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism());
 }
@@ -6431,7 +6431,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
 , d_type(bsl::variant_npos)
 {
     if (!original.valueless_by_exception()) {
-        BloombergLP::bslstl::Variant_CopyConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_CopyConstructVisitor<Variant_Base>
             copyConstructor(this);
         BSLSTL_VARIANT_VISITID(void, copyConstructor, original);
 
@@ -6447,13 +6447,13 @@ inline
 Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
                              bsl::allocator_arg_t,
                              allocator_type                          allocator,
-                             BloombergLP::bslmf::MovableRef<Variant> original)
+                             BNP_Paribas::bslmf::MovableRef<Variant> original)
 : AllocBase(allocator)
 , d_type(bsl::variant_npos)
 {
     Variant& lvalue = original;
     if (!lvalue.valueless_by_exception()) {
-        BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+        BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
             moveConstructor(this);
         BSLSTL_VARIANT_VISITID(void, moveConstructor, lvalue);
 
@@ -6478,7 +6478,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism());
 }
@@ -6498,7 +6498,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01);
@@ -6520,7 +6520,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6544,7 +6544,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6573,7 +6573,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6605,7 +6605,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6640,7 +6640,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6678,7 +6678,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6719,7 +6719,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6763,7 +6763,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6810,7 +6810,7 @@ Variant_Base<t_HEAD, t_TAIL...>::Variant_Base(bsl::allocator_arg_t,
         typename bsl::variant_alternative<t_INDEX, Variant>::type>::type
         Alt_Type;
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *>(BSLS_UTIL_ADDRESSOF(d_union)),
         AllocBase::mechanism(),
         arg_01,
@@ -6852,7 +6852,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(t_ARGS&&... args)
     // construct invocation.  If we were to have either 'Variant_Union' or
     // 'Variant_DataImp' use 'allocator_arg_t' semantics, it wouldn't work for
     // the non allocator aware variant where there is no allocator object.
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         BSLS_UTIL_ADDRESSOF(d_union),
         (void *)0,
         bsl::in_place_index_t<t_INDEX>{},
@@ -6873,7 +6873,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace()
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism());
     d_type = t_INDEX;
@@ -6889,7 +6889,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01)
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01);
@@ -6907,7 +6907,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -6927,7 +6927,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -6953,7 +6953,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -6982,7 +6982,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -7014,7 +7014,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -7049,7 +7049,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -7087,7 +7087,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -7128,7 +7128,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -7172,7 +7172,7 @@ void Variant_Base<t_HEAD, t_TAIL...>::baseEmplace(const t_ARG_01& arg_01,
 
     reset();
 
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         reinterpret_cast<Alt_Type *> BSLS_UTIL_ADDRESSOF(d_union),
         AllocBase::mechanism(),
         arg_01,
@@ -7200,7 +7200,7 @@ Variant_Base<t_HEAD, t_TAIL...>& Variant_Base<t_HEAD, t_TAIL...>::operator=(
         if (this->d_type == rhs.d_type) {
             if (d_type != bsl::variant_npos) {
                 Variant& self = static_cast<Variant&>(*this);
-                BloombergLP::bslstl::Variant_CopyAssignVisitor<Variant>
+                BNP_Paribas::bslstl::Variant_CopyAssignVisitor<Variant>
                 copyAssign(BSLS_UTIL_ADDRESSOF(self));
                 BSLSTL_VARIANT_VISITID(
                     void, copyAssign, static_cast<const Variant&>(rhs));
@@ -7209,7 +7209,7 @@ Variant_Base<t_HEAD, t_TAIL...>& Variant_Base<t_HEAD, t_TAIL...>::operator=(
         else {
             reset();
             if (rhs.d_type != bsl::variant_npos) {
-                BloombergLP::bslstl::Variant_CopyConstructVisitor<Variant_Base>
+                BNP_Paribas::bslstl::Variant_CopyConstructVisitor<Variant_Base>
                     copyConstructor(this);
                 BSLSTL_VARIANT_VISITID(
                     void, copyConstructor, static_cast<const Variant&>(rhs));
@@ -7223,14 +7223,14 @@ Variant_Base<t_HEAD, t_TAIL...>& Variant_Base<t_HEAD, t_TAIL...>::operator=(
 template <class t_HEAD, class... t_TAIL>
 inline
 Variant_Base<t_HEAD, t_TAIL...>& Variant_Base<t_HEAD, t_TAIL...>::operator=(
-                              BloombergLP::bslmf::MovableRef<Variant_Base> rhs)
+                              BNP_Paribas::bslmf::MovableRef<Variant_Base> rhs)
 {
     Variant_Base& lvalue = rhs;
     if (&lvalue != this) {
         if (this->d_type == lvalue.d_type) {
             if (d_type != bsl::variant_npos) {
                 Variant& self = static_cast<Variant&>(*this);
-                BloombergLP::bslstl::Variant_MoveAssignVisitor<Variant>
+                BNP_Paribas::bslstl::Variant_MoveAssignVisitor<Variant>
                 moveAssign(BSLS_UTIL_ADDRESSOF(self));
                 BSLSTL_VARIANT_VISITID(
                     void, moveAssign, static_cast<Variant&>(lvalue));
@@ -7239,7 +7239,7 @@ Variant_Base<t_HEAD, t_TAIL...>& Variant_Base<t_HEAD, t_TAIL...>::operator=(
         else {
             reset();
             if (lvalue.d_type != bsl::variant_npos) {
-                BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+                BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
                     moveConstructor(this);
                 BSLSTL_VARIANT_VISITID(
                     void, moveConstructor, static_cast<Variant&>(lvalue));
@@ -7253,7 +7253,7 @@ template <class t_HEAD, class... t_TAIL>
 void Variant_Base<t_HEAD, t_TAIL...>::reset() BSLS_KEYWORD_NOEXCEPT
 {
     if (d_type != bsl::variant_npos) {
-        BloombergLP::bslstl::Variant_DestructorVisitor destructor;
+        BNP_Paribas::bslstl::Variant_DestructorVisitor destructor;
         bsl::visit(destructor, static_cast<Variant&>(*this));
         d_type = bsl::variant_npos;
     }
@@ -7318,7 +7318,7 @@ variant<t_HEAD, t_TAIL...>::variant(const variant& original)
 template <class t_HEAD, class... t_TAIL>
 inline
 variant<t_HEAD, t_TAIL...>::variant(
-                              BloombergLP::bslmf::MovableRef<variant> original)
+                              BNP_Paribas::bslmf::MovableRef<variant> original)
 : Variant_Base(original)
 {
 }
@@ -7879,7 +7879,7 @@ inline
 variant<t_HEAD, t_TAIL...>::variant(
                              bsl::allocator_arg_t,
                              allocator_type                          allocator,
-                             BloombergLP::bslmf::MovableRef<variant> original)
+                             BNP_Paribas::bslmf::MovableRef<variant> original)
 : Variant_Base(bsl::allocator_arg_t(), allocator, original)
 {
 }
@@ -8518,7 +8518,7 @@ variant<t_HEAD, t_TAIL...>::variant(bsl::allocator_arg_t,
 
 template <class t_HEAD, class... t_TAIL>
 template <class t_TYPE>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8533,7 +8533,7 @@ variant<t_HEAD, t_TAIL...>::emplace()
 
 template <class t_HEAD, class... t_TAIL>
 template <class t_TYPE, class t_ARG_01>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8548,7 +8548,7 @@ variant<t_HEAD, t_TAIL...>::emplace(const t_ARG_01& arg_01)
 
 template <class t_HEAD, class... t_TAIL>
 template <class t_TYPE, class t_ARG_01, class t_ARG_02>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8564,7 +8564,7 @@ variant<t_HEAD, t_TAIL...>::emplace(const t_ARG_01& arg_01,
 
 template <class t_HEAD, class... t_TAIL>
 template <class t_TYPE, class t_ARG_01, class t_ARG_02, class t_ARG_03>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8585,7 +8585,7 @@ template <class t_TYPE,
           class t_ARG_02,
           class t_ARG_03,
           class t_ARG_04>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8608,7 +8608,7 @@ template <class t_TYPE,
           class t_ARG_03,
           class t_ARG_04,
           class t_ARG_05>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8634,7 +8634,7 @@ template <class t_TYPE,
           class t_ARG_04,
           class t_ARG_05,
           class t_ARG_06>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8662,7 +8662,7 @@ template <class t_TYPE,
           class t_ARG_05,
           class t_ARG_06,
           class t_ARG_07>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8692,7 +8692,7 @@ template <class t_TYPE,
           class t_ARG_06,
           class t_ARG_07,
           class t_ARG_08>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8724,7 +8724,7 @@ template <class t_TYPE,
           class t_ARG_07,
           class t_ARG_08,
           class t_ARG_09>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -8765,7 +8765,7 @@ template <class t_TYPE,
           class t_ARG_08,
           class t_ARG_09,
           class t_ARG_10>
-typename bsl::enable_if<BloombergLP::bslstl::Variant_HasUniqueType<
+typename bsl::enable_if<BNP_Paribas::bslstl::Variant_HasUniqueType<
                             t_TYPE,
                             variant<t_HEAD, t_TAIL...> >::value,
                         t_TYPE&>::type
@@ -9034,7 +9034,7 @@ variant<t_HEAD, t_TAIL...>& variant<t_HEAD, t_TAIL...>::operator=(
 template <class t_HEAD, class... t_TAIL>
 inline
 variant<t_HEAD, t_TAIL...>& variant<t_HEAD, t_TAIL...>::operator=(
-                                   BloombergLP::bslmf::MovableRef<variant> rhs)
+                                   BNP_Paribas::bslmf::MovableRef<variant> rhs)
 {
     variant<t_HEAD, t_TAIL...>& lvalue = rhs;
     Variant_Base::operator=(
@@ -9045,7 +9045,7 @@ template <class t_HEAD, class... t_TAIL>
 template <class t_TYPE>
 inline
 typename bsl::enable_if<
-    BloombergLP::bslstl::Variant_AssignsFromType<variant<t_HEAD, t_TAIL...>,
+    BNP_Paribas::bslstl::Variant_AssignsFromType<variant<t_HEAD, t_TAIL...>,
                                                  t_TYPE>::value,
     variant<t_HEAD, t_TAIL...>&>::type
 variant<t_HEAD, t_TAIL...>::operator=(const t_TYPE& rhs)
@@ -9073,14 +9073,14 @@ void variant<t_HEAD, t_TAIL...>::swap(variant& other)
 {
     if (!valueless_by_exception()) {
         if (index() == other.index()) {
-            BloombergLP::bslstl::Variant_SwapVisitor<variant> swapper(this);
+            BNP_Paribas::bslstl::Variant_SwapVisitor<variant> swapper(this);
             BSLSTL_VARIANT_VISITID(void, swapper, other);
         }
         else {
             variant tmpThis(MoveUtil::move(*this));
             this->reset();
             if (!other.valueless_by_exception()) {
-                BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+                BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
                     moveConstructor(this);
                 BSLSTL_VARIANT_VISITID(void, moveConstructor, other);
             }
@@ -9091,7 +9091,7 @@ void variant<t_HEAD, t_TAIL...>::swap(variant& other)
             this->d_type = other.index();
 #endif  // BSL_VARIANT_FULL_IMPLEMENTATION
             other.reset();
-            BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+            BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
             moveConstructor(BSLS_UTIL_ADDRESSOF(other));
             BSLSTL_VARIANT_VISITID(void, moveConstructor, tmpThis);
 #ifndef BSL_VARIANT_FULL_IMPLEMENTATION
@@ -9101,7 +9101,7 @@ void variant<t_HEAD, t_TAIL...>::swap(variant& other)
     }
     else {
         if (!other.valueless_by_exception()) {
-            BloombergLP::bslstl::Variant_MoveConstructVisitor<Variant_Base>
+            BNP_Paribas::bslstl::Variant_MoveConstructVisitor<Variant_Base>
                 moveConstructor(this);
             BSLSTL_VARIANT_VISITID(void, moveConstructor, other);
 #ifndef BSL_VARIANT_FULL_IMPLEMENTATION
@@ -9139,7 +9139,7 @@ typename variant_alternative<t_INDEX, variant<t_HEAD, t_TAIL...> >::type& get(
     BSLMF_ASSERT((t_INDEX < variant_size<variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...>                  Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil                      ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil                      ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, Variant>::type Ret;
 
     return ImpUtil::get<Ret, t_INDEX>(obj);
@@ -9152,7 +9152,7 @@ get(const variant<t_HEAD, t_TAIL...>& obj)
     BSLMF_ASSERT((t_INDEX < variant_size<variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...>                  Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil                      ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil                      ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, Variant>::type Ret;
 
     return ImpUtil::get<const Ret, t_INDEX>(obj);
@@ -9165,7 +9165,7 @@ typename variant_alternative<t_INDEX, variant<t_HEAD, t_TAIL...> >::type&& get(
     BSLMF_ASSERT((t_INDEX < variant_size<variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...>                  Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil                      ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil                      ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, Variant>::type Ret;
 
     return std::move(ImpUtil::get<Ret, t_INDEX>(obj));
@@ -9179,7 +9179,7 @@ get(const variant<t_HEAD, t_TAIL...>&& obj)
     BSLMF_ASSERT((t_INDEX < variant_size<variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...>                  Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil                      ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil                      ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, Variant>::type Ret;
 
     return std::move(ImpUtil::get<const Ret, t_INDEX>(obj));
@@ -9192,7 +9192,7 @@ get(t_VARIANT& obj)
 {
     BSLMF_ASSERT((t_INDEX < variant_size<t_VARIANT>::value));
 
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, t_VARIANT>::type Ret;
 
     return ImpUtil::get<Ret, t_INDEX>(obj);
@@ -9201,11 +9201,11 @@ get(t_VARIANT& obj)
 template <size_t t_INDEX, class t_VARIANT>
 typename Variant_GetIndexReturnType<
     t_INDEX,
-    BloombergLP::bslmf::MovableRef<t_VARIANT> >::type
-get(BloombergLP::bslmf::MovableRef<t_VARIANT> obj)
+    BNP_Paribas::bslmf::MovableRef<t_VARIANT> >::type
+get(BNP_Paribas::bslmf::MovableRef<t_VARIANT> obj)
 {
-    typedef BloombergLP::bslmf::MovableRefUtil   MoveUtil;
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil   MoveUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, t_VARIANT>::type Ret;
 
     t_VARIANT& lvalue = obj;
@@ -9219,12 +9219,12 @@ get(BloombergLP::bslmf::MovableRef<t_VARIANT> obj)
 template <class t_TYPE, class t_HEAD, class... t_TAIL>
 t_TYPE& get(variant<t_HEAD, t_TAIL...>& obj)
 {
-    BSLMF_ASSERT((BloombergLP::bslstl::Variant_HasUniqueType<
+    BSLMF_ASSERT((BNP_Paribas::bslstl::Variant_HasUniqueType<
                   t_TYPE,
                   variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...> Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil     ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil     ImpUtil;
 
     return ImpUtil::get<t_TYPE, BSLSTL_VARIANT_INDEX_OF(t_TYPE, Variant)>(obj);
 }
@@ -9232,12 +9232,12 @@ t_TYPE& get(variant<t_HEAD, t_TAIL...>& obj)
 template <class t_TYPE, class t_HEAD, class... t_TAIL>
 const t_TYPE& get(const variant<t_HEAD, t_TAIL...>& obj)
 {
-    BSLMF_ASSERT((BloombergLP::bslstl::Variant_HasUniqueType<
+    BSLMF_ASSERT((BNP_Paribas::bslstl::Variant_HasUniqueType<
                   t_TYPE,
                   variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...> Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil     ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil     ImpUtil;
 
     return ImpUtil::get<const t_TYPE,
                         BSLSTL_VARIANT_INDEX_OF(t_TYPE, Variant)>(obj);
@@ -9247,12 +9247,12 @@ template <class t_TYPE, class t_HEAD, class... t_TAIL>
 t_TYPE&& get(variant<t_HEAD, t_TAIL...>&& obj)
 {
     static_assert(
-        BloombergLP::bslstl::
+        BNP_Paribas::bslstl::
             Variant_HasUniqueType<t_TYPE, variant<t_HEAD, t_TAIL...> >::value,
         "Type is not unique in variant");
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...> Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil     ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil     ImpUtil;
 
     return std::move(
           ImpUtil::get<t_TYPE, BSLSTL_VARIANT_INDEX_OF(t_TYPE, Variant)>(obj));
@@ -9262,12 +9262,12 @@ template <class t_TYPE, class t_HEAD, class... t_TAIL>
 const t_TYPE&& get(const variant<t_HEAD, t_TAIL...>&& obj)
 {
     static_assert(
-        BloombergLP::bslstl::
+        BNP_Paribas::bslstl::
             Variant_HasUniqueType<t_TYPE, variant<t_HEAD, t_TAIL...> >::value,
         "Type is not unique in variant");
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...> Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil     ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil     ImpUtil;
 
     return std::move(
           ImpUtil::get<const t_TYPE, BSLSTL_VARIANT_INDEX_OF(t_TYPE, Variant)>(
@@ -9280,9 +9280,9 @@ typename Variant_GetTypeReturnType<t_TYPE&, t_VARIANT>::type
 get(t_VARIANT& obj)
 {
     BSLMF_ASSERT((
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
 
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     return ImpUtil::get<t_TYPE, BSLSTL_VARIANT_INDEX_OF(t_TYPE, t_VARIANT)>(
                                                                           obj);
@@ -9293,24 +9293,24 @@ typename Variant_GetTypeReturnType<const t_TYPE&, t_VARIANT>::type
 get(const t_VARIANT& obj)
 {
     BSLMF_ASSERT((
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
 
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     return ImpUtil::get<const t_TYPE,
                         BSLSTL_VARIANT_INDEX_OF(t_TYPE, t_VARIANT)>(obj);
 }
 
 template <class t_TYPE, class t_VARIANT>
-typename Variant_GetTypeReturnType<BloombergLP::bslmf::MovableRef<t_TYPE>,
+typename Variant_GetTypeReturnType<BNP_Paribas::bslmf::MovableRef<t_TYPE>,
                                    t_VARIANT>::type
-get(BloombergLP::bslmf::MovableRef<t_VARIANT> obj)
+get(BNP_Paribas::bslmf::MovableRef<t_VARIANT> obj)
 {
     BSLMF_ASSERT((
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
 
-    typedef BloombergLP::bslmf::MovableRefUtil            MoveUtil;
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil            MoveUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     t_VARIANT& lvalue = obj;
     return MoveUtil::move(
@@ -9330,7 +9330,7 @@ get_if(variant<t_HEAD, t_TAIL...> *ptr) BSLS_KEYWORD_NOEXCEPT
     BSLMF_ASSERT((t_INDEX < variant_size<variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...>                  Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil                      ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil                      ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, Variant>::type Ret;
 
     if (ptr == 0 || ptr->index() != t_INDEX) {
@@ -9349,7 +9349,7 @@ get_if(const variant<t_HEAD, t_TAIL...> *ptr) BSLS_KEYWORD_NOEXCEPT
     BSLMF_ASSERT((t_INDEX < variant_size<variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...>                  Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil                      ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil                      ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, Variant>::type Ret;
 
     if (ptr == 0 || ptr->index() != t_INDEX) {
@@ -9362,12 +9362,12 @@ template <class t_TYPE, class t_HEAD, class... t_TAIL>
 typename add_pointer<t_TYPE>::type get_if(
                          variant<t_HEAD, t_TAIL...> *ptr) BSLS_KEYWORD_NOEXCEPT
 {
-    BSLMF_ASSERT((BloombergLP::bslstl::Variant_HasUniqueType<
+    BSLMF_ASSERT((BNP_Paribas::bslstl::Variant_HasUniqueType<
                   t_TYPE,
                   variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...> Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil     ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil     ImpUtil;
 
     if (ptr == 0 || ptr->index() != BSLSTL_VARIANT_INDEX_OF(t_TYPE, Variant)) {
         return NULL;                                                  // RETURN
@@ -9380,12 +9380,12 @@ template <class t_TYPE, class t_HEAD, class... t_TAIL>
 typename add_pointer<const t_TYPE>::type get_if(
                    const variant<t_HEAD, t_TAIL...> *ptr) BSLS_KEYWORD_NOEXCEPT
 {
-    BSLMF_ASSERT((BloombergLP::bslstl::Variant_HasUniqueType<
+    BSLMF_ASSERT((BNP_Paribas::bslstl::Variant_HasUniqueType<
                   t_TYPE,
                   variant<t_HEAD, t_TAIL...> >::value));
 
     typedef typename bsl::variant<t_HEAD, t_TAIL...> Variant;
-    typedef BloombergLP::bslstl::Variant_ImpUtil     ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil     ImpUtil;
 
     if (ptr == 0 || ptr->index() != BSLSTL_VARIANT_INDEX_OF(t_TYPE, Variant)) {
         return NULL;                                                  // RETURN
@@ -9402,7 +9402,7 @@ get_if(t_VARIANT *ptr) BSLS_KEYWORD_NOEXCEPT
 {
     BSLMF_ASSERT((t_INDEX < variant_size<t_VARIANT>::value));
 
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
     typedef typename bsl::variant_alternative<t_INDEX, t_VARIANT>::type Ret;
 
     if (ptr == 0 || ptr->index() != t_INDEX) {
@@ -9417,9 +9417,9 @@ typename Variant_GetTypeReturnType<t_TYPE, t_VARIANT>::pointer
 get_if(t_VARIANT *ptr) BSLS_KEYWORD_NOEXCEPT
 {
     BSLMF_ASSERT((
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
 
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (ptr == 0 ||
         ptr->index() != BSLSTL_VARIANT_INDEX_OF(t_TYPE, t_VARIANT)) {
@@ -9435,9 +9435,9 @@ typename Variant_GetTypeReturnType<const t_TYPE, t_VARIANT>::pointer
 get_if(const t_VARIANT *ptr) BSLS_KEYWORD_NOEXCEPT
 {
     BSLMF_ASSERT((
-        BloombergLP::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
+        BNP_Paribas::bslstl::Variant_HasUniqueType<t_TYPE, t_VARIANT>::value));
 
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (ptr == 0 ||
         ptr->index() != BSLSTL_VARIANT_INDEX_OF(t_TYPE, t_VARIANT)) {
@@ -9457,7 +9457,7 @@ void hashAppend(t_HASHALG& hashAlg, const variant<t_HEAD, t_TAIL...>& input)
 {
     if (!input.valueless_by_exception()) {
         hashAppend(hashAlg, input.index());
-        BloombergLP::bslstl::Variant_HashVisitor<t_HASHALG> hashVisitor(
+        BNP_Paribas::bslstl::Variant_HashVisitor<t_HASHALG> hashVisitor(
                                                                       hashAlg);
         visit(hashVisitor, input);
     }
@@ -9470,7 +9470,7 @@ template <class t_TYPE, class t_HEAD, class... t_TAIL>
 bool holds_alternative(
                    const variant<t_HEAD, t_TAIL...>& obj) BSLS_KEYWORD_NOEXCEPT
 {
-    BSLMF_ASSERT((BloombergLP::bslstl::Variant_HasUniqueType<
+    BSLMF_ASSERT((BNP_Paribas::bslstl::Variant_HasUniqueType<
                   t_TYPE,
                   variant<t_HEAD, t_TAIL...> >::value));
     typedef typename bsl::variant<t_HEAD, t_TAIL...> Variant;
@@ -9481,10 +9481,10 @@ template <class t_HEAD, class... t_TAIL>
 void swap(bsl::variant<t_HEAD, t_TAIL...>& lhs,
           bsl::variant<t_HEAD, t_TAIL...>& rhs)
 {
-    BloombergLP::bslstl::variant_swapImpl(
+    BNP_Paribas::bslstl::variant_swapImpl(
         bsl::integral_constant<
             bool,
-            BloombergLP::bslstl::
+            BNP_Paribas::bslstl::
                 Variant_UsesBslmaAllocatorAny<t_HEAD, t_TAIL...>::value>(),
         lhs,
         rhs);
@@ -9495,7 +9495,7 @@ template <class t_HEAD, class... t_TAIL>
 bool operator==(const variant<t_HEAD, t_TAIL...>& lhs,
                 const variant<t_HEAD, t_TAIL...>& rhs)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (lhs.index() != rhs.index()) {
         return false;                                                 // RETURN
@@ -9510,7 +9510,7 @@ template <class t_HEAD, class... t_TAIL>
 bool operator!=(const variant<t_HEAD, t_TAIL...>& lhs,
                 const variant<t_HEAD, t_TAIL...>& rhs)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (lhs.index() != rhs.index()) {
         return true;                                                  // RETURN
@@ -9525,7 +9525,7 @@ template <class t_HEAD, class... t_TAIL>
 bool operator<(const variant<t_HEAD, t_TAIL...>& lhs,
                const variant<t_HEAD, t_TAIL...>& rhs)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (rhs.valueless_by_exception()) {
         return false;                                                 // RETURN
@@ -9543,7 +9543,7 @@ template <class t_HEAD, class... t_TAIL>
 bool operator>(const variant<t_HEAD, t_TAIL...>& lhs,
                const variant<t_HEAD, t_TAIL...>& rhs)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (lhs.valueless_by_exception()) {
         return false;                                                 // RETURN
@@ -9561,7 +9561,7 @@ template <class t_HEAD, class... t_TAIL>
 bool operator<=(const variant<t_HEAD, t_TAIL...>& lhs,
                 const variant<t_HEAD, t_TAIL...>& rhs)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (lhs.valueless_by_exception()) {
         return true;                                                  // RETURN
@@ -9579,7 +9579,7 @@ template <class t_HEAD, class... t_TAIL>
 bool operator>=(const variant<t_HEAD, t_TAIL...>& lhs,
                 const variant<t_HEAD, t_TAIL...>& rhs)
 {
-    typedef BloombergLP::bslstl::Variant_ImpUtil ImpUtil;
+    typedef BNP_Paribas::bslstl::Variant_ImpUtil ImpUtil;
 
     if (rhs.valueless_by_exception()) {
         return true;                                                  // RETURN
@@ -9610,7 +9610,7 @@ operator<=>(const variant<t_ALTS...>& lhs, const variant<t_ALTS...>& rhs)
     const size_t rhs_index = rhs.index();
     if ((lhs_index != variant_npos) && (rhs_index != variant_npos)) {
         if (lhs_index == rhs_index) {
-            return BloombergLP::bslstl::Variant_ImpUtil::visitId<RET>(
+            return BNP_Paribas::bslstl::Variant_ImpUtil::visitId<RET>(
                     [&lhs]<size_t t_INDEX>(bsl::in_place_index_t<t_INDEX>,
                                            auto&& rhs_value) {
                         return bsl::get<t_INDEX>(lhs) <=> rhs_value;  // RETURN

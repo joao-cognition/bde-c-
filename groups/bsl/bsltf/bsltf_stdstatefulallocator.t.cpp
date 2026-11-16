@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace BloombergLP;
-using namespace BloombergLP::bsltf;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bsltf;
 using bsls::NameOf;
 
 #if defined(BSLS_COMPILERFEATURES_SIMULATE_FORWARD_WORKAROUND)

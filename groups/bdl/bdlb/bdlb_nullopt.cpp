@@ -5,7 +5,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT("$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 #if !defined(BSLS_COMPILERFEATURES_SUPPORT_INLINE_VARIABLES)

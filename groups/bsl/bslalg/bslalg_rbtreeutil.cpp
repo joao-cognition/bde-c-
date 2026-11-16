@@ -13,7 +13,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <stdlib.h>
 #include <stdio.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 /// Return `true` if `node` is 0 or colored black, and `false` otherwise.

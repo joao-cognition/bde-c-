@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(balm_publisher_cpp,"$Id$ $CSID$")
 #include <balm_collector.h>    // for testing only
 #include <balm_metricsample.h> // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balm {
                               // ---------------

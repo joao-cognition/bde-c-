@@ -11,7 +11,7 @@ BSLS_IDENT("$Id: $")
 // defined in the corresponding C++ standard header.  In C++17 or later we
 // import the 'std' names and earlier we provide our own implementation.
 
-// 'bslstl_charconv.h' will decide whether to use the Bloomberg implementation,
+// 'bslstl_charconv.h' will decide whether to use the BNP Paribas implementation,
 // or forward the implementation from the platform standard library into the
 // 'bsl' namespace.
 

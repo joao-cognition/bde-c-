@@ -23,7 +23,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -200,7 +200,7 @@ int bdlat_enumMakeFallback(MyEnum *result)
 
 }  // close namespace test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_EnumFunctions {
 
 template <>
@@ -258,7 +258,7 @@ int main(int argc, char *argv[])
 
         using namespace test;
         BSLMF_ASSERT(bdlar::IsEnum<MyEnum>::value);
-        BSLMF_ASSERT(::BloombergLP::bdlat_EnumFunctions::
+        BSLMF_ASSERT(::BNP_Paribas::bdlat_EnumFunctions::
                                          HasFallbackEnumerator<MyEnum>::value);
 
         MyEnum enumeration = EnumValue1;
@@ -303,9 +303,9 @@ int main(int argc, char *argv[])
 
         // Test `bdlat_EnumFunctions` customization-points
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_EnumFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_EnumFunctions::
                                         IsEnumeration<bdlar::EnumRef>::value));
-            BSLMF_ASSERT((::BloombergLP::bdlat_EnumFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_EnumFunctions::
                                 HasFallbackEnumerator<bdlar::EnumRef>::value));
 
             bdlat_ValueTypeFunctions::reset(&ref);
@@ -320,9 +320,9 @@ int main(int argc, char *argv[])
             bdlat_EnumFunctions::toString(&strValue, ref);
         }
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_EnumFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_EnumFunctions::
                                    IsEnumeration<bdlar::EnumConstRef>::value));
-            BSLMF_ASSERT((::BloombergLP::bdlat_EnumFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_EnumFunctions::
                            HasFallbackEnumerator<bdlar::EnumConstRef>::value));
 
             bdlar::EnumConstRef cref(ref);

@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BDLC_FLATHASHSET_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 // FORWARD DECLARATIONS
@@ -826,8 +826,8 @@ class FlatHashSet {
 // forwarding in some compilers.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     erase(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key)
     {
@@ -888,8 +888,8 @@ class FlatHashSet {
 // forwarding in some compilers.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , typename bsl::pair<iterator, bool> >::type
     insert(BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY) key)
     {
@@ -930,8 +930,8 @@ class FlatHashSet {
 // forwarding in some compilers.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
          && bsl::is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(LOOKUP_KEY),
                                 const_iterator>::value == false
          && bsl::is_convertible<const_iterator,
@@ -1012,8 +1012,8 @@ class FlatHashSet {
     /// to the specified `key`.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        &&  BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        &&  BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
         , bool>::type
     contains(const LOOKUP_KEY& key) const
     {
@@ -1034,8 +1034,8 @@ class FlatHashSet {
     /// keys, the returned value will be either 0 or 1.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t >::type
     count(const LOOKUP_KEY& key) const
     {
@@ -1069,8 +1069,8 @@ class FlatHashSet {
     /// element.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
     {
@@ -1089,8 +1089,8 @@ class FlatHashSet {
     /// this set.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
          , const_iterator>::type
     find(const LOOKUP_KEY& key) const
     {

@@ -35,7 +35,7 @@
 # define BSLFMT_FORMAT_STRING_PARAMETER bsl::format_string
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                               // --------------

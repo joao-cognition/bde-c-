@@ -8,7 +8,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_exceptionutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 BSLA_NORETURN

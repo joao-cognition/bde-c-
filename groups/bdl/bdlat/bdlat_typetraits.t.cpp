@@ -9,7 +9,7 @@
 #include <bsl_cstdlib.h>
 #include <bsl_iostream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================
@@ -73,7 +73,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                            CLASSES FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // traitless class
 

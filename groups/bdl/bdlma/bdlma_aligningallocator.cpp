@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdlma_aligningallocator_cpp, "$Id$ $CSID$")
 #include <bsls_assert.h>
 #include <bsls_bslexceptionutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
 namespace {

@@ -5,7 +5,7 @@
 BSLS_IDENT_RCSID(bslim_fuzzutil_cpp,"$Id$ $CSID$")
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslim {
 namespace {
 // LOCAL METHODS

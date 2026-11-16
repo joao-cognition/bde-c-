@@ -307,7 +307,7 @@ BSLS_IDENT("$Id: $")
 
 #include <stddef.h>  // 'size_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                       //===============================

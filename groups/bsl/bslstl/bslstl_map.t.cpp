@@ -91,7 +91,7 @@
 
 #ifndef BDE_OPENSOURCE_PUBLICATION
 // TBD Alisdair gave considerable feedback on this test driver (see Phabricator
-// https://all.phab.dev.bloomberg.com/D512209) that still needs to be
+// https://all.phab.dev.bnpparibas.com/D512209) that still needs to be
 // addressed.  The feedback applies to other `bslstl` containers, as well.
 // "TBD" comments distilling the feedback that still needs attention is
 // sprinkled throughout this test driver.
@@ -385,7 +385,7 @@ void invokePatternSwap(TYPE *a, TYPE *b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` and `invokePatternSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::pair;
 using bsl::map;
 using bsls::NameOf;

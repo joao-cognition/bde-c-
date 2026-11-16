@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(bdljsn_stringutil_cpp, "$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bdljsn;
 
 /// Write the sequence of characters in the range specified by
@@ -194,7 +194,7 @@ int readUnquotedStringImp(STRING                  *value,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                              // -----------------

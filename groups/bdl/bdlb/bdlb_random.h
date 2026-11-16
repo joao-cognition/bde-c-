@@ -134,7 +134,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_cstdint.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
                                // =============
                                // struct Random

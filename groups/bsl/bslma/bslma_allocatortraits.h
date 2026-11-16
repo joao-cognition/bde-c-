@@ -35,16 +35,16 @@ BSLS_IDENT("$Id: $")
 // Thus, the `allocator_traits` template cannot be instantiated on an allocator
 // type that does not provide a full compliment of types and functions required
 // by the C++03 standard, and it will ignore any special C++11 features
-// specified in `ALLOC`.  This limitation exists because Bloomberg does not
+// specified in `ALLOC`.  This limitation exists because BNP Paribas does not
 // need the full functionality of the C++11 model, but needs only to
 // distinguish between C++03 allocators and allocators that implement the BSLMA
 // allocator model (see {`bslma_bslallocator`}).  The full feature set of
 // `allocator_traits` would require a lot of resources for implementation and
 // (especially) testing.  Moreover, a full implementation would require
 // metaprogramming that is too advanced for the feature set of the compilers
-// currently in use at Bloomberg.  This interface is useful, however, as a way
+// currently in use at BNP Paribas.  This interface is useful, however, as a way
 // to future-proof containers against the eventual implementation of the full
-// feature set, and to take advantage of the Bloomberg-specific features
+// feature set, and to take advantage of the BNP Paribas-specific features
 // described below.
 //
 // There are two important (new) C++11 features provided by the
@@ -52,11 +52,11 @@ BSLS_IDENT("$Id: $")
 // variable-length argument list (limited to 5 constructor arguments on
 // compilers that don't support variadic templates) and the
 // allocator-propagation traits.  The implementations of these features within
-// this component are tuned to Bloomberg's needs.  The `construct` member
+// this component are tuned to BNP Paribas's needs.  The `construct` member
 // function will automatically forward the allocator to the constructed object
 // iff the `ALLOC` parameter is convertible from `bslma::Allocator*` and the
 // object being constructed has the `bslma::UsesBslmaAllocator` type trait, as
-// per standard Bloomberg practice.  The
+// per standard BNP Paribas practice.  The
 // `select_on_container_copy_construction` static member will return a
 // default-constructed allocator iff `ALLOC` is convertible from
 // `bslma::Allocator *` because bslma allocators should not be copied when a
@@ -83,7 +83,7 @@ BSLS_IDENT("$Id: $")
 // This example demonstrates the intended use of `allocator_traits` to
 // implement a standard-conforming container class.  First, we create a
 // container class that holds a single object and which meets the requirements
-// both of a standard container and of a Bloomberg container.  I.e., when
+// both of a standard container and of a BNP Paribas container.  I.e., when
 // instantiated with an allocator argument it uses the standard allocator
 // model; otherwise it uses the `bslma` model.  We provide an alias,
 // `AllocTraits`, to the specific `allocator_traits` instantiation to simplify
@@ -92,7 +92,7 @@ BSLS_IDENT("$Id: $")
 // ```
 // #include <bslma_allocatortraits.h>
 //
-// using namespace BloombergLP;
+// using namespace BNP_Paribas;
 //
 // /// This class provides a container that always holds exactly one
 // /// element, dynamically allocated using the specified allocator.
@@ -479,7 +479,7 @@ BSLS_IDENT("$Id: $")
 
 #include <limits>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 
@@ -1010,7 +1010,7 @@ namespace bsl {
 /// `allocator_traits` class template, which provides a uniform mechanism
 /// for accessing nested types within, and operations on, any
 /// standard-conforming allocator.  A specialization of this class template
-/// for `bsl::allocator` provides support for Bloomberg's `bslma` allocator
+/// for `bsl::allocator` provides support for BNP Paribas's `bslma` allocator
 /// model (see the `bslma_bslallocator` component for more details).  In
 /// C++11 compilation environments, the `construct` methods forward to the
 /// allocator's `construct` method if such a method matching the (variable
@@ -1028,7 +1028,7 @@ struct allocator_traits {
 
   private:
 
-    typedef typename BloombergLP::bslma::AllocatorTraits_HasSelectOnCopyMethod<
+    typedef typename BNP_Paribas::bslma::AllocatorTraits_HasSelectOnCopyMethod<
                                     ALLOCATOR_TYPE>::type DelegateSelectMethod;
 
     /// Return the result of invoking the
@@ -1059,7 +1059,7 @@ struct allocator_traits {
     /// uninitialized storage.
     template <class ELEMENT_TYPE, class... Args>
     static typename bsl::enable_if<
-        BloombergLP::bslma::AllocatorTraits_HasConstructMethod<ALLOCATOR_TYPE,
+        BNP_Paribas::bslma::AllocatorTraits_HasConstructMethod<ALLOCATOR_TYPE,
                                                                void,
                                                                ELEMENT_TYPE *,
                                                                Args...>::value,
@@ -1069,7 +1069,7 @@ struct allocator_traits {
                      Args&&...        arguments);
     template <class ELEMENT_TYPE, class... Args>
     static typename bsl::enable_if<
-        !BloombergLP::bslma::AllocatorTraits_HasConstructMethod<
+        !BNP_Paribas::bslma::AllocatorTraits_HasConstructMethod<
             ALLOCATOR_TYPE,
             void,
             ELEMENT_TYPE *,
@@ -1081,7 +1081,7 @@ struct allocator_traits {
 
     template <class ELEMENT_TYPE>
     static typename bsl::enable_if<
-        BloombergLP::bslma::AllocatorTraits_HasDestroyMethod<
+        BNP_Paribas::bslma::AllocatorTraits_HasDestroyMethod<
             ALLOCATOR_TYPE,
             void,
             ELEMENT_TYPE *>::value,
@@ -1097,7 +1097,7 @@ struct allocator_traits {
     /// unless `elementAddr` refers to a valid, constructed object.
     template <class ELEMENT_TYPE>
     static typename bsl::enable_if<
-        !BloombergLP::bslma::AllocatorTraits_HasDestroyMethod<
+        !BNP_Paribas::bslma::AllocatorTraits_HasDestroyMethod<
             ALLOCATOR_TYPE,
             void,
             ELEMENT_TYPE *>::value,
@@ -1111,29 +1111,29 @@ struct allocator_traits {
     typedef typename ALLOCATOR_TYPE::value_type       value_type;
 
     typedef typename
-         BloombergLP::bslma::AllocatorTraits_PointerType<ALLOCATOR_TYPE>::type
+         BNP_Paribas::bslma::AllocatorTraits_PointerType<ALLOCATOR_TYPE>::type
                                                       pointer;
     typedef typename
-    BloombergLP::bslma::AllocatorTraits_ConstPointerType<ALLOCATOR_TYPE>::type
+    BNP_Paribas::bslma::AllocatorTraits_ConstPointerType<ALLOCATOR_TYPE>::type
                                                       const_pointer;
     typedef typename
-     BloombergLP::bslma::AllocatorTraits_VoidPointerType<ALLOCATOR_TYPE>::type
+     BNP_Paribas::bslma::AllocatorTraits_VoidPointerType<ALLOCATOR_TYPE>::type
                                                       void_pointer;
-    typedef typename BloombergLP::bslma::
+    typedef typename BNP_Paribas::bslma::
                     AllocatorTraits_ConstVoidPointerType<ALLOCATOR_TYPE>::type
                                                       const_void_pointer;
 
     typedef typename
-      BloombergLP::bslma::AllocatorTraits_DifferenceType<ALLOCATOR_TYPE>::type
+      BNP_Paribas::bslma::AllocatorTraits_DifferenceType<ALLOCATOR_TYPE>::type
                                                       difference_type;
     typedef typename
-            BloombergLP::bslma::AllocatorTraits_SizeType<ALLOCATOR_TYPE>::type
+            BNP_Paribas::bslma::AllocatorTraits_SizeType<ALLOCATOR_TYPE>::type
                                                       size_type;
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_ALIAS_TEMPLATES
     template <class ELEMENT_TYPE>
     using rebind_alloc = typename
-           BloombergLP::bslma::AllocatorTraits_RebindAlloc<ALLOCATOR_TYPE,
+           BNP_Paribas::bslma::AllocatorTraits_RebindAlloc<ALLOCATOR_TYPE,
                                                            ELEMENT_TYPE>::type;
 
     template <class ELEMENT_TYPE>
@@ -1141,7 +1141,7 @@ struct allocator_traits {
 #else // !BSLS_COMPILERFEATURES_SUPPORT_ALIAS_TEMPLATES
     template <class ELEMENT_TYPE>
     struct rebind_alloc
-        : BloombergLP::bslma::AllocatorTraits_RebindAlloc<ALLOCATOR_TYPE,
+        : BNP_Paribas::bslma::AllocatorTraits_RebindAlloc<ALLOCATOR_TYPE,
                                                           ELEMENT_TYPE>::type
     {
         // Note that this class attempts to emulate an alias template, but is
@@ -1151,7 +1151,7 @@ struct allocator_traits {
         // preferred actual allocator type and not a subclass of the desired
         // type.
 
-        typedef typename BloombergLP::bslma::
+        typedef typename BNP_Paribas::bslma::
                 AllocatorTraits_RebindAlloc<ALLOCATOR_TYPE, ELEMENT_TYPE>::type
                                                                 allocator_type;
 
@@ -1250,7 +1250,7 @@ struct allocator_traits {
     /// identical to or derived from `false_type`.  This type is
     /// `ALLOCATOR_TYPE::is_always_equal` if such a type is defined, and
     /// `is_empty<ALLOCATOR_TYPE>` otherwise.
-    typedef typename BloombergLP::bslma::AllocatorTraits_IsAlwaysEqual<
+    typedef typename BNP_Paribas::bslma::AllocatorTraits_IsAlwaysEqual<
                              ALLOCATOR_TYPE>::type is_always_equal;
 
     /// Identical to, or derived from `true_type` if an allocator of
@@ -1259,7 +1259,7 @@ struct allocator_traits {
     /// or derived from `false_type`.  This type is
     /// `ALLOCATOR_TYPE::propagate_on_container_copy_assignment` if such a
     /// type is defined, and `false_type` otherwise.
-    typedef typename BloombergLP::bslma::AllocatorTraits_PropOnCopyAssign<
+    typedef typename BNP_Paribas::bslma::AllocatorTraits_PropOnCopyAssign<
                   ALLOCATOR_TYPE>::type propagate_on_container_copy_assignment;
 
     /// Identical to, or derived from `true_type` if an allocator of
@@ -1268,7 +1268,7 @@ struct allocator_traits {
     /// or derived from `false_type`.  This type is
     /// `ALLOCATOR_TYPE::propagate_on_container_move_assignment` if such a
     /// type is defined, and `false_type` otherwise.
-    typedef typename BloombergLP::bslma::AllocatorTraits_PropOnMoveAssign<
+    typedef typename BNP_Paribas::bslma::AllocatorTraits_PropOnMoveAssign<
                   ALLOCATOR_TYPE>::type propagate_on_container_move_assignment;
 
     /// Identical to, or derived from `true_type` if the allocators of
@@ -1277,7 +1277,7 @@ struct allocator_traits {
     /// derived from `false_type`.  This type is
     /// `ALLOCATOR_TYPE::propagate_on_container_swap` if such a type is
     /// defined, and `false_type` otherwise.
-    typedef typename BloombergLP::bslma::AllocatorTraits_PropOnSwap<
+    typedef typename BNP_Paribas::bslma::AllocatorTraits_PropOnSwap<
                              ALLOCATOR_TYPE>::type propagate_on_container_swap;
 };
 
@@ -1356,7 +1356,7 @@ template <class ALLOCATOR_TYPE>
 template <class ELEMENT_TYPE, class... Args>
 inline
 typename bsl::enable_if<
-    BloombergLP::bslma::AllocatorTraits_HasConstructMethod<ALLOCATOR_TYPE,
+    BNP_Paribas::bslma::AllocatorTraits_HasConstructMethod<ALLOCATOR_TYPE,
                                                            void,
                                                            ELEMENT_TYPE *,
                                                            Args...>::value,
@@ -1374,7 +1374,7 @@ template <class ALLOCATOR_TYPE>
 template <class ELEMENT_TYPE, class... Args>
 inline
 typename bsl::enable_if<
-    !BloombergLP::bslma::AllocatorTraits_HasConstructMethod<ALLOCATOR_TYPE,
+    !BNP_Paribas::bslma::AllocatorTraits_HasConstructMethod<ALLOCATOR_TYPE,
                                                             void,
                                                             ELEMENT_TYPE *,
                                                             Args...>::value,
@@ -1390,7 +1390,7 @@ allocator_traits<ALLOCATOR_TYPE>::privateConstruct(ALLOCATOR_TYPE&,
 template <class ALLOCATOR_TYPE>
 template <class ELEMENT_TYPE>
 inline
-typename bsl::enable_if<BloombergLP::bslma::AllocatorTraits_HasDestroyMethod<
+typename bsl::enable_if<BNP_Paribas::bslma::AllocatorTraits_HasDestroyMethod<
                             ALLOCATOR_TYPE,
                             void,
                             ELEMENT_TYPE *>::value,
@@ -1405,7 +1405,7 @@ allocator_traits<ALLOCATOR_TYPE>::privateDestroy(
 template <class ALLOCATOR_TYPE>
 template <class ELEMENT_TYPE>
 inline
-typename bsl::enable_if<!BloombergLP::bslma::AllocatorTraits_HasDestroyMethod<
+typename bsl::enable_if<!BNP_Paribas::bslma::AllocatorTraits_HasDestroyMethod<
                             ALLOCATOR_TYPE,
                             void,
                             ELEMENT_TYPE *>::value,
@@ -1502,7 +1502,7 @@ allocator_traits<ALLOCATOR_TYPE>::max_size(
                     const ALLOCATOR_TYPE& basicAllocator) BSLS_KEYWORD_NOEXCEPT
 {
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_DECLTYPE)
-    return BloombergLP::bslma::
+    return BNP_Paribas::bslma::
          AllocatorTraits_CallMaxSize<ALLOCATOR_TYPE>::max_size(basicAllocator);
 #else
     // Cannot sniff out whether 'basicAllocator.max_size()' is valid in C++03,

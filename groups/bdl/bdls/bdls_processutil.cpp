@@ -52,7 +52,7 @@ BSLS_IDENT_RCSID(bdls_processutil_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // This macro is equivalent to calling 'BSLS_LOG_ERROR(...)', except that it
 // uses a static atomic int to only emit one trace per process.
@@ -172,7 +172,7 @@ void resolveSymLinksIfAny(bsl::string *fileName)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdls {
 
                              // ------------------

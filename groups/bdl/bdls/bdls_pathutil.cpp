@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdls_pathutil_cpp,"$Id$ $CSID$")
 #include <bsl_cstddef.h>
 #include <bsl_cstring.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdls {
 

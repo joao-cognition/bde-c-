@@ -23,7 +23,7 @@ BSLS_IDENT_RCSID(balcl_option_cpp,"$Id$ $CSID$")
 #include <bsl_cstring.h> // 'bsl::strlen', 'bsl::strchr'
 #include <bsl_ostream.h> // 'bsl::flush'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balcl {
 
                           // ------------

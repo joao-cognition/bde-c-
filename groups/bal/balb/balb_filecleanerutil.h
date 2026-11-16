@@ -57,7 +57,7 @@ BSLS_IDENT("$Id: $")
 
 #include <balb_filecleanerconfiguration.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balb {
 
                            // ======================

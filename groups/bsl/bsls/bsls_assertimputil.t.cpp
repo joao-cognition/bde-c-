@@ -9,7 +9,7 @@
 #include <exception> // `exception`
 
 using namespace std;
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

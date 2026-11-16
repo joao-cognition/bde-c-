@@ -66,8 +66,8 @@ pipeline {
                     mail bcc: '',               //tweak from/to/subjects to use
                     cc: '',
                     replyTo: '',
-                    from: 'bdebuild@jaas.dev.bloomberg.com',
-                    to: env.CHANGE_AUTHOR + '@bloomberg.net',
+                    from: 'bdebuild@jaas.dev.bnpparibas.com',
+                    to: env.CHANGE_AUTHOR + '@bnpparibas.com',
                     subject: 'Build status of job :'+ env.JOB_NAME,
                     body: env.BUILD_URL + ' Failed!'
         }

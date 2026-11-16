@@ -10,7 +10,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #if defined(BSLS_PLATFORM_CPU_SPARC_V9) \
     && (defined(BSLS_PLATFORM_CMP_GNU) || defined(BSLS_PLATFORM_CMP_SUN))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 static
 void bsls_AtomicOperations_Sparc64_AssemblyContainer() BSLS_ANNOTATION_USED;

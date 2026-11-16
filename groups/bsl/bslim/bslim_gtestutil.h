@@ -92,7 +92,7 @@ void PrintTo(const wstring& value, ostream *stream);
 
 /// Write the specified `value` to the specified `*stream`, surrounded by
 /// double quotes.
-void PrintTo(const BloombergLP::bslstl::StringRef& value, ostream *stream);
+void PrintTo(const BNP_Paribas::bslstl::StringRef& value, ostream *stream);
 
 /// Write the specified `value` to the specified `*stream`, surrounded by
 /// double quotes.

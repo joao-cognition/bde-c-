@@ -13,7 +13,7 @@
 #include <bsl_iostream.h>
 #include <bsl_memory.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

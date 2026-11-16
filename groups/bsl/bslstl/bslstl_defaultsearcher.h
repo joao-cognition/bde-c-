@@ -316,7 +316,7 @@ BSLS_IDENT("$Id: $")
 #include <cstring>  // for 'std::memcmp'
 #include <utility>  // for 'std::make_pair'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                         // =====================
@@ -550,7 +550,7 @@ template<class ForwardIterator1,
 class default_searcher {
 
     //DATA
-    BloombergLP::bslstl::DefaultSearcher<ForwardIterator1,
+    BNP_Paribas::bslstl::DefaultSearcher<ForwardIterator1,
                                          BinaryPredicate> d_imp;
 
   public:
@@ -574,7 +574,7 @@ class default_searcher {
     /// specified `original` object. by moving (in constant time) the state
     /// of `original` to the new searcher.  The `original` object is left in
     /// an unspecified (valid) state.
-    //! default_searcher(BloombergLP::bslmf::MovableRef<default_searcher>
+    //! default_searcher(BNP_Paribas::bslmf::MovableRef<default_searcher>
     //!                                                    original) = default;
 
     /// Destroy this `default_searcher` object.
@@ -589,7 +589,7 @@ class default_searcher {
     /// Assign to this object the state of the specified `rhs` object and
     /// return a non-`const` reference to this searcher.
     //! default_searcher& operator=(
-    //!                        BloombergLP::bslmf::MovableRef<default_searcher>
+    //!                        BNP_Paribas::bslmf::MovableRef<default_searcher>
     //!                                                         rhs) = default;
 
     // ACCESSORS
@@ -624,7 +624,7 @@ class default_searcher {
 //                          INLINE DEFINITIONS
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                         // ---------------------
@@ -662,7 +662,7 @@ DefaultSearcher<FORWARD_ITR_NEEDLE, EQUAL>::operator()(
                typename bsl::iterator_traits<FORWARD_ITR_HAYSTACK>::value_type
                              >::value));
 
-    return BloombergLP::bslstl::
+    return BNP_Paribas::bslstl::
            DefaultSearcher_ImpUtil::doSearch<FORWARD_ITR_NEEDLE,
                                              EQUAL,
                                              FORWARD_ITR_HAYSTACK>(

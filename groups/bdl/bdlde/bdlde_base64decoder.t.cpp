@@ -49,7 +49,7 @@
 #undef ES
 #undef GS
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -391,12 +391,12 @@ char assertion[ERROR_STATE + 1 == NUM_STATES];
 // The following is a very long text to use both in the stress test and
 // in the usage example.
 
-const char BLOOMBERG_NEWS[] =
-"        (Commentary.  Chet Currier is a Bloomberg News  \n"
+const char BNPPARIBAS_NEWS[] =
+"        (Commentary.  Chet Currier is a BNP Paribas News  \n"
 "columnist.  The opinions expressed are his own.)  \n"
 " \n"
 "By Chet Currier \n"
-"     Sept.  14 (Bloomberg) -- The trouble with college finance in \n"
+"     Sept.  14 (BNP Paribas) -- The trouble with college finance in \n"
 "21st Century America is way too much homework.  \n"
 "     Study up on UGMAs, ESAs, Section 529 savings programs that \n"
 "come in more than 50 different versions, and prepaid tuition \n"
@@ -1268,7 +1268,7 @@ bool isState(Obj *object, int state)
 // ----------------------------------------------------------------------------
 
 namespace USAGE {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
 // The 'streamEncoder' part of the usage example is not propagated to the .h
 // file.
@@ -3521,7 +3521,7 @@ DEFINE_TEST_CASE(12)
         //
         // Plan:
         //   - First have the encoder convert a large amount of text, created
-        //     for example by copying from a Bloomberg news page.  Then use the
+        //     for example by copying from a BNP Paribas news page.  Then use the
         //     decoder to convert the result back into its original form.
         //     Finally, verify that the output from the decoder to the input to
         //     the encoder are identical.
@@ -3876,7 +3876,7 @@ DEFINE_TEST_CASE(12)
 
         V("Verify encoder with unlimited line length.");
         {
-            const char* sample = BLOOMBERG_NEWS;
+            const char* sample = BNPPARIBAS_NEWS;
 
             int maxLineLength = 0;
 
@@ -3929,7 +3929,7 @@ DEFINE_TEST_CASE(12)
 
         V("Verify encoder with maximum line length = 76.");
         {
-            const char* sample = BLOOMBERG_NEWS;
+            const char* sample = BNPPARIBAS_NEWS;
 
             int maxLineLength = 76;
 
@@ -4015,7 +4015,7 @@ DEFINE_TEST_CASE(11)
 
         namespace TC = USAGE;
 
-        const bsl::string  inStr(BLOOMBERG_NEWS, sizeof(BLOOMBERG_NEWS));
+        const bsl::string  inStr(BNPPARIBAS_NEWS, sizeof(BNPPARIBAS_NEWS));
         bsl::istringstream inStream(inStr);
         bsl::stringstream  outStream;
         bsl::stringstream  backInStream;

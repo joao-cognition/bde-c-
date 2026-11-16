@@ -105,7 +105,7 @@ namespace pkg {
                         // class BufferAllocator
                         // =====================
 
-class BufferAllocator : public BloombergLP::bslma::Allocator {
+class BufferAllocator : public BNP_Paribas::bslma::Allocator {
     // This 'class' provides a concrete buffer allocator that implements the
     // 'bslma::Allocator' interface, allocating memory blocks from a fixed-size
     // buffer that is supplied by the user at construction, or from an
@@ -122,7 +122,7 @@ class BufferAllocator : public BloombergLP::bslma::Allocator {
 
     int                            d_cursor;        // current cursor
 
-    BloombergLP::bslma::Allocator *d_allocator_p;   // memory allocator to use
+    BNP_Paribas::bslma::Allocator *d_allocator_p;   // memory allocator to use
                                                     // if an allocation
                                                     // request exceeds the
                                                     // remaining space in
@@ -138,7 +138,7 @@ class BufferAllocator : public BloombergLP::bslma::Allocator {
     // CREATORS
     BufferAllocator(char                          *buffer,
                     int                            bufferSize,
-                    BloombergLP::bslma::Allocator *basicAllocator = 0);
+                    BNP_Paribas::bslma::Allocator *basicAllocator = 0);
         // Create a buffer allocator for allocating memory blocks from the
         // specified 'buffer' of the specified 'bufferSize' bytes.  Optionally
         // specify a 'basicAllocator' used to supply memory for allocation
@@ -152,7 +152,7 @@ class BufferAllocator : public BloombergLP::bslma::Allocator {
         // allocator is released.
 
     // MANIPULATORS
-    virtual void *allocate(BloombergLP::bsls::Types::size_type size);
+    virtual void *allocate(BNP_Paribas::bsls::Types::size_type size);
         // Return the address of a contiguous block of maximally-aligned memory
         // of the specified 'size' (in bytes).  If 'size' is 0, no memory is
         // allocated and 0 is returned.  If an allocation request exceeds the
@@ -180,11 +180,11 @@ class BufferAllocator : public BloombergLP::bslma::Allocator {
 inline
 BufferAllocator::BufferAllocator(char                          *buffer,
                                  int                            bufferSize,
-                                 BloombergLP::bslma::Allocator *basicAllocator)
+                                 BNP_Paribas::bslma::Allocator *basicAllocator)
 : d_buffer_p(buffer)
 , d_bufferSize(bufferSize)
 , d_cursor(0)
-, d_allocator_p(BloombergLP::bslma::Default::allocator(basicAllocator))
+, d_allocator_p(BNP_Paribas::bslma::Default::allocator(basicAllocator))
 {
     BSLS_ASSERT_SAFE(buffer);
     BSLS_ASSERT_SAFE(0 <= bufferSize);

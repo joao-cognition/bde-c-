@@ -99,7 +99,7 @@ void aSsErT(bool condition, const char *message, int line)
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP17_FILESYSTEM
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_CMP_CLANG

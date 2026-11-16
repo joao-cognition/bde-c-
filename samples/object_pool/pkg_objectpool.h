@@ -67,7 +67,7 @@
 //  };
 //
 //  // TRAITS
-//  namespace BloombergLP {
+//  namespace BNP_Paribas {
 //  namespace bslma {
 
 //  template <> struct UsesBslmaAllocator<DatabaseConnection>
@@ -137,7 +137,7 @@ class ObjectPool {
 
     // DATA
     bsl::list<TYPE *>               d_objects;      // list of managed objects
-    BloombergLP::bslma::Allocator  *d_allocator_p;  // memory allocator (held,
+    BNP_Paribas::bslma::Allocator  *d_allocator_p;  // memory allocator (held,
                                                     // not owned)
 
     // PRIVATE CLASS METHODS
@@ -153,7 +153,7 @@ class ObjectPool {
 
   public:
     // CREATORS
-    explicit ObjectPool(BloombergLP::bslma::Allocator *basicAllocator = 0);
+    explicit ObjectPool(BNP_Paribas::bslma::Allocator *basicAllocator = 0);
         // Create an object pool that invokes the default constructor of the
         // the template parameter type 'TYPE' to construct objects.  Optionally
         // specify a 'basicAllocator' used to supply memory.  If
@@ -184,7 +184,7 @@ class ObjectPool {
 }  // close enterprise namespace
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <typename TYPE>
@@ -223,9 +223,9 @@ TYPE *ObjectPool<TYPE>::createObject(bsl::true_type)
 // CREATORS
 template <typename TYPE>
 inline
-ObjectPool<TYPE>::ObjectPool(BloombergLP::bslma::Allocator *basicAllocator)
+ObjectPool<TYPE>::ObjectPool(BNP_Paribas::bslma::Allocator *basicAllocator)
 : d_objects(basicAllocator)
-, d_allocator_p(BloombergLP::bslma::Default::allocator(basicAllocator))
+, d_allocator_p(BNP_Paribas::bslma::Default::allocator(basicAllocator))
 {
 }
 
@@ -250,7 +250,7 @@ TYPE *ObjectPool<TYPE>::getObject()
         return object;                                                // RETURN
     }
 
-    return createObject(BloombergLP::bslma::UsesBslmaAllocator<TYPE>());
+    return createObject(BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>());
 }
 
 template <typename TYPE>

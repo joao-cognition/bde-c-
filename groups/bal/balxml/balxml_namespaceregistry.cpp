@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(balxml_namespaceregistry_cpp,"$Id$ $CSID$")
 
 #define ARRAY_LEN(X) int(sizeof(X)/sizeof(X[0]))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 
@@ -25,7 +25,7 @@ const char *const predefinedNamespaces[] =
     "http://www.w3.org/2001/XMLSchema-instance",  // e_XMLSCHEMA_INSTANCE
     "http://schemas.xmlsoap.org/wsdl/",           // e_WSDL
     "http://schemas.xmlsoap.org/wsdl/soap/",      // e_WSDL_SOAP
-    "http://bloomberg.com/schemas/bdem"           // e_BDEM
+    "http://bnpparibas.com/schemas/bdem"           // e_BDEM
 };
 
 /// Private function.  Look up the specified `namespaceUri` in the list of

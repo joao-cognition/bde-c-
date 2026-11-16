@@ -845,7 +845,7 @@ CHAR_TYPE oneChar)
         }
         else if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(bit != zeroChar)) {
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-            BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument(
+            BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument(
                                              "string for bitset constructor "
                                              "must be '0' or '1'");
         }
@@ -874,7 +874,7 @@ void bitset<N>::copyString(
         }
         else if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(bit != zeroChar)) {
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-            BloombergLP::bslstl::StdExceptUtil::throwInvalidArgument(
+            BNP_Paribas::bslstl::StdExceptUtil::throwInvalidArgument(
                                              "string for bitset constructor "
                                              "must be '0' or '1'");
         }
@@ -918,7 +918,7 @@ bitset(const std::basic_string<CHAR_TYPE, TRAITS, ALLOCATOR>& str,
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(pos > str.size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                                   "'pos > str.size()' for bitset constructor");
     }
     memset(d_data, 0, k_BITSETSIZE * k_BYTES_PER_INT);
@@ -950,7 +950,7 @@ bitset(const bsl::basic_string<CHAR_TYPE, TRAITS, ALLOCATOR>& str,
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(pos > str.size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                                   "'pos > str.size()' for bitset constructor");
     }
     memset(d_data, 0, k_BITSETSIZE * k_BYTES_PER_INT);
@@ -1236,7 +1236,7 @@ bool bitset<N>::test(size_t pos) const
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(pos >= N)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                                         "out_of_range in bsl::bitset<>::test");
     }
     return operator[](pos);
@@ -1267,7 +1267,7 @@ unsigned long bitset<N>::to_ulong() const
     for (std::size_t i = k_INTS_IN_LONG; i < k_BITSETSIZE; ++i) {
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(d_data[i])) {
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-            BloombergLP::bslstl::StdExceptUtil::throwOverflowError(
+            BNP_Paribas::bslstl::StdExceptUtil::throwOverflowError(
                                         "overflow in bsl::bitset<>::to_ulong");
         }
     }

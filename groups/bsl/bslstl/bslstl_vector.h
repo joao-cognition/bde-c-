@@ -632,7 +632,7 @@ BSLS_IDENT("$Id: $")
 
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 # define BSLSTL_VECTOR_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T) \
-                  requires ::BloombergLP::bslmf::ContainerCompatibleRange<R, T>
+                  requires ::BNP_Paribas::bslmf::ContainerCompatibleRange<R, T>
 #else
 # define BSLSTL_VECTOR_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T)
 #endif
@@ -713,7 +713,7 @@ template <class BSLSTL_ITERATOR>
 struct Vector_DeduceIteratorCategory<BSLSTL_ITERATOR, true> {
 
     // PUBLIC TYPES
-    typedef BloombergLP::bslmf::Nil type;
+    typedef BNP_Paribas::bslmf::Nil type;
 };
 
 
@@ -738,7 +738,7 @@ struct Vector_RangeIteratorCategory {
     // distance in a SFINAE-friendly manner, otherwise just treat it like an
     // input iterator.
     typedef bsl::conditional_t<
-        BloombergLP::bslstl::IteratorUtil
+        BNP_Paribas::bslstl::IteratorUtil
             ::canCalculateInsertDistance<t_ITERATOR, t_SENTINEL>(),
         typename bsl::iterator_traits<t_ITERATOR>::iterator_category,
         std::input_iterator_tag>                                         type;
@@ -755,7 +755,7 @@ template <class t_ITERATOR, class t_SENTINEL>
 struct Vector_RangeIteratorCategory<t_ITERATOR, t_SENTINEL, true> {
 
     // PUBLIC TYPES
-    typedef BloombergLP::bslmf::Nil type;
+    typedef BNP_Paribas::bslmf::Nil type;
 };
 
                         // ======================================
@@ -857,7 +857,7 @@ class vectorBase {
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil     MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil     MoveUtil;
 
   protected:
     // PROTECTED DATA
@@ -888,7 +888,7 @@ class vectorBase {
     /// Adopt all outstanding memory allocations associated with the specified
     /// `base` object.  The behavior is undefined unless this object is in a
     /// default-constructed state.
-    void adopt(BloombergLP::bslmf::MovableRef<vectorBase> base);
+    void adopt(BNP_Paribas::bslmf::MovableRef<vectorBase> base);
 
                              // *** iterators ***
 
@@ -1039,21 +1039,21 @@ class vectorBase {
 /// left in a valid state and its value is unchanged.
 template <class VALUE_TYPE, class ALLOCATOR = allocator<VALUE_TYPE> >
 class vector : public  vectorBase<VALUE_TYPE>
-             , private BloombergLP::bslalg::ContainerBase<ALLOCATOR> {
+             , private BNP_Paribas::bslalg::ContainerBase<ALLOCATOR> {
 
     // PRIVATE TYPES
 
     /// This `typedef` is an alias for a utility class that provides many
     /// useful functions that operate on arrays.
-    typedef BloombergLP::bslalg::ArrayPrimitives      ArrayPrimitives;
+    typedef BNP_Paribas::bslalg::ArrayPrimitives      ArrayPrimitives;
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil        MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil        MoveUtil;
 
     /// This `typedef` is an alias for a utility class that provides many
     /// useful functions that operate on allocators.
-    typedef BloombergLP::bslma::AllocatorUtil         AllocatorUtil;
+    typedef BNP_Paribas::bslma::AllocatorUtil         AllocatorUtil;
 
     /// This `typedef` is an alias for the allocator traits type associated
     /// with this container.
@@ -1084,7 +1084,7 @@ class vector : public  vectorBase<VALUE_TYPE>
 
     /// Container base type, containing the allocator and applying the empty
     /// base class optimization (EBO) whenever appropriate.
-    typedef BloombergLP::bslalg::ContainerBase<ALLOCATOR> ContainerBase;
+    typedef BNP_Paribas::bslalg::ContainerBase<ALLOCATOR> ContainerBase;
 
     /// This class provides a proctor for deallocating an array of `VALUE_TYPE`
     /// objects, to be used in the `vector` constructors.
@@ -1171,7 +1171,7 @@ class vector : public  vectorBase<VALUE_TYPE>
     template <class INTEGRAL>
     void constructFromRange(INTEGRAL          initialSize,
                             INTEGRAL          value,
-                            BloombergLP::bslmf::Nil);
+                            BNP_Paribas::bslmf::Nil);
 
 
     /// Populate a default-constructed vector with the values held in the
@@ -1213,16 +1213,16 @@ class vector : public  vectorBase<VALUE_TYPE>
                               const_iterator                          position,
                               INPUT_ITER                              count,
                               INPUT_ITER                              value,
-                              BloombergLP::bslmf::MatchArithmeticType ,
-                              BloombergLP::bslmf::Nil                 );
+                              BNP_Paribas::bslmf::MatchArithmeticType ,
+                              BNP_Paribas::bslmf::Nil                 );
 
     /// Match non-integral type for `INPUT_ITER`.
     template <class INPUT_ITER>
     void privateInsertDispatch(const_iterator              position,
                                INPUT_ITER                  first,
                                INPUT_ITER                  last,
-                               BloombergLP::bslmf::MatchAnyType ,
-                               BloombergLP::bslmf::MatchAnyType );
+                               BNP_Paribas::bslmf::MatchAnyType ,
+                               BNP_Paribas::bslmf::MatchAnyType );
 
     /// Range insert implementation function.
     template <class t_ITERATOR, class t_SENTINEL>
@@ -1278,7 +1278,7 @@ class vector : public  vectorBase<VALUE_TYPE>
     /// move constructor of a non-copy-insertable `value_type`), `*this` is
     /// unaffected.  Throw `std::length_error` if `size() == max_size()`.
     void privatePushBackWithAllocation(
-                             BloombergLP::bslmf::MovableRef<VALUE_TYPE> value);
+                             BNP_Paribas::bslmf::MovableRef<VALUE_TYPE> value);
 
   public:
     // CREATORS
@@ -1380,7 +1380,7 @@ class vector : public  vectorBase<VALUE_TYPE>
     /// the new vector.  The allocator associated with `original` is
     /// propagated for use in the newly-created vector.  `original` is left
     /// in a valid but unspecified state.
-    vector(BloombergLP::bslmf::MovableRef<vector> original)
+    vector(BNP_Paribas::bslmf::MovableRef<vector> original)
                                              BSLS_KEYWORD_NOEXCEPT; // IMPLICIT
 
     /// Create a vector having the same value as the specified `original`
@@ -1404,7 +1404,7 @@ class vector : public  vectorBase<VALUE_TYPE>
     /// `VALUE_TYPE`}).  Note that a `bslma::Allocator *` can be supplied
     /// for `basicAllocator` if the (template parameter) type `ALLOCATOR` is
     /// `bsl::allocator` (the default).
-    vector(BloombergLP::bslmf::MovableRef<vector> original,
+    vector(BNP_Paribas::bslmf::MovableRef<vector> original,
                 const typename type_identity<ALLOCATOR>::type& basicAllocator);
 
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_GENERALIZED_INITIALIZERS)
@@ -1456,7 +1456,7 @@ class vector : public  vectorBase<VALUE_TYPE>
     /// explicitly spelled out to work around an MSVC 2022 bug, see DRQS
     /// 171087946.
     vector& operator=(
-            BloombergLP::bslmf::MovableRef<vector<VALUE_TYPE, ALLOCATOR> > rhs)
+            BNP_Paribas::bslmf::MovableRef<vector<VALUE_TYPE, ALLOCATOR> > rhs)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
               AllocatorTraits::propagate_on_container_move_assignment::value ||
               AllocatorTraits::is_always_equal::value);
@@ -1598,7 +1598,7 @@ class vector : public  vectorBase<VALUE_TYPE>
     /// `std::length_error` if `size() == max_size()`.  This method requires
     /// that the (template parameter) type `VALUE_TYPE` be `move-insertable`
     /// into this vector (see {Requirements on `VALUE_TYPE`}).
-    void push_back(BloombergLP::bslmf::MovableRef<VALUE_TYPE> value);
+    void push_back(BNP_Paribas::bslmf::MovableRef<VALUE_TYPE> value);
 
     /// Erase the last element from this vector.  The behavior is undefined
     /// if this vector is empty.
@@ -1636,7 +1636,7 @@ class vector : public  vectorBase<VALUE_TYPE>
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(1 >
                                                   maxSize - this->size())) {
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-            BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+            BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                 "vector<...>::emplace(pos,arguments): vector too long");
         }
 
@@ -1698,7 +1698,7 @@ class vector : public  vectorBase<VALUE_TYPE>
     /// `move-insertable` into this vector (see {Requirements on
     /// `VALUE_TYPE`}).
     iterator insert(const_iterator                             position,
-                    BloombergLP::bslmf::MovableRef<VALUE_TYPE> value);
+                    BNP_Paribas::bslmf::MovableRef<VALUE_TYPE> value);
 
     /// Insert at the specified `position` in this vector the specified
     /// `numElements` copies of the specified `value`, and return an
@@ -1755,7 +1755,7 @@ class vector : public  vectorBase<VALUE_TYPE>
 
         const size_type index = position - this->begin();
         privateInsertDispatch(
-            position, first, last, first, BloombergLP::bslmf::Nil());
+            position, first, last, first, BNP_Paribas::bslmf::Nil());
         return this->begin() + index;
     }
 
@@ -1874,7 +1874,7 @@ bool operator!=(const vector<VALUE_TYPE, ALLOCATOR>& lhs,
 /// specified `rhs` vectors by using the comparison operators of `VALUE_TYPE`
 /// on each element; return the result of that comparison.
 template <class VALUE_TYPE, class ALLOCATOR>
-BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> operator<=>(
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> operator<=>(
                                      const vector<VALUE_TYPE, ALLOCATOR>& lhs,
                                      const vector<VALUE_TYPE, ALLOCATOR>& rhs);
 
@@ -1981,7 +1981,7 @@ class vector<VALUE_TYPE *, ALLOCATOR>
 {
 
     // PRIVATE TYPES
-    typedef BloombergLP::bsls::Types::UintPtr                   UintPtr;
+    typedef BNP_Paribas::bsls::Types::UintPtr                   UintPtr;
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_ALIAS_TEMPLATES)
     typedef typename allocator_traits<ALLOCATOR>::
                                 template rebind_alloc<UintPtr>  ImplAlloc;
@@ -1989,7 +1989,7 @@ class vector<VALUE_TYPE *, ALLOCATOR>
     typedef typename ALLOCATOR::template rebind<UintPtr>::other ImplAlloc;
 #endif
     typedef vector<UintPtr, ImplAlloc>                          Impl;
-    typedef BloombergLP::bslmf::MovableRefUtil                  MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil                  MoveUtil;
 
     // PRIVATE DATA
     Impl d_impl;  // The 'UintPtr' vector used for the implementation.
@@ -2039,13 +2039,13 @@ class vector<VALUE_TYPE *, ALLOCATOR>
 
     vector(const vector& original);
 
-    vector(BloombergLP::bslmf::MovableRef<vector> original)
+    vector(BNP_Paribas::bslmf::MovableRef<vector> original)
                                              BSLS_KEYWORD_NOEXCEPT; // IMPLICIT
 
     vector(const vector& original,
                 const typename type_identity<ALLOCATOR>::type& basicAllocator);
 
-    vector(BloombergLP::bslmf::MovableRef<vector> original,
+    vector(BNP_Paribas::bslmf::MovableRef<vector> original,
                 const typename type_identity<ALLOCATOR>::type& basicAllocator);
 
 
@@ -2062,7 +2062,7 @@ class vector<VALUE_TYPE *, ALLOCATOR>
     /// NOTE: This function has been implemented inline due to an issue with
     /// the Sun compiler.
     vector& operator=(
-          BloombergLP::bslmf::MovableRef<vector<VALUE_TYPE *, ALLOCATOR> > rhs)
+          BNP_Paribas::bslmf::MovableRef<vector<VALUE_TYPE *, ALLOCATOR> > rhs)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(BSLS_KEYWORD_NOEXCEPT_OPERATOR(
                        d_impl = MoveUtil::move(MoveUtil::access(rhs).d_impl)))
     {
@@ -2222,10 +2222,10 @@ class vector<VALUE_TYPE *, ALLOCATOR>
 
 #ifdef BSLALG_SYNTHTHREEWAYUTIL_AVAILABLE
 
-    friend BloombergLP::bslalg::SynthThreeWayUtil::Result<Impl>
+    friend BNP_Paribas::bslalg::SynthThreeWayUtil::Result<Impl>
     operator<=>(const vector& lhs, const vector& rhs)
     {
-        return BloombergLP::bslalg::SynthThreeWayUtil::compare(lhs.d_impl,
+        return BNP_Paribas::bslalg::SynthThreeWayUtil::compare(lhs.d_impl,
                                                                rhs.d_impl);
     }
 
@@ -2297,7 +2297,7 @@ vector(SIZE_TYPE, VALUE, ALLOC *) -> vector<VALUE>;
 template <
     class INPUT_ITERATOR,
     class VALUE =
-         typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
+         typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
     >
 vector(INPUT_ITERATOR, INPUT_ITERATOR) -> vector<VALUE>;
 
@@ -2309,7 +2309,7 @@ template<
     class INPUT_ITERATOR,
     class ALLOCATOR,
     class VALUE =
-         typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+         typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 vector(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR) -> vector<VALUE, ALLOCATOR>;
@@ -2322,7 +2322,7 @@ template<
     class INPUT_ITERATOR,
     class ALLOC,
     class VALUE =
-         typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+         typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<VALUE>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -2380,7 +2380,7 @@ class vector_UintPtrConversionIterator {
 
   public:
     // PUBLIC TYPES
-    typedef BloombergLP::bsls::Types::UintPtr UintPtr;
+    typedef BNP_Paribas::bsls::Types::UintPtr UintPtr;
 
     typedef UintPtr  value_type;
     typedef UintPtr *pointer;
@@ -2540,7 +2540,7 @@ vector_UintPtrConversionIterator<VALUE_TYPE, ITERATOR>::operator++(int)
 // ACCESSORS
 template <class VALUE_TYPE, class ITERATOR>
 inline
-BloombergLP::bsls::Types::UintPtr
+BNP_Paribas::bsls::Types::UintPtr
 vector_UintPtrConversionIterator<VALUE_TYPE, ITERATOR>::operator*() const
 {
     VALUE_TYPE const ptr = *d_iter;
@@ -2714,7 +2714,7 @@ vectorBase<VALUE_TYPE>::vectorBase()
 template <class VALUE_TYPE>
 inline
 void
-vectorBase<VALUE_TYPE>::adopt(BloombergLP::bslmf::MovableRef<vectorBase> base)
+vectorBase<VALUE_TYPE>::adopt(BNP_Paribas::bslmf::MovableRef<vectorBase> base)
 {
     BSLS_ASSERT_SAFE(0 == d_dataBegin_p);
     BSLS_ASSERT_SAFE(0 == d_dataEnd_p);
@@ -2780,7 +2780,7 @@ vectorBase<VALUE_TYPE>::at(size_type position)
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(position >= size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                                 "vector<...>::at(position): invalid position");
     }
     return d_dataBegin_p[position];
@@ -2923,7 +2923,7 @@ vectorBase<VALUE_TYPE>::at(size_type position) const
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(position >= size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                           "const vector<...>::at(position): invalid position");
     }
     return d_dataBegin_p[position];
@@ -2977,7 +2977,7 @@ template <class VALUE_TYPE, class ALLOCATOR>
 BSLS_PLATFORM_AGGRESSIVE_INLINE
 vector<VALUE_TYPE, ALLOCATOR>::Proctor::~Proctor()
 {
-    using BloombergLP::bslma::AllocatorUtil;
+    using BNP_Paribas::bslma::AllocatorUtil;
 
     if (d_data_p) {
         AllocatorUtil::deallocateObject(d_container_p->allocatorRef(),
@@ -3038,7 +3038,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateConstruct(
     constructFromSizedRange(
         begin,
         ranges::end(range),
-        BloombergLP::bslstl::IteratorUtil::insertDistance(begin,
+        BNP_Paribas::bslstl::IteratorUtil::insertDistance(begin,
                                                           ranges::end(range)));
 }
 
@@ -3077,13 +3077,13 @@ void vector<VALUE_TYPE, ALLOCATOR>::constructFromRange(
     // Specialization for all iterators except input iterators: 'size' can be
     // computed in advance.
     BSLS_ASSERT_SAFE(!Vector_RangeCheck::isInvalidRange(first, last));
-    BSLS_ASSERT_OPT((BloombergLP::bslstl::IteratorUtil
+    BSLS_ASSERT_OPT((BNP_Paribas::bslstl::IteratorUtil
                           ::canCalculateInsertDistance<FWD_ITER, FWD_ITER>()));
 
     constructFromSizedRange(
         first,
         last,
-        BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+        BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
 }
 
 template <class VALUE_TYPE, class ALLOCATOR>
@@ -3114,7 +3114,7 @@ template <class INTEGRAL>
 void vector<VALUE_TYPE, ALLOCATOR>::constructFromRange(
                                             INTEGRAL               initialSize,
                                             INTEGRAL               value,
-                                            BloombergLP::bslmf::Nil)
+                                            BNP_Paribas::bslmf::Nil)
 {
     // IMPLEMENTATION NOTES: this constructor is trying to construct a range of
     // 'initialSize' elements having the specified integral 'value'.  Without
@@ -3127,7 +3127,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::constructFromRange(
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
                            static_cast<size_type>(initialSize) > max_size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                   "vector<...>::(repeated-value constructor): input too long");
     }
 
@@ -3160,7 +3160,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::constructFromSizedRange(t_ITERATOR first,
     const size_type maxSize = max_size();
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(size > maxSize)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                            "vector<...>::(range-constructor): input too long");
     }
 
@@ -3212,7 +3212,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateAppendRange(
     privateAppendSizedRange(
         begin,
         ranges::end(range),
-        BloombergLP::bslstl::IteratorUtil::insertDistance(begin,
+        BNP_Paribas::bslstl::IteratorUtil::insertDistance(begin,
                                                           ranges::end(range)));
 }
 
@@ -3253,7 +3253,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateAppendSizedRange(
     size_type diff = max_size() - size;
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(rangeSize > diff)) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                            "vector<...>::(range-constructor): input too long");
     }
 
@@ -3287,8 +3287,8 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateInsertDispatch(
                               const_iterator                          position,
                               INPUT_ITER                              count,
                               INPUT_ITER                              value,
-                              BloombergLP::bslmf::MatchArithmeticType ,
-                              BloombergLP::bslmf::Nil                 )
+                              BNP_Paribas::bslmf::MatchArithmeticType ,
+                              BNP_Paribas::bslmf::Nil                 )
 {
     // 'count' and 'value' are integral types that just happen to be the same.
     // They are not iterators, so we call 'insert(position, count, value)'.
@@ -3305,8 +3305,8 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateInsertDispatch(
                                           const_iterator              position,
                                           INPUT_ITER                  first,
                                           INPUT_ITER                  last,
-                                          BloombergLP::bslmf::MatchAnyType ,
-                                          BloombergLP::bslmf::MatchAnyType )
+                                          BNP_Paribas::bslmf::MatchAnyType ,
+                                          BNP_Paribas::bslmf::MatchAnyType )
 {
     // Dispatch based on iterator category.
     BSLS_ASSERT_SAFE(!Vector_RangeCheck::isInvalidRange(first, last));
@@ -3378,7 +3378,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateInsert(
     // 'allocator_traits<ALLOC>::destroy(allocator, pointer)' rather than
     // invoke the destructor directly.  'bslalg::AutoArrayDestructor' is close,
     // but lacks 'reset'.
-    BloombergLP::bslma::AutoDestructor<VALUE_TYPE> insertProctor(
+    BNP_Paribas::bslma::AutoDestructor<VALUE_TYPE> insertProctor(
                                                               emplacePosition);
     while (emplacePosition != emplaceEnd) {
         AllocatorTraits::construct(alloc, emplacePosition, *first);
@@ -3483,18 +3483,18 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateInsert(
     // Specialization for all iterators except input iterators: 'size' can be
     // computed in advance.
     BSLS_ASSERT_SAFE(!Vector_RangeCheck::isInvalidRange(first, last));
-    BSLS_ASSERT_OPT((BloombergLP::bslstl::IteratorUtil
+    BSLS_ASSERT_OPT((BNP_Paribas::bslstl::IteratorUtil
                           ::canCalculateInsertDistance<FWD_ITER, SENTINEL>()));
 
     const iterator& pos = const_cast<iterator>(position);
 
     const size_type maxSize = max_size();
     const size_type n =
-                BloombergLP::bslstl::IteratorUtil::insertDistance(first, last);
+                BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last);
 
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(n > maxSize - this->size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                        "vector<...>::insert(pos,first,last): vector too long");
     }
 
@@ -3542,7 +3542,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateMoveInsert(
     const size_type n = fromVector->size();
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(n > maxSize - this->size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                        "vector<...>::insert(pos,first,last): vector too long");
     }
 
@@ -3604,7 +3604,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::privateEmplaceBackWithAllocation(
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(max_size() == this->size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                          "vector<...>:emplace_back(args...): vector too long");
     }
 
@@ -3642,7 +3642,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::privatePushBackWithAllocation(
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(max_size() == this->size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                              "vector<...>:push_back(lvalue): vector too long");
     }
 
@@ -3673,12 +3673,12 @@ void vector<VALUE_TYPE, ALLOCATOR>::privatePushBackWithAllocation(
 
 template <class VALUE_TYPE, class ALLOCATOR>
 void vector<VALUE_TYPE, ALLOCATOR>::privatePushBackWithAllocation(
-                              BloombergLP::bslmf::MovableRef<VALUE_TYPE> value)
+                              BNP_Paribas::bslmf::MovableRef<VALUE_TYPE> value)
 {
     VALUE_TYPE& lvalue = value;
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(max_size() == this->size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                              "vector<...>:push_back(rvalue): vector too long");
     }
 
@@ -3738,7 +3738,7 @@ vector<VALUE_TYPE, ALLOCATOR>::vector(size_type        initialSize,
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(initialSize > max_size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                                   "vector<...>::vector(n,v): vector too long");
     }
     if (initialSize > 0) {
@@ -3765,7 +3765,7 @@ vector<VALUE_TYPE, ALLOCATOR>::vector(size_type         initialSize,
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(initialSize > max_size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                                   "vector<...>::vector(n,v): vector too long");
     }
     if (initialSize > 0) {
@@ -3798,7 +3798,7 @@ vector<VALUE_TYPE, ALLOCATOR>::vector(INPUT_ITER       first,
     typedef typename Vector_RangeIteratorCategory<INPUT_ITER, INPUT_ITER>::type
                                                                            Tag;
 
-    if (is_same<Tag, BloombergLP::bslmf::Nil>::value || first != last) {
+    if (is_same<Tag, BNP_Paribas::bslmf::Nil>::value || first != last) {
         // Range-check avoids allocating on an empty sequence.
         constructFromRange(first, last, Tag());
     }
@@ -3851,7 +3851,7 @@ vector(const vector& original,
 
 template <class VALUE_TYPE, class ALLOCATOR>
 vector<VALUE_TYPE, ALLOCATOR>::vector(
-                               BloombergLP::bslmf::MovableRef<vector> original)
+                               BNP_Paribas::bslmf::MovableRef<vector> original)
                                                           BSLS_KEYWORD_NOEXCEPT
 : vectorBase<VALUE_TYPE>()
 , ContainerBase(MoveUtil::access(original).get_allocator())
@@ -3862,7 +3862,7 @@ vector<VALUE_TYPE, ALLOCATOR>::vector(
 
 template <class VALUE_TYPE, class ALLOCATOR>
 vector<VALUE_TYPE, ALLOCATOR>::vector(
-                 BloombergLP::bslmf::MovableRef<vector>         original,
+                 BNP_Paribas::bslmf::MovableRef<vector>         original,
                  const typename type_identity<ALLOCATOR>::type& basicAllocator)
 : vectorBase<VALUE_TYPE>()
 , ContainerBase(basicAllocator)
@@ -3929,7 +3929,7 @@ template <class VALUE_TYPE, class ALLOCATOR>
 BSLS_PLATFORM_AGGRESSIVE_INLINE
 vector<VALUE_TYPE, ALLOCATOR>::~vector()
 {
-    using BloombergLP::bslalg::ArrayDestructionPrimitives;
+    using BNP_Paribas::bslalg::ArrayDestructionPrimitives;
 
     // suppress buggy warning in GCC 12 and later (DRQS 174259807)
 #ifdef BSLS_PLATFORM_CMP_GNU
@@ -3974,7 +3974,7 @@ vector<VALUE_TYPE, ALLOCATOR>::operator=(const vector& rhs)
 
 template <class VALUE_TYPE, class ALLOCATOR>
 vector<VALUE_TYPE, ALLOCATOR>& vector<VALUE_TYPE, ALLOCATOR>::operator=(
-            BloombergLP::bslmf::MovableRef<vector<VALUE_TYPE, ALLOCATOR> > rhs)
+            BNP_Paribas::bslmf::MovableRef<vector<VALUE_TYPE, ALLOCATOR> > rhs)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
               AllocatorTraits::propagate_on_container_move_assignment::value ||
               AllocatorTraits::is_always_equal::value)
@@ -4065,7 +4065,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::resize(size_type newSize)
     // are 'move-insertable' and 'default-constructible'.
 
     if (newSize <= this->size()) {
-        BloombergLP::bslalg::ArrayDestructionPrimitives::destroy(
+        BNP_Paribas::bslalg::ArrayDestructionPrimitives::destroy(
                                             this->d_dataBegin_p + newSize,
                                             this->d_dataEnd_p,
                                             this->allocatorRef());
@@ -4081,7 +4081,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::resize(size_type newSize)
         const size_type maxSize = max_size();
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(newSize > maxSize)) {
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-            BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+            BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                 "vector<...>::resize(n): vector too long");
         }
 
@@ -4118,7 +4118,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::resize(size_type         newSize,
     // the move constructor of a non-copy-insertable 'value_type' throws).
 
     if (newSize <= this->size()) {
-        BloombergLP::bslalg::ArrayDestructionPrimitives::destroy(
+        BNP_Paribas::bslalg::ArrayDestructionPrimitives::destroy(
                                             this->d_dataBegin_p + newSize,
                                             this->d_dataEnd_p,
                                             this->allocatorRef());
@@ -4134,7 +4134,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::reserve(size_type newCapacity)
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(newCapacity > max_size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                          "vector<...>::reserve(newCapacity): vector too long");
     }
     if (0 == this->d_capacity && 0 != newCapacity) {
@@ -4226,7 +4226,7 @@ void vector<VALUE_TYPE, ALLOCATOR>::push_back(const VALUE_TYPE& value)
 template <class VALUE_TYPE, class ALLOCATOR>
 inline
 void vector<VALUE_TYPE, ALLOCATOR>::push_back(
-                              BloombergLP::bslmf::MovableRef<VALUE_TYPE> value)
+                              BNP_Paribas::bslmf::MovableRef<VALUE_TYPE> value)
 {
     VALUE_TYPE& lvalue = value;
     if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(this->d_capacity > this->size())) {
@@ -4266,7 +4266,7 @@ template <class VALUE_TYPE, class ALLOCATOR>
 typename vector<VALUE_TYPE, ALLOCATOR>::iterator
 vector<VALUE_TYPE, ALLOCATOR>::insert(
                            const_iterator                             position,
-                           BloombergLP::bslmf::MovableRef<VALUE_TYPE> value)
+                           BNP_Paribas::bslmf::MovableRef<VALUE_TYPE> value)
 {
     BSLS_ASSERT_SAFE(this->begin() <= position);
     BSLS_ASSERT_SAFE(position      <= this->end());
@@ -4274,7 +4274,7 @@ vector<VALUE_TYPE, ALLOCATOR>::insert(
     const size_type maxSize = max_size();
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(1 > maxSize - this->size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                                "vector<...>::insert(pos,rv): vector too long");
     }
 
@@ -4328,7 +4328,7 @@ vector<VALUE_TYPE, ALLOCATOR>::insert(const_iterator    position,
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(
                                        numElements > maxSize - this->size())) {
         BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        BloombergLP::bslstl::StdExceptUtil::throwLengthError(
+        BNP_Paribas::bslstl::StdExceptUtil::throwLengthError(
                               "vector<...>::insert(pos,n,v): vector too long");
     }
 
@@ -4476,7 +4476,7 @@ inline
 void vector<VALUE_TYPE, ALLOCATOR>::clear() BSLS_KEYWORD_NOEXCEPT
 {
     if (!this->empty()) {
-        BloombergLP::bslalg::ArrayDestructionPrimitives::destroy(
+        BNP_Paribas::bslalg::ArrayDestructionPrimitives::destroy(
                                                    this->d_dataBegin_p,
                                                    this->d_dataEnd_p,
                                                    this->allocatorRef());
@@ -4512,7 +4512,7 @@ inline
 bool operator==(const vector<VALUE_TYPE, ALLOCATOR>& lhs,
                 const vector<VALUE_TYPE, ALLOCATOR>& rhs)
 {
-    return BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+    return BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
                                                     lhs.end(),
                                                     lhs.size(),
                                                     rhs.begin(),
@@ -4534,7 +4534,7 @@ bool operator!=(const vector<VALUE_TYPE, ALLOCATOR>& lhs,
 
 template <class VALUE_TYPE, class ALLOCATOR>
 inline
-BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> operator<=>(
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> operator<=>(
                                       const vector<VALUE_TYPE, ALLOCATOR>& lhs,
                                       const vector<VALUE_TYPE, ALLOCATOR>& rhs)
 {
@@ -4543,7 +4543,7 @@ BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE_TYPE> operator<=>(
                               lhs.end(),
                               rhs.begin(),
                               rhs.end(),
-                              BloombergLP::bslalg::SynthThreeWayUtil::compare);
+                              BNP_Paribas::bslalg::SynthThreeWayUtil::compare);
 }
 
 #else
@@ -4553,7 +4553,7 @@ inline
 bool operator< (const vector<VALUE_TYPE, ALLOCATOR>& lhs,
                 const vector<VALUE_TYPE, ALLOCATOR>& rhs)
 {
-    return 0 > BloombergLP::bslalg::RangeCompare::lexicographical(lhs.begin(),
+    return 0 > BNP_Paribas::bslalg::RangeCompare::lexicographical(lhs.begin(),
                                                                   lhs.end(),
                                                                   lhs.size(),
                                                                   rhs.begin(),
@@ -4624,7 +4624,7 @@ template <class HASHALG, class VALUE_TYPE, class ALLOCATOR>
 inline
 void hashAppend(HASHALG& hashAlg, const vector<VALUE_TYPE, ALLOCATOR>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     typedef typename vector<VALUE_TYPE, ALLOCATOR>::const_iterator ci_t;
     hashAppend(hashAlg, input.size());
     for (ci_t b = input.begin(), e = input.end(); b != e; ++b) {
@@ -4636,7 +4636,7 @@ template <class HASHALG, class ALLOCATOR>
 inline
 void hashAppend(HASHALG& hashAlg, const vector<char, ALLOCATOR>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, input.size());
     hashAppend(hashAlg, input.data(), input.size());
 }
@@ -4720,7 +4720,7 @@ vector<VALUE_TYPE *, ALLOCATOR>::vector(const vector& original)
 template <class VALUE_TYPE, class ALLOCATOR>
 inline
 vector<VALUE_TYPE *, ALLOCATOR>::vector(
-                               BloombergLP::bslmf::MovableRef<vector> original)
+                               BNP_Paribas::bslmf::MovableRef<vector> original)
                                                           BSLS_KEYWORD_NOEXCEPT
 : d_impl(MoveUtil::move(MoveUtil::access(original).d_impl))
 {
@@ -4737,7 +4737,7 @@ vector<VALUE_TYPE *, ALLOCATOR>::vector(const vector&    original,
 template <class VALUE_TYPE, class ALLOCATOR>
 inline
 vector<VALUE_TYPE *, ALLOCATOR>::vector(
-    BloombergLP::bslmf::MovableRef<vector>         original,
+    BNP_Paribas::bslmf::MovableRef<vector>         original,
     const typename type_identity<ALLOCATOR>::type& basicAllocator)
 : d_impl(MoveUtil::move(MoveUtil::access(original).d_impl),
          ImplAlloc(basicAllocator))
@@ -5289,7 +5289,7 @@ VALUE_TYPE *const *vector<VALUE_TYPE *, ALLOCATOR>::data() const
 //: o A sequence container uses 'bslma' allocators if the (template parameter)
 //:     type 'ALLOCATOR' is convertible from 'bslma::Allocator *'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

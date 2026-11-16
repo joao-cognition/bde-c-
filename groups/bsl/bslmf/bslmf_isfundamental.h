@@ -15,7 +15,7 @@ BSLS_IDENT("$Id: $")
 //@SEE_ALSO: bslmf_isenum, bslmf_ispointer
 //
 //@DESCRIPTION: This component defines two meta-functions,
-// `bsl::is_fundamental` and `BloombergLP::bslmf::IsFundamental` and a template
+// `bsl::is_fundamental` and `BNP_Paribas::bslmf::IsFundamental` and a template
 // variable `bsl::is_fundamental_v`, that represents the result value of the
 // `bsl::is_fundamental` meta-function.  All these meta-functions may be used
 // to query whether a type is a fundamental type.
@@ -112,7 +112,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_keyword.h>
 #include <bsls_nullptr.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ========================

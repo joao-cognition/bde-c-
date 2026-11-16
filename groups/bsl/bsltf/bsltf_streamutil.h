@@ -41,7 +41,7 @@ BSLS_IDENT("$Id: $")
 //
 // Then, in 'main', we define a 'bsltf::SimpleTestType' object 'st':
 //..
-//  BloombergLP::bsltf::SimpleTestType st;
+//  BNP_Paribas::bsltf::SimpleTestType st;
 //..
 // Now, we do some output, assigning 'st' several different values and
 // streaming them out:
@@ -68,7 +68,7 @@ BSLS_IDENT("$Id: $")
 #include <bsltf_templatetestfacility.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 // ============================================================================

@@ -27,7 +27,7 @@
 #include <bsl_vector.h>                  // for usage example
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

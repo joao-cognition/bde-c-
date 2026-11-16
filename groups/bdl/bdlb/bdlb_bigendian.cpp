@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(bdlb_bigendian_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // COMPILE-TIME ASSERTIONS
 

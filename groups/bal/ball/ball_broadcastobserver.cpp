@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(ball_broadcastobserver_cpp,"$Id$ $CSID$")
 
 #include <bslmt_writelockguard.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                          // -----------------------

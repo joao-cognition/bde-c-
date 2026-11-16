@@ -18,7 +18,7 @@
 #include <bsl_ostream.h>
 #include <bsl_sstream.h>   // `bsl::ostringstream`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

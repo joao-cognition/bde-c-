@@ -137,7 +137,7 @@ namespace bsl {
 
 #   include <stddef.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                    // =====================================
@@ -211,10 +211,10 @@ concept Formattable_With =
 /// character type must be one of `char` or `wchar_t`.
 namespace bsl {
 template <class t_TYPE, class t_CHAR>
-concept formattable = BloombergLP::bslfmt::Formattable_With<
+concept formattable = BNP_Paribas::bslfmt::Formattable_With<
     std::remove_reference_t<t_TYPE>,
     bsl::basic_format_context<
-        BloombergLP::bslfmt::Formattable_DummyOutputIterator<t_CHAR>,
+        BNP_Paribas::bslfmt::Formattable_DummyOutputIterator<t_CHAR>,
         t_CHAR> >;
 }  // close namespace bsl
 

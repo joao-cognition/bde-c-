@@ -13,7 +13,7 @@ BSLS_IDENT("$Id: $")
 //  bslmf::IsPolymorphic: meta-function for detecting polymorphic types
 //
 //@DESCRIPTION: This component defines two meta-functions,
-// `bsl::is_polymorphic` and `BloombergLP::bslmf::IsPolymorphic` and a template
+// `bsl::is_polymorphic` and `BNP_Paribas::bslmf::IsPolymorphic` and a template
 // variable `bsl::is_polymorphic_v`, that represents the result value of the
 // `bsl::is_polymorphic` meta-function.  All of these meta-functions may be
 // used to query whether a type is a polymorphic class as defined in the C++11
@@ -142,7 +142,7 @@ BSLS_IDENT("$Id: $")
 # define BSLMF_ISPOLYMORPHIC_HAS_INTRINSIC
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                        // ========================
@@ -210,7 +210,7 @@ namespace bsl {
 template <class t_TYPE>
 struct is_polymorphic
 : integral_constant<bool,
-                    BloombergLP::bslmf::IsPolymorphic_Imp<
+                    BNP_Paribas::bslmf::IsPolymorphic_Imp<
                         typename remove_cv<t_TYPE>::type>::Value> {
 };
 
@@ -224,7 +224,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_polymorphic_v =
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 

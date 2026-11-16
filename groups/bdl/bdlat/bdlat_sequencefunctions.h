@@ -168,7 +168,7 @@ BSLS_IDENT("$Id: $")
 /// - - - - - - - - - - -
 // Suppose you had a `struct` that contains three members:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // namespace mine {
 //
@@ -612,7 +612,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_assert.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                       // =================================
                       // namespace bdlat_SequenceFunctions

@@ -14,7 +14,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #pragma warning(disable:4355) // ctor uses 'this' used in member-initializer
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                     // --------------------------------------

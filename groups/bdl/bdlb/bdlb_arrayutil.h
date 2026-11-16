@@ -174,13 +174,13 @@ BSLS_IDENT("$Id: $")
 
 /// Return the number of elements in the passed array `a` as a constant
 /// expression.
-#define BDLB_ARRAYUTIL_SIZE(a) sizeof(BloombergLP::bdlb::ArrayUtil::sizer(a))
+#define BDLB_ARRAYUTIL_SIZE(a) sizeof(BNP_Paribas::bdlb::ArrayUtil::sizer(a))
 
 /// Return the number of elements in the passed array `a` as a constant
 /// expression.
-#define BDLB_ARRAYUTIL_LENGTH(a) sizeof(BloombergLP::bdlb::ArrayUtil::sizer(a))
+#define BDLB_ARRAYUTIL_LENGTH(a) sizeof(BNP_Paribas::bdlb::ArrayUtil::sizer(a))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
                             // ====================
                             // struct bdeuArrayUtil

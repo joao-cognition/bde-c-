@@ -15,7 +15,7 @@ BSLS_IDENT("$Id: $")
 //@SEE_ALSO: bslmf_isfundamental
 //
 //@DESCRIPTION: This component defines two meta-functions, `bsl::is_enum` and
-// `BloombergLP::bslmf::IsEnum` and a template variable `bsl::is_enum_v`, that
+// `BNP_Paribas::bslmf::IsEnum` and a template variable `bsl::is_enum_v`, that
 // represents the result value of the `bsl::is_enum` meta-function.  All these
 // meta-functions may be used to query whether a type is an enumerated type,
 // optionally qualified with `const` or `volatile`.
@@ -112,7 +112,7 @@ struct is_enum;
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                                 // =============
@@ -165,7 +165,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_enum_v = is_enum<t_TYPE>::value;
 
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                         // ===============================
@@ -225,7 +225,7 @@ template <class t_TYPE>
 struct is_enum
 : conditional<!is_fundamental<t_TYPE>::value && !is_reference<t_TYPE>::value &&
                   !is_class<t_TYPE>::value,
-              BloombergLP::bslmf::IsEnum_TestConversions<t_TYPE>,
+              BNP_Paribas::bslmf::IsEnum_TestConversions<t_TYPE>,
               false_type>::type {
 };
 

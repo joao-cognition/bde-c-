@@ -32,7 +32,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #if defined(BSLS_PLATFORM_CMP_SUN)
 #pragma error_messages(off, functypequal)
@@ -231,7 +231,7 @@ void aSsErT(bool condition, const char *message, int line)
 // to ensure proper alignment.  We insert telemetry to count the number of
 // times `operator==` is called:
 // ```
-    namespace BloombergLP {
+    namespace BNP_Paribas {
 
     /// This `struct` holds two data members with a byte of padding, and can
     /// be compared using the overloaded `operator==`.
@@ -461,7 +461,7 @@ void aSsErT(bool condition, const char *message, int line)
 // trait.  First, we define a class template that is not bitwise
 // EqualityComparable, `NotComparable`:
 // ```
-    namespace BloombergLP {
+    namespace BNP_Paribas {
 
     template <class TYPE>
     struct NotComparable
@@ -567,7 +567,7 @@ struct UserDefinedBwEqStruct2 {
 
     BSLMF_NESTED_TRAIT_DECLARATION(
                               UserDefinedBwEqStruct2,
-                              BloombergLP::bslmf::IsBitwiseEqualityComparable);
+                              BNP_Paribas::bslmf::IsBitwiseEqualityComparable);
 
     int d_i;    // class must have a bitwise EqualityComparable data member
 };
@@ -587,7 +587,7 @@ union UserDefinedBwEqUnion2 {
 
     BSLMF_NESTED_TRAIT_DECLARATION(
                               UserDefinedBwEqUnion2,
-                              BloombergLP::bslmf::IsBitwiseEqualityComparable);
+                              BNP_Paribas::bslmf::IsBitwiseEqualityComparable);
 
     int d_i;    // class must have a bitwise EqualityComparable data member
 };
@@ -624,7 +624,7 @@ typedef int (UserDefinedNonEqStruct::*MethodPtrTestType) ();
 // Provide explicit traits specializations, ensuring that both means of
 // associating a trait with a type are tested.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <>

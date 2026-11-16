@@ -30,7 +30,7 @@ BSLS_IDENT("$Id$ $CSID$")
 // removing the static-assert and allowing general conversions everywhere (as
 // undefined behavior) were seen as too large.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                        // ---------------------

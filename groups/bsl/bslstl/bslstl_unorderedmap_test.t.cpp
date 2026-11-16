@@ -18,19 +18,19 @@
   // this warning at the very beginning.
   //
   // bslstl_simplepool.h: In member function
-  //    'void BloombergLP::bslstl::SimplePool<VALUE,
+  //    'void BNP_Paribas::bslstl::SimplePool<VALUE,
   //                                          ALLOCATOR>::reserve(size_type)
   //    [with
-  //      VALUE = BloombergLP::bslalg::BidirectionalNode<
+  //      VALUE = BNP_Paribas::bslalg::BidirectionalNode<
   //                                               bsl::pair<const int, int> >;
   //      ALLOCATOR = {anonymous}::u::DummyAllocator<
-  //          BloombergLP::bslalg::BidirectionalNode<
+  //          BNP_Paribas::bslalg::BidirectionalNode<
   //                                           bsl::pair<const int, int> > >]':
   //  bslstl_simplepool.h:611:10: warning: array subscript 0 is outside array
-  //      bounds of 'BloombergLP::bslstl::SimplePool<
-  //        BloombergLP::bslalg::BidirectionalNode<bsl::pair<const int, int> >,
+  //      bounds of 'BNP_Paribas::bslstl::SimplePool<
+  //        BNP_Paribas::bslalg::BidirectionalNode<bsl::pair<const int, int> >,
   //            {anonymous}::u::DummyAllocator<
-  //            BloombergLP::bslalg::BidirectionalNode<
+  //            BNP_Paribas::bslalg::BidirectionalNode<
   //                bsl::pair<const int, int> > > >::Block [0]'
   //  [-Warray-bounds=]
   // 611 |     end->d_next_p = d_freeList_p;  // Handle the last block here
@@ -115,7 +115,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 using bsl::pair;
 
@@ -734,7 +734,7 @@ template <class HASHALG>
 inline
 void hashAppend(HASHALG& hashAlg, const EraseAmbiguityTestType& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     (void) object;  // suppress `unused variable` warning
     hashAppend(hashAlg, 0);
 }
@@ -1977,7 +1977,7 @@ struct MoveHolder {
 
     /// This typedef is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     /// Default initialize the held value.
     MoveHolder()
@@ -1999,7 +1999,7 @@ struct MoveHolder {
 
     /// Move-construct from the specified `rhs`. Set the `rhs` moved-from
     /// flag to `true`.
-    MoveHolder(BloombergLP::bslmf::MovableRef<MoveHolder> rhs)
+    MoveHolder(BNP_Paribas::bslmf::MovableRef<MoveHolder> rhs)
     : d_value(MoveUtil::move(MoveUtil::access(rhs).d_value))
     , d_moved(false)
     {
@@ -2017,7 +2017,7 @@ struct MoveHolder {
 
     /// Move-assign from the specified `rhs`. Set the `rhs` moved-from flag
     /// to `true`.
-    MoveHolder& operator=(BloombergLP::bslmf::MovableRef<MoveHolder> rhs)
+    MoveHolder& operator=(BNP_Paribas::bslmf::MovableRef<MoveHolder> rhs)
     {
         MoveHolder& lvalue = rhs;
 
@@ -2681,7 +2681,7 @@ void TestDriver<KEY, VALUE, HASH, EQUAL, ALLOC>::
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOC>
 void TestDriver<KEY, VALUE, HASH, EQUAL, ALLOC>::testCase43()
 {
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     static const struct {
         int         d_line;      // source line number
@@ -8613,7 +8613,7 @@ void TestDriver<KEY, VALUE, HASH, EQUAL, ALLOC>::testCase17()
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS) \
  && defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 
-    static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+    static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                           SRC,
                                           typename SRC::iterator::value_type>);
 

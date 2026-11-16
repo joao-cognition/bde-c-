@@ -33,7 +33,7 @@
 #include <bslma_defaultallocatorguard.h>
 
 // CONVENIENCE
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bdlde;
 using namespace bsl;
 

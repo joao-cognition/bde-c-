@@ -22,7 +22,7 @@ BSLS_IDENT_RCSID(baljsn_encoderoptions_cpp,"$Id$ $CSID$")
 // documentation and to make other changes.  The steps to generate and update
 // this file can be found in the 'doc/generating_codec_options.txt' file.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
                             // -------------------

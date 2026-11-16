@@ -55,8 +55,8 @@
 # endif
 #endif
 
-using namespace BloombergLP;
-using namespace BloombergLP::bdljsn;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bdljsn;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -329,11 +329,11 @@ using bsl::flush;
 // [39] JsonObject& Json::theObject();
 // [39] Json& Json::operator[](const string_view& key);
 // [39] Json& Json::operator[](size_t index);
-// [39] Json::operator BloombergLP::bdljsn::JsonArray &();
+// [39] Json::operator BNP_Paribas::bdljsn::JsonArray &();
 // [39] Json::operator bool &();
-// [39] Json::operator BloombergLP::bdljsn::JsonNull &();
-// [39] Json::operator BloombergLP::bdljsn::JsonNumber &();
-// [39] Json::operator BloombergLP::bdljsn::JsonObject &();
+// [39] Json::operator BNP_Paribas::bdljsn::JsonNull &();
+// [39] Json::operator BNP_Paribas::bdljsn::JsonNumber &();
+// [39] Json::operator BNP_Paribas::bdljsn::JsonObject &();
 // [39] Json::operator bsl::string &();
 // [44] pair<JsonObject::Iterator, bool> Json::insert(const Member& m);
 // [44] pair<JsonObject::Iterator, bool> Json::insert(MovableRef<Member>);
@@ -405,11 +405,11 @@ using bsl::flush;
 // [40] const Json& Json::operator[](size_t index) const;
 // [40] size_t Json::size() const;
 // [40] bool Json::contains(const bsl::string_view& key) const;
-// [40] Json::operator const BloombergLP::bdljsn::JsonArray &() const;
+// [40] Json::operator const BNP_Paribas::bdljsn::JsonArray &() const;
 // [40] Json::operator const bool &() const;
-// [40] Json::operator const BloombergLP::bdljsn::JsonNull &() const;
-// [40] Json::operator const BloombergLP::bdljsn::JsonNumber &() const;
-// [40] Json::operator const BloombergLP::bdljsn::JsonObject &() const;
+// [40] Json::operator const BNP_Paribas::bdljsn::JsonNull &() const;
+// [40] Json::operator const BNP_Paribas::bdljsn::JsonNumber &() const;
+// [40] Json::operator const BNP_Paribas::bdljsn::JsonObject &() const;
 // [40] Json::operator const bsl::basic_string &() const;
 // [47] template RT             visit<RT>(FORWARD_REF visitor) const;
 // [47] template decltype(auto) visit    (FORWARD_REF visitor) const;
@@ -6477,14 +6477,14 @@ namespace Example3 {
 //                               MAIN PROGRAM
 // ----------------------------------------------------------------------------
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 typedef bsls::Types:: Int64  Int64;
 typedef bsls::Types::Uint64 Uint64;
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 
@@ -9227,11 +9227,11 @@ int main(int argc, char *argv[])
         //   const Json& Json::operator[](size_t index) const;
         //   size_t Json::size() const;
         //   bool Json::contains(const bsl::string_view& key) const;
-        //   Json::operator const BloombergLP::bdljsn::JsonArray &() const;
+        //   Json::operator const BNP_Paribas::bdljsn::JsonArray &() const;
         //   Json::operator const bool &() const;
-        //   Json::operator const BloombergLP::bdljsn::JsonNull &() const;
-        //   Json::operator const BloombergLP::bdljsn::JsonNumber &() const;
-        //   Json::operator const BloombergLP::bdljsn::JsonObject &() const;
+        //   Json::operator const BNP_Paribas::bdljsn::JsonNull &() const;
+        //   Json::operator const BNP_Paribas::bdljsn::JsonNumber &() const;
+        //   Json::operator const BNP_Paribas::bdljsn::JsonObject &() const;
         //   Json::operator const bsl::basic_string &() const;
         //
         //   bslma::Allocator* Json::allocator() const;
@@ -9817,7 +9817,7 @@ int main(int argc, char *argv[])
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_OPERATOR_EXPLICIT)
         if (veryVerbose)
             cout << "Json::operator const "
-                    "BloombergLP::bdljsn::JsonArray &() const;\n";
+                    "BNP_Paribas::bdljsn::JsonArray &() const;\n";
         {
             typedef JsonArray Type;
             const Obj   X((Type()));
@@ -9833,7 +9833,7 @@ int main(int argc, char *argv[])
         }
         if (veryVerbose)
             cout << "Json::operator const "
-                    "BloombergLP::bdljsn::JsonNull &() const;\n";
+                    "BNP_Paribas::bdljsn::JsonNull &() const;\n";
         {
             typedef JsonNull Type;
             const Obj   X((Type()));
@@ -9842,7 +9842,7 @@ int main(int argc, char *argv[])
         }
         if (veryVerbose)
             cout << "Json::operator const "
-                    "BloombergLP::bdljsn::JsonNumber &() const;\n";
+                    "BNP_Paribas::bdljsn::JsonNumber &() const;\n";
         {
             typedef JsonNumber Type;
             const Obj   X((Type()));
@@ -9851,7 +9851,7 @@ int main(int argc, char *argv[])
         }
         if (veryVerbose)
             cout << "Json::operator const "
-                    "BloombergLP::bdljsn::JsonObject &() const;\n";
+                    "BNP_Paribas::bdljsn::JsonObject &() const;\n";
         {
             typedef JsonObject Type;
             const Obj   X((Type()));
@@ -10025,11 +10025,11 @@ int main(int argc, char *argv[])
         //   JsonObject& Json::theObject();
         //   Json& Json::operator[](const string_view& key);
         //   Json& Json::operator[](size_t index);
-        //   Json::operator BloombergLP::bdljsn::JsonArray &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonArray &();
         //   Json::operator bool &();
-        //   Json::operator BloombergLP::bdljsn::JsonNull &();
-        //   Json::operator BloombergLP::bdljsn::JsonNumber &();
-        //   Json::operator BloombergLP::bdljsn::JsonObject &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonNull &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonNumber &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonObject &();
         //   Json::operator bsl::string &();
         // --------------------------------------------------------------------
 
@@ -10822,7 +10822,7 @@ int main(int argc, char *argv[])
             ASSERTV(sam.isTotalSame());
         }
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_OPERATOR_EXPLICIT)
-        //   Json::operator BloombergLP::bdljsn::JsonArray &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonArray &();
         {
             bslma::TestAllocator sa("supplied", veryVeryVeryVerbose);
 
@@ -10842,7 +10842,7 @@ int main(int argc, char *argv[])
             ASSERTV(&result == &(X.theBoolean()));
             ASSERTV(sa.numBlocksTotal(), 0 == sa.numBlocksTotal());
         }
-        //   Json::operator BloombergLP::bdljsn::JsonNull &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonNull &();
         {
             bslma::TestAllocator sa("supplied", veryVeryVeryVerbose);
 
@@ -10852,7 +10852,7 @@ int main(int argc, char *argv[])
             ASSERTV(&result == &(X.theNull()));
             ASSERTV(sa.numBlocksTotal(), 0 == sa.numBlocksTotal());
         }
-        //   Json::operator BloombergLP::bdljsn::JsonNumber &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonNumber &();
         {
             bslma::TestAllocator sa("supplied", veryVeryVeryVerbose);
 
@@ -10862,7 +10862,7 @@ int main(int argc, char *argv[])
             ASSERTV(&result == &(X.theNumber()));
             ASSERTV(sa.numBlocksTotal(), 0 == sa.numBlocksTotal());
         }
-        //   Json::operator BloombergLP::bdljsn::JsonObject &();
+        //   Json::operator BNP_Paribas::bdljsn::JsonObject &();
         {
             bslma::TestAllocator sa("supplied", veryVeryVeryVerbose);
 

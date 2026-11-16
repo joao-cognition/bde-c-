@@ -141,9 +141,9 @@ enum {
 enum {
     k_SUCCESS                 = 0,
     k_INVALID_INPUT_CHARACTER =
-                    BloombergLP::bdlde::CharConvertStatus::k_INVALID_INPUT_BIT,
+                    BNP_Paribas::bdlde::CharConvertStatus::k_INVALID_INPUT_BIT,
     k_OUTPUT_BUFFER_TOO_SMALL =
-                    BloombergLP::bdlde::CharConvertStatus::k_OUT_OF_SPACE_BIT
+                    BNP_Paribas::bdlde::CharConvertStatus::k_OUT_OF_SPACE_BIT
 };
 
 namespace {
@@ -632,7 +632,7 @@ int ucs2ToUtf8Impl(STRING               *result,
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                            // ----------------------

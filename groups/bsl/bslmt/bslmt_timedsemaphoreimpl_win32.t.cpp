@@ -18,7 +18,7 @@
 
 #include <bsl_cstdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLMT_PLATFORM_WIN32_THREADS

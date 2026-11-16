@@ -106,25 +106,25 @@ namespace bsl {
 /// Partial specialization of the `bsl::formatter` template for C arrays.
 template <class t_TYPE, std::size_t k_SIZE, class t_CHAR>
 struct formatter<t_TYPE[k_SIZE], t_CHAR>
-                       : BloombergLP::bslfmt::range_formatter<t_TYPE, t_CHAR> {
+                       : BNP_Paribas::bslfmt::range_formatter<t_TYPE, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for `bsl::array`.
 template <class t_TYPE, std::size_t k_SIZE, class t_CHAR>
 struct formatter<bsl::array<t_TYPE, k_SIZE>, t_CHAR>
-                       : BloombergLP::bslfmt::range_formatter<t_TYPE, t_CHAR> {
+                       : BNP_Paribas::bslfmt::range_formatter<t_TYPE, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for `bsl::deque`.
 template <class t_TYPE, class t_ALLOCATOR, class t_CHAR>
 struct formatter<bsl::deque<t_TYPE, t_ALLOCATOR>, t_CHAR>
-                       : BloombergLP::bslfmt::range_formatter<t_TYPE, t_CHAR> {
+                       : BNP_Paribas::bslfmt::range_formatter<t_TYPE, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for `bsl::list`.
 template <class t_TYPE, class t_ALLOCATOR, class t_CHAR>
 struct formatter<bsl::list<t_TYPE, t_ALLOCATOR>, t_CHAR>
-                       : BloombergLP::bslfmt::range_formatter<t_TYPE, t_CHAR> {
+                       : BNP_Paribas::bslfmt::range_formatter<t_TYPE, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for `bsl::map`.
@@ -134,7 +134,7 @@ template <class t_KEY,
           class t_ALLOCATOR,
           class t_CHAR>
 struct formatter<bsl::map<t_KEY, t_VALUE, t_COMPARATOR, t_ALLOCATOR>, t_CHAR>
-    : BloombergLP::bslfmt::MapLikeFormatter<typename
+    : BNP_Paribas::bslfmt::MapLikeFormatter<typename
                bsl::map<t_KEY, t_VALUE, t_COMPARATOR, t_ALLOCATOR>::value_type,
                t_CHAR> {
 };
@@ -148,7 +148,7 @@ template <class t_KEY,
           class t_CHAR>
 struct formatter<bsl::multimap<t_KEY, t_VALUE, t_COMPARATOR, t_ALLOCATOR>,
                  t_CHAR>
-    : BloombergLP::bslfmt::MapLikeFormatter<typename
+    : BNP_Paribas::bslfmt::MapLikeFormatter<typename
           bsl::multimap<t_KEY, t_VALUE, t_COMPARATOR, t_ALLOCATOR>::value_type,
           t_CHAR> {
 };
@@ -157,7 +157,7 @@ struct formatter<bsl::multimap<t_KEY, t_VALUE, t_COMPARATOR, t_ALLOCATOR>,
 /// `bsl::multiset`.
 template <class t_KEY, class t_COMPARATOR, class t_ALLOCATOR, class t_CHAR>
 struct formatter<bsl::multiset<t_KEY, t_COMPARATOR, t_ALLOCATOR>, t_CHAR>
-    : BloombergLP::bslfmt::SetLikeFormatter<typename
+    : BNP_Paribas::bslfmt::SetLikeFormatter<typename
                    bsl::multiset<t_KEY, t_COMPARATOR, t_ALLOCATOR>::value_type,
                    t_CHAR> {
 };
@@ -165,7 +165,7 @@ struct formatter<bsl::multiset<t_KEY, t_COMPARATOR, t_ALLOCATOR>, t_CHAR>
 /// Partial specialization of the `bsl::formatter` template for `bsl::set`.
 template <class t_KEY, class t_COMPARATOR, class t_ALLOCATOR, class t_CHAR>
 struct formatter<bsl::set<t_KEY, t_COMPARATOR, t_ALLOCATOR>, t_CHAR>
-    : BloombergLP::bslfmt::SetLikeFormatter<typename
+    : BNP_Paribas::bslfmt::SetLikeFormatter<typename
                         bsl::set<t_KEY, t_COMPARATOR, t_ALLOCATOR>::value_type,
                         t_CHAR> {
 };
@@ -173,7 +173,7 @@ struct formatter<bsl::set<t_KEY, t_COMPARATOR, t_ALLOCATOR>, t_CHAR>
 /// Partial specialization of the `bsl::formatter` template for `bsl::span`.
 template <class t_TYPE, std::size_t k_EXTENT, class t_CHAR>
 struct formatter<bsl::span<t_TYPE, k_EXTENT>, t_CHAR>
-                       : BloombergLP::bslfmt::range_formatter<t_TYPE, t_CHAR> {
+                       : BNP_Paribas::bslfmt::range_formatter<t_TYPE, t_CHAR> {
 };
 
 /// Partial specialization of the `bsl::formatter` template for
@@ -190,7 +190,7 @@ struct formatter<bsl::unordered_map<t_KEY,
                                     t_EQUAL,
                                     t_ALLOCATOR>,
                  t_CHAR>
-    : BloombergLP::bslfmt::MapLikeFormatter<typename
+    : BNP_Paribas::bslfmt::MapLikeFormatter<typename
            bsl::unordered_map<t_KEY,
                               t_VALUE,
                               t_HASH,
@@ -213,7 +213,7 @@ struct formatter<bsl::unordered_multimap<t_KEY,
                                          t_EQUAL,
                                          t_ALLOCATOR>,
                  t_CHAR>
-    : BloombergLP::bslfmt::MapLikeFormatter<typename
+    : BNP_Paribas::bslfmt::MapLikeFormatter<typename
            bsl::unordered_multimap<t_KEY,
                                    t_VALUE,
                                    t_HASH,
@@ -231,7 +231,7 @@ template <class t_KEY,
           class t_CHAR>
 struct formatter<bsl::unordered_multiset<t_KEY, t_HASH, t_EQUAL, t_ALLOCATOR>,
                  t_CHAR>
-    : BloombergLP::bslfmt::SetLikeFormatter<typename
+    : BNP_Paribas::bslfmt::SetLikeFormatter<typename
            bsl::unordered_multiset<t_KEY,
                                    t_HASH,
                                    t_EQUAL,
@@ -248,7 +248,7 @@ template <class t_KEY,
           class t_CHAR>
 struct formatter<bsl::unordered_set<t_KEY, t_HASH, t_EQUAL, t_ALLOCATOR>,
                  t_CHAR>
-    : BloombergLP::bslfmt::SetLikeFormatter<typename
+    : BNP_Paribas::bslfmt::SetLikeFormatter<typename
            bsl::unordered_set<t_KEY, t_HASH, t_EQUAL, t_ALLOCATOR>::value_type,
            t_CHAR> {
 };
@@ -256,7 +256,7 @@ struct formatter<bsl::unordered_set<t_KEY, t_HASH, t_EQUAL, t_ALLOCATOR>,
 /// Partial specialization of the `bsl::formatter` template for `bsl::vector`.
 template <class t_TYPE, class t_ALLOCATOR, class t_CHAR>
 struct formatter<bsl::vector<t_TYPE, t_ALLOCATOR>, t_CHAR>
-                       : BloombergLP::bslfmt::range_formatter<t_TYPE, t_CHAR> {
+                       : BNP_Paribas::bslfmt::range_formatter<t_TYPE, t_CHAR> {
 };
 
 }  // close namespace bsl

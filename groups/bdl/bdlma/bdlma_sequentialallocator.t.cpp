@@ -16,7 +16,7 @@
 
 #undef GS  // Solaris 2.10 x86 /usr/include/sys/regset.h
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

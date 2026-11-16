@@ -236,7 +236,7 @@ BSLS_IDENT("$Id: $")
     BSLS_DEPRECATE_FEATURE("bsl",                                             \
                            "deprecated_cpp17_standard_library_features",      \
                            "do not use")
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 
@@ -303,13 +303,13 @@ std::size_t Hash<std::filesystem::path>::operator()(
 /// implementation of `bslh::hashAppend` for the (native) standard library
 /// `std::filesystem::path` type as we are not allowed to add overloads
 /// directly into namespace `std`.  Also note that this will NOT be found by
-/// the compiler if HASHALG is not in `BloombergLP::bslh`.
+/// the compiler if HASHALG is not in `BNP_Paribas::bslh`.
 template <class HASHALG>
 BSLS_PLATFORM_AGGRESSIVE_INLINE
 void hashAppend(HASHALG& hashAlg, const std::filesystem::path& path)
 {
-    using BloombergLP::bslh::hashAppend;
-    BloombergLP::bslh::Hash<std::filesystem::path> hashFunctor;
+    using BNP_Paribas::bslh::hashAppend;
+    BNP_Paribas::bslh::Hash<std::filesystem::path> hashFunctor;
 
     hashAppend(hashAlg, hashFunctor(path));
 }

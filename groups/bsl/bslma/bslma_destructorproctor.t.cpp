@@ -14,7 +14,7 @@
 #include <new>
 #include <string>  // For breathing test only - TBD rewrite without
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                 TEST PLAN

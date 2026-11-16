@@ -15,7 +15,7 @@
 
 #include <string>   // breathing test, should be replaceable
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 #ifdef BSLS_PLATFORM_CMP_CLANG

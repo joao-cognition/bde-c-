@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(baljsn_encodeimplutil_cpp,"$Id$ $CSID$")
 
 #include <baljsn_formatter.h>  // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
 }  // close package    namespace

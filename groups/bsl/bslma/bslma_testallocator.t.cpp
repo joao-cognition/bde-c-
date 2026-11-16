@@ -39,7 +39,7 @@
 #pragma bde_verify -TY02   // Template parameter uses single-letter name
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                              TEST PLAN

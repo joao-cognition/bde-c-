@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(bdlb_sysrandom_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #if defined(BSLS_PLATFORM_OS_UNIX)
 
@@ -74,7 +74,7 @@ int readFile(unsigned char *buffer, size_t numBytes, const char *filename)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                         // ------------------------

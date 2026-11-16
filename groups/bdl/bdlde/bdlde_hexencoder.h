@@ -269,12 +269,12 @@ BSLS_IDENT("$Id: $")
 // ```
 // Next, to demonstrate how our function works we need to create a stream with
 // data to encode.  Assume that we have some character buffer,
-// `BLOOMBERG_NEWS`, and a function, `streamDecoder` mirroring the work of the
+// `BNPPARIBAS_NEWS`, and a function, `streamDecoder` mirroring the work of the
 // `streamEncoder`.  Below we should encode this string into a hexidecimal
 // format:
 // ```
-// bsl::istringstream inStream(bsl::string(BLOOMBERG_NEWS,
-//                                         strlen(BLOOMBERG_NEWS)));
+// bsl::istringstream inStream(bsl::string(BNPPARIBAS_NEWS,
+//                                         strlen(BNPPARIBAS_NEWS)));
 // bsl::stringstream  outStream;
 // bsl::stringstream  backInStream;
 // ```
@@ -289,7 +289,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
                        // ================

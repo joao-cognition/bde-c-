@@ -16,7 +16,7 @@ BSLS_IDENT_RCSID(bslmt_threadattributes_cpp,"$Id$ $CSID$")
 #include <bsl_c_limits.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // CREATORS
 bslmt::ThreadAttributes::ThreadAttributes()

@@ -11,7 +11,7 @@ BSLS_IDENT("$Id: $")
 // defined in the corresponding C++ standard header.  In C++17 or later we
 // import the 'std' names and earlier we provide our own implementation.
 
-// Include Bloomberg's implementation.
+// Include BNP Paribas's implementation.
 #include <bslstl_stringview.h>
 
 #endif

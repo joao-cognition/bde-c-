@@ -17,7 +17,7 @@ BSLS_IDENT_RCSID(balm_metricformat_cpp,"$Id$ $CSID$")
 #define snprintf _snprintf
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                         // ----------------------------
                         // class balm::MetricFormatSpec

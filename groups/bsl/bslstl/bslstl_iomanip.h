@@ -115,7 +115,7 @@ namespace bsl {
 
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED
     // Export additional names, leaked to support transitive dependencies in
-    // higher level (non BDE) Bloomberg code.
+    // higher level (non BDE) BNP Paribas code.
 # if !defined(BSLS_PLATFORM_CMP_MSVC) && __cplusplus < 201703L
     // As some of these names are removed from C++17, take a sledgehammer to
     // crack this nut, and remove all non-standard exports.
@@ -160,7 +160,7 @@ namespace bsl {
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 #if defined BSLS_LIBRARYFEATURES_HAS_CPP17_BASELINE_LIBRARY
 // 'std::quoted' function does not support the 'bsl::basic_string' and
@@ -331,7 +331,7 @@ quoted(const bsl::basic_string<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC>& value,
 /// obtained using the optionally specified `delim` and `escape` characters,
 /// and that can be inserted to output (or extracted from input) stream.
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
-BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                     t_CHAR_TRAITS,
                                                    t_ALLOC>
 quoted(bsl::basic_string<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC>& value,
@@ -342,7 +342,7 @@ quoted(bsl::basic_string<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC>& value,
 
 #ifndef BSLSTL_STRING_VIEW_IS_ALIASED
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS>
-BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
                                                        t_CHAR_TRAITS>
 quoted(const bsl::basic_string_view<t_CHAR_TYPE, t_CHAR_TRAITS>& value,
        t_CHAR_TYPE                                               delim =
@@ -368,7 +368,7 @@ quoted(const bsl::basic_string_view<t_CHAR_TYPE, t_CHAR_TRAITS>& value,
 // CREATORS
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
 inline
-BloombergLP::bslstl::
+BNP_Paribas::bslstl::
     IoManip_QuotedStringFormatter<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC>::
         IoManip_QuotedStringFormatter(
                 bsl::basic_string<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC> *str,
@@ -384,7 +384,7 @@ BloombergLP::bslstl::
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
 inline
 t_CHAR_TYPE
-BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                    t_CHAR_TRAITS,
                                                    t_ALLOC>::delim() const
 {
@@ -394,7 +394,7 @@ BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
 inline
 t_CHAR_TYPE
-BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                    t_CHAR_TRAITS,
                                                    t_ALLOC>::escape() const
 {
@@ -404,7 +404,7 @@ BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
 inline
 bsl::basic_string<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC> *
-BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                    t_CHAR_TRAITS,
                                                    t_ALLOC>::str() const
 {
@@ -418,7 +418,7 @@ BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
 // CREATORS
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS>
 inline
-BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
                                                        t_CHAR_TRAITS>::
     IoManip_QuotedStringViewFormatter(
              const bsl::basic_string_view<t_CHAR_TYPE, t_CHAR_TRAITS>& strView,
@@ -434,7 +434,7 @@ BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS>
 inline
 const t_CHAR_TYPE *
-BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
                                                        t_CHAR_TRAITS>::data()
     const
 {
@@ -444,7 +444,7 @@ BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS>
 inline
 t_CHAR_TYPE
-BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
                                                        t_CHAR_TRAITS>::delim()
     const
 {
@@ -454,7 +454,7 @@ BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS>
 inline
 t_CHAR_TYPE
-BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
                                                        t_CHAR_TRAITS>::escape()
     const
 {
@@ -464,7 +464,7 @@ BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
 // FREE FUNCTIONS
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
 std::basic_istream<t_CHAR_TYPE, t_CHAR_TRAITS>&
-BloombergLP::bslstl::operator>>(
+BNP_Paribas::bslstl::operator>>(
                         std::basic_istream<t_CHAR_TYPE, t_CHAR_TRAITS>& input,
                         const IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                             t_CHAR_TRAITS,
@@ -478,7 +478,7 @@ BloombergLP::bslstl::operator>>(
 
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
 std::basic_ostream<t_CHAR_TYPE, t_CHAR_TRAITS>&
-BloombergLP::bslstl::operator<<(
+BNP_Paribas::bslstl::operator<<(
                         std::basic_ostream<t_CHAR_TYPE, t_CHAR_TRAITS>& output,
                         const IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                             t_CHAR_TRAITS,
@@ -492,7 +492,7 @@ BloombergLP::bslstl::operator<<(
 
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS>
 std::basic_ostream<t_CHAR_TYPE, t_CHAR_TRAITS>&
-BloombergLP::bslstl::operator<<(
+BNP_Paribas::bslstl::operator<<(
    std::basic_ostream<t_CHAR_TYPE, t_CHAR_TRAITS>&                      output,
    const IoManip_QuotedStringViewFormatter<t_CHAR_TYPE, t_CHAR_TRAITS>& object)
 {
@@ -515,14 +515,14 @@ bsl::quoted(
 }
 
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS, class t_ALLOC>
-BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                    t_CHAR_TRAITS,
                                                    t_ALLOC>
 bsl::quoted(bsl::basic_string<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC>& value,
             t_CHAR_TYPE                                             delim,
             t_CHAR_TYPE                                             escape)
 {
-    return BloombergLP::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
+    return BNP_Paribas::bslstl::IoManip_QuotedStringFormatter<t_CHAR_TYPE,
                                                               t_CHAR_TRAITS,
                                                               t_ALLOC>(&value,
                                                                        delim,
@@ -531,7 +531,7 @@ bsl::quoted(bsl::basic_string<t_CHAR_TYPE, t_CHAR_TRAITS, t_ALLOC>& value,
 
 #ifndef BSLSTL_STRING_VIEW_IS_ALIASED
 template <class t_CHAR_TYPE, class t_CHAR_TRAITS>
-BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
+BNP_Paribas::bslstl::IoManip_QuotedStringViewFormatter<t_CHAR_TYPE,
                                                        t_CHAR_TRAITS>
 bsl::quoted(const bsl::basic_string_view<t_CHAR_TYPE, t_CHAR_TRAITS>& value,
             t_CHAR_TYPE                                               delim,
@@ -540,7 +540,7 @@ bsl::quoted(const bsl::basic_string_view<t_CHAR_TYPE, t_CHAR_TRAITS>& value,
     // obtained using the optionally specified 'delim' and 'escape' characters,
     // and that can be inserted to output stream.
 {
-    return BloombergLP::bslstl::IoManip_QuotedStringViewFormatter<
+    return BNP_Paribas::bslstl::IoManip_QuotedStringViewFormatter<
                                                         t_CHAR_TYPE,
                                                         t_CHAR_TRAITS>(value,
                                                                        delim,

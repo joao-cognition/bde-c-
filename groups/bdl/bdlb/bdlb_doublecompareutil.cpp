@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bdlb_doublecompare_cpp,"$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 const double DoubleCompareUtil::k_DEFAULT_RELATIVE_TOLERANCE = 1e-12;

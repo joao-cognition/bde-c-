@@ -38,7 +38,7 @@ BSLS_IDENT_RCSID(balm_metricsmanager_cpp,"$Id$ $CSID$")
 // The classes are defined here, in the implementation, to avoid exposing the
 // implementation details of the metrics manager in the component header.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
 /// This class provides a namespace for auxiliary template operations for
@@ -479,7 +479,7 @@ class MetricsManager_CallbackRegistry {
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 template <class VECTOR, class MEMBER = typename VECTOR::value_type>
 struct IsVector {
@@ -524,7 +524,7 @@ struct SampleDescription {
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
 // ============================================================================

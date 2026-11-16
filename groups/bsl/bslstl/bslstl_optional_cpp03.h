@@ -21,8 +21,8 @@
 // regions of C++11 code, then this header contains no code and is not
 // '#include'd in the original header.
 //
-// Generated on Thu Sep 24 17:06:39 2026
-// Command line: sim_cpp11_features bslstl_optional.h
+// Generated on Mon Nov 16 07:41:53 2026
+// Command line: sim_cpp11_features.py bslstl_optional.h
 
 #ifdef COMPILING_BSLSTL_OPTIONAL_H
 
@@ -155,93 +155,93 @@
         !bsl::is_same<TYPE, ANY_TYPE>::value &&                               \
         !BSLSTL_OPTIONAL_CONVERTS_FROM_BSL_OPTIONAL(TYPE, ANY_TYPE) &&        \
             BSLSTL_OPTIONAL_IS_CONSTRUCTIBLE(TYPE, ANY_TYPE, true),           \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_CONSTRUCTS_FROM_BSL_OPTIONAL(TYPE,         \
                                                                 ANY_TYPE)     \
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_BSL_OPTIONAL(                   \
                      TYPE,                                                    \
-                     ANY_TYPE) = BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                     ANY_TYPE) = BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_STD_OPTIONAL(TYPE,          \
                                                                ANY_TYPE)      \
     typename bsl::enable_if<                                                  \
         !BSLSTL_OPTIONAL_CONVERTS_FROM_STD_OPTIONAL(TYPE, ANY_TYPE) &&        \
             BSLSTL_OPTIONAL_IS_CONSTRUCTIBLE(TYPE, ANY_TYPE, true),           \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_CONSTRUCTS_FROM_STD_OPTIONAL(TYPE,         \
                                                                 ANY_TYPE)     \
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_STD_OPTIONAL(                   \
                      TYPE,                                                    \
-                     ANY_TYPE) = BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                     ANY_TYPE) = BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCT_PROPAGATES_ALLOCATOR(TYPE,        \
                                                                  ANY_TYPE)    \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslstl::Optional_PropagatesAllocator<TYPE,               \
+        BNP_Paribas::bslstl::Optional_PropagatesAllocator<TYPE,               \
                                                           ANY_TYPE>::value,   \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_CONSTRUCT_PROPAGATES_ALLOCATOR(TYPE,       \
                                                                   ANY_TYPE)   \
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCT_PROPAGATES_ALLOCATOR(                 \
                      TYPE,                                                    \
-                     ANY_TYPE) = BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                     ANY_TYPE) = BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCT_DOES_NOT_PROPAGATE_ALLOCATOR(     \
     TYPE, ANY_TYPE)                                                           \
     typename bsl::enable_if<                                                  \
-        !BloombergLP::bslstl::Optional_PropagatesAllocator<TYPE,              \
+        !BNP_Paribas::bslstl::Optional_PropagatesAllocator<TYPE,              \
                                                            ANY_TYPE>::value,  \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_CONSTRUCT_DOES_NOT_PROPAGATE_ALLOCATOR(    \
     TYPE, ANY_TYPE)                                                           \
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCT_DOES_NOT_PROPAGATE_ALLOCATOR(         \
                      TYPE,                                                    \
-                     ANY_TYPE) = BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                     ANY_TYPE) = BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM(TYPE, ANY_TYPE)             \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslstl::Optional_ConstructsFromType<TYPE,                \
+        BNP_Paribas::bslstl::Optional_ConstructsFromType<TYPE,                \
                                                          ANY_TYPE>::value,    \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_CONSTRUCTS_FROM(TYPE, ANY_TYPE)            \
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM(                                \
                      TYPE,                                                    \
-                     ANY_TYPE) = BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                     ANY_TYPE) = BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_DEFINE_IF_DERIVED_FROM_OPTIONAL(DERIVED)              \
     typename bsl::enable_if<                                                  \
-        BloombergLP::bslmf::IsAccessibleBaseOf<optional, DERIVED>::value &&   \
+        BNP_Paribas::bslmf::IsAccessibleBaseOf<optional, DERIVED>::value &&   \
         !bsl::is_const<DERIVED>::value,                                       \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_DERIVED_FROM_OPTIONAL(DERIVED)             \
     BSLSTL_OPTIONAL_DEFINE_IF_DERIVED_FROM_OPTIONAL(DERIVED) =                \
-                                 BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                                 BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(U, V)                    \
     typename bsl::enable_if<                                                  \
         !bsl::is_convertible<V, U>::value,                                    \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_EXPLICIT_CONSTRUCT(U, V)                   \
     BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(                             \
                             U,                                                \
-                            V) = BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                            V) = BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(U, V)                \
     typename bsl::enable_if<                                                  \
         bsl::is_convertible<V, U>::value,                                     \
-        BloombergLP::bslstl::Optional_OptNoSuchType>::type
+        BNP_Paribas::bslstl::Optional_OptNoSuchType>::type
 
 #define BSLSTL_OPTIONAL_DECLARE_IF_NOT_EXPLICIT_CONSTRUCT(U, V)               \
     BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(                         \
                             U,                                                \
-                            V) = BloombergLP::bslstl::Optional_OptNoSuchType(0)
+                            V) = BNP_Paribas::bslstl::Optional_OptNoSuchType(0)
 
 #define BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_BSL_OPTIONAL(TYPE, ANY_TYPE)       \
     typename bsl::enable_if<                                                  \
@@ -262,7 +262,7 @@
 # if !defined(BSLS_COMPILERFEATURES_SUPPORT_RVALUE_REFERENCES)
 #   define BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_DERIVED(TYPE, DERIVED)          \
       typename bsl::enable_if<                                                \
-        BloombergLP::bslmf::IsAccessibleBaseOf<bsl::optional<TYPE>,           \
+        BNP_Paribas::bslmf::IsAccessibleBaseOf<bsl::optional<TYPE>,           \
                                                DERIVED>::value &&             \
         !bsl::is_same<bsl::optional<TYPE>, DERIVED>::value,                   \
         optional<TYPE> >::type
@@ -281,10 +281,10 @@
 
 #define BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_ANY_TYPE(TYPE, ANY_TYPE)           \
     typename bsl::enable_if<                                                  \
-        !::BloombergLP::bslmf::IsAccessibleBaseOf<                            \
+        !::BNP_Paribas::bslmf::IsAccessibleBaseOf<                            \
             bsl::optional<TYPE>,                                              \
             typename bsl::remove_cv<                                          \
-                typename ::BloombergLP::bslmf::MovableRefUtil::               \
+                typename ::BNP_Paribas::bslmf::MovableRefUtil::               \
                     RemoveReference<ANY_TYPE>::type>::type>::value,           \
         optional<TYPE> >::type
 
@@ -307,7 +307,7 @@
   #define BSLSTL_OPTIONAL_REQUIRES(EXPR)
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 /// This trivial tag type is used to create `nullopt_t` objects prior to
 /// C++17.
@@ -341,7 +341,7 @@ struct nullopt_t {
     explicit BSLS_KEYWORD_CONSTEXPR nullopt_t(
          t_TYPE,
          typename enable_if<is_same<t_TYPE,
-                                    BloombergLP::bslstl::
+                                    BNP_Paribas::bslstl::
                                         Optional_NulloptConstructToken>::value,
                             int>::type = 0) BSLS_KEYWORD_NOEXCEPT
     {
@@ -352,7 +352,7 @@ struct nullopt_t {
 /// `nullopt_t` argument.
 #  if defined(BSLS_COMPILERFEATURES_SUPPORT_INLINE_VARIABLES)
 inline constexpr
-nullopt_t nullopt(BloombergLP::bslstl::Optional_NulloptConstructToken{});
+nullopt_t nullopt(BNP_Paribas::bslstl::Optional_NulloptConstructToken{});
 #  else
 extern const nullopt_t nullopt;
 #  endif
@@ -368,7 +368,7 @@ class optional;
 //                   Section: bslstl::Optional_* Utilities
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                 // =============================
@@ -569,7 +569,7 @@ struct Optional_DataImp {
     // MANIPULATORS
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -1079,7 +1079,7 @@ concept Optional_DerivedFromOptional =
 /// stored object.
 template <class t_TYPE,
           bool  t_USES_BSLMA_ALLOC =
-              BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value>
+              BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value>
 class Optional_Base {
 
   public:
@@ -1099,7 +1099,7 @@ class Optional_Base {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
 # ifndef BSLS_COMPILERFEATURES_SUPPORT_OPERATOR_EXPLICIT
     // UNSPECIFIED BOOL
@@ -1108,7 +1108,7 @@ class Optional_Base {
     /// operators are not supported.  An `optional` object is contextually
     /// converted to `UnspecifiedBool` when used in `if` statements, but is not
     /// implicitly convertible to `bool`.
-    typedef BloombergLP::bsls::UnspecifiedBool<Optional_Base>
+    typedef BNP_Paribas::bsls::UnspecifiedBool<Optional_Base>
                                                    UnspecifiedBoolUtil;
     typedef typename UnspecifiedBoolUtil::BoolType UnspecifiedBool;
 # endif
@@ -1116,7 +1116,7 @@ class Optional_Base {
     // DATA
 
     // in-place `TYPE` object
-    BloombergLP::bslstl::Optional_Data<t_TYPE> d_value;
+    BNP_Paribas::bslstl::Optional_Data<t_TYPE> d_value;
 
     // allocator to be used for all in-place `TYPE` objects
     allocator_type                             d_allocator;
@@ -1142,7 +1142,7 @@ class Optional_Base {
     /// the newly-created object.  The allocator associated with `original`
     /// is propagated for use in the newly-created object.  `original` is
     /// left in a valid, but unspecified state.
-    Optional_Base(BloombergLP::bslmf::MovableRef<Optional_Base> original)
+    Optional_Base(BNP_Paribas::bslmf::MovableRef<Optional_Base> original)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                             bsl::is_nothrow_move_constructible<t_TYPE>::value);
 
@@ -1150,7 +1150,7 @@ class Optional_Base {
     /// initialized by forwarding from the specified `value`.  Use the
     /// currently installed default allocator to supply memory.
     template <class t_ANY_TYPE>
-    Optional_Base(BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+    Optional_Base(BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                   BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value);
 
     /// Create a disengaged `Optional_Base` object if the specified
@@ -1158,7 +1158,7 @@ class Optional_Base {
     /// the value of `original.value()` converted to `t_TYPE` otherwise.
     /// Use the currently installed default allocator to supply memory.
     template <class t_ANY_TYPE>
-    Optional_Base(BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original);
 
     /// Create a disengaged `Optional_Base` object if the specified
@@ -1168,7 +1168,7 @@ class Optional_Base {
     /// `original` is left in a valid but unspecified state.
     template <class t_ANY_TYPE>
     Optional_Base(
-             BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+             BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
              BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original,
              BSLSTL_OPTIONAL_DECLARE_IF_CONSTRUCT_DOES_NOT_PROPAGATE_ALLOCATOR(
                  t_TYPE,
@@ -1182,7 +1182,7 @@ class Optional_Base {
     /// `original` is left in a valid but unspecified state.
     template <class t_ANY_TYPE>
     Optional_Base(
-        BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+        BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
         BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original,
         BSLSTL_OPTIONAL_DECLARE_IF_CONSTRUCT_PROPAGATES_ALLOCATOR(t_TYPE,
                                                                   t_ANY_TYPE));
@@ -1193,7 +1193,7 @@ class Optional_Base {
     /// the value of `original.value()` converted to `t_TYPE` otherwise.
     /// Use the currently installed default allocator to supply memory.
     template <class t_ANY_TYPE>
-    Optional_Base(BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                   const std::optional<t_ANY_TYPE>& original);
 
     /// Create a disengaged `Optional_Base` object if the specified
@@ -1201,13 +1201,13 @@ class Optional_Base {
     /// the value of `original.value()` converted to `t_TYPE` otherwise.
     /// Use the currently installed default allocator to supply memory.
     template <class t_ANY_TYPE>
-    Optional_Base(BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                   std::optional<t_ANY_TYPE>&& original);
 # endif  // BSLSTL_OPTIONAL_USES_STD_ALIASES
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -1587,7 +1587,7 @@ class Optional_Base {
     /// is left in a valid but unspecified state.
     Optional_Base(bsl::allocator_arg_t,
                   allocator_type                                allocator,
-                  BloombergLP::bslmf::MovableRef<Optional_Base> original);
+                  BNP_Paribas::bslmf::MovableRef<Optional_Base> original);
 
     /// Create an `Optional_Base` object whose contained value is
     /// initialized by forwarding from the specified `value`.  Use the
@@ -1595,7 +1595,7 @@ class Optional_Base {
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   allocator_type                                allocator,
-                  BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                  BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                   BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value);
 
     /// If the specified `original` contains a value, create an
@@ -1605,7 +1605,7 @@ class Optional_Base {
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   allocator_type                   allocator,
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original);
 
     /// If the specified `original` contains a value, create an
@@ -1617,7 +1617,7 @@ class Optional_Base {
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   allocator_type                                     allocator,
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original);
 
 # ifdef BSLSTL_OPTIONAL_USES_STD_ALIASES
@@ -1629,7 +1629,7 @@ class Optional_Base {
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   allocator_type                   allocator,
-                  BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                   const std::optional<t_ANY_TYPE>& original);
 
     /// If the specified `original` contains a value, create an
@@ -1641,13 +1641,13 @@ class Optional_Base {
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   allocator_type              allocator,
-                  BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                   std::optional<t_ANY_TYPE>&& original);
 # endif  // BSLSTL_OPTIONAL_USES_STD_ALIASES
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -2075,23 +2075,23 @@ class Optional_Base {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(Optional_Base,
-                                   BloombergLP::bslma::UsesBslmaAllocator);
+                                   BNP_Paribas::bslma::UsesBslmaAllocator);
     BSLMF_NESTED_TRAIT_DECLARATION(Optional_Base,
-                                   BloombergLP::bslmf::UsesAllocatorArgT);
+                                   BNP_Paribas::bslmf::UsesAllocatorArgT);
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          Optional_Base,
-                         BloombergLP::bslmf::IsBitwiseMoveable,
-                         BloombergLP::bslmf::IsBitwiseMoveable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseMoveable,
+                         BNP_Paribas::bslmf::IsBitwiseMoveable<t_TYPE>::value);
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          Optional_Base,
-                         BloombergLP::bslmf::IsBitwiseCopyable,
-                         BloombergLP::bslmf::IsBitwiseCopyable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseCopyable,
+                         BNP_Paribas::bslmf::IsBitwiseCopyable<t_TYPE>::value);
 
     // MANIPULATORS
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -2472,7 +2472,7 @@ class Optional_Base {
     /// either move-constructed into or move-assigned to this object.  `rhs` is
     /// left in a valid but unspecified state.
     Optional_Base& operator=(
-                            BloombergLP::bslmf::MovableRef<Optional_Base> rhs);
+                            BNP_Paribas::bslmf::MovableRef<Optional_Base> rhs);
 
     /// Return a pointer providing modifiable access to the underlying `t_TYPE`
     /// object.  The behavior is undefined if the `Optional_Base` object is
@@ -2624,7 +2624,7 @@ class Optional_Base<t_TYPE, false> : public std::optional<t_TYPE> {
     /// by forwarding from the specified `value`.
     template <class t_ANY_TYPE>
     constexpr
-    Optional_Base(BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+    Optional_Base(BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                   t_ANY_TYPE&& value);
 
     /// Create a disengaged `Optional_Base` object if the specified `original`
@@ -2632,7 +2632,7 @@ class Optional_Base<t_TYPE, false> : public std::optional<t_TYPE> {
     /// `original.value()` (of `t_ANY_TYPE`) converted to `t_TYPE` otherwise.
     template <class t_ANY_TYPE>
     BSLSTL_OPTIONAL_CONSTEXPR20
-    Optional_Base(BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original);
 
     /// Create a disengaged `Optional_Base` object if the specified `original`
@@ -2641,17 +2641,17 @@ class Optional_Base<t_TYPE, false> : public std::optional<t_TYPE> {
     /// `original` is left in a valid but unspecified state.
     template <class t_ANY_TYPE>
     BSLSTL_OPTIONAL_CONSTEXPR20
-    Optional_Base(BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   Optional_Base<t_ANY_TYPE>&& original);
 
     template <class t_ANY_TYPE>
     BSLSTL_OPTIONAL_CONSTEXPR20
-    Optional_Base(BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                   const std::optional<t_ANY_TYPE>& original);
 
     template <class t_ANY_TYPE>
     BSLSTL_OPTIONAL_CONSTEXPR20
-    Optional_Base(BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                   std::optional<t_ANY_TYPE>&& original);
 
     /// Create an `Optional_Base` object whose contained value is initialized
@@ -2686,31 +2686,31 @@ class Optional_Base<t_TYPE, false> : public std::optional<t_TYPE> {
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                  BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                   t_ANY_TYPE&&);
 
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>&);
 
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   Optional_Base<t_ANY_TYPE>&&);
 
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                   const std::optional<t_ANY_TYPE>&);
 
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                   std::optional<t_ANY_TYPE>&&);
 
     template <class... t_ARGS>
@@ -2760,12 +2760,12 @@ class Optional_Base<t_TYPE, false> : public std::optional<t_TYPE> {
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          Optional_Base,
-                         BloombergLP::bslmf::IsBitwiseMoveable,
-                         BloombergLP::bslmf::IsBitwiseMoveable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseMoveable,
+                         BNP_Paribas::bslmf::IsBitwiseMoveable<t_TYPE>::value);
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          Optional_Base,
-                         BloombergLP::bslmf::IsBitwiseCopyable,
-                         BloombergLP::bslmf::IsBitwiseCopyable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseCopyable,
+                         BNP_Paribas::bslmf::IsBitwiseCopyable<t_TYPE>::value);
 };
 # else  // BSLSTL_OPTIONAL_USES_STD_ALIASES
 
@@ -2784,7 +2784,7 @@ class Optional_Base<t_TYPE, false> {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
 # ifndef BSLS_COMPILERFEATURES_SUPPORT_OPERATOR_EXPLICIT
     // UNSPECIFIED BOOL
@@ -2793,7 +2793,7 @@ class Optional_Base<t_TYPE, false> {
     /// operators are not supported.  An 'optional' object is contextually
     /// converted to 'UnspecifiedBool' when used in 'if' statements, but is not
     /// implicitly convertible to 'bool'.
-    typedef BloombergLP::bsls::UnspecifiedBool<Optional_Base>
+    typedef BNP_Paribas::bsls::UnspecifiedBool<Optional_Base>
                                                    UnspecifiedBoolUtil;
     typedef typename UnspecifiedBoolUtil::BoolType UnspecifiedBool;
 # endif
@@ -2801,7 +2801,7 @@ class Optional_Base<t_TYPE, false> {
     // DATA
 
     /// in-place `TYPE` object
-    BloombergLP::bslstl::Optional_Data<t_TYPE> d_value;
+    BNP_Paribas::bslstl::Optional_Data<t_TYPE> d_value;
 
   protected:
     // PROTECTED TYPES
@@ -2829,21 +2829,21 @@ class Optional_Base<t_TYPE, false> {
     /// specified `original` object by moving the contents of `original` to
     /// the newly-created object.  `original` is left in a valid, but
     /// unspecified state.
-    Optional_Base(BloombergLP::bslmf::MovableRef<Optional_Base> original)
+    Optional_Base(BNP_Paribas::bslmf::MovableRef<Optional_Base> original)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                             bsl::is_nothrow_move_constructible<t_TYPE>::value);
 
     /// Create an `Optional_Base` object whose contained value is initialized
     /// by forwarding from the specified `value`.
     template <class t_ANY_TYPE>
-    Optional_Base(BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+    Optional_Base(BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                   BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value);
 
     /// Create a disengaged `Optional_Base` object if the specified
     /// `original` object is disengaged, and an `Optional_Base` object with
     /// the value of `original.value()` converted to `t_TYPE` otherwise.
     template <class t_ANY_TYPE>
-    Optional_Base(BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original);
 
     /// Create a disengaged `Optional_Base` object if the specified
@@ -2851,12 +2851,12 @@ class Optional_Base<t_TYPE, false> {
     /// the value of `original.value()` converted to `t_TYPE` otherwise.
     /// `original` is left in a valid but unspecified state.
     template <class t_ANY_TYPE>
-    Optional_Base(BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+    Optional_Base(BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original);
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -3213,29 +3213,29 @@ class Optional_Base<t_TYPE, false> {
 
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslmf::MovableRef<Optional_Base>);
+                  BNP_Paribas::bslmf::MovableRef<Optional_Base>);
 
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                  BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                   BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE));
 
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>&);
 
     template <class t_ANY_TYPE>
     Optional_Base(bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>));
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -3671,17 +3671,17 @@ class Optional_Base<t_TYPE, false> {
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          Optional_Base,
-                         BloombergLP::bslmf::IsBitwiseMoveable,
-                         BloombergLP::bslmf::IsBitwiseMoveable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseMoveable,
+                         BNP_Paribas::bslmf::IsBitwiseMoveable<t_TYPE>::value);
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          Optional_Base,
-                         BloombergLP::bslmf::IsBitwiseCopyable,
-                         BloombergLP::bslmf::IsBitwiseCopyable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseCopyable,
+                         BNP_Paribas::bslmf::IsBitwiseCopyable<t_TYPE>::value);
 
     // MANIPULATORS
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -4049,7 +4049,7 @@ class Optional_Base<t_TYPE, false> {
     /// either move-constructed into or move-assigned to this object.  `rhs` is
     /// left in a valid but unspecified state.
     Optional_Base& operator=(
-                            BloombergLP::bslmf::MovableRef<Optional_Base> rhs);
+                            BNP_Paribas::bslmf::MovableRef<Optional_Base> rhs);
 
     /// Return a pointer providing modifiable access to the underlying `t_TYPE`
     /// object.  The behavior is undefined if this object is disengaged.
@@ -4149,14 +4149,14 @@ namespace bsl {
                                // ==============
 
 template <class t_TYPE>
-class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
+class optional : public BNP_Paribas::bslstl::Optional_Base<t_TYPE> {
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bslstl::Optional_Base<t_TYPE> BaseType;
+    typedef BNP_Paribas::bslstl::Optional_Base<t_TYPE> BaseType;
 
     typedef typename BaseType::AllocType AllocType;
 
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP17_BASELINE_LIBRARY
     // FRIENDS
@@ -4167,7 +4167,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
     /// Create an `optional` object, which contains the result of invocation of
     /// the specified `invocable` with the specified `arg`.
     template <class t_INVOCABLE, class t_ARG>
-    optional(BloombergLP::bslstl::Optional_InvokeConstructorTag ,
+    optional(BNP_Paribas::bslstl::Optional_InvokeConstructorTag ,
              t_INVOCABLE&&                                      invocable,
              t_ARG&&                                            arg);
 #endif
@@ -4176,20 +4176,20 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                         optional,
-                        BloombergLP::bslma::UsesBslmaAllocator,
-                        BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value);
+                        BNP_Paribas::bslma::UsesBslmaAllocator,
+                        BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value);
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                         optional,
-                        BloombergLP::bslmf::UsesAllocatorArgT,
-                        BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value);
+                        BNP_Paribas::bslmf::UsesAllocatorArgT,
+                        BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value);
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          optional,
-                         BloombergLP::bslmf::IsBitwiseMoveable,
-                         BloombergLP::bslmf::IsBitwiseMoveable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseMoveable,
+                         BNP_Paribas::bslmf::IsBitwiseMoveable<t_TYPE>::value);
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                          optional,
-                         BloombergLP::bslmf::IsBitwiseCopyable,
-                         BloombergLP::bslmf::IsBitwiseCopyable<t_TYPE>::value);
+                         BNP_Paribas::bslmf::IsBitwiseCopyable,
+                         BNP_Paribas::bslmf::IsBitwiseCopyable<t_TYPE>::value);
 
     // CREATORS
 
@@ -4217,7 +4217,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
     /// the instantiation provides the move constructor in C++03; a move
     /// constructor is implicitly declared in C++11).
     template <class t_DERIVED>
-    optional(BloombergLP::bslmf::MovableRef<t_DERIVED> original,
+    optional(BNP_Paribas::bslmf::MovableRef<t_DERIVED> original,
              BSLSTL_OPTIONAL_DECLARE_IF_DERIVED_FROM_OPTIONAL(t_DERIVED))
              BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                bsl::is_nothrow_move_constructible<t_TYPE>::value);  // IMPLICIT
@@ -4352,7 +4352,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -4892,7 +4892,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -5311,7 +5311,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
     /// move assignment operator is implicitly declared in C++11).
     template <class t_DERIVED>
     BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_DERIVED(t_TYPE, t_DERIVED)&
-    operator=(BloombergLP::bslmf::MovableRef<t_DERIVED> rhs);
+    operator=(BNP_Paribas::bslmf::MovableRef<t_DERIVED> rhs);
 #endif
 
     /// Disengage this object if the specified `rhs` object is disengaged,
@@ -5369,7 +5369,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
     /// reference providing modifiable access to this object.  The contents
     /// of `rhs` are either move-constructed into or move-assigned to this
     /// object.  `rhs` is left in a valid but unspecified state.
-    optional& operator=(BloombergLP::bslmf::MovableRef<t_TYPE> rhs);
+    optional& operator=(BNP_Paribas::bslmf::MovableRef<t_TYPE> rhs);
 
     /// Assign to this object the value of the specified `rhs` object (of
     /// `ANY_TYPE`) converted to `TYPE`, and return a reference providing
@@ -5382,7 +5382,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
 
     template <class t_ANY_TYPE>
     BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_ANY_TYPE(t_TYPE, t_ANY_TYPE)&
-    operator=(BloombergLP::bslmf::MovableRef<t_ANY_TYPE> rhs);
+    operator=(BNP_Paribas::bslmf::MovableRef<t_ANY_TYPE> rhs);
 #endif  // RVALUES else
 
 #ifdef BSLSTL_OPTIONAL_USES_STD_ALIASES
@@ -5514,7 +5514,7 @@ class optional : public BloombergLP::bslstl::Optional_Base<t_TYPE> {
 //         Section: Type Traits on Allocator-Unaware 'Optional_Base'
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class t_TYPE>
@@ -5552,7 +5552,7 @@ optional(t_TYPE) -> optional<t_TYPE>;
 template <class t_TYPE,
           class t_ALLOC,
           class = typename bsl::enable_if_t<
-                    BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value>,
+                    BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value>,
           class = typename bsl::enable_if_t<
                 bsl::is_convertible_v<t_ALLOC, bsl::allocator<char>>>
           >
@@ -5567,7 +5567,7 @@ optional(bsl::allocator_arg_t, t_ALLOC, t_TYPE)
 template <class t_TYPE,
           class t_ALLOC,
           class = typename bsl::enable_if_t<
-                    BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value>,
+                    BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value>,
           class = typename bsl::enable_if_t<
                 bsl::is_convertible_v<t_ALLOC, bsl::allocator<char>>>
           >
@@ -5586,7 +5586,7 @@ optional(bsl::allocator_arg_t, t_ALLOC, optional<t_TYPE>)
 /// if the template parameter `t_TYPE` provides that guarantee, `lhs` and
 /// `rhs` have equal allocators, and `lhs.hasValue() == rhs.hasValue()`.
 template <class t_TYPE>
-typename bsl::enable_if<BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(bsl::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs);
 
@@ -5596,7 +5596,7 @@ swap(bsl::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs);
 /// result of the `hasValue` method for `lhs` and `rhs` is the same.
 template <class t_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR20
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(bsl::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs);
 
@@ -5620,7 +5620,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator==(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` and `rhs` `optional` objects do not
@@ -5634,7 +5634,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator!=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered before
@@ -5648,7 +5648,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<(const bsl::optional<t_LHS_TYPE>& lhs,
                const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered after
@@ -5662,7 +5662,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>(const bsl::optional<t_LHS_TYPE>& lhs,
                const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered before
@@ -5675,7 +5675,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered after
@@ -5688,7 +5688,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 // comparison with 'nullopt_t'
@@ -5799,18 +5799,18 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator==(const bsl::optional<t_LHS_TYPE>& lhs,
                 const t_RHS_TYPE&                rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs == rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs == rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator==(const t_LHS_TYPE&                lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` and `rhs` objects do not have the same
@@ -5824,18 +5824,18 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator!=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const t_RHS_TYPE&                rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs != rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs != rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator!=(const t_LHS_TYPE&                lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered before
@@ -5847,9 +5847,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs < rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs < rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` is ordered before the specified `rhs`
@@ -5861,9 +5861,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered after the
@@ -5875,9 +5875,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs > rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs > rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` is ordered after the specified `rhs`
@@ -5889,9 +5889,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered before
@@ -5902,9 +5902,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<=(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs <= rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs <= rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` is ordered before the specified `rhs`
@@ -5915,9 +5915,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<=(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 /// Return `true` if the specified `lhs` `optional` object is ordered after the
@@ -5928,9 +5928,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>=(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs >= rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs >= rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 // Return `true` if the specified `lhs` is ordered after the specified `rhs`
@@ -5941,9 +5941,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>=(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         });
 
 #if defined BSLS_COMPILERFEATURES_SUPPORT_THREE_WAY_COMPARISON \
@@ -5964,7 +5964,7 @@ compare_three_way_result_t<t_LHS, t_RHS> operator<=>(
 /// return the result of that comparison.  This function can be called in
 /// constant expressions only if `t_LHS` is not allocator-aware.
 template <class t_LHS, class t_RHS>
-requires (!BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS>) &&
+requires (!BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS>) &&
          three_way_comparable_with<t_LHS, t_RHS>
 BSLSTL_OPTIONAL_CONSTEXPR20
 compare_three_way_result_t<t_LHS, t_RHS> operator<=>(
@@ -6011,12 +6011,12 @@ compare_three_way_result_t<t_LHS, t_RHS> operator<=>(
 /// function can be called in constant expressions only if `t_TYPE` is not
 /// allocator-aware.
 template <class t_TYPE>
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(bsl::optional<t_TYPE>& lhs, std::optional<t_TYPE>& rhs);
 template <class t_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR20
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(std::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs);
 
@@ -6033,13 +6033,13 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator==(const std::optional<t_LHS_TYPE>& lhs,
                           const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator==(const bsl::optional<t_LHS_TYPE>& lhs,
                           const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` and `rhs` optional objects do not
@@ -6054,13 +6054,13 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator!=(const bsl::optional<t_LHS_TYPE>& lhs,
                           const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator!=(const std::optional<t_LHS_TYPE>& lhs,
                           const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` optional object is ordered before
@@ -6075,13 +6075,13 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator<(const bsl::optional<t_LHS_TYPE>& lhs,
                          const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator<(const std::optional<t_LHS_TYPE>& lhs,
                          const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` optional object is ordered after
@@ -6095,13 +6095,13 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator>(const bsl::optional<t_LHS_TYPE>& lhs,
                          const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator>(const std::optional<t_LHS_TYPE>& lhs,
                          const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` is ordered before the specified
@@ -6114,13 +6114,13 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator<=(const bsl::optional<t_LHS_TYPE>& lhs,
                           const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator<=(const std::optional<t_LHS_TYPE>& lhs,
                           const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 
 /// Return `true` if the specified `lhs` optional object is ordered after
@@ -6133,13 +6133,13 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator>=(const bsl::optional<t_LHS_TYPE>& lhs,
                           const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 template <class t_LHS_TYPE, class t_RHS_TYPE>
 constexpr bool operator>=(const std::optional<t_LHS_TYPE>& lhs,
                           const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     });
 #endif  // BSLSTL_OPTIONAL_USES_STD_ALIASES
 
@@ -6157,7 +6157,7 @@ make_optional(bsl::allocator_arg_t,
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -6570,7 +6570,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17 bsl::optional<t_TYPE> make_optional();
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -6937,7 +6937,7 @@ make_optional(std::initializer_list<t_INIT_LIST_TYPE>      il,
 //                           INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 // ============================================================================
@@ -6976,7 +6976,7 @@ Optional_DataImp<t_TYPE>::Optional_DataImp(
 // MANIPULATORS
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -6990,7 +6990,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        bslma::Allocator                             *allocator)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator);
     d_hasValue = true;
@@ -7007,7 +7007,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_01) args_01)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01));
@@ -7027,7 +7027,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_02) args_02)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7050,7 +7050,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_03) args_03)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7076,7 +7076,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_04) args_04)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7105,7 +7105,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_05) args_05)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7137,7 +7137,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_06) args_06)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7172,7 +7172,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_07) args_07)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7210,7 +7210,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_08) args_08)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7251,7 +7251,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_09) args_09)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7295,7 +7295,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_10) args_10)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS_01, args_01),
@@ -7323,7 +7323,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        std::initializer_list<t_INIT_LIST_TYPE>       il)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il);
@@ -7341,7 +7341,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_01) args_01)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7362,7 +7362,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_02) args_02)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7386,7 +7386,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_03) args_03)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7413,7 +7413,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_04) args_04)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7443,7 +7443,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_05) args_05)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7476,7 +7476,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_06) args_06)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7512,7 +7512,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_07) args_07)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7551,7 +7551,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_08) args_08)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7593,7 +7593,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_09) args_09)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7638,7 +7638,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS_10) args_10)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7669,7 +7669,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS)...  args)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         BSLS_COMPILERFEATURES_FORWARD(t_ARGS, args)...);
@@ -7686,7 +7686,7 @@ t_TYPE& Optional_DataImp<t_TYPE>::emplace(
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ARGS)...  args)
 {
     reset();
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         d_buffer.address(),
         allocator,
         il,
@@ -7857,7 +7857,7 @@ Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
 template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
-                        BloombergLP::bslmf::MovableRef<Optional_Base> original)
+                        BNP_Paribas::bslmf::MovableRef<Optional_Base> original)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                              bsl::is_nothrow_move_constructible<t_TYPE>::value)
 : d_allocator(MoveUtil::access(original).get_allocator())
@@ -7873,7 +7873,7 @@ template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
-                         BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                         BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                          BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value)
 {
     emplace(BSLS_COMPILERFEATURES_FORWARD(t_ANY_TYPE, value));
@@ -7883,7 +7883,7 @@ template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original)
 {
     if (original.has_value()) {
@@ -7895,7 +7895,7 @@ template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
-  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
   BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original,
   BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCT_DOES_NOT_PROPAGATE_ALLOCATOR(t_TYPE,
                                                                    t_ANY_TYPE))
@@ -7910,7 +7910,7 @@ template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
-          BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+          BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
           BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original,
           BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCT_PROPAGATES_ALLOCATOR(t_TYPE,
                                                                    t_ANY_TYPE))
@@ -7927,7 +7927,7 @@ template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
-                    BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                     const std::optional<t_ANY_TYPE>& original)
 {
     if (original.has_value()) {
@@ -7939,7 +7939,7 @@ template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
-                    BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                     std::optional<t_ANY_TYPE>&& original)
 {
     if (original.has_value()) {
@@ -7950,7 +7950,7 @@ Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -8582,7 +8582,7 @@ inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
                        bsl::allocator_arg_t,
                        allocator_type                                allocator,
-                       BloombergLP::bslmf::MovableRef<Optional_Base> original)
+                       BNP_Paribas::bslmf::MovableRef<Optional_Base> original)
 : d_allocator(allocator)
 {
     Optional_Base& lvalue = original;
@@ -8598,7 +8598,7 @@ inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
                        bsl::allocator_arg_t,
                        allocator_type                                allocator,
-                       BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                       BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                        BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value)
 : d_allocator(allocator)
 {
@@ -8611,7 +8611,7 @@ inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
                   bsl::allocator_arg_t,
                   allocator_type                   allocator,
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original)
 : d_allocator(allocator)
 {
@@ -8626,7 +8626,7 @@ inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
                   bsl::allocator_arg_t,
                   allocator_type                                     allocator,
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original)
 : d_allocator(allocator)
 {
@@ -8643,7 +8643,7 @@ inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
                     bsl::allocator_arg_t,
                     allocator_type                   allocator,
-                    BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                     const std::optional<t_ANY_TYPE>& original)
 : d_allocator(allocator)
 {
@@ -8658,7 +8658,7 @@ inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
                     bsl::allocator_arg_t,
                     allocator_type              allocator,
-                    BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                     std::optional<t_ANY_TYPE>&& original)
 : d_allocator(allocator)
 {
@@ -8670,7 +8670,7 @@ Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::Optional_Base(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -9359,7 +9359,7 @@ const t_TYPE& Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::dereferenceRaw() const
 // MANIPULATORS
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -9954,7 +9954,7 @@ void Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::swap(Optional_Base& other)
     BSLS_ASSERT(d_allocator == other.d_allocator);
 
     if (this->has_value() && other.has_value()) {
-        BloombergLP::bslalg::SwapUtil::swap(
+        BNP_Paribas::bslalg::SwapUtil::swap(
                                           BSLS_UTIL_ADDRESSOF(d_value.value()),
                                           BSLS_UTIL_ADDRESSOF(*other));
     }
@@ -10027,12 +10027,12 @@ t_TYPE Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::value_or(
                                                       t_ANY_TYPE&&   value) &&
 {
     if (has_value()) {
-        return BloombergLP::bslma::ConstructionUtil::make<t_TYPE>(
+        return BNP_Paribas::bslma::ConstructionUtil::make<t_TYPE>(
                                         allocator,
                                         std::move(d_value.value()));  // RETURN
     }
     else {
-        return BloombergLP::bslma::ConstructionUtil::make<t_TYPE>(
+        return BNP_Paribas::bslma::ConstructionUtil::make<t_TYPE>(
                                    allocator,
                                    std::forward<t_ANY_TYPE>(value));  // RETURN
     }
@@ -10063,7 +10063,7 @@ template <class t_TYPE, bool t_USES_BSLMA_ALLOC>
 inline
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>&
 Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::operator=(
-                             BloombergLP::bslmf::MovableRef<Optional_Base> rhs)
+                             BNP_Paribas::bslmf::MovableRef<Optional_Base> rhs)
 {
     Optional_Base& lvalue = rhs;
 
@@ -10201,11 +10201,11 @@ t_TYPE Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::value_or(
                     BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value) const&
 {
     if (has_value()) {
-        return BloombergLP::bslma::ConstructionUtil::make<t_TYPE>(
+        return BNP_Paribas::bslma::ConstructionUtil::make<t_TYPE>(
             allocator, d_value.value());                              // RETURN
     }
     else {
-        return BloombergLP::bslma::ConstructionUtil::make<t_TYPE>(
+        return BNP_Paribas::bslma::ConstructionUtil::make<t_TYPE>(
             allocator,
             BSLS_COMPILERFEATURES_FORWARD(t_ANY_TYPE, value));        // RETURN
     }
@@ -10237,11 +10237,11 @@ t_TYPE Optional_Base<t_TYPE, t_USES_BSLMA_ALLOC>::value_or(
                      BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value) const
 {
     if (has_value()) {
-        return BloombergLP::bslma::ConstructionUtil::make<t_TYPE>(
+        return BNP_Paribas::bslma::ConstructionUtil::make<t_TYPE>(
             allocator, d_value.value());                              // RETURN
     }
     else {
-        return BloombergLP::bslma::ConstructionUtil::make<t_TYPE>(
+        return BNP_Paribas::bslma::ConstructionUtil::make<t_TYPE>(
             allocator,
             BSLS_COMPILERFEATURES_FORWARD(ANY_TYPE, value));          // RETURN
     }
@@ -10323,7 +10323,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 constexpr
 Optional_Base<t_TYPE, false>::Optional_Base(
-                         BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                         BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                          t_ANY_TYPE&& value)
 : StdOptionalBase(std::forward<t_ANY_TYPE>(value))
 {
@@ -10333,7 +10333,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR20 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original)
 {
     if (original.has_value()) {
@@ -10345,7 +10345,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR20 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   Optional_Base<t_ANY_TYPE>&& original)
 {
     if (original.has_value()) {
@@ -10357,7 +10357,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR20 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                    BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                     const std::optional<t_ANY_TYPE>& original)
 : StdOptionalBase(original)
 {
@@ -10367,7 +10367,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR20 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                    BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                     std::optional<t_ANY_TYPE>&& original)
 : StdOptionalBase(std::move(original))
 {
@@ -10431,7 +10431,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                          bsl::allocator_arg_t,
                          AllocType,
-                         BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                         BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                          t_ANY_TYPE&&)
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -10444,7 +10444,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                   bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>&)
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -10457,7 +10457,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                   bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   Optional_Base<t_ANY_TYPE>&&)
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -10470,7 +10470,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                     bsl::allocator_arg_t,
                     AllocType,
-                    BloombergLP::bslstl::Optional_CopyConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional,
                     const std::optional<t_ANY_TYPE>&)
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -10483,7 +10483,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                     bsl::allocator_arg_t,
                     AllocType,
-                    BloombergLP::bslstl::Optional_MoveConstructFromStdOptional,
+                    BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional,
                     std::optional<t_ANY_TYPE>&&)
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -10579,7 +10579,7 @@ Optional_Base<t_TYPE, false>::Optional_Base(const Optional_Base& original)
 template <class t_TYPE>
 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                        BloombergLP::bslmf::MovableRef<Optional_Base> original)
+                        BNP_Paribas::bslmf::MovableRef<Optional_Base> original)
          BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                              bsl::is_nothrow_move_constructible<t_TYPE>::value)
 {
@@ -10594,7 +10594,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                         BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                         BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                          BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value)
 {
     emplace(BSLS_COMPILERFEATURES_FORWARD(t_ANY_TYPE, value));
@@ -10604,7 +10604,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>& original)
 {
     if (original.has_value()) {
@@ -10616,7 +10616,7 @@ template <class t_TYPE>
 template <class t_ANY_TYPE>
 inline
 Optional_Base<t_TYPE, false>::Optional_Base(
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>) original)
 {
     Optional_Base<t_ANY_TYPE>& lvalue = original;
@@ -10627,7 +10627,7 @@ Optional_Base<t_TYPE, false>::Optional_Base(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -11240,7 +11240,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                                  bsl::allocator_arg_t,
                                  AllocType,
-                                 BloombergLP::bslmf::MovableRef<Optional_Base>)
+                                 BNP_Paribas::bslmf::MovableRef<Optional_Base>)
 {
     BSLS_ASSERT_INVOKE_NORETURN(
                          "Should not be called for non-allocator-aware types");
@@ -11252,7 +11252,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                          bsl::allocator_arg_t,
                          AllocType,
-                         BloombergLP::bslstl::Optional_ConstructFromForwardRef,
+                         BNP_Paribas::bslstl::Optional_ConstructFromForwardRef,
                          BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE))
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -11265,7 +11265,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                   bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional,
                   const Optional_Base<t_ANY_TYPE>&)
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -11278,7 +11278,7 @@ inline
 Optional_Base<t_TYPE, false>::Optional_Base(
                   bsl::allocator_arg_t,
                   AllocType,
-                  BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional,
+                  BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional,
                   BSLMF_MOVABLEREF_DEDUCE(Optional_Base<t_ANY_TYPE>))
 {
     BSLS_ASSERT_INVOKE_NORETURN(
@@ -11287,7 +11287,7 @@ Optional_Base<t_TYPE, false>::Optional_Base(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -11888,7 +11888,7 @@ const t_TYPE& Optional_Base<t_TYPE, false>::dereferenceRaw() const
 // MANIPULATORS
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -12482,7 +12482,7 @@ void Optional_Base<t_TYPE, false>::swap(Optional_Base& other)
                            bsl::is_nothrow_swappable<t_TYPE>::value)
 {
     if (this->has_value() && other.has_value()) {
-        BloombergLP::bslalg::SwapUtil::swap(
+        BNP_Paribas::bslalg::SwapUtil::swap(
                                          BSLS_UTIL_ADDRESSOF(d_value.value()),
                                          BSLS_UTIL_ADDRESSOF(*other));
     }
@@ -12569,7 +12569,7 @@ template <class t_TYPE>
 inline
 Optional_Base<t_TYPE, false>&
 Optional_Base<t_TYPE, false>::operator=(
-                             BloombergLP::bslmf::MovableRef<Optional_Base> rhs)
+                             BNP_Paribas::bslmf::MovableRef<Optional_Base> rhs)
 {
     Optional_Base& lvalue = rhs;
     if (lvalue.has_value()) {
@@ -12776,7 +12776,7 @@ template <class t_TYPE>
 template <class t_INVOCABLE, class t_ARG>
 inline
 optional<t_TYPE>::optional(
-                  BloombergLP::bslstl::Optional_InvokeConstructorTag tag,
+                  BNP_Paribas::bslstl::Optional_InvokeConstructorTag tag,
                   t_INVOCABLE&&                                      invocable,
                   t_ARG&&                                            arg)
 : BaseType(tag, std::forward<t_INVOCABLE>(invocable), std::forward<t_ARG>(arg))
@@ -12802,7 +12802,7 @@ optional<t_TYPE>::optional(bsl::nullopt_t) BSLS_KEYWORD_NOEXCEPT
 template <class t_TYPE>
 template <class t_DERIVED>
 optional<t_TYPE>::optional(
-                    BloombergLP::bslmf::MovableRef<t_DERIVED> original,
+                    BNP_Paribas::bslmf::MovableRef<t_DERIVED> original,
                     BSLSTL_OPTIONAL_DEFINE_IF_DERIVED_FROM_OPTIONAL(t_DERIVED))
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                              bsl::is_nothrow_move_constructible<t_TYPE>::value)
@@ -12817,7 +12817,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17 optional<t_TYPE>::optional(
           BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value,
           BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM(t_TYPE, t_ANY_TYPE),
           BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_ConstructFromForwardRef(),
+: BaseType(BNP_Paribas::bslstl::Optional_ConstructFromForwardRef(),
            BSLS_COMPILERFEATURES_FORWARD(t_ANY_TYPE, value))
 {
 }
@@ -12828,7 +12828,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17 optional<t_TYPE>::optional(
               BSLS_COMPILERFEATURES_FORWARD_REF(t_ANY_TYPE) value,
               BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM(t_TYPE, t_ANY_TYPE),
               BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_ConstructFromForwardRef(),
+: BaseType(BNP_Paribas::bslstl::Optional_ConstructFromForwardRef(),
            BSLS_COMPILERFEATURES_FORWARD(t_ANY_TYPE, value))
 {
 }
@@ -12841,7 +12841,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
                                                             const t_ANY_TYPE&),
      BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE,
                                                       const t_ANY_TYPE&))
-: BaseType(BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional(),
            original)
 {
 }
@@ -12853,7 +12853,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
      BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_BSL_OPTIONAL(t_TYPE,
                                                             const t_ANY_TYPE&),
      BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, const t_ANY_TYPE&))
-: BaseType(BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional(),
            original)
 {
 }
@@ -12864,9 +12864,9 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
     BSLMF_MOVABLEREF_DEDUCE(optional<t_ANY_TYPE>) original,
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_BSL_OPTIONAL(t_TYPE, t_ANY_TYPE),
     BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional(),
            MoveUtil::move(
-                  static_cast<BloombergLP::bslstl::Optional_Base<t_ANY_TYPE>&>(
+                  static_cast<BNP_Paribas::bslstl::Optional_Base<t_ANY_TYPE>&>(
                       original)))
 {
 }
@@ -12877,9 +12877,9 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
     BSLMF_MOVABLEREF_DEDUCE(optional<t_ANY_TYPE>) original,
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_BSL_OPTIONAL(t_TYPE, t_ANY_TYPE),
     BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional(),
            MoveUtil::move(
-                  static_cast<BloombergLP::bslstl::Optional_Base<t_ANY_TYPE>&>(
+                  static_cast<BNP_Paribas::bslstl::Optional_Base<t_ANY_TYPE>&>(
                       original)))
 {
 }
@@ -12892,7 +12892,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
      BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_STD_OPTIONAL(t_TYPE,
                                                             const t_ANY_TYPE&),
      BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_CopyConstructFromStdOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional(),
            original)
 {
 }
@@ -12904,7 +12904,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
      BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_STD_OPTIONAL(t_TYPE,
                                                             const t_ANY_TYPE&),
      BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_CopyConstructFromStdOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional(),
            original)
 {
 }
@@ -12915,7 +12915,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
     std::optional<t_ANY_TYPE>&& original,
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_STD_OPTIONAL(t_TYPE, t_ANY_TYPE),
     BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_MoveConstructFromStdOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional(),
            std::move(original))
 {
 }
@@ -12926,7 +12926,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
     std::optional<t_ANY_TYPE>&& original,
     BSLSTL_OPTIONAL_DEFINE_IF_CONSTRUCTS_FROM_STD_OPTIONAL(t_TYPE, t_ANY_TYPE),
     BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
-: BaseType(BloombergLP::bslstl::Optional_MoveConstructFromStdOptional(),
+: BaseType(BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional(),
            std::move(original))
 {
 }
@@ -12934,7 +12934,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20 optional<t_TYPE>::optional(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -13536,7 +13536,7 @@ optional<t_TYPE>::optional(
           BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_ConstructFromForwardRef(),
+           BNP_Paribas::bslstl::Optional_ConstructFromForwardRef(),
            BSLS_COMPILERFEATURES_FORWARD(t_ANY_TYPE, value))
 {
 }
@@ -13551,7 +13551,7 @@ optional<t_TYPE>::optional(
              BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_ConstructFromForwardRef(),
+           BNP_Paribas::bslstl::Optional_ConstructFromForwardRef(),
            BSLS_COMPILERFEATURES_FORWARD(t_ANY_TYPE, value))
 {
 }
@@ -13568,7 +13568,7 @@ optional<t_TYPE>::optional(
                                                       const t_ANY_TYPE&))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional(),
+           BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional(),
            original)
 {
 }
@@ -13584,7 +13584,7 @@ optional<t_TYPE>::optional(
      BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, const t_ANY_TYPE&))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_CopyConstructFromOtherOptional(),
+           BNP_Paribas::bslstl::Optional_CopyConstructFromOtherOptional(),
            original)
 {
 }
@@ -13599,9 +13599,9 @@ optional<t_TYPE>::optional(
     BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional(),
+           BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional(),
            MoveUtil::move(
-                  static_cast<BloombergLP::bslstl::Optional_Base<t_ANY_TYPE>&>(
+                  static_cast<BNP_Paribas::bslstl::Optional_Base<t_ANY_TYPE>&>(
                       original)))
 {
 }
@@ -13616,9 +13616,9 @@ optional<t_TYPE>::optional(
     BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_MoveConstructFromOtherOptional(),
+           BNP_Paribas::bslstl::Optional_MoveConstructFromOtherOptional(),
            MoveUtil::move(
-                  static_cast<BloombergLP::bslstl::Optional_Base<t_ANY_TYPE>&>(
+                  static_cast<BNP_Paribas::bslstl::Optional_Base<t_ANY_TYPE>&>(
                       original)))
 {
 }
@@ -13636,7 +13636,7 @@ optional<t_TYPE>::optional(
                                                       const t_ANY_TYPE&))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_CopyConstructFromStdOptional(),
+           BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional(),
            original)
 {
 }
@@ -13652,7 +13652,7 @@ optional<t_TYPE>::optional(
      BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, const t_ANY_TYPE))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_CopyConstructFromStdOptional(),
+           BNP_Paribas::bslstl::Optional_CopyConstructFromStdOptional(),
            original)
 {
 }
@@ -13667,7 +13667,7 @@ optional<t_TYPE>::optional(
     BSLSTL_OPTIONAL_DEFINE_IF_NOT_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_MoveConstructFromStdOptional(),
+           BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional(),
            std::move(original))
 {
 }
@@ -13682,7 +13682,7 @@ optional<t_TYPE>::optional(
     BSLSTL_OPTIONAL_DEFINE_IF_EXPLICIT_CONSTRUCT(t_TYPE, t_ANY_TYPE))
 : BaseType(bsl::allocator_arg_t(),
            allocator,
-           BloombergLP::bslstl::Optional_MoveConstructFromStdOptional(),
+           BNP_Paribas::bslstl::Optional_MoveConstructFromStdOptional(),
            std::move(original))
 {
 }
@@ -13690,7 +13690,7 @@ optional<t_TYPE>::optional(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -14387,7 +14387,7 @@ optional<t_TYPE>::operator=(bsl::nullopt_t) BSLS_KEYWORD_NOEXCEPT
 template <class t_TYPE>
 template <class t_DERIVED>
 BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_DERIVED(t_TYPE, t_DERIVED) &
-optional<t_TYPE>::operator=(BloombergLP::bslmf::MovableRef<t_DERIVED> rhs)
+optional<t_TYPE>::operator=(BNP_Paribas::bslmf::MovableRef<t_DERIVED> rhs)
 {
     BaseType& lvalue = rhs;
     BaseType::operator=(MoveUtil::move(lvalue));
@@ -14415,7 +14415,7 @@ BSLSTL_OPTIONAL_CONSTEXPR20
 BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_BSL_OPTIONAL(t_TYPE, t_ANY_TYPE)&
 optional<t_TYPE>::operator=(BSLMF_MOVABLEREF_DEDUCE(optional<t_ANY_TYPE>) rhs)
 {
-    BloombergLP::bslstl::Optional_Base<t_ANY_TYPE>& lvalue = rhs;
+    BNP_Paribas::bslstl::Optional_Base<t_ANY_TYPE>& lvalue = rhs;
     if (lvalue.has_value()) {
         this->assignOrEmplace(MoveUtil::move(*lvalue));
     } else {
@@ -14444,7 +14444,7 @@ optional<t_TYPE>& optional<t_TYPE>::operator=(const t_TYPE& rhs)
 
 template <class t_TYPE>
 optional<t_TYPE>&
-optional<t_TYPE>::operator=(BloombergLP::bslmf::MovableRef<t_TYPE> rhs)
+optional<t_TYPE>::operator=(BNP_Paribas::bslmf::MovableRef<t_TYPE> rhs)
 {
     this->assignOrEmplace(MoveUtil::move(rhs));
     return *this;
@@ -14462,7 +14462,7 @@ optional<t_TYPE>::operator=(const t_ANY_TYPE& rhs)
 template <class t_TYPE>
 template <class t_ANY_TYPE>
 BSLSTL_OPTIONAL_ENABLE_ASSIGN_FROM_ANY_TYPE(t_TYPE, t_ANY_TYPE)&
-optional<t_TYPE>::operator=(BloombergLP::bslmf::MovableRef<t_ANY_TYPE> rhs)
+optional<t_TYPE>::operator=(BNP_Paribas::bslmf::MovableRef<t_ANY_TYPE> rhs)
 {
     this->assignOrEmplace(MoveUtil::move(rhs));
     return *this;
@@ -14513,7 +14513,7 @@ constexpr auto optional<t_TYPE>::transform(t_FUNC&& func) &
                   "The callable must return an object type");
 
     if (this->has_value()) {
-        using BloombergLP::bslstl::Optional_InvokeConstructorTag;
+        using BNP_Paribas::bslstl::Optional_InvokeConstructorTag;
         return optional<ResultType>{Optional_InvokeConstructorTag{},
                                     std::forward<t_FUNC>(func),
                                     **this};
@@ -14535,7 +14535,7 @@ constexpr auto optional<t_TYPE>::transform(t_FUNC&& func) const &
                   "The callable must return an object type");
 
     if (this->has_value()) {
-        using BloombergLP::bslstl::Optional_InvokeConstructorTag;
+        using BNP_Paribas::bslstl::Optional_InvokeConstructorTag;
         return optional<ResultType>{Optional_InvokeConstructorTag{},
                                     std::forward<t_FUNC>(func),
                                     **this};
@@ -14557,7 +14557,7 @@ constexpr auto optional<t_TYPE>::transform(t_FUNC&& func) &&
                   "The callable must return an object type");
 
     if (this->has_value()) {
-        using BloombergLP::bslstl::Optional_InvokeConstructorTag;
+        using BNP_Paribas::bslstl::Optional_InvokeConstructorTag;
         return optional<ResultType>{Optional_InvokeConstructorTag{},
                                     std::forward<t_FUNC>(func),
                                     std::move(**this)};
@@ -14579,7 +14579,7 @@ constexpr auto optional<t_TYPE>::transform(t_FUNC&& func) const &&
                   "The callable must return an object type");
 
     if (this->has_value()) {
-        using BloombergLP::bslstl::Optional_InvokeConstructorTag;
+        using BNP_Paribas::bslstl::Optional_InvokeConstructorTag;
         return optional<ResultType>{Optional_InvokeConstructorTag{},
                                     std::forward<t_FUNC>(func),
                                     std::move(**this)};
@@ -14604,9 +14604,9 @@ optional<t_TYPE>::transform(const t_FUNC& func)
     if (this->has_value()) {
         ResultType val = func(**this);
 
-        BloombergLP::bslma::UsesBslmaAllocator<ResultType> usesAlloc;
+        BNP_Paribas::bslma::UsesBslmaAllocator<ResultType> usesAlloc;
 
-        return BloombergLP::bslstl::Optional_TransformImpUtil::make(val,
+        return BNP_Paribas::bslstl::Optional_TransformImpUtil::make(val,
                                                                     usesAlloc);
                                                                       // RETURN
     }
@@ -14631,9 +14631,9 @@ optional<t_TYPE>::transform(const t_FUNC& func) const
     if (this->has_value()) {
         ResultType val = func(**this);
 
-        BloombergLP::bslma::UsesBslmaAllocator<ResultType> usesAlloc;
+        BNP_Paribas::bslma::UsesBslmaAllocator<ResultType> usesAlloc;
 
-        return BloombergLP::bslstl::Optional_TransformImpUtil::make(val,
+        return BNP_Paribas::bslstl::Optional_TransformImpUtil::make(val,
                                                                     usesAlloc);
                                                                       // RETURN
     }
@@ -14648,7 +14648,7 @@ constexpr auto optional<t_TYPE>::and_then(t_FUNC&& func) &
 {
     using ResultType = std::remove_cv_t<std::remove_reference_t<
                                        std::invoke_result_t<t_FUNC, t_TYPE&>>>;
-    using ::BloombergLP::bslstl::Optional_IsBslOptional;
+    using ::BNP_Paribas::bslstl::Optional_IsBslOptional;
     static_assert(Optional_IsBslOptional<ResultType>::value,
                   "The callable must return bsl::optional");
 
@@ -14664,7 +14664,7 @@ constexpr auto optional<t_TYPE>::and_then(t_FUNC&& func) const &
 {
     using ResultType = std::remove_cv_t<std::remove_reference_t<
                                  std::invoke_result_t<t_FUNC, const t_TYPE&>>>;
-    using ::BloombergLP::bslstl::Optional_IsBslOptional;
+    using ::BNP_Paribas::bslstl::Optional_IsBslOptional;
     static_assert(Optional_IsBslOptional<ResultType>::value,
                   "The callable must return bsl::optional");
 
@@ -14680,7 +14680,7 @@ constexpr auto optional<t_TYPE>::and_then(t_FUNC&& func) &&
 {
     using ResultType = std::remove_cv_t<std::remove_reference_t<
                                       std::invoke_result_t<t_FUNC, t_TYPE&&>>>;
-    using ::BloombergLP::bslstl::Optional_IsBslOptional;
+    using ::BNP_Paribas::bslstl::Optional_IsBslOptional;
     static_assert(Optional_IsBslOptional<ResultType>::value,
                   "The callable must return bsl::optional");
 
@@ -14696,7 +14696,7 @@ constexpr auto optional<t_TYPE>::and_then(t_FUNC&& func) const &&
 {
     using ResultType = std::remove_cv_t<std::remove_reference_t<
                                 std::invoke_result_t<t_FUNC, const t_TYPE&&>>>;
-    using ::BloombergLP::bslstl::Optional_IsBslOptional;
+    using ::BNP_Paribas::bslstl::Optional_IsBslOptional;
     static_assert(Optional_IsBslOptional<ResultType>::value,
                   "The callable must return bsl::optional");
 
@@ -14716,7 +14716,7 @@ optional<t_TYPE>::and_then(const t_FUNC& func)
         typename invoke_result<const t_FUNC&, t_TYPE&>::type>::type ResultType;
 
     BSLMF_ASSERT(
-               BloombergLP::bslstl::Optional_IsBslOptional<ResultType>::value);
+               BNP_Paribas::bslstl::Optional_IsBslOptional<ResultType>::value);
 
     if (this->has_value()) {
         return func(**this);                                          // RETURN
@@ -14735,7 +14735,7 @@ optional<t_TYPE>::and_then(const t_FUNC& func) const
         ResultType;
 
     BSLMF_ASSERT(
-               BloombergLP::bslstl::Optional_IsBslOptional<ResultType>::value);
+               BNP_Paribas::bslstl::Optional_IsBslOptional<ResultType>::value);
 
     if (this->has_value()) {
         return func(**this);                                          // RETURN
@@ -14806,7 +14806,7 @@ optional<t_TYPE> optional<t_TYPE>::or_else(const t_FUNC& func) const
 
 template <class t_TYPE>
 inline
-typename bsl::enable_if<BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(bsl::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs)
 {
@@ -14827,7 +14827,7 @@ swap(bsl::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs)
 
 template <class t_TYPE>
 inline BSLSTL_OPTIONAL_CONSTEXPR20
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(bsl::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs)
 {
@@ -14838,7 +14838,7 @@ swap(bsl::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs)
 template <class t_HASHALG, class t_TYPE>
 void hashAppend(t_HASHALG& hashAlg, const bsl::optional<t_TYPE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     if (input.has_value()) {
         hashAppend(hashAlg, true);
@@ -14856,7 +14856,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator==(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (lhs.has_value() && rhs.has_value()) {
@@ -14870,7 +14870,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator!=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (lhs.has_value() && rhs.has_value()) {
@@ -14885,7 +14885,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<(const bsl::optional<t_LHS_TYPE>& lhs,
                const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!rhs.has_value()) {
@@ -14900,7 +14900,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>(const bsl::optional<t_LHS_TYPE>& lhs,
                const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!lhs.has_value()) {
@@ -14915,7 +14915,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!lhs.has_value()) {
@@ -14930,7 +14930,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!rhs.has_value()) {
@@ -15059,9 +15059,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator==(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs == rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs == rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return lhs.has_value() && *lhs == rhs;
@@ -15071,9 +15071,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator==(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return rhs.has_value() && lhs == *rhs;
@@ -15083,9 +15083,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator!=(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs != rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs != rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return !lhs.has_value() || *lhs != rhs;
@@ -15095,9 +15095,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator!=(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return !rhs.has_value() || lhs != *rhs;
@@ -15107,9 +15107,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs < rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs < rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return !lhs.has_value() || *lhs < rhs;
@@ -15119,9 +15119,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return rhs.has_value() && lhs < *rhs;
@@ -15131,9 +15131,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs > rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs > rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return lhs.has_value() && *lhs > rhs;
@@ -15143,9 +15143,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return !rhs.has_value() || lhs > *rhs;
@@ -15155,9 +15155,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<=(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs <= rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs <= rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return !lhs.has_value() || *lhs <= rhs;
@@ -15167,9 +15167,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator<=(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return rhs.has_value() && lhs <= *rhs;
@@ -15179,9 +15179,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>=(const bsl::optional<t_LHS_TYPE>& lhs, const t_RHS_TYPE& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS_TYPE>
         && requires {
-            { *lhs >= rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { *lhs >= rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return lhs.has_value() && *lhs >= rhs;
@@ -15191,9 +15191,9 @@ template <class t_LHS_TYPE, class t_RHS_TYPE>
 BSLSTL_OPTIONAL_CONSTEXPR17
 bool operator>=(const t_LHS_TYPE& lhs, const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(
-        !BloombergLP::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
+        !BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_LHS_TYPE>
         && requires {
-            { lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+            { lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
         })
 {
     return !rhs.has_value() || lhs >= *rhs;
@@ -15216,7 +15216,7 @@ compare_three_way_result_t<t_LHS, t_RHS> operator<=>(
 }
 
 template <class t_LHS, class t_RHS>
-requires (!BloombergLP::bslstl::Optional_DerivedFromOptional<t_RHS>) &&
+requires (!BNP_Paribas::bslstl::Optional_DerivedFromOptional<t_RHS>) &&
          three_way_comparable_with<t_LHS, t_RHS>
 BSLSTL_OPTIONAL_CONSTEXPR20
 compare_three_way_result_t<t_LHS, t_RHS> operator<=>(
@@ -15270,7 +15270,7 @@ compare_three_way_result_t<t_LHS, t_RHS> operator<=>(
 # ifdef BSLSTL_OPTIONAL_USES_STD_ALIASES
 template <class t_TYPE>
 inline
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(bsl::optional<t_TYPE>& lhs, std::optional<t_TYPE>& rhs)
 {
@@ -15279,7 +15279,7 @@ swap(bsl::optional<t_TYPE>& lhs, std::optional<t_TYPE>& rhs)
 
 template <class t_TYPE>
 inline BSLSTL_OPTIONAL_CONSTEXPR20
-typename bsl::enable_if<!BloombergLP::bslma::UsesBslmaAllocator<t_TYPE>::value,
+typename bsl::enable_if<!BNP_Paribas::bslma::UsesBslmaAllocator<t_TYPE>::value,
                         void>::type
 swap(std::optional<t_TYPE>& lhs, bsl::optional<t_TYPE>& rhs)
 {
@@ -15293,7 +15293,7 @@ constexpr
 bool operator==(const bsl::optional<t_LHS_TYPE>& lhs,
                 const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (lhs.has_value() && rhs.has_value()) {
@@ -15307,7 +15307,7 @@ constexpr
 bool operator==(const std::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs == *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs == *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (lhs.has_value() && rhs.has_value()) {
@@ -15321,7 +15321,7 @@ constexpr
 bool operator!=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (lhs.has_value() && rhs.has_value()) {
@@ -15336,7 +15336,7 @@ constexpr
 bool operator!=(const std::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs != *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs != *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (lhs.has_value() && rhs.has_value()) {
@@ -15351,7 +15351,7 @@ constexpr
 bool operator<(const bsl::optional<t_LHS_TYPE>& lhs,
                const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!rhs.has_value()) {
@@ -15366,7 +15366,7 @@ constexpr
 bool operator<(const std::optional<t_LHS_TYPE>& lhs,
                const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs < *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs < *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!rhs.has_value()) {
@@ -15381,7 +15381,7 @@ constexpr
 bool operator>(const bsl::optional<t_LHS_TYPE>& lhs,
                const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!lhs.has_value()) {
@@ -15396,7 +15396,7 @@ constexpr
 bool operator>(const std::optional<t_LHS_TYPE>& lhs,
                const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs > *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs > *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!lhs.has_value()) {
@@ -15411,7 +15411,7 @@ constexpr
 bool operator<=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!lhs.has_value()) {
@@ -15426,7 +15426,7 @@ constexpr
 bool operator<=(const std::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs <= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs <= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!lhs.has_value()) {
@@ -15441,7 +15441,7 @@ constexpr
 bool operator>=(const bsl::optional<t_LHS_TYPE>& lhs,
                 const std::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!rhs.has_value()) {
@@ -15455,7 +15455,7 @@ constexpr
 bool operator>=(const std::optional<t_LHS_TYPE>& lhs,
                 const bsl::optional<t_RHS_TYPE>& rhs)
     BSLSTL_OPTIONAL_REQUIRES(requires {
-        { *lhs >= *rhs } -> BloombergLP::bslstl::Optional_ConvertibleToBool;
+        { *lhs >= *rhs } -> BNP_Paribas::bslstl::Optional_ConvertibleToBool;
     })
 {
     if (!rhs.has_value()) {
@@ -15481,7 +15481,7 @@ make_optional(bsl::allocator_arg_t,
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -15806,7 +15806,7 @@ bsl::optional<t_TYPE> make_optional(
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif
@@ -16173,7 +16173,7 @@ BSLSTL_OPTIONAL_CONSTEXPR17 bsl::optional<t_TYPE> make_optional()
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
 // {{{ BEGIN GENERATED CODE
-// Command line: sim_cpp11_features bslstl_optional.h
+// Command line: sim_cpp11_features.py bslstl_optional.h
 #ifndef BSLSTL_OPTIONAL_VARIADIC_LIMIT
 #define BSLSTL_OPTIONAL_VARIADIC_LIMIT 10
 #endif

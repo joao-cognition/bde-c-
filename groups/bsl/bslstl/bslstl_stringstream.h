@@ -150,7 +150,7 @@ class basic_stringstream
     typedef std::basic_iostream<CHAR_TYPE, CHAR_TRAITS>          BaseStream;
     typedef std::ios_base                                        ios_base;
 
-    typedef BloombergLP::bslmf::MovableRefUtil                   MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil                   MoveUtil;
 
   private:
     // NOT IMPLEMENTED
@@ -209,15 +209,15 @@ class basic_stringstream
     /// is left in a valid but unspecified state.
     explicit
     basic_stringstream(
-                     BloombergLP::bslmf::MovableRef<StringType> initialString);
+                     BNP_Paribas::bslmf::MovableRef<StringType> initialString);
     basic_stringstream(
-                      BloombergLP::bslmf::MovableRef<StringType> initialString,
+                      BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                       const allocator_type&                      allocator);
     basic_stringstream(
-                      BloombergLP::bslmf::MovableRef<StringType> initialString,
+                      BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                       ios_base::openmode                         modeBitMask);
     basic_stringstream(
-                      BloombergLP::bslmf::MovableRef<StringType> initialString,
+                      BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                       ios_base::openmode                         modeBitMask,
                       const allocator_type&                      allocator);
 
@@ -357,7 +357,7 @@ class basic_stringstream
     /// this stream to the specified `value`.  If `value` is passed by
     /// `MovableRef`, it is left in a valid but unspecified state.
     void str(const StringType& value);
-    void str(BloombergLP::bslmf::MovableRef<StringType> value);
+    void str(BNP_Paribas::bslmf::MovableRef<StringType> value);
     template <class SALLOC>
     typename
         bsl::enable_if<!bsl::is_same<ALLOCATOR, SALLOC>::value, void>::type
@@ -457,7 +457,7 @@ typedef basic_stringstream<wchar_t, char_traits<wchar_t>, allocator<wchar_t> >
 }  // close namespace bsl
 
 // TYPE TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
@@ -523,7 +523,7 @@ basic_stringstream(const StringType&     initialString,
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringstream<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-basic_stringstream(BloombergLP::bslmf::MovableRef<StringType> initialString)
+basic_stringstream(BNP_Paribas::bslmf::MovableRef<StringType> initialString)
 : BaseType(MoveUtil::move(initialString), ios_base::in | ios_base::out)
 , BaseStream(BaseType::rdbuf())
 {
@@ -532,7 +532,7 @@ basic_stringstream(BloombergLP::bslmf::MovableRef<StringType> initialString)
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringstream<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-basic_stringstream(BloombergLP::bslmf::MovableRef<StringType> initialString,
+basic_stringstream(BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                    const allocator_type&                      allocator)
 : BaseType(MoveUtil::move(initialString),
            ios_base::in | ios_base::out,
@@ -544,7 +544,7 @@ basic_stringstream(BloombergLP::bslmf::MovableRef<StringType> initialString,
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringstream<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-basic_stringstream(BloombergLP::bslmf::MovableRef<StringType> initialString,
+basic_stringstream(BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                    ios_base::openmode                         modeBitMask)
 : BaseType(MoveUtil::move(initialString), modeBitMask)
 , BaseStream(BaseType::rdbuf())
@@ -554,7 +554,7 @@ basic_stringstream(BloombergLP::bslmf::MovableRef<StringType> initialString,
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringstream<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-basic_stringstream(BloombergLP::bslmf::MovableRef<StringType> initialString,
+basic_stringstream(BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                    ios_base::openmode                         modeBitMask,
                    const allocator_type&                      allocator)
 : BaseType(MoveUtil::move(initialString), modeBitMask, allocator)
@@ -625,7 +625,7 @@ void basic_stringstream<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::str(
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 void basic_stringstream<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::str(
-                              BloombergLP::bslmf::MovableRef<StringType> value)
+                              BNP_Paribas::bslmf::MovableRef<StringType> value)
 {
     this->rdbuf()->str(MoveUtil::move(value));
 }

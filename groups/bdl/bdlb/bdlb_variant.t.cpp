@@ -63,7 +63,7 @@
 #undef ES
 #undef GS
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using bsls::NameOf;
 

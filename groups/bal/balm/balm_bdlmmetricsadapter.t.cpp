@@ -23,7 +23,7 @@
 #include <bsl_sstream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 
@@ -112,7 +112,7 @@ typedef balm::BdlmMetricsAdapter Obj;
 
 static int s_testMetricCount = 0;
 
-void testMetric(BloombergLP::bdlm::Metric *value)
+void testMetric(BNP_Paribas::bdlm::Metric *value)
 {
     (void)value;
     ++s_testMetricCount;
@@ -135,7 +135,7 @@ void testMetric(BloombergLP::bdlm::Metric *value)
 // First, we provide a metric function to be used during callback registration
 // with the `balm` monitoring system:
 // ```
-    void elidedMetric(BloombergLP::bdlm::Metric *value)
+    void elidedMetric(BNP_Paribas::bdlm::Metric *value)
     {
         (void)value;
         // ...
@@ -148,7 +148,7 @@ void testMetric(BloombergLP::bdlm::Metric *value)
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

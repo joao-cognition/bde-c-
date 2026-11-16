@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlb_bitstringimputil_cpp,"$Id$ $CSID$")
 
 #include <bslmf_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 BSLMF_ASSERT(sizeof(bsl::uint64_t) * 8 == BitStringImpUtil::k_BITS_PER_UINT64);

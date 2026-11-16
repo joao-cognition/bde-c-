@@ -75,7 +75,7 @@ BSLS_IDENT("$Id: $")
 //     }
 // };
 //
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace bslma {
 //
 // template <>
@@ -173,7 +173,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>  // size_t
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

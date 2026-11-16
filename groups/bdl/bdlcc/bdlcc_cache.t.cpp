@@ -40,7 +40,7 @@
 #include <bsls_nameof.h>
 #include <bsls_timeinterval.h>
 #include <bsls_timeutil.h>  // `CachePerformance`
-#include <bsls_types.h>     // `BloombergLP::bsls::Types::Int64`
+#include <bsls_types.h>     // `BNP_Paribas::bsls::Types::Int64`
 
 #include <bsl_format.h>
 #include <bsl_iostream.h>
@@ -51,7 +51,7 @@
 #include <bsl_cmath.h>      // `sqrt`
 #include <bsl_cstdio.h>     // `sprintf`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -1794,14 +1794,14 @@ public:
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace  bslmf {
 template<> struct UsesAllocatorArgT<TypeWithAllocatorArg> : bsl::true_type {};
 }
 namespace  bslma {
 template<> struct UsesBslmaAllocator<TypeWithAllocatorArg> : bsl::true_type {};
 }
-}  // close namespace BloombergLP
+}  // close namespace BNP_Paribas
 
 // TestDriver template
 namespace {

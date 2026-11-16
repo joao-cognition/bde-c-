@@ -317,7 +317,7 @@ BSLS_IDENT("$Id: $")
 # pragma bde_verify -AQK01 // Suppress "Need #include <stdio.h> for 'stdout'"
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // FORWARD REFERENCES
@@ -1000,9 +1000,9 @@ TestAllocator_getProxy(BSLMA_ALLOC_TYPE *allocator)
         std::puts("\t\tBegin bslma exception test.");                       \
     }                                                                       \
     int bslmaExceptionCounter = 0;                                          \
-    const BloombergLP::bslma::TestAllocator_ProxyBase&                      \
+    const BNP_Paribas::bslma::TestAllocator_ProxyBase&                      \
         bslmaExceptionTestAllocator =                                       \
-          BloombergLP::bslma::TestAllocator_getProxy(&BSLMA_TESTALLOCATOR); \
+          BNP_Paribas::bslma::TestAllocator_getProxy(&BSLMA_TESTALLOCATOR); \
     bslmaExceptionTestAllocator.setAllocationLimit(bslmaExceptionCounter);  \
     bool bslmaKeepLoopingInTestAllocatorExceptionTest = true;               \
     while(bslmaKeepLoopingInTestAllocatorExceptionTest) {                   \
@@ -1033,7 +1033,7 @@ TestAllocator_getProxy(BSLMA_ALLOC_TYPE *allocator)
 
 #ifndef BSLMA_TESTALLOCATOR_EXCEPTION_TEST_END
 #define BSLMA_TESTALLOCATOR_EXCEPTION_TEST_END                              \
-        } catch (BloombergLP::bslma::TestAllocatorException& e) {           \
+        } catch (BNP_Paribas::bslma::TestAllocatorException& e) {           \
             if (veryVeryVerbose) {                                          \
                 std::printf("\t*** BSLMA_EXCEPTION: "                       \
                             "alloc limit = %d, last alloc size = %d ***\n", \

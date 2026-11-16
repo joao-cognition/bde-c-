@@ -615,7 +615,7 @@ BSLS_IDENT("$Id: $")
 //     assert( 75 == defaultCategory.triggerLevel());
 //     assert( 50 == defaultCategory.triggerAllLevel());
 // ```
-// Next, we add a category named "BloombergLP" (by calling `addCategory`).
+// Next, we add a category named "BNP_Paribas" (by calling `addCategory`).
 // Note that threshold levels supplied with the category override all defaults
 // (including thresholds set by the supplied callback).  Also note that the
 // logger manager invokes the supplied category name filter to map the category
@@ -624,23 +624,23 @@ BSLS_IDENT("$Id: $")
 // category is searched for (i.e., by name) in the registry:
 // ```
 //     const ball::Category *blpCategory =
-//                        manager.addCategory("BloombergLP", 128, 96, 64, 32);
-//     assert(blpCategory == manager.lookupCategory("BLOOMBERGLP"));
-//     assert(  0 == bsl::strcmp("bloomberglp", blpCategory->categoryName()));
+//                        manager.addCategory("BNP_Paribas", 128, 96, 64, 32);
+//     assert(blpCategory == manager.lookupCategory("BNP_PARIBAS"));
+//     assert(  0 == bsl::strcmp("bnp_paribas", blpCategory->categoryName()));
 //     assert(128 == blpCategory->recordLevel());
 //     assert( 96 == blpCategory->passLevel());
 //     assert( 64 == blpCategory->triggerLevel());
 //     assert( 32 == blpCategory->triggerAllLevel());
 // ```
-// Then, we add a second category named "BloombergLP.bal.ball" (by calling
+// Then, we add a second category named "BNP_Paribas.bal.ball" (by calling
 // `setCategory`) and `assert` that the threshold levels are "inherited" from
-// category "BloombergLP":
+// category "BNP_Paribas":
 // ```
 //     const ball::Category *ballCategory =
-//                                manager.setCategory("BLOOMbergLP.bal.ball");
+//                                manager.setCategory("BNP_pariBAS.bal.ball");
 //
-//     assert(ballCategory == manager.lookupCategory("bloomberglp.bal.ball"));
-//     assert(  0 == bsl::strcmp("bloomberglp.bal.ball",
+//     assert(ballCategory == manager.lookupCategory("bnp_paribas.bal.ball"));
+//     assert(  0 == bsl::strcmp("bnp_paribas.bal.ball",
 //                               ballCategory->categoryName()));
 //     assert(128 == ballCategory->recordLevel());
 //     assert( 96 == ballCategory->passLevel());
@@ -911,7 +911,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_set.h>
 #include <bsl_string_view.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 class Context;

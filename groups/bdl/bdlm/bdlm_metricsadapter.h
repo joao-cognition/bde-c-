@@ -196,7 +196,7 @@ BSLS_IDENT("$Id: $")
 // Next, we provide the metric method, `my_metric`, which will compute its
 // invocation count:
 // ```
-// void my_metric(BloombergLP::bdlm::Metric *value)
+// void my_metric(BNP_Paribas::bdlm::Metric *value)
 // {
 //     *value = value->theGauge() + 1.0;
 // }
@@ -233,7 +233,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_functional.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlm {
 
 class MetricDescriptor;

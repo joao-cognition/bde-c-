@@ -368,7 +368,7 @@ void use_without_diagnostic_message_SCANF()                          // { 6fwn}
 
 void use_without_diagnostic_message_FORMAT()                         // { 7fwn}
 {
-    test_PRINTF(test_FORMAT("FR", "Name: %s"), "Michael Bloomberg");
+    test_PRINTF(test_FORMAT("FR", "Name: %s"), "Michael BNP Paribas");
 }
 
 void use_without_diagnostic_message_ARG1_NON_NULL()                  // { 8fwn}
@@ -559,7 +559,7 @@ BSLS_ANNOTATION_NORETURN void test_NORETURN_function()                // {17fe}
 
 // ----------------------------------------------------------------------------
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 namespace std {}
 using namespace std;
 

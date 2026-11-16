@@ -15,7 +15,7 @@
 #include <bsl_iostream.h>
 #include <bsl_sstream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -90,7 +90,7 @@ namespace UsageExample {
 // describing a user.
 //
 //  <?xml version='1.0' encoding='UTF-8'?>
-//  <directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'>
+//  <directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'>
 //      <name>John Smith</name>
 //      <phone dir:phonetype='cell'>212-318-2000</phone>
 //      <address/>
@@ -166,7 +166,7 @@ namespace UsageExample {
         { balxml::Reader::e_NODE_TYPE_ELEMENT,
           "directory-entry" , 0                              ,  0,
           false,
-          { { "xmlns:dir"  , "http://bloomberg.com/schemas/directory" } }    },
+          { { "xmlns:dir"  , "http://bnpparibas.com/schemas/directory" } }    },
 
         { balxml::Reader::e_NODE_TYPE_ELEMENT,
           "name"           , 0                               , +1,
@@ -646,7 +646,7 @@ int usageExample()
 // ```
     const char TEST_XML_STRING[] =
        "<?xml version='1.0' encoding='UTF-8'?>\n"
-       "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'>\n"
+       "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'>\n"
        "    <name>John Smith</name>\n"
        "    <phone dir:phonetype='cell'>212-318-2000</phone>\n"
        "    <address/>\n"

@@ -145,7 +145,7 @@ BSLS_IDENT("$Id: $")
 #include <variant>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlf {
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_CTAD

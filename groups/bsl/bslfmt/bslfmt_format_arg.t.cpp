@@ -12,7 +12,7 @@
 #include <stdlib.h>  // `atoi`
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -127,7 +127,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                     GLOBAL HELPER CLASSES FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 /// A minimum implementation of a format context to enable arg testing

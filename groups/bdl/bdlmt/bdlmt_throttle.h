@@ -233,7 +233,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_climits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlmt {
 
                                // ==============
@@ -559,30 +559,30 @@ bsls::Types::Int64 Throttle::nanosecondsPerAction() const
 
 #define BDLMT_THROTTLE_INIT(maxSimultaneousActions,                           \
                             nanosecondsPerAction) {                           \
-    { -BloombergLP::bdlmt::Throttle::k_TEN_YEARS_NANOSECONDS },               \
-    BloombergLP::bdlmt::Throttle_InitHelper<                                  \
+    { -BNP_Paribas::bdlmt::Throttle::k_TEN_YEARS_NANOSECONDS },               \
+    BNP_Paribas::bdlmt::Throttle_InitHelper<                                  \
                                          (maxSimultaneousActions),            \
                                          (nanosecondsPerAction)>::k_npaValue, \
-    bsl::integral_constant<BloombergLP::bsls::Types::Int64,                   \
+    bsl::integral_constant<BNP_Paribas::bsls::Types::Int64,                   \
          1LL * (maxSimultaneousActions) * (nanosecondsPerAction)>::value,     \
-    BloombergLP::bdlmt::Throttle_InitHelper<                                  \
+    BNP_Paribas::bdlmt::Throttle_InitHelper<                                  \
                                          (maxSimultaneousActions),            \
                                          (nanosecondsPerAction)>::k_msaValue, \
-    BloombergLP::bsls::SystemClockType::e_MONOTONIC                           \
+    BNP_Paribas::bsls::SystemClockType::e_MONOTONIC                           \
  }
 
 #define BDLMT_THROTTLE_INIT_REALTIME(maxSimultaneousActions,                  \
                                      nanosecondsPerAction) {                  \
-    { -BloombergLP::bdlmt::Throttle::k_TEN_YEARS_NANOSECONDS },               \
-    BloombergLP::bdlmt::Throttle_InitHelper<                                  \
+    { -BNP_Paribas::bdlmt::Throttle::k_TEN_YEARS_NANOSECONDS },               \
+    BNP_Paribas::bdlmt::Throttle_InitHelper<                                  \
                                          (maxSimultaneousActions),            \
                                          (nanosecondsPerAction)>::k_npaValue, \
-    bsl::integral_constant<BloombergLP::bsls::Types::Int64,                   \
+    bsl::integral_constant<BNP_Paribas::bsls::Types::Int64,                   \
          1LL * (maxSimultaneousActions) * (nanosecondsPerAction)>::value,     \
-    BloombergLP::bdlmt::Throttle_InitHelper<                                  \
+    BNP_Paribas::bdlmt::Throttle_InitHelper<                                  \
                                          (maxSimultaneousActions),            \
                                          (nanosecondsPerAction)>::k_msaValue, \
-    BloombergLP::bsls::SystemClockType::e_REALTIME                            \
+    BNP_Paribas::bsls::SystemClockType::e_REALTIME                            \
  }
 
 #define BDLMT_THROTTLE_INIT_ALLOW_ALL  BDLMT_THROTTLE_INIT(1, 0)
@@ -596,7 +596,7 @@ bsls::Types::Int64 Throttle::nanosecondsPerAction() const
                           nanosecondsPerAction)                               \
     if (bool bdlmt_throttle_iFsToP = false) {}                                \
     else                                                                      \
-        for (static BloombergLP::bdlmt::Throttle bdlmt_throttle_iFtHrOtTlE =  \
+        for (static BNP_Paribas::bdlmt::Throttle bdlmt_throttle_iFtHrOtTlE =  \
                                 BDLMT_THROTTLE_INIT((maxSimultaneousActions), \
                                                     (nanosecondsPerAction));  \
              !bdlmt_throttle_iFsToP;                                          \
@@ -607,7 +607,7 @@ bsls::Types::Int64 Throttle::nanosecondsPerAction() const
                                    nanosecondsPerAction)                      \
     if (bool bdlmt_throttle_iFsToP = false) {}                                \
     else                                                                      \
-        for (static BloombergLP::bdlmt::Throttle bdlmt_throttle_iFtHrOtTlE =  \
+        for (static BNP_Paribas::bdlmt::Throttle bdlmt_throttle_iFtHrOtTlE =  \
                        BDLMT_THROTTLE_INIT_REALTIME((maxSimultaneousActions), \
                                                     (nanosecondsPerAction));  \
              !bdlmt_throttle_iFsToP;                                          \

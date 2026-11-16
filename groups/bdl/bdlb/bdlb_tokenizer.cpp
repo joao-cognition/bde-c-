@@ -53,7 +53,7 @@ const Action actionTable[NUM_INPUTS][NUM_STATES] = {
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlb {
 

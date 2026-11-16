@@ -76,7 +76,7 @@ BSLS_IDENT("$Id: $")
 // ```
 // Now, invoking the main program on AIX produces the following output:
 // ```
-// (0): BloombergLP::balst::StackTracePrintUtil::.printStackTrace(
+// (0): BNP_Paribas::balst::StackTracePrintUtil::.printStackTrace(
 //      std::basic_ostream<char,std::char_traits<char> >&,int,bool)+0x170 at
 //      0x1000a2c8 source:balst_stacktraceprintutil.cpp:52 in
 //      balst_stacktraceprintutil.t.dbg_
@@ -115,7 +115,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_sstream.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balst {
                          // =========================

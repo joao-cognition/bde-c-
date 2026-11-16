@@ -91,7 +91,7 @@ BSLS_IDENT("$Id: $")
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                             // ========================
@@ -179,8 +179,8 @@ using std::chars_format;
 
 #else
 
-using BloombergLP::bslstl::to_chars_result;
-using BloombergLP::bslstl::to_chars;
+using BNP_Paribas::bslstl::to_chars_result;
+using BNP_Paribas::bslstl::to_chars;
 
 #endif
 

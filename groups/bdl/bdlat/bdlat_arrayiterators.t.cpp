@@ -12,7 +12,7 @@
 #include <bsl_vector.h>
 #include <bsl_algorithm.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -233,7 +233,7 @@ class FixedArrayElement {
 
 }  // close namespace Test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ArrayFunctions {
     // META FUNCTIONS
     template <int SIZE, class TYPE>

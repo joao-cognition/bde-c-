@@ -490,7 +490,7 @@ BSLS_IDENT("$Id: $")
 // {
 //     // ..
 //
-//     using namespace BloombergLP;
+//     using namespace BNP_Paribas;
 //
 //     bslmt::ThreadGroup tg;
 //     tg.addThreads(SumUtilTest(), k_NUM_THREADS);
@@ -556,13 +556,13 @@ BSLS_IDENT("$Id: $")
                            // =================
 
 #define BSLMT_TESTUTIL_GUARD_NAME_IMPL                                        \
-                                  bloomberglp_bslmt_tEsTuTiL_GuArD_ ## __LINE__
+                                  bnp_paribas_bslmt_tEsTuTiL_GuArD_ ## __LINE__
 
 /// Acquire the critical section, and release it when the macro call goes
 /// out of scope.  If the critical section is already held by the current
 /// thread, this can still be used with no additional effect.
 #define BSLMT_TESTUTIL_GUARD                                                  \
-        BloombergLP::bslmt::TestUtil_Guard BSLMT_TESTUTIL_GUARD_NAME_IMPL
+        BNP_Paribas::bslmt::TestUtil_Guard BSLMT_TESTUTIL_GUARD_NAME_IMPL
 
 #define BSLMT_TESTUTIL_OUTPUT_GUARD           BSLMT_TESTUTIL_GUARD
 #define BSLMT_TESTUTIL_NESTED_OUTPUT_GUARD    BSLMT_TESTUTIL_GUARD
@@ -687,7 +687,7 @@ BSLS_IDENT("$Id: $")
     __LINE__
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
                               // ===============

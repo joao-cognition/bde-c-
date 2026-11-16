@@ -91,7 +91,7 @@ extern "C" {
 
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 template <class TIMED_SEMAPHORE_POLICY>

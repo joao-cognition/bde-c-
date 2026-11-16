@@ -66,7 +66,7 @@ BSLS_IDENT("$Id: $")
 // assert(0 == strcmp(asciiValue, "DEBUG"));
 // ```
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                          // ==================

@@ -71,7 +71,7 @@
 
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -1617,8 +1617,8 @@ int top(bslma::Allocator *alloc)
     const bool demangle = !PLAT_WIN;
 
     bsl::vector<const char *> matches(alloc);
-    matches.push_back(demangle ? "top(BloombergLP::bslma::Allocator" : "top");
-    matches.push_back(demangle ? "bottom(BloombergLP::bslma::Allocator" :
+    matches.push_back(demangle ? "top(BNP_Paribas::bslma::Allocator" : "top");
+    matches.push_back(demangle ? "bottom(BNP_Paribas::bslma::Allocator" :
                                                                      "bottom");
     matches.push_back("main");
 
@@ -1830,7 +1830,7 @@ void bottom(bslma::Allocator *alloc)
 //  0x10001e438 0x10001e3b8 0x10001e3b0 0x10001e3b0 0x10001e3b0 0x10001e3b0 ...
 // ```
 // The hex stack traces can be translated to a human-readable stack trace
-// using tools outside of BDE, such as Bloomberg's `/bb/bin/showfunc.tsk`:
+// using tools outside of BDE, such as BNP Paribas's `/bb/bin/showfunc.tsk`:
 // ```
 //  $ /bb/bin/showfunc.tsk <path to executable> 0x10001e438 0x10001e3b8 ...
 //  0x10001e438 .traceExample3__Fv + 64
@@ -2304,40 +2304,40 @@ int main(int argc, char *argv[])
         bsl::vector<TC::Data> v(&ta);
 
         TC::pushVec(&v, L_, &bsls::StackAddressUtil::getStackAddresses,
-                 "BloombergLP::bsls::StackAddressUtil::getStackAddresses(void",
+                 "BNP_Paribas::bsls::StackAddressUtil::getStackAddresses(void",
                              "getStackAddresses", "bsls_stackaddressutil.cpp");
         TC::pushVec(&v, L_, &bsls::Log::logFormattedMessage,
-                                "BloombergLP::bsls::Log::logFormattedMessage(",
+                                "BNP_Paribas::bsls::Log::logFormattedMessage(",
                                         "logFormattedMessage", "bsls_log.cpp");
         TC::pushVec(&v, L_, &balst::StackTraceFrame::address,
-                              "BloombergLP::balst::StackTraceFrame::address()",
+                              "BNP_Paribas::balst::StackTraceFrame::address()",
                                          "address", "balst_stacktraceframe.h");
         TC::pushVec(&v, L_, &bdlb::String::strstrCaseless,
-                                  "BloombergLP::bdlb::String::strstrCaseless(",
+                                  "BNP_Paribas::bdlb::String::strstrCaseless(",
                                           "strstrCaseless", "bdlb_string.cpp");
         TC::pushVec(&v, L_, &bdlb::StringRefUtil::upperCaseCmp,
-                             "BloombergLP::bdlb::StringRefUtil::upperCaseCmp(",
+                             "BNP_Paribas::bdlb::StringRefUtil::upperCaseCmp(",
                                      "upperCaseCmp", "bdlb_stringrefutil.cpp");
         TC::pushVec(&v, L_, &bdlma::SequentialAllocator::allocateAndExpand,
-                 "BloombergLP::bdlma::SequentialAllocator::allocateAndExpand(",
+                 "BNP_Paribas::bdlma::SequentialAllocator::allocateAndExpand(",
                            "allocateAndExpand", "bdlma_sequentialallocator.h");
         TC::pushVec(&v, L_, &bdls::FilesystemUtil::unmap,
-                               "BloombergLP::bdls::FilesystemUtil::unmap(void",
+                               "BNP_Paribas::bdls::FilesystemUtil::unmap(void",
                                            "unmap", "bdls_filesystemutil.cpp");
         TC::pushVec(&v, L_, &bslim::TestUtil::compareText,
-             "BloombergLP::bslim::TestUtil::compareText(BloombergLP::bslstl::",
+             "BNP_Paribas::bslim::TestUtil::compareText(BNP_Paribas::bslstl::",
                                           "compareText", "bslim_testutil.cpp");
         TC::pushVec(&v, L_, &bslma::TestAllocator::numBlocksInUse,
-                         "BloombergLP::bslma::TestAllocator::numBlocksInUse()",
+                         "BNP_Paribas::bslma::TestAllocator::numBlocksInUse()",
                                     "numBlocksInUse", "bslma_testallocator.h");
         TC::pushVec(&v, L_, &bslmt::ThreadUtil::exit,
-                                   "BloombergLP::bslmt::ThreadUtil::exit(void",
+                                   "BNP_Paribas::bslmt::ThreadUtil::exit(void",
                                                  "exit", "bslmt_threadutil.h");
         TC::pushVec(&v, L_, &bsls::Stopwatch::accumulatedTimes,
-                       "BloombergLP::bsls::Stopwatch::accumulatedTimes(double",
+                       "BNP_Paribas::bsls::Stopwatch::accumulatedTimes(double",
                                      "accumulatedTimes", "bsls_stopwatch.cpp");
         TC::pushVec(&v, L_, &bsls::TimeInterval::totalNanoseconds,
-                         "BloombergLP::bsls::TimeInterval::totalNanoseconds()",
+                         "BNP_Paribas::bsls::TimeInterval::totalNanoseconds()",
                                     "totalNanoseconds", "bsls_timeinterval.h");
 
 //      This part of the test was eliminated, because the lib containing
@@ -2384,7 +2384,7 @@ int main(int argc, char *argv[])
                 expName.resize(pos);
             }
 
-            BSLS_ASSERT(npos != expName.find("BloombergLP"));
+            BSLS_ASSERT(npos != expName.find("BNP_Paribas"));
             BSLS_ASSERT(!expName.empty());
             BSLS_ASSERT(baseName);
 
@@ -2407,7 +2407,7 @@ int main(int argc, char *argv[])
             const char * const mangledName = frame.mangledSymbolName().c_str();
             ASSERTV(LINE, mangledName, expMangled,
                                        (passed.d_mangledSymbolGood =
-                       npos != frame.mangledSymbolName().find("BloombergLP")));
+                       npos != frame.mangledSymbolName().find("BNP_Paribas")));
             ASSERTV(LINE, mangledName, expMangled,
                                        (passed.d_mangledSymbolGood &=
                        npos != frame.mangledSymbolName().find(expMangled)));

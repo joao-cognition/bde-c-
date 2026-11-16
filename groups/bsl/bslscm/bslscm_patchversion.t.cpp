@@ -7,7 +7,7 @@
 #include <stdio.h>      // `printf`, `fprintf`
 #include <stdlib.h>     // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                     STANDARD BSL ASSERT TEST FUNCTION

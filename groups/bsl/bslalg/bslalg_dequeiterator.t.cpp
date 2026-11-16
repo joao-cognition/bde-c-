@@ -13,7 +13,7 @@
 #include <stdlib.h>     // `atoi`
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -90,7 +90,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                      GLOBAL PRINT FUNCTIONS
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 // Iterator-specific print function.

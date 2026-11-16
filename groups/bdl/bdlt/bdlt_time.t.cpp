@@ -27,7 +27,7 @@
 #include <bsl_limits.h>
 #include <bsl_sstream.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -714,7 +714,7 @@ if (veryVerbose)
 
         if (verbose) cout << "Brute force test of several times." << endl;
         {
-            typedef ::BloombergLP::bslh::Hash<> Hasher;
+            typedef ::BNP_Paribas::bslh::Hash<> Hasher;
 
             bdlt::Time       t1;
             bdlt::Time       t2( 0,  1,  1,  20);

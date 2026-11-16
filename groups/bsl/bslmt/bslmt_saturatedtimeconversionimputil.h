@@ -130,7 +130,7 @@ BSLS_IDENT("$Id: $")
 #include <mach/clock_types.h>    // for 'mach_timespec_t'
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
                    // ====================================

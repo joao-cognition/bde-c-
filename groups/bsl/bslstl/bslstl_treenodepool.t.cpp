@@ -42,7 +42,7 @@
 #pragma bde_verify -TP19   // Missing or malformed standard test driver section
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 using namespace bslstl;
 
@@ -207,7 +207,7 @@ class AllocatingIntType {
     const int& value() const { return *d_value_p; }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>
@@ -275,7 +275,7 @@ class Wrapper {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class TYPE>

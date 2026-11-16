@@ -93,7 +93,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_iosfwd.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslx {
 
                          // ===============

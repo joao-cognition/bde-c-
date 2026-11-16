@@ -119,7 +119,7 @@ BSLS_IDENT("$Id: $")
 #define BSLS_BSLLOCK_ASSERT_SAFE(x)
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                               // =============

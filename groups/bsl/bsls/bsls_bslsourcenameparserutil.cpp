@@ -125,7 +125,7 @@ static
 inline
 bool isTestDriverType(unsigned sourceType)
 {
-    using BloombergLP::bsls::BslSourceNameParserUtil;
+    using BNP_Paribas::bsls::BslSourceNameParserUtil;
     return 0 != (sourceType & BslSourceNameParserUtil::k_MASK_TEST);
 }
 
@@ -149,7 +149,7 @@ const char *skipPath(const char *filename)
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                       //-------------------------------

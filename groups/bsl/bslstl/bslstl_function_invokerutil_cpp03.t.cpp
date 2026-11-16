@@ -21,7 +21,7 @@
 // Expanded test driver only when compiling bslstl_function_invokerutil.cpp
 #ifdef COMPILING_BSLSTL_FUNCTION_INVOKERUTIL_T_CPP
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

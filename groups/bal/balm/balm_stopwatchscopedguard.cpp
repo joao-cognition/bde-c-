@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(balm_stopwatchscopedguard_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                       // --------------------------------
                       // class balm::StopwatchScopedGuard

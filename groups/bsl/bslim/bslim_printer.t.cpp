@@ -48,7 +48,7 @@
 #pragma warning(disable:4312)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bslim;
 
@@ -1433,7 +1433,7 @@ int main(int argc, char *argv[])
 
         bslma::TestAllocator ta(veryVeryVeryVerbose);
 
-        using namespace BloombergLP::bsltf;
+        using namespace BNP_Paribas::bsltf;
 
         AllocBitwiseMoveableTestType o1 =
                  TemplateTestFacility::create<AllocBitwiseMoveableTestType>(1);

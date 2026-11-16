@@ -9,7 +9,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -113,7 +113,7 @@ public:
     #include <bslmf_allocatorargt.h>
     #include <new>
 
-    namespace BloombergLP {
+    namespace BNP_Paribas {
 
     template <class T1, class T2, class ALLOC>
     class DiscriminatedUnion {

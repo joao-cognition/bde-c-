@@ -17,7 +17,7 @@ BSLS_IDENT_RCSID(ball_fileobserver_cpp,"$Id$ $CSID$")
 #include <bsl_cstring.h>                      // for 'bsl::strcmp'
 #include <bsl_iostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 namespace {

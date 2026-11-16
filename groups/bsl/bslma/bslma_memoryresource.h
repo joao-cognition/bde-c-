@@ -398,7 +398,7 @@ class memory_resource {
 
     // PRIVATE CONSTANTS
     enum {
-        k_MAX_ALIGN = BloombergLP::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT
+        k_MAX_ALIGN = BNP_Paribas::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT
     };
 
   public:

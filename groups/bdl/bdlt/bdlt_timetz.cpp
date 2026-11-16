@@ -14,7 +14,7 @@ BSLS_IDENT_RCSID(bdlt_timetz_cpp,"$Id$ $CSID$")
 #include <bsl_ostream.h>
 #include <bsl_sstream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 // 'TimeTz' is bitwise copyable only if 'Time' is also bitwise copyable.

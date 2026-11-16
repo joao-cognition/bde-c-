@@ -52,13 +52,13 @@
 #include <s_baltst_generatetestnullablevalue.h>
 #include <s_baltst_testplaceholder.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
 using bsl::flush;
 using bsls::NameOf;
-namespace test = BloombergLP::s_baltst;
+namespace test = BNP_Paribas::s_baltst;
 
 // ============================================================================
 //                             TEST PLAN
@@ -731,7 +731,7 @@ using TestNamespace::TestEnum;
                  // bdlat_EnumFunctions Overrides for TestEnum
                  // ==========================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlat_EnumFunctions {
 
@@ -794,7 +794,7 @@ namespace bdlat_EnumFunctions {
 //@DESCRIPTION:
 //  todo: provide annotation for `CustomizedInt`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
 class CustomizedInt {
@@ -993,7 +993,7 @@ bsl::ostream& test::operator<<(bsl::ostream& stream, const CustomizedInt& rhs)
 
 // test_customizedint.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                                // ---------
@@ -1038,7 +1038,7 @@ const char CustomizedInt::CLASS_NAME[] = "CustomizedInt";
 //  #include <cassert>
 //  #include <vector>
 //
-//  using namespace BloombergLP;
+//  using namespace BNP_Paribas;
 //
 void usageExample()
 {

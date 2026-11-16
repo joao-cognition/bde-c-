@@ -60,7 +60,7 @@ BSLS_IDENT_RCSID(bdlma_concurrentpool_cpp,"$Id$ $CSID$")
 // +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+ ...
 // ```
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
 namespace {

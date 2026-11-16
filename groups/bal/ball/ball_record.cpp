@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(ball_record_cpp,"$Id$ $CSID$")
 #include <bsl_ostream.h>
 #include <bsl_functional.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                            // ------------

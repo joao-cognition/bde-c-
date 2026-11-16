@@ -10,7 +10,7 @@
 #include <stdio.h>      // `printf`
 #include <stdlib.h>     // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -104,7 +104,7 @@ class AnotherNotTrivial {
     AnotherNotTrivial(const AnotherNotTrivial&) : d_this_p(this) {}
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <>
 struct IsBitwiseMoveable<AlmostTrivial> : bsl::true_type {};

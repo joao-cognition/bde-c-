@@ -43,16 +43,16 @@ void handle_contract_violation(const std::contract_violation &violation)
 {
     if (violation.continuation_mode() ==
                    std::contract_violation_continuation_mode::MAYBE_CONTINUE) {
-        BloombergLP::bsls::Review::invokeLanguageContractHandler(violation);
+        BNP_Paribas::bsls::Review::invokeLanguageContractHandler(violation);
     }
     else {
-        BloombergLP::bsls::Assert::invokeLanguageContractHandler(violation);
+        BNP_Paribas::bsls::Assert::invokeLanguageContractHandler(violation);
     }
 }
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                               // ---------------
@@ -304,12 +304,12 @@ void Assert::invokeHandlerNoReturn(const bsls::AssertViolation &violation)
 void Assert::invokeLanguageContractHandler(
                                       const std::contract_violation &violation)
 {
-    BloombergLP::bsls::AssertViolation bslsViolation(
+    BNP_Paribas::bsls::AssertViolation bslsViolation(
         violation.comment().data(),
         violation.file_name().data(),
         violation.line_number(),
         violation.assertion_level().data());
-    BloombergLP::bsls::Assert::invokeHandler(bslsViolation);
+    BNP_Paribas::bsls::Assert::invokeHandler(bslsViolation);
 }
 #endif
 

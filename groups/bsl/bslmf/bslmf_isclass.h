@@ -13,7 +13,7 @@ BSLS_IDENT("$Id: $")
 //  bslmf::IsClass: meta-function for determining class types
 //
 //@DESCRIPTION: This component defines two meta-functions, `bsl::is_class` and
-// `BloombergLP::bslmf::IsClass` and a template variable `bsl::is_class_v`,
+// `BNP_Paribas::bslmf::IsClass` and a template variable `bsl::is_class_v`,
 // that represents the result value of the `bsl::is_class` meta-function.  All
 // these meta-functions may be used to query whether a type is a `class`,
 // `struct`, or `union`, optionally qualified with `const` or `volatile`.
@@ -84,7 +84,7 @@ BSLS_IDENT("$Id: $")
 #include <cstdlib>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                              // ==================
@@ -120,7 +120,7 @@ namespace bsl {
 /// definition of a class type, but is an error according to the standard
 /// library definition of this type trait.
 template <class t_TYPE>
-struct is_class : BloombergLP::bslmf::IsClass_Imp<t_TYPE>::type {
+struct is_class : BNP_Paribas::bslmf::IsClass_Imp<t_TYPE>::type {
 };
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_VARIABLE_TEMPLATES
@@ -133,7 +133,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_class_v =
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
                             // ==============
                             // struct IsClass

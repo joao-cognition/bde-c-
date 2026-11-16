@@ -34,7 +34,7 @@ using std::fflush;
 using std::fprintf;
 using std::printf;
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN

@@ -14,7 +14,7 @@ BSLS_IDENT_RCSID(bdlmt_signaler_cpp,"$Id$ $CSID$")
 
 #include <bsl_algorithm.h>    // swap
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlmt {
 
                          // ----------------------------
@@ -226,7 +226,7 @@ void SignalerConnectionGuard::swap(SignalerConnectionGuard& other)
 // NOTICE:
 //      Copyright (C) Bloomberg L.P., 2019
 //      All Rights Reserved.
-//      Property of Bloomberg L.P. (BLP)
+//      Property of BNP Paribas (BNPP)
 //      This software is made available solely pursuant to the
 //      terms of a BLP license agreement which governs its use.
 // ----------------------------- END-OF-FILE ----------------------------------

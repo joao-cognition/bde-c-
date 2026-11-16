@@ -154,7 +154,7 @@ BSLS_IDENT("$Id: $")
 // `UsesBslmaAllocator` trait with the type (sometimes referred to as a
 // "C++11-style" trait declaration, because it is more in keeping with the
 // style of trait declarations found in the C++11 Standard).  Note that the
-// specialization must be performed in the `BloombergLP::bslma` namespace:
+// specialization must be performed in the `BNP_Paribas::bslma` namespace:
 // ```
 // class UsesAllocatorType2 {
 //     // ...
@@ -172,7 +172,7 @@ BSLS_IDENT("$Id: $")
 // }  // close namespace xyz
 //
 // // TRAITS
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace bslma {
 //
 // template <>
@@ -270,7 +270,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_annotation.h>
 #include <bsls_compilerfeatures.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // FORWARD DECLARATION

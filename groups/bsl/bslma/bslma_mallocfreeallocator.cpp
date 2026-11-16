@@ -16,7 +16,7 @@ BSLS_IDENT("$Id$ $CSID$")
 // pattern to ensure that the returned allocator object remains valid forever
 // (without leaking memory).
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                         // -----------------------------------------
                         // union bslma_MallocFreeAllocator_Singleton

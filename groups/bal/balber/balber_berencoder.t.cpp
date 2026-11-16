@@ -59,8 +59,8 @@
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-namespace test = BloombergLP::s_baltst;
-using namespace BloombergLP;
+namespace test = BNP_Paribas::s_baltst;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -258,7 +258,7 @@ void printDiagnostic(balber::BerEncoder & encoder)
 // ----------------------------------------------------------------------------
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace s_baltst { class MyChoice; }
 namespace s_baltst { class MySequenceWithNullable; }
@@ -295,7 +295,7 @@ struct Messages {
 //                               USAGE EXAMPLE
 // ----------------------------------------------------------------------------
 // ```
-    namespace BloombergLP {
+    namespace BNP_Paribas {
     namespace usage {
 
     /// This struct represents a sequence containing a `string` member, an
@@ -682,7 +682,7 @@ struct Messages {
 
 static void usageExample()
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 ///Usage
 ///-----
 // This section illustrates intended use of this component.

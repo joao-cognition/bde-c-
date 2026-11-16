@@ -10,7 +10,7 @@
 #include <bsl_cstdlib.h>
 #include <bsl_cstring.h>  // for bsl::strchr
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -151,10 +151,10 @@ static int veryVeryVerbose = 0;
         balxml::NamespaceRegistry registry;
         balxml::PrefixStack prefixes(&registry);
         int cal = prefixes.pushPrefix("cal",
-                                  "http://www.bloomberg.com/schemas/calendar");
-        prefixes.pushPrefix("math", "http://www.bloomberg.com/schemas/math");
+                                  "http://www.bnpparibas.com/schemas/calendar");
+        prefixes.pushPrefix("math", "http://www.bnpparibas.com/schemas/math");
         prefixes.pushPrefix("",  // Default namespace
-                            "http://www.bloomberg.com/schemas/app");
+                            "http://www.bnpparibas.com/schemas/app");
 // ```
 // Now we can parse an attribute string and the `balxml::ElementAttribute`
 // object will provide detailed information about it.
@@ -170,20 +170,20 @@ static int veryVeryVerbose = 0;
         ASSERT(0 == bsl::strcmp("date", attribute1.localName()));
         ASSERT(0 == bsl::strcmp("cal", attribute1.prefix()));
         ASSERT(cal == attribute1.namespaceId());
-        ASSERT(0 == bsl::strcmp("http://www.bloomberg.com/schemas/calendar",
+        ASSERT(0 == bsl::strcmp("http://www.bnpparibas.com/schemas/calendar",
                                 attribute1.namespaceUri()));
         ASSERT(0 == attribute1.flags());
 // ```
 // Results are slightly different when the attribute name has no prefix:
 // ```
-        char attrStr2[] = "name=\"Bloomberg, L.P.\"";
+        char attrStr2[] = "name=\"BNP Paribas, L.P.\"";
         balxml::ElementAttribute attribute2;
         ASSERT(attribute2.isNull());
         parseAttribute(&attribute2, attrStr2, &prefixes);
 
         ASSERT(! attribute2.isNull());
         ASSERT(0 == bsl::strcmp("name", attribute2.qualifiedName()));
-        ASSERT(0 == bsl::strcmp("Bloomberg, L.P.", attribute2.value()));
+        ASSERT(0 == bsl::strcmp("BNP Paribas, L.P.", attribute2.value()));
         ASSERT(0 == bsl::strcmp("name", attribute2.localName()));
 // ```
 // As per the XML namespace standard, an attribute with no namespace prefix

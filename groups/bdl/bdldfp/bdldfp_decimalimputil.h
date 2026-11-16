@@ -156,16 +156,16 @@ BSLS_IDENT("$Id$")
 
 
 #define BDLDFP_DECIMALIMPUTIL_DF(lit)                                        \
-    BloombergLP::bdldfp::DecimalImpUtil::parse32(                            \
-        (BloombergLP::bdldfp::DecimalImpUtil::checkLiteral(lit), #lit))
+    BNP_Paribas::bdldfp::DecimalImpUtil::parse32(                            \
+        (BNP_Paribas::bdldfp::DecimalImpUtil::checkLiteral(lit), #lit))
 
 #define BDLDFP_DECIMALIMPUTIL_DD(lit)                                        \
-    BloombergLP::bdldfp::DecimalImpUtil::parse64(                            \
-        (BloombergLP::bdldfp::DecimalImpUtil::checkLiteral(lit), #lit))
+    BNP_Paribas::bdldfp::DecimalImpUtil::parse64(                            \
+        (BNP_Paribas::bdldfp::DecimalImpUtil::checkLiteral(lit), #lit))
 
 #define BDLDFP_DECIMALIMPUTIL_DL(lit)                                        \
-    BloombergLP::bdldfp::DecimalImpUtil::parse128(                           \
-        (BloombergLP::bdldfp::DecimalImpUtil::checkLiteral(lit), #lit))
+    BNP_Paribas::bdldfp::DecimalImpUtil::parse128(                           \
+        (BNP_Paribas::bdldfp::DecimalImpUtil::checkLiteral(lit), #lit))
 
 #elif defined(BDLDFP_DECIMALPLATFORM_C99_TR) || defined( __IBM_DFP__ )
 
@@ -182,7 +182,7 @@ BSLS_IDENT("$Id$")
 #endif
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
 
                         // ====================

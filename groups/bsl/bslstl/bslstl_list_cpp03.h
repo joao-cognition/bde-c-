@@ -110,7 +110,7 @@ class List_Iterator {
     // PUBLIC TYPES
     typedef std::bidirectional_iterator_tag   iterator_category;
     typedef NcType                            value_type;
-    typedef BloombergLP::bsls::Types::IntPtr  difference_type;
+    typedef BNP_Paribas::bsls::Types::IntPtr  difference_type;
     typedef VALUE                            *pointer;
     typedef VALUE&                            reference;
 
@@ -384,7 +384,7 @@ class list {
                                                   AllocTraits;
 
     /// Alias for the utility associated with movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil    MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil    MoveUtil;
 
     /// Alias for the wrapper containing the (usually stateless) allocator and
     /// number of elements stored in this container.
@@ -664,7 +664,7 @@ class list {
     /// the new list.  The allocator associated with `original` is
     /// propagated for use in the newly-created list.  `original` is left in
     /// a valid but unspecified state.
-    list(BloombergLP::bslmf::MovableRef<list> original);            // IMPLICIT
+    list(BNP_Paribas::bslmf::MovableRef<list> original);            // IMPLICIT
 
     /// Create a list having the same value as the specified `original`
     /// object that uses the specified `basicAllocator` to supply memory.
@@ -676,7 +676,7 @@ class list {
     /// into this list (see {Requirements on `VALUE`}).  Note that a
     /// `bslma::Allocator *` can be supplied for `basicAllocator` if the
     /// (template parameter) `ALLOCATOR` is `bsl::allocator` (the default).
-    list(BloombergLP::bslmf::MovableRef<list>           original,
+    list(BNP_Paribas::bslmf::MovableRef<list>           original,
          const typename type_identity<ALLOCATOR>::type& basicAllocator);
 
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_GENERALIZED_INITIALIZERS)
@@ -729,7 +729,7 @@ class list {
     /// a valid but unspecified state.  This method requires that the
     /// (template parameter) type `VALUE` be `move-assignable` and
     /// `move-insertable` into this list (see {Requirements on `VALUE`}).
-    list& operator=(BloombergLP::bslmf::MovableRef<list> rhs)
+    list& operator=(BNP_Paribas::bslmf::MovableRef<list> rhs)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                           AllocTraits::is_always_equal::value);
 
@@ -1262,7 +1262,7 @@ class list {
     /// non-copy-insertable `value_type`), this method has no effect.  This
     /// method requires that the (template parameter) `VALUE` be
     /// `move-insertable` into this list (see {Requirements on `VALUE`}).
-    void push_back(BloombergLP::bslmf::MovableRef<value_type> value);
+    void push_back(BNP_Paribas::bslmf::MovableRef<value_type> value);
 
     /// Prepend to the front of this list a copy of the specified `value`.
     /// This method offers full guarantee of rollback in case an exception
@@ -1276,7 +1276,7 @@ class list {
     /// non-copy-insertable `value_type`), this method has no effect.  This
     /// method requires that the (template parameter) `VALUE` be
     /// `move-insertable` into this list (see {Requirements on `VALUE`}).
-    void push_front(BloombergLP::bslmf::MovableRef<value_type> value);
+    void push_front(BNP_Paribas::bslmf::MovableRef<value_type> value);
 
                        // *** random access inserts ***
 
@@ -1474,7 +1474,7 @@ class list {
     /// The behavior is undefined unless `dstPosition` is an iterator in the
     /// range `[cbegin() .. cend()]` (both endpoints included).
     iterator insert(const_iterator                             dstPosition,
-                    BloombergLP::bslmf::MovableRef<value_type> value);
+                    BNP_Paribas::bslmf::MovableRef<value_type> value);
 
     /// Insert at the specified `dstPosition` in this list the specified
     /// `numElements` copies of the specified `value`, and return an
@@ -1562,7 +1562,7 @@ class list {
     /// the same allocator.  `operator<` must define a strict weak ordering
     /// per `value_type` (see {Comparators and Strict Weak Ordering}).
     void merge(list&                                other);
-    void merge(BloombergLP::bslmf::MovableRef<list> other);
+    void merge(BNP_Paribas::bslmf::MovableRef<list> other);
 
     /// Merge the specified sorted `other` list into this sorted list, using
     /// the specified binary `comparator` predicate to order elements.  This
@@ -1574,7 +1574,7 @@ class list {
     template <class COMPARE>
     void merge(list& other, COMPARE comparator);
     template <class COMPARE>
-    void merge(BloombergLP::bslmf::MovableRef<list> other, COMPARE comparator);
+    void merge(BNP_Paribas::bslmf::MovableRef<list> other, COMPARE comparator);
 
     /// Erase all the elements having the specified `value` from this list
     /// and return the number of erased elements.
@@ -1612,7 +1612,7 @@ class list {
     void splice(const_iterator                       dstPosition,
                 list&                                src);
     void splice(const_iterator                       dstPosition,
-                BloombergLP::bslmf::MovableRef<list> src);
+                BNP_Paribas::bslmf::MovableRef<list> src);
 
     /// Remove the single element at the specified `srcNode` from the
     /// specified `src` list, and insert it at the specified `dstPosition`
@@ -1626,7 +1626,7 @@ class list {
                 list&                                src,
                 const_iterator                       srcNode);
     void splice(const_iterator                       dstPosition,
-                BloombergLP::bslmf::MovableRef<list> src,
+                BNP_Paribas::bslmf::MovableRef<list> src,
                 const_iterator                       srcNode);
 
     /// Remove the elements in the specified range `[first .. last)` from
@@ -1644,7 +1644,7 @@ class list {
                 const_iterator                       first,
                 const_iterator                       last);
     void splice(const_iterator                       dstPosition,
-                BloombergLP::bslmf::MovableRef<list> src,
+                BNP_Paribas::bslmf::MovableRef<list> src,
                 const_iterator                       first,
                 const_iterator                       last);
 
@@ -1764,7 +1764,7 @@ list(SIZE_TYPE, VALUE, ALLOC *) -> list<VALUE>;
 template <
     class INPUT_ITERATOR,
     class VALUE = typename
-                   BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
+                   BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
     >
 list(INPUT_ITERATOR, INPUT_ITERATOR) -> list<VALUE>;
 
@@ -1777,7 +1777,7 @@ template<
     class INPUT_ITERATOR,
     class ALLOCATOR,
     class VALUE = typename
-                  BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+                  BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>>
 list(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR) -> list<VALUE, ALLOCATOR>;
 
@@ -1789,7 +1789,7 @@ template<
     class INPUT_ITERATOR,
     class ALLOC,
     class VALUE = typename
-                  BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+                  BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<VALUE>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -1856,7 +1856,7 @@ bool operator!=(const list<VALUE, ALLOCATOR>& lhs,
 /// the specified `rhs` lists by using the comparison operators of `VALUE`
 /// on each element; return the result of that comparison.
 template <class VALUE, class ALLOCATOR>
-BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE> operator<=>(
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<VALUE> operator<=>(
                                             const list<VALUE, ALLOCATOR>& lhs,
                                             const list<VALUE, ALLOCATOR>& rhs);
 
@@ -2028,7 +2028,7 @@ inline
 typename bsl::List_Iterator<VALUE>::pointer
                                        List_Iterator<VALUE>::operator->() const
 {
-    return BloombergLP::bsls::Util::addressOf(this->d_node_p->d_value);
+    return BNP_Paribas::bsls::Util::addressOf(this->d_node_p->d_value);
 }
 
 // FREE OPERATORS
@@ -2181,7 +2181,7 @@ void list<VALUE, ALLOCATOR>::deleteNode(NodePtr node)
     BSLS_ASSERT_SAFE(node);
 
     AllocTraits::destroy(allocatorImp(),
-                         BloombergLP::bsls::Util::addressOf(node->d_value));
+                         BNP_Paribas::bsls::Util::addressOf(node->d_value));
     AllocTraits::deallocate(allocatorImp(), node, 1);
 }
 
@@ -2481,7 +2481,7 @@ list<VALUE, ALLOCATOR>::list(const list&                        original,
 }
 
 template <class VALUE, class ALLOCATOR>
-list<VALUE, ALLOCATOR>::list(BloombergLP::bslmf::MovableRef<list> original)
+list<VALUE, ALLOCATOR>::list(BNP_Paribas::bslmf::MovableRef<list> original)
 : d_sentinel()
 , d_alloc_and_size(MoveUtil::access(original).allocatorImp(), 0)
 {
@@ -2499,7 +2499,7 @@ list<VALUE, ALLOCATOR>::list(BloombergLP::bslmf::MovableRef<list> original)
 
 template <class VALUE, class ALLOCATOR>
 list<VALUE, ALLOCATOR>::list(
-                 BloombergLP::bslmf::MovableRef<list>           original,
+                 BNP_Paribas::bslmf::MovableRef<list>           original,
                  const typename type_identity<ALLOCATOR>::type& basicAllocator)
 : d_sentinel()
 , d_alloc_and_size(basicAllocator, size_type(-1))
@@ -2578,7 +2578,7 @@ list<VALUE, ALLOCATOR>& list<VALUE, ALLOCATOR>::operator=(const list& rhs)
             // Fully destroy old list before assigning allocator, then reset to
             // the empty list state.
             destroyAll();
-            BloombergLP::bslma::AllocatorUtil::assign(&allocatorImp(),
+            BNP_Paribas::bslma::AllocatorUtil::assign(&allocatorImp(),
                                                       rhs.allocatorImp(),
                                                       Propagate());
             createSentinel();
@@ -2591,7 +2591,7 @@ list<VALUE, ALLOCATOR>& list<VALUE, ALLOCATOR>::operator=(const list& rhs)
 
 template <class VALUE, class ALLOCATOR>
 list<VALUE, ALLOCATOR>& list<VALUE, ALLOCATOR>::operator=(
-                                      BloombergLP::bslmf::MovableRef<list> rhs)
+                                      BNP_Paribas::bslmf::MovableRef<list> rhs)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(AllocTraits::is_always_equal::value)
 {
     typedef typename
@@ -2625,7 +2625,7 @@ list<VALUE, ALLOCATOR>& list<VALUE, ALLOCATOR>::operator=(
         list other(MoveUtil::move(lvalue));
 
         using std::swap;
-        using BloombergLP::bslma::AllocatorUtil;
+        using BNP_Paribas::bslma::AllocatorUtil;
 
         AllocatorUtil::swap(                       // won't throw
             &allocatorImp(), &other.allocatorImp(), Propagate());
@@ -3519,7 +3519,7 @@ void list<VALUE, ALLOCATOR>::push_back(const VALUE& value)
 template <class VALUE, class ALLOCATOR>
 inline
 void list<VALUE, ALLOCATOR>::push_back(
-                                   BloombergLP::bslmf::MovableRef<VALUE> value)
+                                   BNP_Paribas::bslmf::MovableRef<VALUE> value)
 {
     emplace(cend(), MoveUtil::move(value));
 }
@@ -3534,7 +3534,7 @@ void list<VALUE, ALLOCATOR>::push_front(const VALUE& value)
 template <class VALUE, class ALLOCATOR>
 inline
 void list<VALUE, ALLOCATOR>::push_front(
-                                   BloombergLP::bslmf::MovableRef<VALUE> value)
+                                   BNP_Paribas::bslmf::MovableRef<VALUE> value)
 {
     emplace(cbegin(), MoveUtil::move(value));
 }
@@ -3558,7 +3558,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position)
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value));
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value));
     proctor.release();
     return insertNode(position, p);
 }
@@ -3574,7 +3574,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01));
     proctor.release();
     return insertNode(position, p);
@@ -3593,7 +3593,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02));
     proctor.release();
@@ -3615,7 +3615,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03));
@@ -3640,7 +3640,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03),
@@ -3668,7 +3668,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03),
@@ -3699,7 +3699,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03),
@@ -3733,7 +3733,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03),
@@ -3770,7 +3770,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03),
@@ -3810,7 +3810,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03),
@@ -3853,7 +3853,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_01, arguments_01),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_02, arguments_02),
                          BSLS_COMPILERFEATURES_FORWARD(ARGS_03, arguments_03),
@@ -3881,7 +3881,7 @@ list<VALUE, ALLOCATOR>::emplace(const_iterator position,
     NodePtr p = allocateNode();
     NodeProctor proctor(this, p);
     AllocTraits::construct(allocatorImp(),
-                           BloombergLP::bsls::Util::addressOf(p->d_value),
+                           BNP_Paribas::bsls::Util::addressOf(p->d_value),
                            BSLS_COMPILERFEATURES_FORWARD(ARGS, arguments)...);
     proctor.release();
     return insertNode(position, p);
@@ -3900,7 +3900,7 @@ template <class VALUE, class ALLOCATOR>
 typename list<VALUE, ALLOCATOR>::iterator
 list<VALUE, ALLOCATOR>::insert(
                              const_iterator                        dstPosition,
-                             BloombergLP::bslmf::MovableRef<VALUE> value)
+                             BNP_Paribas::bslmf::MovableRef<VALUE> value)
 {
     return emplace(dstPosition, MoveUtil::move(value));
 }
@@ -3967,7 +3967,7 @@ void list<VALUE, ALLOCATOR>::merge(list& other)
 
 template <class VALUE, class ALLOCATOR>
 inline
-void list<VALUE, ALLOCATOR>::merge(BloombergLP::bslmf::MovableRef<list> other)
+void list<VALUE, ALLOCATOR>::merge(BNP_Paribas::bslmf::MovableRef<list> other)
 {
     list& lvalue = other;
 
@@ -4009,7 +4009,7 @@ template <class VALUE, class ALLOCATOR>
 template <class COMPARE>
 inline
 void list<VALUE, ALLOCATOR>::merge(
-                               BloombergLP::bslmf::MovableRef<list> other,
+                               BNP_Paribas::bslmf::MovableRef<list> other,
                                COMPARE                              comparator)
 {
     list& lvalue = other;
@@ -4121,7 +4121,7 @@ template <class VALUE, class ALLOCATOR>
 inline
 void list<VALUE, ALLOCATOR>::splice(
                               const_iterator                       dstPosition,
-                              BloombergLP::bslmf::MovableRef<list> src)
+                              BNP_Paribas::bslmf::MovableRef<list> src)
 {
     splice(dstPosition, MoveUtil::access(src));
 }
@@ -4157,7 +4157,7 @@ template <class VALUE, class ALLOCATOR>
 inline
 void list<VALUE, ALLOCATOR>::splice(
                               const_iterator                       dstPosition,
-                              BloombergLP::bslmf::MovableRef<list> src,
+                              BNP_Paribas::bslmf::MovableRef<list> src,
                               const_iterator                       srcNode)
 {
     splice(dstPosition, MoveUtil::access(src), srcNode);
@@ -4198,7 +4198,7 @@ template <class VALUE, class ALLOCATOR>
 inline
 void list<VALUE, ALLOCATOR>::splice(
                               const_iterator                       dstPosition,
-                              BloombergLP::bslmf::MovableRef<list> src,
+                              BNP_Paribas::bslmf::MovableRef<list> src,
                               const_iterator                       first,
                               const_iterator                       last)
 {
@@ -4253,7 +4253,7 @@ void list<VALUE, ALLOCATOR>::swap(list& other)
 
     if (Propagate::value) {
         using std::swap;
-        using BloombergLP::bslma::AllocatorUtil;
+        using BNP_Paribas::bslma::AllocatorUtil;
 
         AllocatorUtil::swap(  // Won't throw
             &allocatorImp(), &other.allocatorImp(), Propagate());
@@ -4415,7 +4415,7 @@ inline
 bool bsl::operator==(const list<VALUE, ALLOCATOR>& lhs,
                      const list<VALUE, ALLOCATOR>& rhs)
 {
-    return BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+    return BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
                                                     lhs.end(),
                                                     lhs.size(),
                                                     rhs.begin(),
@@ -4439,7 +4439,7 @@ bool bsl::operator!=(const list<VALUE, ALLOCATOR>& lhs,
 
 template <class VALUE, class ALLOCATOR>
 inline
-BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE> bsl::operator<=>(
+BNP_Paribas::bslalg::SynthThreeWayUtil::Result<VALUE> bsl::operator<=>(
                                              const list<VALUE, ALLOCATOR>& lhs,
                                              const list<VALUE, ALLOCATOR>& rhs)
 {
@@ -4448,7 +4448,7 @@ BloombergLP::bslalg::SynthThreeWayUtil::Result<VALUE> bsl::operator<=>(
                               lhs.end(),
                               rhs.begin(),
                               rhs.end(),
-                              BloombergLP::bslalg::SynthThreeWayUtil::compare);
+                              BNP_Paribas::bslalg::SynthThreeWayUtil::compare);
 }
 
 #else
@@ -4458,7 +4458,7 @@ inline
 bool bsl::operator< (const list<VALUE, ALLOCATOR>& lhs,
                      const list<VALUE, ALLOCATOR>& rhs)
 {
-    return 0 > BloombergLP::bslalg::RangeCompare::lexicographical(lhs.begin(),
+    return 0 > BNP_Paribas::bslalg::RangeCompare::lexicographical(lhs.begin(),
                                                                   lhs.end(),
                                                                   lhs.size(),
                                                                   rhs.begin(),
@@ -4518,7 +4518,7 @@ template <class VALUE, class ALLOCATOR, class PREDICATE>
 inline typename bsl::list<VALUE, ALLOCATOR>::size_type
 bsl::erase_if(list<VALUE, ALLOCATOR>& l, PREDICATE predicate)
 {
-    return BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(l, predicate);
+    return BNP_Paribas::bslstl::AlgorithmUtil::containerEraseIf(l, predicate);
 }
 
 template <class VALUE, class ALLOCATOR>
@@ -4539,7 +4539,7 @@ void bsl::swap(list<VALUE, ALLOCATOR>& a, list<VALUE, ALLOCATOR>& b)
 //: o A sequence container uses 'bslma' allocators if the (template parameter)
 //:   type 'ALLOCATOR' is convertible from 'bslma::Allocator*'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 
@@ -4565,7 +4565,7 @@ namespace bslmf {
 
 template <class VALUE, class ALLOCATOR>
 struct IsBitwiseMoveable<bsl::list<VALUE, ALLOCATOR> >
-    : BloombergLP::bslmf::IsBitwiseMoveable<ALLOCATOR>
+    : BNP_Paribas::bslmf::IsBitwiseMoveable<ALLOCATOR>
 {};
 
 }  // close namespace bslmf

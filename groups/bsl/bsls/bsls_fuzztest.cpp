@@ -11,7 +11,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <cstdlib>
 #include <cstring>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 const char *FuzzTestPreconditionTracker::s_file_p                     = "";

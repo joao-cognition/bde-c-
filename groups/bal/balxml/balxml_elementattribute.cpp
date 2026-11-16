@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(balxml_elementattribute_cpp,"$Id$ $CSID$")
 #include <bsl_string.h>
 #include <bsl_cstring.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balxml {
 
 BSLMF_ASSERT(bslmf::IsTriviallyCopyableCheck<ElementAttribute>::value);

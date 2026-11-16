@@ -10,7 +10,7 @@
 #include <bsls_asserttest.h>
 #include <bsls_libraryfeatures.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

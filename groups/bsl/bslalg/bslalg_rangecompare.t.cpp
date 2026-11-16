@@ -26,7 +26,7 @@
 #pragma warning(disable:4312)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 //=============================================================================
@@ -604,7 +604,7 @@ inline
 bool operator==(const MyContainer<VALUE_TYPE>& lhs,
                 const MyContainer<VALUE_TYPE>& rhs)
 {
-    return BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+    return BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
                                                     lhs.end(),
                                                     lhs.size(),
                                                     rhs.begin(),
@@ -617,7 +617,7 @@ inline
 bool operator!=(const MyContainer<VALUE_TYPE>& lhs,
                 const MyContainer<VALUE_TYPE>& rhs)
 {
-    return !BloombergLP::bslalg::RangeCompare::equal(lhs.begin(),
+    return !BNP_Paribas::bslalg::RangeCompare::equal(lhs.begin(),
                                                      lhs.end(),
                                                      lhs.size(),
                                                      rhs.begin(),
@@ -655,7 +655,7 @@ class MyString {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(MyString,
-                                   BloombergLP::bslma::UsesBslmaAllocator);
+                                   BNP_Paribas::bslma::UsesBslmaAllocator);
 
     // CREATORS
 
@@ -812,7 +812,7 @@ class MyPoint {
   public:
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION(MyPoint,
-                          BloombergLP::bslmf::IsBitwiseEqualityComparable);
+                          BNP_Paribas::bslmf::IsBitwiseEqualityComparable);
 
     // CREATORS
 
@@ -1023,7 +1023,7 @@ class BitWiseNoOpEqual {
 };
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <> struct IsBitwiseEqualityComparable<BitWiseNoOpEqual>
     : bsl::true_type {};
@@ -1920,7 +1920,7 @@ struct TestPairType {
     int first, second;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <> struct IsBitwiseEqualityComparable<TestPairType>
     : bsl::true_type {};

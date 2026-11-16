@@ -26,7 +26,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -195,7 +195,7 @@ std::ostream& operator<<(std::ostream& os, const CanStream& obj)
 namespace bsl {
 template <>
 struct formatter<CanStream, char>
-: BloombergLP::bslfmt::StreamedFormatter<CanStream> {
+: BNP_Paribas::bslfmt::StreamedFormatter<CanStream> {
 };
 }  // close namespace bsl
 
@@ -276,7 +276,7 @@ std::ostream& operator<<(std::ostream&                   os,
 namespace bsl {
 template <>
 struct formatter<VariableLengthStreamable, char>
-: BloombergLP::bslfmt::StreamedFormatter<VariableLengthStreamable> {
+: BNP_Paribas::bslfmt::StreamedFormatter<VariableLengthStreamable> {
 };
 }  // close namespace bsl
 
@@ -438,7 +438,7 @@ void calculateResult(bsl::string                     *formatString,
    namespace bsl {
    template <>
    struct formatter<StreamableType, char> :
-   BloombergLP::bslfmt::StreamedFormatter<StreamableType> {
+   BNP_Paribas::bslfmt::StreamedFormatter<StreamableType> {
    };
    }  // close namespace bsl
 //```
@@ -522,7 +522,7 @@ int main(int argc, char **argv)
 // namespace bsl {
 // template <>
 // struct formatter<StreamableType, char> :
-// BloombergLP::bslfmt::StreamedFormatter<StreamableType> {
+// BNP_Paribas::bslfmt::StreamedFormatter<StreamableType> {
 // };
 // }  // close namespace bsl
 //```

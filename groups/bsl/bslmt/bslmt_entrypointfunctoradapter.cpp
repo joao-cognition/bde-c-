@@ -4,7 +4,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT("$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 /// Interpreting `argument` as an `EntryPointFunctorAdapter_Base*`, invoke
 /// `argument->function(argument)`.  Do not use outside this component.

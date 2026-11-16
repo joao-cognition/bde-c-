@@ -34,7 +34,7 @@
     // xlC representation for a null member pointer is not all zero bits.
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdlsb_memoutstreambuf_cpp,"$Id$ $CSID$")
 #include <bsl_cstring.h>
 #include <bsl_limits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlsb {
                          // --------------------------
                          // class MemOutStreamBuf_Util

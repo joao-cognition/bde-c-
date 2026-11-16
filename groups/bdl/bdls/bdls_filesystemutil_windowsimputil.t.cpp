@@ -53,7 +53,7 @@
 // ----------------------------------------------------------------------------
 
 namespace {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 int testStatus = 0;
@@ -117,7 +117,7 @@ void aSsErT(bool condition, const char *message, int line)
 
 #if !U_PLATFORM_IS_NATIVE
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -134,10 +134,10 @@ union  UlargeIntegerImp;
 
 typedef int                                      BOOL;
 typedef bsl::uint32_t                            DWORD;
-typedef ::BloombergLP::bsls::Types::Uint64       ULONGLONG;
-typedef struct ::BloombergLP::u::FiletimeImp     FILETIME;
+typedef ::BNP_Paribas::bsls::Types::Uint64       ULONGLONG;
+typedef struct ::BNP_Paribas::u::FiletimeImp     FILETIME;
 typedef void                                    *HANDLE;
-typedef ::BloombergLP::bsls::Types::Int64        INT64;
+typedef ::BNP_Paribas::bsls::Types::Int64        INT64;
 #if defined(BSLS_PLATFORM_CPU_64_BIT)
 typedef bsls::Types::Int64                       LONG_PTR;
 #elif defined(BSLS_PLATFORM_CPU_32_BIT)
@@ -146,14 +146,14 @@ typedef bsl::int32_t                             LONG_PTR;
 typedef bsls::Types::Int64                       LONG_PTR;
 #endif
 typedef bsl::uint32_t                           *LPDWORD;
-typedef struct ::BloombergLP::u::FiletimeImp    *LPFILETIME;
-typedef struct ::BloombergLP::u::SystemtimeImp  *LPSYSTEMTIME;
-typedef struct ::BloombergLP::u::SystemtimeImp   SYSTEMTIME;
-typedef union ::BloombergLP::u::UlargeIntegerImp ULARGE_INTEGER;
-typedef ::BloombergLP::bsls::Types::Uint64       ULONG64;
+typedef struct ::BNP_Paribas::u::FiletimeImp    *LPFILETIME;
+typedef struct ::BNP_Paribas::u::SystemtimeImp  *LPSYSTEMTIME;
+typedef struct ::BNP_Paribas::u::SystemtimeImp   SYSTEMTIME;
+typedef union ::BNP_Paribas::u::UlargeIntegerImp ULARGE_INTEGER;
+typedef ::BNP_Paribas::bsls::Types::Uint64       ULONG64;
 typedef unsigned short                           WORD;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -211,7 +211,7 @@ union UlargeIntegerImp {
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -1139,7 +1139,7 @@ FILETIME toFT(int year,
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     int test = argc > 1 ? bsl::atoi(argv[1]) : 0;
     bool             verbose = argc > 2;

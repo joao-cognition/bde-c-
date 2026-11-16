@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BDLB_NULLABLEVALUEREF_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 template <class TYPE>
@@ -50,7 +50,7 @@ class NullableValueRef {
     /// operators are not supported.  A `NullableAllocatedValue` is implicitly
     /// converted to `UnspecifiedBool` when used in `if` statements, but is not
     /// implicitly convertible to `bool`.
-    typedef BloombergLP::bsls::UnspecifiedBool<NullableValueRef>
+    typedef BNP_Paribas::bsls::UnspecifiedBool<NullableValueRef>
                                                            UnspecifiedBoolUtil;
     typedef typename UnspecifiedBoolUtil::BoolType         UnspecifiedBool;
 #endif
@@ -633,7 +633,7 @@ class ConstNullableValueRef {
     /// operators are not supported.  A `NullableAllocatedValue` is implicitly
     /// converted to `UnspecifiedBool` when used in `if` statements, but is not
     /// implicitly convertible to `bool`.
-    typedef BloombergLP::bsls::UnspecifiedBool<ConstNullableValueRef>
+    typedef BNP_Paribas::bsls::UnspecifiedBool<ConstNullableValueRef>
                                                            UnspecifiedBoolUtil;
     typedef typename UnspecifiedBoolUtil::BoolType         UnspecifiedBool;
 #endif
@@ -1629,7 +1629,7 @@ template <class HASHALG, class TYPE>
 void bdlb::hashAppend(HASHALG&                      hashAlg,
                       const NullableValueRef<TYPE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     if (!input.has_value()) {
         hashAppend(hashAlg, false);
@@ -2082,7 +2082,7 @@ template <class HASHALG, class TYPE>
 void bdlb::hashAppend(HASHALG&                           hashAlg,
                       const ConstNullableValueRef<TYPE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     if (!input.has_value()) {
         hashAppend(hashAlg, false);

@@ -23,7 +23,7 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_PLATFORM_CPU_SPARC_V9) \
     && (defined(BSLS_PLATFORM_CMP_GNU) || defined(BSLS_PLATFORM_CMP_SUN))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 extern "C"
 {

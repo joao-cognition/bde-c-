@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(bdlar_anyref_cpp, "$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
                            // ------------

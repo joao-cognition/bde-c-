@@ -8,7 +8,7 @@ BSLS_IDENT_PRAGMA_ONCE
 
 //@PURPOSE: Provide a superficial test of all classes in `baltst` package.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
 }  // close package namespace

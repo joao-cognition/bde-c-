@@ -142,7 +142,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_string.h>  // 'bslstl::StringRef'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
                         // ====================
                         // struct StringRefUtil

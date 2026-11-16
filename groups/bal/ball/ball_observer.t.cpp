@@ -27,7 +27,7 @@
 #include <bsl_iostream.h>
 #include <bsl_new.h>         // placement `new` syntax
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================

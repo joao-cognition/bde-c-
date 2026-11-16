@@ -34,7 +34,7 @@
 #pragma warning(disable:4834)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 using bsl::cout;
 using bsl::cerr;
@@ -624,7 +624,7 @@ int main(int argc, char *argv[])
             cout << "\nTESTING `hashAppend`"
                  << "\n====================\n";
 
-        typedef ::BloombergLP::bslh::Hash<> Hasher;
+        typedef ::BNP_Paribas::bslh::Hash<> Hasher;
         typedef Hasher::result_type         HashType;
         Hasher                              hasher;
 

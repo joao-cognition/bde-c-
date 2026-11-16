@@ -26,7 +26,7 @@
 #include <winerror.h>
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

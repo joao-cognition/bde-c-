@@ -26,7 +26,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                TEST PLAN
@@ -466,7 +466,7 @@ struct TrivialClass {
 union TrivialUnion {
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <>

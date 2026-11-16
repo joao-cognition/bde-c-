@@ -387,7 +387,7 @@ BSLS_IDENT("$Id: $")
 #include <bslalg_typetraits.h>
 #endif  // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlbb {
 
                               // ================
@@ -523,7 +523,7 @@ class BlobBuffer {
 namespace bslmf {
 
 template <>
-struct IsBitwiseMoveable<BloombergLP::bdlbb::BlobBuffer>
+struct IsBitwiseMoveable<BNP_Paribas::bdlbb::BlobBuffer>
 : IsBitwiseMoveable<bsl::shared_ptr<char> >::type {
 };
 
@@ -944,15 +944,15 @@ class Blob {
 namespace bslmf {
 
 template <>
-struct IsBitwiseMoveable<BloombergLP::bdlbb::Blob>
-: IsBitwiseMoveable<bsl::vector<BloombergLP::bdlbb::BlobBuffer> >::type {
+struct IsBitwiseMoveable<BNP_Paribas::bdlbb::Blob>
+: IsBitwiseMoveable<bsl::vector<BNP_Paribas::bdlbb::BlobBuffer> >::type {
 };
 }  // close namespace bslmf
 
 namespace bslma {
 
 template <>
-struct UsesBslmaAllocator<BloombergLP::bdlbb::Blob> : bsl::true_type {
+struct UsesBslmaAllocator<BNP_Paribas::bdlbb::Blob> : bsl::true_type {
 };
 }  // close namespace bslma
 

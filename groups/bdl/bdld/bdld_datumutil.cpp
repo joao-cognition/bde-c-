@@ -26,7 +26,7 @@ BSLS_IDENT_RCSID(RCSid_bdld_datumutil_cpp, "$Id$ $CSID$")
 #include <bsl_string_view.h>
 #include <bsl_unordered_set.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdld {
 
 // ============================================================================

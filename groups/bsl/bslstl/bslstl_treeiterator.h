@@ -150,7 +150,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_removecvq.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDE
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                      // ==================
@@ -455,7 +455,7 @@ namespace bsl {
 
 template <class VALUE, class NODE, class DIFFERENCE_TYPE>
 struct is_trivially_copyable<
-              BloombergLP::bslstl::TreeIterator<VALUE, NODE, DIFFERENCE_TYPE> >
+              BNP_Paribas::bslstl::TreeIterator<VALUE, NODE, DIFFERENCE_TYPE> >
     : bsl::true_type {
 };
 

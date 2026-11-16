@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(bdlma_multipool_cpp,"$Id$ $CSID$")
 #include <bsl_new.h>
 #include <bsl_limits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
 // TYPES

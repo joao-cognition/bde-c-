@@ -149,7 +149,7 @@
 // comes in through 'operator()' is in 4 and 8 byte data fields (often the
 // case), since memory accesses won't be split across memory word boundaries.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 }  // close package namespace

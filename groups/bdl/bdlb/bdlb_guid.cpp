@@ -26,7 +26,7 @@ BSLS_IDENT_RCSID(bdlb_guid_cpp,"$Id$ $CSID$")
 #include <immintrin.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

@@ -219,7 +219,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
   #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -6821,13 +6821,13 @@ int main(int argc, char *argv[])
         // CONCERN: REGRESSION TEST FOR C99 FEATURES
         //
         // Concerns:
-        // 1. Ensure that some C99 functions are available on some Bloomberg
+        // 1. Ensure that some C99 functions are available on some BNP Paribas
         //    production platforms (to avoid any regressions from the
         //    introduction of bsls_libraryfeatures).
         //
         // Plan:
         // 1. Verify `BSLS_LIBRARYFEATURES_HAS_C99_LIBRARY` is `true`, and
-        //    important `<cmath>` functions are available on Bloomberg
+        //    important `<cmath>` functions are available on BNP Paribas
         //    production platforms.
         //
         // Testing:

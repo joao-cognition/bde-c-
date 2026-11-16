@@ -31,7 +31,7 @@ BSLS_IDENT_RCSID(ball_asyncfileobserver_cpp,"$Id$ $CSID$")
 // 'stopPublicationThread') is called, a special record is enqueued
 // (created using 'createStopRecord') for which 'isStopRecord' is 'false'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 namespace {

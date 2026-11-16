@@ -74,7 +74,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_isbitwisecopyable.h>
 #include <bslmf_nestedtraitdeclaration.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                         // =============================

@@ -105,7 +105,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_deprecatefeature.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 

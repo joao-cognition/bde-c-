@@ -324,7 +324,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_cstddef.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                        // ============================
@@ -530,7 +530,7 @@ class BufferedSequentialPool {
 }  // close enterprise namespace
 
 // Note that the `new` and `delete` operators are declared outside the
-// `BloombergLP` namespace so that they do not hide the standard placement
+// `BNP_Paribas` namespace so that they do not hide the standard placement
 // `new` and `delete` operators (i.e.,
 // `void *operator new(bsl::size_t, void *)` and
 // `void operator delete(void *)`).
@@ -541,7 +541,7 @@ class BufferedSequentialPool {
 // overloaded the array version of `operator new`:
 //..
 //   void *operator new[](bsl::size_t                                 size,
-//                        BloombergLP::bdlma::BufferedSequentialPool& pool);
+//                        BNP_Paribas::bdlma::BufferedSequentialPool& pool);
 //..
 // The user of the pool class would have expected to be able to use operator
 // `new` as follows:
@@ -581,7 +581,7 @@ class BufferedSequentialPool {
 /// }
 /// ```
 void *operator new(bsl::size_t                                 size,
-                   BloombergLP::bdlma::BufferedSequentialPool& pool);
+                   BNP_Paribas::bdlma::BufferedSequentialPool& pool);
 
 /// Use the specified `pool` to deallocate the memory at the specified
 /// `address`.  The behavior is undefined unless `address` was allocated
@@ -589,13 +589,13 @@ void *operator new(bsl::size_t                                 size,
 /// supplied solely to allow the compiler to arrange for it to be called in
 /// case of an exception.
 void operator delete(void                                        *address,
-                     BloombergLP::bdlma::BufferedSequentialPool&  pool);
+                     BNP_Paribas::bdlma::BufferedSequentialPool&  pool);
 
 // ============================================================================
 //                             INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                        // ----------------------------
@@ -712,13 +712,13 @@ bslma::Allocator *BufferedSequentialPool::allocator() const
 // FREE OPERATORS
 inline
 void *operator new(bsl::size_t                                 size,
-                   BloombergLP::bdlma::BufferedSequentialPool& pool)
+                   BNP_Paribas::bdlma::BufferedSequentialPool& pool)
 {
     return pool.allocate(size);
 }
 
 inline
-void operator delete(void *, BloombergLP::bdlma::BufferedSequentialPool&)
+void operator delete(void *, BNP_Paribas::bdlma::BufferedSequentialPool&)
 {
     // NOTE: there is no deallocation from this allocation mechanism.
 }

@@ -1,7 +1,7 @@
 ---
 name: Bug report
-about: Bloomberg (internal) users should *not* use Issues.  Please enter a DRQS to group 101
+about: BNP Paribas (internal) users should *not* use Issues.  Please enter a DRQS to group 101
 
 ---
 
-**Bloomberg users should not use Issues - please enter a DRQS to group 101**
+**BNP Paribas users should not use Issues - please enter a DRQS to group 101**

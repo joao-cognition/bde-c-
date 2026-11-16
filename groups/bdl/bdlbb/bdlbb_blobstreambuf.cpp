@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(bdlbb_blobstreambuf_cpp, "$Id$ $CSID$")
 #undef min
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlbb {
 
                            // =====================

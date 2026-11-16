@@ -76,7 +76,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_cstddef.h>    // size_t
 #include <bsl_cstdint.h>    // uint8_t
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslim {
 
                              // ==================

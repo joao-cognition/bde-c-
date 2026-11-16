@@ -121,7 +121,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_iosfwd.h>
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                                  // ============
@@ -549,7 +549,7 @@ template <class HASHALG>
 inline
 void bdlt::hashAppend(HASHALG& hashAlg, const TimeTz& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, object.localTime());
     hashAppend(hashAlg, object.offset());
 }
@@ -561,7 +561,7 @@ namespace bslmf {
 /// This template specialization for `IsBitwiseCopyable` indicates that
 /// `bdlt::TimeTz` is a bitwise copyable type.
 template <>
-struct IsBitwiseCopyable<BloombergLP::bdlt::TimeTz> : bsl::true_type {
+struct IsBitwiseCopyable<BNP_Paribas::bdlt::TimeTz> : bsl::true_type {
 };
 
 }  // close namespace bslmf

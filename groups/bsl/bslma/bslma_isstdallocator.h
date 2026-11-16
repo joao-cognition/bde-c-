@@ -29,7 +29,7 @@ BSLS_IDENT("$Id: $")
 // ways to specify this trait:
 //
 // 1. Specialize `IsStdAllocator<some-alloc>` to derive from `bsl::true_type`
-//    in namespace `BloombergLP::bslma`.
+//    in namespace `BNP_Paribas::bslma`.
 // 2. Add 'BSLMF_NESTED_TRAIT_DECLARATION(some-alloc,
 //    bslma::IsStdAllocator)' within the public portion of the class definition
 //    for *some-alloc*.
@@ -110,7 +110,7 @@ BSLS_IDENT("$Id: $")
 #include <cstddef>  // 'std::size_t'
 #include <memory>   // 'std::allocator'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // FORWARD DECLARATIONS
@@ -288,10 +288,10 @@ struct IsStdAllocator_Imp<
 // For backwards compatibility:
 namespace bsl {
 
-using BloombergLP::bslma::IsStdAllocator;
+using BNP_Paribas::bslma::IsStdAllocator;
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_VARIABLE_TEMPLATES
-using BloombergLP::bslma::IsStdAllocator_v;
+using BNP_Paribas::bslma::IsStdAllocator_v;
 #endif
 
 }  // close namespace bsl

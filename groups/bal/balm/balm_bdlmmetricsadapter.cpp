@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(balm_bdlmmetricsadapter_cpp,"$Id$ $CSID$")
 
 #include <bsl_sstream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balm {
 
                          // ------------------------

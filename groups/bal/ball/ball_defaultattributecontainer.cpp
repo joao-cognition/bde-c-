@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(ball_defaultattributecontainer_cpp,"$Id$ $CSID$")
 
 #include <bsl_climits.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                     // -------------------------------

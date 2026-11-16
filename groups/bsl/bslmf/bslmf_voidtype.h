@@ -55,7 +55,7 @@ BSLS_IDENT("$Id: $")
 // The following macros are for use only in a type-dependent context.  They all
 // expand to a type expression that uses either `bsl::void_t<ARGS>` if alias
 // templates are supported by the current compiler, and to
-// `typename BloombergLP::bslmf::VoidType<ARGS>::type` otherwise.  The alias
+// `typename BNP_Paribas::bslmf::VoidType<ARGS>::type` otherwise.  The alias
 // template form is preferred, as it consumes fewer resources while compiling
 // code; the compiled code will be equivalent, whichever implementation is
 // chosen.  These macros support writing simple code that uses the preferred
@@ -205,7 +205,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_compilerfeatures.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                         // =======================
@@ -252,7 +252,7 @@ using void_t = void;
 // preferred interface for portable C++03/11 code is to use the three
 // 'VOIDTYPE' macros, rather than the class templates directly.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// Metafunction that always yields `type` `void` for any well-formed type
@@ -283,11 +283,11 @@ struct VoidType_2 {
 }  // close enterprise namespace
 
 # define BSLMF_VOIDTYPE(ARG)                                                  \
-                   typename BloombergLP::bslmf::VoidType_1<     ARG   >::type
+                   typename BNP_Paribas::bslmf::VoidType_1<     ARG   >::type
 # define BSLMF_VOIDTYPE2(...)                                                 \
-                   typename BloombergLP::bslmf::VoidType_2<__VA_ARGS__>::type
+                   typename BNP_Paribas::bslmf::VoidType_2<__VA_ARGS__>::type
 # define BSLMF_VOIDTYPES(...)                                                 \
-                   typename BloombergLP::bslmf::VoidType<__VA_ARGS__>::type
+                   typename BNP_Paribas::bslmf::VoidType<__VA_ARGS__>::type
 #endif  // supports C++11 API directly
 
 #endif

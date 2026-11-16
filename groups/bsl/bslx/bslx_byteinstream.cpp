@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(bslx_byteinstream_cpp,"$Id$ $CSID$")
 #include <bsl_ios.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslx {
 
                         // ------------------

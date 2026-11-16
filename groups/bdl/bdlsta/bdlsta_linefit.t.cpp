@@ -17,7 +17,7 @@
 #include <bsl_cstddef.h>
 #include <bsl_cstdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC

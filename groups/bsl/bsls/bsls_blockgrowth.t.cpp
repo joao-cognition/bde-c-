@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <cstring>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 //=============================================================================

@@ -57,7 +57,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslalg_numericformatterutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                          // ========================
@@ -94,7 +94,7 @@ namespace bsl {
 /// `bool`.
 template <class t_CHAR>
 struct formatter<bool, t_CHAR>
-: BloombergLP::bslfmt::FormatterBool_Imp<t_CHAR> {
+: BNP_Paribas::bslfmt::FormatterBool_Imp<t_CHAR> {
 };
 
 }
@@ -103,7 +103,7 @@ struct formatter<bool, t_CHAR>
 //                            INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                          // ------------------------

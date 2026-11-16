@@ -35,7 +35,7 @@ BSLS_IDENT("$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // LOCAL METHODS
 
@@ -467,7 +467,7 @@ int encodeValue(baljsn::SimpleFormatter    *formatter,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
                               // ----------------

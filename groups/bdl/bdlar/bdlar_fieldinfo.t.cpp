@@ -33,7 +33,7 @@
 // ----------------------------------------------------------------------------
 
 namespace {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 int testStatus = 0;
 
@@ -93,7 +93,7 @@ void aSsErT(bool condition, const char *message, int line)
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

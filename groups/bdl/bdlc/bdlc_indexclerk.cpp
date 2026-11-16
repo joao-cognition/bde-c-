@@ -23,7 +23,7 @@ BSLS_IDENT_RCSID(bdlc_indexclerk_cpp,"$Id$ $CSID$")
 // facility doesn't currently exist in BDE, so instead we must manually disable
 // the warning in the body of 'operator*'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
                               // ----------------

@@ -17,7 +17,7 @@ BSLS_IDENT_RCSID(bdljsn_error_cpp,"$Id$ $CSID$")
 #include <bsls_assert.h>
 #include <bsls_review.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                                 // -----------

@@ -13,7 +13,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bsls_alignmentutil.h>
 #include <bsls_exceptionutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                              // -------------------

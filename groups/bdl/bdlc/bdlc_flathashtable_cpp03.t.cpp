@@ -21,7 +21,7 @@
 // Expanded test driver only when compiling bdlc_flathashtable.cpp
 #ifdef COMPILING_BDLC_FLATHASHTABLE_T_CPP
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

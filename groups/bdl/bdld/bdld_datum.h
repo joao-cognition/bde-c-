@@ -655,7 +655,7 @@ BSLS_IDENT("$Id$ $CSID$")
     #define BDLD_DATUM_FORCE_INLINE inline
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdld {
 

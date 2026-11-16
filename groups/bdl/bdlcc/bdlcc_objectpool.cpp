@@ -52,7 +52,7 @@ BSLS_IDENT_RCSID(bdlcc_objectpool_cpp,"$Id$ $CSID$")
 //              <--------OBJECT_FRAME_SIZE------->
 //..
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlcc {
 
                        // ---------------------------

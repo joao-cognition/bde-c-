@@ -70,7 +70,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using bsls::NameOf;
 
@@ -1709,7 +1709,7 @@ bool operator!=(const NonAssignableAllocTestType& lhs,
 }
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>
@@ -1905,7 +1905,7 @@ bool operator!=(const ConvertibleFromAllocatorTestType& lhs,
 }
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>
@@ -2889,7 +2889,7 @@ int func2()
 struct EmptyStruct { };  // for CASE 28
 
 // ASPECTS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 template <class HASHALG, class RETURN, class CLASS>

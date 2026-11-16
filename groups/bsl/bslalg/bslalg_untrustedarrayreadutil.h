@@ -169,7 +169,7 @@ BSLS_IDENT("$Id: $")
 #include <cstddef>  // `std::size_t`, `std::ptrdiff_t`
 #include <limits>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
                        // =============================

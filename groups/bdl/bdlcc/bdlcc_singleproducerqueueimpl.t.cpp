@@ -34,7 +34,7 @@
 #include <bsl_unordered_map.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -1782,7 +1782,7 @@ int main(int argc, char *argv[])
             sa.setAllocationLimit(0);
             try {
                 mX.tryPopFront(&value);
-            } catch (BloombergLP::bslma::TestAllocatorException& e) {
+            } catch (BNP_Paribas::bslma::TestAllocatorException& e) {
                 ++numException;
             }
             sa.setAllocationLimit(-1);
@@ -2752,7 +2752,7 @@ int main(int argc, char *argv[])
             sa.setAllocationLimit(0);
             try {
                 mX.popFront(&value);
-            } catch (BloombergLP::bslma::TestAllocatorException& e) {
+            } catch (BNP_Paribas::bslma::TestAllocatorException& e) {
                 ++numException;
             }
             sa.setAllocationLimit(-1);

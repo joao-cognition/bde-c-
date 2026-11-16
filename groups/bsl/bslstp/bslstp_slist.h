@@ -186,7 +186,7 @@ protected:
     _Node* __next = (_Node*) (__pos->_M_next);
     _Slist_node_base* __next_next = __next->_M_next;
     __pos->_M_next = __next_next;
-    BloombergLP::bslma::DestructionUtil::destroy(
+    BNP_Paribas::bslma::DestructionUtil::destroy(
                                          BSLS_UTIL_ADDRESSOF(__next->_M_data));
     _M_head.allocatorRef().deallocate(__next,1);
     return __next_next;
@@ -221,7 +221,7 @@ private:
       {
           // MODIFIED BY ARTHUR
           //_STLP_STD::swap(v1._M_head._M_data, v2._M_head._M_data);
-          typedef BloombergLP::bslalg::ScalarPrimitives primitive;
+          typedef BNP_Paribas::bslalg::ScalarPrimitives primitive;
           primitive::swap(v1._M_head._M_data, v2._M_head._M_data);
       }
   };
@@ -250,7 +250,7 @@ private:
   _Node* _M_create_node(const value_type& __x = _Tp()) {
     _Node* __node = this->_M_head.allocatorRef().allocate(1);
     BSLS_TRY {
-      typedef BloombergLP::bslma::ConstructionUtil Util;
+      typedef BNP_Paribas::bslma::ConstructionUtil Util;
       Util::construct(BSLS_UTIL_ADDRESSOF(__node->_M_data),
                       this->get_allocator(),
                       __x);
@@ -283,7 +283,7 @@ public:
   { _M_insert_after_range(&this->_M_head._M_data, __first, __last); }
 
   slist(const _Self& __x)
-  : _Slist_base<_Tp, _Alloc>(BloombergLP::bslstp::Util::copyContainerAllocator(__x.get_allocator()))
+  : _Slist_base<_Tp, _Alloc>(BNP_Paribas::bslstp::Util::copyContainerAllocator(__x.get_allocator()))
     { insert(begin(), __x.begin(), __x.end()); }
 
   // Copy-construct with alternative allocator.
@@ -370,7 +370,7 @@ public:
   bool empty() const { return this->_M_head._M_data._M_next == 0; }
 
   void swap(_Self& __x) {
-    BloombergLP::bslstp::Util::swapContainers(*this, __x, QuickSwap());
+    BNP_Paribas::bslstp::Util::swapContainers(*this, __x, QuickSwap());
   }
 
 public:
@@ -384,7 +384,7 @@ public:
   void pop_front() {
     _Node* __node = (_Node*) this->_M_head._M_data._M_next;
     this->_M_head._M_data._M_next = __node->_M_next;
-    BloombergLP::bslma::DestructionUtil::destroy(
+    BNP_Paribas::bslma::DestructionUtil::destroy(
                                          BSLS_UTIL_ADDRESSOF(__node->_M_data));
     this->_M_head.allocatorRef().deallocate(__node, 1);
   }
@@ -615,12 +615,12 @@ public:
       // them with the desired allocator as a separate step.  After
       // initialization, we ensure that destructors are called by creating an
       // auto-destructor object.
-      BloombergLP::bsls::ObjectBuffer<_Self> __counterBuffers[64];
+      BNP_Paribas::bsls::ObjectBuffer<_Self> __counterBuffers[64];
       _Self* __counter = &__counterBuffers[0].object();
-      BloombergLP::bslalg::ArrayPrimitives::uninitializedFillN(
+      BNP_Paribas::bslalg::ArrayPrimitives::uninitializedFillN(
                                                __counter, 64, __carry,
                                                this->_M_head.get_allocator());
-      BloombergLP::bslma::AutoDestructor<_Self> __counterGuard(__counter, 64);
+      BNP_Paribas::bslma::AutoDestructor<_Self> __counterGuard(__counter, 64);
 
       int __fill = 0;
       while (!empty()) {
@@ -743,7 +743,7 @@ _Slist_base<_Tp,_Alloc>::_M_erase_after(_Slist_node_base* __before_first,
   while (__cur != __last_node) {
     _Slist_node<_Tp>* __tmp = __cur;
     __cur = (_Slist_node<_Tp>*) __cur->_M_next;
-    BloombergLP::bslma::DestructionUtil::destroy(
+    BNP_Paribas::bslma::DestructionUtil::destroy(
                                           BSLS_UTIL_ADDRESSOF(__tmp->_M_data));
     _M_head.allocatorRef().deallocate(__tmp,1);
   }
@@ -858,14 +858,14 @@ void slist<_Tp,_Alloc>::sort()
     // them with the desired allocator as a separate step.  After
     // initialization, we ensure that destructors are called by creating an
     // auto-destructor object.
-    BloombergLP::bsls::ObjectBuffer<_Self> __counterBuffers[64];
+    BNP_Paribas::bsls::ObjectBuffer<_Self> __counterBuffers[64];
     _Self* __counter = &__counterBuffers[0].object();
     typename _Alloc_traits<_Self, _Alloc>::allocator_type __alloc(
                                                         this->get_allocator());
-    BloombergLP::bslalg::ArrayPrimitives::uninitializedFillN(
+    BNP_Paribas::bslalg::ArrayPrimitives::uninitializedFillN(
                                                __counter, 64, __carry,
                                                __alloc);
-    BloombergLP::bslma::AutoDestructor<_Self> __counterGuard(__counter, 64);
+    BNP_Paribas::bslma::AutoDestructor<_Self> __counterGuard(__counter, 64);
 
     int __fill = 0;
     while (!empty()) {

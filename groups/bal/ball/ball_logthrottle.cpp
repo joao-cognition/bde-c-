@@ -17,19 +17,19 @@ BSLS_IDENT_RCSID(ball_logthrottle_cpp,"$Id$ $CSID$")
 //#define BALL_LOGTHROTTLE_STREAM_CONST_IMP(SEVERITY,                        \@
 //                                          MAX_SIMULTANEOUS_MESSAGES,       \@
 //                                          NANOSECONDS_PER_MESSAGE)         \@
-//for (const BloombergLP::ball::CategoryHolder                               \@
+//for (const BNP_Paribas::ball::CategoryHolder                               \@
 //                                          *ball_logthrottle_cAtEgOrYhOlDeR \@
-//             = BloombergLP::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(\@
+//             = BNP_Paribas::ball::Log::categoryHolderIfEnabled<(SEVERITY)>(\@
 //                     ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER)); \@
 //     ball_logthrottle_cAtEgOrYhOlDeR;                                      \@
 //     ball_logthrottle_cAtEgOrYhOlDeR = 0)                                  \@
-//for (static BloombergLP::bdlmt::Throttle ball_logthrottle_tHrOtTlE =       \@
+//for (static BNP_Paribas::bdlmt::Throttle ball_logthrottle_tHrOtTlE =       \@
 //                          BDLMT_THROTTLE_INIT((MAX_SIMULTANEOUS_MESSAGES), \@
 //                                              (NANOSECONDS_PER_MESSAGE));  \@
 //     ball_logthrottle_cAtEgOrYhOlDeR                                       \@
 //    && ball_logthrottle_tHrOtTlE.requestPermission();                      \@
 //     )                                                                     \@
-//for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                    \@
+//for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                    \@
 //                              ball_logthrottle_cAtEgOrYhOlDeR->category(), \@
 //                              __FILE__,                                    \@
 //                              __LINE__,                                    \@
@@ -41,7 +41,7 @@ BSLS_IDENT_RCSID(ball_logthrottle_cpp,"$Id$ $CSID$")
 // ```
 //#define BALL_LOGTHROTTLE_TRACE(                                            \@
 //                       MAX_SIMULTANEOUS_MESSAGES, NANOSECONDS_PER_MESSAGE) \@
-//    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BloombergLP::ball::Severity::e_TRACE,\@
+//    BALL_LOGTHROTTLE_STREAM_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE,\@
 //                                      (MAX_SIMULTANEOUS_MESSAGES),         \@
 //                                      (NANOSECONDS_PER_MESSAGE))           \@
 //                                                       BALL_LOG_OUTPUT_STREAM
@@ -77,22 +77,22 @@ BSLS_IDENT_RCSID(ball_logthrottle_cpp,"$Id$ $CSID$")
 //#define BALL_LOGTHROTTLE_STREAM_IMP(SEVERITY,                              \@
 //                                    MAX_SIMULTANEOUS_MESSAGES,             \@
 //                                    NANOSECONDS_PER_MESSAGE)               \@
-//for (const BloombergLP::ball::CategoryHolder                               \@
+//for (const BNP_Paribas::ball::CategoryHolder                               \@
 //                                          *ball_logthrottle_cAtEgOrYhOlDeR \@
 //                    = ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER); \@
 //     ball_logthrottle_cAtEgOrYhOlDeR                                       \@
 //    && ball_logthrottle_cAtEgOrYhOlDeR->threshold() >= (SEVERITY)          \@
-//    && BloombergLP::ball::Log::isCategoryEnabled(                          \@
+//    && BNP_Paribas::ball::Log::isCategoryEnabled(                          \@
 //                                          ball_logthrottle_cAtEgOrYhOlDeR, \@
 //                                          (SEVERITY));                     \@
 //     ball_logthrottle_cAtEgOrYhOlDeR = 0)                                  \@
-//for (static BloombergLP::bdlmt::Throttle ball_logthrottle_tHrOtTlE =       \@
+//for (static BNP_Paribas::bdlmt::Throttle ball_logthrottle_tHrOtTlE =       \@
 //                     BDLMT_THROTTLE_INIT((MAX_SIMULTANEOUS_MESSAGES),      \@
 //                                         (NANOSECONDS_PER_MESSAGE));       \@
 //     ball_logthrottle_cAtEgOrYhOlDeR                                       \@
 //    && ball_logthrottle_tHrOtTlE.requestPermission();                      \@
 //     )                                                                     \@
-//for (BloombergLP::ball::Log_Stream ball_log_lOg_StReAm(                    \@
+//for (BNP_Paribas::ball::Log_Stream ball_log_lOg_StReAm(                    \@
 //                              ball_logthrottle_cAtEgOrYhOlDeR->category(), \@
 //                              __FILE__,                                    \@
 //                              __LINE__,                                    \@
@@ -133,21 +133,21 @@ BSLS_IDENT_RCSID(ball_logthrottle_cpp,"$Id$ $CSID$")
 //                                     NANOSECONDS_PER_MESSAGE,              \@
 //                                     ...)                                  \@
 //do {                                                                       \@
-//    static BloombergLP::bdlmt::Throttle ball_logthrottle_tHrOtTlE =        \@
+//    static BNP_Paribas::bdlmt::Throttle ball_logthrottle_tHrOtTlE =        \@
 //                           BDLMT_THROTTLE_INIT((MAX_SIMULTANEOUS_MESSAGES),\@
 //                                               (NANOSECONDS_PER_MESSAGE)); \@
-//    const BloombergLP::ball::CategoryHolder                                \@
+//    const BNP_Paribas::ball::CategoryHolder                                \@
 //                                          *ball_logthrottle_cAtEgOrYhOlDeR \@
-//            = BloombergLP::ball::Log::categoryHolderIfEnabled<(SEVERITY)>( \@
+//            = BNP_Paribas::ball::Log::categoryHolderIfEnabled<(SEVERITY)>( \@
 //                      ball_log_getCategoryHolder(BALL_LOG_CATEGORYHOLDER));\@
 //    if (ball_logthrottle_cAtEgOrYhOlDeR &&                                 \@
 //                           ball_logthrottle_tHrOtTlE.requestPermission()) {\@
-//        BloombergLP::ball::Log_Formatter ball_logthrottle_fOrMaTtEr(       \@
+//        BNP_Paribas::ball::Log_Formatter ball_logthrottle_fOrMaTtEr(       \@
 //                               ball_logthrottle_cAtEgOrYhOlDeR->category(),\@
 //                               __FILE__,                                   \@
 //                               __LINE__,                                   \@
 //                               (SEVERITY));                                \@
-//        BloombergLP::ball::Log::format(                                    \@
+//        BNP_Paribas::ball::Log::format(                                    \@
 //                             ball_logthrottle_fOrMaTtEr.messageBuffer(),   \@
 //                             ball_logthrottle_fOrMaTtEr.messageBufferLen(),\@
 //                             __VA_ARGS__);                                 \@
@@ -159,7 +159,7 @@ BSLS_IDENT_RCSID(ball_logthrottle_cpp,"$Id$ $CSID$")
 //#define BALL_LOGTHROTTLEVA_TRACE(MAX_SIMULTANEOUS_MESSAGES,                \@
 //                                 NANOSECONDS_PER_MESSAGE,                  \@
 //                                 ...)                                      \@
-//    BALL_LOGTHROTTLEVA_CONST_IMP(BloombergLP::ball::Severity::e_TRACE,     \@
+//    BALL_LOGTHROTTLEVA_CONST_IMP(BNP_Paribas::ball::Severity::e_TRACE,     \@
 //                                 (MAX_SIMULTANEOUS_MESSAGES),              \@
 //                                 (NANOSECONDS_PER_MESSAGE),                \@
 //                                 __VA_ARGS__)

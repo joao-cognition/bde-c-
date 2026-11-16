@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdlt_calendarloader_cpp,"$Id$ $CSID$")
 #include <bdlt_dayofweekset.h>     // for testing only
 #include <bdlt_packedcalendar.h>   // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                          // --------------------

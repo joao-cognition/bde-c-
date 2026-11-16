@@ -13,7 +13,7 @@ BSLS_IDENT("$Id: $")
 //@DESCRIPTION: This component provides ...
 //
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
 // Forward

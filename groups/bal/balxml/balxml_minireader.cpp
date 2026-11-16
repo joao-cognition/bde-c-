@@ -277,7 +277,7 @@ void replaceCharReferences(char *text)
 
 }  // close unnamed namespace
 
-namespace BloombergLP  {
+namespace BNP_Paribas  {
 
                        // ------------------------------
                        // class balxml::MiniReader::Node

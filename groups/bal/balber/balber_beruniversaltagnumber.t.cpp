@@ -41,13 +41,13 @@
 #include <bsl_ostream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
 using bsl::ends;
 using bsl::flush;
-namespace test = BloombergLP::s_baltst;
+namespace test = BNP_Paribas::s_baltst;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -115,7 +115,7 @@ void aSsErT(int c, const char *s, int i)
 
 typedef bsls::Types::IntPtr IntPtr;
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
 // Declare a dynamic type
@@ -189,7 +189,7 @@ typedef bdlat_TypeCategory                TC;
 //                        GLOBAL ENTITIES FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -1118,11 +1118,11 @@ int main(int argc, char *argv[])
 /// ```
 #define PASS(...)                                                             \
     ASSERT_PASS(                                                              \
-      ::BloombergLP::u::TestCase4_ImpUtil::verifySelect(__LINE__, __VA_ARGS__))
+      ::BNP_Paribas::u::TestCase4_ImpUtil::verifySelect(__LINE__, __VA_ARGS__))
 
 #define FAIL(...)                                                             \
     ASSERT_SAFE_FAIL(                                                         \
-                ::BloombergLP::u::TestCase4_ImpUtil::verifySelect(__VA_ARGS__))
+                ::BNP_Paribas::u::TestCase4_ImpUtil::verifySelect(__VA_ARGS__))
 /// Verify that a particular set of argument values are out-of-contract
 /// for `select`.  This macro supports one of two overloads, having the
 /// following specifications:
@@ -1147,7 +1147,7 @@ int main(int argc, char *argv[])
 /// ```
 #define FAIL_OPT(...)                                                         \
     ASSERT_OPT_FAIL(                                                          \
-                ::BloombergLP::u::TestCase4_ImpUtil::verifySelect(__VA_ARGS__))
+                ::BNP_Paribas::u::TestCase4_ImpUtil::verifySelect(__VA_ARGS__))
 
         // The following test table verifies that `select` behaves according
         // to the specification in the component documentation.

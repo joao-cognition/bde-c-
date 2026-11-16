@@ -82,10 +82,10 @@ int main(int argc, char *argv[])
         // typedef ball::ManagedAttribute   ball::Predicate;
         {
             ASSERT(true ==
-                   (bsl::is_same<BloombergLP::ball::ManagedAttribute,
-                                 BloombergLP::ball::Predicate>::value));
+                   (bsl::is_same<BNP_Paribas::ball::ManagedAttribute,
+                                 BNP_Paribas::ball::Predicate>::value));
 
-            BloombergLP::ball::Predicate("name", "value");
+            BNP_Paribas::ball::Predicate("name", "value");
         }
 
       } break;

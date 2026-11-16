@@ -29,7 +29,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -241,7 +241,7 @@ int bdlat_choiceSelectionId(const MyChoice& object)
 
 }  // close namespace test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_ChoiceFunctions {
 
 template <>
@@ -393,7 +393,7 @@ int main(int argc, char *argv[])
 
         // Test `bdlat_ChoiceFunctions` customization-points
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_ChoiceFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_ChoiceFunctions::
                                            IsChoice<bdlar::ChoiceRef>::value));
 
             bdlat_ValueTypeFunctions::reset(&ref);
@@ -406,7 +406,7 @@ int main(int argc, char *argv[])
             bdlat_ChoiceFunctions::accessSelection(ref, accessor);
         }
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_ChoiceFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_ChoiceFunctions::
                                       IsChoice<bdlar::ChoiceConstRef>::value));
 
             bdlar::ChoiceConstRef cref(ref);

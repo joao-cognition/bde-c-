@@ -40,7 +40,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_nativestd.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 /// Provide a namespace for implementing helper routines for algorithm
@@ -564,7 +564,7 @@ t_OUTPUT_ITERATOR copy_n(t_INPUT_ITERATOR  first,
 // PRIVATE CLASS METHODS
 template <class t_INPUT_ITERATOR, class t_SIZE, class t_OUTPUT_ITERATOR>
 inline
-t_OUTPUT_ITERATOR BloombergLP::bslstl::AlgorithmUtil::copyNImp(
+t_OUTPUT_ITERATOR BNP_Paribas::bslstl::AlgorithmUtil::copyNImp(
                                          t_INPUT_ITERATOR               first,
                                          t_SIZE                         count,
                                          t_OUTPUT_ITERATOR              result,
@@ -582,7 +582,7 @@ template <class t_RANDOM_ACCESS_ITERATOR,
           class t_SIZE,
           class t_OUTPUT_ITERATOR>
 inline
-t_OUTPUT_ITERATOR BloombergLP::bslstl::AlgorithmUtil::copyNImp(
+t_OUTPUT_ITERATOR BNP_Paribas::bslstl::AlgorithmUtil::copyNImp(
                                         t_RANDOM_ACCESS_ITERATOR first,
                                         t_SIZE                   count,
                                         t_OUTPUT_ITERATOR        result,
@@ -595,7 +595,7 @@ t_OUTPUT_ITERATOR BloombergLP::bslstl::AlgorithmUtil::copyNImp(
 template <class CONTAINER, class PREDICATE>
 inline
 typename CONTAINER::size_type
-BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(CONTAINER& container,
+BNP_Paribas::bslstl::AlgorithmUtil::containerEraseIf(CONTAINER& container,
                                                      PREDICATE  predicate)
 {
     typename CONTAINER::size_type oldSize = container.size();
@@ -613,14 +613,14 @@ BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(CONTAINER& container,
 
 template <class t_INPUT_ITERATOR, class t_SIZE, class t_OUTPUT_ITERATOR>
 inline
-t_OUTPUT_ITERATOR BloombergLP::bslstl::AlgorithmUtil::copyN(
+t_OUTPUT_ITERATOR BNP_Paribas::bslstl::AlgorithmUtil::copyN(
                                                       t_INPUT_ITERATOR  first,
                                                       t_SIZE            count,
                                                       t_OUTPUT_ITERATOR result)
 {
     typedef typename bsl::iterator_traits<t_INPUT_ITERATOR>::iterator_category
                                                                            Tag;
-    return BloombergLP::bslstl::AlgorithmUtil::copyNImp(first,
+    return BNP_Paribas::bslstl::AlgorithmUtil::copyNImp(first,
                                                         count,
                                                         result,
                                                         Tag());
@@ -745,7 +745,7 @@ t_OUTPUT_ITERATOR bsl::copy_n(t_INPUT_ITERATOR  first,
                               t_SIZE            count,
                               t_OUTPUT_ITERATOR result)
 {
-    return BloombergLP::bslstl::AlgorithmUtil::copyN(first,
+    return BNP_Paribas::bslstl::AlgorithmUtil::copyN(first,
                                                      count,
                                                      result);
 }

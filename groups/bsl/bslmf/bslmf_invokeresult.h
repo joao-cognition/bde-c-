@@ -247,7 +247,7 @@ BSLS_IDENT("$Id: $")
 # define BSLMF_INVOKERESULT_SUPPORT_CPP17_SEMANTICS 1
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                  // ==========================================
@@ -312,7 +312,7 @@ namespace bsl {
 /// component-level documentation for more detail.
 template <class t_FN, class... t_ARGTYPES>
 class invoke_result
-: public BloombergLP::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES...>::
+: public BNP_Paribas::bslmf::InvokeResult_BaseCalcUtil<t_FN, t_ARGTYPES...>::
       BaseType {
 
     ///Implementation Note
@@ -343,7 +343,7 @@ using invoke_result_t = typename invoke_result<t_FN, t_ARGTYPES...>::type;
 //                              TEMPLATE IMPLEMENTATIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES // $var-args=13
@@ -379,8 +379,8 @@ struct InvokeResult_BaseCalcUtil {
     typedef typename bslmf::MovableRefUtil::Decay<t_FN>::type F;
 
     enum {
-        k_IS_FUNCPTR   = BloombergLP::bslmf::IsFunctionPointer<F>::value,
-        k_IS_MEMFUNCPTR= BloombergLP::bslmf::IsMemberFunctionPointer<F>::value,
+        k_IS_FUNCPTR   = BNP_Paribas::bslmf::IsFunctionPointer<F>::value,
+        k_IS_MEMFUNCPTR= BNP_Paribas::bslmf::IsMemberFunctionPointer<F>::value,
         k_IS_MEMOBJPTR = bsl::is_member_object_pointer<F>::value
     };
 
@@ -403,7 +403,7 @@ struct InvokeResult_BaseCalcUtil {
     /// the same invoke expression if the type can be deduced, and is
     /// `InvokeResultDeductionFailed` otherwise.  Note that in C++11 and
     /// later, `type` is never `InvokeResultDeductionFailed`.
-    typedef typename BloombergLP::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
+    typedef typename BNP_Paribas::bslmf::InvokeResult_Imp<k_IS_FUNCPTR,
                                                           k_IS_MEMFUNCPTR,
                                                           k_IS_MEMOBJPTR,
                                                           FwdFn,

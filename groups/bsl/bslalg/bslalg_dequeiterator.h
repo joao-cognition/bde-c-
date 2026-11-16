@@ -94,7 +94,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>  // std::size_t, std::ptrdiff_t
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 
@@ -787,11 +787,11 @@ DequeIterator<VALUE_TYPE, 1>::valuePtr() const
 //                                TYPE TRAITS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class VALUE_TYPE, int BLOCK_LENGTH>
-struct IsBitwiseCopyable<BloombergLP::bslalg::DequeIterator<VALUE_TYPE,
+struct IsBitwiseCopyable<BNP_Paribas::bslalg::DequeIterator<VALUE_TYPE,
                                                             BLOCK_LENGTH> >
     : bsl::true_type
 {};

@@ -86,14 +86,14 @@ namespace bsl {
 
 template <class _Value,
           class _HashFcn =
-                    typename ::BloombergLP::bslstp::HashSelector<_Value>::Type,
+                    typename ::BNP_Paribas::bslstp::HashSelector<_Value>::Type,
           class _EqualKey = typename bsl::ComparatorSelector<_Value>::Type,
           class _Alloc = bsl::allocator<_Value> >
 class hash_set
 {
 private:
   typedef hashtable<_Value, _Value, _HashFcn,
-                    ::BloombergLP::bslstp::Identity<_Value>,
+                    ::BNP_Paribas::bslstp::Identity<_Value>,
                     _EqualKey, _Alloc> _Ht;
   typedef hash_set<_Value, _HashFcn, _EqualKey, _Alloc> _Self;
   typedef typename _Ht::iterator _ht_iterator;
@@ -244,14 +244,14 @@ void swap(hash_set<_Value, _HashFcn, _EqualKey, _Alloc>& lhs,
 
 template <class _Value,
           class _HashFcn =
-                    typename ::BloombergLP::bslstp::HashSelector<_Value>::Type,
+                    typename ::BNP_Paribas::bslstp::HashSelector<_Value>::Type,
           class _EqualKey = typename bsl::ComparatorSelector<_Value>::Type,
           class _Alloc = bsl::allocator<_Value> >
 class hash_multiset
 {
 private:
   typedef hashtable<_Value, _Value, _HashFcn,
-                    ::BloombergLP::bslstp::Identity<_Value>,
+                    ::BNP_Paribas::bslstp::Identity<_Value>,
                     _EqualKey, _Alloc> _Ht;
   typedef hash_multiset<_Value, _HashFcn, _EqualKey, _Alloc> _Self;
 
@@ -497,7 +497,7 @@ public:
 //: o An ordered container uses 'bslma' allocators if the parameterized
 //:     'ALLOCATOR' is convertible from 'bslma::Allocator*'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

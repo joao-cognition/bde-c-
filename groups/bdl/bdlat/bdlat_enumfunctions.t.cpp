@@ -18,7 +18,7 @@
 #include <bsl_sstream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -103,7 +103,7 @@ bool veryVerbose = false;
 //                            CLASSES FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace test {
 
 // The generated ENUMERATOR_INFO_ARRAY doesn't use the enumeration type, so it
@@ -791,7 +791,7 @@ bool MyEnumWithFallback::isFallback(MyEnumWithFallback::Value value)
 // Suppose you have a C++ `enum` type called `ImageType` whose enumerators
 // represent supported formats for image files:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
 
    namespace mine {
 
@@ -981,7 +981,7 @@ bool MyEnumWithFallback::isFallback(MyEnumWithFallback::Value value)
    struct HasFallbackEnumerator<mine::ImageType> : public bsl::true_type {
    };
    }  // close namespace bdlat_EnumFunctions
-   }  // close namespace BloombergLP
+   }  // close namespace BNP_Paribas
 // ```
 // The `bdlat` infrastructure (and any component that uses this infrastructure)
 // will now recognize `ImageType` as an "enumeration" type with a fallback
@@ -1058,7 +1058,7 @@ bool MyEnumWithFallback::isFallback(MyEnumWithFallback::Value value)
 // ============================================================================
 //           ADDITIONAL METADATA FOR ENUMERATIONS IN THIS TEST DRIVER
 // ----------------------------------------------------------------------------
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace test {
 const EnumeratorInfo<PolygonType> k_POLYGON_TYPE_INFO[k_NUM_POLYGON_TYPES] = {

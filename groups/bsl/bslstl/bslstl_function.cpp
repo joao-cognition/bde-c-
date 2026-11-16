@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(bslstl_function_cpp, "$Id$ $CSID$")
 #include <bsla_maybeunused.h>     // For testing only
 #include <bslmf_usesallocator.h>  // For testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 // 'BSLS_ASSERT' filename fix -- See {'bsls_assertimputil'}
 #ifdef BSLS_ASSERTIMPUTIL_AVOID_STRING_CONSTANTS
 extern const char s_bslstl_function_h[] = "bslstl_function.h";

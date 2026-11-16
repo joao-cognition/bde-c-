@@ -359,7 +359,7 @@ BSLS_IDENT("$Id: $")
 
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 # define BSLSTL_PRIORITY_QUEUE_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T) \
-                  requires ::BloombergLP::bslmf::ContainerCompatibleRange<R, T>
+                  requires ::BNP_Paribas::bslmf::ContainerCompatibleRange<R, T>
 #else
 # define BSLSTL_PRIORITY_QUEUE_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T)
 #endif
@@ -405,7 +405,7 @@ class priority_queue {
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     // PRIVATE MANIPULATORS
 
@@ -437,8 +437,8 @@ class priority_queue {
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         priority_queue,
-        BloombergLP::bslma::UsesBslmaAllocator,
-        BloombergLP::bslma::UsesBslmaAllocator<container_type>::value);
+        BNP_Paribas::bslma::UsesBslmaAllocator,
+        BNP_Paribas::bslma::UsesBslmaAllocator<container_type>::value);
 
     // CREATORS
 
@@ -466,7 +466,7 @@ class priority_queue {
     /// elements in the priority queue.
     explicit priority_queue(
            const COMPARATOR&                         comparator,
-           BloombergLP::bslmf::MovableRef<CONTAINER> container);
+           BNP_Paribas::bslmf::MovableRef<CONTAINER> container);
 
 
     /// Create a priority queue, adapting a default-constructed container of
@@ -501,7 +501,7 @@ class priority_queue {
            INPUT_ITERATOR                            first,
            INPUT_ITERATOR                            last,
            const COMPARATOR&                         comparator,
-           BloombergLP::bslmf::MovableRef<CONTAINER> container);
+           BNP_Paribas::bslmf::MovableRef<CONTAINER> container);
 
     /// Create a priority queue having the same value as the specified
     /// `original` object.  Use a copy of the comparator from `original` to
@@ -511,7 +511,7 @@ class priority_queue {
     /// Create a priority queue having the same value as the specified
     /// `original` object.  Use a copy of the comparator from `original` to
     /// order elements in the priority queue.
-    priority_queue(BloombergLP::bslmf::MovableRef<priority_queue> original);
+    priority_queue(BNP_Paribas::bslmf::MovableRef<priority_queue> original);
 
     /// Create an empty priority queue, adapting a default-constructed
     /// container of the (template parameter) type `CONTAINER` that uses the
@@ -560,7 +560,7 @@ class priority_queue {
     /// container uses allocator.  Otherwise this constructor is disabled.
     template <class ALLOCATOR>
     priority_queue(const COMPARATOR&                         comparator,
-                   BloombergLP::bslmf::MovableRef<CONTAINER> container,
+                   BNP_Paribas::bslmf::MovableRef<CONTAINER> container,
                    const ALLOCATOR&                          basicAllocator,
                    typename enable_if<
                               bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
@@ -587,7 +587,7 @@ class priority_queue {
     /// constructor is disabled.
     template <class ALLOCATOR>
     priority_queue(
-                 BloombergLP::bslmf::MovableRef<priority_queue> original,
+                 BNP_Paribas::bslmf::MovableRef<priority_queue> original,
                  const ALLOCATOR&                               basicAllocator,
                  typename enable_if<
                               bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
@@ -638,7 +638,7 @@ class priority_queue {
     /// `rhs` object and return a reference providing modifiable access to
     /// this object.  `rhs` is left in a valid but unspecified state.
     priority_queue& operator=(
-                            BloombergLP::bslmf::MovableRef<priority_queue> rhs)
+                            BNP_Paribas::bslmf::MovableRef<priority_queue> rhs)
                                     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false);
 
     /// Insert the specified `value` into this priority queue.  In effect,
@@ -647,7 +647,7 @@ class priority_queue {
 
     /// Insert the specified `value` into this priority queue.  In effect,
     /// performs `c.push_back(value);`.
-    void push(BloombergLP::bslmf::MovableRef<value_type> value);
+    void push(BNP_Paribas::bslmf::MovableRef<value_type> value);
 
     /// Insert the elements of the specified `range` into this priority queue.
     /// Note that `range` must meet the requirements of an input range and the
@@ -727,7 +727,7 @@ priority_queue(COMPARATOR, CONTAINER, ALLOCATOR)
 template <
     class INPUT_ITERATOR,
     class VALUE =
-          typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
+          typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
     >
 priority_queue(INPUT_ITERATOR, INPUT_ITERATOR)
   -> priority_queue<VALUE>;
@@ -741,7 +741,7 @@ template <
     class COMPARATOR,
     class CONTAINER,
     class VALUE =
-          typename BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
+          typename BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>
     >
 priority_queue(INPUT_ITERATOR, INPUT_ITERATOR, COMPARATOR, CONTAINER)
   -> priority_queue<VALUE, CONTAINER, COMPARATOR>;
@@ -830,7 +830,7 @@ template <class VALUE, class CONTAINER, class COMPARATOR>
 inline
 priority_queue<VALUE, CONTAINER, COMPARATOR>::priority_queue(
                           const COMPARATOR&                         comparator,
-                          BloombergLP::bslmf::MovableRef<CONTAINER> container)
+                          BNP_Paribas::bslmf::MovableRef<CONTAINER> container)
 : c(MoveUtil::move(container))
 , comp(comparator)
 {
@@ -870,7 +870,7 @@ priority_queue<VALUE, CONTAINER, COMPARATOR>::priority_queue(
                          INPUT_ITERATOR                             first,
                          INPUT_ITERATOR                             last,
                          const COMPARATOR&                          comparator,
-                         BloombergLP::bslmf::MovableRef<CONTAINER>  container)
+                         BNP_Paribas::bslmf::MovableRef<CONTAINER>  container)
 : c(MoveUtil::move(container))
 , comp(comparator)
 {
@@ -890,7 +890,7 @@ priority_queue<VALUE, CONTAINER, COMPARATOR>::priority_queue(
 template <class VALUE, class CONTAINER, class COMPARATOR>
 inline
 priority_queue<VALUE, CONTAINER, COMPARATOR>::priority_queue(
-                       BloombergLP::bslmf::MovableRef<priority_queue> original)
+                       BNP_Paribas::bslmf::MovableRef<priority_queue> original)
 : c(MoveUtil::move(MoveUtil::access(original).c))
 , comp(MoveUtil::access(original).comp)
 {
@@ -944,7 +944,7 @@ template <class ALLOCATOR>
 inline
 priority_queue<VALUE, CONTAINER, COMPARATOR>::priority_queue(
                       const COMPARATOR&                         comparator,
-                      BloombergLP::bslmf::MovableRef<CONTAINER> container,
+                      BNP_Paribas::bslmf::MovableRef<CONTAINER> container,
                       const ALLOCATOR&                          basicAllocator,
                       typename enable_if<
                               bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
@@ -973,7 +973,7 @@ template <class VALUE, class CONTAINER, class COMPARATOR>
 template <class ALLOCATOR>
 inline
 priority_queue<VALUE, CONTAINER, COMPARATOR>::priority_queue(
-                 BloombergLP::bslmf::MovableRef<priority_queue> original,
+                 BNP_Paribas::bslmf::MovableRef<priority_queue> original,
                  const ALLOCATOR&                               basicAllocator,
                  typename enable_if<
                               bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
@@ -1073,7 +1073,7 @@ template <class VALUE, class CONTAINER, class COMPARATOR>
 inline
 priority_queue<VALUE, CONTAINER, COMPARATOR>&
 priority_queue<VALUE, CONTAINER, COMPARATOR>::operator=(
-                            BloombergLP::bslmf::MovableRef<priority_queue> rhs)
+                            BNP_Paribas::bslmf::MovableRef<priority_queue> rhs)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false)
 {
     c = MoveUtil::move(MoveUtil::access(rhs).c);
@@ -1093,7 +1093,7 @@ void priority_queue<VALUE, CONTAINER, COMPARATOR>::push(
 template <class VALUE, class CONTAINER, class COMPARATOR>
 inline
 void priority_queue<VALUE, CONTAINER, COMPARATOR>::push(
-                              BloombergLP::bslmf::MovableRef<value_type> value)
+                              BNP_Paribas::bslmf::MovableRef<value_type> value)
 {
     c.push_back(MoveUtil::move(value));
     std::push_heap(c.begin(), c.end(), comp);
@@ -1144,8 +1144,8 @@ void priority_queue<VALUE, CONTAINER, COMPARATOR>::swap(priority_queue& other)
                                  bsl::is_nothrow_swappable<CONTAINER>::value &&
                                  bsl::is_nothrow_swappable<COMPARATOR>::value)
 {
-    BloombergLP::bslalg::SwapUtil::swap(&c, &other.c);
-    BloombergLP::bslalg::SwapUtil::swap(&comp, &other.comp);
+    BNP_Paribas::bslalg::SwapUtil::swap(&c, &other.c);
+    BNP_Paribas::bslalg::SwapUtil::swap(&comp, &other.comp);
 }
 
 // ACCESSORS

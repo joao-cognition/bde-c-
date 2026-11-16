@@ -470,7 +470,7 @@ BSLS_IDENT("$Id: $")
 #include <string_view>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
 // FORWARD DECLARATIONS

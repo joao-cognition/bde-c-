@@ -25,7 +25,7 @@
 
 using std::printf;
 using std::fflush;
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                             TEST PLAN
@@ -155,7 +155,7 @@ struct StlAAByTrait { };
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

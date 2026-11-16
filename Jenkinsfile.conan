@@ -1,14 +1,14 @@
 #!groovy
 
 // ***************************************************************
-// This is an internal Bloomberg Conan recipe.                   *
-// This recipe does not work outside of Bloomberg infrastructure *
+// This is an internal BNP Paribas Conan recipe.                   *
+// This recipe does not work outside of BNP Paribas infrastructure *
 // ***************************************************************
 
 library identifier: "conan-pipeline@main",
         retriever: modernSCM([
             $class: 'GitSCMSource',
-            remote: "https://bbgithub.dev.bloomberg.com/conan/conan-pipeline",
+            remote: "https://bbgithub.dev.bnpparibas.com/conan/conan-pipeline",
             credentialsId: 'bbgithub_token'
     ])
 

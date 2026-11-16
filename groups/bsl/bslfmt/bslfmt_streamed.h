@@ -72,7 +72,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_deprecatefeature.h>
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 #ifdef BSL_FORMATTABLE_DEFINED
@@ -270,10 +270,10 @@ namespace bsl {
 /// Standard (`bsl`) formatter for the `bslfmt::Streamed` wrapper, delegates to
 /// `bslfmt::StreamedFormatter` of the wrapped type.
 template <class t_STREAMABLE>
-struct formatter<BloombergLP::bslfmt::Streamed<t_STREAMABLE>, char> {
+struct formatter<BNP_Paribas::bslfmt::Streamed<t_STREAMABLE>, char> {
   private:
     // DATA
-    BloombergLP::bslfmt::StreamedFormatter<t_STREAMABLE> d_formatter;
+    BNP_Paribas::bslfmt::StreamedFormatter<t_STREAMABLE> d_formatter;
 
   public:
     // MANIPULATORS
@@ -301,7 +301,7 @@ struct formatter<BloombergLP::bslfmt::Streamed<t_STREAMABLE>, char> {
     /// Throw an exception of type `bsl::format_error` in the event of failure.
     template <class t_FORMAT_CONTEXT>
     typename t_FORMAT_CONTEXT::iterator format(
-        const BloombergLP::bslfmt::Streamed<t_STREAMABLE>& value,
+        const BNP_Paribas::bslfmt::Streamed<t_STREAMABLE>& value,
         t_FORMAT_CONTEXT&                                  formatContext) const
     {
         return d_formatter.format(value.object(), formatContext);

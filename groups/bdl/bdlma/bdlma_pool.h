@@ -96,7 +96,7 @@ BSLS_IDENT("$Id: $")
 //
 // Supplying an overloaded global `operator new`:
 // ```
-// ::operator new(bsl::size_t size, BloombergLP::bdlma::Pool& pool);
+// ::operator new(bsl::size_t size, BNP_Paribas::bdlma::Pool& pool);
 // ```
 // allows for the following cleaner usage, which does not require the size
 // calculation and guarantees that `pool->deallocate` *is* called in the case
@@ -277,7 +277,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_cstddef.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                                 // ==========
@@ -440,7 +440,7 @@ class Pool {
 }  // close enterprise namespace
 
 // Note that the `new` and `delete` operators are declared outside the
-// `BloombergLP` namespace so that they do not hide the standard placement
+// `BNP_Paribas` namespace so that they do not hide the standard placement
 // `new` and `delete` operators (i.e.,
 // `void *operator new(bsl::size_t, void *)` and
 // `void operator delete(void *)`).
@@ -450,7 +450,7 @@ class Pool {
 // would cause dangerous ambiguity.  Consider what would have happened had we
 // overloaded the array version of `operator new`:
 // ```
-//  void *operator new[](bsl::size_t size, BloombergLP::bdlma::Pool& pool);
+//  void *operator new[](bsl::size_t size, BNP_Paribas::bdlma::Pool& pool);
 // ```
 // A user of `bdlma::Pool` may expect to be able to use array `operator new` as
 // follows:
@@ -494,20 +494,20 @@ class Pool {
 /// t->~my_Type();
 /// pool->deallocate(t);
 /// ```
-void *operator new(bsl::size_t size, BloombergLP::bdlma::Pool& pool);
+void *operator new(bsl::size_t size, BNP_Paribas::bdlma::Pool& pool);
 
 /// Use the specified `pool` to deallocate the memory at the specified
 /// `address`.  The behavior is undefined unless `address` is non-zero, was
 /// allocated using `pool`, and has not already been deallocated.  Note that
 /// this operator is supplied solely to allow the compiler to arrange for it
 /// to be called in the case of an exception.
-void operator delete(void *address, BloombergLP::bdlma::Pool& pool);
+void operator delete(void *address, BNP_Paribas::bdlma::Pool& pool);
 
 // ============================================================================
 //                             INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                                 // ----------
@@ -585,9 +585,9 @@ bslma::Allocator *Pool::allocator() const
 
 // FREE OPERATORS
 inline
-void *operator new(bsl::size_t size, BloombergLP::bdlma::Pool& pool)
+void *operator new(bsl::size_t size, BNP_Paribas::bdlma::Pool& pool)
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     BSLS_ASSERT_SAFE(size <= pool.blockSize() &&
         bsls::AlignmentUtil::calculateAlignmentFromSize(size)
@@ -598,7 +598,7 @@ void *operator new(bsl::size_t size, BloombergLP::bdlma::Pool& pool)
 }
 
 inline
-void operator delete(void *address, BloombergLP::bdlma::Pool& pool)
+void operator delete(void *address, BNP_Paribas::bdlma::Pool& pool)
 {
     BSLS_ASSERT_SAFE(address);
 

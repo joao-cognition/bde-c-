@@ -26,8 +26,8 @@
 
 #include <string.h>
 
-using namespace BloombergLP;
-using namespace BloombergLP::bsltf;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bsltf;
 
 #if defined(BSLS_COMPILERFEATURES_SIMULATE_FORWARD_WORKAROUND)
 # define BSL_DO_NOT_TEST_MOVE_FORWARDING 1

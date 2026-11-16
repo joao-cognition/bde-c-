@@ -49,7 +49,7 @@ BSLS_IDENT_RCSID(balb_pipecontrolchannel_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_OS_WINDOWS
 bsl::string describeWin32Error(DWORD lastError)
@@ -71,7 +71,7 @@ bsl::string describeWin32Error(DWORD lastError)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #ifdef BSLS_PLATFORM_OS_WINDOWS
 const DWORD MAX_PIPE_BUFFER_LEN = 256; // max "send" message size

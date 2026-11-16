@@ -13,7 +13,7 @@
 
 #include <string>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -77,7 +77,7 @@ using namespace bsl;
 // [ 6] error_condition default_error_condition() const
 // [ 6] std::string message() const
 // [ 6] int value() const
-// [ 6] operator int BloombergLP::bsls::UnspecifiedBool::*()
+// [ 6] operator int BNP_Paribas::bsls::UnspecifiedBool::*()
 //
 // ERROR CONDITION METHODS
 // [ 7] error_condition()
@@ -89,7 +89,7 @@ using namespace bsl;
 // [ 7] const error_category& category() const
 // [ 7] std::string message() const
 // [ 7] int value() const
-// [ 7] operator int BloombergLP::bsls::UnspecifiedBool::*()
+// [ 7] operator int BNP_Paribas::bsls::UnspecifiedBool::*()
 //
 // ----------------------------------------------------------------------------
 // [ 1] BREATHING TEST
@@ -143,7 +143,7 @@ void aSsErT(bool condition, const char *message, int line)
 //            GLOBAL TYPEDEFS/CONSTANTS/FUNCTIONS FOR TESTING
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 /// Print a descriptive form of the specified `category` bracketed by the
 /// specified `leadingString` and `trailingString`.
@@ -316,7 +316,7 @@ const char *test_error_category::name() const BSLS_KEYWORD_NOEXCEPT
 // First, open the namespaces for this component.
 // ```
     // carfx_errors.h
-    namespace BloombergLP {
+    namespace BNP_Paribas {
     namespace carfx {
 // ```
 // Then define an `enum` component to specify the set of error codes for the
@@ -452,13 +452,13 @@ const char *test_error_category::name() const BSLS_KEYWORD_NOEXCEPT
 // ```
     namespace BSL_IS_ERROR_CODE_ENUM_NAMESPACE {
     template <>
-    struct is_error_code_enum<BloombergLP::carfx::Errors::Enum>
+    struct is_error_code_enum<BNP_Paribas::carfx::Errors::Enum>
     : public bsl::true_type { };
     }  // close namespace BSL_IS_ERROR_CODE_ENUM_NAMESPACE
 
     namespace BSL_IS_ERROR_CONDITION_ENUM_NAMESPACE {
     template <>
-    struct is_error_condition_enum<BloombergLP::carfx::Errors::Enum>
+    struct is_error_condition_enum<BNP_Paribas::carfx::Errors::Enum>
     : public bsl::true_type { };
     }  // close namespace BSL_IS_ERROR_CONDITION_ENUM_NAMESPACE
 // ```
@@ -469,7 +469,7 @@ const char *test_error_category::name() const BSLS_KEYWORD_NOEXCEPT
     /// `code` to describe any problems encountered.
     void drive(bsl::error_code *code, int distance)
     {
-        using namespace BloombergLP::carfx;
+        using namespace BNP_Paribas::carfx;
         if (distance > 1000) {
             *code = make_error_code(Errors::e_ENGINE_FELL_OUT);
         }
@@ -563,7 +563,7 @@ int main(int argc, char *argv[])
         //   const error_category& category() const
         //   std::string message() const
         //   int value() const
-        //   operator int BloombergLP::bsls::UnspecifiedBool::*()
+        //   operator int BNP_Paribas::bsls::UnspecifiedBool::*()
         // --------------------------------------------------------------------
 
         if (verbose)
@@ -720,7 +720,7 @@ int main(int argc, char *argv[])
         //   error_condition default_error_condition() const
         //   std::string message() const
         //   int value() const
-        //   operator int BloombergLP::bsls::UnspecifiedBool::*()
+        //   operator int BNP_Paribas::bsls::UnspecifiedBool::*()
         // --------------------------------------------------------------------
 
         if (verbose)

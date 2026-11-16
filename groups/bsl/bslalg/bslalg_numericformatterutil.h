@@ -335,7 +335,7 @@ BSLS_IDENT("$Id: $")
 
 #include <limits>  // 'bsl' cannot be used in 'bslalg'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
                         // ===========================

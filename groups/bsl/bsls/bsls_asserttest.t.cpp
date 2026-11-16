@@ -38,7 +38,7 @@
 #pragma bde_verify -MN04   // Pointer members must end in `_p`
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -1029,7 +1029,7 @@ class AssertTestProctor  {
     const bool aSsErTcOnDiTiOn = !(X);                                        \
     stdioProctor.verifyAndDismiss();                                          \
     if (aSsErTcOnDiTiOn) {                                                    \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
         aSsErT(aSsErTcOnDiTiOn, #X, __LINE__); } } while (false)
 
 #define LOOP1_ASSERT_WITH_STDIO LOOP_ASSERT_WITH_STDIO
@@ -1038,50 +1038,50 @@ class AssertTestProctor  {
     const bool aSsErTcOnDiTiOn = !(X);                                        \
     stdioProctor.verifyAndDismiss();                                          \
     if (aSsErTcOnDiTiOn) {                                                    \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
         aSsErT(aSsErTcOnDiTiOn, #X, __LINE__); } } while (false)
 
 #define LOOP3_ASSERT_WITH_STDIO(I,J,K,X)                                      \
     const bool aSsErTcOnDiTiOn = !(X);                                        \
     stdioProctor.verifyAndDismiss();                                          \
     if (aSsErTcOnDiTiOn) {                                                    \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
         aSsErT(aSsErTcOnDiTiOn, #X, __LINE__); } } while (false)
 
 #define LOOP4_ASSERT_WITH_STDIO(I,J,K,L,X)                                    \
     const bool aSsErTcOnDiTiOn = !(X);                                        \
     stdioProctor.verifyAndDismiss();                                          \
     if (aSsErTcOnDiTiOn) {                                                    \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(L, #L ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(L, #L ": ", "\n");     \
         aSsErT(aSsErTcOnDiTiOn, #X, __LINE__); } } while (false)
 
 #define LOOP5_ASSERT_WITH_STDIO(I,J,K,L,M,X)                                  \
     const bool aSsErTcOnDiTiOn = !(X);                                        \
     stdioProctor.verifyAndDismiss();                                          \
     if (aSsErTcOnDiTiOn) {                                                    \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(L, #L ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(M, #M ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(L, #L ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(M, #M ": ", "\n");     \
         aSsErT(aSsErTcOnDiTiOn, #X, __LINE__); } } while (false)
 
 #define LOOP6_ASSERT_WITH_STDIO(I,J,K,L,M,N,X)                                \
     const bool aSsErTcOnDiTiOn = !(X);                                        \
     stdioProctor.verifyAndDismiss();                                          \
     if (aSsErTcOnDiTiOn) {                                                    \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(L, #L ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(M, #M ": ", "\n");     \
-        BloombergLP::bsls::BslTestUtil::callDebugprint(N, #N ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(I, #I ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(J, #J ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(K, #K ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(L, #L ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(M, #M ": ", "\n");     \
+        BNP_Paribas::bsls::BslTestUtil::callDebugprint(N, #N ": ", "\n");     \
         aSsErT(aSsErTcOnDiTiOn, #X, __LINE__); } } while (false)
 
 // These 3 macros we hope will keep coming from `<bsls_bsltestutil.h>`

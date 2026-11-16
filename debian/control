@@ -1,7 +1,7 @@
 Source: bsl-internal
 Section: unknown
 Priority: extra
-Maintainer: Mike Giroux <mgiroux@bloomberg.net>
+Maintainer: Mike Giroux <mgiroux@bnpparibas.com>
 Build-Depends: bde-internal-tools (>> 3.11)
 Standards-Version: 3.8.4
 
@@ -98,9 +98,9 @@ Description: PCRE 2 Regular Expression Library
 Package: libbbryu-dev-extra
 Depends: libbbryu-dev
 Architecture: any
-Description: Bloomberg LP Extended Ryu Float Formatting Library
+Description: BNP Paribas Extended Ryu Float Formatting Library
  thirdparty/bbryu extra libraries
 
 Package: libbbryu-dev
 Architecture: any
-Description: Bloomberg LP Extended Ryu Float Formatting Library
+Description: BNP Paribas Extended Ryu Float Formatting Library

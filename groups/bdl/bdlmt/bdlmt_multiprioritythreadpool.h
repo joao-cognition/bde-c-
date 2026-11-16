@@ -416,7 +416,7 @@ BSLS_IDENT("$Id: $")
 #endif
 #include <bsl_functional.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bdlmt {
                        // =============================

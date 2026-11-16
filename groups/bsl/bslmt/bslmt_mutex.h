@@ -256,7 +256,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmt_muteximpl_win32.h>
 #include <bslmt_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
 template <class THREAD_POLICY>

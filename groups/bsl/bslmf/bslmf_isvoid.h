@@ -15,7 +15,7 @@ BSLS_IDENT("$Id: $")
 //@SEE_ALSO: bslmf_integralconstant
 //
 //@DESCRIPTION: This component defines two meta-functions, `bsl::is_void` and
-// `BloombergLP::bslmf::IsVoid` and a template variable `bsl::is_void_v`, that
+// `BNP_Paribas::bslmf::IsVoid` and a template variable `bsl::is_void_v`, that
 // represents the result value of `bsl::is_void` meta-function.  All these
 // meta-functions may be used to query whether a type is the (possibly
 // cv-qualified) `void` type.
@@ -131,7 +131,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_void_v = is_void<t_TYPE>::value;
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                         // ===================

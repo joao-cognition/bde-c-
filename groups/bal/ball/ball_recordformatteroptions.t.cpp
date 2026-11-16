@@ -12,7 +12,7 @@
 #include <bsl_iostream.h>
 #include <bsl_cstddef.h>  // for 'bsl::size_t'
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;

@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bslstl_function_smallobjectoptimization_cpp,"$Id$ $CSID$")
 
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 const std::size_t Function_SmallObjectOptimization::k_NON_SOO_SMALL_SIZE;

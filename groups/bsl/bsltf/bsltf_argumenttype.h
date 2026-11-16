@@ -159,7 +159,7 @@ BSLS_IDENT("$Id: $")
 #include <cstring>
 #include <cstdio>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                          // ==========================
@@ -430,7 +430,7 @@ ArgumentType<N>& ArgumentType<N>::operator=(const ArgumentType& rhs)
 template <int N>
 inline
 ArgumentType<N>&
-ArgumentType<N>::operator=(BloombergLP::bslmf::MovableRef<ArgumentType> rhs)
+ArgumentType<N>::operator=(BNP_Paribas::bslmf::MovableRef<ArgumentType> rhs)
 {
     ArgumentType& lvalue = rhs;
 

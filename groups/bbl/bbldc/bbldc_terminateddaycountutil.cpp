@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(bbldc_terminateddaycountutil_cpp,"$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bbldc {
 
                       // -----------------------------

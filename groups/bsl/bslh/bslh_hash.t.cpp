@@ -18,7 +18,7 @@
 #include <string.h>
 #include <wchar.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                  TEST PLAN
@@ -591,7 +591,7 @@ void hashAppend(bslh::DefaultHashAlgorithm& hashAlg, const StrangeStruct3& x)
 
 }  // close namespace OtherWeirdPlace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 template <class HASH_ALGORITHM>
@@ -746,7 +746,7 @@ PortableHash::result_type PortableHash::computeHash()
 
 }  // close namespace AlienNamespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 /// This class implements a mock hashing algorithm that provides a way to
@@ -1247,7 +1247,7 @@ int main(int argc, char *argv[])
 
         typedef AlienNamespace::PortableHash PH;
 
-        BloombergLP::bslh::Hash<PH> hash;
+        BNP_Paribas::bslh::Hash<PH> hash;
         PH                          alg;
 
         {

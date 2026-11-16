@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(bslx_typecode_cpp,"$Id$ $CSID$")
 #include <bslim_printer.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslx {
 
                      // ---------------

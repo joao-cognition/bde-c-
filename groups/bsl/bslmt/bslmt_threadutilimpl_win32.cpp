@@ -35,7 +35,7 @@ BSLS_IDENT_RCSID(bslmt_threadutilimpl_win32_cpp,"$Id$ $CSID$")
     #include <bslma_default.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // CLASS DATA
 const bslmt::ThreadUtilImpl<bslmt::Platform::Win32Threads>::Handle

@@ -167,7 +167,7 @@ BSLS_IDENT("$Id: $")
 #  define BSLFMT_FORMAT_WSTRING_PARAMETER bslfmt::wformat_string
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                  // ===================================

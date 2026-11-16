@@ -194,7 +194,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_typeinfo.h>
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balber {
 
 struct BerEncoder_encodeProxy;

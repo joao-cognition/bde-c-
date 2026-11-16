@@ -15,7 +15,7 @@ BSLS_IDENT_RCSID(bsls_timeinterval_cpp,"$Id$ $CSID$")
 // BDE_VERIFY pragma: push
 // BDE_VERIFY pragma: -FABC01
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 namespace {

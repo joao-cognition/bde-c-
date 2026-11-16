@@ -9,7 +9,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: Provide types, in the `bsl` namespace, equivalent to those
 // defined in the corresponding C++ standard header.  Include the native
-// compiler-provided standard header, and also directly include Bloomberg's
+// compiler-provided standard header, and also directly include BNP Paribas's
 // implementation of the C++ standard type (if one exists).  Finally, place the
 // included symbols from the `std` namespace (if any) into the `bsl` namespace.
 //
@@ -241,14 +241,14 @@ using std::remove_all_extents;
 
 template <std::size_t t_LEN,
           std::size_t t_ALIGNMENT =
-              BloombergLP::bsls::AlignmentUtil
+              BNP_Paribas::bsls::AlignmentUtil
               ::defaultAlignmentOfAlignedStorage<t_LEN>()>
 using aligned_storage BSL_TYPE_TRAITS_DEPRECATED_ALIGNED
     = std::aligned_storage<t_LEN, t_ALIGNMENT>;
 
 template <std::size_t t_LEN,
           std::size_t t_ALIGNMENT =
-              BloombergLP::bsls::AlignmentUtil
+              BNP_Paribas::bsls::AlignmentUtil
               ::defaultAlignmentOfAlignedStorage<t_LEN>()>
 using aligned_storage_t BSL_TYPE_TRAITS_DEPRECATED_ALIGNED
     = typename std::aligned_storage<t_LEN, t_ALIGNMENT>::type;

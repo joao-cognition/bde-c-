@@ -30,7 +30,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_issame.h>
 #include <bslmf_nestedtraitdeclaration.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                            // ======================

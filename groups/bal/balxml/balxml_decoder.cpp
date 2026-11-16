@@ -83,7 +83,7 @@ BSLS_IDENT_RCSID(balxml_decoder_cpp,"$Id$ $CSID$")
 // 'Parser' class (through the 'baexml_Decoder_Parser' protocol), passing it
 // the context of the sub-element.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

@@ -205,7 +205,7 @@ BSLS_IDENT("$Id: $")
 
 #include <new>          // For 'std::bad_alloc'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 

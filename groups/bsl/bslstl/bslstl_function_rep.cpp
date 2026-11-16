@@ -9,7 +9,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 #if !defined(BSLS_PLATFORM_CMP_MSVC) && !defined(BSLS_PLATFORM_CMP_SUN)
 const std::size_t bslstl::Function_Rep::k_NON_SOO_SMALL_SIZE;

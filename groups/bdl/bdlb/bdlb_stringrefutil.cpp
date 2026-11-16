@@ -6,7 +6,7 @@
 #include <bsl_algorithm.h>
 #include <bsl_cstring.h>  // 'bsl::memcmp'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
 /// Return the lower case analog of the specified `ch` if `ch` is an upper

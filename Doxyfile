@@ -5,3 +5,7 @@ DO2_BDEDOX2 = YES
 DO2_BDE_INLINE_COMPONENT_CLASSES = YES
 DO2_AWESOME_DOXYGEN_CSS = YES
 DO2_STRICT_EXIT = YES
+PROJECT_BRIEF = "BNP Paribas foundational C++ libraries"
+PROJECT_LOGO = docs/brand/bde_logo_white.svg
+HTML_EXTRA_STYLESHEET = docs/brand/bnp-doxygen.css
+HTML_COLORSTYLE_HUE = 153

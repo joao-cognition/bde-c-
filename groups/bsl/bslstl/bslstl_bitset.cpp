@@ -6,7 +6,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslmf_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 BSLMF_ASSERT(4 == sizeof(int));
 

@@ -8,7 +8,7 @@
 
 BSLS_IDENT_RCSID(balm_metrics_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balm {
 

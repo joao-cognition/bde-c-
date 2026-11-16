@@ -16,7 +16,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <climits>  // INT_MAX
 #include <cstdio>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 /// Allocate a memory block of the specified `size` from the specified
 /// `buffer` at the specified `cursor` position, aligned at the specified

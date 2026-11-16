@@ -281,7 +281,7 @@ BSLS_IDENT("$Id: $")
 //
 //     // TRAITS
 //     BSLALG_DECLARE_NESTED_TRAITS(MyTestTypeWithBslmaAllocatorTraits,
-//                          BloombergLP::bslalg::TypeTraitUsesBslmaAllocator);
+//                          BNP_Paribas::bslalg::TypeTraitUsesBslmaAllocator);
 //
 //     // CREATORS
 //     MyTestTypeWithBslmaAllocatorTraits() {}
@@ -360,7 +360,7 @@ BSLS_IDENT("$Id: $")
 #include <bslalg_typetraitpair.h>
 #include <bslalg_typetraitusesbslmaallocator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                     // ========================================
                     // macros BSLALG_DECLARE_NESTED_TRAITS[1-5]

@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(ball_attributecollectorregistry_cpp,"$Id$ $CSID$")
 #include <bslmt_readlockguard.h>
 #include <bslmt_writelockguard.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                          // --------------------------------

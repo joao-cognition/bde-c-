@@ -66,7 +66,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstdio>  // for 'std::printf'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 struct MoveState {
@@ -189,7 +189,7 @@ inline void bsltf::debugprint(const bsltf::MoveState::Enum& value)
     std::printf("%s", MoveState::toAscii(value));
 }
 
-}  // close namespace BloombergLP
+}  // close namespace BNP_Paribas
 
 #endif
 

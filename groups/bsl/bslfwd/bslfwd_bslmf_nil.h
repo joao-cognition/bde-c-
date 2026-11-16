@@ -11,7 +11,7 @@
 //@DESCRIPTION: This header provides a forward-declaration for the
 // corresponding BDE type.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
    struct Nil;
 }  // close namespace bslmf

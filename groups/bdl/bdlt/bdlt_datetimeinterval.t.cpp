@@ -37,7 +37,7 @@
 #include <bsl_sstream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -481,7 +481,7 @@ if (veryVerbose)
             cout << "\nTESTING `hashAppend`"
                  << "\n====================\n";
 
-        typedef ::BloombergLP::bslh::Hash<> Hasher;
+        typedef ::BNP_Paribas::bslh::Hash<> Hasher;
         typedef Hasher::result_type         HashType;
         Hasher                              hasher;
 

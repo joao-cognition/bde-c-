@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(ball_recordattributes_cpp,"$Id$ $CSID$")
 #include <bsl_cstring.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // ----------------------

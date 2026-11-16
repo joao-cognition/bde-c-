@@ -7,7 +7,7 @@ BSLS_IDENT_RCSID(bdlat_sequencefunctions_cpp,"$Id$ $CSID$")
 #include <bdlat_attributeinfo.h>  // for testing only
 #include <bdlat_formattingmode.h> // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

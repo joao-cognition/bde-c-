@@ -49,7 +49,7 @@ BSLS_IDENT("$Id: $")
 # include <format>     // for 'std::visit_format_arg'
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                 // =========================================

@@ -43,7 +43,7 @@
 #undef ES  // From solaris/x86 2.10 <stdlib.h>
            //       -> sys/wait.h -> signal.h -> sys/ucontext.h -> sys/regset.h
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 # ifdef BSLS_PLATFORM_CMP_CLANG
@@ -164,7 +164,7 @@ using namespace BloombergLP;
 // [ 7] basic_string operator+(const StringRef& l, std::string r);
 // [ 7] basic_string operator+(const char *l, const StringRef& r);
 // [ 7] basic_string operator+(const StringRef& l, const char *r);
-// [ 8] bsl::hash<BloombergLP::bslstl::StringRef>
+// [ 8] bsl::hash<BNP_Paribas::bslstl::StringRef>
 // [ 8] bslh::Hash<>
 //
 // OTHER COMPONENTS
@@ -2367,7 +2367,7 @@ void printChar(CHAR c, bool notFirst)
     }
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 /// Print the specified `value`.
@@ -3466,7 +3466,7 @@ TestDriver<CHAR_TYPE>::g(size_t length, CHAR_TYPE seed)
     return object;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace comparisons {
 namespace {
 
@@ -4504,7 +4504,7 @@ int main(int argc, char *argv[])
         //     nothing beyond the end of the string is being hashed.
         //
         // Testing:
-        //   bsl::hash<BloombergLP::bslstl::StringRef>
+        //   bsl::hash<BNP_Paribas::bslstl::StringRef>
         //   bslh::Hash<>
         // --------------------------------------------------------------------
 
@@ -5178,7 +5178,7 @@ int main(int argc, char *argv[])
             { L_,  "ZMH"                        },
 
 
-            // The full Bloomberg stock tickers of the 499 members of the S&P
+            // The full BNP Paribas stock tickers of the 499 members of the S&P
             // 500 as reported by {SPX Index MEMB<GO>} on 20081112
             { L_,  "A UN Equity"                },
             { L_,  "AA UN Equity"               },
@@ -6665,16 +6665,16 @@ int main(int argc, char *argv[])
                                  "\nTESTING BASIC ACCESSORS AND COMPARISONS"
                                  "\n=======================================\n";
 
-        BloombergLP::comparisons::testAccessorsComparisons<char>();
-        BloombergLP::comparisons::testAccessorsComparisons<wchar_t>();
+        BNP_Paribas::comparisons::testAccessorsComparisons<char>();
+        BNP_Paribas::comparisons::testAccessorsComparisons<wchar_t>();
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_UNICODE_CHAR_TYPES
-        BloombergLP::comparisons::testAccessorsComparisons<char16_t>();
-        BloombergLP::comparisons::testAccessorsComparisons<char32_t>();
+        BNP_Paribas::comparisons::testAccessorsComparisons<char16_t>();
+        BNP_Paribas::comparisons::testAccessorsComparisons<char32_t>();
 #endif
 
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_UTF8_CHAR_TYPE
-        BloombergLP::comparisons::testAccessorsComparisons<char8_t>();
+        BNP_Paribas::comparisons::testAccessorsComparisons<char8_t>();
 #endif
       } break;
       case 2: {

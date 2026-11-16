@@ -16,7 +16,7 @@ BSLS_IDENT_RCSID(bdlt_date_cpp,"$Id$ $CSID$")
 
 #include <bsl_c_stdio.h>   // 'snprintf'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 BSLMF_ASSERT(bslmf::IsBitwiseCopyable<Date>::value);

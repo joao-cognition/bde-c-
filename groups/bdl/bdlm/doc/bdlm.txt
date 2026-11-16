@@ -74,10 +74,10 @@
  Here we define a metric reporting function 'youMetric' for reporting a metric
  related to 'YourClass':
 ..
-  void yourMetric(BloombergLP::bdlm::Metric             *value,
-                  const BloombergLP::package::YourClass *object)
+  void yourMetric(BNP_Paribas::bdlm::Metric             *value,
+                  const BNP_Paribas::package::YourClass *object)
   {
-        *value = BloombergLP::bdlm::Metric::Gauge(object->interestingValue());
+        *value = BNP_Paribas::bdlm::Metric::Gauge(object->interestingValue());
   }
 ..
  A class exposes metrics by registering functors with a

@@ -169,7 +169,7 @@ class error_code {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bsls::UnspecifiedBool<error_code> UnspecifiedBool;
+    typedef BNP_Paribas::bsls::UnspecifiedBool<error_code> UnspecifiedBool;
     typedef UnspecifiedBool::BoolType                      BoolType;
 
   public:
@@ -245,7 +245,7 @@ class error_condition {
 
   private:
     // PRIVATE TYPES
-    typedef BloombergLP::bsls::UnspecifiedBool<error_condition>
+    typedef BNP_Paribas::bsls::UnspecifiedBool<error_condition>
                                       UnspecifiedBool;
     typedef UnspecifiedBool::BoolType BoolType;
 
@@ -522,7 +522,7 @@ error_code::operator BoolType() const
 template <class HASHALG>
 void hashAppend(HASHALG& hashAlgorithm, const error_code& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlgorithm, static_cast<const void *>(&object.category()));
     hashAppend(hashAlgorithm, object.value());
 }
@@ -628,7 +628,7 @@ error_condition::operator BoolType() const
 template <class HASHALG>
 void hashAppend(HASHALG& hashAlgorithm, const error_condition& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlgorithm, static_cast<const void *>(&object.category()));
     hashAppend(hashAlgorithm, object.value());
 }
@@ -705,12 +705,12 @@ bool operator<(const error_condition& lhs, const error_condition& rhs)
 }
 
 template <>
-struct hash<bsl::error_code> : BloombergLP::bslh::Hash<>
+struct hash<bsl::error_code> : BNP_Paribas::bslh::Hash<>
 {
 };
 
 template <>
-struct hash<bsl::error_condition> : BloombergLP::bslh::Hash<>
+struct hash<bsl::error_condition> : BNP_Paribas::bslh::Hash<>
 {
 };
 
@@ -728,12 +728,12 @@ namespace std {
 #endif
 
 template <>
-struct hash<bsl::error_code> : BloombergLP::bslh::Hash<>
+struct hash<bsl::error_code> : BNP_Paribas::bslh::Hash<>
 {
 };
 
 template <>
-struct hash<bsl::error_condition> : BloombergLP::bslh::Hash<>
+struct hash<bsl::error_condition> : BNP_Paribas::bslh::Hash<>
 {
 };
 }  // close namespace std

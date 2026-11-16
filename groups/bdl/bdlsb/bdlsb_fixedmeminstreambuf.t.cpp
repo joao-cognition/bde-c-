@@ -12,7 +12,7 @@
 #include <bsl_sstream.h>            // for testing only
 #include <bsl_string.h>             // for testing only
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -343,7 +343,7 @@ int main(int argc, char **argv)
         //   "bad override" error on `setbuf`, claiming that:
         //
         //   bad_override: Method
-        //   BloombergLP::bdlsb::FixedMemInStreamBuf::setbuf hides but does not
+        //   BNP_Paribas::bdlsb::FixedMemInStreamBuf::setbuf hides but does not
         //   override std::basic_streambuf<char, std::char_traits<char>
         //   >::setbuf because some type qualifiers do not match.
         //

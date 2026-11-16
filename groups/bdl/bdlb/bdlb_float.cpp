@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlb_float_cpp,"$Id$ $CSID$")
 
 #include <bsl_cstring.h>          // for 'memcpy'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

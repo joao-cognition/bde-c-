@@ -135,10 +135,10 @@ BSLS_IDENT("$Id$")
 // The desire to convert numbers from binary to decimal format is fraught with
 // misunderstanding, and is often accompanied by ill-conceived attempts to
 // "correct rounding errors" and otherwise coerce results into aesthetically
-// pleasing forms.  In the Bloomberg environment, there is the additional
+// pleasing forms.  In the BNP Paribas environment, there is the additional
 // complication of IBM/Perkin-Elmer/Interdata floating point.  This is a
 // floating-point format that uses a base-16 rather than a base-2 underlying
-// representation, and the Bloomberg environment contains numbers that began as
+// representation, and the BNP Paribas environment contains numbers that began as
 // decimals, were converted to IBM format, and then were converted from IBM
 // format to IEEE format.
 //
@@ -331,7 +331,7 @@ BSLS_IDENT("$Id$")
 #include <bsl_c_signal.h>  // Formerly transitively included via decContext.h
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
                         // ========================
                         // class DecimalConvertUtil

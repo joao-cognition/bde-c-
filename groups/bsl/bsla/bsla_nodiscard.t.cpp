@@ -56,7 +56,7 @@
 // [ 1] BREATHING TEST
 // ----------------------------------------------------------------------------
 
-namespace bsls = BloombergLP::bsls;
+namespace bsls = BNP_Paribas::bsls;
 
 // ============================================================================
 //                     STANDARD BSL ASSERT TEST FUNCTION

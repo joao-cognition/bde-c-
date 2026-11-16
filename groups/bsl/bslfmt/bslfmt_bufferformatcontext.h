@@ -84,7 +84,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>  // `std::size_t`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                     // ==================================
@@ -98,7 +98,7 @@ struct BufferFormatContext_ArgType {
 
     // TYPES
 #ifdef BSLS_COMPILERFEATURES_SUPPORT_DECLTYPE
-    typedef decltype(BloombergLP::bslmf::Util::declval<
+    typedef decltype(BNP_Paribas::bslmf::Util::declval<
                           const t_FORMAT_CONTEXT&>().arg(0))            type;
 #else
     typedef typename t_FORMAT_CONTEXT::Arg                              type;

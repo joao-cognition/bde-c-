@@ -10,7 +10,7 @@ BSLS_IDENT_RCSID(bslmt_sluice_cpp,"$Id$ $CSID$")
 #include <bslma_allocator.h>
 #include <bslma_default.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                     // ----------------------------------
                     // class Sluice::GenerationDescriptor

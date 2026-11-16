@@ -5,7 +5,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bslalg_nothrowmovableutil_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {}  // Close namespace BloombergLP
+namespace BNP_Paribas {}  // Close namespace BNP_Paribas
 
 // ----------------------------------------------------------------------------
 // Copyright 2020 Bloomberg Finance L.P.

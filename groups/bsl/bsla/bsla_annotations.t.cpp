@@ -79,7 +79,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace bsls = BloombergLP::bsls;
+namespace bsls = BNP_Paribas::bsls;
 
 // ============================================================================
 //                     STANDARD BSL ASSERT TEST FUNCTION
@@ -335,7 +335,7 @@ int use_without_diagnostic_message_FALLTHROUGH()
 
 void use_without_diagnostic_message_FORMAT()
 {
-    test_PRINTF(test_FORMAT("FR", "Name: %s"), "Michael Bloomberg");
+    test_PRINTF(test_FORMAT("FR", "Name: %s"), "Michael BNP Paribas");
 }
 
 #if !U_TRIGGER_WARNINGS

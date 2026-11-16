@@ -372,7 +372,7 @@ BSLS_IDENT("$Id: $")
     // `BSLS_COMPILERFEATURES_FULL_CPP11`.
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
@@ -424,10 +424,10 @@ typedef bsl::integral_constant<int, 2> Pair_BslmaIdiomAllocatorArgT;
 /// idiom.
 template <class TYPE>
 struct Pair_BslmaIdiom : bsl::conditional
-         < !BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value
+         < !BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value
          , Pair_BslmaIdiomNone
          , typename
-           bsl::conditional< BloombergLP::bslmf::UsesAllocatorArgT<TYPE>::value
+           bsl::conditional< BNP_Paribas::bslmf::UsesAllocatorArgT<TYPE>::value
                            , Pair_BslmaIdiomAllocatorArgT
                            , Pair_BslmaIdiomAtEnd
                            >::type
@@ -469,7 +469,7 @@ struct Pair_ImpUtil {
     static
     std::tuple<ARGS...>
     concatAllocator(std::tuple<ARGS...>&&          tpl,
-                    BloombergLP::bslma::Allocator* alloc,
+                    BNP_Paribas::bslma::Allocator* alloc,
                     bsl::Pair_BslmaIdiomNone);
 
     /// Construct and return by value a tuple, containing arguments for the
@@ -480,9 +480,9 @@ struct Pair_ImpUtil {
     /// exception-safety guarantee.
     template <class ... ARGS>
     static
-    std::tuple<ARGS..., BloombergLP::bslma::Allocator *>
+    std::tuple<ARGS..., BNP_Paribas::bslma::Allocator *>
     concatAllocator(std::tuple<ARGS...>&&          tpl,
-                    BloombergLP::bslma::Allocator* alloc,
+                    BNP_Paribas::bslma::Allocator* alloc,
                     bsl::Pair_BslmaIdiomAtEnd);
 
     /// Construct and return by value a tuple, containing arguments for the
@@ -495,10 +495,10 @@ struct Pair_ImpUtil {
     template <class ... ARGS>
     static
     std::tuple<bsl::allocator_arg_t,
-               BloombergLP::bslma::Allocator *,
+               BNP_Paribas::bslma::Allocator *,
                ARGS...>
     concatAllocator(std::tuple<ARGS...>&&          tpl,
-                    BloombergLP::bslma::Allocator* alloc,
+                    BNP_Paribas::bslma::Allocator* alloc,
                     bsl::Pair_BslmaIdiomAllocatorArgT);
 #endif
 
@@ -513,7 +513,7 @@ struct Pair_ImpUtil {
     static constexpr bool hasNothrowSwap()
     {
         using std::swap;
-        using U = BloombergLP::bslmf::Util;
+        using U = BNP_Paribas::bslmf::Util;
         return noexcept(swap(U::declval<TYPE1&>(), U::declval<TYPE1&>())) &&
                noexcept(swap(U::declval<TYPE2&>(), U::declval<TYPE2&>()));
     }
@@ -605,11 +605,11 @@ struct Pair_First {
     /// takes a `bslma`-style allocator as the last constructor argument,
     /// and 3) `TYPE` takes a `bslma`-style allocator as the second
     /// constructor argument preceded by `bsl::allocator_arg`.
-    Pair_First(BloombergLP::bslma::Allocator *basicAllocator,
+    Pair_First(BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
-    Pair_First(BloombergLP::bslma::Allocator *basicAllocator,
+    Pair_First(BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAtEnd);
-    Pair_First(BloombergLP::bslma::Allocator *basicAllocator,
+    Pair_First(BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAllocatorArgT);
 
     /// Construct the `first` member from the specified non-modifiable
@@ -651,40 +651,40 @@ struct Pair_First {
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
     template <class PARAM>
     Pair_First(PARAM&&                        value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_First(PARAM&&                        value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAtEnd);
     template <class PARAM>
     Pair_First(PARAM&&                        value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAllocatorArgT);
 #else
     template <class PARAM>
     Pair_First(const PARAM&                   value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_First(PARAM&                         value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_First(const PARAM&                   value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAtEnd);
     template <class PARAM>
     Pair_First(PARAM&                         value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAtEnd);
     template <class PARAM>
     Pair_First(const PARAM&                   value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAllocatorArgT);
     template <class PARAM>
     Pair_First(PARAM&                         value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomAllocatorArgT);
 #endif
 
@@ -697,7 +697,7 @@ struct Pair_First {
     /// `Pair_IndexSequence` object.
     template <class ...ARGS, size_t ...I>
     Pair_First(std::tuple<ARGS...>&& argsPack,
-               BloombergLP::bslstl::Pair_IndexSequence<I...>);
+               BNP_Paribas::bslstl::Pair_IndexSequence<I...>);
 #endif
 };
 
@@ -751,16 +751,16 @@ struct Pair_First<TYPE&> {
     template <class PARAM>
     constexpr
     Pair_First(PARAM&&                        value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
 #else   // no C++11 support
     template <class PARAM>
     Pair_First(const PARAM&                   value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_First(PARAM&                         value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
 #endif
 
@@ -774,7 +774,7 @@ struct Pair_First<TYPE&> {
     template <class ARG>
     constexpr
     Pair_First(std::tuple<ARG>&& arg,
-               BloombergLP::bslstl::Pair_IndexSequence<0u>);
+               BNP_Paribas::bslstl::Pair_IndexSequence<0u>);
 #endif
 
     // MANIPULATORS
@@ -827,7 +827,7 @@ struct Pair_First<TYPE&&> {
     template <class PARAM>
     constexpr
     Pair_First(PARAM&&                        value,
-               BloombergLP::bslma::Allocator *basicAllocator,
+               BNP_Paribas::bslma::Allocator *basicAllocator,
                Pair_BslmaIdiomNone);
 
 # if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
@@ -840,7 +840,7 @@ struct Pair_First<TYPE&&> {
     template <class ARG>
     constexpr
     Pair_First(std::tuple<ARG>&& arg,
-               BloombergLP::bslstl::Pair_IndexSequence<0u>);
+               BNP_Paribas::bslstl::Pair_IndexSequence<0u>);
 # endif
 
     // MANIPULATORS
@@ -938,11 +938,11 @@ struct Pair_Second {
     /// takes a `bslma`-style allocator as the last constructor argument,
     /// and 3) `TYPE` takes a `bslma`-style allocator as the second
     /// constructor argument preceded by `bsl::allocator_arg`.
-    Pair_Second(BloombergLP::bslma::Allocator *basicAllocator,
+    Pair_Second(BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
-    Pair_Second(BloombergLP::bslma::Allocator *basicAllocator,
+    Pair_Second(BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAtEnd);
-    Pair_Second(BloombergLP::bslma::Allocator *basicAllocator,
+    Pair_Second(BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAllocatorArgT);
 
     /// Construct the `second` member from the specified non-modifiable
@@ -985,40 +985,40 @@ struct Pair_Second {
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
     template <class PARAM>
     Pair_Second(PARAM&&                        value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_Second(PARAM&&                        value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAtEnd);
     template <class PARAM>
     Pair_Second(PARAM&&                        value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAllocatorArgT);
 #else
     template <class PARAM>
     Pair_Second(const PARAM&                   value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_Second(PARAM&                         value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_Second(const PARAM&                   value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAtEnd);
     template <class PARAM>
     Pair_Second(PARAM&                         value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAtEnd);
     template <class PARAM>
     Pair_Second(const PARAM&                   value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAllocatorArgT);
     template <class PARAM>
     Pair_Second(PARAM&                         value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomAllocatorArgT);
 #endif
 
@@ -1031,7 +1031,7 @@ struct Pair_Second {
     /// `Pair_IndexSequence` object.
     template <class ...ARGS, size_t ...I>
     Pair_Second(std::tuple<ARGS...>&& argsPack,
-                BloombergLP::bslstl::Pair_IndexSequence<I...>);
+                BNP_Paribas::bslstl::Pair_IndexSequence<I...>);
 #endif
 };
 
@@ -1085,16 +1085,16 @@ struct Pair_Second<TYPE&> {
     template <class PARAM>
     constexpr
     Pair_Second(PARAM&&                        value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
 #else   // no C++11 support
     template <class PARAM>
     Pair_Second(const PARAM&                   value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
     template <class PARAM>
     Pair_Second(PARAM&                         value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
 #endif
 
@@ -1108,7 +1108,7 @@ struct Pair_Second<TYPE&> {
     template <class ARG>
     constexpr
     Pair_Second(std::tuple<ARG>&& arg,
-                BloombergLP::bslstl::Pair_IndexSequence<0u>);
+                BNP_Paribas::bslstl::Pair_IndexSequence<0u>);
 #endif
 
     // MANIPULATORS
@@ -1161,7 +1161,7 @@ struct Pair_Second<TYPE&&> {
     template <class PARAM>
     constexpr
     Pair_Second(PARAM&&                        value,
-                BloombergLP::bslma::Allocator *basicAllocator,
+                BNP_Paribas::bslma::Allocator *basicAllocator,
                 Pair_BslmaIdiomNone);
 
 # if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
@@ -1174,7 +1174,7 @@ struct Pair_Second<TYPE&&> {
     template <class ARG>
     constexpr
     Pair_Second(std::tuple<ARG>&& arg,
-                BloombergLP::bslstl::Pair_IndexSequence<0u>);
+                BNP_Paribas::bslstl::Pair_IndexSequence<0u>);
 # endif
 
     // MANIPULATORS
@@ -1215,7 +1215,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
 
     /// This typedef is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil             MovUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil             MovUtil;
 
     /// This empty `struct` is used with `bsl::enable_if` in template
     /// constraints.
@@ -1243,7 +1243,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
 #else
     pair();
 #endif
-    explicit pair(BloombergLP::bslma::Allocator *basicAllocator);
+    explicit pair(BNP_Paribas::bslma::Allocator *basicAllocator);
 
     /// The copy constructor is declared implicitly, and will be implicitly
     /// deleted if either `T1` or `T2` have inaccessible or deleted copy
@@ -1263,7 +1263,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     /// allocators.  Note that the copy constructor is implicitly declared
     /// (if `T1` and `T2` are both `copy-constructible`) by compilers that
     /// do not support defaulted declarations.
-    pair(const pair& original, BloombergLP::bslma::Allocator *basicAllocator);
+    pair(const pair& original, BNP_Paribas::bslma::Allocator *basicAllocator);
 
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
     /// The move constructor is declared implicitly, and will be implicitly
@@ -1281,7 +1281,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     /// Note this this constructor will *not* be deleted when the implicitly
     /// declared move constructor is deleted, and will produce an error when
     /// it is called in such cases.
-    pair(pair&& original, BloombergLP::bslma::Allocator *basicAllocator);
+    pair(pair&& original, BNP_Paribas::bslma::Allocator *basicAllocator);
 #else   // no C++11 support
     /// Construct a pair having the same value as that of the specified
     /// `original` before the call to the move constructor.  Optionally
@@ -1290,9 +1290,9 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     /// respectively) uses `bslma`-style allocators.  Note that `original`
     /// is left in a valid but unspecified state.  Also note that this
     /// method requires that `T1` and `T2` be move-constructible.
-    pair(BloombergLP::bslmf::MovableRef<pair>  original);
-    pair(BloombergLP::bslmf::MovableRef<pair>  original,
-         BloombergLP::bslma::Allocator        *basicAllocator);
+    pair(BNP_Paribas::bslmf::MovableRef<pair>  original);
+    pair(BNP_Paribas::bslmf::MovableRef<pair>  original,
+         BNP_Paribas::bslma::Allocator        *basicAllocator);
 #endif
 
     /// Construct a `pair` with the `first` member initialized to the
@@ -1307,7 +1307,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
          typename bsl::add_lvalue_reference<const T2>::type  b);
     pair(typename bsl::add_lvalue_reference<const T1>::type  a,
          typename bsl::add_lvalue_reference<const T2>::type  b,
-         BloombergLP::bslma::Allocator                      *basicAllocator);
+         BNP_Paribas::bslma::Allocator                      *basicAllocator);
 
     /// Construct a pair with the 'first' member initialized to the specified
     /// 'a' value of (template parameter) type 'PARAM_1' and the 'second' member
@@ -1325,13 +1325,13 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
                 std::is_constructible<T2, PARAM_2>::value &&
                 !(bsl::is_pointer<bsl::remove_reference_t<PARAM_2>>::value &&
                   bsl::is_convertible<PARAM_2,
-                                      BloombergLP::bslma::Allocator *>::value)>
+                                      BNP_Paribas::bslma::Allocator *>::value)>
              >
     constexpr pair(PARAM_1&& a, PARAM_2&& b);
     template <class PARAM_1, class PARAM_2>
     pair(PARAM_1&&                      a,
          PARAM_2&&                      b,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 #else   // no C++11 support
     template <class PARAM_1, class PARAM_2>
     pair(const PARAM_1& a,
@@ -1342,7 +1342,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
                 !(bsl::is_pointer<
                       typename bsl::remove_reference<PARAM_2>::type>::value &&
                   bsl::is_convertible<PARAM_2,
-                                      BloombergLP::bslma::Allocator *>::value),
+                                      BNP_Paribas::bslma::Allocator *>::value),
             SfinaeEnable>::type = SfinaeEnable())
     : FirstBase(a)
     , SecondBase(b)
@@ -1354,7 +1354,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     template <class PARAM_1, class PARAM_2>
     pair(const PARAM_1&                 a,
          const PARAM_2&                 b,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 
     template <class PARAM_1, class PARAM_2>
     pair(PARAM_1&       a,
@@ -1365,7 +1365,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
                 !(bsl::is_pointer<
                       typename bsl::remove_reference<PARAM_2>::type>::value &&
                   bsl::is_convertible<PARAM_2,
-                                      BloombergLP::bslma::Allocator *>::value),
+                                      BNP_Paribas::bslma::Allocator *>::value),
             SfinaeEnable>::type = SfinaeEnable())
     : FirstBase(a)
     , SecondBase(b)
@@ -1377,7 +1377,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     template <class PARAM_1, class PARAM_2>
     pair(PARAM_1&                       a,
          const PARAM_2&                 b,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 
     template <class PARAM_1, class PARAM_2>
     pair(const PARAM_1& a,
@@ -1388,7 +1388,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
                 !(bsl::is_pointer<
                       typename bsl::remove_reference<PARAM_2>::type>::value &&
                   bsl::is_convertible<PARAM_2,
-                                      BloombergLP::bslma::Allocator *>::value),
+                                      BNP_Paribas::bslma::Allocator *>::value),
             SfinaeEnable>::type = SfinaeEnable())
     : FirstBase(a)
     , SecondBase(b)
@@ -1400,7 +1400,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     template <class PARAM_1, class PARAM_2>
     pair(const PARAM_1&                 a,
          PARAM_2&                       b,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 
     template <class PARAM_1, class PARAM_2>
     pair(PARAM_1& a,
@@ -1411,7 +1411,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
                 !(bsl::is_pointer<
                       typename bsl::remove_reference<PARAM_2>::type>::value &&
                   bsl::is_convertible<PARAM_2,
-                                      BloombergLP::bslma::Allocator *>::value),
+                                      BNP_Paribas::bslma::Allocator *>::value),
             SfinaeEnable>::type = SfinaeEnable())
     : FirstBase(a)
     , SecondBase(b)
@@ -1423,7 +1423,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     template <class PARAM_1, class PARAM_2>
     pair(PARAM_1&                       a,
          PARAM_2&                       b,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 #endif
 
     /// Construct a `pair` from the specified `other` pair, holding `first`
@@ -1452,10 +1452,10 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
 #endif
     template <class PARAM_1, class PARAM_2>
     pair(const pair<PARAM_1, PARAM_2>&       other,
-         BloombergLP::bslma::Allocator      *basicAllocator);
+         BNP_Paribas::bslma::Allocator      *basicAllocator);
     template <class PARAM_1, class PARAM_2>
     pair(const std::pair<PARAM_1, PARAM_2>&  other,
-         BloombergLP::bslma::Allocator      *basicAllocator);
+         BNP_Paribas::bslma::Allocator      *basicAllocator);
 
     /// Construct a `pair` from the specified `other` pair, holding `first`
     /// and `second` values of (template parameter) type `PARAM_1` and
@@ -1477,13 +1477,13 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     constexpr pair(std::pair<PARAM_1, PARAM_2>&& other);
     template <class PARAM_1, class PARAM_2>
     pair(pair<PARAM_1, PARAM_2>&&       other,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
     template <class PARAM_1, class PARAM_2>
     pair(std::pair<PARAM_1, PARAM_2>&&  other,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 #else   // no C++11 support
     template <class PARAM_1, class PARAM_2>
-    pair(BloombergLP::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > other,
+    pair(BNP_Paribas::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > other,
          typename bsl::enable_if<bsl::is_convertible<PARAM_1, T1>::value &&
                                  bsl::is_convertible<PARAM_2, T2>::value,
                                  SfinaeEnable>::type = SfinaeEnable())
@@ -1497,7 +1497,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     }
 
     template <class PARAM_1, class PARAM_2>
-    pair(BloombergLP::bslmf::MovableRef<std::pair<PARAM_1, PARAM_2> > other,
+    pair(BNP_Paribas::bslmf::MovableRef<std::pair<PARAM_1, PARAM_2> > other,
          typename bsl::enable_if<bsl::is_convertible<PARAM_1, T1>::value &&
                                  bsl::is_convertible<PARAM_2, T2>::value,
                                  SfinaeEnable>::type = SfinaeEnable())
@@ -1511,11 +1511,11 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     }
     template <class PARAM_1, class PARAM_2>
     pair(
-      BloombergLP::bslmf::MovableRef<pair<PARAM_1, PARAM_2> >  other,
-      BloombergLP::bslma::Allocator                           *basicAllocator);
+      BNP_Paribas::bslmf::MovableRef<pair<PARAM_1, PARAM_2> >  other,
+      BNP_Paribas::bslma::Allocator                           *basicAllocator);
     template <class PARAM_1, class PARAM_2>
-    pair(BloombergLP::bslmf::MovableRef<std::pair<PARAM_1, PARAM_2> > other,
-         BloombergLP::bslma::Allocator *basicAllocator);
+    pair(BNP_Paribas::bslmf::MovableRef<std::pair<PARAM_1, PARAM_2> > other,
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 #endif
 
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
@@ -1540,7 +1540,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     pair(std::piecewise_construct_t,
          std::tuple<ARGS_1...>          first_args,
          std::tuple<ARGS_2...>          second_args,
-         BloombergLP::bslma::Allocator *basicAllocator);
+         BNP_Paribas::bslma::Allocator *basicAllocator);
 #endif
 
 #ifndef BDE_OMIT_INTERNAL_DEPRECATED
@@ -1549,7 +1549,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     /// `PARAM_1` and `T2` is constructible from from `PARAM_2`.
     template <class PARAM_1, class PARAM_2>
     BSLS_KEYWORD_CONSTEXPR
-    pair(const BloombergLP::bslma::ManagedPtr_PairProxy<PARAM_1, PARAM_2>&
+    pair(const BNP_Paribas::bslma::ManagedPtr_PairProxy<PARAM_1, PARAM_2>&
                                                               rhs); // IMPLICIT
 #endif // BDE_OMIT_INTERNAL_DEPRECATED
 
@@ -1621,7 +1621,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     /// modifiable access to this object.  Note that 'rhs' is left in a
     /// valid but unspecified state.  This method requires that (template
     /// parameter) types 'T1' and 'T2' be move-assignable.
-    pair& operator=(BloombergLP::bslmf::MovableRef<pair> rhs);
+    pair& operator=(BNP_Paribas::bslmf::MovableRef<pair> rhs);
 
     /// Assign to this `pair` the value of the specified `rhs` pair, holding
     /// `first` and `second` values of (template parameter) types `PARAM_1`
@@ -1630,7 +1630,7 @@ class pair : public Pair_First<T1>, public Pair_Second<T2> {
     /// assignable from `PARAM_1` and `T2` be assignable from `PARAM_2`.
     template <class PARAM_1, class PARAM_2>
     pair& operator=(
-                  BloombergLP::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > rhs);
+                  BNP_Paribas::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > rhs);
 #endif
 
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
@@ -1712,7 +1712,7 @@ template <
     class T2,
     class ALLOC,
     class = bsl::enable_if_t<
-         bsl::is_convertible_v<ALLOC *, BloombergLP::bslma::Allocator *>>
+         bsl::is_convertible_v<ALLOC *, BNP_Paribas::bslma::Allocator *>>
     >
 pair(T1, T2, ALLOC *) -> pair<T1, T2>;
 
@@ -1725,7 +1725,7 @@ template <
     class T2,
     class ALLOC,
     class = bsl::enable_if_t<
-         bsl::is_convertible_v<ALLOC *, BloombergLP::bslma::Allocator *>>
+         bsl::is_convertible_v<ALLOC *, BNP_Paribas::bslma::Allocator *>>
     >
 pair(pair<T1, T2>, ALLOC *) -> pair<T1, T2>;
 
@@ -1743,7 +1743,7 @@ template <
     class T2,
     class ALLOC,
     class = bsl::enable_if_t<
-         bsl::is_convertible_v<ALLOC *, BloombergLP::bslma::Allocator *>>
+         bsl::is_convertible_v<ALLOC *, BNP_Paribas::bslma::Allocator *>>
     >
 pair(std::pair<T1, T2>, ALLOC *) -> pair<T1, T2>;
 #endif
@@ -1778,8 +1778,8 @@ bool operator!=(const pair<T1, T2>& lhs, const pair<T1, T2>& rhs);
 template <class T1, class T2>
 constexpr
 std::common_comparison_category_t<
-    BloombergLP::bslalg::SynthThreeWayUtil::Result<T1>,
-    BloombergLP::bslalg::SynthThreeWayUtil::Result<T2>
+    BNP_Paribas::bslalg::SynthThreeWayUtil::Result<T1>,
+    BNP_Paribas::bslalg::SynthThreeWayUtil::Result<T2>
 > operator<=>(const pair<T1, T2>& lhs, const pair<T1, T2>& rhs);
 
 #else
@@ -1894,7 +1894,7 @@ struct tuple_size<bsl::pair<T1, T2> > : integral_constant<size_t, 2>
 
 }  // close namespace std
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                           // =====================
@@ -2057,7 +2057,7 @@ inline
 std::tuple<ARGS...>
 Pair_ImpUtil::concatAllocator(
           std::tuple<ARGS...>&&          tpl,
-          BloombergLP::bslma::Allocator *,
+          BNP_Paribas::bslma::Allocator *,
           bsl::Pair_BslmaIdiomNone)
 {
     return std::move(tpl);
@@ -2065,10 +2065,10 @@ Pair_ImpUtil::concatAllocator(
 
 template <class ... ARGS>
 inline
-std::tuple<ARGS..., BloombergLP::bslma::Allocator *>
+std::tuple<ARGS..., BNP_Paribas::bslma::Allocator *>
 Pair_ImpUtil::concatAllocator(
                  std::tuple<ARGS...>&&          tpl,
-                 BloombergLP::bslma::Allocator *alloc,
+                 BNP_Paribas::bslma::Allocator *alloc,
                  bsl::Pair_BslmaIdiomAtEnd)
 {
     return std::tuple_cat(std::move(tpl), std::tie(alloc));
@@ -2077,11 +2077,11 @@ Pair_ImpUtil::concatAllocator(
 template <class ... ARGS>
 inline
 std::tuple<bsl::allocator_arg_t,
-           BloombergLP::bslma::Allocator *,
+           BNP_Paribas::bslma::Allocator *,
            ARGS...>
 Pair_ImpUtil::concatAllocator(
                  std::tuple<ARGS...>&&          tpl,
-                 BloombergLP::bslma::Allocator *alloc,
+                 BNP_Paribas::bslma::Allocator *alloc,
                  bsl::Pair_BslmaIdiomAllocatorArgT)
 {
     return std::tuple_cat(std::tie(bsl::allocator_arg, alloc), std::move(tpl));
@@ -2104,7 +2104,7 @@ Pair_First<TYPE>::Pair_First()
 
 template <class TYPE>
 inline
-Pair_First<TYPE>::Pair_First(BloombergLP::bslma::Allocator *,
+Pair_First<TYPE>::Pair_First(BNP_Paribas::bslma::Allocator *,
                              Pair_BslmaIdiomNone)
 : first()
 {
@@ -2112,7 +2112,7 @@ Pair_First<TYPE>::Pair_First(BloombergLP::bslma::Allocator *,
 
 template <class TYPE>
 inline
-Pair_First<TYPE>::Pair_First(BloombergLP::bslma::Allocator *basicAllocator,
+Pair_First<TYPE>::Pair_First(BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAtEnd)
 : first(basicAllocator)
 {
@@ -2120,7 +2120,7 @@ Pair_First<TYPE>::Pair_First(BloombergLP::bslma::Allocator *basicAllocator,
 
 template <class TYPE>
 inline
-Pair_First<TYPE>::Pair_First(BloombergLP::bslma::Allocator *basicAllocator,
+Pair_First<TYPE>::Pair_First(BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAllocatorArgT)
 : first(bsl::allocator_arg, basicAllocator)
 {
@@ -2166,7 +2166,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(PARAM&&                        value,
-                             BloombergLP::bslma::Allocator *,
+                             BNP_Paribas::bslma::Allocator *,
                              Pair_BslmaIdiomNone)
 : first(std::forward<PARAM>(value))
 {
@@ -2176,7 +2176,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(PARAM&&                        value,
-                             BloombergLP::bslma::Allocator *basicAllocator,
+                             BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAtEnd)
 : first(std::forward<PARAM>(value), basicAllocator)
 {
@@ -2186,7 +2186,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(PARAM&&                        value,
-                             BloombergLP::bslma::Allocator *basicAllocator,
+                             BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAllocatorArgT)
 : first(bsl::allocator_arg, basicAllocator, std::forward<PARAM>(value))
 {
@@ -2196,7 +2196,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(const PARAM&                   value,
-                             BloombergLP::bslma::Allocator *,
+                             BNP_Paribas::bslma::Allocator *,
                              Pair_BslmaIdiomNone)
 : first(value)
 {
@@ -2206,7 +2206,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(PARAM&                         value,
-                             BloombergLP::bslma::Allocator *,
+                             BNP_Paribas::bslma::Allocator *,
                              Pair_BslmaIdiomNone)
 : first(value)
 {
@@ -2216,7 +2216,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(const PARAM&                   value,
-                             BloombergLP::bslma::Allocator *basicAllocator,
+                             BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAtEnd)
 : first(value, basicAllocator)
 {
@@ -2226,7 +2226,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(PARAM&                         value,
-                             BloombergLP::bslma::Allocator *basicAllocator,
+                             BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAtEnd)
 : first(value, basicAllocator)
 {
@@ -2236,7 +2236,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(const PARAM&                   value,
-                             BloombergLP::bslma::Allocator *basicAllocator,
+                             BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAllocatorArgT)
 : first(bsl::allocator_arg, basicAllocator, value)
 {
@@ -2246,7 +2246,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE>::Pair_First(PARAM&                         value,
-                             BloombergLP::bslma::Allocator *basicAllocator,
+                             BNP_Paribas::bslma::Allocator *basicAllocator,
                              Pair_BslmaIdiomAllocatorArgT)
 : first(bsl::allocator_arg, basicAllocator, value)
 {
@@ -2258,7 +2258,7 @@ template <class TYPE>
 template <class ...ARGS, size_t ...I>
 inline
 Pair_First<TYPE>::Pair_First(std::tuple<ARGS...>&& argsPack,
-                             BloombergLP::bslstl::Pair_IndexSequence<I...>)
+                             BNP_Paribas::bslstl::Pair_IndexSequence<I...>)
 : first(std::get<I>(std::move(argsPack))...)
 {
 }
@@ -2309,7 +2309,7 @@ template <class TYPE>
 template <class PARAM>
 inline constexpr
 Pair_First<TYPE&>::Pair_First(PARAM&&                        value,
-                              BloombergLP::bslma::Allocator *,
+                              BNP_Paribas::bslma::Allocator *,
                               Pair_BslmaIdiomNone                 )
 : first(std::forward<PARAM>(value))
 {
@@ -2319,7 +2319,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE&>::Pair_First(const PARAM&                   value,
-                              BloombergLP::bslma::Allocator *,
+                              BNP_Paribas::bslma::Allocator *,
                               Pair_BslmaIdiomNone                 )
 : first(value)
 {
@@ -2329,7 +2329,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_First<TYPE&>::Pair_First(PARAM&                         value,
-                              BloombergLP::bslma::Allocator *,
+                              BNP_Paribas::bslma::Allocator *,
                               Pair_BslmaIdiomNone                 )
 : first(value)
 {
@@ -2341,7 +2341,7 @@ template <class TYPE>
 template <class ARG>
 inline constexpr
 Pair_First<TYPE&>::Pair_First(std::tuple<ARG>&& arg,
-                              BloombergLP::bslstl::Pair_IndexSequence<0u>)
+                              BNP_Paribas::bslstl::Pair_IndexSequence<0u>)
 : first(std::get<0u>(arg))
 {
 }
@@ -2384,7 +2384,7 @@ template <class TYPE>
 template <class PARAM>
 inline constexpr
 Pair_First<TYPE&&>::Pair_First(PARAM&&                        value,
-                               BloombergLP::bslma::Allocator *,
+                               BNP_Paribas::bslma::Allocator *,
                                Pair_BslmaIdiomNone                 )
 : first(std::forward<PARAM>(value))
 {
@@ -2395,7 +2395,7 @@ template <class TYPE>
 template <class ARG>
 inline constexpr
 Pair_First<TYPE&&>::Pair_First(std::tuple<ARG>&& arg,
-                               BloombergLP::bslstl::Pair_IndexSequence<0u>)
+                               BNP_Paribas::bslstl::Pair_IndexSequence<0u>)
 : first(std::get<0u>(arg))
 {
 }
@@ -2428,7 +2428,7 @@ Pair_Second<TYPE>::Pair_Second()
 
 template <class TYPE>
 inline
-Pair_Second<TYPE>::Pair_Second(BloombergLP::bslma::Allocator *,
+Pair_Second<TYPE>::Pair_Second(BNP_Paribas::bslma::Allocator *,
                                Pair_BslmaIdiomNone)
 : second()
 {
@@ -2436,7 +2436,7 @@ Pair_Second<TYPE>::Pair_Second(BloombergLP::bslma::Allocator *,
 
 template <class TYPE>
 inline
-Pair_Second<TYPE>::Pair_Second(BloombergLP::bslma::Allocator *basicAllocator,
+Pair_Second<TYPE>::Pair_Second(BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAtEnd)
 : second(basicAllocator)
 {
@@ -2444,7 +2444,7 @@ Pair_Second<TYPE>::Pair_Second(BloombergLP::bslma::Allocator *basicAllocator,
 
 template <class TYPE>
 inline
-Pair_Second<TYPE>::Pair_Second(BloombergLP::bslma::Allocator *basicAllocator,
+Pair_Second<TYPE>::Pair_Second(BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAllocatorArgT)
 : second(bsl::allocator_arg, basicAllocator)
 {
@@ -2489,7 +2489,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(PARAM&&                        value,
-                               BloombergLP::bslma::Allocator *,
+                               BNP_Paribas::bslma::Allocator *,
                                Pair_BslmaIdiomNone)
 : second(std::forward<PARAM>(value))
 {
@@ -2499,7 +2499,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(PARAM&&                        value,
-                               BloombergLP::bslma::Allocator *basicAllocator,
+                               BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAtEnd)
 : second(std::forward<PARAM>(value), basicAllocator)
 {
@@ -2509,7 +2509,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(PARAM&&                        value,
-                               BloombergLP::bslma::Allocator *basicAllocator,
+                               BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAllocatorArgT)
 : second(bsl::allocator_arg, basicAllocator, std::forward<PARAM>(value))
 {
@@ -2519,7 +2519,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(const PARAM&                   value,
-                               BloombergLP::bslma::Allocator *,
+                               BNP_Paribas::bslma::Allocator *,
                                Pair_BslmaIdiomNone)
 : second(value)
 {
@@ -2529,7 +2529,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(PARAM&                         value,
-                               BloombergLP::bslma::Allocator *,
+                               BNP_Paribas::bslma::Allocator *,
                                Pair_BslmaIdiomNone)
 : second(value)
 {
@@ -2539,7 +2539,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(const PARAM&                   value,
-                               BloombergLP::bslma::Allocator *basicAllocator,
+                               BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAtEnd)
 : second(value, basicAllocator)
 {
@@ -2549,7 +2549,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(PARAM&                         value,
-                               BloombergLP::bslma::Allocator *basicAllocator,
+                               BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAtEnd)
 : second(value, basicAllocator)
 {
@@ -2559,7 +2559,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(const PARAM&                   value,
-                               BloombergLP::bslma::Allocator *basicAllocator,
+                               BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAllocatorArgT)
 : second(bsl::allocator_arg, basicAllocator, value)
 {
@@ -2569,7 +2569,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE>::Pair_Second(PARAM&                         value,
-                               BloombergLP::bslma::Allocator *basicAllocator,
+                               BNP_Paribas::bslma::Allocator *basicAllocator,
                                Pair_BslmaIdiomAllocatorArgT)
 : second(bsl::allocator_arg, basicAllocator, value)
 {
@@ -2581,7 +2581,7 @@ template <class TYPE>
 template <class ...ARGS, size_t ...I>
 inline
 Pair_Second<TYPE>::Pair_Second(std::tuple<ARGS...>&& argsPack,
-                               BloombergLP::bslstl::Pair_IndexSequence<I...>)
+                               BNP_Paribas::bslstl::Pair_IndexSequence<I...>)
 : second(std::get<I>(std::move(argsPack))...)
 {
 }
@@ -2631,7 +2631,7 @@ template <class TYPE>
 template <class PARAM>
 inline constexpr
 Pair_Second<TYPE&>::Pair_Second(PARAM&&                        value,
-                                BloombergLP::bslma::Allocator *,
+                                BNP_Paribas::bslma::Allocator *,
                                 Pair_BslmaIdiomNone                 )
 : second(std::forward<PARAM>(value))
 {
@@ -2641,7 +2641,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE&>::Pair_Second(const PARAM&                   value,
-                                BloombergLP::bslma::Allocator *,
+                                BNP_Paribas::bslma::Allocator *,
                                 Pair_BslmaIdiomNone                 )
 : second(value)
 {
@@ -2651,7 +2651,7 @@ template <class TYPE>
 template <class PARAM>
 inline
 Pair_Second<TYPE&>::Pair_Second(PARAM&                         value,
-                                BloombergLP::bslma::Allocator *,
+                                BNP_Paribas::bslma::Allocator *,
                                 Pair_BslmaIdiomNone                 )
 : second(value)
 {
@@ -2663,7 +2663,7 @@ template <class TYPE>
 template <class ARG>
 inline constexpr
 Pair_Second<TYPE&>::Pair_Second(std::tuple<ARG>&& arg,
-                                BloombergLP::bslstl::Pair_IndexSequence<0u>)
+                                BNP_Paribas::bslstl::Pair_IndexSequence<0u>)
 : second(std::get<0u>(arg))
 {
 }
@@ -2705,7 +2705,7 @@ template <class TYPE>
 template <class PARAM>
 inline constexpr
 Pair_Second<TYPE&&>::Pair_Second(PARAM&&                        value,
-                                 BloombergLP::bslma::Allocator *,
+                                 BNP_Paribas::bslma::Allocator *,
                                  Pair_BslmaIdiomNone            )
 : second(std::forward<PARAM>(value))
 {
@@ -2716,7 +2716,7 @@ template <class TYPE>
 template <class ARG>
 inline constexpr
 Pair_Second<TYPE&&>::Pair_Second(std::tuple<ARG>&& arg,
-                                 BloombergLP::bslstl::Pair_IndexSequence<0u>)
+                                 BNP_Paribas::bslstl::Pair_IndexSequence<0u>)
 : second(std::get<0u>(arg))
 {
 }
@@ -2749,7 +2749,7 @@ pair<T1, T2>::pair()
 
 template <class T1, class T2>
 inline
-pair<T1, T2>::pair(BloombergLP::bslma::Allocator *basicAllocator)
+pair<T1, T2>::pair(BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(basicAllocator, FirstBslmaIdiom())
 , SecondBase(basicAllocator, SecondBslmaIdiom())
 {
@@ -2770,7 +2770,7 @@ inline
 pair<T1, T2>::pair(
             typename bsl::add_lvalue_reference<const T1>::type  a,
             typename bsl::add_lvalue_reference<const T2>::type  b,
-            BloombergLP::bslma::Allocator                      *basicAllocator)
+            BNP_Paribas::bslma::Allocator                      *basicAllocator)
 : FirstBase(a, basicAllocator, FirstBslmaIdiom())
 , SecondBase(b, basicAllocator, SecondBslmaIdiom())
 {
@@ -2791,7 +2791,7 @@ template <class PARAM_1, class PARAM_2>
 inline
 pair<T1, T2>::pair(PARAM_1&&                      a,
                    PARAM_2&&                      b,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(std::forward<PARAM_1>(a), basicAllocator, FirstBslmaIdiom())
 , SecondBase(std::forward<PARAM_2>(b), basicAllocator, SecondBslmaIdiom())
 {
@@ -2802,7 +2802,7 @@ template <class PARAM_1, class PARAM_2>
 inline
 pair<T1, T2>::pair(const PARAM_1&                 a,
                    const PARAM_2&                 b,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(a, basicAllocator, FirstBslmaIdiom())
 , SecondBase(b, basicAllocator, SecondBslmaIdiom())
 {
@@ -2813,7 +2813,7 @@ template <class PARAM_1, class PARAM_2>
 inline
 pair<T1, T2>::pair(PARAM_1&                       a,
                    const PARAM_2&                 b,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(a, basicAllocator, FirstBslmaIdiom())
 , SecondBase(b, basicAllocator, SecondBslmaIdiom())
 {
@@ -2824,7 +2824,7 @@ template <class PARAM_1, class PARAM_2>
 inline
 pair<T1, T2>::pair(const PARAM_1&                 a,
                    PARAM_2&                       b,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(a, basicAllocator, FirstBslmaIdiom())
 , SecondBase(b, basicAllocator, SecondBslmaIdiom())
 {
@@ -2835,7 +2835,7 @@ template <class PARAM_1, class PARAM_2>
 inline
 pair<T1, T2>::pair(PARAM_1&                       a,
                    PARAM_2&                       b,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(a, basicAllocator, FirstBslmaIdiom())
 , SecondBase(b, basicAllocator, SecondBslmaIdiom())
 {
@@ -2850,11 +2850,11 @@ pair<T1, T2>::pair(std::piecewise_construct_t,
                    std::tuple<ARGS_1...>      first_args,
                    std::tuple<ARGS_2...>      second_args)
 : FirstBase(std::move(first_args),
-            BloombergLP::bslstl::Pair_MakeIndexSequence<
+            BNP_Paribas::bslstl::Pair_MakeIndexSequence<
                    std::tuple_size<std::tuple<ARGS_1...> >::value
                                               >())
 , SecondBase(std::move(second_args),
-             BloombergLP::bslstl::Pair_MakeIndexSequence<
+             BNP_Paribas::bslstl::Pair_MakeIndexSequence<
                    std::tuple_size<std::tuple<ARGS_2...> >::value
                                               >())
 {
@@ -2866,16 +2866,16 @@ inline
 pair<T1, T2>::pair(std::piecewise_construct_t,
                    std::tuple<ARGS_1...>          first_args,
                    std::tuple<ARGS_2...>          second_args,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(Pair_ImpUtil::concatAllocator(std::move(first_args),
                                           basicAllocator,
                                           FirstBslmaIdiom()),
-            BloombergLP::bslstl::Pair_MakeIndexSequence<
+            BNP_Paribas::bslstl::Pair_MakeIndexSequence<
                 Pair_ConstructionParametersPackLength<T1, ARGS_1...>::value>())
 , SecondBase(Pair_ImpUtil::concatAllocator(std::move(second_args),
                                            basicAllocator,
                                            SecondBslmaIdiom()),
-            BloombergLP::bslstl::Pair_MakeIndexSequence<
+            BNP_Paribas::bslstl::Pair_MakeIndexSequence<
                 Pair_ConstructionParametersPackLength<T2, ARGS_2...>::value>())
 {
 }
@@ -2884,7 +2884,7 @@ pair<T1, T2>::pair(std::piecewise_construct_t,
 template <class T1, class T2>
 inline
 pair<T1, T2>::pair(const pair&                    original,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(original.first, basicAllocator, FirstBslmaIdiom())
 , SecondBase(original.second, basicAllocator, SecondBslmaIdiom())
 {
@@ -2894,7 +2894,7 @@ pair<T1, T2>::pair(const pair&                    original,
 template <class T1, class T2>
 inline
 pair<T1, T2>::pair(pair&&                         original,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(std::forward<T1>(original.first),
             basicAllocator,
             FirstBslmaIdiom())
@@ -2906,7 +2906,7 @@ pair<T1, T2>::pair(pair&&                         original,
 #else   // no C++11 support
 template <class T1, class T2>
 inline
-pair<T1, T2>::pair(BloombergLP::bslmf::MovableRef<pair> original)
+pair<T1, T2>::pair(BNP_Paribas::bslmf::MovableRef<pair> original)
 : FirstBase(MovUtil::move(MovUtil::access(original).first))
 , SecondBase(MovUtil::move(MovUtil::access(original).second))
 {
@@ -2914,8 +2914,8 @@ pair<T1, T2>::pair(BloombergLP::bslmf::MovableRef<pair> original)
 
 template <class T1, class T2>
 inline
-pair<T1, T2>::pair(BloombergLP::bslmf::MovableRef<pair>  original,
-                   BloombergLP::bslma::Allocator        *basicAllocator)
+pair<T1, T2>::pair(BNP_Paribas::bslmf::MovableRef<pair>  original,
+                   BNP_Paribas::bslma::Allocator        *basicAllocator)
 : FirstBase(MovUtil::move(MovUtil::access(original).first),
             basicAllocator,
             FirstBslmaIdiom())
@@ -2968,7 +2968,7 @@ template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 inline
 pair<T1, T2>::pair(const pair<PARAM_1, PARAM_2>&  other,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(other.first, basicAllocator, FirstBslmaIdiom())
 , SecondBase(other.second, basicAllocator, SecondBslmaIdiom())
 {
@@ -2978,7 +2978,7 @@ template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 inline
 pair<T1, T2>::pair(const std::pair<PARAM_1, PARAM_2>&  other,
-                   BloombergLP::bslma::Allocator      *basicAllocator)
+                   BNP_Paribas::bslma::Allocator      *basicAllocator)
 : FirstBase(other.first, basicAllocator, FirstBslmaIdiom())
 , SecondBase(other.second, basicAllocator, SecondBslmaIdiom())
 {
@@ -3004,7 +3004,7 @@ constexpr pair<T1, T2>::pair(std::pair<PARAM_1, PARAM_2>&& other)
 template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 pair<T1, T2>::pair(pair<PARAM_1, PARAM_2>&&       other,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(std::move(other.first), basicAllocator, FirstBslmaIdiom())
 , SecondBase(std::move(other.second), basicAllocator, SecondBslmaIdiom())
 {
@@ -3013,7 +3013,7 @@ pair<T1, T2>::pair(pair<PARAM_1, PARAM_2>&&       other,
 template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 pair<T1, T2>::pair(std::pair<PARAM_1, PARAM_2>&&  other,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : FirstBase(std::move(other.first), basicAllocator, FirstBslmaIdiom())
 , SecondBase(std::move(other.second), basicAllocator, SecondBslmaIdiom())
 {
@@ -3022,8 +3022,8 @@ pair<T1, T2>::pair(std::pair<PARAM_1, PARAM_2>&&  other,
 template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 pair<T1, T2>::pair(
-    BloombergLP::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > other,
-    BloombergLP::bslma::Allocator                          *basicAllocator)
+    BNP_Paribas::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > other,
+    BNP_Paribas::bslma::Allocator                          *basicAllocator)
 : FirstBase(MovUtil::move(MovUtil::access(other).first),
             basicAllocator,
             FirstBslmaIdiom())
@@ -3036,8 +3036,8 @@ pair<T1, T2>::pair(
 template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 pair<T1, T2>::pair(
-   BloombergLP::bslmf::MovableRef<std::pair<PARAM_1, PARAM_2> > other,
-   BloombergLP::bslma::Allocator                               *basicAllocator)
+   BNP_Paribas::bslmf::MovableRef<std::pair<PARAM_1, PARAM_2> > other,
+   BNP_Paribas::bslma::Allocator                               *basicAllocator)
 : FirstBase(MovUtil::move(MovUtil::access(other).first),
             basicAllocator,
             FirstBslmaIdiom())
@@ -3053,7 +3053,7 @@ template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 BSLS_KEYWORD_CONSTEXPR
 pair<T1, T2>::pair(
-         const BloombergLP::bslma::ManagedPtr_PairProxy<PARAM_1, PARAM_2>& rhs)
+         const BNP_Paribas::bslma::ManagedPtr_PairProxy<PARAM_1, PARAM_2>& rhs)
 : FirstBase(rhs.first)
 , SecondBase(rhs.second)
 {
@@ -3063,7 +3063,7 @@ pair<T1, T2>::pair(
 // MANIPULATORS
 #if !defined(BSLS_COMPILERFEATURES_FULL_CPP11)
 template <class T1, class T2>
-pair<T1, T2>& pair<T1, T2>::operator=(BloombergLP::bslmf::MovableRef<pair> rhs)
+pair<T1, T2>& pair<T1, T2>::operator=(BNP_Paribas::bslmf::MovableRef<pair> rhs)
 {
     pair& lvalue = rhs;
     first = MovUtil::move(lvalue.first);
@@ -3110,7 +3110,7 @@ pair<T1, T2>& pair<T1, T2>::operator=(pair<PARAM_1, PARAM_2>&& rhs)
 template <class T1, class T2>
 template <class PARAM_1, class PARAM_2>
 pair<T1, T2>& pair<T1, T2>::operator=(
-                   BloombergLP::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > rhs)
+                   BNP_Paribas::bslmf::MovableRef<pair<PARAM_1, PARAM_2> > rhs)
 {
     pair<PARAM_1, PARAM_2>& lvalue = rhs;
     first = MovUtil::move(lvalue.first);
@@ -3201,11 +3201,11 @@ bool operator!=(const pair<T1, T2>& lhs, const pair<T1, T2>& rhs)
 template <class T1, class T2>
 constexpr
 std::common_comparison_category_t<
-    BloombergLP::bslalg::SynthThreeWayUtil::Result<T1>,
-    BloombergLP::bslalg::SynthThreeWayUtil::Result<T2>
+    BNP_Paribas::bslalg::SynthThreeWayUtil::Result<T1>,
+    BNP_Paribas::bslalg::SynthThreeWayUtil::Result<T2>
 > operator<=>(const pair<T1, T2>& lhs, const pair<T1, T2>& rhs)
 {
-    using BloombergLP::bslalg::SynthThreeWayUtil;
+    using BNP_Paribas::bslalg::SynthThreeWayUtil;
     auto result = SynthThreeWayUtil::compare(lhs.first, rhs.first);
     return result == 0 ? SynthThreeWayUtil::compare(lhs.second, rhs.second)
                        : result;
@@ -3270,7 +3270,7 @@ swap(pair<T1, T2>& a, pair<T1, T2>& b) noexcept(noexcept(a.swap(b)))
 template <class HASHALG, class T1, class T2>
 void hashAppend(HASHALG& hashAlg, const pair<T1, T2>&  input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, input.first);
     hashAppend(hashAlg, input.second);
 }
@@ -3278,7 +3278,7 @@ void hashAppend(HASHALG& hashAlg, const pair<T1, T2>&  input)
 }  // close namespace bsl
 
 #if defined(BSLS_COMPILERFEATURES_FULL_CPP11)
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
                          // ---------------------
@@ -3360,7 +3360,7 @@ inline
 typename std::tuple_element<INDEX, bsl::pair<T1, T2> >::type&
 bsl::get(bsl::pair<T1, T2>& p) noexcept
 {
-    return BloombergLP::bslstl::Pair_GetImpUtil<INDEX, T1, T2>::getPairElement(
+    return BNP_Paribas::bslstl::Pair_GetImpUtil<INDEX, T1, T2>::getPairElement(
                                                                             p);
 }
 
@@ -3369,7 +3369,7 @@ inline
 const typename std::tuple_element<INDEX, bsl::pair<T1, T2> >::type&
 bsl::get(const bsl::pair<T1, T2>& p) noexcept
 {
-    return BloombergLP::bslstl::Pair_GetImpUtil<INDEX, T1, T2>::getPairElement(
+    return BNP_Paribas::bslstl::Pair_GetImpUtil<INDEX, T1, T2>::getPairElement(
                                                                             p);
 }
 
@@ -3378,7 +3378,7 @@ inline
 typename std::tuple_element<INDEX, bsl::pair<T1, T2> >::type&&
 bsl::get(bsl::pair<T1, T2>&& p) noexcept
 {
-    return BloombergLP::bslstl::Pair_GetImpUtil<INDEX, T1, T2>::getPairElement(
+    return BNP_Paribas::bslstl::Pair_GetImpUtil<INDEX, T1, T2>::getPairElement(
                                                                  std::move(p));
 }
 
@@ -3386,8 +3386,8 @@ template<class TYPE, class T1, class T2>
 inline
 TYPE& bsl::get(bsl::pair<T1, T2>& p) noexcept
 {
-    return BloombergLP::bslstl::Pair_GetImpUtil<
-        BloombergLP::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
+    return BNP_Paribas::bslstl::Pair_GetImpUtil<
+        BNP_Paribas::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
                                                            ::getPairElement(p);
 }
 
@@ -3395,8 +3395,8 @@ template<class TYPE, class T1, class T2>
 inline
 const TYPE& bsl::get(const bsl::pair<T1, T2>& p) noexcept
 {
-    return BloombergLP::bslstl::Pair_GetImpUtil<
-        BloombergLP::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
+    return BNP_Paribas::bslstl::Pair_GetImpUtil<
+        BNP_Paribas::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
                                                            ::getPairElement(p);
 }
 
@@ -3404,8 +3404,8 @@ template<class TYPE, class T1, class T2>
 inline
 TYPE&& bsl::get(bsl::pair<T1, T2>&& p) noexcept
 {
-    return BloombergLP::bslstl::Pair_GetImpUtil<
-        BloombergLP::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
+    return BNP_Paribas::bslstl::Pair_GetImpUtil<
+        BNP_Paribas::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
             ::getPairElement(std::move(p));
 }
 
@@ -3413,8 +3413,8 @@ template<class TYPE, class T1, class T2>
 inline
 const TYPE&& bsl::get(const bsl::pair<T1, T2>&& p) noexcept
 {
-    return BloombergLP::bslstl::Pair_GetImpUtil<
-        BloombergLP::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
+    return BNP_Paribas::bslstl::Pair_GetImpUtil<
+        BNP_Paribas::bslstl::Pair_IndexOfType<TYPE, T1, T2>::value, T1, T2>
             ::getPairElement(std::move(p));
 }
 #endif // BSLS_COMPILERFEATURES_FULL_CPP11
@@ -3439,7 +3439,7 @@ struct is_trivially_default_constructible<bsl::pair<T1, T2> >
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class T1, class T2>

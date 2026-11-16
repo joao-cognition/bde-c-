@@ -10,7 +10,7 @@
 #include <bsls_timeinterval.h>
 #include <bdlt_currenttime.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================

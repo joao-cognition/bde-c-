@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdlma_memoryblockdescriptor_cpp,"$Id$ $CSID$")
 
 #include <cstdio>                          // for 'std::printf'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                        // ---------------------------

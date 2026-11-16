@@ -23,7 +23,7 @@
 #include <bsl_vector.h>
 #include <bsl_deque.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================

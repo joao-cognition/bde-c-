@@ -61,7 +61,7 @@ BSLS_IDENT("$Id: $")
 #include <bslmf_removereference.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// This utility `struct` is a private implementation detail that hosts an
@@ -132,7 +132,7 @@ struct add_pointer {
     /// (template parameter) `t_TYPE` if it is not a reference type;
     /// otherwise, this `typedef` is an alias to a pointer type that points
     /// to the type referred to by the reference `t_TYPE`.
-    typedef typename BloombergLP::bslmf::AddPointer_Impl<t_TYPE>::type type;
+    typedef typename BNP_Paribas::bslmf::AddPointer_Impl<t_TYPE>::type type;
 };
 
 /// If we can form a reference to `t_TYPE`, then we can also form a pointer

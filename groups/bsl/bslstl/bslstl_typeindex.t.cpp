@@ -39,7 +39,7 @@
 #include <stdlib.h>     // `atoi`
 #include <string.h>     // `strcmp`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                      WORKAROUND MACROS FOR COMPILER BUGS
@@ -940,7 +940,7 @@ int main(int argc, char *argv[])
 
         if (verbose) printf("\nTesting via `bslh::Hash` as a proxy\n");
         {
-            typedef ::BloombergLP::bslh::Hash<> Hasher;
+            typedef ::BNP_Paribas::bslh::Hash<> Hasher;
 
             const Hasher hasher = {};
 

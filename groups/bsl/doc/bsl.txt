@@ -12,7 +12,7 @@
 
  Note that the C++ standard library is implemented in the 'bsl' namespace
  instead of the standard 'std' namespace.  This allow clients to use both the
- native compiler provided C++ standard library together with the Bloomberg
+ native compiler provided C++ standard library together with the BNP Paribas
  provided C++ standard library in the same translation unit.
 
  The 'bsl' package group is the foundation of the firm-wide BDE library and has
@@ -54,7 +54,7 @@
       bsls
 ..
  Note that the 'bsl+stdhdrs' package is only a compatibility layer for
- Bloomberg managed code.  It is not an essential package for the rest of the
+ BNP Paribas managed code.  It is not an essential package for the rest of the
  BDE libraries (i.e., all other package groups above 'bsl' will compile and
  function without 'bsl+stdhdrs').  This package implements the logic required
  for 'BDE-STL' mode.
@@ -67,7 +67,7 @@
 /Package Synopsis
 /----------------
 : 'bsl+bslhdrs':
-:      Provide a compatibility layer to enable BDE-STL mode in Bloomberg.
+:      Provide a compatibility layer to enable BDE-STL mode in BNP Paribas.
 :
 : 'bsla':
 :      Provide macros for portable use of compiler annotations.

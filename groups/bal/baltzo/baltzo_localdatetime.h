@@ -109,7 +109,7 @@ BSLS_IDENT("$Id: $ $CSID: $")
 #include <bsl_iosfwd.h>
 #include <bsl_string.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baltzo {
 
                             // ===================

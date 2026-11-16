@@ -66,9 +66,9 @@ struct _Alloc_traits
 // inheritance is being used for EBO optimization
 template <class _Value, class _Tp, class _MaybeReboundAlloc>
 class _STLP_alloc_proxy
-    : public BloombergLP::bslalg::ContainerBase<_MaybeReboundAlloc> {
+    : public BNP_Paribas::bslalg::ContainerBase<_MaybeReboundAlloc> {
 private:
-  typedef BloombergLP::bslalg::ContainerBase<_MaybeReboundAlloc> _Base;
+  typedef BNP_Paribas::bslalg::ContainerBase<_MaybeReboundAlloc> _Base;
 
   typedef _STLP_alloc_proxy<_Value, _Tp, _MaybeReboundAlloc> _Self;
 

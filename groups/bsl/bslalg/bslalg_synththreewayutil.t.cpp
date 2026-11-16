@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 #ifdef BSLALG_SYNTHTHREEWAYUTIL_AVAILABLE
 typedef bslalg::SynthThreeWayUtil Obj;
 #endif

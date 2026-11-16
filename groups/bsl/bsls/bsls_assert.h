@@ -310,7 +310,7 @@ BSLS_IDENT("$Id: $")
 //
 ///Assertion Handler Policy
 ///------------------------
-// Bloomberg policy is that (by default) tasks may not install an assertion
+// BNP Paribas policy is that (by default) tasks may not install an assertion
 // handler that returns control to the point immediately following the
 // detection of a failed assertion.  So an assertion handler may, for example,
 // terminate the task or throw an exception, but may not log the problem and
@@ -322,8 +322,8 @@ BSLS_IDENT("$Id: $")
 // `bsls_assert` provides a two-part mechanism to permit returning after the
 // detection of failed assertions.
 //
-// It is a violation of Bloomberg policy to modify this default configuration
-// without permission from senior management.  (Internal Bloomberg users should
+// It is a violation of BNP Paribas policy to modify this default configuration
+// without permission from senior management.  (Internal BNP Paribas users should
 // contact the BDE team if you feel your application needs an exception to this
 // policy).
 //
@@ -1705,8 +1705,8 @@ BSLS_IDENT("$Id: $")
 #define BSLS_ASSERT_ASSERT_IMP(X,LVL) do {                                    \
         if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!(X))) {                    \
             BSLS_PERFORMANCEHINT_UNLIKELY_HINT;                               \
-            BloombergLP::bsls::Assert::invokeHandler(                         \
-                BloombergLP::bsls::AssertViolation(#X,                        \
+            BNP_Paribas::bsls::Assert::invokeHandler(                         \
+                BNP_Paribas::bsls::AssertViolation(#X,                        \
                                                    BSLS_ASSERTIMPUTIL_FILE,   \
                                                    BSLS_ASSERTIMPUTIL_LINE,   \
                                                    LVL));                     \
@@ -1761,8 +1761,8 @@ BSLS_IDENT("$Id: $")
 // does not check a condition --- it always invokes the handler when reached.
 
 #define BSLS_ASSERT_UNREACHABLE_IMP(X,LVL) do {                               \
-        BloombergLP::bsls::Assert::invokeHandler(                             \
-            BloombergLP::bsls::AssertViolation(                               \
+        BNP_Paribas::bsls::Assert::invokeHandler(                             \
+            BNP_Paribas::bsls::AssertViolation(                               \
                                   X,                                          \
                                   BSLS_ASSERTIMPUTIL_FILE,                    \
                                   BSLS_ASSERTIMPUTIL_LINE,                    \
@@ -1812,19 +1812,19 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_ASSERT_SAFE_IS_ACTIVE)
     #define BSLS_ASSERT_SAFE(X) BSLS_ASSERT_ASSERT_IMP(                       \
                                      X,                                       \
-                                     BloombergLP::bsls::Assert::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Assert::k_LEVEL_SAFE)
 #elif defined(BSLS_ASSERT_SAFE_IS_REVIEW)
     #define BSLS_ASSERT_SAFE(X) BSLS_REVIEW_REVIEW_IMP(                       \
                                      X,                                       \
-                                     BloombergLP::bsls::Assert::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Assert::k_LEVEL_SAFE)
 #elif defined(BSLS_ASSERT_SAFE_IS_ASSUMED)
     #define BSLS_ASSERT_SAFE(X) BSLS_ASSERT_ASSUME_IMP(                       \
                                      X,                                       \
-                                     BloombergLP::bsls::Assert::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Assert::k_LEVEL_SAFE)
 #else
     #define BSLS_ASSERT_SAFE(X) BSLS_ASSERT_DISABLED_IMP(                     \
                                      X,                                       \
-                                     BloombergLP::bsls::Assert::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Assert::k_LEVEL_SAFE)
 #endif
 
 // Define 'BSLS_ASSERT_SAFE_UNREACHABLE' accordingly.
@@ -1832,16 +1832,16 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_ASSERT_SAFE_IS_ACTIVE)
     #define BSLS_ASSERT_SAFE_UNREACHABLE(X) BSLS_ASSERT_UNREACHABLE_IMP(      \
                                      X,                                       \
-                                     BloombergLP::bsls::Assert::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Assert::k_LEVEL_SAFE)
 #elif defined(BSLS_ASSERT_SAFE_IS_REVIEW)
     #define BSLS_ASSERT_SAFE_UNREACHABLE(X) BSLS_REVIEW_UNREACHABLE_IMP(      \
                                      X,                                       \
-                                     BloombergLP::bsls::Assert::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Assert::k_LEVEL_SAFE)
 #else
     #define BSLS_ASSERT_SAFE_UNREACHABLE(X)                                   \
                              BSLS_ASSERT_UNREACHABLE_DISABLED_IMP(            \
                                      X,                                       \
-                                     BloombergLP::bsls::Assert::k_LEVEL_SAFE)
+                                     BNP_Paribas::bsls::Assert::k_LEVEL_SAFE)
 #endif
 
 
@@ -1883,19 +1883,19 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_ASSERT_IS_ACTIVE)
     #define BSLS_ASSERT(X) BSLS_ASSERT_ASSERT_IMP(                            \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 #elif defined(BSLS_ASSERT_IS_REVIEW)
     #define BSLS_ASSERT(X) BSLS_REVIEW_REVIEW_IMP(                            \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 #elif defined(BSLS_ASSERT_IS_ASSUMED)
     #define BSLS_ASSERT(X) BSLS_ASSERT_ASSUME_IMP(                            \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 #else
     #define BSLS_ASSERT(X) BSLS_ASSERT_DISABLED_IMP(                          \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 #endif
 
 // Define 'BSLS_ASSERT_UNREACHABLE' accordingly.
@@ -1903,16 +1903,16 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_ASSERT_IS_ACTIVE)
     #define BSLS_ASSERT_UNREACHABLE(X) BSLS_ASSERT_UNREACHABLE_IMP(           \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 #elif defined(BSLS_ASSERT_IS_REVIEW)
     #define BSLS_ASSERT_UNREACHABLE(X) BSLS_REVIEW_UNREACHABLE_IMP(           \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 #else
     #define BSLS_ASSERT_UNREACHABLE(X)                                        \
                              BSLS_ASSERT_UNREACHABLE_DISABLED_IMP(            \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 #endif
 
                               // ===============
@@ -1952,19 +1952,19 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_ASSERT_OPT_IS_ACTIVE)
     #define BSLS_ASSERT_OPT(X) BSLS_ASSERT_ASSERT_IMP(                        \
                                       X,                                      \
-                                      BloombergLP::bsls::Assert::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Assert::k_LEVEL_OPT)
 #elif defined(BSLS_ASSERT_OPT_IS_REVIEW)
     #define BSLS_ASSERT_OPT(X) BSLS_REVIEW_REVIEW_IMP(                        \
                                       X,                                      \
-                                      BloombergLP::bsls::Assert::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Assert::k_LEVEL_OPT)
 #elif defined(BSLS_ASSERT_OPT_IS_ASSUMED)
     #define BSLS_ASSERT_OPT(X) BSLS_ASSERT_ASSUME_IMP(                        \
                                       X,                                      \
-                                      BloombergLP::bsls::Assert::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Assert::k_LEVEL_OPT)
 #else
     #define BSLS_ASSERT_OPT(X) BSLS_ASSERT_DISABLED_IMP(                      \
                                       X,                                      \
-                                      BloombergLP::bsls::Assert::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Assert::k_LEVEL_OPT)
 #endif
 
 // Define 'BSLS_ASSERT_OPT_UNREACHABLE' accordingly.
@@ -1972,16 +1972,16 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_ASSERT_OPT_IS_ACTIVE)
     #define BSLS_ASSERT_OPT_UNREACHABLE(X) BSLS_ASSERT_UNREACHABLE_IMP(       \
                                       X,                                      \
-                                      BloombergLP::bsls::Assert::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Assert::k_LEVEL_OPT)
 #elif defined(BSLS_ASSERT_OPT_IS_REVIEW)
     #define BSLS_ASSERT_OPT_UNREACHABLE(X) BSLS_REVIEW_UNREACHABLE_IMP(       \
                                       X,                                      \
-                                      BloombergLP::bsls::Assert::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Assert::k_LEVEL_OPT)
 #else
     #define BSLS_ASSERT_OPT_UNREACHABLE(X)                                    \
                              BSLS_ASSERT_UNREACHABLE_DISABLED_IMP(            \
                                       X,                                      \
-                                      BloombergLP::bsls::Assert::k_LEVEL_OPT)
+                                      BNP_Paribas::bsls::Assert::k_LEVEL_OPT)
 #endif
 
                              // ==================
@@ -1990,12 +1990,12 @@ BSLS_IDENT("$Id: $")
 
 // 'BSLS_ASSERT_INVOKE' is always active and never in review mode or disabled.
 #define BSLS_ASSERT_INVOKE(X) do {                                            \
-        BloombergLP::bsls::Assert::invokeHandler(                             \
-            BloombergLP::bsls::AssertViolation(                               \
+        BNP_Paribas::bsls::Assert::invokeHandler(                             \
+            BNP_Paribas::bsls::AssertViolation(                               \
                                   X,                                          \
                                   BSLS_ASSERTIMPUTIL_FILE,                    \
                                   BSLS_ASSERTIMPUTIL_LINE,                    \
-                                  BloombergLP::bsls::Assert::k_LEVEL_INVOKE));\
+                                  BNP_Paribas::bsls::Assert::k_LEVEL_INVOKE));\
     } while (false)
 
 // 'BSLS_ASSERT_INVOKE_NORETURN' is always active and guaranteed to never
@@ -2007,12 +2007,12 @@ BSLS_IDENT("$Id: $")
 // code paths that are meant to be unreachable within functions having non-void
 // return types.
 #define BSLS_ASSERT_INVOKE_NORETURN(X) do {                                   \
-        BloombergLP::bsls::Assert::invokeHandlerNoReturn(                     \
-            BloombergLP::bsls::AssertViolation(                               \
+        BNP_Paribas::bsls::Assert::invokeHandlerNoReturn(                     \
+            BNP_Paribas::bsls::AssertViolation(                               \
                                   X,                                          \
                                   BSLS_ASSERTIMPUTIL_FILE,                    \
                                   BSLS_ASSERTIMPUTIL_LINE,                    \
-                                  BloombergLP::bsls::Assert::k_LEVEL_INVOKE));\
+                                  BNP_Paribas::bsls::Assert::k_LEVEL_INVOKE));\
     } while (true)
 
 
@@ -2033,7 +2033,7 @@ BSLS_IDENT("$Id: $")
 #ifndef BSLS_ASSERT_RECURSIVELY_INCLUDED_TESTDRIVER_GUARD
 #define BSLS_ASSERT_RECURSIVELY_INCLUDED_TESTDRIVER_GUARD
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                            // =====================
@@ -2305,7 +2305,7 @@ class Assert {
     /// detection of a failed assertion).
     static bool abortUponReturningAssertionFailureHandler();
 
-    /// DO NOT USE!  It is a violation of Bloomberg policy to invoke this
+    /// DO NOT USE!  It is a violation of BNP Paribas policy to invoke this
     /// function without having prior authorization from senior management.
     ///
     /// Allow an assertion handler to return control to the calling function
@@ -2315,8 +2315,8 @@ class Assert {
     /// that, by default, an assertion handler that attempts to return
     /// normally will cause the program to be aborted.
     ///
-    /// Internal Bloomberg users should contact the BDE team if they feel
-    /// their application might need to violate Bloomberg policy by allowing
+    /// Internal BNP Paribas users should contact the BDE team if they feel
+    /// their application might need to violate BNP Paribas policy by allowing
     /// the currently installed assertion handler to return normally (after
     /// a failed assertion).
     static void permitOutOfPolicyReturningFailureHandler();
@@ -2407,7 +2407,7 @@ typedef bsls::AssertFailureHandlerGuard bdes_AssertFailureHandlerGuard;
 
 #define BSLS_ASSERT_ASSERT(X) BSLS_ASSERT_ASSERT_IMP(                         \
                                    X,                                         \
-                                   BloombergLP::bsls::Assert::k_LEVEL_ASSERT)
+                                   BNP_Paribas::bsls::Assert::k_LEVEL_ASSERT)
 
 #endif // BDE_OMIT_INTERNAL_DEPRECATED
 

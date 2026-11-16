@@ -510,7 +510,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_algorithm.h>
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 class PackedCalendar_BusinessDayConstIterator;
@@ -3246,7 +3246,7 @@ template <class HASHALG>
 inline
 void bdlt::hashAppend(HASHALG& hashAlg, const PackedCalendar& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     hashAppend(hashAlg, object.d_firstDate);
     hashAppend(hashAlg, object.d_lastDate);
     hashAppend(hashAlg, object.d_weekendDaysTransitions);
@@ -3258,7 +3258,7 @@ void bdlt::hashAppend(HASHALG& hashAlg, const PackedCalendar& object)
 }  // close enterprise namespace
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <>

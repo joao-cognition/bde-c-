@@ -224,7 +224,7 @@ BSLS_IDENT("$Id: $")
 
 #include <new>  // Placement new
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

@@ -242,11 +242,11 @@ BSLS_IDENT("$Id: $")
 // }
 // ```
 // Next, to demonstrate how our function works we need to create a stream with
-// encoded data.  Assume that we have some character string, `BLOOMBERG_NEWS`,
+// encoded data.  Assume that we have some character string, `BNPPARIBAS_NEWS`,
 // and a function, `streamEncoder` mirroring the work of the `streamDecoder`:
 // ```
-// bsl::istringstream inStream(bsl::string(BLOOMBERG_NEWS,
-//                                         strlen(BLOOMBERG_NEWS)));
+// bsl::istringstream inStream(bsl::string(BNPPARIBAS_NEWS,
+//                                         strlen(BNPPARIBAS_NEWS)));
 // bsl::stringstream  outStream;
 // bsl::stringstream  backInStream;
 //
@@ -258,7 +258,7 @@ BSLS_IDENT("$Id: $")
 // ```
 // Finally, we observe that the output fully matches the original text:
 // ```
-// assert(0 == strcmp(BLOOMBERG_NEWS, backInStream.str().c_str()));
+// assert(0 == strcmp(BNPPARIBAS_NEWS, backInStream.str().c_str()));
 // ```
 
 #include <bdlscm_version.h>
@@ -267,7 +267,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_iterator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlde {
 
 /// This class implements a mechanism capable of converting data of

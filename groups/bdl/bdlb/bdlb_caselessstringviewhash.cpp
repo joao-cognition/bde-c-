@@ -14,7 +14,7 @@ BSLS_IDENT_RCSID(bdlb_caselessstringviewhash_cpp,"$Id$ $CSID$")
 
 #include <bsl_algorithm.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                        // -----------------------------

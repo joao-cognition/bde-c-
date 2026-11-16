@@ -18,7 +18,7 @@
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -197,7 +197,7 @@ namespace Obj = bdlat_NullableValueFunctions;
 
     // Definitions needed for Usage but not shown in the header file
 
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace your {
 
    class YourNullableValue {
@@ -250,7 +250,7 @@ namespace Obj = bdlat_NullableValueFunctions;
    }  // close namespace your
    }  // close enterprise namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace your {
 
 // MANIPULATORS
@@ -308,7 +308,7 @@ struct ValueType<your::YourNullableValue> {
 // Suppose you had a type whose value could be in a "null" state.
 //
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    struct MyNullableValue {
@@ -335,7 +335,7 @@ struct ValueType<your::YourNullableValue> {
 // First, we should forward declare all the functions that we will implement
 // inside the `mine` namespace:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace mine {
 
    // MANIPULATORS
@@ -373,7 +373,7 @@ struct ValueType<your::YourNullableValue> {
 // functions should be defined in some `.cpp` file, unless you choose to make
 // them `inline` functions.
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
 
    // MANIPULATORS
    void mine::bdlat_nullableValueMakeValue(MyNullableValue *object)
@@ -415,7 +415,7 @@ struct ValueType<your::YourNullableValue> {
 // in the `bdlat_NullableValueFunctions` namespace for the
 // `mine::MyNullableValue` type:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
    namespace bdlat_NullableValueFunctions {
 
    // TRAITS
@@ -665,7 +665,7 @@ struct ValueType<your::YourNullableValue> {
 // Finally, suppose we have another type such as `your::YourNullableType`,
 // shown below:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace your {
 //
 // class YourNullableValue {

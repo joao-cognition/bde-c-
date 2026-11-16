@@ -55,7 +55,7 @@ class stack {
 
     /// This `typedef` is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil  MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil  MoveUtil;
 
     // PRIVATE MANIPULATORS
 
@@ -103,8 +103,8 @@ class stack {
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
         stack,
-        BloombergLP::bslma::UsesBslmaAllocator,
-        BloombergLP::bslma::UsesBslmaAllocator<container_type>::value);
+        BNP_Paribas::bslma::UsesBslmaAllocator,
+        BNP_Paribas::bslma::UsesBslmaAllocator<container_type>::value);
 
     // CREATORS
 
@@ -121,7 +121,7 @@ class stack {
     /// moving the contents of `original` to the new stack.  The allocator
     /// associated with `original` is propagated for use in the new stack.
     /// `original` is left in a valid but unspecified state.
-    stack(BloombergLP::bslmf::MovableRef<stack> original);
+    stack(BNP_Paribas::bslmf::MovableRef<stack> original);
 
     /// Create a stack whose underlying container has the value of the
     /// specified `container`.  The currently installed default allocator is
@@ -135,7 +135,7 @@ class stack {
     /// `container` is propagated for use in the new stack.  `container` is
     /// left in a valid but unspecified state.
     explicit
-    stack(BloombergLP::bslmf::MovableRef<CONTAINER> container);
+    stack(BNP_Paribas::bslmf::MovableRef<CONTAINER> container);
 
     /// Create an empty stack, and use the specified `basicAllocator` to
     /// supply memory.  If `CONTAINER::allocator_type` does not exist, this
@@ -176,7 +176,7 @@ class stack {
     /// `CONTAINER::allocator_type` does not exist, this constructor may not
     /// be used.
     template <class ALLOCATOR>
-    stack(BloombergLP::bslmf::MovableRef<CONTAINER> container,
+    stack(BNP_Paribas::bslmf::MovableRef<CONTAINER> container,
           const ALLOCATOR&                          basicAllocator,
           typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                              ALLOCATOR>::type * = 0);
@@ -191,7 +191,7 @@ class stack {
     /// constructor.  Also note that if `CONTAINER::allocator_type` does not
     /// exist, this constructor may not be used.
     template <class ALLOCATOR>
-    stack(BloombergLP::bslmf::MovableRef<stack> original,
+    stack(BNP_Paribas::bslmf::MovableRef<stack> original,
           const ALLOCATOR&                      basicAllocator,
           typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                              ALLOCATOR>::type * = 0);
@@ -239,7 +239,7 @@ class stack {
     /// operator of `CONTAINER`.  `rhs` is left in a valid but unspecified
     /// state, and if an exception is thrown, `*this` is left in a valid but
     /// unspecified state.
-    stack& operator=(BloombergLP::bslmf::MovableRef<stack> rhs)
+    stack& operator=(BNP_Paribas::bslmf::MovableRef<stack> rhs)
                                     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false);
 
 #if BSLS_COMPILERFEATURES_SIMULATE_VARIADIC_TEMPLATES
@@ -415,7 +415,7 @@ class stack {
     /// specified `value` (on entry) by moving the contents of `value` to
     /// the new object on this stack.  `value` is left in a valid but
     /// unspecified state.
-    void push(BloombergLP::bslmf::MovableRef<value_type> value);
+    void push(BNP_Paribas::bslmf::MovableRef<value_type> value);
 
     /// Push onto this stack the elements of the specified `range`.  Note that
     /// `range` must meet the requirements of an input range and the values
@@ -475,7 +475,7 @@ stack(CONTAINER, ALLOCATOR) -> stack<typename CONTAINER::value_type, CONTAINER>;
 /// Deduce the template parameter `VALUE` from the parameters supplied to the
 /// constructor of `stack`.
 template <class INPUT_ITER,
-          class TYPE = BloombergLP::bslstl::IteratorUtil::
+          class TYPE = BNP_Paribas::bslstl::IteratorUtil::
                                                          IterVal_t<INPUT_ITER>>
 stack(INPUT_ITER, INPUT_ITER) -> stack<TYPE>;
 
@@ -485,7 +485,7 @@ stack(INPUT_ITER, INPUT_ITER) -> stack<TYPE>;
 /// standard allocator.
 template <class INPUT_ITER,
           class ALLOCATOR,
-          class TYPE = BloombergLP::bslstl::IteratorUtil::
+          class TYPE = BNP_Paribas::bslstl::IteratorUtil::
                                                          IterVal_t<INPUT_ITER>,
           class = enable_if_t<IsStdAllocator_v<ALLOCATOR>>>
 stack(INPUT_ITER, INPUT_ITER, ALLOCATOR)-> stack<TYPE, deque<TYPE, ALLOCATOR>>;
@@ -616,7 +616,7 @@ stack<VALUE, CONTAINER>::stack(const CONTAINER& container)
 
 template <class VALUE, class CONTAINER>
 inline
-stack<VALUE, CONTAINER>::stack(BloombergLP::bslmf::MovableRef<stack> original)
+stack<VALUE, CONTAINER>::stack(BNP_Paribas::bslmf::MovableRef<stack> original)
 : c(MoveUtil::move(MoveUtil::access(original).c))
 {
 }
@@ -664,7 +664,7 @@ stack<VALUE, CONTAINER>::stack(
 
 template <class VALUE, class CONTAINER>
 inline
-stack<VALUE, CONTAINER>::stack(BloombergLP::bslmf::MovableRef<CONTAINER>
+stack<VALUE, CONTAINER>::stack(BNP_Paribas::bslmf::MovableRef<CONTAINER>
                                                                      container)
 : c(MoveUtil::move(container))
 {
@@ -674,7 +674,7 @@ template <class VALUE, class CONTAINER>
 template <class ALLOCATOR>
 inline
 stack<VALUE, CONTAINER>::stack(
-    BloombergLP::bslmf::MovableRef<CONTAINER> container,
+    BNP_Paribas::bslmf::MovableRef<CONTAINER> container,
     const ALLOCATOR&                          basicAllocator,
     typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                        ALLOCATOR>::type *)
@@ -686,7 +686,7 @@ template <class VALUE, class CONTAINER>
 template <class ALLOCATOR>
 inline
 stack<VALUE, CONTAINER>::stack(
-    BloombergLP::bslmf::MovableRef<stack> original,
+    BNP_Paribas::bslmf::MovableRef<stack> original,
     const ALLOCATOR&                      basicAllocator,
     typename enable_if<bsl::uses_allocator<CONTAINER, ALLOCATOR>::value,
                        ALLOCATOR>::type *)
@@ -775,7 +775,7 @@ stack<VALUE, CONTAINER>& stack<VALUE, CONTAINER>::operator=(const stack& rhs)
 template <class VALUE, class CONTAINER>
 inline
 stack<VALUE, CONTAINER>& stack<VALUE, CONTAINER>::operator=(
-                                     BloombergLP::bslmf::MovableRef<stack> rhs)
+                                     BNP_Paribas::bslmf::MovableRef<stack> rhs)
                                      BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(false)
 {
     c = MoveUtil::move(MoveUtil::access(rhs).c);
@@ -1102,7 +1102,7 @@ void stack<VALUE, CONTAINER>::push(const value_type& value)
 
 template <class VALUE, class CONTAINER>
 inline
-void stack<VALUE, CONTAINER>::push(BloombergLP::bslmf::MovableRef<value_type>
+void stack<VALUE, CONTAINER>::push(BNP_Paribas::bslmf::MovableRef<value_type>
                                                                          value)
 {
     c.push_back(MoveUtil::move(value));
@@ -1132,7 +1132,7 @@ void stack<VALUE, CONTAINER>::swap(stack& other)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                    bsl::is_nothrow_swappable<CONTAINER>::value)
 {
-    BloombergLP::bslalg::SwapUtil::swap(&c, &other.c);
+    BNP_Paribas::bslalg::SwapUtil::swap(&c, &other.c);
 }
 
 template <class VALUE, class CONTAINER>

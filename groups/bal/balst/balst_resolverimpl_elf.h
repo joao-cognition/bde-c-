@@ -47,7 +47,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
 template <class RESOLVER_POLICY>

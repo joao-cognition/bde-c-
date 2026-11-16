@@ -71,7 +71,7 @@
     #include <sys/types.h>
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using bsls::NameOf;
 
@@ -759,7 +759,7 @@ void NoOpAssertHandler(const char *, const char *, int)
 {
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 unsigned u_errno()
@@ -7664,7 +7664,7 @@ int main(int argc, char *argv[])
             // `devgit:bde/bde-core` commit:
             // ```
             //  commit a93a90d9c567d7a24994811f79c65b38c2cb9791
-            //  Author: (Henry) Mike Verschell <hverschell@bloomberg.net>
+            //  Author: (Henry) Mike Verschell <hverschell@bnpparibas.com>
             //  Date:   Fri Apr 19 16:28:50 2013 -0400
             // ```
         }
@@ -11140,7 +11140,7 @@ int main(int argc, char *argv[])
         ASSERT(0 == Obj::unmap(p, pageSize));
 
 #if 0
-        Obj::FileDescriptor fd =  // /bb/data is Bloomberg-specific
+        Obj::FileDescriptor fd =  // /bb/data is BNP Paribas-specific
                        Obj::open("/bb/data/tmp/blahblah.tmp",
                                  Obj::e_OPEN_OR_CREATE,
                                  Obj::e_READ_WRITE);

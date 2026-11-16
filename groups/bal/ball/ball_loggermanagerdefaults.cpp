@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(ball_loggermanagerdefaults_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 enum {
     // This enumeration provides the default values for the attributes of

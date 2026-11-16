@@ -32,8 +32,8 @@ BSLS_IDENT_RCSID(balber_berutil_cpp, "$Id$ $CSID$")
 namespace {
 namespace u {
 
-typedef BloombergLP::bsls::Types::Uint64           Uint64;
-typedef BloombergLP::balber::BerDecoderOptions     BerDecoderOptions;
+typedef BNP_Paribas::bsls::Types::Uint64           Uint64;
+typedef BNP_Paribas::balber::BerDecoderOptions     BerDecoderOptions;
 
                    // ======================================
                    // struct BerUtil_64BitFloatingPointMasks
@@ -129,7 +129,7 @@ void warnOnce()
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balber {
 
                                // --------------

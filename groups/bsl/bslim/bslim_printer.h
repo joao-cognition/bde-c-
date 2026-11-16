@@ -541,7 +541,7 @@ BSLS_IDENT("$Id: $")
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP11_TUPLE
 #include <bsl_utility.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslim {
 

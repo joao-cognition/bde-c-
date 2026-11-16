@@ -28,7 +28,7 @@ BSLS_IDENT_RCSID(bdlmt_timereventscheduler_cpp,"$Id$ $CSID$")
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 /// Default number of bits used to represent each `bdlcc::TimeQueue` handle.
@@ -62,8 +62,8 @@ bsl::function<bsls::TimeInterval()> createDefaultCurrentTimeFunctor(
               clockType);
 }
 
-void startLagMetric(BloombergLP::bdlm::Metric               *value,
-                    BloombergLP::bdlmt::TimerEventScheduler *object)
+void startLagMetric(BNP_Paribas::bdlm::Metric               *value,
+                    BNP_Paribas::bdlmt::TimerEventScheduler *object)
 {
     const bsls::TimeInterval now  = object->now();
     const bsls::TimeInterval next = object->nextPendingEventTime();

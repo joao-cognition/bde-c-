@@ -119,8 +119,8 @@ struct owner_equal {
                                                          BSLS_KEYWORD_NOEXCEPT;
 
     /// Return `true` if the address of the
-    /// `BloombergLP::bslma::SharedPtrRep` object used by the specified `x`
-    /// is equal to the address of the `BloombergLP::bslma::SharedPtrRep`
+    /// `BNP_Paribas::bslma::SharedPtrRep` object used by the specified `x`
+    /// is equal to the address of the `BNP_Paribas::bslma::SharedPtrRep`
     /// object used by the specified `y`, and `false` otherwise.
     template<class ELEMENT_TYPE_X, class ELEMENT_TYPE_Y>
     bool operator()(const weak_ptr<ELEMENT_TYPE_X>& x,

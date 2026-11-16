@@ -8,7 +8,7 @@ BSLS_IDENT_RCSID(s_baltst_depthtestmessageutil_cpp, "$Id$ $CSID$")
 
 #include <bsl_climits.h> // `INT_MIN`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
 

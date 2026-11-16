@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(bdlt_timetable_cpp,"$Id$ $CSID$")
 
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                        // ============================

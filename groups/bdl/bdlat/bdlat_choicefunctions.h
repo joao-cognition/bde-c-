@@ -104,7 +104,7 @@ BSLS_IDENT("$Id: $")
 // is selected.  The default constructor of the `struct` makes the selection
 // undefined:
 // ```
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 //
 // namespace mine {
 //
@@ -459,7 +459,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_assert.h>
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                       // ===============================
                       // namespace bdlat_ChoiceFunctions

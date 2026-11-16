@@ -40,7 +40,7 @@ BSLS_IDENT("$Id$")
 
 #include <bsl_cstring.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdldfp {
                         // =================================
                         // class DecimalConvertUtil_IntelDfp

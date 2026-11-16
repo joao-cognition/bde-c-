@@ -31,7 +31,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -302,7 +302,7 @@ bool bdlat_sequenceHasAttribute(const MySequence& , int attributeId)
 
 }  // close namespace test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_SequenceFunctions {
 
 template <>
@@ -645,7 +645,7 @@ int main(int argc, char *argv[])
 
         // Test `bdlat_SequenceFunctions` customization-points
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_SequenceFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_SequenceFunctions::
                                        IsSequence<bdlar::SequenceRef>::value));
 
             bdlat_ValueTypeFunctions::reset(&ref);
@@ -674,7 +674,7 @@ int main(int argc, char *argv[])
             bdlat_SequenceFunctions::accessAttributes(ref, universalAccessor);
         }
         {
-            BSLMF_ASSERT((::BloombergLP::bdlat_SequenceFunctions::
+            BSLMF_ASSERT((::BNP_Paribas::bdlat_SequenceFunctions::
                                   IsSequence<bdlar::SequenceConstRef>::value));
 
             bdlar::SequenceConstRef cref(ref);

@@ -184,7 +184,7 @@ BSLS_IDENT("$Id: $")
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
 #include <bsl_chrono.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmt {
 
                            // =================
@@ -267,7 +267,7 @@ bsls::TimeInterval ChronoUtil::durationToTimeInterval(
 {
     using namespace bsl::chrono;
 
-    // Explicit scope needed due to legacy code using 'seconds' at BloombergLP
+    // Explicit scope needed due to legacy code using 'seconds' at BNP_Paribas
     // namespace scope.
     bsl::chrono::seconds wholeSecs =
         duration_cast<bsl::chrono::seconds>(duration);

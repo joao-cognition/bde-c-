@@ -10,7 +10,7 @@ BSLS_IDENT("$Id$ $CSID$")
 // continues until the BloombergLP copyright notice.  Changes made to the
 // original code include:
 //
-// 1. Added `BloombergLP` and `bslh` namespaces
+// 1. Added `BNP_Paribas` and `bslh` namespaces
 // 2. Renamed `SpookyHash` to `SpookyHashAlgorithmImp`
 // 3. Changed formatting to match BDE conventions
 // 4. Changed C-style casts to `static_cast`s to match BDE conventions
@@ -56,7 +56,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <string.h>  // for `memcpy` and `memset`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslh {
 

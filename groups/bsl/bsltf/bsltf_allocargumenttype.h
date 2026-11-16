@@ -48,7 +48,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                          // ============================
@@ -129,7 +129,7 @@ class AllocArgumentType {
     /// Assign to this object the value of the specified `rhs` object.  Note
     /// that `rhs` is left in a valid but unspecified state.
     AllocArgumentType&
-    operator=(BloombergLP::bslmf::MovableRef<AllocArgumentType> rhs);
+    operator=(BNP_Paribas::bslmf::MovableRef<AllocArgumentType> rhs);
 
     // ACCESSORS
 
@@ -292,7 +292,7 @@ AllocArgumentType<N>::operator=(const AllocArgumentType& rhs)
 template <int N>
 inline
 AllocArgumentType<N>& AllocArgumentType<N>::operator=(
-                         BloombergLP::bslmf::MovableRef<AllocArgumentType> rhs)
+                         BNP_Paribas::bslmf::MovableRef<AllocArgumentType> rhs)
 {
     AllocArgumentType& lvalue = rhs;
 

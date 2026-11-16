@@ -262,7 +262,7 @@ BSLS_IDENT("$Id: $")
 
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                            // =====================
                            // struct bdlat_TypeName

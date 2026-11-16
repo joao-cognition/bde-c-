@@ -114,7 +114,7 @@ BSLS_IDENT("$Id: $")
 // clang-format on
 #else
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlb {
 
                       // ==================================
@@ -155,7 +155,7 @@ class NullableAllocatedValue {
     /// operators are not supported.  A `NullableAllocatedValue` is implicitly
     /// converted to `UnspecifiedBool` when used in `if` statements, but is not
     /// implicitly convertible to `bool`.
-    typedef BloombergLP::bsls::UnspecifiedBool<NullableAllocatedValue>
+    typedef BNP_Paribas::bsls::UnspecifiedBool<NullableAllocatedValue>
                                                            UnspecifiedBoolUtil;
     typedef typename UnspecifiedBoolUtil::BoolType         UnspecifiedBool;
 #  endif
@@ -1146,14 +1146,14 @@ TYPE& NullableAllocatedValue<TYPE>::emplace(
     }
 
     if (isLocal()) {
-        BloombergLP::bslma::ConstructionUtil::construct(
+        BNP_Paribas::bslma::ConstructionUtil::construct(
                                  ptr,
                                  alloc,
                                  BSLS_COMPILERFEATURES_FORWARD(ARGS, args)...);
     }
     else {
         bslma::DeallocatorProctor<bslma::Allocator> proctor(ptr, alloc);
-        BloombergLP::bslma::ConstructionUtil::construct(
+        BNP_Paribas::bslma::ConstructionUtil::construct(
                                  ptr,
                                  alloc,
                                  BSLS_COMPILERFEATURES_FORWARD(ARGS, args)...);
@@ -1187,7 +1187,7 @@ TYPE& NullableAllocatedValue<TYPE>::emplace(
     }
 
     if (isLocal()) {
-        BloombergLP::bslma::ConstructionUtil::construct(
+        BNP_Paribas::bslma::ConstructionUtil::construct(
                                  ptr,
                                  alloc,
                                  il,
@@ -1195,7 +1195,7 @@ TYPE& NullableAllocatedValue<TYPE>::emplace(
     }
     else {
         bslma::DeallocatorProctor<bslma::Allocator> proctor(ptr, alloc);
-        BloombergLP::bslma::ConstructionUtil::construct(
+        BNP_Paribas::bslma::ConstructionUtil::construct(
                                  ptr,
                                  alloc,
                                  il,
@@ -1867,7 +1867,7 @@ template <class HASHALG, class TYPE>
 void bdlb::hashAppend(HASHALG&                            hashAlg,
                       const NullableAllocatedValue<TYPE>& input)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
 
     if (!input.isNull()) {
         hashAppend(hashAlg, true);

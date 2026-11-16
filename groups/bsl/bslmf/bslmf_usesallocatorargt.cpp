@@ -7,9 +7,9 @@
 #include <bsls_ident.h>
 BSLS_IDENT("$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
-} // Close namespace BloombergLP
+} // Close namespace BNP_Paribas
 
 // ----------------------------------------------------------------------------
 // Copyright 2016 Bloomberg Finance L.P.

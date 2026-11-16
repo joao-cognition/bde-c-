@@ -21,7 +21,7 @@
 #include <bsl_iostream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -206,7 +206,7 @@ void bdlat_enumToString(bsl::string *result, const PolygonType& value)
 
 }  // close namespace test
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_EnumFunctions {
 template <>
 struct IsEnumeration<test::PolygonType> : public bsl::true_type {
@@ -225,7 +225,7 @@ struct IsEnumeration<test::PolygonType> : public bsl::true_type {
 // represent supported formats for image files, and it exposes "enumeration"
 // behavior as described in `bdlat_enumfunctions.h`:
 // ```
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace mine {
 
 enum ImageType { JPG = 0, PNG = 1, GIF = 2, UNKNOWN = 100 };
@@ -390,7 +390,7 @@ struct HasFallbackEnumerator<mine::ImageType> : public bsl::true_type {
 // ```
 void usageExample()
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     mine::ImageType imageType;
     int             rc;
@@ -418,7 +418,7 @@ void usageExample()
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

@@ -155,7 +155,7 @@ struct is_member_object_pointer<t_TYPE t_CLASS::*const volatile>
 // data members.  However, xlC appears to have sufficient compenstating bugs
 // that this implementation gives the correct result in such cases too.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                        // ================================
@@ -190,7 +190,7 @@ namespace bsl {
 
 template <class t_TYPE>
 struct is_member_object_pointer
-: BloombergLP::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
     // This 'struct' template implements the 'is_member_object_pointer'
     // meta-function defined in the C++11 standard [meta.unary.cat] to
     // determine if the (template parameter) 't_TYPE' is a pointer to
@@ -201,21 +201,21 @@ struct is_member_object_pointer
 
 template <class t_TYPE>
 struct is_member_object_pointer<const t_TYPE>
-: BloombergLP::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
     // Partial specialization to handle 'const'-qualified pointer-to-member
     // objects.
 };
 
 template <class t_TYPE>
 struct is_member_object_pointer<volatile t_TYPE>
-: BloombergLP::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
     // Partial specialization to handle 'volatile'-qualified pointer-to-member
     // objects.
 };
 
 template <class t_TYPE>
 struct is_member_object_pointer<const volatile t_TYPE>
-: BloombergLP::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsPointerToMemberData_Imp<t_TYPE>::type {
     // Partial specialization to handle 'const volatile'-qualified
     // pointer-to-member objects.
 };

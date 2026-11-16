@@ -63,7 +63,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_compilerfeatures.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
                          // ===================
@@ -126,7 +126,7 @@ struct add_const {
     /// a top-level `const`-qualifier added if `t_TYPE` is not a reference,
     /// nor a function, nor already `const`-qualified; otherwise, `type` is
     /// an alias to `t_TYPE`.
-    typedef typename BloombergLP::bslmf::AddConst_Imp<
+    typedef typename BNP_Paribas::bslmf::AddConst_Imp<
         t_TYPE,
         !is_reference<t_TYPE>::value && !is_function<t_TYPE>::value &&
             !is_const<t_TYPE>::value>::Type type;

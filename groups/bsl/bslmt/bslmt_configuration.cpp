@@ -93,7 +93,7 @@ static int nativeDefaultThreadStackSizeImp()
 }
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 static bsls::AtomicOperations::AtomicTypes::Int
 defaultThreadStackSizeValue = { -1 };

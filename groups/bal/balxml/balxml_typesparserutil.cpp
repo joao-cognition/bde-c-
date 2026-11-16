@@ -27,7 +27,7 @@ BSLS_IDENT_RCSID(balxml_typesparserutil_cpp,"$Id$ $CSID$")
 #include <bsl_cfloat.h>
 #include <bsl_cmath.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 namespace u {

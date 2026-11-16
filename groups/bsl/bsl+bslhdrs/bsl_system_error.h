@@ -11,7 +11,7 @@ BSLS_IDENT("$Id: $")
 // defined in the corresponding C++ standard header.  In C++03 mode we provide
 // our own implementation, and in C++11 or later we import the 'std' names.
 
-// Include Bloomberg's implementation.
+// Include BNP Paribas's implementation.
 #include <bslstl_errc.h>
 #include <bslstl_error.h>
 #include <bslstl_iserrorcodeenum.h>

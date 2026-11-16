@@ -10,7 +10,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #if defined(BSLS_PLATFORM_CPU_SPARC_32) \
     && (defined(BSLS_PLATFORM_CMP_GNU) || defined(BSLS_PLATFORM_CMP_SUN))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // These function implementations rely on the V8+ ABI.  Our sparc processors
 // supports it.  32-bit arguments are put into registers: %o0, %o1, etc.

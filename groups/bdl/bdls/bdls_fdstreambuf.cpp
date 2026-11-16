@@ -53,7 +53,7 @@ extern "C" {
 }  // extern "C"
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                               // -------------
                               // local typedef

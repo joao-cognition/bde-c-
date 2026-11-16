@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLFMT_FORMAT_ARG_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 // FORWARD DECLARATIONS
@@ -119,7 +119,7 @@ class basic_format_arg<basic_format_context<t_OUT, t_CHAR> > {
                     basic_format_context<t_OUT, t_CHAR>& fc) const;
     };
 
-    typedef typename BloombergLP::bsls::UnspecifiedBool<basic_format_arg>
+    typedef typename BNP_Paribas::bsls::UnspecifiedBool<basic_format_arg>
                                                    UnspecifiedBoolType;
     typedef typename UnspecifiedBoolType::BoolType BoolType;
 

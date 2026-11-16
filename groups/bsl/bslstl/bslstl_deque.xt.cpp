@@ -423,7 +423,7 @@ void invokePatternSwap(TYPE *a, TYPE *b)
 // The following `using` directives must come *after* the definition of
 // `invokeAdlSwap` and `invokePatternSwap` (above).
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::deque;
 
 // ============================================================================
@@ -1599,7 +1599,7 @@ class ContainerCompatibleRange {
     auto end() const { return const_sentinel(d_value.end()); }
 };
 
-static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                                  ContainerCompatibleRange<int>,
                                                  int>);
 static_assert(bsl::forward_iterator<
@@ -1708,7 +1708,7 @@ class ContainerCompatibleSizedRange {
     auto size() const { return d_value.size(); }
 };
 
-static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                             ContainerCompatibleSizedRange<int>,
                                             int>);
 static_assert(bsl::ranges::sized_range<ContainerCompatibleSizedRange<int>>);
@@ -1788,7 +1788,7 @@ class LimitAllocator : public ALLOC {
     }
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <class ALLOCATOR>

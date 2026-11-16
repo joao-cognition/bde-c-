@@ -200,7 +200,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_cstdio.h>
 #include <bsl_functional.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 class Context;

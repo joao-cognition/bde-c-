@@ -372,7 +372,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>         // for 'std::size_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma {
 
@@ -634,7 +634,7 @@ class SequentialPool {
 // FREE OPERATORS
 
 // Note that the operators 'new' and 'delete' are declared outside the
-// 'BloombergLP' namespace so that they do not hide the standard placement
+// 'BNP_Paribas' namespace so that they do not hide the standard placement
 // 'new' and 'delete' operators (i.e., 'void *operator new(size_t, void *)' and
 // 'void operator delete(void *)').
 //
@@ -644,7 +644,7 @@ class SequentialPool {
 // overloaded the array version of operator 'new':
 //..
 //  void *operator new[](std::size_t size,
-//                       BloombergLP::bslma::Pool& pool)
+//                       BNP_Paribas::bslma::Pool& pool)
 //..
 // The user of the pool class would have expected to be able to use
 // 'new-expression':
@@ -684,7 +684,7 @@ class SequentialPool {
 /// }
 /// ```
 inline
-void *operator new(std::size_t size, BloombergLP::bslma::SequentialPool& pool);
+void *operator new(std::size_t size, BNP_Paribas::bslma::SequentialPool& pool);
 
 /// Use the specified `pool` to deallocate the memory at the specified
 /// `address`.  The behavior is undefined unless `address` was allocated
@@ -692,13 +692,13 @@ void *operator new(std::size_t size, BloombergLP::bslma::SequentialPool& pool);
 /// supplied solely to allow the compiler to arrange for it to be called in
 /// case of an exception.
 inline
-void operator delete(void *address, BloombergLP::bslma::SequentialPool& pool);
+void operator delete(void *address, BNP_Paribas::bslma::SequentialPool& pool);
 
 // ============================================================================
 //                          INLINE DEFINITIONS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
                              // --------------
@@ -748,13 +748,13 @@ typedef bslma::SequentialPool bslma_SequentialPool;
 // FREE OPERATORS
 
 inline
-void *operator new(std::size_t size, BloombergLP::bslma::SequentialPool& pool)
+void *operator new(std::size_t size, BNP_Paribas::bslma::SequentialPool& pool)
 {
     return pool.allocate(static_cast<int>(size));
 }
 
 inline
-void operator delete(void *, BloombergLP::bslma::SequentialPool&)
+void operator delete(void *, BNP_Paribas::bslma::SequentialPool&)
 {
     // NOTE: there is no deallocation from this allocation mechanism.
 }

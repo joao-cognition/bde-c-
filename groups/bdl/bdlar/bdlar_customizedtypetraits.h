@@ -15,7 +15,7 @@ BSLS_IDENT("$Id: $")
 #include <bdlar_anyref.h>
 #include <bdlar_customizedtyperef.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
 BSLMF_ASSERT(k_TMP_ANY_BUFFER_SIZE >= sizeof(AnyConstRef));

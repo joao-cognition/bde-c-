@@ -6,7 +6,7 @@ BSLS_IDENT("$Id$ $CSID$")
 
 #include <bslh_defaulthashalgorithm.h>  // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
 std::size_t HashThreadId_ImpUtil::getHashInput(const std::thread::id& tid)

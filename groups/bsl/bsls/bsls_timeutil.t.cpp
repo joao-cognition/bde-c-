@@ -40,7 +40,7 @@
     #define U_BSLS_TIMEUTIL_HAS_THREAD_TIMERS 1
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                 TEST PLAN

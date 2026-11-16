@@ -61,7 +61,7 @@
 // [ 1] static bsls::Uint64 swapBytes32(bsls::Uint64)
 //-----------------------------------------------------------------------------
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using std::printf;
 using std::fprintf;
 using std::fflush;
@@ -129,10 +129,10 @@ void aSsErT(bool b, const char *s, int i)
 //                         GLOBAL TYPEDEF FOR TESTING
 //-----------------------------------------------------------------------------
 
-typedef BloombergLP::bsls::Types::Int64  Int64;
-typedef BloombergLP::bsls::Types::Uint64 Uint64;
+typedef BNP_Paribas::bsls::Types::Int64  Int64;
+typedef BNP_Paribas::bsls::Types::Uint64 Uint64;
 
-typedef BloombergLP::bsls::ByteOrderUtil Util;
+typedef BNP_Paribas::bsls::ByteOrderUtil Util;
 
 //=============================================================================
 //                    GLOBAL HELPER FUNCTIONS FOR TESTING

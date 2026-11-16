@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(bdlat_arrayfunctions_cpp,"$Id$ $CSID$")
 
 #include <bdlat_typetraits.h>  // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

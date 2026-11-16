@@ -85,7 +85,7 @@
 #pragma warning(disable:4834)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 using bsls::nameOfType;
 
@@ -1131,7 +1131,7 @@ inline
 bool isNativeString(const std::basic_string<TYPE,TRAITS,ALLOC>&)
     { return true; }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 // Specialize trait to clarify for bde_verify that `LimitAllocator` does not
 // require satisfy the `UsesBslmaAllocator` trait.
@@ -5631,7 +5631,7 @@ void TestDriver<TYPE,TRAITS,ALLOC>::testCase29()
     //   hashAppend(HASHALG& hashAlg, const basic_string& str);
     //   hashAppend(HASHALG& hashAlg, const std::basic_string& str);
     // --------------------------------------------------------------------
-    typedef ::BloombergLP::bslh::Hash<>            Hasher;
+    typedef ::BNP_Paribas::bslh::Hash<>            Hasher;
     typedef typename Hasher::result_type           HashType;
     typedef std::basic_string<TYPE, TRAITS, ALLOC> NativeObj;
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP17_PMR_STRING

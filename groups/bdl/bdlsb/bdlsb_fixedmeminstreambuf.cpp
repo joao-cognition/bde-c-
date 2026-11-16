@@ -9,7 +9,7 @@ BSLS_IDENT_RCSID(bdlsb_fixedmeminstreambuf_cpp,"$Id$ $CSID$")
 #include <bsl_ostream.h>
 #include <bsl_iomanip.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlsb {
 
 // PROTECTED MANIPULATORS

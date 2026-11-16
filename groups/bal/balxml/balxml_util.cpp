@@ -137,7 +137,7 @@ bool extractNamespaceFromXsd_Impl(bsl::streambuf *xsdSource,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP  {
+namespace BNP_Paribas  {
 namespace balxml {
 
                                 // -----------

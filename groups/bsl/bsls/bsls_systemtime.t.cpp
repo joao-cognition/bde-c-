@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                                  TEST PLAN
@@ -97,7 +97,7 @@ typedef bsls::SystemClockType       SystemClockType;
 //                      HELPER FUNCTIONS FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 /// Print the specified `timeInterval` to the console.  Note that this free

@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdljsn_jsonliterals_cpp, "$Id$ $CSID$")
 
 #include <bsl_string_view.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                                // ------------------

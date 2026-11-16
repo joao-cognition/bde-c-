@@ -24,7 +24,7 @@
 #include <wchar.h>
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -1222,13 +1222,13 @@ int main(int argc, char *argv[])
         // Concerns:
         //
         // 1. The set of Windows time-zone identifiers accepted by the
-        //    `getZoneId` method is useful for the business needs of Bloomberg
+        //    `getZoneId` method is useful for the business needs of BNP Paribas
         //    LP.
         //
         // Plan:
         //
         // 1. The {TZDF<GO>} function provides information on a set of time
-        //    zones of interest to Bloomberg customers.  Check that these are
+        //    zones of interest to BNP Paribas customers.  Check that these are
         //    found in the registry of the Windows test platform and that they
         //    are successfully mapped to Zoneinfo time-zone identifiers.
         //

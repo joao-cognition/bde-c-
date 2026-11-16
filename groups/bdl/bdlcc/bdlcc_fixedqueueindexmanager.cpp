@@ -19,7 +19,7 @@ BSLS_IDENT_RCSID(bdlcc_fixedqueueindexmanager_cpp,"$Id$ $CSID$")
 #include <bsl_iostream.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 ///Implementation Notes
 ///--------------------

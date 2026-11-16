@@ -107,7 +107,7 @@ void aSsErT(bool b, const char *s, int i)
 //                       GLOBAL TEST ALIASES
 // ----------------------------------------------------------------------------
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                       GLOBAL TEST VALUES

@@ -56,7 +56,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 
 //=============================================================================
@@ -1243,7 +1243,7 @@ template <class HASHALG>
 inline
 void hashAppend(HASHALG& hashAlg, const EraseAmbiguityTestType& object)
 {
-    using ::BloombergLP::bslh::hashAppend;
+    using ::BNP_Paribas::bslh::hashAppend;
     (void) object;  // suppress `unused variable` warning
     hashAppend(hashAlg, 0);
 }
@@ -6977,7 +6977,7 @@ void TestDriver<KEY, MAPPED, HASH, EQUAL, ALLOC>::testCase17()
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS) \
  && defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 
-    static_assert(BloombergLP::bslmf::ContainerCompatibleRange<
+    static_assert(BNP_Paribas::bslmf::ContainerCompatibleRange<
                                           SRC,
                                           typename SRC::iterator::value_type>);
 

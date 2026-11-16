@@ -53,7 +53,7 @@
   #endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -1082,7 +1082,7 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
                     int                                  yearValue,
                     bool                                 paddingRequired) const
         {
-            typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+            typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
             char  buffer[4];
             char *bufferEnd = NFUtil::toChars(buffer, buffer + 4, yearValue);
@@ -1102,7 +1102,7 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
                 }
 
                 if (numPaddingCharacters) {
-                    outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+                    outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
                         t_CHAR>::outputFromChar(paddingStr,
                                                 paddingStr +
                                                     numPaddingCharacters,
@@ -1110,7 +1110,7 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
                 }
             }
             outIterator =
-                BloombergLP::bslfmt::FormatterCharUtil<t_CHAR>::outputFromChar(
+                BNP_Paribas::bslfmt::FormatterCharUtil<t_CHAR>::outputFromChar(
                     buffer,
                     bufferEnd,
                     outIterator);
@@ -1125,7 +1125,7 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
                     int                                  monthOrDayValue,
                     bool                                 paddingRequired) const
         {
-            typedef BloombergLP::bslalg::NumericFormatterUtil NFUtil;
+            typedef BNP_Paribas::bslalg::NumericFormatterUtil NFUtil;
 
             char  buffer[2];
             char *bufferEnd = NFUtil::toChars(buffer,
@@ -1134,11 +1134,11 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
 
             if (paddingRequired) {
                 if (10 > monthOrDayValue) {
-                    outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+                    outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
                         t_CHAR>::outputFromChar('0', outIterator);
                 }
             }
-            outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+            outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
                 t_CHAR>::outputFromChar(buffer, bufferEnd, outIterator);
         }
 // ```
@@ -1245,16 +1245,16 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
                 outputMonthDay<t_FORMAT_CONTEXT>(outIterator,
                                                  value.day(),
                                                  false);
-                outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+                outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
                     t_CHAR>::outputFromChar(' ', outIterator);
 
                 // Outputting month
                 const char *month = months[value.month() - 1];
-                outIterator  = BloombergLP::bslfmt::FormatterCharUtil<
+                outIterator  = BNP_Paribas::bslfmt::FormatterCharUtil<
                     t_CHAR>::outputFromChar(month,
                                             month + std::strlen(month),
                                             outIterator);
-                outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+                outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
                     t_CHAR>::outputFromChar(' ', outIterator);
 
                 // Outputting year
@@ -1263,14 +1263,14 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
             else if (e_NUMERIC == d_format) {  // 1999-10-23
                 // Outputting year
                 outputYear<t_FORMAT_CONTEXT>(outIterator, value.year(), true);
-                outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+                outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
                     t_CHAR>::outputFromChar('-', outIterator);
 
                 // Outputting month
                 outputMonthDay<t_FORMAT_CONTEXT>(outIterator,
                                                  value.month(),
                                                  true);
-                outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+                outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
                     t_CHAR>::outputFromChar('-', outIterator);
 
                 // Outputting day
@@ -1305,7 +1305,7 @@ void verifyArgAndArgs(int LINE, const bsl::wformat_args& fargs)
 // about `bsl::format`.  We want to make sure that these examples compile and
 // produce the expected output.
 // Full link to the `bsl::format` page:
-// https://bde.bloomberg.com/bde/articles/bslfmt.html
+// https://bde.bnpparibas.com/bde/articles/bslfmt.html
 
 class MyType {
 };
@@ -3600,11 +3600,11 @@ int main(int argc, char **argv)
       case 13: {
         // --------------------------------------------------------------------
         // TESTING EXAMPLES IN BDE DOCUMENTATION
-        //   Website `https://bde.bloomberg.com` contains several usage
+        //   Website `https://bde.bnpparibas.com` contains several usage
         //   examples showing how to use `bsl::format`.  We want to make sure
         //   that these examples compile and produce the expected output.
         //   Full page link:
-        //   https://bde.bloomberg.com/bde/articles/bslfmt.html
+        //   https://bde.bnpparibas.com/bde/articles/bslfmt.html
         //
         // Concerns:
         // 1. The usage examples provided on the BDE website compile, link, and

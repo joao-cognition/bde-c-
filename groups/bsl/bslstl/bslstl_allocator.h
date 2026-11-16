@@ -354,9 +354,9 @@ BSLS_IDENT("$Id: $")
 
 #include <bslma_bslallocator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
-}  // close namespace BloombergLP
+}  // close namespace BNP_Paribas
 
 #endif
 

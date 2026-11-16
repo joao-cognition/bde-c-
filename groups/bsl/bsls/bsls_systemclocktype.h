@@ -58,7 +58,7 @@ BSLS_IDENT("$Id: $")
 // assert(0 == strcmp(asciiValue, "MONOTONIC"));
 // ```
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                          // ======================

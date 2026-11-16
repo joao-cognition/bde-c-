@@ -11,7 +11,7 @@ BSLS_IDENT_RCSID(bdljsn_jsonnumber_cpp, "$Id$ $CSID$")
 #include <bslim_printer.h>
 #include <bslalg_numericformatterutil.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
                               // ----------------

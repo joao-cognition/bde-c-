@@ -52,7 +52,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsl_string_view.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 class DateFormatter_Cache;
@@ -566,12 +566,12 @@ namespace bsl {
 
 /// This type implements the formatter logic specific for `Date` objects.
 template <class t_CHAR>
-class formatter<BloombergLP::bdlt::Date, t_CHAR> {
+class formatter<BNP_Paribas::bdlt::Date, t_CHAR> {
     // PRIVATE TYPES
-    typedef BloombergLP::bdlt::Date                         Date;
-    typedef BloombergLP::bdlt::DateFormatter_Cache          FormatCache;
-    typedef BloombergLP::bdlt::Formatter<
-                 BloombergLP::bdlt::DateFormatter, t_CHAR>  Formatter;
+    typedef BNP_Paribas::bdlt::Date                         Date;
+    typedef BNP_Paribas::bdlt::DateFormatter_Cache          FormatCache;
+    typedef BNP_Paribas::bdlt::Formatter<
+                 BNP_Paribas::bdlt::DateFormatter, t_CHAR>  Formatter;
     // DATA
     Formatter                                               d_formatter;
 

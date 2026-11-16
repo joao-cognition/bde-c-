@@ -58,7 +58,7 @@
 //      Tests in this group verify that assignments is not possible to
 //      an optional of const type or to a const qualified optional
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -91,8 +91,8 @@ using namespace bsl;
 // TRAITS
 // [15] bsl::is_trivially_copyable
 // [15] bsl::is_trivially_destructible
-// [15] BloombergLP::bslma::UsesBslmaAllocator
-// [15] BloombergLP::bslmf::UsesAllocatorArgT
+// [15] BNP_Paribas::bslma::UsesBslmaAllocator
+// [15] BNP_Paribas::bslmf::UsesAllocatorArgT
 //
 // CREATORS
 // [ 2] optional();
@@ -315,7 +315,7 @@ static bool veryVerbose;
 static bool veryVeryVerbose;
 static bool veryVeryVeryVerbose;
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 typedef bslmf::MovableRefUtil MoveUtil;
@@ -5880,7 +5880,7 @@ bool testCase29(bsl::optional<MyClass2>)
                                 // Test Case 22
                                 // ------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 template <class HASHALG, class RETURN, class CLASS>
@@ -6689,7 +6689,7 @@ void testCase25()
 
 template <class TYPE,
           bool  USES_BSLMA_ALLOC =
-                           BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value>
+                           BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value>
 struct Derived;
 
 template <class TYPE>
@@ -7153,7 +7153,7 @@ void TestDriver<TYPE>::testCase24()
     // TESTING DERIVED -- `TYPE` DOES NOT ALLOCATE
     // ------------------------------------------------------------------------
 
-    BSLMF_ASSERT(!BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value);
+    BSLMF_ASSERT(!BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value);
 
     const TestValues     tvs;
 
@@ -7299,7 +7299,7 @@ void TestDriver<TYPE>::testCase23()
     // TESTING DERIVED -- `TYPE` ALLOCATES
     // ------------------------------------------------------------------------
 
-    BSLMF_ASSERT(BloombergLP::bslma::UsesBslmaAllocator<TYPE>::value);
+    BSLMF_ASSERT(BNP_Paribas::bslma::UsesBslmaAllocator<TYPE>::value);
 
     bslma::TestAllocator         da("default", veryVeryVeryVerbose);
     bslma::DefaultAllocatorGuard dag(&da);
@@ -15262,8 +15262,8 @@ int main(int argc, char **argv)
         if (verbose) printf("\nTESTING COMPONENT-PRIVATE CONCEPTS"
                             "\n==================================\n");
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS
-        using BloombergLP::bslstl::Optional_ConvertibleToBool;
-        using BloombergLP::bslstl::Optional_DerivedFromOptional;
+        using BNP_Paribas::bslstl::Optional_ConvertibleToBool;
+        using BNP_Paribas::bslstl::Optional_DerivedFromOptional;
         BSLMF_ASSERT(( Optional_ConvertibleToBool<bool>));
         BSLMF_ASSERT(( Optional_ConvertibleToBool<int>));
 # ifdef BSLS_COMPILERFEATURES_SUPPORT_THREE_WAY_COMPARISON

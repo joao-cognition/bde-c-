@@ -37,7 +37,7 @@
 #include <bsl_sstream.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
@@ -262,12 +262,12 @@ char assertion[e_ERROR_STATE + 1 == NUM_STATES];
 // The following is a very long text to use both in the stress test and in the
 // usage example.
 
-const char BLOOMBERG_NEWS[] =
-"        (Commentary. Chet Currier is a Bloomberg News \n"
+const char BNPPARIBAS_NEWS[] =
+"        (Commentary. Chet Currier is a BNP Paribas News \n"
 "columnist. The opinions expressed are his own.) \n"
 "\n"
 "By Chet Currier\n"
-"     Sept. 14 (Bloomberg) -- The trouble with college finance in\n"
+"     Sept. 14 (BNP Paribas) -- The trouble with college finance in\n"
 "21st Century America is way too much homework.\n"
 "     Study up on UGMAs, ESAs, Section 529 savings programs that\n"
 "come in more than 50 different versions, and prepaid tuition\n"
@@ -1962,7 +1962,7 @@ int main(int argc, char *argv[])
 //     // text to the specified output stream `os`.  Return 0 on success, and a
 //     // negative value otherwise.
 // ```
-        const bsl::string  inStr(BLOOMBERG_NEWS, sizeof(BLOOMBERG_NEWS));
+        const bsl::string  inStr(BNPPARIBAS_NEWS, sizeof(BNPPARIBAS_NEWS));
         bsl::istringstream inStream(inStr);
 
         bsl::stringstream  outStream;
@@ -2206,7 +2206,7 @@ int main(int argc, char *argv[])
         //
         // Plan:
         //   - First have the encoder convert a large amount of text, created
-        //     for example by copying from a Bloomberg news page.  Then use the
+        //     for example by copying from a BNP Paribas news page.  Then use the
         //     decoder to convert the result back into its original form.
         //     Finally, verify that the output from the decoder to the input to
         //     the encoder are identical.
@@ -2608,7 +2608,7 @@ int main(int argc, char *argv[])
 
         V("Verify encoder with unlimited line length.");
         {
-            const char* sample = BLOOMBERG_NEWS;
+            const char* sample = BNPPARIBAS_NEWS;
 
             int maxLineLength = 0;
 
@@ -2661,7 +2661,7 @@ int main(int argc, char *argv[])
 
         V("Verify encoder with maximum line length = 76.");
         {
-            const char* sample = BLOOMBERG_NEWS;
+            const char* sample = BNPPARIBAS_NEWS;
 
             int maxLineLength = 76;
 

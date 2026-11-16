@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(balxml_errorinfo_cpp,"$Id$ $CSID$")
 
 
 
-namespace BloombergLP  {
+namespace BNP_Paribas  {
 
 namespace balxml {
 

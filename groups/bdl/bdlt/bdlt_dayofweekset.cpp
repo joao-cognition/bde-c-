@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(bdlt_dayofweekset_cpp,"$Id$ $CSID$")
 #include <bsl_iomanip.h>
 #include <bsl_ostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 BSLMF_ASSERT(bslmf::IsBitwiseCopyable<DayOfWeekSet_Iter>::value);

@@ -61,7 +61,7 @@ BSLS_IDENT("$Id: $")
 
 #include <cstddef>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                           // =======================

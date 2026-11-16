@@ -64,7 +64,7 @@ BSLS_IDENT_RCSID(bdlc_hashtable_cpp,"$Id$ $CSID$")
 //  }
 //..
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 static
 const unsigned int PRIME_NUMBERS_IMP[] = {

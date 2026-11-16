@@ -52,14 +52,14 @@ BSLS_ANNOTATION_UNUSED void checkPathBufferSize() {
     enum { k_MAX_PATH = PATH_MAX };
 #endif
     static const bool k_BUFFER_SUFFICIENTLY_LARGE =
-        BloombergLP::bsls::OutputRedirector::k_PATH_BUFFER_SIZE > k_MAX_PATH;
+        BNP_Paribas::bsls::OutputRedirector::k_PATH_BUFFER_SIZE > k_MAX_PATH;
     CompileTimeAssert<k_BUFFER_SUFFICIENTLY_LARGE>();
 }
 
 }  // close unnamed namespace
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 // PRIVATE MANIPULATORS

@@ -16,11 +16,11 @@ namespace
 // This global static data is declared and defined entirely hidden inside
 // the .cpp file, as the IBM compiler may create multiple copies if accessed
 // through inline functions defined in the header.
-    static ::BloombergLP::bslma::Allocator
+    static ::BNP_Paribas::bslma::Allocator
                               *s_StdTestAllocatorConfiguration_allocator_p = 0;
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
 

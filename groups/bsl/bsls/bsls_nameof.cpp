@@ -29,7 +29,7 @@ namespace u {
 /// appropriate pattern is likely to start.
 ///
 /// Several types of patterns are to be matched:
-/// * namespace `BloombergLP::`
+/// * namespace `BNP_Paribas::`
 /// * `std::...string<...`
 /// * `bsl::...string<...`
 /// * `std::...::pmr::string<...`
@@ -77,7 +77,7 @@ void substitute(char       *buffer,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 // CLASS METHOD
@@ -95,14 +95,14 @@ const char *NameOf_Base::initBuffer(char       *buffer,
 #if defined(BSLS_PLATFORM_CMP_MSVC)
 # if defined(BSLS_PLATFORM_CPU_64_BIT)
     static
-    const char uselessPreamble[] = {    "__cdecl BloombergLP::bsls::NameOf<" };
+    const char uselessPreamble[] = {    "__cdecl BNP_Paribas::bsls::NameOf<" };
 # else
     static
-    const char uselessPreamble[] = { "__thiscall BloombergLP::bsls::NameOf<" };
+    const char uselessPreamble[] = { "__thiscall BNP_Paribas::bsls::NameOf<" };
 # endif
 #else
     static
-    const char uselessPreamble[] = {            "BloombergLP::bsls::NameOf<" };
+    const char uselessPreamble[] = {            "BNP_Paribas::bsls::NameOf<" };
 #endif
 
     // This will fail to compile if expression in `[]` is not `true`.  We
@@ -144,7 +144,7 @@ const char *NameOf_Base::initBuffer(char       *buffer,
     // If typename == 'int',
 
     // functionName:
-    //           "BloombergLP::bsls::NameOf<TYPE>::NameOf() [with TYPE = int]"
+    //           "BNP_Paribas::bsls::NameOf<TYPE>::NameOf() [with TYPE = int]"
     //
     // pc:                                 "TYPE>::NameOf() [with TYPE = int]"
 
@@ -163,7 +163,7 @@ const char *NameOf_Base::initBuffer(char       *buffer,
 
 #elif defined(BSLS_PLATFORM_CMP_CLANG)
     // If typename = 'int'
-    // functionName: "BloombergLP::bsls::NameOf<int>::NameOf() [TYPE = int]"
+    // functionName: "BNP_Paribas::bsls::NameOf<int>::NameOf() [TYPE = int]"
     // pc:                                     "int>::NameOf() [TYPE = int]"
 
     static const char openMatch[] = { ">::NameOf() [TYPE = " };
@@ -181,7 +181,7 @@ const char *NameOf_Base::initBuffer(char       *buffer,
 
 #elif defined(BSLS_PLATFORM_CMP_MSVC)
     // If typename = 'int'
-    // functionName: "__thiscall BloombergLP::bsls::NameOf<int>::NameOf(void)"
+    // functionName: "__thiscall BNP_Paribas::bsls::NameOf<int>::NameOf(void)"
     // pc:                                                "int>::NameOf(void)"
 
     static const char tail[] = { ">::NameOf(void)" };
@@ -199,7 +199,7 @@ const char *NameOf_Base::initBuffer(char       *buffer,
     // Sun CC, Aix.
 
     // If typename == 'int',
-    // functionName: "BloombergLP::bsls::NameOf<int>::NameOf()"
+    // functionName: "BNP_Paribas::bsls::NameOf<int>::NameOf()"
     // pc:                                     "int>::NameOf()"
 
     static const char tail[] = { ">::NameOf()" };
@@ -335,7 +335,7 @@ const char *NameOf_Base::initBuffer(char       *buffer,
     static const char anonymous[] = { "(anonymous namespace)::" };
 #endif
 
-    u::substitute(buffer,     "BloombergLP::", "");
+    u::substitute(buffer,     "BNP_Paribas::", "");
 
     // ... At this point 'stringName' is the templated version of 'std::string'
 

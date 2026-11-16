@@ -97,7 +97,7 @@
 #include <bsl_vector.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma { class Allocator; }
 }
 
@@ -128,7 +128,7 @@ class Customer {
 
   public:
     // CREATORS
-    explicit Customer(BloombergLP::bslma::Allocator *basicAllocator = 0);
+    explicit Customer(BNP_Paribas::bslma::Allocator *basicAllocator = 0);
         // Create a 'Customer' object having the (default) attribute values:
         //..
         //  firstName() == ""
@@ -140,11 +140,11 @@ class Customer {
         // 'basicAllocator' is 0, the currently installed default allocator is
         // used.
 
-    Customer(const BloombergLP::bslstl::StringRef&  firstName,
-             const BloombergLP::bslstl::StringRef&  lastName,
+    Customer(const BNP_Paribas::bslstl::StringRef&  firstName,
+             const BNP_Paribas::bslstl::StringRef&  lastName,
              const bsl::vector<int>&                accounts,
              int                                    id,
-             BloombergLP::bslma::Allocator         *basicAllocator = 0);
+             BNP_Paribas::bslma::Allocator         *basicAllocator = 0);
         // Create a 'Customer' object having the specified 'firstName',
         // 'lastName', 'accounts', and 'id' attribute values.  Optionally
         // specify a 'basicAllocator' used to supply memory.  If
@@ -152,7 +152,7 @@ class Customer {
         // used.  The behavior is undefined unless 'id >= 0'.
 
     Customer(const Customer&                original,
-             BloombergLP::bslma::Allocator *basicAllocator = 0);
+             BNP_Paribas::bslma::Allocator *basicAllocator = 0);
         // Create a 'Customer' object having the same value as the specified
         // 'original' object.  Optionally specify a 'basicAllocator' used to
         // supply memory.  If 'basicAllocator' is 0, the currently installed
@@ -170,7 +170,7 @@ class Customer {
         // Set the 'accounts' attribute of this object to the specified
         // 'value'.
 
-    void setFirstName(const BloombergLP::bslstl::StringRef& value);
+    void setFirstName(const BNP_Paribas::bslstl::StringRef& value);
         // Set the 'firstName' attribute of this object to the specified
         // 'value'.
 
@@ -178,7 +178,7 @@ class Customer {
         // Set the 'id' attribute of this object to the specified 'value'.
         // The behavior is undefined unless 'value >= 0'.
 
-    void setLastName(const BloombergLP::bslstl::StringRef& value);
+    void setLastName(const BNP_Paribas::bslstl::StringRef& value);
         // Set the 'lastName' attribute of this object to the specified
         // 'value'.
 
@@ -208,7 +208,7 @@ class Customer {
 
                                   // Aspects
 
-    BloombergLP::bslma::Allocator *allocator() const;
+    BNP_Paribas::bslma::Allocator *allocator() const;
         // Return the allocator used by this object to supply memory.  Note
         // that if no allocator was supplied at construction the currently
         // installed default allocator is used.
@@ -263,7 +263,7 @@ void swap(Customer& a, Customer& b);
 }  // close enterprise namespace
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <> struct UsesBslmaAllocator<Enterprise::pkg::Customer>
@@ -285,7 +285,7 @@ namespace pkg {
 
 // CREATORS
 inline
-Customer::Customer(BloombergLP::bslma::Allocator *basicAllocator)
+Customer::Customer(BNP_Paribas::bslma::Allocator *basicAllocator)
 : d_firstName(basicAllocator)
 , d_lastName(basicAllocator)
 , d_accounts(basicAllocator)
@@ -294,11 +294,11 @@ Customer::Customer(BloombergLP::bslma::Allocator *basicAllocator)
 }
 
 inline
-Customer::Customer(const BloombergLP::bslstl::StringRef&  firstName,
-                   const BloombergLP::bslstl::StringRef&  lastName,
+Customer::Customer(const BNP_Paribas::bslstl::StringRef&  firstName,
+                   const BNP_Paribas::bslstl::StringRef&  lastName,
                    const bsl::vector<int>&                accounts,
                    int                                    id,
-                   BloombergLP::bslma::Allocator         *basicAllocator)
+                   BNP_Paribas::bslma::Allocator         *basicAllocator)
 : d_firstName(firstName.begin(), firstName.end(), basicAllocator)
 , d_lastName(lastName.begin(), lastName.end(), basicAllocator)
 , d_accounts(accounts, basicAllocator)
@@ -308,7 +308,7 @@ Customer::Customer(const BloombergLP::bslstl::StringRef&  firstName,
 
 inline
 Customer::Customer(const Customer&                original,
-                   BloombergLP::bslma::Allocator *basicAllocator)
+                   BNP_Paribas::bslma::Allocator *basicAllocator)
 : d_firstName(original.d_firstName, basicAllocator)
 , d_lastName(original.d_lastName, basicAllocator)
 , d_accounts(original.d_accounts, basicAllocator)
@@ -334,7 +334,7 @@ void Customer::setAccounts(const bsl::vector<int>& value)
 }
 
 inline
-void Customer::setFirstName(const BloombergLP::bslstl::StringRef& value)
+void Customer::setFirstName(const BNP_Paribas::bslstl::StringRef& value)
 {
     d_firstName.assign(value.begin(), value.end());
 }
@@ -348,7 +348,7 @@ void Customer::setId(int value)
 }
 
 inline
-void Customer::setLastName(const BloombergLP::bslstl::StringRef& value)
+void Customer::setLastName(const BNP_Paribas::bslstl::StringRef& value)
 {
     d_lastName.assign(value.begin(), value.end());
 }
@@ -360,10 +360,10 @@ void Customer::swap(Customer& other)
 {
     BSLS_ASSERT_SAFE(allocator() == other.allocator());
 
-    BloombergLP::bslalg::SwapUtil::swap(&d_firstName, &other.d_firstName);
-    BloombergLP::bslalg::SwapUtil::swap(&d_lastName,  &other.d_lastName);
-    BloombergLP::bslalg::SwapUtil::swap(&d_accounts,  &other.d_accounts);
-    BloombergLP::bslalg::SwapUtil::swap(&d_id,        &other.d_id);
+    BNP_Paribas::bslalg::SwapUtil::swap(&d_firstName, &other.d_firstName);
+    BNP_Paribas::bslalg::SwapUtil::swap(&d_lastName,  &other.d_lastName);
+    BNP_Paribas::bslalg::SwapUtil::swap(&d_accounts,  &other.d_accounts);
+    BNP_Paribas::bslalg::SwapUtil::swap(&d_id,        &other.d_id);
 }
 
 // ACCESSORS
@@ -394,7 +394,7 @@ const bsl::string& Customer::lastName() const
                                   // Aspects
 
 inline
-BloombergLP::bslma::Allocator *Customer::allocator() const
+BNP_Paribas::bslma::Allocator *Customer::allocator() const
 {
     return d_firstName.get_allocator().mechanism();
 }

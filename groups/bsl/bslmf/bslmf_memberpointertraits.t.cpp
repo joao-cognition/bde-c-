@@ -24,8 +24,8 @@
 // correct types.
 // ----------------------------------------------------------------------------
 // PUBLIC CLASS DATA
-// [2 ] BloombergLP::bslmf::MemberPointerTraits::MemberType
-// [2 ] BloombergLP::bslmf::MemberPointerTraits::ClassType
+// [2 ] BNP_Paribas::bslmf::MemberPointerTraits::MemberType
+// [2 ] BNP_Paribas::bslmf::MemberPointerTraits::ClassType
 // ----------------------------------------------------------------------------
 // [1 ] Usage example
 
@@ -34,7 +34,7 @@
 // ----------------------------------------------------------------------------
 
 namespace {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 int testStatus = 0;
 
@@ -314,7 +314,7 @@ typedef int (BASE::*PtrToMemberFuncNoExcept)() noexcept;
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     const int test = argc > 1 ? atoi(argv[1]) : 0;
 

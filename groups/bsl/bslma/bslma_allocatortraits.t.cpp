@@ -30,7 +30,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -194,7 +194,7 @@ class allocator {
     // and frees memory.
 
     // DATA
-    BloombergLP::bslma::Allocator *d_mechanism_p;
+    BNP_Paribas::bslma::Allocator *d_mechanism_p;
 
     // FRIENDS
     template <class T1, class T2>
@@ -205,10 +205,10 @@ class allocator {
     BSLMF_NESTED_TRAIT_DECLARATION(allocator,
                                    ::bsl::is_trivially_copyable);
     BSLMF_NESTED_TRAIT_DECLARATION(allocator,
-                                   BloombergLP::bslmf::IsBitwiseMoveable);
+                                   BNP_Paribas::bslmf::IsBitwiseMoveable);
     BSLMF_NESTED_TRAIT_DECLARATION(
                               allocator,
-                              BloombergLP::bslmf::IsBitwiseEqualityComparable);
+                              BNP_Paribas::bslmf::IsBitwiseEqualityComparable);
 
     // PUBLIC TYPES
     typedef std::size_t     size_type;
@@ -228,7 +228,7 @@ class allocator {
         //  this->d_mechanism_p == bslma::Default::defaultAllocator();
         // ```
 
-    allocator(BloombergLP::bslma::Allocator *mechanism);            // IMPLICIT
+    allocator(BNP_Paribas::bslma::Allocator *mechanism);            // IMPLICIT
         // Convert a `bslma::Allocator` pointer to an `allocator` object that
         // forwards allocation calls to the object pointed to by the specified
         // `mechanism`.  If `mechanism` is 0, then the currently installed
@@ -277,14 +277,14 @@ class allocator {
 template <class TYPE>
 inline
 allocator<TYPE>::allocator()
-: d_mechanism_p(BloombergLP::bslma::Default::defaultAllocator())
+: d_mechanism_p(BNP_Paribas::bslma::Default::defaultAllocator())
 {
 }
 
 template <class TYPE>
 inline
-allocator<TYPE>::allocator(BloombergLP::bslma::Allocator *mechanism)
-: d_mechanism_p(BloombergLP::bslma::Default::allocator(mechanism))
+allocator<TYPE>::allocator(BNP_Paribas::bslma::Allocator *mechanism)
+: d_mechanism_p(BNP_Paribas::bslma::Default::allocator(mechanism))
 {
 }
 
@@ -387,7 +387,7 @@ using ::bsl::is_trivially_copyable;
 // This example demonstrates the intended use of `allocator_traits` to
 // implement a standard-conforming container class.  First, we create a
 // container class that holds a single object and which meets the requirements
-// both of a standard container and of a Bloomberg container.  I.e., when
+// both of a standard container and of a BNP Paribas container.  I.e., when
 // instantiated with an allocator argument it uses the standard allocator
 // model; otherwise it uses the `bslma` model.  We provide an alias,
 // `AllocTraits`, to the specific `allocator_traits` instantiation to simplify
@@ -396,7 +396,7 @@ using ::bsl::is_trivially_copyable;
 // ```
 // #include <bslma_allocatortraits.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 template <class TYPE, class ALLOC = bsl::allocator<TYPE> >
 class MyContainer {
@@ -1480,7 +1480,7 @@ class AttribClass5Alloc
 
 // Set the `UsesBslmaAllocator` trait.  If the allocator uses the bslma model,
 // then this trait will be true.
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
     template <class ALLOC>
     struct UsesBslmaAllocator<AttribClass5Alloc<ALLOC> > :

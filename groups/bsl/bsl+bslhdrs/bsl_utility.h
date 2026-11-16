@@ -9,7 +9,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: Provide types, in the 'bsl' namespace, equivalent to those
 // defined in the corresponding C++ standard header.  Include the native
-// compiler-provided standard header, and also directly include Bloomberg's
+// compiler-provided standard header, and also directly include BNP Paribas's
 // implementation of the C++ standard type (if one exists).  Finally, place the
 // included symbols from the 'std' namespace (if any) into the 'bsl' namespace.
 
@@ -60,14 +60,14 @@ namespace bsl {
     using std::index_sequence_for;
 #else
     template <class T, T ...INTS>
-    using integer_sequence = BloombergLP::bslmf::IntegerSequence<T, INTS...>;
+    using integer_sequence = BNP_Paribas::bslmf::IntegerSequence<T, INTS...>;
 
     template <std::size_t... INTS>
     using index_sequence = integer_sequence<std::size_t, INTS...>;
 
     template <class T, T N>
     using make_integer_sequence =
-                                 BloombergLP::bslmf::MakeIntegerSequence<T, N>;
+                                 BNP_Paribas::bslmf::MakeIntegerSequence<T, N>;
 
     template <std::size_t N>
     using make_index_sequence = make_integer_sequence<std::size_t, N>;
@@ -96,7 +96,7 @@ namespace bsl {
 #endif
 }  // close package namespace
 
-// Include Bloomberg's implementation.
+// Include BNP Paribas's implementation.
 #include <bslstl_pair.h>
 
 #endif

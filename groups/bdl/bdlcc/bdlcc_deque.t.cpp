@@ -60,7 +60,7 @@
 #pragma warning(disable:4312)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 using bsl::cout;
 using bsl::cerr;
@@ -396,7 +396,7 @@ typename VECTOR::value_type *vData(VECTOR *v)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
                         // ===========================
                         // class MoveCopyAllocTestType
@@ -3049,7 +3049,7 @@ class MultiThreadedRangeTryPushTest {
 
 }  // close namespace MULTI_THREADED_TRY_PUSH
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 // This is really unnecessary because the `BufferedPopper` type is never

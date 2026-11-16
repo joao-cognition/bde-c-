@@ -13,7 +13,7 @@ BSLS_IDENT_RCSID(balxml_prefixstack_cpp,"$Id$ $CSID$")
 
 #define ARRAY_LEN(X) int(sizeof(X)/sizeof(X[0]))
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

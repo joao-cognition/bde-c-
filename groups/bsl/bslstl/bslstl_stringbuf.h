@@ -177,12 +177,12 @@ BSLS_IDENT("$Id: $")
 #endif // BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
 #endif // BDE_OMIT_INTERNAL_DEPRECATED
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 // 'BSLS_ASSERT' filename fix -- See {'bsls_assertimputil'}
 #ifdef BSLS_ASSERTIMPUTIL_AVOID_STRING_CONSTANTS
 extern const char s_bslstl_stringbuf_h[];
 #undef BSLS_ASSERTIMPUTIL_FILE
-#define BSLS_ASSERTIMPUTIL_FILE BloombergLP::s_bslstl_stringbuf_h
+#define BSLS_ASSERTIMPUTIL_FILE BNP_Paribas::s_bslstl_stringbuf_h
 #endif
 }
 
@@ -207,7 +207,7 @@ class basic_stringbuf
     typedef bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> StringType;
     typedef bsl::basic_string_view<CHAR_TYPE, CHAR_TRAITS>       ViewType;
 
-    typedef BloombergLP::bslmf::MovableRefUtil                   MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil                   MoveUtil;
 
   public:
     // TYPES
@@ -461,15 +461,15 @@ class basic_stringbuf
     /// supplied, the allocator in `initialString` is used.  `initialString`
     /// is left in a valid but unspecified state.
     explicit
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType>
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType>
                                                  initialString);
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType>
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType>
                                                  initialString,
                     const allocator_type&        allocator);
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType>
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType>
                                                  initialString,
                     ios_base::openmode           modeBitMask);
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType>
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType>
                                                  initialString,
                     ios_base::openmode           modeBitMask,
                     const allocator_type&        allocator);
@@ -623,7 +623,7 @@ class basic_stringbuf
     /// of the updated buffer.  If `value` is passed by `MovableRef`, then
     /// it is left in an unspecified but valid state.
     void str(const StringType& value);
-    void str(BloombergLP::bslmf::MovableRef<StringType> value);
+    void str(BNP_Paribas::bslmf::MovableRef<StringType> value);
     template <class SALLOC>
     typename
         bsl::enable_if<!bsl::is_same<ALLOCATOR, SALLOC>::value, void>::type
@@ -778,7 +778,7 @@ class StringBufContainer {
     typedef basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>   StreamBufType;
     typedef bsl::basic_string<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR> StringType;
 
-    typedef BloombergLP::bslmf::MovableRefUtil                   MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil                   MoveUtil;
 
     // DATA
     StreamBufType d_bufObj;  // contained 'basic_stringbuf'
@@ -816,7 +816,7 @@ class StringBufContainer {
     }
 
     StringBufContainer(
-                      BloombergLP::bslmf::MovableRef<StringType> initialString,
+                      BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                       ios_base::openmode                         modeBitMask,
                       const ALLOCATOR&                           allocator)
     : d_bufObj(MoveUtil::move(initialString), modeBitMask, allocator)
@@ -824,7 +824,7 @@ class StringBufContainer {
     }
 
     StringBufContainer(
-                      BloombergLP::bslmf::MovableRef<StringType> initialString,
+                      BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                       ios_base::openmode                         modeBitMask)
     : d_bufObj(MoveUtil::move(initialString), modeBitMask)
     {
@@ -1413,7 +1413,7 @@ basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType> initialString)
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType> initialString)
 : BaseType()
 , d_str(MoveUtil::move(initialString))
 , d_endHint(d_str.size())
@@ -1425,7 +1425,7 @@ basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType> initialString,
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                     const allocator_type&                      allocator)
 : BaseType()
 , d_str(MoveUtil::move(initialString), allocator)
@@ -1438,7 +1438,7 @@ basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType> initialString,
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                     ios_base::openmode                         modeBitMask)
 : BaseType()
 , d_str(MoveUtil::move(initialString))
@@ -1451,7 +1451,7 @@ basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 inline
 basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::
-    basic_stringbuf(BloombergLP::bslmf::MovableRef<StringType> initialString,
+    basic_stringbuf(BNP_Paribas::bslmf::MovableRef<StringType> initialString,
                     ios_base::openmode                         modeBitMask,
                     const allocator_type&                      allocator)
 : BaseType()
@@ -1595,7 +1595,7 @@ void basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::str(
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 void basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::str(
-                              BloombergLP::bslmf::MovableRef<StringType> value)
+                              BNP_Paribas::bslmf::MovableRef<StringType> value)
 {
     StringType& lvalue = value;
 
@@ -1662,8 +1662,8 @@ void basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>::swap(
     other.pubimbue(loc);
 
     d_str.swap(other.d_str);
-    BloombergLP::bslalg::SwapUtil::swap(&this->d_endHint, &other.d_endHint);
-    BloombergLP::bslalg::SwapUtil::swap(&this->d_mode,    &other.d_mode);
+    BNP_Paribas::bslalg::SwapUtil::swap(&this->d_endHint, &other.d_endHint);
+    BNP_Paribas::bslalg::SwapUtil::swap(&this->d_mode,    &other.d_mode);
 
     // Fix the stream-position pointers.
 
@@ -1721,7 +1721,7 @@ template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>
 void bsl::swap(basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& a,
                basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& b)
 {
-    typedef BloombergLP::bslmf::MovableRefUtil MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil MoveUtil;
 
     if (a.get_allocator() == b.get_allocator()
     ||  bsl::allocator_traits<ALLOCATOR>::propagate_on_container_swap::value) {
@@ -1744,7 +1744,7 @@ void bsl::swap(basic_stringbuf<CHAR_TYPE, CHAR_TRAITS, ALLOCATOR>& a,
 //                                TYPE TRAITS
 // ============================================================================
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 template <class CHAR_TYPE, class CHAR_TRAITS, class ALLOCATOR>

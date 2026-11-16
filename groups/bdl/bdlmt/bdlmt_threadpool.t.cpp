@@ -58,7 +58,7 @@
 #        include <sys/resource.h>
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 // ============================================================================
@@ -1007,7 +1007,7 @@ void CheckAllocatorMatchFunctor::operator()()
 }  // close namespace case17
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <>
 struct UsesBslmaAllocator<case17::CheckAllocatorMatchFunctor>

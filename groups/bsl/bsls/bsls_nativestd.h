@@ -13,7 +13,7 @@ BSLS_IDENT("$Id: $")
 //
 //@DESCRIPTION: This component defines a namespace alias, `native_std`, that
 // serves as an alias for the `std` namespace.  The `bsl` package group
-// contains a Bloomberg implementation of the C++ standard library.  In the
+// contains a BNP Paribas implementation of the C++ standard library.  In the
 // past, this implementation supported using the preprocessor to replace `std`
 // with `bsl` and intercepting all standard library headers with BDE-provided
 // implementations.  When building in this bde-stl mode by defining
@@ -31,8 +31,8 @@ BSLS_IDENT("$Id: $")
 ///-----
 // In the following example we use the `native_std` prefix to access the native
 // implementation of `std::string`, even when the compilation is configured to
-// override the use of native STL types with Bloomberg provided STL types
-// (i.e., bde-stl mode, used by Bloomberg managed code):
+// override the use of native STL types with BNP Paribas provided STL types
+// (i.e., bde-stl mode, used by BNP Paribas managed code):
 // ```
 // #include <bsls_nativestd.h>
 // #include <string>

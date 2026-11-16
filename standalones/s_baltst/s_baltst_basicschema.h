@@ -34,7 +34,7 @@ BSLS_IDENT_PRAGMA_ONCE
 
 #include <bslma_allocator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 
 namespace s_baltst { class BasicSchemaAnnotationElement; }

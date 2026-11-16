@@ -293,7 +293,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_chrono.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 extern "C" {
     /// `bslmt_ThreadFunction` is an alias for a function type taking a

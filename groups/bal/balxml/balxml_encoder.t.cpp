@@ -93,13 +93,13 @@
 #include <bsls_platform.h>
 #include <bsls_review.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::cerr;
 using bsl::endl;
 using bsl::flush;
 using bsl::string_view;
-namespace test = BloombergLP::s_baltst;
+namespace test = BNP_Paribas::s_baltst;
 
 // ============================================================================
 //                                 TEST PLAN
@@ -514,7 +514,7 @@ int veryVeryVeryVerbose;
 //@DESCRIPTION:
 //  todo: provide annotation for `MySequenceWithArrays`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
 class MySequenceWithArrays {
@@ -1217,7 +1217,7 @@ bsl::ostream& test::operator<<(bsl::ostream&                      stream,
 
 // test_mysequencewitharrays.cpp  -*-C++-*-
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                                // ---------
@@ -1483,7 +1483,7 @@ bsl::ostream& MySequenceWithArrays::print(
 
 namespace DECIMALTEST {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using test::Address;
 
 class Contractor {
@@ -2115,7 +2115,7 @@ bsl::ostream& Contractor::print(
 
 }  // close namespace DECIMALTEST
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 // TRAITS
 BDLAT_DECL_SEQUENCE_WITH_ALLOCATOR_TRAITS(DECIMALTEST::Contractor)
@@ -3881,8 +3881,8 @@ R(L_,  s(na0,na1,n(i0),n(i1))   , t, t, x(S,x(A0,V0   ),x(A1,V1   )) )  // *
 // ```
 //  <?xml version='1.0' encoding='UTF-8'?>
 //  <xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
-//             xmlns:test='http://bloomberg.com/schemas/test'
-//             targetNamespace='http://bloomberg.com/schemas/test'
+//             xmlns:test='http://bnpparibas.com/schemas/test'
+//             targetNamespace='http://bnpparibas.com/schemas/test'
 //             elementFormDefault='unqualified'>
 //
 //      <xs:complexType name='Address'>
@@ -3922,7 +3922,7 @@ R(L_,  s(na0,na1,n(i0),n(i1))   , t, t, x(S,x(A0,V0   ),x(A1,V1   )) )  // *
 //  #include <bsl_iostream.h>
 //  #include <bsl_sstream.h>
 //
-//  using namespace BloombergLP;
+//  using namespace BNP_Paribas;
 
     void usageExample()
     {
@@ -4643,7 +4643,7 @@ int main(int argc, char *argv[])
         if (verbose) cout << "Testing Decimal64\n"
                              "=================\n";
 
-        using namespace BloombergLP;
+        using namespace BNP_Paribas;
         namespace TC = DECIMALTEST;
 
 #define DFP(X) BDLDFP_DECIMAL_DD(X)
@@ -5531,13 +5531,13 @@ int main(int argc, char *argv[])
                           << "\n=============================" << endl;
 
         static const char OBJ_NS[] =
-            "http://bloomberg.com/schemas/balxml_encoder.t.xsd";
+            "http://bnpparibas.com/schemas/balxml_encoder.t.xsd";
         static const char PRETTY_NS_ATTR[] = "\n    "
-            "xmlns=\"http://bloomberg.com/schemas/balxml_encoder.t.xsd\"";
+            "xmlns=\"http://bnpparibas.com/schemas/balxml_encoder.t.xsd\"";
         static const char PRETTY_XSI_ATTR[] = "\n    "
             "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
         static const char COMPACT_NS_ATTR[] =
-            " xmlns=\"http://bloomberg.com/schemas/balxml_encoder.t.xsd\"";
+            " xmlns=\"http://bnpparibas.com/schemas/balxml_encoder.t.xsd\"";
         static const char COMPACT_XSI_ATTR[] =
             " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
         static const char NIL_ATTR[]=" xsi:nil=\"true\"";
@@ -5956,13 +5956,13 @@ int main(int argc, char *argv[])
                           << "\n=============================" << endl;
 
         static const char OBJ_NS[] =
-            "http://bloomberg.com/schemas/balxml_encoder.t.xsd";
+            "http://bnpparibas.com/schemas/balxml_encoder.t.xsd";
         static const char PRETTY_NS_ATTR[] = "\n    "
-            "xmlns=\"http://bloomberg.com/schemas/balxml_encoder.t.xsd\"";
+            "xmlns=\"http://bnpparibas.com/schemas/balxml_encoder.t.xsd\"";
         static const char PRETTY_XSI_ATTR[] = "\n    "
             "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
         static const char COMPACT_NS_ATTR[] =
-            " xmlns=\"http://bloomberg.com/schemas/balxml_encoder.t.xsd\"";
+            " xmlns=\"http://bnpparibas.com/schemas/balxml_encoder.t.xsd\"";
         static const char COMPACT_XSI_ATTR[] =
             " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
         static const char NIL_ATTR[]=" xsi:nil=\"true\"";
@@ -7489,7 +7489,7 @@ int main(int argc, char *argv[])
 
          balxml::EncoderOptions options;
 
-         options.setObjectNamespace("http://bloomberg.com/schemas/apiy");
+         options.setObjectNamespace("http://bnpparibas.com/schemas/apiy");
 
          bsl::stringstream result;
 

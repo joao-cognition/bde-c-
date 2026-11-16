@@ -361,7 +361,7 @@ const char *getPwhatVar(const char *const tag)
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
                             // ----------------
                             // StackAddressUtil

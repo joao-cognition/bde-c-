@@ -12,7 +12,7 @@
 #include <bsl_sstream.h>
 #include <bsl_vector.h>      // test case 11, vector
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================

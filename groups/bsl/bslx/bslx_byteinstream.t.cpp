@@ -20,7 +20,7 @@
 #include <bsl_sstream.h>
 #include <bsl_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 using namespace bslx;
 
@@ -160,7 +160,7 @@ static void aSsErT(int c, const char *s, int i)
 //                      HELPER CLASSES AND FUNCTIONS
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslx {
 
 void debugprint(const ByteInStream& object)

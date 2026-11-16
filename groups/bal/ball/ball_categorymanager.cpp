@@ -29,7 +29,7 @@ BSLS_IDENT_RCSID(ball_categorymanager_cpp,"$Id$ $CSID$")
 #undef max
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
 namespace {

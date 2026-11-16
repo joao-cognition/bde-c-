@@ -24,7 +24,7 @@
 #include <bsl_string.h>
 #include <bsl_unordered_map.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================
@@ -513,7 +513,7 @@ int main(int argc, char *argv[])
         if (verbose) cout << "\nTESTING `hashAppend`"
                           << "\n====================\n";
 
-        typedef ::BloombergLP::bslh::Hash<> Hasher;
+        typedef ::BNP_Paribas::bslh::Hash<> Hasher;
         typedef Hasher::result_type         HashType;
         Hasher                              hasher;
 

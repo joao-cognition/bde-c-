@@ -115,8 +115,8 @@ BSLS_IDENT("$Id: $")
 // const char TEST_XSD_STRING[] =
 //    "<?xml version='1.0' encoding='UTF-8'?>"
 //    "<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema'"
-//    "            xmlns='http://bloomberg.com/schemas/directory'"
-//    "            targetNamespace='http://bloomberg.com/schemas/directory'"
+//    "            xmlns='http://bnpparibas.com/schemas/directory'"
+//    "            targetNamespace='http://bnpparibas.com/schemas/directory'"
 //    "            elementFormDefault='qualified'"
 //    "            attributeFormDefault='qualified' >"
 //    " "
@@ -145,9 +145,9 @@ BSLS_IDENT("$Id: $")
 // ```
 // const char TEST_GOOD_XML_STRING[] =
 //   "<?xml version='1.0' encoding='UTF-8'?>\n"
-//   "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'\n"
+//   "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'\n"
 //   "     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'\n"
-//   "     xsi:schemaLocation='http://bloomberg.com/schemas/directory  \n"
+//   "     xsi:schemaLocation='http://bnpparibas.com/schemas/directory  \n"
 //   "                         aaa.xsd' >\n"
 //   "    <name>John Smith</name>\n"
 //   "    <phone dir:phonetype='cell'>212-318-2000</phone>\n"
@@ -159,9 +159,9 @@ BSLS_IDENT("$Id: $")
 // ```
 // const char TEST_BAD_XML_STRING[] =
 //   "<?xml version='1.0' encoding='UTF-8'?>\n"
-//   "<directory-entry xmlns:dir='http://bloomberg.com/schemas/directory'\n"
+//   "<directory-entry xmlns:dir='http://bnpparibas.com/schemas/directory'\n"
 //   "     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'\n"
-//   "     xsi:schemaLocation='http://bloomberg.com/schemas/directory  \n"
+//   "     xsi:schemaLocation='http://bnpparibas.com/schemas/directory  \n"
 //   "                         aaa.xsd' >\n"
 //   "    <name>John Smith</name>\n"
 //   "    <phone dir:phonetype='cell'>212-318-2000</phone>\n"
@@ -262,7 +262,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balxml {
                            // ======================

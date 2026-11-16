@@ -23,7 +23,7 @@
 
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::cout;
 using bsl::endl;
 using bsl::flush;
@@ -249,7 +249,7 @@ struct MyMessage {
                            // --------------
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 BDLAT_DECL_CHOICE_TRAITS(MyChoice)
 }  // close enterprise namespace
 
@@ -342,7 +342,7 @@ bool operator==(const MyChoice& o1, const MyChoice& o2)
                            // ------------
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 BDLAT_DECL_ENUMERATION_TRAITS(MyEnum)
 }  // close enterprise namespace
 
@@ -401,7 +401,7 @@ int bdlat_customizedTypeConvertFromBaseType(MyCustomString     *object,
     return object->fromString(value);
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_CustomizedTypeFunctions {
 
 template <>
@@ -434,7 +434,7 @@ bdlat_TypeCategory::Value bdlat_typeCategorySelect(const MyDynamicType& )
     return bdlat_TypeCategory::e_SIMPLE_CATEGORY;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 template <>
 struct bdlat_TypeCategoryDeclareDynamic<MyDynamicType> : bsl::true_type {
@@ -605,7 +605,7 @@ int bdlat_sequenceManipulateAttributes(MyMessage      *object,
     return rc;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat_SequenceFunctions {
 
 template <>

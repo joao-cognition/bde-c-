@@ -11,7 +11,7 @@
 #include <cstring>
 #include <iostream>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 //=============================================================================

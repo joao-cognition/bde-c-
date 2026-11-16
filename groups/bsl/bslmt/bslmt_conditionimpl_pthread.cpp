@@ -12,7 +12,7 @@ BSLS_IDENT_RCSID(bslmt_conditionimpl_pthread_cpp,"$Id$ $CSID$")
 
 #ifdef BSLMT_PLATFORM_POSIX_THREADS
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 #if !defined(BSLS_PLATFORM_OS_DARWIN)

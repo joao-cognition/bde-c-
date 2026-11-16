@@ -74,7 +74,7 @@ BSLS_IDENT("$Id: $")
 
 #include <vector>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bbldc {
 
                         // =========================

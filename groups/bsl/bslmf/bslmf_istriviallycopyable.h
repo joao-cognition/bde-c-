@@ -178,7 +178,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_trivially_copyable_v =
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls { class TimeInterval; }
 
@@ -279,7 +279,7 @@ namespace bsl {
 /// be specialized to inherit from `bsl::true_type` for them.
 template <class t_TYPE>
 struct is_trivially_copyable
-: BloombergLP::bslmf::IsTriviallyCopyable_Intrinsic<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsTriviallyCopyable_Intrinsic<t_TYPE>::type {
 };
 
 /// This partial specialization optimizes away a number of nested template
@@ -309,21 +309,21 @@ struct is_trivially_copyable<t_TYPE&&> : false_type {
 /// same result as their element type.
 template <class t_TYPE>
 struct is_trivially_copyable<const t_TYPE>
-: BloombergLP::bslmf::IsTriviallyCopyable_Solaris<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsTriviallyCopyable_Solaris<t_TYPE>::type {
 };
 
 /// This partial specialization ensures that volatile-qualified types have the
 /// same result as their element type.
 template <class t_TYPE>
 struct is_trivially_copyable<volatile t_TYPE>
-: BloombergLP::bslmf::IsTriviallyCopyable_Solaris<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsTriviallyCopyable_Solaris<t_TYPE>::type {
 };
 
 /// This partial specialization ensures that const-volatile-qualified types
 /// have the same result as their element type.
 template <class t_TYPE>
 struct is_trivially_copyable<const volatile t_TYPE>
-: BloombergLP::bslmf::IsTriviallyCopyable_Solaris<t_TYPE>::type {
+: BNP_Paribas::bslmf::IsTriviallyCopyable_Solaris<t_TYPE>::type {
 };
 #else
 /// This partial specialization ensures that const-qualified types have the
@@ -425,19 +425,19 @@ struct is_trivially_copyable<const volatile t_TYPE[]>
 /// This template specialization for `is_trivially_copyable` indicates that
 /// `TimeInterval` is a trivially copyable type.
 template <>
-struct is_trivially_copyable<BloombergLP::bsls::TimeInterval> : bsl::true_type{
+struct is_trivially_copyable<BNP_Paribas::bsls::TimeInterval> : bsl::true_type{
 };
 
 #ifndef BSLMF_ISTRIVIALLYCOPYABLE_NATIVE_IMPLEMENTATION
 /// This template specialization for `is_trivially_copyable` indicates that
 /// `Nil` is a trivially copyable type.
 template <>
-struct is_trivially_copyable<BloombergLP::bslmf::Nil> : bsl::true_type {
+struct is_trivially_copyable<BNP_Paribas::bslmf::Nil> : bsl::true_type {
 };
 #endif
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// This `struct` exists to return the same value as `is_trivially_copyable`

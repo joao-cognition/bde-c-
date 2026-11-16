@@ -16,14 +16,14 @@ BSLS_IDENT("$Id: $")
 // the (documentation-only) protocol for serial date implementation utilities
 // -- each class implements a common set of methods, each having the same
 // signature, and each having the same contract.  Currently, two
-// implementations are allowed: `bdlt_posixdateimputil` (required in Bloomberg
+// implementations are allowed: `bdlt_posixdateimputil` (required in BNP Paribas
 // code) and `bdlt_prolepticdateimputil` (an option for open source code).
 
 #include <bdlscm_version.h>
 
 #ifndef BDE_OPENSOURCE_PUBLICATION
     #ifdef BDE_USE_PROLEPTIC_DATES
-    #error 'BDE_USE_PROLEPTIC_DATES' option disallowed for Bloomberg code.
+    #error 'BDE_USE_PROLEPTIC_DATES' option disallowed for BNP Paribas code.
     #endif
 #endif
 
@@ -33,7 +33,7 @@ BSLS_IDENT("$Id: $")
 #include <bdlt_posixdateimputil.h>
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
                            // ========================

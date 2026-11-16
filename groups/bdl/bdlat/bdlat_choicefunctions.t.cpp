@@ -20,7 +20,7 @@
 
 #include <bdlb_string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;  // automatically added by script
 
 //=============================================================================
@@ -316,7 +316,7 @@ const bdlat_SelectionInfo *Figure::lookupSelectionInfo(int id)
 // is selected.  The default constructor of the `struct` makes the selection
 // undefined:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
 
    namespace mine {
 

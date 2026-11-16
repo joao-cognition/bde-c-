@@ -14,7 +14,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #if defined(BSLS_PLATFORM_CMP_SUN)
   #pragma error_messages(off, reftoref)

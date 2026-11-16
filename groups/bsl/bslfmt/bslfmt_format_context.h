@@ -133,7 +133,7 @@ BSLS_IDENT("$Id: $")
 #include <bslstl_utility.h>
 #include <bslstl_variant.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
 // FORWARD DECLARATIONS
@@ -448,14 +448,14 @@ inline
 typename basic_format_context<t_OUT, t_CHAR>::iterator
 basic_format_context<t_OUT, t_CHAR>::out()
 {
-    return BloombergLP::bslmf::MovableRefUtil::move(d_out);
+    return BNP_Paribas::bslmf::MovableRefUtil::move(d_out);
 }
 
 template <class t_OUT, class t_CHAR>
 inline
 void basic_format_context<t_OUT, t_CHAR>::advance_to(iterator it)
 {
-    d_out = BloombergLP::bslmf::MovableRefUtil::move(it);
+    d_out = BNP_Paribas::bslmf::MovableRefUtil::move(it);
 }
 
 // ACCESSORS

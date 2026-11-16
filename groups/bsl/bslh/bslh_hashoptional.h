@@ -74,7 +74,7 @@ BSLS_IDENT("$Id: $")
 
 #include <optional>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
 // FREE FUNCTIONS

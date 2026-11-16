@@ -9,7 +9,7 @@
 #include <stdio.h>      // `printf`
 #include <stdlib.h>     // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -86,7 +86,7 @@ struct AnotherPairLike {
 class NotAPair {
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <>
 struct IsPair<PairLike> : bsl::true_type {};

@@ -24,7 +24,7 @@
 #pragma GCC diagnostic ignored "-Wstringop-overread"
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -333,7 +333,7 @@ const bdlat_AttributeInfo *Point::lookupAttributeInfo(int id)
 /// - - - - - - - - - - -
 // Suppose you had a `struct` that contains three members:
 // ```
-   namespace BloombergLP {
+   namespace BNP_Paribas {
 
    namespace mine {
 

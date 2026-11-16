@@ -49,7 +49,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_optional.h>
 #include <bsl_string_view.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 class TimeFormatter_Cache;
@@ -556,12 +556,12 @@ namespace bsl {
 
 /// This type implements the formatter logic specific for `Time` objects.
 template <class t_CHAR>
-class formatter<BloombergLP::bdlt::Time, t_CHAR> {
+class formatter<BNP_Paribas::bdlt::Time, t_CHAR> {
     // PRIVATE TYPES
-    typedef BloombergLP::bdlt::Time                               Time;
-    typedef BloombergLP::bdlt::TimeFormatter_Cache                FormatCache;
-    typedef BloombergLP::bdlt::Formatter<
-                   BloombergLP::bdlt::TimeFormatter, t_CHAR>      Formatter;
+    typedef BNP_Paribas::bdlt::Time                               Time;
+    typedef BNP_Paribas::bdlt::TimeFormatter_Cache                FormatCache;
+    typedef BNP_Paribas::bdlt::Formatter<
+                   BNP_Paribas::bdlt::TimeFormatter, t_CHAR>      Formatter;
 
     // DATA
     Formatter                                               d_formatter;

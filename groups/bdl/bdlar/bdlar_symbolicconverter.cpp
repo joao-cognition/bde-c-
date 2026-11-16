@@ -6,7 +6,7 @@
 #include <bsls_ident.h>
 BSLS_IDENT_RCSID(bdlar_symbolicconverter_cpp,"$Id$ $CSID$")
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
                        // ------------------------

@@ -147,7 +147,7 @@ BSLS_IDENT_RCSID(bdld_datum_cpp,"$Id$ $CSID$")
 
 namespace {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bdld;
 
 /// Return `true` if key in the specified `lhs` is less than key in the
@@ -632,7 +632,7 @@ const Datum *findElementLinear(const bslstl::StringRef& key,
 //                               Implementation
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdld {
 
                                 // -----------

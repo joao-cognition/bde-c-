@@ -23,7 +23,7 @@ BSLS_IDENT_RCSID(s_baltst_mysequencewithnillable_cpp, "$Id$ $CSID$")
 #include <bsl_ostream.h>
 #include <bsl_utility.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                         // ----------------------------

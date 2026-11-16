@@ -8,7 +8,7 @@
 #include <bsl_cstring.h>
 #include <bsl_cstdio.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 static bool verbose = false;
 static bool veryVerbose = false;

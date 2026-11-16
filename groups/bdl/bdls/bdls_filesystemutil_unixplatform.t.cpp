@@ -44,7 +44,7 @@
 // ----------------------------------------------------------------------------
 
 namespace {
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 int testStatus = 0;
@@ -106,7 +106,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                           ENTITIES FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 namespace u {
 
@@ -309,7 +309,7 @@ struct PlatformUtil {
 
 int main(int argc, char *argv[])
 {
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
 
     int test = argc > 1 ? bsl::atoi(argv[1]) : 0;
     bool             verbose = argc > 2;

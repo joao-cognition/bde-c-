@@ -15,7 +15,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 
 // ============================================================================
@@ -286,7 +286,7 @@ void aSsErT(bool condition, const char *message, int line)
 //             const char *name       = months[monthIndex - 1];
 //             const int   nameLength = static_cast<int>(strlen(name));
 //
-//             outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//             outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                 t_CHAR>::outputFromChar(name,
 //                                         name + nameLength,
 //                                         outIterator);
@@ -298,23 +298,23 @@ void aSsErT(bool condition, const char *message, int line)
 //                 for (int i = 0;
 //                      i < widthValue - nameLength;
 //                      ++i) {
-//                     outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//                     outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                         t_CHAR>::outputFromChar(' ', outIterator);
 //                 }
 //             }
 //         }
 //         else if (e_NUMERIC == d_format) {  // 03
 //             if (10 > monthIndex) {
-//                 outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//                 outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                     t_CHAR>::outputFromChar('0', outIterator);
 //             }
 //             else {
-//                 outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//                 outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                     t_CHAR>::outputFromChar('1', outIterator);
 //                 monthIndex -= 10;
 //
 //             }
-//             outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//             outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                 t_CHAR>::outputFromChar('0' + static_cast<char>(monthIndex),
 //                                         outIterator);
 //
@@ -325,7 +325,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                 for (int i = 0;
 //                      i < widthValue - 2;
 //                      ++i) {
-//                     outIterator = BloombergLP::bslfmt::FormatterCharUtil<
+//                     outIterator = BNP_Paribas::bslfmt::FormatterCharUtil<
 //                         t_CHAR>::outputFromChar(' ', outIterator);
 //                 }
 //             }

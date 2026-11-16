@@ -26,8 +26,8 @@
 #include <string.h>
 
 
-using namespace BloombergLP;
-using namespace BloombergLP::bsltf;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bsltf;
 
 //=============================================================================
 //                             TEST PLAN

@@ -91,7 +91,7 @@ unsigned int reverse_hash(const char *data, int length)
 }
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

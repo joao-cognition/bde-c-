@@ -9,7 +9,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bslalg_bidirectionalnode.h>         // for testing only
 #include <bslalg_hashtablebucket.h>           // for testing only
 
-namespace BloombergLP
+namespace BNP_Paribas
 {
 
 namespace bslalg

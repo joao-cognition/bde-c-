@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLTF_STDTESTALLOCATOR_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsltf {
 
                         // ===================================
@@ -629,7 +629,7 @@ StdTestAllocator<TYPE>::allocate(typename StdTestAllocator<TYPE>::size_type
                                                                    numElements)
 {
     if (numElements > this->max_size()) {
-        BloombergLP::bsls::BslExceptionUtil::throwBadAlloc();
+        BNP_Paribas::bsls::BslExceptionUtil::throwBadAlloc();
     }
 
     return

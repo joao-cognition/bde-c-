@@ -80,7 +80,7 @@ BSLS_IDENT("$Id: $")
 // `prefixName`.  No warnings occur when correct arguments are passed:
 // ```
 // char buffer[1000];
-// ::printf(prefixName(buffer, e_SPANISH, "%s\n"), "Michael Bloomberg");
+// ::printf(prefixName(buffer, e_SPANISH, "%s\n"), "Michael BNP Paribas");
 //
 // char name[100];
 // ::sscanf("Emmanuel Macron", prefixName(buffer, e_FRENCH, "%s"), name);

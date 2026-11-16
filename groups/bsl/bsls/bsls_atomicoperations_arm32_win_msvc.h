@@ -23,7 +23,7 @@ BSLS_IDENT("$Id: $")
     defined(BSLS_PLATFORM_CMP_MSVC)
 #include <intrin.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

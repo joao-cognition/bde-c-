@@ -55,7 +55,7 @@ const char *findBasename(const char *pathName)
     return ptr;
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
 template <class RESOLVER_POLICY>

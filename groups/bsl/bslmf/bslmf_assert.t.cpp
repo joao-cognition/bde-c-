@@ -67,7 +67,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmftest {
 
                            // ======================
@@ -135,7 +135,7 @@ void MyType::foo()
     BSLMF_ASSERT(sizeof(int) >= sizeof(char));
     BSLMF_ASSERT(1);
 
-    using namespace BloombergLP;
+    using namespace BNP_Paribas;
     BSLMF_ASSERT(1);
 }
 

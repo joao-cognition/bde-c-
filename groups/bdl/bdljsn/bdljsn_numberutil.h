@@ -132,7 +132,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_type_traits.h>
 #include <bsl_iostream.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
 struct NumberUtil_ImpUtil;

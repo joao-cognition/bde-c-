@@ -29,7 +29,7 @@ BSLS_IDENT_RCSID(bdlm_metricsregistry_cpp,"$Id$ $CSID$")
 // `removeMetricsAdapter`) we will need test the individual optional handles to
 // see if they are set.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlm {
 
                        // ==========================

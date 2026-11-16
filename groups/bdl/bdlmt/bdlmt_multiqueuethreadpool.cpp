@@ -25,7 +25,7 @@ BSLS_IDENT_RCSID(bdlmt_multiqueuethreadpool_cpp,"$Id$ $CSID$")
 #include <bsl_memory.h>
 #include <bsl_vector.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace {
 
 /// Construct at the specified `arena` a `bdlmt::MultiQueueThreadPool_Queue`

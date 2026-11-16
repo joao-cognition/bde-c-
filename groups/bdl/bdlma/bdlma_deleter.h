@@ -55,7 +55,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bdlscm_version.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlma {
 
                               // =============

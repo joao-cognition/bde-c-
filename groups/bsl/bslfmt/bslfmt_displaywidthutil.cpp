@@ -18,7 +18,7 @@ BSLS_IDENT_RCSID(bslfmt_displaywidthutil_cpp,"$Id$ $CSID$")
 
 #include <limits>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace {
 

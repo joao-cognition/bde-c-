@@ -48,7 +48,7 @@ BSLS_IDENT_RCSID(balst_resolverimpl_windows_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
                          // ==========================
                          // local struct DbgHelpRecord
@@ -459,7 +459,7 @@ void reportError(const char *string)
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
                    // =======================================

@@ -29,7 +29,7 @@
 #include <ratio>
 #endif  // BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 using bsls::NameOf;
 
@@ -868,7 +868,7 @@ std::ostream& operator<<(std::ostream&   stream,
 // ----------------------------------------------------------------------------
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
 /// Write the specified `timeInterval` to the console.

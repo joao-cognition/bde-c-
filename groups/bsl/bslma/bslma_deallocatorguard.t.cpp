@@ -11,7 +11,7 @@
 #include <stdlib.h>     // `atoi`
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -96,7 +96,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                          HELPER CLASS FOR TESTING
 //-----------------------------------------------------------------------------
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 class TestAllocator {
     int   d_isDeallocateCalled;    // set if `deallocate` has bee called

@@ -52,7 +52,7 @@
 #include <bsls_performancehint.h>
 #include <bsls_timeinterval.h>
 #include <bsls_timeutil.h>  // `HashPerformance`
-#include <bsls_types.h>     // `BloombergLP::bsls::Types::Int64`
+#include <bsls_types.h>     // `BNP_Paribas::bsls::Types::Int64`
 
 #include <bsl_algorithm.h>  // sort
 #include <bsl_climits.h>    // INT_MAX
@@ -79,7 +79,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // ============================================================================

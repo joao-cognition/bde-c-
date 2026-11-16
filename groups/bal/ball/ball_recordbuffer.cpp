@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(ball_recordbuffer_cpp,"$Id$ $CSID$")
 
 #include <ball_severity.h>        // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                            // ------------------

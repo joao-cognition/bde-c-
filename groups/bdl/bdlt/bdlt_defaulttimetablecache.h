@@ -113,7 +113,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslma_allocator.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlt {
 
 class TimetableCache;

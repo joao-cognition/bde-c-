@@ -6,7 +6,7 @@ BSLS_IDENT_RCSID(ball_countingallocator_cpp,"$Id$ $CSID$")
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace ball {
 
                         // -----------------------

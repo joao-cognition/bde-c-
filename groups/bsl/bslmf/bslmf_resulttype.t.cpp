@@ -12,7 +12,7 @@
 #include <stdio.h>   // `printf`
 #include <stdlib.h>  // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -347,7 +347,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("\nFULL TEST"
                             "\n=========\n");
 
-        using BloombergLP::bslmf::ResultType;
+        using BNP_Paribas::bslmf::ResultType;
 
 #define ASSERT_SAME(...) \
         ASSERT((bsl::is_same<__VA_ARGS__>::value))

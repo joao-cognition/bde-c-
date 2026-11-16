@@ -62,7 +62,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_compilerfeatures.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdljsn {
 
 #if defined(BSLS_COMPILERFEATURES_SUPPORT_INLINE_NAMESPACE)  && \

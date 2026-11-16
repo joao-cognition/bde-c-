@@ -29,7 +29,7 @@ typedef pthread_t thread_t;
 #endif
 
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 typedef void *(*thread_func)(void *arg);
 

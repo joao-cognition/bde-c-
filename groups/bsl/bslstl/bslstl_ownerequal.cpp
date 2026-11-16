@@ -5,7 +5,7 @@
 BSLS_IDENT("$Id$ $CSID$")
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 

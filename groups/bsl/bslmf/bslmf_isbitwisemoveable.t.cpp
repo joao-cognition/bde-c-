@@ -21,7 +21,7 @@
 # pragma error_messages(off, functypequal)
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 // BDE_VERIFY pragma : -IND01
@@ -174,7 +174,7 @@ struct UserDefinedBwmTestType {
 struct UserDefinedBwmTestType2 {
 
     BSLMF_NESTED_TRAIT_DECLARATION(UserDefinedBwmTestType2,
-                                   BloombergLP::bslmf::IsBitwiseMoveable);
+                                   BNP_Paribas::bslmf::IsBitwiseMoveable);
 };
 
 /// One-byte simple structs should typically be bitwise moveable.
@@ -256,7 +256,7 @@ struct UserDefinedFakeTriviallyCopyableTestType {
 // Provide explicit traits specializations, ensuring that both means of
 // associating a trait with a type are tested.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <>
@@ -355,7 +355,7 @@ typedef struct {
 // function argument of type `true_type`, the second takes and extra function
 // argument of type `false_type`:
 // ```
-    namespace BloombergLP {
+    namespace BNP_Paribas {
 
     template <class TYPE>
     void destructiveMoveArrayImp(TYPE *to,
@@ -619,7 +619,7 @@ typedef struct {
 // "control" template that is not bitwise moveable.  First, we define the
 // non-bitwise-moveable template, `NonMoveableTemplate`:
 // ```
-    namespace BloombergLP {
+    namespace BNP_Paribas {
 
     template <class TYPE>
     struct NonMoveableTemplate
@@ -718,7 +718,7 @@ typedef struct {
 //
 // First, we declare a normal empty class which *is* bitwise moveable:
 // ```
-    namespace BloombergLP {
+    namespace BNP_Paribas {
     namespace xyza {
 
     /// This class is implicitly moveable by virtue of being only one byte

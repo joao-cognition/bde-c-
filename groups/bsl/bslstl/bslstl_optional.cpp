@@ -115,12 +115,12 @@ namespace bsl {
 
 #if !defined(BSLS_COMPILERFEATURES_SUPPORT_INLINE_VARIABLES)
 const nullopt_t nullopt =
-              nullopt_t(BloombergLP::bslstl::Optional_NulloptConstructToken());
+              nullopt_t(BNP_Paribas::bslstl::Optional_NulloptConstructToken());
 #endif
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslstl {
 
 }  // close package namespace

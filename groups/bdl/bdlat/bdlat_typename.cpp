@@ -3,7 +3,7 @@
 
 #include <bsls_assert.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 const char bdlat_TypeName_Imp::BDLAT_NAME_BOOL[]           = "bool";
 const char bdlat_TypeName_Imp::BDLAT_NAME_CHAR[]           = "char";

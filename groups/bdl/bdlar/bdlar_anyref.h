@@ -35,7 +35,7 @@ BSLS_IDENT("$Id: $")
 #include <bdlat_typecategory.h>
 #include <bdlat_valuetypefunctions.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlar {
 
                            // ============

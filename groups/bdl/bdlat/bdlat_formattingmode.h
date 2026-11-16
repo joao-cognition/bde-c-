@@ -58,7 +58,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bdlat_bdeatoverrides.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 /// This struct contains the symbolic constants for the formatting modes
 /// supported by the `bdlat` framework.

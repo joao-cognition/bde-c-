@@ -6,7 +6,7 @@
 #include <cstdio>    // `fprintf`
 #include <cstdlib>   // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace std;
 
 //=============================================================================

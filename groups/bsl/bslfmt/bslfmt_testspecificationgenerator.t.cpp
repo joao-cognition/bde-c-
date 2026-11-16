@@ -18,7 +18,7 @@
 # include <format>  //  oracle tests
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 // ============================================================================
 //                             TEST PLAN
 // ----------------------------------------------------------------------------

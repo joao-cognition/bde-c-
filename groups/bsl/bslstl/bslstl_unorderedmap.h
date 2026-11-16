@@ -1014,7 +1014,7 @@ BSLS_IDENT("$Id: $")
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP20_CONCEPTS) \
  && defined(BSLS_LIBRARYFEATURES_HAS_CPP20_RANGES)
 # define BSLSTL_UNORDEREDMAP_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T) \
-                  requires ::BloombergLP::bslmf::ContainerCompatibleRange<R, T>
+                  requires ::BNP_Paribas::bslmf::ContainerCompatibleRange<R, T>
 #else
 # define BSLSTL_UNORDEREDMAP_REQUIRES_CONTAINER_COMPATIBLE_RANGE(R, T)
 #endif
@@ -1070,20 +1070,20 @@ class unordered_map {
     /// This `typedef` is an alias for the policy used internally by this
     /// unordered map to extract the `KEY` value from the key-value pair
     /// objects maintained by this unordered map.
-    typedef BloombergLP::bslstl::UnorderedMapKeyConfiguration<const KEY,
+    typedef BNP_Paribas::bslstl::UnorderedMapKeyConfiguration<const KEY,
                                                               ValueType>
                                                         ListConfiguration;
 
     /// This typedef is an alias for the template instantiation of the
     /// underlying `bslstl::HashTable` used to implement this container.
-    typedef BloombergLP::bslstl::HashTable<ListConfiguration,
+    typedef BNP_Paribas::bslstl::HashTable<ListConfiguration,
                                              HASH,
                                              EQUAL,
                                              ALLOCATOR> HashTable;
 
     /// This typedef is an alias for the type of links maintained by the
     /// linked list of elements held by the underlying `bslstl::HashTable`.
-    typedef BloombergLP::bslalg::BidirectionalLink HashTableLink;
+    typedef BNP_Paribas::bslalg::BidirectionalLink HashTableLink;
 
     /// This typedef is an alias for the type of nodes that hold the values
     /// in this unordered map.
@@ -1091,7 +1091,7 @@ class unordered_map {
 
     /// This typedef is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil    MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil    MoveUtil;
 
     // FRIENDS
     template <class KEY2,
@@ -1161,13 +1161,13 @@ class unordered_map {
     typedef typename AllocatorTraits::pointer          pointer;
     typedef typename AllocatorTraits::const_pointer    const_pointer;
 
-    typedef BloombergLP::bslstl::HashTableIterator<
+    typedef BNP_Paribas::bslstl::HashTableIterator<
                              value_type, difference_type> iterator;
-    typedef BloombergLP::bslstl::HashTableIterator<
+    typedef BNP_Paribas::bslstl::HashTableIterator<
                        const value_type, difference_type> const_iterator;
-    typedef BloombergLP::bslstl::HashTableBucketIterator<
+    typedef BNP_Paribas::bslstl::HashTableBucketIterator<
                              value_type, difference_type> local_iterator;
-    typedef BloombergLP::bslstl::HashTableBucketIterator<
+    typedef BNP_Paribas::bslstl::HashTableBucketIterator<
                        const value_type, difference_type> const_local_iterator;
 
   private:
@@ -1477,7 +1477,7 @@ class unordered_map {
     /// with `original` is propagated for use in the newly-created unordered
     /// map.  `original` is left in a valid but unspecified state.
     unordered_map(
-          BloombergLP::bslmf::MovableRef<unordered_map> original);  // IMPLICIT
+          BNP_Paribas::bslmf::MovableRef<unordered_map> original);  // IMPLICIT
 
     /// Create an unordered map having the same value, hasher, key-equality
     /// comparator, and `max_load_factor` as the specified `original`.  Use
@@ -1488,7 +1488,7 @@ class unordered_map {
     /// for `basicAllocator` if the (template parameter) `ALLOCATOR` type is
     /// `bsl::allocator` (the default).
     unordered_map(
-                BloombergLP::bslmf::MovableRef<unordered_map>  original,
+                BNP_Paribas::bslmf::MovableRef<unordered_map>  original,
                 const typename type_identity<ALLOCATOR>::type& basicAllocator);
 
     /// Destroy this object and each of its elements.
@@ -1520,7 +1520,7 @@ class unordered_map {
     /// the type `value_type` be `move-constructible` (see {Requirements on
     /// `value_type`}).
     unordered_map&
-    operator=(BloombergLP::bslmf::MovableRef<unordered_map> rhs)
+    operator=(BNP_Paribas::bslmf::MovableRef<unordered_map> rhs)
         BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                 AllocatorTraits::is_always_equal::value &&
                                 std::is_nothrow_move_assignable<HASH>::value &&
@@ -1553,7 +1553,7 @@ class unordered_map {
     /// (see {Requirements on `value_type`}).  Note that `key` may be
     /// modified; it is guaranteed to be left in a valid state.
     typename add_lvalue_reference<VALUE>::type operator[](
-                                 BloombergLP::bslmf::MovableRef<key_type> key);
+                                 BNP_Paribas::bslmf::MovableRef<key_type> key);
 
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
     /// Return a reference providing modifiable access to the mapped-value
@@ -1570,8 +1570,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
         typename add_lvalue_reference<VALUE>::type>::type
     operator [](LOOKUP_KEY&& key)
     {
@@ -1596,14 +1596,14 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
         typename add_lvalue_reference<VALUE>::type>::type
     at(const LOOKUP_KEY& key) {
         HashTableLink *node = d_impl.find(key);
 
         if (!node) {
-            BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+            BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                       "unordered_map<...>::at(LOOKUP_KEY): invalid key value");
         }
         return static_cast<HashTableNode *>(node)->value().second;
@@ -1729,8 +1729,8 @@ class unordered_map {
     size_type erase(const key_type& key);
     template <class t_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<HASH, t_KEY>::value &&
-        BloombergLP::bslmf::IsTransparentPredicate<EQUAL,t_KEY>::value &&
+        BNP_Paribas::bslmf::IsTransparentPredicate<HASH, t_KEY>::value &&
+        BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,t_KEY>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
                         iterator>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
@@ -1765,8 +1765,8 @@ class unordered_map {
     /// equivalent to the key of at most one element in this unordered map.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       iterator>::type
     find(const LOOKUP_KEY& key)
         {
@@ -1958,7 +1958,7 @@ class unordered_map {
     /// newly-created entry and `true`.
     template <class BDE_OTHER_TYPE>
     pair<iterator, bool> insert_or_assign(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                                       BDE_OTHER_TYPE&&                    obj);
 
     /// If a key equivalent to the specified `key` already exists in this
@@ -1973,8 +1973,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template<class LOOKUP_KEY, class BDE_OTHER_TYPE>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
          , pair<iterator, bool> >::type
     insert_or_assign(LOOKUP_KEY&& key, BDE_OTHER_TYPE&& obj)
     {
@@ -2014,7 +2014,7 @@ class unordered_map {
     /// key already in the unordered_map.
     template <class BDE_OTHER_TYPE>
     iterator insert_or_assign(const_iterator                      hint,
-                              BloombergLP::bslmf::MovableRef<KEY> key,
+                              BNP_Paribas::bslmf::MovableRef<KEY> key,
                               BDE_OTHER_TYPE&&                    obj);
 
     /// If a key equivalent to the specified `key` already exists in this
@@ -2030,8 +2030,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template<class LOOKUP_KEY, class BDE_OTHER_TYPE>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
          , iterator>::type
     insert_or_assign(const_iterator   hint,
                      LOOKUP_KEY&&     key,
@@ -2061,8 +2061,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                        pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
         {
@@ -2152,7 +2152,7 @@ class unordered_map {
     /// respectively.  For C++03, `VALUE` must also be `copy-constructible`.
     template <class... Args>
     pair<iterator, bool> try_emplace(
-                              BloombergLP::bslmf::MovableRef<KEY> key,
+                              BNP_Paribas::bslmf::MovableRef<KEY> key,
                               Args&&...                           args);
 
     /// If a key equivalent to the specified `key` already exists in this
@@ -2169,8 +2169,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template<class LOOKUP_KEY, class... Args>
     typename bsl::enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
         && !bsl::is_convertible<LOOKUP_KEY&&, const_iterator>::value
         && !bsl::is_convertible<LOOKUP_KEY&&, iterator>::value,
            pair<iterator, bool> >::type
@@ -2213,7 +2213,7 @@ class unordered_map {
     /// C++03, `VALUE` must also be `copy-constructible`.
     template <class... Args>
     iterator try_emplace(const_iterator                      hint,
-                         BloombergLP::bslmf::MovableRef<KEY> key,
+                         BNP_Paribas::bslmf::MovableRef<KEY> key,
                          Args&&...                           args);
 
     /// If a key equivalent to the specified `key` already exists in this
@@ -2230,8 +2230,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template<class LOOKUP_KEY, class... Args>
     typename bsl::enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
            iterator>::type
     try_emplace(const_iterator hint, LOOKUP_KEY&& key, Args&&... args)
     {
@@ -2266,14 +2266,14 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
         typename add_lvalue_reference<const VALUE>::type>::type
     at(const LOOKUP_KEY& key) const {
         HashTableLink *node = d_impl.find(key);
 
         if (!node) {
-            BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+            BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                 "unordered_map<...>::at(LOOKUP_KEY) const: invalid key value");
         }
         return static_cast<HashTableNode *>(node)->value().second;
@@ -2325,8 +2325,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       size_type>::type
     bucket(const LOOKUP_KEY& key) const
     {
@@ -2359,8 +2359,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       size_type>::type
     count(const LOOKUP_KEY& key) const
         {
@@ -2383,8 +2383,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error
     template <class LOOKUP_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value &&
-            BloombergLP::bslmf::IsTransparentPredicate<EQUAL,
+        BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value &&
+            BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,
                                                        LOOKUP_KEY>::value,
         bool>::type
     contains(const LOOKUP_KEY& key) const
@@ -2410,8 +2410,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
         {
@@ -2443,8 +2443,8 @@ class unordered_map {
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       const_iterator>::type
     find(const LOOKUP_KEY& key) const
         {
@@ -2509,9 +2509,9 @@ class unordered_map {
 /// allocator.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class HASH = bsl::hash<KEY>,
     class EQUAL = bsl::equal_to<KEY>,
     class ALLOCATOR = bsl::allocator<pair<const KEY, VALUE>>,
@@ -2539,9 +2539,9 @@ template <
     class HASH,
     class EQUAL,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -2564,9 +2564,9 @@ template <
     class INPUT_ITERATOR,
     class HASH,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<std::is_invocable_v<HASH, const KEY &>>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
@@ -2587,9 +2587,9 @@ template <
     class INPUT_ITERATOR,
     class HASH,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<bsl::pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -2609,9 +2609,9 @@ unordered_map(INPUT_ITERATOR,
 template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 unordered_map(INPUT_ITERATOR,
@@ -2627,9 +2627,9 @@ unordered_map(INPUT_ITERATOR,
 template <
     class INPUT_ITERATOR,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<bsl::pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -2648,9 +2648,9 @@ unordered_map(INPUT_ITERATOR,
 template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 unordered_map(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
@@ -2663,9 +2663,9 @@ unordered_map(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
 template <
     class INPUT_ITERATOR,
     class ALLOC,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterKey_t<INPUT_ITERATOR>,
     class VALUE =
-               BloombergLP::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
+               BNP_Paribas::bslstl::IteratorUtil::IterMapped_t<INPUT_ITERATOR>,
     class DEFAULT_ALLOCATOR = bsl::allocator<bsl::pair<const KEY, VALUE>>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
     >
@@ -2913,10 +2913,10 @@ void unordered_map<KEY, VALUE,  HASH, EQUAL, ALLOCATOR>::constructFromRange(
     }
 
     if BSLS_KEYWORD_CONSTEXPR_CPP17 (
-        BloombergLP::bslstl::IteratorUtil::
+        BNP_Paribas::bslstl::IteratorUtil::
                        canCalculateInsertDistance<INPUT_ITERATOR,SENTINEL>()) {
         this->reserve(
-               BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+               BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
     }
 
     bool isInsertedFlag;  // value is not used
@@ -2939,10 +2939,10 @@ void unordered_map<KEY, VALUE,  HASH, EQUAL, ALLOCATOR>::constructFromRange(
                                                     size_t         numElements)
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_t>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     if (0 < numElements) {
         this->reserve(numElements);
@@ -3140,7 +3140,7 @@ unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_map(
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_map(
-                        BloombergLP::bslmf::MovableRef<unordered_map> original)
+                        BNP_Paribas::bslmf::MovableRef<unordered_map> original)
 : d_impl(MoveUtil::access(original).get_allocator())
 {
     unordered_map& lvalue = original;
@@ -3151,7 +3151,7 @@ unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_map(
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::unordered_map(
-                 BloombergLP::bslmf::MovableRef<unordered_map>  original,
+                 BNP_Paribas::bslmf::MovableRef<unordered_map>  original,
                  const typename type_identity<ALLOCATOR>::type& basicAllocator)
 : d_impl(MoveUtil::move(MoveUtil::access(original).d_impl), basicAllocator)
 {
@@ -3183,7 +3183,7 @@ template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>&
 unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::operator=(
-                             BloombergLP::bslmf::MovableRef<unordered_map> rhs)
+                             BNP_Paribas::bslmf::MovableRef<unordered_map> rhs)
     BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                 AllocatorTraits::is_always_equal::value &&
                                 std::is_nothrow_move_assignable<HASH>::value &&
@@ -3229,7 +3229,7 @@ template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 inline
 typename add_lvalue_reference<VALUE>::type
 unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::operator[](
-                                  BloombergLP::bslmf::MovableRef<key_type> key)
+                                  BNP_Paribas::bslmf::MovableRef<key_type> key)
 {
     bool           isInserted;  // not used
     HashTableLink *node = d_impl.insertKeyIfMissing(
@@ -3246,7 +3246,7 @@ unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::at(const key_type& key)
     HashTableLink *node = d_impl.find(key);
 
     if (!node) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                         "unordered_map<...>::at(key_type): invalid key value");
     }
 
@@ -3490,7 +3490,7 @@ template <class BDE_OTHER_TYPE>
 bsl::pair<typename unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::iterator,
           bool>
 bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::insert_or_assign(
-    BloombergLP::bslmf::MovableRef<KEY> key,
+    BNP_Paribas::bslmf::MovableRef<KEY> key,
     BDE_OTHER_TYPE&&                    obj)
 {
     typedef bsl::pair<iterator, bool> ResultType;
@@ -3525,7 +3525,7 @@ template <class BDE_OTHER_TYPE>
 typename unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::iterator
 bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::insert_or_assign(
                                       const_iterator                      hint,
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                                       BDE_OTHER_TYPE&&                    obj)
 {
     bool isInsertedFlag = false;
@@ -3620,7 +3620,7 @@ bsl::pair<
      typename bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::iterator,
      bool>
 bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                                       Args&&...                           args)
 {
     typedef bsl::pair<iterator, bool> ResultType;
@@ -3659,7 +3659,7 @@ inline
 typename bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::iterator
 bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::try_emplace(
                                  const_iterator                           hint,
-                                 BloombergLP::bslmf::MovableRef<KEY>      key,
+                                 BNP_Paribas::bslmf::MovableRef<KEY>      key,
                                  Args&&...                                args)
 {
     bool isInsertedFlag = false;
@@ -3687,10 +3687,10 @@ void unordered_map<KEY, VALUE,  HASH, EQUAL, ALLOCATOR>::insertFromRange(
     // `IteratorUtil::insertDistance` may be expensive for non-random-access
     // iterators.
 
-    if BSLS_KEYWORD_CONSTEXPR_CPP17 (BloombergLP::bslstl::IteratorUtil
+    if BSLS_KEYWORD_CONSTEXPR_CPP17 (BNP_Paribas::bslstl::IteratorUtil
                     ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()) {
         this->reserve(this->size()
-             + BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+             + BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
     }
 
     bool isInsertedFlag;  // value is not used
@@ -3713,10 +3713,10 @@ void unordered_map<KEY, VALUE,  HASH, EQUAL, ALLOCATOR>::insertFromRange(
                                                     size_t         numElements)
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_t>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     this->reserve(this->size() + numElements);
 
@@ -3738,7 +3738,7 @@ unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::at(
 {
     HashTableLink *target = d_impl.find(key);
     if (!target ){
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                         "unordered_map<...>::at(key_type): invalid key value");
     }
     return static_cast<HashTableNode *>(target)->value().second;
@@ -4007,7 +4007,7 @@ typename bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>::size_type
 bsl::erase_if(unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>&     m,
                                                            PREDICATE predicate)
 {
-    return BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(m, predicate);
+    return BNP_Paribas::bslstl::AlgorithmUtil::containerEraseIf(m, predicate);
 }
 
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
@@ -4032,7 +4032,7 @@ bsl::swap(bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR>& a,
 //:   (template parameter) type 'ALLOCATOR' is convertible from
 //:   'bslma::Allocator *'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslalg {
 
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
@@ -4060,8 +4060,8 @@ namespace bslmf {
 template <class KEY, class VALUE, class HASH, class EQUAL, class ALLOCATOR>
 struct IsBitwiseMoveable<
     bsl::unordered_map<KEY, VALUE, HASH, EQUAL, ALLOCATOR> >
-    : ::BloombergLP::bslmf::IsBitwiseMoveable<BloombergLP::bslstl::HashTable<
-          ::BloombergLP::bslstl::
+    : ::BNP_Paribas::bslmf::IsBitwiseMoveable<BNP_Paribas::bslstl::HashTable<
+          ::BNP_Paribas::bslstl::
                UnorderedMapKeyConfiguration<KEY, bsl::pair<const KEY, VALUE> >,
           HASH,
           EQUAL,

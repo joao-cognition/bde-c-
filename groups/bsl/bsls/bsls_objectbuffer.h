@@ -85,7 +85,7 @@ BSLS_IDENT("$Id: $")
 //     const my_String INARRAY[3] = {
 //         my_String("hello"),
 //         my_String("goodbye"),
-//         my_String("Bloomberg")
+//         my_String("BNP Paribas")
 //     };
 //
 //     manipulateStrings(INARRAY, 3);
@@ -210,7 +210,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_alignmentfromtype.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bsls {
 

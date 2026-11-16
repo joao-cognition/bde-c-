@@ -29,7 +29,7 @@
 # undef DELETE  // Awkward microsoft macro, that we would rather live without
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using std::numeric_limits;
 
 // ============================================================================
@@ -398,7 +398,7 @@ void transformAndTestValue(Uint64 seedValue)
                 }
 
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP17_INT_CHARCONV)
-                namespace imp = BloombergLP::bslstl;
+                namespace imp = BNP_Paribas::bslstl;
 
                 char iBuffer[1000];
                 imp::to_chars_result iSts = imp::to_chars(iBuffer,
@@ -1244,7 +1244,7 @@ int main(int argc, char *argv[])
                 }
 
 #if defined(BSLS_LIBRARYFEATURES_HAS_CPP17_INT_CHARCONV)
-                namespace imp = BloombergLP::bslstl;
+                namespace imp = BNP_Paribas::bslstl;
 
                 char iBuffer[1000];
                 imp::to_chars_result iSts = imp::to_chars(

@@ -40,7 +40,7 @@
 #include <string.h>
 #include <wchar.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 
@@ -387,7 +387,7 @@ void aSsErT(bool condition, const char *message, int line)
     template <class HASH_ALGORITHM>
     void hashAppend(HASH_ALGORITHM &hashAlg, const Point &point)
     {
-        using ::BloombergLP::bslh::hashAppend;
+        using ::BNP_Paribas::bslh::hashAppend;
         hashAppend(hashAlg, point.d_x);
         hashAppend(hashAlg, point.d_y);
     }

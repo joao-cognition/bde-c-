@@ -35,7 +35,7 @@ BSLS_IDENT_RCSID(baljsn_parserutil_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 template <class TYPE>
 int loadInfOrNan(TYPE *value, const bsl::string_view& data)
@@ -174,7 +174,7 @@ int base64Decode(bsl::vector<char>       *value,
 }  // close namespace u
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
                              // -----------------

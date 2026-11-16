@@ -8,7 +8,7 @@ BSLS_IDENT("$Id$ $CSID$")
 #include <bslma_testallocator.h>          // for testing only
 #include <bslmf_istriviallycopyable.h>    // for testing only
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 }  // close enterprise namespace
 

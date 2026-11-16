@@ -23,7 +23,7 @@
 #include <stdio.h>      // `printf`
 #include <stdlib.h>     // `atoi`
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN
@@ -195,7 +195,7 @@ struct my_BothTraitsClass {
                                    bslma::UsesBslmaAllocator);
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 // Being empty, `my_NilTraitClass` would normally be implicitly bitwise

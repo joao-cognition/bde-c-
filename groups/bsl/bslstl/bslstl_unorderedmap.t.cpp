@@ -66,7 +66,7 @@
 #pragma GCC diagnostic ignored "-Wlarger-than="
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 using bsl::pair;
 

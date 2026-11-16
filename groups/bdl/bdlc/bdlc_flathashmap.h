@@ -307,7 +307,7 @@ BSLS_IDENT("$Id: $")
 
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlc {
 
 // FORWARD DECLARATIONS
@@ -608,8 +608,8 @@ class FlatHashMap {
     /// return a reference to the newly mapped value.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , VALUE&>::type
     operator[](LOOKUP_KEY&& key)
     {
@@ -631,8 +631,8 @@ class FlatHashMap {
     /// exception.  Note that this method is not exception-neutral.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , VALUE&>::type
     at(const LOOKUP_KEY& key)
     {
@@ -640,7 +640,7 @@ class FlatHashMap {
 
         iterator iter = find(key);
         if (iter == end()) {
-            BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+            BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                              "FlatHashMap::at(LOOKUP_KEY): invalid key_value");
         }
         return iter->second;
@@ -671,8 +671,8 @@ class FlatHashMap {
     /// element.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
     {
@@ -734,8 +734,8 @@ class FlatHashMap {
     /// element.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t>::type
     erase(LOOKUP_KEY&& key)
     {
@@ -773,8 +773,8 @@ class FlatHashMap {
     /// entry exists in this map.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , iterator>::type
     find(const LOOKUP_KEY& key)
     {
@@ -877,7 +877,7 @@ class FlatHashMap {
     /// and `true`.  `obj` is left in a (valid) unspecified state.
     template<class M>
     bsl::pair<iterator, bool> insert_or_assign(
-                             BloombergLP::bslmf::MovableRef<KEY> key, M&& obj);
+                             BNP_Paribas::bslmf::MovableRef<KEY> key, M&& obj);
 
     /// If this map contains an entry with a key equivalent to the specified
     /// `key`, assign the specified `obj` to the `mapped_type` of that entry,
@@ -886,8 +886,8 @@ class FlatHashMap {
     /// and `true`.  `obj` is left in a (valid) unspecified state.
     template <class LOOKUP_KEY, class M>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     insert_or_assign(LOOKUP_KEY&& key, M&& obj)
     {
@@ -915,7 +915,7 @@ class FlatHashMap {
     /// state.
     template <class MAPPED>
     iterator insert_or_assign(const_iterator,
-                              BloombergLP::bslmf::MovableRef<KEY> key,
+                              BNP_Paribas::bslmf::MovableRef<KEY> key,
                               MAPPED&& obj);
 
     /// If this map contains an entry with a key equivalent to the specified
@@ -925,8 +925,8 @@ class FlatHashMap {
     /// state.
     template <class LOOKUP_KEY, class MAPPED>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , iterator>::type
     insert_or_assign(const_iterator, LOOKUP_KEY&& key, MAPPED&& obj)
     {
@@ -989,7 +989,7 @@ class FlatHashMap {
     /// C++03, `VALUE` must also be `copy-constructible`.
     template <class... ARGS>
     bsl::pair<iterator, bool> try_emplace(
-                                     BloombergLP::bslmf::MovableRef<KEY> key,
+                                     BNP_Paribas::bslmf::MovableRef<KEY> key,
                                      ARGS&&...                           args);
 
     /// If a key equivalent to the specified `key` already exists in this map
@@ -1003,8 +1003,8 @@ class FlatHashMap {
     /// C++03, `VALUE` must also be `copy-constructible`.
     template <class LOOKUP_KEY, class... ARGS>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<iterator, bool> >::type
     try_emplace(LOOKUP_KEY&& key, ARGS&&... args)
     {
@@ -1039,7 +1039,7 @@ class FlatHashMap {
     /// respectively.  For C++03, `VALUE` must also be `copy-constructible`.
     template <class... ARGS>
     iterator try_emplace(const_iterator,
-                         BloombergLP::bslmf::MovableRef<KEY> key,
+                         BNP_Paribas::bslmf::MovableRef<KEY> key,
                          ARGS&&...                           args);
 
     /// If a key equivalent to the specified `key` already exists in this map
@@ -1052,8 +1052,8 @@ class FlatHashMap {
     /// `VALUE` must also be `copy-constructible`.
     template <class LOOKUP_KEY, class... ARGS>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , iterator>::type
     try_emplace(const_iterator, LOOKUP_KEY&& key, ARGS&&... args)
     {
@@ -1106,8 +1106,8 @@ class FlatHashMap {
     /// exception-neutral.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , const VALUE&>::type
     at(const LOOKUP_KEY& key) const
     {
@@ -1115,7 +1115,7 @@ class FlatHashMap {
 
         const_iterator iter = find(key);
         if (iter == end()) {
-            BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+            BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                        "FlatHashMap::at(LOOKUP_KEY) const: invalid key_value");
         }
         return iter->second;
@@ -1133,8 +1133,8 @@ class FlatHashMap {
     /// to the specified `key`.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        &&  BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        &&  BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
         , bool>::type
     contains(const LOOKUP_KEY& key) const
     {
@@ -1153,8 +1153,8 @@ class FlatHashMap {
     /// keys, the returned value will be either 0 or 1.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::size_t >::type
     count(const LOOKUP_KEY& key) const
     {
@@ -1188,8 +1188,8 @@ class FlatHashMap {
     /// element.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , bsl::pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
     {
@@ -1208,8 +1208,8 @@ class FlatHashMap {
     /// this map.
     template <class LOOKUP_KEY>
     typename bsl::enable_if<
-            BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-         && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
+            BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+         && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value
           , const_iterator>::type
     find(const LOOKUP_KEY& key) const
     {
@@ -1653,7 +1653,7 @@ VALUE& FlatHashMap<KEY, VALUE, HASH, EQUAL>::at(const KEY& key)
     iterator node = d_impl.find(key);
 
     if (node == d_impl.end()) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                           "FlatHashMap<...>::at(key_type): invalid key value");
     }
 
@@ -1772,7 +1772,7 @@ template <class MAPPED>
 inline
 bsl::pair<typename FlatHashMap<KEY, VALUE, HASH, EQUAL>::iterator, bool>
 FlatHashMap<KEY, VALUE, HASH, EQUAL>::insert_or_assign(
-                                       BloombergLP::bslmf::MovableRef<KEY> key,
+                                       BNP_Paribas::bslmf::MovableRef<KEY> key,
                                        MAPPED&&                            obj)
 {
     const KEY& lvalue = key;
@@ -1803,7 +1803,7 @@ inline
 typename FlatHashMap<KEY, VALUE, HASH, EQUAL>::iterator
 FlatHashMap<KEY, VALUE, HASH, EQUAL>::insert_or_assign(
                                        const_iterator,
-                                       BloombergLP::bslmf::MovableRef<KEY> key,
+                                       BNP_Paribas::bslmf::MovableRef<KEY> key,
                                        MAPPED&&                            obj)
 {
     const KEY& lvalue = key;
@@ -1862,7 +1862,7 @@ template <class KEY, class VALUE, class HASH, class EQUAL>
 template <class... ARGS>
 bsl::pair<typename FlatHashMap<KEY, VALUE, HASH, EQUAL>::iterator, bool>
 FlatHashMap<KEY, VALUE, HASH, EQUAL>::try_emplace(
-                                      BloombergLP::bslmf::MovableRef<KEY> key,
+                                      BNP_Paribas::bslmf::MovableRef<KEY> key,
                                       ARGS&&...                           args)
 {
     return d_impl.try_emplace(
@@ -1891,7 +1891,7 @@ template <class KEY, class VALUE, class HASH, class EQUAL>
 template <class... ARGS>
 typename FlatHashMap<KEY, VALUE, HASH, EQUAL>::iterator
 FlatHashMap<KEY, VALUE, HASH, EQUAL>::try_emplace(const_iterator,
-                         BloombergLP::bslmf::MovableRef<KEY> key,
+                         BNP_Paribas::bslmf::MovableRef<KEY> key,
                          ARGS&&...                           args)
 {
     return d_impl.try_emplace(
@@ -1941,7 +1941,7 @@ const VALUE& FlatHashMap<KEY, VALUE, HASH, EQUAL>::at(const KEY& key) const
     const_iterator node = d_impl.find(key);
 
     if (node == d_impl.end()) {
-        BloombergLP::bslstl::StdExceptUtil::throwOutOfRange(
+        BNP_Paribas::bslstl::StdExceptUtil::throwOutOfRange(
                     "FlatHashMap<...>::at(key_type) const: invalid key value");
     }
 

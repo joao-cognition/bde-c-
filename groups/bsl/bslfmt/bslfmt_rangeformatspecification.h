@@ -69,7 +69,7 @@ BSLS_IDENT("$Id: $")
 #include <cstddef>  // `std::size_t`
 
 #ifndef BSLS_LIBRARYFEATURES_HAS_CPP23_RANGE_FORMAT
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslfmt {
 
                   // ===========================================

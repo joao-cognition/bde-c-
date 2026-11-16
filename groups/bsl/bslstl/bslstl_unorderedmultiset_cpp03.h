@@ -64,24 +64,24 @@ class unordered_multiset
     /// This typedef is an alias for the policy used internally by this
     /// container to extract the `KEY` value from the values maintained by
     /// this unordered multiset.
-    typedef ::BloombergLP::bslstl::UnorderedSetKeyConfiguration<ValueType>
+    typedef ::BNP_Paribas::bslstl::UnorderedSetKeyConfiguration<ValueType>
                                                              ListConfiguration;
 
     /// This typedef is an alias for the template instantiation of the
     /// underlying `bslstl::HashTable` used to implement this unordered
     /// multiset.
-    typedef ::BloombergLP::bslstl::HashTable<ListConfiguration,
+    typedef ::BNP_Paribas::bslstl::HashTable<ListConfiguration,
                                              HASH,
                                              EQUAL,
                                              ALLOCATOR>      HashTable;
 
     /// This typedef is an alias for the type of links maintained by the
     /// linked list of elements held by the underlying `bslstl::HashTable`.
-    typedef ::BloombergLP::bslalg::BidirectionalLink         HashTableLink;
+    typedef ::BNP_Paribas::bslalg::BidirectionalLink         HashTableLink;
 
     /// This typedef is a convenient alias for the utility associated with
     /// movable references.
-    typedef BloombergLP::bslmf::MovableRefUtil               MoveUtil;
+    typedef BNP_Paribas::bslmf::MovableRefUtil               MoveUtil;
 
     // FRIENDS
     template <class KEY2,
@@ -107,10 +107,10 @@ class unordered_multiset
     typedef typename AllocatorTraits::pointer          pointer;
     typedef typename AllocatorTraits::const_pointer    const_pointer;
 
-    typedef ::BloombergLP::bslstl::HashTableIterator<
+    typedef ::BNP_Paribas::bslstl::HashTableIterator<
                     const value_type, difference_type> iterator;
 
-    typedef ::BloombergLP::bslstl::HashTableBucketIterator<
+    typedef ::BNP_Paribas::bslstl::HashTableBucketIterator<
                     const value_type, difference_type> local_iterator;
 
     typedef iterator                                   const_iterator;
@@ -120,8 +120,8 @@ class unordered_multiset
     // TRAITS
     BSLMF_NESTED_TRAIT_DECLARATION_IF(
                     unordered_multiset,
-                    ::BloombergLP::bslmf::IsBitwiseMoveable,
-                    ::BloombergLP::bslmf::IsBitwiseMoveable<HashTable>::value);
+                    ::BNP_Paribas::bslmf::IsBitwiseMoveable,
+                    ::BNP_Paribas::bslmf::IsBitwiseMoveable<HashTable>::value);
 
   private:
     // DATA
@@ -182,7 +182,7 @@ class unordered_multiset
     /// newly-created unordered multiset.  `original` is left in a valid but
     /// unspecified state.
     unordered_multiset(
-                  BloombergLP::bslmf::MovableRef<unordered_multiset> original);
+                  BNP_Paribas::bslmf::MovableRef<unordered_multiset> original);
 
     /// Create an unordered multiset having the same value as the specified
     /// `original` object that uses the specified `basicAllocator` to supply
@@ -213,7 +213,7 @@ class unordered_multiset
     /// supplied for `basicAllocator` if the (template parameter) type
     /// `ALLOCATOR` is `bsl::allocator` (the default).
     unordered_multiset(
-            BloombergLP::bslmf::MovableRef<unordered_multiset> original,
+            BNP_Paribas::bslmf::MovableRef<unordered_multiset> original,
             const typename type_identity<ALLOCATOR>::type&     basicAllocator);
 
     /// Create an unordered multiset, and insert each `value_type` object in
@@ -471,7 +471,7 @@ class unordered_multiset
     /// `KEY` be both `move-assignable` and `move-insertable` into this
     /// unordered multiset (see {Requirements on `KEY`}).
     unordered_multiset&
-    operator=(BloombergLP::bslmf::MovableRef<unordered_multiset> rhs)
+    operator=(BNP_Paribas::bslmf::MovableRef<unordered_multiset> rhs)
                             BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                 AllocatorTraits::is_always_equal::value
                              && std::is_nothrow_move_assignable<HASH>::value
@@ -527,8 +527,8 @@ class unordered_multiset
     /// at most one equivalent-key group in this unordered multiset.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       pair<iterator, iterator> >::type
     equal_range(const LOOKUP_KEY& key)
         {
@@ -559,8 +559,8 @@ class unordered_multiset
     size_type erase(const key_type& key);
     template <class t_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<HASH, t_KEY>::value &&
-        BloombergLP::bslmf::IsTransparentPredicate<EQUAL,t_KEY>::value &&
+        BNP_Paribas::bslmf::IsTransparentPredicate<HASH, t_KEY>::value &&
+        BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,t_KEY>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
                         iterator>::value &&
         !is_convertible<BSLS_COMPILERFEATURES_FORWARD_REF(t_KEY),
@@ -612,8 +612,8 @@ class unordered_multiset
     /// at most one equivalent-key group in this unordered multiset.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       iterator>::type
     find(const LOOKUP_KEY& key)
         {
@@ -645,7 +645,7 @@ class unordered_multiset
     /// equivalent to `value`.  This method requires that the (template
     /// parameter) type `KEY` be `move-insertable` into this unordered
     /// multiset (see {Requirements on `KEY`}).
-    iterator insert(BloombergLP::bslmf::MovableRef<value_type> value);
+    iterator insert(BNP_Paribas::bslmf::MovableRef<value_type> value);
 
     /// Insert the specified `value` into this unordered multiset (in
     /// constant time if the specified `hint` refers to an element in this
@@ -680,7 +680,7 @@ class unordered_multiset
     /// is an iterator in the range `[begin() .. end()]` (both endpoints
     /// included).
     iterator insert(const_iterator                             hint,
-                    BloombergLP::bslmf::MovableRef<value_type> value);
+                    BNP_Paribas::bslmf::MovableRef<value_type> value);
 
     /// Insert into this unordered multiset the value of each `value_type`
     /// object in the range starting at the specified `first` iterator and
@@ -1168,8 +1168,8 @@ class unordered_multiset
     /// key is equivalent to the specified `key`.
     template <class LOOKUP_KEY>
     typename enable_if<
-        BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value &&
-            BloombergLP::bslmf::IsTransparentPredicate<EQUAL,
+        BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value &&
+            BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,
                                                        LOOKUP_KEY>::value,
         bool>::type
     contains(const LOOKUP_KEY& key) const
@@ -1210,8 +1210,8 @@ class unordered_multiset
     /// at most one equivalent-key group in this unordered multiset.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       const_iterator>::type
     find(const LOOKUP_KEY& key) const
         {
@@ -1231,13 +1231,13 @@ class unordered_multiset
     /// one equivalent-key group in this unordered multiset.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       size_type>::type
     count(const LOOKUP_KEY& key) const
         {
             // Note: implemented inline due to Sun CC compilation error.
-            typedef ::BloombergLP::bslalg::BidirectionalNode<value_type> BNode;
+            typedef ::BNP_Paribas::bslalg::BidirectionalNode<value_type> BNode;
 
             size_type result = 0;
             for (HashTableLink *cursor = d_impl.find(key);
@@ -1269,8 +1269,8 @@ class unordered_multiset
     /// at most one equivalent-key group in this unordered multiset.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       pair<const_iterator, const_iterator> >::type
     equal_range(const LOOKUP_KEY& key) const
         {
@@ -1323,8 +1323,8 @@ class unordered_multiset
     /// Note: implemented inline due to Sun CC compilation error.
     template <class LOOKUP_KEY>
     typename enable_if<
-           BloombergLP::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
-        && BloombergLP::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
+           BNP_Paribas::bslmf::IsTransparentPredicate<HASH, LOOKUP_KEY>::value
+        && BNP_Paribas::bslmf::IsTransparentPredicate<EQUAL,LOOKUP_KEY>::value,
                       size_type>::type
     bucket(const LOOKUP_KEY& key) const
     {
@@ -1375,7 +1375,7 @@ class unordered_multiset
 /// supplied allocator meets the requirements of a standard allocator.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class HASH = bsl::hash<KEY>,
     class EQUAL = bsl::equal_to<KEY>,
     class ALLOCATOR = bsl::allocator<KEY>,
@@ -1399,7 +1399,7 @@ unordered_multiset(INPUT_ITERATOR,
 /// unless the supplied allocator is convertible to `bsl::allocator<KEY>`.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class HASH,
     class EQUAL,
     class ALLOC,
@@ -1423,7 +1423,7 @@ unordered_multiset(
 /// allocator meets the requirements of a standard allocator.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class HASH,
     class ALLOCATOR,
     class = bsl::enable_if_t<std::is_invocable_v<HASH, const KEY &>>,
@@ -1443,7 +1443,7 @@ unordered_multiset(INPUT_ITERATOR,
 /// supplied allocator is convertible to `bsl::allocator<KEY>`.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class HASH,
     class ALLOC,
     class DEFAULT_ALLOCATOR = bsl::allocator<KEY>,
@@ -1464,7 +1464,7 @@ unordered_multiset(
 template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 unordered_multiset(INPUT_ITERATOR,
@@ -1479,7 +1479,7 @@ unordered_multiset(INPUT_ITERATOR,
 /// convertible to `bsl::allocator<KEY>`.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class ALLOC,
     class DEFAULT_ALLOCATOR = bsl::allocator<KEY>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
@@ -1498,7 +1498,7 @@ unordered_multiset(
 template <
     class INPUT_ITERATOR,
     class ALLOCATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class = bsl::enable_if_t<bsl::IsStdAllocator_v<ALLOCATOR>>
     >
 unordered_multiset(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
@@ -1510,7 +1510,7 @@ unordered_multiset(INPUT_ITERATOR, INPUT_ITERATOR, ALLOCATOR)
 /// convertible to `bsl::allocator<KEY>`.
 template <
     class INPUT_ITERATOR,
-    class KEY = BloombergLP::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
+    class KEY = BNP_Paribas::bslstl::IteratorUtil::IterVal_t<INPUT_ITERATOR>,
     class ALLOC,
     class DEFAULT_ALLOCATOR = bsl::allocator<KEY>,
     class = bsl::enable_if_t<bsl::is_convertible_v<ALLOC *, DEFAULT_ALLOCATOR>>
@@ -1740,10 +1740,10 @@ void unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::constructFromRange(
     }
 
     if BSLS_KEYWORD_CONSTEXPR_CPP17 (
-        BloombergLP::bslstl::IteratorUtil::
+        BNP_Paribas::bslstl::IteratorUtil::
                        canCalculateInsertDistance<INPUT_ITERATOR,SENTINEL>()) {
         this->reserve(
-               BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+               BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
     }
 
     while (first != last) {
@@ -1764,10 +1764,10 @@ void unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::constructFromRange(
                                                     size_t         numElements)
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_t>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     if (0 < numElements) {
         this->reserve(numElements);
@@ -1795,10 +1795,10 @@ void unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::insertFromRange(
     // `IteratorUtil::insertDistance` may be expensive for non-random-access
     /// iterators.
 
-    if BSLS_KEYWORD_CONSTEXPR_CPP17 (BloombergLP::bslstl::IteratorUtil
+    if BSLS_KEYWORD_CONSTEXPR_CPP17 (BNP_Paribas::bslstl::IteratorUtil
                     ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()) {
         this->reserve(this->size()
-             + BloombergLP::bslstl::IteratorUtil::insertDistance(first, last));
+             + BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last));
     }
 
     while (first != last) {
@@ -1819,10 +1819,10 @@ void unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::insertFromRange(
                                                     size_t         numElements)
 {
     BSLS_ASSERT_SAFE((
-        !BloombergLP::bslstl::IteratorUtil
+        !BNP_Paribas::bslstl::IteratorUtil
                        ::canCalculateInsertDistance<INPUT_ITERATOR, SENTINEL>()
         || numElements == static_cast<size_t>(
-             BloombergLP::bslstl::IteratorUtil::insertDistance(first, last))));
+             BNP_Paribas::bslstl::IteratorUtil::insertDistance(first, last))));
 
     this->reserve(this->size() + numElements);
 
@@ -1893,7 +1893,7 @@ unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::unordered_multiset(
 template <class KEY, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::unordered_multiset(
-                   BloombergLP::bslmf::MovableRef<unordered_multiset> original)
+                   BNP_Paribas::bslmf::MovableRef<unordered_multiset> original)
 : d_impl(MoveUtil::move(MoveUtil::access(original).d_impl))
 {
 }
@@ -1910,7 +1910,7 @@ unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::unordered_multiset(
 template <class KEY, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::unordered_multiset(
-             BloombergLP::bslmf::MovableRef<unordered_multiset> original,
+             BNP_Paribas::bslmf::MovableRef<unordered_multiset> original,
              const typename type_identity<ALLOCATOR>::type&     basicAllocator)
 : d_impl(MoveUtil::move(MoveUtil::access(original).d_impl), basicAllocator)
 {
@@ -2072,7 +2072,7 @@ template <class KEY, class HASH, class EQUAL, class ALLOCATOR>
 inline
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>&
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::operator=(
-                        BloombergLP::bslmf::MovableRef<unordered_multiset> rhs)
+                        BNP_Paribas::bslmf::MovableRef<unordered_multiset> rhs)
                              BSLS_KEYWORD_NOEXCEPT_SPECIFICATION(
                                  AllocatorTraits::is_always_equal::value
                               && std::is_nothrow_move_assignable<HASH>::value
@@ -2794,7 +2794,7 @@ template <class KEY, class HASH, class EQUAL, class ALLOCATOR>
 typename unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::size_type
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::erase(const key_type& key)
 {
-    typedef ::BloombergLP::bslalg::BidirectionalNode<value_type> BNode;
+    typedef ::BNP_Paribas::bslalg::BidirectionalNode<value_type> BNode;
 
     HashTableLink *target = d_impl.find(key);
     if (target) {
@@ -2852,7 +2852,7 @@ template <class KEY, class HASH, class EQUAL, class ALLOCATOR>
 inline
 typename unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::iterator
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::insert(
-                              BloombergLP::bslmf::MovableRef<value_type> value)
+                              BNP_Paribas::bslmf::MovableRef<value_type> value)
 {
     return iterator(d_impl.insert(MoveUtil::move(value)));
 }
@@ -2872,7 +2872,7 @@ inline
 typename unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::iterator
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::insert(
                               const_iterator                             hint,
-                              BloombergLP::bslmf::MovableRef<value_type> value)
+                              BNP_Paribas::bslmf::MovableRef<value_type> value)
 {
     return iterator(d_impl.insert(MoveUtil::move(value), hint.node()));
 }
@@ -3055,7 +3055,7 @@ typename unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::size_type
 unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::count(
                                                      const key_type& key) const
 {
-    typedef ::BloombergLP::bslalg::BidirectionalNode<value_type> BNode;
+    typedef ::BNP_Paribas::bslalg::BidirectionalNode<value_type> BNode;
 
     size_type result = 0;
     for (HashTableLink *cursor = d_impl.find(key);
@@ -3202,7 +3202,7 @@ typename bsl::unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>::size_type
 bsl::erase_if(unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>& ms,
               PREDICATE                                        predicate)
 {
-    return BloombergLP::bslstl::AlgorithmUtil::containerEraseIf(ms, predicate);
+    return BNP_Paribas::bslstl::AlgorithmUtil::containerEraseIf(ms, predicate);
 }
 
 template <class KEY, class HASH, class EQUAL, class ALLOCATOR>
@@ -3228,7 +3228,7 @@ bsl::swap(bsl::unordered_multiset<KEY, HASH, EQUAL, ALLOCATOR>& a,
 //:   (template parameter) type 'ALLOCATOR' is convertible from
 //:   'bslma::Allocator *'.
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslalg {
 

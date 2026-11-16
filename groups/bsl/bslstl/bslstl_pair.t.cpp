@@ -73,7 +73,7 @@
 # endif
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsls::NameOf;
 
 //=============================================================================
@@ -1055,7 +1055,7 @@ VolatileMovableType::operator=(volatile VolatileMovableType& rhs)
 
 inline
 VolatileMovableType& VolatileMovableType::operator=(
-              BloombergLP::bslmf::MovableRef<volatile VolatileMovableType> rhs)
+              BNP_Paribas::bslmf::MovableRef<volatile VolatileMovableType> rhs)
 {
     volatile VolatileMovableType& lvalue = rhs;
 
@@ -1853,7 +1853,7 @@ struct TupleApiTestDriver
 }  // close unnamed namespace
 
 // TRAITS
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <>
 struct UsesBslmaAllocator<u::AlBase> : bsl::true_type {};
@@ -2263,7 +2263,7 @@ size_t my_AllocArgString<ALLOC>::length() const
     return strlen(d_data_p);
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 template <class ALLOC>
 struct UsesAllocatorArgT<my_AllocArgString<ALLOC> > : bsl::true_type {};
@@ -2491,7 +2491,7 @@ struct my_CopyTrivial {
     int d_data;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 template <>
@@ -2527,7 +2527,7 @@ struct is_trivially_default_constructible<my_CopyBitwise>
 
 struct my_NoTraits : my_NonTrivialBaseClass {};
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 // Empty classes are bitwise movable by default.  Specialize for `my_NoTraits`
@@ -7558,7 +7558,7 @@ int main(int argc, char *argv[])
         //  Prior to C++11, BDE supported move operations through types like
         //  `bslma::ManagedPtr` that emulate move semantics in the same way
         //  that `std::auto_ptr` did.  Such code must still continue to compile
-        //  for Bloomberg with a C++11 library, even though the standard makes
+        //  for BNP Paribas with a C++11 library, even though the standard makes
         //  no such requirement.  Note that due to implementation details of
         //  the `pair` class, it is necessary to test support as `first` and
         //  `second` independently.
@@ -9424,7 +9424,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("\nTESTING `hashAppend`"
                             "\n====================\n");
 
-        typedef ::BloombergLP::bslh::Hash<> Hasher;
+        typedef ::BNP_Paribas::bslh::Hash<> Hasher;
         typedef Hasher::result_type         HashType;
 
         {
@@ -9627,7 +9627,7 @@ int main(int argc, char *argv[])
         // Testing:
         //   pair(const pair<U1, U2>&            rhs);
         //   pair(const pair<U1, U2>&            rhs,
-        //        BloombergLP::bslma::Allocator *basicAllocator);
+        //        BNP_Paribas::bslma::Allocator *basicAllocator);
         // --------------------------------------------------------------------
 
         if (verbose) printf("\nTESTING CONVERSION CONSTRUCTORS"

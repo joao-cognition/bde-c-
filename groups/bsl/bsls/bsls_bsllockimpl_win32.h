@@ -54,7 +54,7 @@ extern "C" {
 
 }  // extern "C"
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bsls {
 
                               // =======================

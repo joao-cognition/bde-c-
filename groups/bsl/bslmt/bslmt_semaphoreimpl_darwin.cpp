@@ -28,7 +28,7 @@ BSLS_IDENT_RCSID(bslmt_semaphoreimpl_darwin_cpp,"$Id$ $CSID$")
 #define SEM_NAME_LEN PSEMNAMLEN
 #endif
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
               // ----------------------------------------------
               // class SemaphoreImpl<Platform::DarwinSemaphore>

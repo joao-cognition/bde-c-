@@ -21,8 +21,8 @@ BSLS_IDENT("$Id: $")
 //
 ///Alternative Systems for Telemetry
 ///---------------------------------
-// Bloomberg software may alternatively use the GUTS telemetry API, which is
-// integrated into Bloomberg infrastructure.
+// BNP Paribas software may alternatively use the GUTS telemetry API, which is
+// integrated into BNP Paribas infrastructure.
 //
 ///Thread Safety
 ///-------------
@@ -526,7 +526,7 @@ BSLS_IDENT("$Id: $")
 // note that the static collector address must be statically initialized (see
 // `Metrics_Helper::CollectorPtr`).
 #define BALM_METRICS_UPDATE(CATEGORY, METRIC1, VALUE1) do {                   \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -546,7 +546,7 @@ BSLS_IDENT("$Id: $")
  } while (0)
 
 #define BALM_METRICS_UPDATE2(CATEGORY, METRIC1, VALUE1, METRIC2, VALUE2) do { \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -576,7 +576,7 @@ BSLS_IDENT("$Id: $")
                              VALUE2,                                          \
                              METRIC3,                                         \
                              VALUE3) do {                                     \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -612,7 +612,7 @@ BSLS_IDENT("$Id: $")
                              VALUE3,                                          \
                              METRIC4,                                         \
                              VALUE4) do {                                     \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -654,7 +654,7 @@ BSLS_IDENT("$Id: $")
                              VALUE4,                                          \
                              METRIC5,                                         \
                              VALUE5) do {                                     \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -702,7 +702,7 @@ BSLS_IDENT("$Id: $")
                              VALUE5,                                          \
                              METRIC6,                                         \
                              VALUE6) do {                                     \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -744,7 +744,7 @@ BSLS_IDENT("$Id: $")
 
 #define BALM_METRICS_TYPED_UPDATE(CATEGORY, METRIC, VALUE, PREFERRED_TYPE)    \
  do {                                                                         \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -766,7 +766,7 @@ BSLS_IDENT("$Id: $")
  } while (0)
 
 #define BALM_METRICS_DYNAMIC_UPDATE(CATEGORY, METRIC, VALUE) do {             \
-    using namespace BloombergLP;                                              \
+    using namespace BNP_Paribas;                                              \
     if (balm::DefaultMetricsManager::instance()) {                            \
         balm::CollectorRepository& repository =                               \
              balm::DefaultMetricsManager::instance()->collectorRepository();  \
@@ -783,7 +783,7 @@ BSLS_IDENT("$Id: $")
                         // =======================
 
 #define BALM_METRICS_INT_UPDATE(CATEGORY, METRIC1, VALUE1) do {               \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -807,7 +807,7 @@ BSLS_IDENT("$Id: $")
                                  VALUE1,                                      \
                                  METRIC2,                                     \
                                  VALUE2) do {                                 \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -837,7 +837,7 @@ BSLS_IDENT("$Id: $")
                                  VALUE2,                                      \
                                  METRIC3,                                     \
                                  VALUE3) do {                                 \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -873,7 +873,7 @@ BSLS_IDENT("$Id: $")
                                  VALUE3,                                      \
                                  METRIC4,                                     \
                                  VALUE4) do {                                 \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -915,7 +915,7 @@ BSLS_IDENT("$Id: $")
                                  VALUE4,                                      \
                                  METRIC5,                                     \
                                  VALUE5) do {                                 \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -963,7 +963,7 @@ BSLS_IDENT("$Id: $")
                                  VALUE5,                                      \
                                  METRIC6,                                     \
                                  VALUE6) do {                                 \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -1007,7 +1007,7 @@ BSLS_IDENT("$Id: $")
                                       VALUE,                                  \
                                       PREFERRED_TYPE)                         \
 do {                                                                          \
-   using namespace BloombergLP;                                               \
+   using namespace BNP_Paribas;                                               \
    typedef balm::Metrics_Helper Helper;                                       \
    static balm::CategoryHolder holder = { false, 0, 0 };                      \
    static Helper::CollectorPtr collector1 = { 0 };                            \
@@ -1030,7 +1030,7 @@ do {                                                                          \
  } while (0)
 
 #define BALM_METRICS_DYNAMIC_INT_UPDATE(CATEGORY, METRIC, VALUE) do {         \
-    using namespace BloombergLP;                                              \
+    using namespace BNP_Paribas;                                              \
     if (balm::DefaultMetricsManager::instance()) {                            \
         balm::CollectorRepository& repository =                               \
              balm::DefaultMetricsManager::instance()->collectorRepository();  \
@@ -1071,60 +1071,60 @@ do {                                                                          \
 #define BALM_METRICS_TIME_BLOCK_SECONDS(CATEGORY, METRIC)                     \
   BALM_METRICS_TIME_BLOCK((CATEGORY),                                         \
                           (METRIC),                                           \
-                          BloombergLP::balm::StopwatchScopedGuard::k_SECONDS);
+                          BNP_Paribas::balm::StopwatchScopedGuard::k_SECONDS);
 
 #define BALM_METRICS_TIME_BLOCK_MILLISECONDS(CATEGORY, METRIC)                \
   BALM_METRICS_TIME_BLOCK(                                                    \
                       (CATEGORY),                                             \
                       (METRIC),                                               \
-                      BloombergLP::balm::StopwatchScopedGuard::k_MILLISECONDS);
+                      BNP_Paribas::balm::StopwatchScopedGuard::k_MILLISECONDS);
 
 #define BALM_METRICS_TIME_BLOCK_MICROSECONDS(CATEGORY, METRIC)                \
   BALM_METRICS_TIME_BLOCK(                                                    \
                       (CATEGORY),                                             \
                       (METRIC),                                               \
-                      BloombergLP::balm::StopwatchScopedGuard::k_MICROSECONDS);
+                      BNP_Paribas::balm::StopwatchScopedGuard::k_MICROSECONDS);
 
 #define BALM_METRICS_TIME_BLOCK_NANOSECONDS(CATEGORY, METRIC)                 \
   BALM_METRICS_TIME_BLOCK(                                                    \
                        (CATEGORY),                                            \
                        (METRIC),                                              \
-                       BloombergLP::balm::StopwatchScopedGuard::k_NANOSECONDS);
+                       BNP_Paribas::balm::StopwatchScopedGuard::k_NANOSECONDS);
 
 #define BALM_METRICS_DYNAMIC_TIME_BLOCK_SECONDS(CATEGORY, METRIC)             \
   BALM_METRICS_DYNAMIC_TIME_BLOCK(                                            \
                            (CATEGORY),                                        \
                            (METRIC),                                          \
-                           BloombergLP::balm::StopwatchScopedGuard::k_SECONDS);
+                           BNP_Paribas::balm::StopwatchScopedGuard::k_SECONDS);
 
 #define BALM_METRICS_DYNAMIC_TIME_BLOCK_MILLISECONDS(CATEGORY, METRIC)        \
   BALM_METRICS_DYNAMIC_TIME_BLOCK(                                            \
                       (CATEGORY),                                             \
                       (METRIC),                                               \
-                      BloombergLP::balm::StopwatchScopedGuard::k_MILLISECONDS);
+                      BNP_Paribas::balm::StopwatchScopedGuard::k_MILLISECONDS);
 
 #define BALM_METRICS_DYNAMIC_TIME_BLOCK_MICROSECONDS(CATEGORY, METRIC)        \
   BALM_METRICS_DYNAMIC_TIME_BLOCK(                                            \
                       (CATEGORY),                                             \
                       (METRIC),                                               \
-                      BloombergLP::balm::StopwatchScopedGuard::k_MICROSECONDS);
+                      BNP_Paribas::balm::StopwatchScopedGuard::k_MICROSECONDS);
 
 #define BALM_METRICS_DYNAMIC_TIME_BLOCK_NANOSECONDS(CATEGORY, METRIC)         \
   BALM_METRICS_DYNAMIC_TIME_BLOCK(                                            \
                        (CATEGORY),                                            \
                        (METRIC),                                              \
-                       BloombergLP::balm::StopwatchScopedGuard::k_NANOSECONDS);
+                       BNP_Paribas::balm::StopwatchScopedGuard::k_NANOSECONDS);
 
                         // =====================
                         // Macro Implementations
                         // =====================
 
 #define BALM_METRICS_IF_CATEGORY_ENABLED_IMP(CATEGORY, HOLDER_NAME)           \
-    static BloombergLP::balm::CategoryHolder HOLDER_NAME = { false, 0, 0 };   \
+    static BNP_Paribas::balm::CategoryHolder HOLDER_NAME = { false, 0, 0 };   \
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(!HOLDER_NAME.category())        \
      && BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(                                \
-                 BloombergLP::balm::DefaultMetricsManager::instance() != 0)) {\
-        BloombergLP::balm::Metrics_Helper::initializeCategoryHolder(          \
+                 BNP_Paribas::balm::DefaultMetricsManager::instance() != 0)) {\
+        BNP_Paribas::balm::Metrics_Helper::initializeCategoryHolder(          \
                                                    &HOLDER_NAME, CATEGORY);   \
     }                                                                         \
     if (HOLDER_NAME.enabled())
@@ -1140,9 +1140,9 @@ do {                                                                          \
                                     METRIC,                                   \
                                     TIME_UNITS,                               \
                                     VARIABLE_NAME)                            \
-    static BloombergLP::balm::Collector *VARIABLE_NAME = 0;                   \
-    if (BloombergLP::balm::DefaultMetricsManager::instance()) {               \
-       using namespace BloombergLP;                                           \
+    static BNP_Paribas::balm::Collector *VARIABLE_NAME = 0;                   \
+    if (BNP_Paribas::balm::DefaultMetricsManager::instance()) {               \
+       using namespace BNP_Paribas;                                           \
        typedef balm::Metrics_Helper Helper;                                   \
        static balm::CategoryHolder holder = { false, 0, 0 };                  \
        if (0 == holder.category()) {                                          \
@@ -1156,7 +1156,7 @@ do {                                                                          \
     else {                                                                    \
        VARIABLE_NAME = 0;                                                     \
     }                                                                         \
-    BloombergLP::balm::StopwatchScopedGuard                                   \
+    BNP_Paribas::balm::StopwatchScopedGuard                                   \
          BALM_METRICS_UNIQUE_NAME(__bAlM_gUaRd)(VARIABLE_NAME, TIME_UNITS);
 
 // Declare a pointer to a 'balm::Collector' with the specified 'VARIABLE_NAME'.
@@ -1170,15 +1170,15 @@ do {                                                                          \
                                             METRIC,                           \
                                             TIME_UNITS,                       \
                                             VARIABLE_NAME)                    \
-    BloombergLP::balm::Collector *VARIABLE_NAME = 0;                          \
-    if (BloombergLP::balm::DefaultMetricsManager::instance()) {               \
-        using namespace BloombergLP;                                          \
+    BNP_Paribas::balm::Collector *VARIABLE_NAME = 0;                          \
+    if (BNP_Paribas::balm::DefaultMetricsManager::instance()) {               \
+        using namespace BNP_Paribas;                                          \
         balm::CollectorRepository& repository =                               \
              balm::DefaultMetricsManager::instance()->collectorRepository();  \
         VARIABLE_NAME = repository.getDefaultCollector((CATEGORY),            \
                                                        (METRIC));             \
     }                                                                         \
-    BloombergLP::balm::StopwatchScopedGuard                                   \
+    BNP_Paribas::balm::StopwatchScopedGuard                                   \
          BALM_METRICS_UNIQUE_NAME(__bAlM_gUaRd)(VARIABLE_NAME, TIME_UNITS);
 
                         // ------------------------
@@ -1211,7 +1211,7 @@ do {                                                                          \
 #define BALM_METRICS_UNIQUE_NAME(X)                                           \
            BALM_METRICS_CAT(X, BALM_METRICS_UNIQNUM)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace balm {
                            // =====================

@@ -326,7 +326,7 @@ using polymorphic_allocator = std::pmr::polymorphic_allocator<TYPE>;
 // alias for `std::pmr::polymorphic_allocator`, these operators must be defined
 // in namespace `std::pmr` to be found by ADL.
 
-namespace BloombergLP::bslma {
+namespace BNP_Paribas::bslma {
 
 #if defined(BSLS_PLATFORM_CMP_MSVC)
 // The MSVC compiler, up to and including version 19.33 (aka VS 2022), has a
@@ -351,7 +351,7 @@ struct PolymorphicAllocator_Unique
 
 #define BSLMF_POLYMORPHICALLOCATOR_NODEDUCE_T(VAL_T)                          \
     std::pmr::polymorphic_allocator<                                          \
-                              BloombergLP::bslma::PolymorphicAllocator_Unique>
+                              BNP_Paribas::bslma::PolymorphicAllocator_Unique>
 
 #else  // Not MSVC compiler
 
@@ -360,7 +360,7 @@ struct PolymorphicAllocator_Unique
 
 #endif
 
-}  // close namespace BloombergLP::bslma
+}  // close namespace BNP_Paribas::bslma
 
 namespace std::pmr {
 
@@ -775,7 +775,7 @@ template <class TYPE>
 struct is_trivially_copyable<polymorphic_allocator<TYPE> > : true_type { };
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 /// Declare `polymorphic_allocator` as a C++11 compatible allocator for
@@ -860,7 +860,7 @@ namespace bsl {
 // CREATORS
 template <class TYPE>
 polymorphic_allocator<TYPE>::polymorphic_allocator() BSLS_KEYWORD_NOEXCEPT
-: d_resource(BloombergLP::bslma::Default::defaultAllocator())
+: d_resource(BNP_Paribas::bslma::Default::defaultAllocator())
 {
 }
 
@@ -899,10 +899,10 @@ inline
 TYPE *polymorphic_allocator<TYPE>::allocate(std::size_t n)
 {
     const size_t k_TYPE_ALIGNMENT =
-        BloombergLP::bsls::AlignmentFromType<TYPE>::VALUE;
+        BNP_Paribas::bsls::AlignmentFromType<TYPE>::VALUE;
 
     if (n > this->max_size()) {
-        BloombergLP::bsls::BslExceptionUtil::throwBadAlloc();
+        BNP_Paribas::bsls::BslExceptionUtil::throwBadAlloc();
     }
 
     return static_cast<TYPE *>(d_resource->allocate(n * sizeof(TYPE),
@@ -924,7 +924,7 @@ inline
 void polymorphic_allocator<TYPE>::deallocate(TYPE *p, std::size_t n)
 {
     const std::size_t k_TYPE_ALIGNMENT =
-        BloombergLP::bsls::AlignmentFromType<TYPE>::VALUE;
+        BNP_Paribas::bsls::AlignmentFromType<TYPE>::VALUE;
 
     d_resource->deallocate(p, n * sizeof(TYPE), k_TYPE_ALIGNMENT);
 }
@@ -934,7 +934,7 @@ template <class ELEMENT_TYPE>
 inline
 void polymorphic_allocator<TYPE>::construct(ELEMENT_TYPE *address)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(address, *this);
+    BNP_Paribas::bslma::ConstructionUtil::construct(address, *this);
 }
 
 #if !BSLS_COMPILERFEATURES_SIMULATE_CPP11_FEATURES
@@ -945,7 +945,7 @@ void polymorphic_allocator<TYPE>::construct(ELEMENT_TYPE *address,
                                             ARG1&         argument1,
                                             ARGS&&...     arguments)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         address,
         *this,
         argument1,
@@ -960,7 +960,7 @@ void polymorphic_allocator<TYPE>::construct(
                             BSLS_COMPILERFEATURES_FORWARD_REF(ARG1)  argument1,
                             ARGS&&...                                arguments)
 {
-    BloombergLP::bslma::ConstructionUtil::construct(
+    BNP_Paribas::bslma::ConstructionUtil::construct(
         address,
         *this,
         BSLS_COMPILERFEATURES_FORWARD(ARG1, argument1),
@@ -973,7 +973,7 @@ template <class ELEMENT_TYPE>
 inline
 void polymorphic_allocator<TYPE>::destroy(ELEMENT_TYPE *address)
 {
-    BloombergLP::bslma::DestructionUtil::destroy(address);
+    BNP_Paribas::bslma::DestructionUtil::destroy(address);
 }
 
 
@@ -983,7 +983,7 @@ inline
 typename polymorphic_allocator<TYPE>::pointer
 polymorphic_allocator<TYPE>::address(reference x) const
 {
-    return BloombergLP::bsls::Util::addressOf(x);
+    return BNP_Paribas::bsls::Util::addressOf(x);
 }
 
 template <class TYPE>
@@ -991,7 +991,7 @@ inline
 typename polymorphic_allocator<TYPE>::const_pointer
 polymorphic_allocator<TYPE>::address(const_reference x) const
 {
-    return BloombergLP::bsls::Util::addressOf(x);
+    return BNP_Paribas::bsls::Util::addressOf(x);
 }
 
 template <class TYPE>

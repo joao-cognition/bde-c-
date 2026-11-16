@@ -26,7 +26,7 @@
 
 #ifdef COMPILING_BSLMF_FUNCTIONPOINTERTRAITS_H
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslmf {
 
 /// C++ function pointer linkage tag.

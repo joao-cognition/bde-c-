@@ -83,7 +83,7 @@ BSLS_IDENT("$Id: $")
 #include <bsls_compilerfeatures.h>
 #include <bsls_keyword.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslma { class Allocator; }
 
@@ -325,7 +325,7 @@ struct UsesBslmaAllocator<bsltf::MoveOnlyAllocTestType>
 
 namespace bsl {
 template <>
-struct is_copy_constructible<BloombergLP::bsltf::MoveOnlyAllocTestType>
+struct is_copy_constructible<BNP_Paribas::bsltf::MoveOnlyAllocTestType>
         : bsl::false_type {};
 }  // close namespace bsl
 

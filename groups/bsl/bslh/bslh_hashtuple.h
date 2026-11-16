@@ -67,7 +67,7 @@ BSLS_IDENT("$Id: $")
 #include <tuple>       // 'std::tuple'
 #include <cstddef>     // 'std::size_t'
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslh {
 
                         // =====================

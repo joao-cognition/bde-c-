@@ -34,8 +34,8 @@
 #pragma GCC diagnostic ignored "-Wlarger-than="
 #endif
 
-using namespace BloombergLP;
-using namespace BloombergLP::bdldfp;
+using namespace BNP_Paribas;
+using namespace BNP_Paribas::bdldfp;
 using namespace bsl;
 
 // ============================================================================
@@ -181,7 +181,7 @@ void aSsErT(bool condition, const char *message, int line)
 //                  GLOBAL TYPEDEFS/CONSTANTS FOR TESTING
 // ----------------------------------------------------------------------------
 
-namespace BDEC = BloombergLP::bdldfp;
+namespace BDEC = BNP_Paribas::bdldfp;
 
 typedef bdldfp::DecimalConvertUtil Util;
 

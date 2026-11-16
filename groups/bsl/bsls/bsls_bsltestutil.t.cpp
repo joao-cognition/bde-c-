@@ -790,9 +790,9 @@ int g_testCase = 0;
 /// first time this function is called, so that a test case that writes no
 /// files creates no directory.  The directory is removed when the program
 /// exits normally.  The behavior is undefined unless `g_testCase` is set.
-const BloombergLP::bsls::TestTempDirectory& testTempDirectory()
+const BNP_Paribas::bsls::TestTempDirectory& testTempDirectory()
 {
-    static BloombergLP::bsls::TestTempDirectory tempDir("bsls_bsltestutil",
+    static BNP_Paribas::bsls::TestTempDirectory tempDir("bsls_bsltestutil",
                                                         g_testCase);
     return tempDir;
 }
@@ -2113,7 +2113,7 @@ void TestDriver::testCase3(OutputRedirector                   *output,
         }
 
         output->reset();
-        BloombergLP::bsls::debugprint(INPUT);
+        BNP_Paribas::bsls::debugprint(INPUT);
 
         ANNOTATED2_ASSERT(LINE, "%d", INPUT, formatString, output->load());
         ANNOTATED4_ASSERT(LINE, "%d",
@@ -2864,7 +2864,7 @@ int main(int argc, char *argv[])
                 }
 
                 output.reset();
-                BloombergLP::bsls::BslTestUtil::printStringNoFlush(INPUT);
+                BNP_Paribas::bsls::BslTestUtil::printStringNoFlush(INPUT);
                 ANNOTATED2_ASSERT(LINE, "%d", INPUT, "%s", output.load());
                 ANNOTATED4_ASSERT(LINE, "%d",
                                   INPUT, "%s",
@@ -2874,8 +2874,8 @@ int main(int argc, char *argv[])
             }
 
             output.reset();
-            BloombergLP::bsls::BslTestUtil::printStringNoFlush("abc");
-            BloombergLP::bsls::BslTestUtil::printStringNoFlush("def");
+            BNP_Paribas::bsls::BslTestUtil::printStringNoFlush("abc");
+            BNP_Paribas::bsls::BslTestUtil::printStringNoFlush("def");
             ASSERT(output.load());
             ASSERT(0 == output.compare("abcdef"));
         }
@@ -2889,7 +2889,7 @@ int main(int argc, char *argv[])
             }
 
             output.reset();
-            BloombergLP::bsls::BslTestUtil::printTab();
+            BNP_Paribas::bsls::BslTestUtil::printTab();
             ASSERT(output.load());
             ASSERT(0 == output.compare("\t"));
         }

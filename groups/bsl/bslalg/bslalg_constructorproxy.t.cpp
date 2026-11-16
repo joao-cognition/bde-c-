@@ -51,7 +51,7 @@
 using std::printf;
 using std::fprintf;
 using std::fflush;
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                 TEST PLAN
@@ -317,7 +317,7 @@ class TestType_Base {
 
     /// Return `true` if the specified `a` matches the allocator.  The
     /// second overload relies on the fact that most STL allocators used for
-    /// testing at Bloomberg can be constructed (not necessarily converted)
+    /// testing at BNP Paribas can be constructed (not necessarily converted)
     /// from `bslma::Allocator *`; if not, a call to the second overload
     /// will fail to compile.
     bool matchAllocator(AllocArg a) const { return a == d_allocator; }

@@ -49,7 +49,7 @@
 #include <bsl_string.h>
 #include <bsl_vector.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bsl;
 
 //=============================================================================
@@ -329,7 +329,7 @@ bool operator!=(const TestString& lhs, const TestString& rhs)
     return !(lhs == rhs);
 }
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 
 bsl::ostream& operator<<(bsl::ostream& out, const TestAllocator& ta)

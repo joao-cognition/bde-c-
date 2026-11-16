@@ -23,7 +23,7 @@ BSLS_IDENT("$Id$ $CSID$")
 // `bsl::is_function<TYPE>` to separate function pointers (returned unchanged)
 // from object pointers (cast via `const_cast`).
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 }  // close enterprise namespace
 
 // ----------------------------------------------------------------------------

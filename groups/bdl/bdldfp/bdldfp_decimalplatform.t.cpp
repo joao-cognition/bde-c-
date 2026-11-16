@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using bsl::atoi;
 using bsl::cerr;
 using bsl::cout;

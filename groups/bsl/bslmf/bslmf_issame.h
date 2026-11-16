@@ -13,7 +13,7 @@ BSLS_IDENT("$Id: $")
 //  bslmf::IsSame: meta-function for testing if two types are the same
 //
 //@DESCRIPTION: This component defines two meta-functions, `bsl::is_same` and
-// `BloombergLP::bslmf::IsSame` and a template variable `bsl::is_same_v`,
+// `BNP_Paribas::bslmf::IsSame` and a template variable `bsl::is_same_v`,
 // that represents the result value of the `bsl::is_same` meta-function.  All
 // these meta-functions may be used to query whether two types are the same.
 // Two types are the same if they name the same type having the same
@@ -122,7 +122,7 @@ BSLS_KEYWORD_INLINE_VARIABLE constexpr bool is_same_v =
 
 }  // close namespace bsl
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 namespace bslmf {
 

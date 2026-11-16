@@ -216,7 +216,7 @@ BSLS_IDENT("$Id: $")
 #include <bsl_string_view.h>
 #include <bsl_utility.h>    // `bsl::pair`
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace baljsn {
 
 class EncoderOptions;

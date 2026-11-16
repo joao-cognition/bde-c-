@@ -18,7 +18,7 @@ BSLS_IDENT_RCSID(balst_resolver_filehelper_cpp,"$Id$ $CSID$")
 
 #if defined(BALST_OBJECTFILEFORMAT_RESOLVER_ELF)
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace balst {
 
                                     // ----------

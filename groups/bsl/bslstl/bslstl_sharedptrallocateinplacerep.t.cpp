@@ -27,7 +27,7 @@
 // like `shared_ptr<int[]>` cause them to complain.
 #endif
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                                  TEST PLAN
@@ -1669,7 +1669,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("\nTESTING `getDeleter`"
                             "\n====================\n");
 
-        using BloombergLP::bsltf::StdStatefulAllocator;
+        using BNP_Paribas::bsltf::StdStatefulAllocator;
 
         typedef bsl::allocator<int> ALLOC_1;
         typedef StdStatefulAllocator<int, true, true, true, true> ALLOC_2;
@@ -1781,7 +1781,7 @@ int main(int argc, char *argv[])
             ASSERT(++numDeallocations == ta.numDeallocations());
         }
 #else
-        using BloombergLP::bsltf::StdStatefulAllocator;
+        using BNP_Paribas::bsltf::StdStatefulAllocator;
 
         typedef bsl::allocator<int> ALLOC_1;
         typedef StdStatefulAllocator<int, true, true, true, true> ALLOC_2;
@@ -1842,7 +1842,7 @@ int main(int argc, char *argv[])
             ASSERT(++numDeallocations == ta.numDeallocations());
         }
 #else
-        using BloombergLP::bsltf::StdStatefulAllocator;
+        using BNP_Paribas::bsltf::StdStatefulAllocator;
 
         typedef bsl::allocator<int> ALLOC_1;
         typedef StdStatefulAllocator<int, true, true, true, true> ALLOC_2;
@@ -1898,7 +1898,7 @@ int main(int argc, char *argv[])
         if (verbose) printf("\nTESTING ARGUMENT-FORWARDING CONSTRUCTORS"
                             "\n========================================\n");
 
-        using BloombergLP::bsltf::StdStatefulAllocator;
+        using BNP_Paribas::bsltf::StdStatefulAllocator;
 
         typedef bsl::allocator<int> ALLOC_1;
         typedef StdStatefulAllocator<int, true, true, true, true> ALLOC_2;
@@ -1967,7 +1967,7 @@ int main(int argc, char *argv[])
             ASSERT(++numDeallocations == ta.numDeallocations());
         }
 #else
-        using BloombergLP::bsltf::StdStatefulAllocator;
+        using BNP_Paribas::bsltf::StdStatefulAllocator;
 
         typedef bsl::allocator<int> ALLOC_1;
         typedef StdStatefulAllocator<int, true, true, true, true> ALLOC_2;

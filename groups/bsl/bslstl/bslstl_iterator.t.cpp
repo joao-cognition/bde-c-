@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #if defined(BSLS_PLATFORM_CMP_SUN)
 #pragma error_messages(off, arrowrtn)

@@ -26,7 +26,7 @@ namespace u {
 // functor passed to the inline 'createWithAllocator' template functions,
 // however, does not provide a way to return a value.
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 /// This `struct` stores the information necessary to call the `extern "C"`
 /// function `d_threadFunction` passing it `void *` `d_userData` after a thread
@@ -57,11 +57,11 @@ struct NamedFuncPtrRecord {
 }  // close namespace u
 
 // Thread limit used to inject thread creation failures in testing.
-BloombergLP::bsls::AtomicUint g_threadLimit = 0;
+BNP_Paribas::bsls::AtomicUint g_threadLimit = 0;
 
 }  // close unnamed namespace
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 
 extern "C"
 /// C-linkage routine that allows us to call a C-style function and name the

@@ -26,7 +26,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bslalg_constructorproxy.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace s_baltst {
 
                       // ===============================

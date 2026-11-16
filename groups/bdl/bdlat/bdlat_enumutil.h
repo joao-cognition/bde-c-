@@ -33,7 +33,7 @@ BSLS_IDENT("$Id: $")
 // #include <bdlb_string.h>
 // #include <bsl_string.h>
 //
-// namespace BloombergLP {
+// namespace BNP_Paribas {
 // namespace mine {
 //
 // enum ImageType {
@@ -205,7 +205,7 @@ BSLS_IDENT("$Id: $")
 // ```
 // void usageExample()
 // {
-//     using namespace BloombergLP;
+//     using namespace BNP_Paribas;
 //
 //     mine::ImageType imageType;
 //     int rc;
@@ -242,7 +242,7 @@ BSLS_IDENT("$Id: $")
 
 #include <bsls_platform.h>
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlat {
 
                               // ===============

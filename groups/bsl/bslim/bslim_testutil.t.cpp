@@ -29,7 +29,7 @@
 // Ensure that the `BSLIM_TESTUTIL_*` macros do not require:
 //  using namespace bsl;
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 //=============================================================================
 //                             TEST PLAN

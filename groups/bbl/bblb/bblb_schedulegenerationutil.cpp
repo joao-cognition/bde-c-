@@ -21,7 +21,7 @@ BSLS_IDENT_RCSID(bblb_schedulegenerationutil_cpp,"$Id$ $CSID$")
 namespace {
 namespace u {
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 using namespace bblb;
 
 template <class VECTOR, class ELEMENT_TYPE>
@@ -724,7 +724,7 @@ void generateFromDayOfWeekInMonthImp(VECTOR                *schedule,
 }  // close unnamed namespace
 
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bblb {
 
                       // -----------------------------

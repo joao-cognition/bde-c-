@@ -30,7 +30,7 @@
 // BDE_VERIFY pragma: -TP09  // Test-case indexing thing
 // BDE_VERIFY pragma: -TP18  // Test-case banners are ALL-CAPS
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 #ifdef BSLS_PLATFORM_HAS_PRAGMA_GCC_DIAGNOSTIC
 #ifdef BSLS_PLATFORM_CMP_CLANG
@@ -523,7 +523,7 @@ class MyBslAllocArgTestDeleter {
     void operator()(TYPE *ptr) const;
 };
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bslma {
 template <>
 struct UsesBslmaAllocator<MyBslAllocArgTestDeleter> : bsl::true_type {

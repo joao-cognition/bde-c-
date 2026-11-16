@@ -42,14 +42,14 @@ void *bdlpcre_malloc(size_t size, void *context)
 {
     void *result = 0;
 
-    BloombergLP::bslma::Allocator *basicAllocator =
-                    reinterpret_cast<BloombergLP::bslma::Allocator *>(context);
+    BNP_Paribas::bslma::Allocator *basicAllocator =
+                    reinterpret_cast<BNP_Paribas::bslma::Allocator *>(context);
     BSLS_TRY {
 #ifdef BSLS_LIBRARYFEATURES_HAS_CPP11_BASELINE_LIBRARY
         size_t alignment = alignof(std::max_align_t);
 #else
         size_t alignment =
-                          BloombergLP::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
+                          BNP_Paribas::bsls::AlignmentUtil::BSLS_MAX_ALIGNMENT;
 #endif
         // Closely mimic the alignment behavior of `malloc` by giving a `size`
         // to the allocator that will result in the maximum possible natural
@@ -81,8 +81,8 @@ void *bdlpcre_malloc(size_t size, void *context)
 
 void bdlpcre_free(void *data, void *context)
 {
-    BloombergLP::bslma::Allocator *basicAllocator =
-                    reinterpret_cast<BloombergLP::bslma::Allocator *>(context);
+    BNP_Paribas::bslma::Allocator *basicAllocator =
+                    reinterpret_cast<BNP_Paribas::bslma::Allocator *>(context);
 
     basicAllocator->deallocate(data);
     return;
@@ -90,7 +90,7 @@ void bdlpcre_free(void *data, void *context)
 
 }  // close extern "C"
 
-namespace BloombergLP {
+namespace BNP_Paribas {
 namespace bdlpcre {
 
 // CONSTANTS

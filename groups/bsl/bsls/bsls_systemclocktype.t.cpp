@@ -9,7 +9,7 @@
 #include <stdlib.h>  // atoi
 #include <string.h>  // strlen, strcmp
 
-using namespace BloombergLP;
+using namespace BNP_Paribas;
 
 // ============================================================================
 //                                  TEST PLAN
